@@ -1,0 +1,14 @@
+/*-- scss:defaults --*/
+
+@import 'https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap';
+
+$font-family: "Atkinson Hyperlegible", sans-serif;
+$link-decoration: none;
+$link-color: #800080;
+/*-- scss:rules --*/
+
+.colour-box {
+  background: #f8f9fa;
+  padding-left:1rem; 
+  padding-right:1rem;
+}

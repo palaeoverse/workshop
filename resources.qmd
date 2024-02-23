@@ -1,0 +1,85 @@
+---
+title: "Resources"
+---
+
+## Summary
+
+This unit of the workshop introduces a variety of resources that are of relevance to palaeobiological analyses and palaeontologists more broadly. The slides for the unit are available here and provide an overview to these commonly used resources, along with links to relevant websites and other content. This acts as both a summary of the resources mentioned in the other Units, as well as including additional resources which may be of interest.
+
+This session is led by Christopher Dean. If you encounter any issues while working with these resources, please contact him [here](mailto:christopherdaviddean@gmail.com). Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please let Chris know and he will add them to the list.
+
+## Content (under construction)
+
+### Data Acquisition
+
+These resources cover the acquisition of data for palaeontological analyses, including occurrence datasets and covariate/associated data.
+
+#### Occurrence Databases
+
+-   [Paleobiology Database](http://paleobiodb.org)
+
+-   [Geobiodiversity database](http://giobiodiversity.com)
+
+-   [Neotoma](http://neotomadb.org)
+
+-   [GBIF](http://gbif.org)
+
+-   [iDigBio](http://idigbio.org)
+
+-   [Neptune](http://nsb.mfn-berlin.de)
+
+-   [BioDeepTime](http://dio.org/10.1111/geb.13735)
+
+-   [Phylacine](http://megapast2future.github.io/PPHYLACINE_1.2/)
+
+-   [PARED](http://paleo-reefs.pal.uni-Erlangen.de)
+
+#### Covariate Datasets
+
+-   [Macrostrat](http://macrostrat.org)
+
+-   [USGS Geological Maps of North America](https://mrdata.usgs.gov/geology/state/)
+
+-   [WorldClim](http://worldclim.org)
+
+-   [ESA WorldCover](http://esa-worldcover.org/en)
+
+### Data Preparation
+
+These resources cover the preparation of data for palaeontological analyses, including data cleaning, organisation and transformation.
+
+### Data Visualisation
+
+These resources cover the various ways in which data can be visualised, from theoretical, practical and ethical angles.
+
+#### General Resources
+
+-   [Best Practices for Data Visualisation (Royal Society Guide)](https://royal-statistical-society.github.io/datavisguide/)
+
+-   [R Graph Gallery](https://r-graph-gallery.com/)
+
+-   [COBLIS (Colour Blindness Simulator)](https://www.color-blindness.com/coblis-color-blindness-simulator/)
+
+-   [Colorhunt](https://colorhunt.co/)
+
+### Writing Functions
+
+These resources cover how to write functions in R
+
+### General Palaeontology Resources
+
+-   [Palaeoverse](http://palaeoverse.org)
+
+-   [Palaeoverse Google Group](https://groups.google.com/g/palaeoverse)
+
+-   [Paleonet](https://paleonet.org/)
+
+### General Programming Resources
+
+### \--
+
+### Problem Solving Tips
+
+\--
+
+![](images/logo.png){fig-align="right" width="25%"}
