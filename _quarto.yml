@@ -5,9 +5,9 @@ project:
 website:
   page-navigation: false
   title: "R for Palaeobiologists"
-  description: "Palaeoverse: Workshop and Hackathon - University College London, Autumn 2023"
-  site-url: https://hackathon.palaeoverse.org
-  repo-url: https://github.com/palaeoverse-community/hackathon/
+  description: "Palaeoverse: Workshop - NAPC 2024"
+  site-url: https://workshop.palaeoverse.org
+  repo-url: https://github.com/palaeoverse-community/workshop/
   repo-actions: [edit, issue]
   open-graph: true
   twitter-card: true
@@ -27,7 +27,7 @@ website:
     align: center
     tools:
       - icon: github
-        href: https://github.com/palaeoverse-community
+        href: https://github.com/palaeoverse
         text: "GitHub organization"
       - icon: twitter
         href: https://twitter.com/ThePalaeoverse

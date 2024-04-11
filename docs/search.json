@@ -4,7 +4,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Time\nEvent\n\n\n\n\n08:00\nWelcome and Introduction to Palaeoverse\n\n\n08:15\nTheory: Data acquisition/cleaning\n\n\n08:30\nPractical: Data acquisition/cleaning\n\n\n09:00\nTheory: Data preparation with palaeoverse\n\n\n09:15\nPractical: Data preparation with palaeoverse\n\n\n09:45\nBREAK ☕\n\n\n10:00\nTheory: Introduction to Data visualisation\n\n\n10:15\nPractical: Introduction to Data visualisation\n\n\n10:45\nIndependent practice time\n\n\n11:30\nResources\n\n\n11:50\nQuestions & Wrap-up"
+    "text": "Time\nEvent\n\n\n\n\n08:00\nWelcome and Introduction to Palaeoverse\n\n\n08:15\nTheory: Data acquisition/cleaning\n\n\n08:30\nPractical: Data acquisition/cleaning\n\n\n09:00\nTheory: Data preparation with palaeoverse\n\n\n09:15\nPractical: Data preparation with palaeoverse\n\n\n09:45\nBreak ☕\n\n\n10:00\nTheory: Introduction to Data visualisation\n\n\n10:15\nPractical: Introduction to Data visualisation\n\n\n10:45\nIndependent practice time\n\n\n11:30\nResources\n\n\n11:50\nQuestions & Wrap-up"
   },
   {
     "objectID": "resources.html",
@@ -39,14 +39,14 @@
     "href": "index.html#arrival",
     "title": "R for Palaeobiologists: Workshop",
     "section": "Arrival",
-    "text": "Arrival\nThe event starts at 08:00 on the 19th June 2024 and will take place in Room 1060, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085. You should enter the building from XXX. We will meet you there from 07:55.\nThe full schedule for the event is available here."
+    "text": "Arrival\nThe event starts at 08:00 on the 19th June 2024 and will take place in Room 1060, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085. You should enter the building from XXX. We will meet you there from 07:55.\nThe full schedule for the workshop is available here."
   },
   {
     "objectID": "index.html#installation",
     "href": "index.html#installation",
     "title": "R for Palaeobiologists: Workshop",
     "section": "Installation",
-    "text": "Installation\nPlease ensure that you have the latest version of R (4.3.2) for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be download here. To minimise any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"deeptime\", \"dplyr\", \"extrafont\", \"ggplot2\", \"ggpubr\", \n                 \"maps\", \"microbenchmark\", \"palaeoverse\", \"profvis\",\"raster\", \n                 \"RColorBrewer\", \"rgplates\", \"roxygen2\", \"rpaleoclim\",\n                 \"sf\", \"svglite\", \"terra\", \"testthat\", \"usethis\")"
+    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be download here. To minimise any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"deeptime\", \"dplyr\", \"extrafont\", \"ggplot2\", \"ggpubr\", \n                 \"maps\", \"microbenchmark\", \"palaeoverse\", \"profvis\",\"raster\", \n                 \"RColorBrewer\", \"rgplates\", \"roxygen2\", \"rpaleoclim\",\n                 \"sf\", \"svglite\", \"terra\", \"testthat\", \"usethis\")"
   },
   {
     "objectID": "index.html#acknowledgements",
