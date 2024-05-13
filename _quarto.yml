@@ -7,7 +7,7 @@ website:
   title: "R for Palaeobiologists"
   description: "Palaeoverse: Workshop - NAPC 2024"
   site-url: https://workshop.palaeoverse.org
-  repo-url: https://github.com/palaeoverse-community/workshop/
+  repo-url: https://github.com/palaeoverse/workshop/
   repo-actions: [edit, issue]
   open-graph: true
   twitter-card: true

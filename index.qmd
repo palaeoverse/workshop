@@ -4,7 +4,7 @@ toc: true
 ---
 
 **08:00--12:00 - 19^th^ June 2024**  
-[Room 1060, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085](https://maps.app.goo.gl/fU1zDr1Cu6T5hWWc8)
+[Room 1010, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085](https://maps.app.goo.gl/fU1zDr1Cu6T5hWWc8)
 
 # Welcome
 
@@ -12,7 +12,7 @@ Welcome to the second edition of **R for Palaeobiologists: Workshop**. R is one 
 
 ## Arrival
 
-The event starts at 08:00 on the 19^th^ June 2024 and will take place in [Room 1060, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085](https://maps.app.goo.gl/fU1zDr1Cu6T5hWWc8). You should enter the building from XXX. We will meet you there from 07:55.
+The event starts at 08:00 on the 19^th^ June 2024 and will take place in [Room 1010, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085](https://maps.app.goo.gl/fU1zDr1Cu6T5hWWc8). You should enter the building from XXX. We will meet you there from 07:55.
 
 The full schedule for the workshop is available [here](/schedule.qmd).
 
