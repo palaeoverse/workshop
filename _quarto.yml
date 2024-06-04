@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
 
+
 website:
   page-navigation: false
   title: "R for Palaeobiologists"
