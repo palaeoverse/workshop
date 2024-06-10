@@ -1,5 +1,271 @@
 [
   {
+    "objectID": "materials/visualization/presentation.html#schedule",
+    "href": "materials/visualization/presentation.html#schedule",
+    "title": "An intro to data visualization",
+    "section": "Schedule",
+    "text": "Schedule\n\n10 - 10:15 AM: Theory of data visualization\n\n10:15 - 10:45 AM: Practical data visualization"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#theory-of-data-visualization",
+    "href": "materials/visualization/presentation.html#theory-of-data-visualization",
+    "title": "An intro to data visualization",
+    "section": "Theory of data visualization",
+    "text": "Theory of data visualization\n\nWhat is data visualization?\nBasic design principles (color & font)\nPicking a graph type\nCommon mistakes\nFile types"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#what-is-data-visualization-1",
+    "href": "materials/visualization/presentation.html#what-is-data-visualization-1",
+    "title": "An intro to data visualization",
+    "section": "What is data visualization?",
+    "text": "What is data visualization?\n\nThe representation of data through the use of graphs and figures.\n\nOften the data is complex, but the representation should be approachable and easy-to-understand."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#what-is-data-visualization-2",
+    "href": "materials/visualization/presentation.html#what-is-data-visualization-2",
+    "title": "An intro to data visualization",
+    "section": "What is data visualization?",
+    "text": "What is data visualization?\nFor example, here is some data:\n\n (even this is a data visualization)\n\n\nRelative YouTube listening of Rihanna compared to the other Billboard Top 100 in 2017 across the US. Made by the New York Times using geocoded streaming data from YouTube."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#what-is-data-visualization-3",
+    "href": "materials/visualization/presentation.html#what-is-data-visualization-3",
+    "title": "An intro to data visualization",
+    "section": "What is data visualization?",
+    "text": "What is data visualization?\nAnd here is a data visualization of that data:\n\n\n\n\nRelative proportions of a sports game that entails “game action”, “game inaction”, or “commercials”. English Premier League shows the highest proportion of game action. NHL games have the most (total) game action."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#what-is-data-visualization-4",
+    "href": "materials/visualization/presentation.html#what-is-data-visualization-4",
+    "title": "An intro to data visualization",
+    "section": "What is data visualization?",
+    "text": "What is data visualization?\nHere’s another example. What data is being represented?\n\n\n\n\n\n\nRelative YouTube listening of Rihanna compared to the other Billboard Top 100 in 2017 across the US. Made by the New York Times using geocoded streaming data from YouTube."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#basic-design-principles-1",
+    "href": "materials/visualization/presentation.html#basic-design-principles-1",
+    "title": "An intro to data visualization",
+    "section": "Basic design principles",
+    "text": "Basic design principles\n\n\n\nColor\n\n\nType (aka font)\n\n\nPositioning (R takes care of most of this)\n\n\nDon’t actually alternate colors and fonts like this unless you are trying to make a point"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color",
+    "href": "materials/visualization/presentation.html#color",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nLots of colors exist!"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-1",
+    "href": "materials/visualization/presentation.html#color-1",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nValue (lightness/darkness)"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-2",
+    "href": "materials/visualization/presentation.html#color-2",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nTemperature (cool vs warm)"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-3",
+    "href": "materials/visualization/presentation.html#color-3",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nSaturation (intensity of color)"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-4",
+    "href": "materials/visualization/presentation.html#color-4",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nPalettes (collections of colors that work well together)\n\n\n\n\n\nAnalogous colors are three colors next to each other on the color wheel, composed of one dominant color (usually a primary or secondary color), then a supporting color (a secondary or tertiary color), and a third color that is either a mix of the two first colors, or an accent color that pops."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-5",
+    "href": "materials/visualization/presentation.html#color-5",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nPalettes (collections of colors that work well together)\n\n\n\n\n\nA complementary color scheme is created by using two colors opposite each other on the color wheel. This type of palette attracts the most attention because of its bold contrast, but that also makes it the most difficult to find a harmonious balance. One way to achieve good balance when using complementary colors is to identify two opposite colors (as shown in the image below) and then create the rest of your palette by creating slightly darker or lighter versions of those same colors."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-6",
+    "href": "materials/visualization/presentation.html#color-6",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nDeclaring colors in R\n\nNames (see cheat sheet)\nHEX codes"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-7",
+    "href": "materials/visualization/presentation.html#color-7",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nGetting HEX codes\n\nIn software (e.g., PowerPoint, Illustrator, Inkscape)\nOnline (e.g., Google, HTML color codes, coolers)"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-8",
+    "href": "materials/visualization/presentation.html#color-8",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nOr use premade color palette packages!\n\nRColorBrewer\ngeological timescale palettes in deeptime\nviridis\n\ndesigned for accessibility\n\nwesanderson"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-9",
+    "href": "materials/visualization/presentation.html#color-9",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nColor accessibility is important!\nThe more color contrast the better!"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-10",
+    "href": "materials/visualization/presentation.html#color-10",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nDon’t forget about color blindness!\nCheck your graphs with a color blindness simulator (e.g., ColourSimulations or ColorOracle).\n\n\n\n \n\n\nRight is with Deuteranopia (red-green color blindness, 6% of males, .4% of females)"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#color-11",
+    "href": "materials/visualization/presentation.html#color-11",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nYour graphs should even be legible in grayscale.\n\n\n\n \n\n\nRight is desaturated"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#font",
+    "href": "materials/visualization/presentation.html#font",
+    "title": "An intro to data visualization",
+    "section": "Font",
+    "text": "Font\nThere are lots of fonts/types, too!"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#font-1",
+    "href": "materials/visualization/presentation.html#font-1",
+    "title": "An intro to data visualization",
+    "section": "Font",
+    "text": "Font\nWe want easily readable fonts:\n\nTahoma\nCalibri\nHelvetica\nArial\n\n\nFind more at Google Fonts\n\nCan import these into R using the sysfonts package"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#font-2",
+    "href": "materials/visualization/presentation.html#font-2",
+    "title": "An intro to data visualization",
+    "section": "Font",
+    "text": "Font\nTips\n\nOne font is usually enough (max two)\nMake sure font size is big enough (who is the audience?)\nUse bold for emphasis, but avoid italics and underlines\nLeft-aligned text is most readable\nUse size as a tool to hierarchize content\nUse 1.5 line spacing for better readability\n\n\nItalics and underlines decrease accessibility (e.g., dyslexia)"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#graph-type-depends-on-data-type",
+    "href": "materials/visualization/presentation.html#graph-type-depends-on-data-type",
+    "title": "An intro to data visualization",
+    "section": "Graph type depends on data type",
+    "text": "Graph type depends on data type\n\n\n\n\nWe don’t have time to go over this entire chart, but it should be a good reference for the future. Note that the first question is what aspect of the data you would like to show: relationships, comparisons, distributions, or compositions. From there, we need to decide how many variables we want to include and/or whether we are showing changes over time."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#common-mistakes",
+    "href": "materials/visualization/presentation.html#common-mistakes",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nOur brains cannot compare angles, so avoid pie charts\n\n\n\n\n\n\n\n\n\n\n\nLook at each of these pie charts and try to identify the increasing/decreasing order of section sizes… Were you right?"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#common-mistakes-1",
+    "href": "materials/visualization/presentation.html#common-mistakes-1",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nVolumes and perspective can be tough too, so best to avoid 3D plots\n\n\n \n\n\nThe two pie charts are the same, but the blue segment in the right pie chart appears smaller because of perspective. What does this 3D chart provide that thhe 2D version does not? (nothing, except maybe aesthetics)"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#common-mistakes-2",
+    "href": "materials/visualization/presentation.html#common-mistakes-2",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nNever truncate your X/Y axes or zoom on one part of them without showing the overall pattern as well"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#common-mistakes-3",
+    "href": "materials/visualization/presentation.html#common-mistakes-3",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nDon’t overcomplicate your graphs!\n\n\nIs the main point of the graph clear?\n\n\n\n\n\n\nHaving too many colors or too many symbols can often be a major point of confusion or misunderstanding in data visualizations. If you are getting to the point where you find it hard to distinguish between two symbols or colors, you probably have too many.\nIn the article this was included in, they only discussed Germany, Greece, Netherlands, and Spain. Therefore, including the other countries as separate colors overcomplicated the figure and made the main point harder to discern. Condensing them to a single “Others” category makes the plot easier to digest and makes the point clearer."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#common-mistakes-4",
+    "href": "materials/visualization/presentation.html#common-mistakes-4",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nDon’t overcomplicate your graphs!\n\n\nThink about how much data to show\n\n\n\n\n\n\nConfined by the limited space on a page, we are often tempted to force all the data we have into a slot that’s way too small. Although this saves valuable space on the page, it has consequences — as shown in this chart, from March 2017. The story is about how scientific publishing is dominated by men. All data points are equally interesting and relevant to the story. But by presenting such a lot of data — four research-field categories as well as the share of inventors — the information is hard to take in."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#image-types",
+    "href": "materials/visualization/presentation.html#image-types",
+    "title": "An intro to data visualization",
+    "section": "Image types",
+    "text": "Image types\n\n\n\n\n\n\n\n\n\n\nRaster\nVector\n\n\n\n\nScale-dependent\nNot scale-dependent\n\n\nLarge size files\nSmaller size files\n\n\nNot easily editable\nEasily editable\n\n\nCan have lots of detail\nUsually fewer details/textures\n\n\nCan not be converted easily to vector files\nCan easily be converted to raster files\n\n\n(e.g., made in Photoshop)\n(e.g., made in Illustrator)"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#file-formats",
+    "href": "materials/visualization/presentation.html#file-formats",
+    "title": "An intro to data visualization",
+    "section": "File formats",
+    "text": "File formats\nYou can export plots from R in many file formats (we’ll mostly use ggsave()):\n\n\n\n\n\nFile format\nImage type\nNotes\n\n\n\n\n.jpg\nRaster\nCan’t have transparent parts\n\n\n.png\nRaster\nCan also have transparent parts\n\n\n.svg\nVector\nCan edit in Inkscape/Illustrator\n\n\n.pdf\nVector\nNot actually an image file type, but can be used\n\n\n\n\nI personally like .pdfs because they are easily shareable and are a pretty common file format for everyone. Pdfs can even be imported into inkscape and illustrator for editing (I’d encourage you to try to do all of your customization within R, but I know some things still aren’t possible/easy in R). svgs are also great, but I find they are less supported by email clients and slack, etc. pngs are great, but don’t scale (get pixellated), so never use them for publications, etc"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#visualization-in-r-1",
+    "href": "materials/visualization/presentation.html#visualization-in-r-1",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nR already has lots of visualization functionality built-in:\n\nplot()\nbarplot()\nhist()\nboxplot()\naxis()\nlegend()\nlines(), segments(), rect(), text(), etc.\n\n\nWe call all of this ‘base’ graphics, because it is all included in the packages that come with R, including the ‘graphics’ and ‘stats’ packages.\nNote that base graphics is done on a static canvas and objects are drawn on the device through R plotting commands. The canvas has a set of global parameters such as margins and layouts which can be manipulated by the user using par() commands. The R graphics engine does not maintain a user visible graphics list. Ojects cannot be easily edited without redrawing a whole plot."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#visualization-in-r-2",
+    "href": "materials/visualization/presentation.html#visualization-in-r-2",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\n\n\n\n\nYou can make some pretty complex plots with ‘base’ R graphics!"
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#visualization-in-r-3",
+    "href": "materials/visualization/presentation.html#visualization-in-r-3",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nMany packages build on these ‘base’ graphics:\n\n{plotrix}\n{rgl}: for 3D interactive graphics\n{gplots}\n{scatterplot3d}: 3D scatterplots\n{palaeoverse}!\n\n\nSome functions in the palaeoverse package produce base R plots. We’ve done this to reduce the number of dependencies that users need to install when they install the palaeoverse package. Note: It also has the axis_geo() function to add a timescale to an existing base R plot."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#visualization-in-r-4",
+    "href": "materials/visualization/presentation.html#visualization-in-r-4",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nThen ‘grid’ graphics came along:\n\nMore complex layouts\nScaling is maintained on resizing\nNested graphs and more interactivity\n\n\n\n\n\nHowever, one can quickly run into trouble with R’s base graphic system if one wants to design complex layouts where scaling is maintained properly on resizing, nested graphs are desired or more interactivity is needed. grid was designed by Paul Murrell to overcome some of these limitations.\nNote that each component has a size, if you were scale this larger or smaller, all of those relative sizes would be preserved (unlike in base R graphics)."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#visualization-in-r-5",
+    "href": "materials/visualization/presentation.html#visualization-in-r-5",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nMany packages build on these ‘grid’ graphics:\n\n{lattice}: trellis graphics\n{vcd}: for categorical data\n{ggplot2}: “grammar of graphics”\n{hexbin}: hexagonal bins\n{patchwork}: combine (ggplot2) plots\n{deeptime}!\n\n\nIn our practical, we’ll be exploring ggplot2. The deeptime package that I’ve developed helps to make plots with ggplots2 (mostly). For example, it has the coord_geo() function which adds a timescale to an existing ggplot2 plot."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#visualization-in-r-6",
+    "href": "materials/visualization/presentation.html#visualization-in-r-6",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nPackages for spatial visualization:\n\n{sf}: basic objects and methods for vector data\n{terra}: basic objects and methods for raster data\n{ggplot2}: works for plotting spatial data, too\n{raster}: plotting raster data\n\n\n\n\n\nIn our practical, we’ll also be exploring using and visualizing spatial objects."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#data-visualization-books",
+    "href": "materials/visualization/presentation.html#data-visualization-books",
+    "title": "An intro to data visualization",
+    "section": "Data visualization books",
+    "text": "Data visualization books\n\n\n\n\n\n\nThe Visual Display of Quantitative Information by Edward R. Tufte\n\nBetter Data Visualizations by Jonathan Schwabish\n\n\n\nFundamentals of Data Visualization by Claus O. Wilke\n\nBuilding Science Graphics by Jen Christiansen\n\n\n\n\nHere are some books that cover more of the theory of data visualization. Remember all of these slides will be available after the workshop for reference."
+  },
+  {
+    "objectID": "materials/visualization/presentation.html#practical-data-visualization",
+    "href": "materials/visualization/presentation.html#practical-data-visualization",
+    "title": "An intro to data visualization",
+    "section": "Practical data visualization",
+    "text": "Practical data visualization\n1. Data visualization using ggplot2\n\n\n\n2. Data visualization of spatial data\n\n\n\n\nSo now that we’ve covered the theory of data visualization, let’s move on to some brief practical examples!"
+  },
+  {
     "objectID": "materials/preparation/presentation.html#development-team",
     "href": "materials/preparation/presentation.html#development-team",
     "title": "Into the palaeoverse",
@@ -273,7 +539,7 @@
     "href": "visualisation.html",
     "title": "Data visualization",
     "section": "",
-    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as colour and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting vector and raster spatial data. The slides for the unit are available here and provide an introduction to some of the most commonly used resources. The code for the ggplot2 tutorial is available here, as well as for the spatial data tutorial here.\nThis session is led by Sofía Galván and Miranta Kouvari. If you encounter any issues while working with the tutorials, please contact Sofía here. If you have any questions or further enquiries on the theory covered, please contact Miranta here.",
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here.",
     "crumbs": [
       "Workshop Materials",
       "Data visualisation"
@@ -284,7 +550,7 @@
     "href": "visualisation.html#summary",
     "title": "Data visualization",
     "section": "",
-    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as colour and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting vector and raster spatial data. The slides for the unit are available here and provide an introduction to some of the most commonly used resources. The code for the ggplot2 tutorial is available here, as well as for the spatial data tutorial here.\nThis session is led by Sofía Galván and Miranta Kouvari. If you encounter any issues while working with the tutorials, please contact Sofía here. If you have any questions or further enquiries on the theory covered, please contact Miranta here.",
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here.",
     "crumbs": [
       "Workshop Materials",
       "Data visualisation"
@@ -295,7 +561,7 @@
     "href": "visualisation.html#resources",
     "title": "Data visualization",
     "section": "Resources",
-    "text": "Resources\n\nData visualization slides\nData visualization 0: base R html\nData visualization 0: base R Rmd\nData visualization 1: ggplot2 html\nData visualization 1: ggplot2 Rmd\nData visualization 2: spatial data html\nData visualization 2: spatial data Rmd",
+    "text": "Resources\n\nPresentation\nggplot2 Tutorial (html) | ggplot2 Tutorial (qmd)\nSpatial Tutorial (html) | Spatial Tutorial (qmd)",
     "crumbs": [
       "Workshop Materials",
       "Data visualisation"
@@ -494,5 +760,54 @@
     "title": "Latitudinal trends in Phanerozoic reefs",
     "section": "",
     "text": "Functions in palaeoverse are designed around the assumption that most users’ data are stored in an occurrence data.frame. As such, this is the expected input data format for most functions. We provide two example occurrence datasets (tetrapods and reefs) within the package from different data sources. In this vignette, we will focus on the reefs dataset which is a compilation of Phanerozoic reef occurrences (n = 4,363) from the PaleoReefs Database (Kiessling & Krause, 2022).\n\n# Load the dataset\ndata(reefs)\n# View the first five rows & columns of reefs\nreefs[1:5, 1:5]\n\n  r_number               name             formation   system         series\n1        1   Tilkideligi Tepe                       Triassic Upper Triassic\n2        2              Hydra Pantokrator Limestone Triassic Upper Triassic\n3        3 Shiraho, W-Pacific                        Neogene       Holocene\n4        4 Aksu-Terziler area                       Triassic Upper Triassic\n5        5    Adnet, Salzburg                       Triassic Upper Triassic\n\n\nNote the structure of the dataset. Each row contains a unique occurrence and each column contains a unique variable."
+  },
+  {
+    "objectID": "materials/visualization/practical-ggplot2.html",
+    "href": "materials/visualization/practical-ggplot2.html",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "",
+    "text": "ggplot2 is designed around the “grammar of graphics”. In most cases you start with ggplot() and then supply a dataset and “aesthetic” mappings (with aes()). You then add on individual layers (like geom_point() or geom_histogram()) to add the visualization(s) that you want. Let’s first try making a scatterplot using some built-in data about car mileage (mpg). In this case, we’ll plot the highway mileage with respect to the engine size (displacement). Note that in this case, instead of calling functions separately, we chain them together with the + operator.\n\n# load the ggplot2 package\nlibrary(ggplot2)\n\n\n# check out the mileage data\nhead(mpg)\n\n# A tibble: 6 × 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa…\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa…\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa…\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa…\n5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa…\n6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa…\n\n\n\nggplot(mpg, aes(x = displ, y = hwy)) + \n  geom_point()\n\n\n\n\n\n\n\n\nYou’ll notice that with just a couple of lines, we’ve already made a pretty nice visualization. ggplot2 does most of the work for us once we specify our x and y variables. Let’s go a step further and color the points by another variable (e.g., the class of the car). With ggplot2, all that requires is specifying another aesthetic:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point()\n\n\n\n\n\n\n\n\nNotice that ggplot2 comes with its own default color scheme. I would strongly discourage you from using the default colors. Instead, we’ll try out some of the accessible color palettes we talked about earlier. First, let’s try one of the viridis color palettes. Since this palette is included in ggplot2, all we need to do is add the proper “scale” to our ggplot() call.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_viridis_d()\n\n\n\n\n\n\n\n\nHmm…with this many colors, it becomes a little hard to distinguish between the colors with this color palette. Let’s try one of the brewer color palettes.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(palette = \"Set1\")\n\n\n\n\n\n\n\n\nOutside of color, there are many other aspects of the graph that we can modify using “scale”s. For example, we can modify the x and y axes:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\")\n\n\n\n\n\n\n\n\n\n\nThe last basic thing you might want to do with ggplot2 is modify the style of the visualization. This is extremely customizable, but the first place to start is with a built-in theme. I personally prefer the classic theme:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nUsing this built-in theme has changed many visual aspects of the graph, including changing the plot background color, adding axis lines, and removing the internal grid lines. If you look very closely, however, the axis tick labels are still a slight grey. We can use the theme() function to further customize the appearance and change this. In this case, we’ll make the axis text elements have a black color.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nAnd there we have it! With just 7 lines we’ve created what I would say is a publication quality graph! ggplot does a lot of the tedious work for you, giving you time to focus on the more important aspects, such as labeling and color. Admittedly, I’ve spent a LOT of time on these aspects in the past…\nMore information about all of the hierarchical theme components that you can customize is available here. In order to change many of these components, you need to use theme elements like we did above with element_text(). That and other theme elements are documented here."
+  },
+  {
+    "objectID": "materials/visualization/practical-ggplot2.html#theming",
+    "href": "materials/visualization/practical-ggplot2.html#theming",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "",
+    "text": "The last basic thing you might want to do with ggplot2 is modify the style of the visualization. This is extremely customizable, but the first place to start is with a built-in theme. I personally prefer the classic theme:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nUsing this built-in theme has changed many visual aspects of the graph, including changing the plot background color, adding axis lines, and removing the internal grid lines. If you look very closely, however, the axis tick labels are still a slight grey. We can use the theme() function to further customize the appearance and change this. In this case, we’ll make the axis text elements have a black color.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nAnd there we have it! With just 7 lines we’ve created what I would say is a publication quality graph! ggplot does a lot of the tedious work for you, giving you time to focus on the more important aspects, such as labeling and color. Admittedly, I’ve spent a LOT of time on these aspects in the past…\nMore information about all of the hierarchical theme components that you can customize is available here. In order to change many of these components, you need to use theme elements like we did above with element_text(). That and other theme elements are documented here."
+  },
+  {
+    "objectID": "materials/visualization/practical-ggplot2.html#other-layers",
+    "href": "materials/visualization/practical-ggplot2.html#other-layers",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Other layers",
+    "text": "Other layers\nThere are many other types of plots that we can make with ggplot2.\n\nHistograms\nWe can visualize the density of values for a single variable with a histogram:\n\nggplot(mpg, aes(x = hwy)) + \n  geom_histogram() +\n  scale_x_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote how histograms don’t require a y-axis aesthetic by default. The counts are tabulated for you.\n\n\nBoxplots and Violin Plotss\nWe can visualize the density of values for a single variable across a discrete variable with boxplots or violin plots:\n\nggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + \n  geom_boxplot() +\n  scale_x_discrete(name = \"# Cylinders\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + \n  geom_violin(scale = \"width\", draw_quantiles = c(0.25, 0.5, 0.75)) +\n  scale_x_discrete(name = \"# Cylinders\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote that many of these “geom”s have lots of options. For example, we’ve decided to scale all of the violin plots to the same width and to draw the quartiles on them (mimicking the boxplots above).\n\n\n2D Contours\nWe can also visualize the density of values across two continuos variables using a 2D contour. Here we’ll use the built-in Old Faithful waiting time/eruption duration data (faithful). We’ll expand the axes a little bit to better show the contours:\n\nggplot(faithful, aes(x = eruptions, y = waiting)) +\n  geom_density_2d(linewidth = 0.25, colour = \"black\") +\n  xlim(0.5, 6) +\n  ylim(35, 110) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\n\nTime Series\nWe’ll use the built-in economics dataset to explore visualizing a time series. In this case, we are looking at unemployment over time:\n\nggplot(economics, aes(x = date, y = unemploy)) +\n  geom_line() +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\ngeom_path() lets you explore how two variables are related over time. For example, unemployment and personal savings rate:\n\nggplot(economics, aes(x = unemploy/pop, y = psavert)) +\n  geom_path(aes(colour = as.numeric(date))) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote how we’ve used multiple columns of the data to define the x-axis here."
+  },
+  {
+    "objectID": "materials/visualization/practical-ggplot2.html#combining-layers",
+    "href": "materials/visualization/practical-ggplot2.html#combining-layers",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Combining layers",
+    "text": "Combining layers\nWe can also combine multiple layers to show the same data in different ways in the same plot. For example, we could show the raw data for the above contour plot in addition to the contours:\n\nggplot(faithful, aes(x = eruptions, y = waiting)) +\n  geom_point() +\n  geom_density_2d_filled(alpha = 0.5) +\n  geom_density_2d(linewidth = 0.25, colour = \"black\") +\n  xlim(0.5, 6) +\n  ylim(35, 110) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote that, when combining layers, the layers are added to the plot in order, so in this case the points are the bottom layer and the contour lines are the top layer. We changed the alpha of the middle layer to prevent the points from being blocked."
+  },
+  {
+    "objectID": "materials/visualization/practical-ggplot2.html#facetting",
+    "href": "materials/visualization/practical-ggplot2.html#facetting",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Facetting",
+    "text": "Facetting\nLet’s take our scatterplot example from earlier and make it a little more complex with another aesthetic:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNow, what if we wanted to also split the data by the years the cars were manufactured? We’re already using color and shape, so what other aesthetic could we use? We could possible use some shapes that have both a fill and outline color, but that sounds messy. Instead of using another aesthetic, we could also use a facet. This splits the chart into multiple panels:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  facet_wrap(vars(year)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe can get even crazier by faceting by multiple variables:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  facet_grid(rows = vars(cyl), cols = vars(year)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nOK, maybe we’ve gone a little too far here, but you get the picture!"
+  },
+  {
+    "objectID": "materials/visualization/practical-ggplot2.html#timescales",
+    "href": "materials/visualization/practical-ggplot2.html#timescales",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Timescales",
+    "text": "Timescales\nThe deeptime package allows us to add a timescale to a ggplot2 plot with a single line (just like palaeoverse does in base R graphics). coord_geo() is one of many coordinate systems that exist in the ggplot2 ecosystems. Often coordinate systems are used to alter the positions of aesthetics, but in this case coord_geo() adds a timescale to one or more of the axes:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe can stack multiple timescales or have timescales on multiple sides:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(\n    dat = list(\"periods\", \"eras\"), xlim = c(542, 0),\n    pos = list(\"b\", \"b\"), abbrv = list(TRUE, FALSE)\n  ) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(\n    dat = list(\"periods\", \"eras\"), xlim = c(542, 0),\n    pos = list(\"b\", \"t\"), abbrv = list(TRUE, FALSE)\n  ) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nTimescale color palettes\nInstead of a line graph/time series, we could plot these reef counts as a bar graph (geom_col() in this case). However, to give a little more life to our graph, we’ll go ahead and color each bar based on the official geological timescale color palette (included in deeptime). First we need to get the stage names and the beginnings and ends of the bins.\n\n# Get stage names\nreefs_time$stage &lt;- bins$interval_name[reefs_time$bin_assignment]\n\n# Get beginning and end of bins\nreefs_time$bin_max_ma &lt;- bins$max_ma[reefs_time$bin_assignment]\nreefs_time$bin_min_ma &lt;- bins$min_ma[reefs_time$bin_assignment]\n\nThen we can go ahead and make the desired bar graph:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow, fill = stage)) +\n  geom_col(aes(width = bin_max_ma - bin_min_ma)) +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  scale_fill_geo(dat = \"stages\", guide = \"none\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe could also group the stages by era and color them based on that:\n\nreefs_time$era &lt;- cut(reefs_time$bin_midpoint,\n                      breaks = c(0, 66, 252, 542),\n                      labels = c(\"Cenozoic\", \"Mesozoic\", \"Paleozoic\"))\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow, fill = era)) +\n  geom_col(aes(width = bin_max_ma - bin_min_ma)) +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  scale_fill_geo(dat = \"eras\", guide = \"none\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))"
+  },
+  {
+    "objectID": "materials/visualization/practical-ggplot2.html#plot-occurrences-through-time",
+    "href": "materials/visualization/practical-ggplot2.html#plot-occurrences-through-time",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Plot occurrences through time",
+    "text": "Plot occurrences through time\nA common graph in paleontology is stratigraphic occurrences of taxa through time. The palaeoverse and deeptime packages have functions to instantly create graphs like these based on occurrence data. I’ll focus on the deeptime version here since it uses ggplot2. First we’ll grab some tetrapod occurrence data from the palaeoverse package and clean it up a little:\n\noccdf &lt;- subset(tetrapods, accepted_rank == \"genus\")\noccdf &lt;- subset(occdf, select = c(occurrence_no, accepted_name,\n                                  max_ma, min_ma))\noccdf$age &lt;- (occdf$max_ma + occdf$min_ma) / 2\noccdf &lt;- subset(occdf, accepted_name %in% c(\"Eryops\", \"Dimetrodon\",\n                                            \"Diadectes\", \"Diictodon\",\n                                            \"Ophiacodon\", \"Diplocaulus\",\n                                            \"Benthosuchus\"))\n\nNow we’ll use geom_points_range() to plot the occurrences as points and ranges:\n\n# plot those occurrences\nggplot(data = occdf) +\n  geom_points_range(aes(x = age, y = accepted_name)) +\n  scale_x_reverse(name = \"Time (Ma)\") +\n  coord_geo(pos = list(\"bottom\", \"bottom\"),\n            dat = list(\"stages\", \"periods\"),\n            abbrv = list(TRUE, FALSE), expand = TRUE, size = \"auto\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nAnd that’s that!"
   }
 ]
