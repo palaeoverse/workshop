@@ -1,303 +1,390 @@
 ---
-title: "Latitudinal trends in Phanerozoic reefs"
+title: "ggplot2 Data Visualization Practical"
 execute:
   echo: true
   eval: true
   freeze: true
 ---
 
-# Introduction
+# Getting familiar with ggplot2
 
-`palaeoverse` is an R package developed by palaeobiologists, for palaeobiologists. The aim of the package is to generate a community-driven toolkit of generic functions for the palaeobiological community. The package does not provide implementations of statistical analyses, rather it provides auxiliary functions to help streamline analyses and improve code readability and reproducibility. This tutorial is provided to guide you through the installation process and some of the functionality available within `palaeoverse`. To do so, we will focus on a usage example looking at latitudinal trends in Phanerozoic reefs.
+[`ggplot2`](https://ggplot2.tidyverse.org/index.html) is designed around the "grammar of graphics". In most cases you start with `ggplot()` and then supply a dataset and "aesthetic" mappings (with `aes()`). You then add on individual layers (like `geom_point()` or `geom_histogram()`) to add the visualization(s) that you want. Let's first try making a scatterplot using some built-in data about car mileage (`mpg`). In this case, we'll plot the highway mileage with respect to the engine size (displacement). Note that in this case, instead of calling functions separately, we chain them together with the `+` operator.
 
-## Installation
-
-The `palaeoverse` package can be installed via CRAN or its dedicated [GitHub repository](https://github.com/palaeoverse-community/palaeoverse) if the development version is preferred. To install via the CRAN, simply use:
-
-```{r eval=FALSE}
-install.packages("palaeoverse")
+```{r, message = FALSE, warning= FALSE}
+# load the ggplot2 package
+library(ggplot2)
 ```
 
-To install the development version, first install the `devtools` package, and then use `install_github` to install `palaeoverse` directly from GitHub.
-
-```{r eval=FALSE}
-install.packages("devtools")
-devtools::install_github("palaeoverse/palaeoverse")
+```{r}
+# check out the mileage data
+head(mpg)
 ```
 
-You can now load `palaeoverse` using the default `library` function:
-
-```{r load}
-library(palaeoverse)
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point()
 ```
 
-**Before we get onto the good stuff, the development team has a small request**. If you use `palaeoverse` in your research, please cite the associated publication. This will help us to continue our work in supporting you to do yours. You can access the appropriate citation via:
+You'll notice that with just a couple of lines, we've already made a pretty nice visualization. `ggplot2` does most of the work for us once we specify our `x` and `y` variables. Let's go a step further and color the points by another variable (e.g., the class of the car). With `ggplot2`, all that requires is specifying another aesthetic:
 
-```{r citation}
-citation("palaeoverse")
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+  geom_point()
 ```
 
-## Using the package
+Notice that `ggplot2` comes with its own default color scheme. I would strongly discourage you from using the default colors. Instead, we'll try out some of the accessible color palettes we talked about earlier. First, let's try one of the `viridis` color palettes. Since this palette is included in `ggplot2`, all we need to do is add the proper "scale" to our `ggplot()` call.
 
-Functions in `palaeoverse` are designed around the assumption that most users' data are stored in an occurrence `data.frame`. As such, this is the expected input data format for most functions. We provide two example occurrence datasets (`tetrapods` and `reefs`) within the package from different data sources. In this vignette, we will focus on the `reefs` dataset which is a compilation of Phanerozoic reef occurrences (*n* = 4,363) from the [PaleoReefs Database](https://www.paleo-reefs.pal.uni-erlangen.de) (Kiessling & Krause, 2022).
-
-```{r view}
-# Load the dataset
-data(reefs)
-# View the first five rows & columns of reefs
-reefs[1:5, 1:5]
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+  geom_point() +
+  scale_color_viridis_d()
 ```
 
-*Note the structure of the dataset. Each row contains a unique occurrence and each column contains a unique variable.*
+Hmm...with this many colors, it becomes a little hard to distinguish between the colors with this color palette. Let's try one of the [brewer color palettes](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html).
 
-# Let's begin!
-
-Reefs have long been considered good tracers of past tropical and subtropical conditions (Kiessling, 2001; Perrin & Kiessling, 2010). More specifically, their distribution has historically been used to infer the latitudinal extent of tropical and subtropical climatic conditions in deep time. This is of course an oversimplification given all we know about modern reefs systems and their engineers. However, for the purpose of this example, let's not get weighed down by the finer details.
-
-In this example, we will use the `reefs` dataset to examine latitudinal trends in Phanerozoic reefs and demonstrate some of the functionality available in `palaeoverse`.
-
-Let's start by exploring the dataset. Before conducting any analyses, it is always a good idea to explore your data and understand what you are working with. Details related to the example datasets can be accessed via the usual documentation call:
-
-```{r help}
-# Call documentation for dataset
-?reefs
-# You can also use
-help(reefs)
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+  geom_point() +
+  scale_color_brewer(palette = "Set1")
 ```
 
-Let's start by exploring the data a little:
+Outside of color, there are many other [aspects of the graph](https://ggplot2.tidyverse.org/articles/ggplot2-specs.html) that we can modify using "scale"s. For example, we can modify the x and y axes:
 
-```{r nrow}
-# How many reefs are there in the dataset?
-# Each row represents an individual reef.
-nrow(reefs)
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+  geom_point() +
+  scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
+  scale_x_continuous(name = "Engine Displacement (l)") +
+  scale_y_continuous(name = "Highway Mileage (mpg)")
 ```
 
-Not bad (*n* = 4363), that's quite a bit of data to play with! Remember that these are reefs (whole ecosystems), not individual occurrences of fossil organisms like in `tetrapods`. But how much does this vary across time? We can make use of the `group_apply` wrapper function to run a function across subsets of data.
+## Theming
 
-```{r counts}
-# How many reefs per interval?
-# Let's group by the interval column to test
-reef_counts <- group_apply(occdf = reefs, group = "interval", fun = nrow)
-head(reef_counts)
+The last basic thing you might want to do with `ggplot2` is modify the style of the visualization. This is extremely customizable, but the first place to start is with a [built-in theme](https://ggplot2.tidyverse.org/reference/ggtheme.html). I personally prefer the classic theme:
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+  geom_point() +
+  scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
+  scale_x_continuous(name = "Engine Displacement (l)") +
+  scale_y_continuous(name = "Highway Mileage (mpg)") +
+  theme_classic()
 ```
 
-Oh dear, we've just hit a common issue... our reef data does not conform to a common time scale! Some reefs are resolved to stage level, while others are resolved to a coarser or finer temporal resolution. In some instances, regional names are also used, while international names are used in others. This makes it challenging to make comparisons through time... one solution could be to use age values to bin the reefs into time bins, but no age range data is provided in the dataset (i.e. "max_ma" and "min_ma"). We must therefore use the names of each interval to link to a common time scale, the '[International Geological Stages](https://stratigraphy.org/chart)' established by the International Commission on Stratigraphy (ICS). Fortunately, we can make use of the `look_up` function to do so. This function can be used to assign international geological stages and numeric ages to occurrences, or use a user-defined interval key to link to a common time scale. Here, we will use the example `interval_key` available in `palaeoverse` to assign international geological stage names and numeric ages.
+Using this built-in theme has changed many visual aspects of the graph, including changing the plot background color, adding axis lines, and removing the internal grid lines. If you look very closely, however, the axis tick labels are still a slight grey. We can use the `theme()` function to further customize the appearance and change this. In this case, we'll make the axis text elements have a black color.
 
-```{r lookup}
-# Load the interval key
-data("interval_key")
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
+  geom_point() +
+  scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
+  scale_x_continuous(name = "Engine Displacement (l)") +
+  scale_y_continuous(name = "Highway Mileage (mpg)") +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+And there we have it! With just 7 lines we've created what I would say is a publication quality graph! `ggplot` does a lot of the tedious work for you, giving you time to focus on the more important aspects, such as labeling and color. Admittedly, I've spent a LOT of time on these aspects in the past...
+
+More information about all of the hierarchical theme components that you can customize is available [here](https://ggplot2.tidyverse.org/reference/theme.html). In order to change many of these components, you need to use theme elements like we did above with `element_text()`. That and other theme elements are documented [here](https://ggplot2.tidyverse.org/reference/element.html).
+
+# More complex features
+
+## Other layers
+
+There are many other [types of plots](https://ggplot2.tidyverse.org/reference/#layers) that we can make with `ggplot2`.
+
+### Histograms
+
+We can visualize the density of values for a single variable with a histogram:
+
+```{r message = FALSE}
+ggplot(mpg, aes(x = hwy)) + 
+  geom_histogram() +
+  scale_x_continuous(name = "Highway Mileage (mpg)") +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+Note how histograms don't require a y-axis aesthetic by default. The counts are tabulated for you.
+
+### Boxplots and Violin Plotss
+
+We can visualize the density of values for a single variable across a discrete variable with boxplots or violin plots:
+
+```{r message = FALSE}
+ggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + 
+  geom_boxplot() +
+  scale_x_discrete(name = "# Cylinders") +
+  scale_y_continuous(name = "Highway Mileage (mpg)") +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+```{r message = FALSE}
+ggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + 
+  geom_violin(scale = "width", draw_quantiles = c(0.25, 0.5, 0.75)) +
+  scale_x_discrete(name = "# Cylinders") +
+  scale_y_continuous(name = "Highway Mileage (mpg)") +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+Note that many of these "geom"s have lots of options. For example, we've decided to `scale` all of the violin plots to the same width and to draw the quartiles on them (mimicking the boxplots above).
+
+### 2D Contours
+
+We can also visualize the density of values across two continuos variables using a 2D contour. Here we'll use the built-in Old Faithful waiting time/eruption duration data (`faithful`). We'll expand the axes a little bit to better show the contours:
+
+```{r}
+ggplot(faithful, aes(x = eruptions, y = waiting)) +
+  geom_density_2d(linewidth = 0.25, colour = "black") +
+  xlim(0.5, 6) +
+  ylim(35, 110) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+### Time Series
+
+We'll use the built-in `economics` dataset to explore visualizing a time series. In this case, we are looking at unemployment over time:
+
+```{r}
+ggplot(economics, aes(x = date, y = unemploy)) +
+  geom_line() +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+`geom_path()` lets you explore how two variables are related over time. For example, unemployment and personal savings rate:
+
+```{r}
+ggplot(economics, aes(x = unemploy/pop, y = psavert)) +
+  geom_path(aes(colour = as.numeric(date))) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+Note how we've used multiple columns of the data to define the x-axis here.
+
+## Combining layers
+
+We can also combine multiple layers to show the same data in different ways in the same plot. For example, we could show the raw data for the above contour plot in addition to the contours:
+
+```{r}
+ggplot(faithful, aes(x = eruptions, y = waiting)) +
+  geom_point() +
+  geom_density_2d_filled(alpha = 0.5) +
+  geom_density_2d(linewidth = 0.25, colour = "black") +
+  xlim(0.5, 6) +
+  ylim(35, 110) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+Note that, when combining layers, the layers are added to the plot in order, so in this case the points are the bottom layer and the contour lines are the top layer. We changed the alpha of the middle layer to prevent the points from being blocked.
+
+## Facetting
+
+Let's take our scatterplot example from earlier and make it a little more complex with another aesthetic:
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + 
+  geom_point() +
+  scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
+  scale_shape_discrete(name = "Drive Type") +
+  scale_x_continuous(name = "Engine Displacement (l)") +
+  scale_y_continuous(name = "Highway Mileage (mpg)") +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+Now, what if we wanted to also split the data by the years the cars were manufactured? We're already using color and shape, so what other aesthetic could we use? We could possible use some shapes that have both a fill and outline color, but that sounds messy. Instead of using another aesthetic, we could also use a `facet`. This splits the chart into multiple panels:
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + 
+  geom_point() +
+  scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
+  scale_shape_discrete(name = "Drive Type") +
+  scale_x_continuous(name = "Engine Displacement (l)") +
+  scale_y_continuous(name = "Highway Mileage (mpg)") +
+  facet_wrap(vars(year)) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+We can get even crazier by faceting by multiple variables:
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + 
+  geom_point() +
+  scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
+  scale_shape_discrete(name = "Drive Type") +
+  scale_x_continuous(name = "Engine Displacement (l)") +
+  scale_y_continuous(name = "Highway Mileage (mpg)") +
+  facet_grid(rows = vars(cyl), cols = vars(year)) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+
+OK, maybe we've gone a little too far here, but you get the picture!
+
+# Visualizing paleo data
+
+Now let's take a stab at visualizing some paleo data! First, let's load and prepare the packages we are going to need.
+
+```{r, message = FALSE, warning= FALSE}
+library(palaeoverse) # for data
+library(ggplot2) # for plots
+library(deeptime) # for fun plot additions
+```
+
+Now let's prepare our reef data like we learned before:
+
+```{r warning = FALSE}
 # Assign a common time scale based on an interval key
+data(reefs)
 reefs <- look_up(occdf = reefs,
                  early_interval = "interval",
                  late_interval = "interval",
                  int_key = interval_key)
-# Example output
-reefs[100:110, 15:19]
-```
-
-Great! We now have a common time scale and numeric ages. However, some of our reefs seem to range through several stages and we can't count just by the early or late stage. Our data still need to be binned. Let's check out the `time_bins` and `bin_time` functions.
-
-```{r timebins}
-# Now we have numeric ages for our data, we can easily
-# remove pre-Phanerozoic data to focus our study
+# Remove pre-Phanerozoic data to focus our study
 reefs <- subset(reefs, interval_max_ma <= 541)
 # Extract Phanerozoic stage-level stages for time bins
 bins <- time_bins(interval = "Phanerozoic", rank = "stage")
-# Bin data
 # bin_time requires "max_ma" and "min_ma" columns
-# Rename columns in reefs
 colnames(reefs)[which(colnames(reefs) == "interval_max_ma")] <- "max_ma"
 colnames(reefs)[which(colnames(reefs) == "interval_min_ma")] <- "min_ma"
-```
-
-```{r bintime, eval=FALSE}
-# Five methods exist in bin_time for binning occurrence data
-# You can see details on each via ?bin_time
-# Bin by midpoint age
-bin_time(occdf = reefs, bins = bins, method = "mid")
-# Bin by overlap majority
-bin_time(occdf = reefs, bins = bins, method = "majority")
-# Bin into every bin within age range
-bin_time(occdf = reefs, bins = bins, method = "all")
-# Bin randomly into bins within age range (equal probability)
-bin_time(occdf = reefs, bins = bins, method = "random", reps = 10)
-# Bin randomly into bins within age range (uniform probability)
-bin_time(occdf = reefs, bins = bins, method = "point", reps = 10)
-```
-
-```{r binning}
-# Let's go with "all" for this example!
 reefs <- bin_time(occdf = reefs, bins = bins, method = "all")
-```
-
-Note that the number of rows of `reefs` have now increased. This is because the "all" method in `bin_time` duplicates an occurrence for every bin the age range overlaps with.
-
-Let's check those reef numbers through time again using our binned data:
-
-```{r groupapply}
-# Count number of occurrences per interval
-reefs_time <- group_apply(occdf = reefs, group = "interval_mid_ma", fun = nrow)
+# Bin occurrence data
+reefs_time <- group_apply(occdf = reefs, group = c("bin_assignment", "bin_midpoint"), fun = nrow)
+# Clean these columns up
+reefs_time$bin_assignment <- as.numeric(reefs_time$bin_assignment)
+reefs_time$bin_midpoint <- as.numeric(reefs_time$bin_midpoint)
 # Check output
 head(reefs_time)
 ```
 
-That's more like it! But, let's not forget it's always useful to visualise our data. Why don't we plot the number of reefs through time? We can even make use of the `axis_geo` function to add the Geological Time Scale to our plot.
+In the previous practical you plotted this data using base R graphics. Now we'll do the same but using `ggplot2`:
 
-```{r plotcounts}
-# Plot data
-plot(x = reefs_time$interval_mid_ma,
-     y = reefs_time$nrow,
-     xlab = "Time (Ma)",
-     ylab = "Number of reefs per stage",
-     xlim = c(541, 0),
-     xaxt = "n",
-     type = "b", pch = 20)
-# Add axis of the geological time scale
-axis_geo(side = 1, intervals = "periods")
+```{r}
+ggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +
+  geom_line() +
+  scale_x_reverse("Time (Ma)", limits = c(541, 0), expand = expansion(0, 0)) +
+  scale_y_continuous("Number of reefs per stage") +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
 ```
 
-You would (and should) of course want to explore your data a little more than this. However, for the sake of brevity, let's focus on our research theme: latitudinal trends in Phanerozoic reefs.
+## Timescales
 
-When studying modern latitudinal trends (e.g. in biodiversity), researchers can use the geographic coordinates of their samples to conduct analyses. However, as the continents shift through time, palaeobiologists must reconstruct the palaeogeographic coordinates of fossil localities. To do so, plate rotation models are used (e.g. the PALEOMAP model) to rotate the modern coordinates of fossil localities to their location at time of deposition. The `palaeorotate` function allows the user to do so using either the 'point' or 'grid' method. The first approach makes use of the GPlates Web Service and allows point data to be rotated to specific ages using the available models (see <https://gwsdoc.gplates.org>). The second approach uses reconstruction files of pre-generated palaeocoordinates to spatiotemporally link occurrences' modern coordinates and age estimates with their respective palaeocoordinates. Let's give it a shot:
+The [`deeptime`](https://williamgearty.com/deeptime/index.html) package allows us to add a timescale to a `ggplot2` plot with a single line (just like `palaeoverse` does in base R graphics). `coord_geo()` is one of many [coordinate systems](https://ggplot2.tidyverse.org/articles/ggplot2.html#coordinates) that exist in the `ggplot2` ecosystems. Often coordinate systems are used to alter the positions of aesthetics, but in this case `coord_geo()` adds a timescale to one or more of the axes:
 
-```{r palaeorot, message=FALSE, warning=FALSE}
-# Palaeorotate occurrences
-reefs <- palaeorotate(occdf = reefs, age = "bin_midpoint",
-                      method = "point", model = "PALEOMAP")
+```{r}
+ggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +
+  geom_line() +
+  scale_x_reverse("Time (Ma)") +
+  scale_y_continuous("Number of reefs per stage") +
+  coord_geo(xlim = c(541, 0)) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
 ```
 
-```{r checkpcoords}
-# Check palaeocoordinates
-head(reefs[, c("p_lng", "p_lat")])
+We can stack multiple timescales or have timescales on multiple sides:
+
+```{r}
+ggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +
+  geom_line() +
+  scale_x_reverse("Time (Ma)") +
+  scale_y_continuous("Number of reefs per stage") +
+  coord_geo(
+    dat = list("periods", "eras"), xlim = c(542, 0),
+    pos = list("b", "b"), abbrv = list(TRUE, FALSE)
+  ) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
 ```
 
-Now let's plot that palaeolatitudinal distribution!
-
-```{r plotplat}
-# Plot data
-plot(x = reefs$bin_midpoint,
-     y = reefs$p_lat,
-     xlab = "Time (Ma)",
-     ylab = "Palaeolatitude (\u00B0)",
-     xlim = c(541, 0),
-     xaxt = "n",
-     type = "p", pch = 20)
-axis_geo(side = 1, intervals = "periods")
+```{r}
+ggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +
+  geom_line() +
+  scale_x_reverse("Time (Ma)") +
+  scale_y_continuous("Number of reefs per stage") +
+  coord_geo(
+    dat = list("periods", "eras"), xlim = c(542, 0),
+    pos = list("b", "t"), abbrv = list(TRUE, FALSE)
+  ) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
 ```
 
-Neat! But it's hard to draw any trends from this data (there is a lot of it!). We can do better... let's summarise this information... if we assume that reefs are broadly limited to tropical and subtropical climatic conditions, the most poleward reef in each time bin should give us an estimate of the palaeolatitudinal extent of these climatic conditions.
+### Timescale color palettes
 
-```{r plotmaxlat}
-# Let's first assume hemispheric symmetry and convert
-# palaeolatitudes to absolute palaeolatitudes
-reefs$p_lat <- abs(reefs$p_lat)
-# Now we can calculate the most poleward latitude per time bin
-# Extract unique interval midpoints
-midpoints <- sort(unique(reefs$bin_midpoint))
-# Calculate the maximum palaeolatitude for each time bin
-reefs_max <- sapply(X = midpoints, FUN = function(x) {
-  max(reefs[which(reefs$bin_midpoint == x), ]$p_lat, na.rm = TRUE)
-} )
-# Plot data
-plot(x = midpoints,
-     y = reefs_max,
-     xlab = "Time (Ma)",
-     ylab = "Palaeolatitude (\u00B0)",
-     xlim = c(541, 0),
-     xaxt = "n",
-     type = "b",
-     pch = 20)
-# Add axis of the geological time scale
-axis_geo(side = 1, intervals = "periods")
+Instead of a line graph/time series, we could plot these reef counts as a bar graph (`geom_col()` in this case). However, to give a little more life to our graph, we'll go ahead and color each bar based on the official geological timescale color palette (included in `deeptime`). First we need to get the stage names and the beginnings and ends of the bins.
+
+```{r}
+# Get stage names
+reefs_time$stage <- bins$interval_name[reefs_time$bin_assignment]
+
+# Get beginning and end of bins
+reefs_time$bin_max_ma <- bins$max_ma[reefs_time$bin_assignment]
+reefs_time$bin_min_ma <- bins$min_ma[reefs_time$bin_assignment]
 ```
 
-That's definitely much clearer! Should we stop there? Well... how about one last thing... let's consider how plate rotation model choice might impact these results using three different models: GOLONKA, PALEOMAP, and MERDITH2021 (Wright et al. 2013; Scotese & Wright, 2018; Merdith et al. 2021).
+Then we can go ahead and make the desired bar graph:
 
-```{r palrotmult, message=FALSE, warning=FALSE}
-# We can call multiple models at once with palaeorotate
-# First, let's define the models...
-models <- c("GOLONKA", "PALEOMAP", "MERDITH2021")
-# And now palaeorotate!
-reefs <- palaeorotate(occdf = reefs, age = "bin_midpoint",
-                      method = "point", model = models)
+```{r warning = FALSE}
+ggplot(reefs_time, aes(x = bin_midpoint, y = nrow, fill = stage)) +
+  geom_col(aes(width = bin_max_ma - bin_min_ma)) +
+  scale_x_reverse("Time (Ma)") +
+  scale_y_continuous("Number of reefs per stage") +
+  scale_fill_geo(dat = "stages", guide = "none") +
+  coord_geo(xlim = c(541, 0)) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
+```
+We could also group the stages by era and color them based on that:
+
+```{r warning = FALSE}
+reefs_time$era <- cut(reefs_time$bin_midpoint,
+                      breaks = c(0, 66, 252, 542),
+                      labels = c("Cenozoic", "Mesozoic", "Paleozoic"))
+
+ggplot(reefs_time, aes(x = bin_midpoint, y = nrow, fill = era)) +
+  geom_col(aes(width = bin_max_ma - bin_min_ma)) +
+  scale_x_reverse("Time (Ma)") +
+  scale_y_continuous("Number of reefs per stage") +
+  scale_fill_geo(dat = "eras", guide = "none") +
+  coord_geo(xlim = c(541, 0)) +
+  theme_classic() +
+  theme(axis.text = element_text(color = "black"))
 ```
 
-```{r checkpcoords2}
-# Check palaeocoordinates
-# When multiple models are called, the name of the model
-# is added as a suffix to p_lng and p_lat
-head(reefs[, c("p_lng_PALEOMAP", "p_lat_PALEOMAP",
-               "p_lng_GOLONKA", "p_lat_GOLONKA",
-               "p_lng_MERDITH2021", "p_lat_MERDITH2021")])
+## Plot occurrences through time
+
+A common graph in paleontology is stratigraphic occurrences of taxa through time. The `palaeoverse` and `deeptime` packages have functions to instantly create graphs like these based on occurrence data. I'll focus on the `deeptime` version here since it uses `ggplot2`. First we'll grab some tetrapod occurrence data from the `palaeoverse` package and clean it up a little:
+
+```{r}
+occdf <- subset(tetrapods, accepted_rank == "genus")
+occdf <- subset(occdf, select = c(occurrence_no, accepted_name,
+                                  max_ma, min_ma))
+occdf$age <- (occdf$max_ma + occdf$min_ma) / 2
+occdf <- subset(occdf, accepted_name %in% c("Eryops", "Dimetrodon",
+                                            "Diadectes", "Diictodon",
+                                            "Ophiacodon", "Diplocaulus",
+                                            "Benthosuchus"))
 ```
 
-Now we've palaeorotated our data, let's repeat what we did earlier and calculate the most poleward reef occurrence for each model.
+Now we'll use `geom_points_range()` to plot the occurrences as points and ranges:
 
-```{r maxplat}
-# Let's code a little helper function to begin with.
-# This is generally useful when repeating code several times!
-p_lat_max <- function(occdf, midpoint, p_lat) {
-  # Get absolute palaeolatitudes
-  occdf[, p_lat] <- abs(occdf[, p_lat])
-  # Extract unique bin midpoints
-  midpoints <- sort(unique(occdf[, midpoint]))
-  # Calculate maximum palaeolatitude for each bin
-  lat_max <- sapply(X = midpoints, FUN = function(x) {
-    max(occdf[which(occdf[, midpoint] == x), ][, p_lat], na.rm = TRUE)
-  })
-  # Bind data
-  lat_max <- cbind.data.frame(midpoints, lat_max)
-  # Return df
-  return(lat_max)
-}
-# Calculate maximum palaeolatitude of reefs for each time bin for each model
-paleomap <- p_lat_max(occdf = reefs,
-                      midpoint = "bin_midpoint",
-                      p_lat = "p_lat_PALEOMAP")
-golonka <- p_lat_max(occdf = reefs,
-                     midpoint = "bin_midpoint",
-                     p_lat = "p_lat_GOLONKA")
-merdith <- p_lat_max(occdf = reefs,
-                     midpoint = "bin_midpoint",
-                     p_lat = "p_lat_MERDITH2021")
-# Set up plot
-plot(x = NULL,
-     y = NULL,
-     xlab = "Time (Ma)",
-     ylab = "Palaeolatitude (\u00B0)",
-     xlim = c(541, 0),
-     ylim = c(0, 90),
-     xaxt = "n")
-# Plot maximum palaeolatitudes for each model
-lines(x = paleomap$midpoints, y = paleomap$lat_max,
-      type = "o", col = "#e41a1c", pch = 15)
-lines(x = golonka$midpoints, y = golonka$lat_max,
-      type = "o", col = "#377eb8", pch = 16)
-lines(x = merdith$midpoints, y = merdith$lat_max,
-      type = "o", col = "#4daf4a", pch = 17)
-# Add legend
-legend(530, 20, legend=c("PALEOMAP", "GOLONKA", "MERDITH2021"),
-       col = c("#e41a1c", "#377eb8", "#4daf4a"),
-       lty = 1, pch = c(15, 16, 17), bty = "n")
-# Add geological time scale axis
-axis_geo(side = 1, intervals = "periods")
+```{r}
+# plot those occurrences
+ggplot(data = occdf) +
+  geom_points_range(aes(x = age, y = accepted_name)) +
+  scale_x_reverse(name = "Time (Ma)") +
+  coord_geo(pos = list("bottom", "bottom"),
+            dat = list("stages", "periods"),
+            abbrv = list(TRUE, FALSE), expand = TRUE, size = "auto") +
+  theme_classic()
 ```
 
-We will leave you to make your own conclusions...
-
-Hopefully this vignette has shown you the potential uses for `palaeoverse` functions and helped provide a workflow for your own analyses. If you have any questions about the package or its functionality, please feel free to join our [Google Group](https://groups.google.com/g/palaeoverse) and leave a question; we'll aim to answer it as soon as possible!
-
-# References
-
-Kiessling, W. (2001). Paleoclimatic significance of Phanerozoic reefs. Geology 29, 751–754.
-
-Kiessling, W. & Krause, M. C. (2022). PaleoReefs Database (PARED) (1.0) Data set. DOI: 10.5281/zenodo.6037852.
-
-Merdith, A., Williams, S.E., Collins, A.S., Tetley, M.G., Mulder, J.A., Blades, M.L., Young, A., Armistead, S.E., Cannon, J., Zahirovic, S., Müller. R.D. (2021). Extending full-plate tectonic models into deep time: Linking the Neoproterozoic and the Phanerozoic. Earth-Science Reviews, 214(103477). DOI: 10.1016/j.earscirev.2020.103477.
-
-Perrin, C. & Kiessling, W. (2010) Latitudinal trends in Cenozoic reef patterns and their relationship to climate. Carbonate Syst. Oligocene–Miocene Clim. Transit. 17–33.
-
-Scotese, C., & Wright, N. M. (2018). PALEOMAP Paleodigital Elevation Models (PaleoDEMs) for the Phanerozoic. [PALEOMAP Project](https://www.earthbyte.org/paleodem-resource-scotese-and-wright-2018/).
-
-Wright, N., Zahirovic, S., Müller, R. D., & Seton, M. (2013). Towards community-driven paleogeographic reconstructions: integrating open-access paleogeographic and paleobiology data with plate tectonics. Biogeosciences, 10(3), 1529-1541. DOI: 10.5194/bg-10-1529-2013.
+And that's that!
