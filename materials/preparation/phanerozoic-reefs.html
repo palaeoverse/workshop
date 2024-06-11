@@ -283,9 +283,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
   Jones, L.A., Gearty, W., Allen, B.J., Eichenseer, K., Dean, C.D.,
   Galván S., Kouvari, M., Godoy, P.L., Nicholl, C.S.C., Dillon, E.M.,
-  Flannery-Sutherland, J.T., Chiarenza, A.A. 2023. palaeoverse: A
+  Flannery-Sutherland, J.T., Chiarenza, A.A. 2022. palaeoverse: A
   community-driven R package to support palaeobiological analysis.
-  Methods in Ecology and Evolution. 14(9), 2205--2215. doi:
+  Methods in Ecology and Evolution. 00, 1--11. doi:
   10.1111/2041-210X.14099
 
 A BibTeX entry for LaTeX users is
@@ -295,8 +295,7 @@ A BibTeX entry for LaTeX users is
     author = {Lewis A. Jones and William Gearty and Bethany J. Allen and Kilian Eichenseer and Christopher D. Dean and Sofía Galván and Miranta Kouvari and Pedro L. Godoy and Cecily S. C. Nicholl and Lucas Buffan and Erin M. Dillon and Joseph T. Flannery-Sutherland and Alfio Alessandro Chiarenza},
     year = {2023},
     journal = {Methods in Ecology and Evolution},
-    volume = {14(9)},
-    pages = {2205--2215},
+    pages = {1--11},
     doi = {10.1111/2041-210X.14099},
   }</code></pre>
 </div>
@@ -419,23 +418,23 @@ A BibTeX entry for LaTeX users is
 <p>Let’s check those reef numbers through time again using our binned data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count number of occurrences per interval</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>reefs_time <span class="ot">&lt;-</span> <span class="fu">group_apply</span>(<span class="at">occdf =</span> reefs, <span class="at">group =</span> <span class="st">"interval_mid_ma"</span>, <span class="at">fun =</span> nrow)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>reefs_time <span class="ot">&lt;-</span> <span class="fu">group_apply</span>(<span class="at">occdf =</span> reefs, <span class="at">group =</span> <span class="st">"bin_midpoint"</span>, <span class="at">fun =</span> nrow)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check output</span></span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reefs_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  nrow interval_mid_ma
-1    9         0.00585
-2   85         0.07035
-3   10         0.39285
-4   17          0.4515
-5   68         1.29585
-6    9          1.3545</code></pre>
+<pre><code>  nrow bin_midpoint
+1    3       0.0021
+2    3       0.0062
+3    3      0.00995
+4  117      0.07035
+5   52       0.4515
+6   34        1.287</code></pre>
 </div>
 </div>
 <p>That’s more like it! But, let’s not forget it’s always useful to visualise our data. Why don’t we plot the number of reefs through time? We can even make use of the <code>axis_geo</code> function to add the Geological Time Scale to our plot.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> reefs_time<span class="sc">$</span>interval_mid_ma,</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> reefs_time<span class="sc">$</span>bin_midpoint,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> reefs_time<span class="sc">$</span>nrow,</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (Ma)"</span>,</span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Number of reefs per stage"</span>,</span>
@@ -453,7 +452,7 @@ A BibTeX entry for LaTeX users is
 </div>
 </div>
 <p>You would (and should) of course want to explore your data a little more than this. However, for the sake of brevity, let’s focus on our research theme: latitudinal trends in Phanerozoic reefs.</p>
-<p>When studying modern latitudinal trends (e.g.&nbsp;in biodiversity), researchers can use the geographic coordinates of their samples to conduct analyses. However, as the continents shift through time, palaeobiologists must reconstruct the palaeogeographic coordinates of fossil localities. To do so, plate rotation models are used (e.g.&nbsp;the PALEOMAP model) to rotate the modern coordinates of fossil localities to their location at time of deposition. The <code>palaeorotate</code> function allows the user to do so using either the ‘point’ or ‘grid’ method. The first approach makes use of the GPlates Web Service and allows point data to be rotated to specific ages using the available models (see <a href="https://gwsdoc.gplates.org" class="uri">https://gwsdoc.gplates.org</a>). The second approach uses reconstruction files of pre-generated palaeocoordinates to spatiotemporally link occurrences’ modern coordinates and age estimates with their respective palaeocoordinates. Let’s give it a shot:</p>
+<p>When studying modern latitudinal trends (e.g.&nbsp;in biodiversity), researchers can use the geographic coordinates of their samples to conduct analyses. However, as the continents shift through time, palaeobiologists must reconstruct the palaeogeographic coordinates of fossil localities. To do so, Global Plate Models are used (e.g.&nbsp;the PALEOMAP model) to rotate the modern coordinates of fossil localities to their location at time of deposition. The <code>palaeorotate</code> function allows the user to do so using either the ‘point’ or ‘grid’ method. The first approach makes use of the GPlates Web Service and allows point data to be rotated to specific ages using the available models (see <a href="https://gwsdoc.gplates.org" class="uri">https://gwsdoc.gplates.org</a>). The second approach uses reconstruction files of pre-generated palaeocoordinates to spatiotemporally link occurrences’ modern coordinates and age estimates with their respective palaeocoordinates. Let’s give it a shot:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotate occurrences</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>reefs <span class="ot">&lt;-</span> <span class="fu">palaeorotate</span>(<span class="at">occdf =</span> reefs, <span class="at">age =</span> <span class="st">"bin_midpoint"</span>,</span>
@@ -522,7 +521,7 @@ A BibTeX entry for LaTeX users is
 </div>
 </div>
 </div>
-<p>That’s definitely much clearer! Should we stop there? Well… how about one last thing… let’s consider how plate rotation model choice might impact these results using three different models: GOLONKA, PALEOMAP, and MERDITH2021 (Wright et al.&nbsp;2013; Scotese &amp; Wright, 2018; Merdith et al.&nbsp;2021).</p>
+<p>That’s definitely much clearer! Should we stop there? Well… how about one last thing… let’s consider how Global Plate Model choice might impact these results using three different models: GOLONKA, PALEOMAP, and MERDITH2021 (Wright et al.&nbsp;2013; Scotese &amp; Wright, 2018; Merdith et al.&nbsp;2021).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can call multiple models at once with palaeorotate</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First, let's define the models...</span></span>
