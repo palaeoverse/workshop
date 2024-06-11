@@ -1,15 +1,16 @@
 ---
 title: | 
-  Into the palaeoverse
+  Introduction to palaeoverse
 subtitle: |
-  A community-driven R package
-  
-  ![](images/logo.png){fig-align="center" height=150}
+  **A community-driven R package**\
+  By Lewis A. Jones\
+  \
+  ![](images/NAPC.png){fig-align="center" height=150}\
+  North American Paleontological Convention 2024
 author: | 
   [Lewis A. Jones](mailto:LewisAlan.Jones@uvigo.es), Universidade de Vigo
   
   ![](images/mapas.png){fig-align="center" height=80}
-  ![](images/erc.png){fig-align="center" height=80}
 affiliation: "Universidade de Vigo"
 execute:
   echo: true
@@ -18,8 +19,8 @@ execute:
 format: 
   revealjs:
     logo: "images/logo.png"
-    footer: "[palaeoverse: A community-driven R package](https://palaeoverse.org)"
-    theme: default
+    footer: "[palaeoverse: A community-driven R package](https://palaeoverse.org) - [North American Paleontological Convention 2024](https://sites.lsa.umich.edu/napc2024/)"
+    theme: [default, custom.scss]
     embed-resources: true
     output-file: "presentation.html"
 ---
@@ -144,15 +145,16 @@ Finally, palaeoverse is envisioned as a community package. While the initial pac
 -   `lat_bins`
 -   `look_up`
 -   `palaeorotate`
+-   `phylo_check`
 :::
 
 ::: {.column width="50%"}
--   `phylo_check`
 -   `tax_check`
 -   `tax_expand_lat`
 -   `tax_expand_time`
 -   `tax_range_space`
 -   `tax_range_time`
+-   `tax_range_strat`
 -   `tax_unique`
 -   `time_bins`
 :::
@@ -166,7 +168,11 @@ Currently, 15 different functions are available in palaeoverse, plus some exampl
 
 A lot of data, a lot of sources, and a lot of unique features.
 
-![](images/gbdb.png){.absolute top="150" left="0" width="150" height="150"} ![](images/pbdb.png){.absolute top="150" left="200" width="150" height="150"} ![](images/pared.png){.absolute top="150" left="400" width="220" height="150"} ![](images/neotoma.png){.absolute top="150" left="630" width="200" height="150"} ![](images/neptune.png){.absolute top="150" left="850" width="200" height="150"}
+![](images/gbdb.png){.absolute top="150" left="0" width="150" height="150"}
+![](images/pbdb.png){.absolute top="150" left="200" width="150" height="150"}
+![](images/pared.png){.absolute top="150" left="380" width="240" height="150"}
+![](images/neotoma.png){.absolute top="150" left="630" width="200" height="150"}
+![](images/neptune.png){.absolute top="150" left="850" width="200" height="150"}
 
 <br>
 
