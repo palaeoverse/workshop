@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://workshop.palaeoverse.org/schedule.html</loc>
-    <lastmod>2024-06-12T15:29:52.215Z</lastmod>
+    <loc>https://workshop.palaeoverse.org/visualization.html</loc>
+    <lastmod>2024-06-12T00:31:44.929Z</lastmod>
   </url>
   <url>
-    <loc>https://workshop.palaeoverse.org/resources.html</loc>
-    <lastmod>2024-06-12T15:29:51.283Z</lastmod>
+    <loc>https://workshop.palaeoverse.org/schedule.html</loc>
+    <lastmod>2024-06-12T12:52:00.205Z</lastmod>
   </url>
   <url>
     <loc>https://workshop.palaeoverse.org/preparation.html</loc>
-    <lastmod>2024-06-12T15:29:50.542Z</lastmod>
-  </url>
-  <url>
-    <loc>https://workshop.palaeoverse.org/team.html</loc>
-    <lastmod>2024-06-12T15:29:49.168Z</lastmod>
-  </url>
-  <url>
-    <loc>https://workshop.palaeoverse.org/materials/preparation/phanerozoic-reefs.html</loc>
-    <lastmod>2024-06-12T15:29:48.487Z</lastmod>
-  </url>
-  <url>
-    <loc>https://workshop.palaeoverse.org/materials/practice/tetrapod-biodiversity.html</loc>
-    <lastmod>2024-06-12T15:29:41.988Z</lastmod>
-  </url>
-  <url>
-    <loc>https://workshop.palaeoverse.org/materials/visualization/practical-ggplot2.html</loc>
-    <lastmod>2024-06-12T15:29:36.643Z</lastmod>
+    <lastmod>2024-06-12T12:52:00.205Z</lastmod>
   </url>
   <url>
     <loc>https://workshop.palaeoverse.org/materials/visualization/presentation.html</loc>
-    <lastmod>2024-06-12T15:29:34.838Z</lastmod>
+    <lastmod>2024-06-10T14:55:28.306Z</lastmod>
   </url>
   <url>
-    <loc>https://workshop.palaeoverse.org/acquisition.html</loc>
-    <lastmod>2024-06-12T15:29:29.038Z</lastmod>
+    <loc>https://workshop.palaeoverse.org/materials/visualization/practical-ggplot2.html</loc>
+    <lastmod>2024-06-10T21:05:10.869Z</lastmod>
   </url>
   <url>
-    <loc>https://workshop.palaeoverse.org/materials/visualization/practical-spatial.html</loc>
-    <lastmod>2024-06-12T15:29:35.660Z</lastmod>
+    <loc>https://workshop.palaeoverse.org/materials/preparation/phanerozoic-reefs.html</loc>
+    <lastmod>2024-06-12T00:12:40.658Z</lastmod>
   </url>
   <url>
     <loc>https://workshop.palaeoverse.org/materials/introduction/presentation.html</loc>
-    <lastmod>2024-06-12T15:29:40.632Z</lastmod>
-  </url>
-  <url>
-    <loc>https://workshop.palaeoverse.org/materials/preparation/presentation.html</loc>
-    <lastmod>2024-06-12T15:29:47.309Z</lastmod>
-  </url>
-  <url>
-    <loc>https://workshop.palaeoverse.org/practice.html</loc>
-    <lastmod>2024-06-12T15:29:48.839Z</lastmod>
-  </url>
-  <url>
-    <loc>https://workshop.palaeoverse.org/index.html</loc>
-    <lastmod>2024-06-12T15:29:50.160Z</lastmod>
-  </url>
-  <url>
-    <loc>https://workshop.palaeoverse.org/visualization.html</loc>
-    <lastmod>2024-06-12T15:29:50.920Z</lastmod>
+    <lastmod>2024-06-12T15:34:43.667Z</lastmod>
   </url>
   <url>
     <loc>https://workshop.palaeoverse.org/conduct.html</loc>
-    <lastmod>2024-06-12T15:29:51.795Z</lastmod>
+    <lastmod>2024-06-05T19:21:17.744Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workshop.palaeoverse.org/acquisition.html</loc>
+    <lastmod>2024-06-05T19:21:17.744Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workshop.palaeoverse.org/index.html</loc>
+    <lastmod>2024-06-12T15:34:43.653Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workshop.palaeoverse.org/materials/practice/tetrapod-biodiversity.html</loc>
+    <lastmod>2024-06-12T12:52:00.204Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workshop.palaeoverse.org/materials/preparation/presentation.html</loc>
+    <lastmod>2024-06-12T00:12:40.659Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workshop.palaeoverse.org/materials/visualization/practical-spatial.html</loc>
+    <lastmod>2024-06-12T15:34:39.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workshop.palaeoverse.org/practice.html</loc>
+    <lastmod>2024-06-12T12:52:00.204Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workshop.palaeoverse.org/resources.html</loc>
+    <lastmod>2024-06-05T19:21:17.884Z</lastmod>
+  </url>
+  <url>
+    <loc>https://workshop.palaeoverse.org/team.html</loc>
+    <lastmod>2024-06-05T19:21:17.885Z</lastmod>
   </url>
 </urlset>
