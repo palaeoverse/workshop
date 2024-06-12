@@ -531,7 +531,7 @@
     "href": "index.html#installation",
     "title": "R for Palaeobiologists: Workshop",
     "section": "Installation",
-    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be download here. To minimise any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"deeptime\", \"dplyr\", \"extrafont\", \"ggplot2\", \"ggpubr\", \n                 \"maps\", \"microbenchmark\", \"palaeoverse\", \"profvis\",\"raster\", \n                 \"RColorBrewer\", \"rgplates\", \"roxygen2\", \"rpaleoclim\",\n                 \"sf\", \"svglite\", \"terra\", \"testthat\", \"usethis\")",
+    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"dplyr\", \"palaeoverse\", \"ggplot2\", \"deeptime\", \"sf\",\n                 \"rnaturalearth\", \"terra\", \"tidyterra\", \"rpaleoclim\", \"rgplates\")",
     "crumbs": [
       "Overview"
     ]
@@ -541,7 +541,7 @@
     "href": "index.html#acknowledgements",
     "title": "R for Palaeobiologists: Workshop",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis event is run by the Palaeoverse development team and supported by the organisers of the 12th North American Paleontological Convention. We thank the organisers for their support in facilitating this workshop.",
+    "text": "Acknowledgements\nThis event is run by the Palaeoverse development team and supported by the organizers of the 12th North American Paleontological Convention. We thank the organizers for their support in facilitating this workshop.",
     "crumbs": [
       "Overview"
     ]
