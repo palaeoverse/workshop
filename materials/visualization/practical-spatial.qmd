@@ -80,6 +80,48 @@ ggplot() +
 
 Both visually appealing and more geographically accurate, nice! Let's use this projection (and bounding box) for most of our future spatial plots.
 
+## Organismal silhouettes
+
+We could also color the points based on taxonomy. For example, here they are colored by the Class of the fossil occurrence:
+
+```{r fig.width = 7, fig.height = 3}
+ggplot() +
+  geom_sf(data = world) +
+  geom_sf(data = tetrapods_sf, aes(color = class)) +
+  geom_sf(data = bbox) +
+  coord_sf(crs = st_crs("ESRI:54030")) +
+  scale_color_manual(values = c("black", "royalblue3", "seagreen1"),
+                     name = "Class") +
+  theme_classic()
+```
+
+That looks nice! However, one concern might be that people don't know what those taxonomic names refer to. Instead (or in addition to the taxonomy), we could use organism silhouettes for the points using the `rphylopic` package. Note that this might take a while to render because of all of the individual silhouettes.
+
+```{r message = FALSE, warning = FALSE, fig.width = 7, fig.height = 3}
+library(rphylopic)
+
+# Remove duplicates
+tetrapods_unique <- unique(tetrapods[, c("class", "lat", "lng")])
+
+ggplot() +
+  geom_sf(data = world) +
+  geom_phylopic(data = tetrapods_unique,
+                aes(x = lng, y = lat, name = class, color = class),
+                size = 4E5, alpha = 0.75, show.legend = TRUE,
+                key_glyph = phylopic_key_glyph(name = c("Osteichthyes",
+                                                        "Reptilia",
+                                                        "Saurischia"))) +
+  geom_sf(data = bbox) +
+  coord_sf(crs = st_crs("ESRI:54030"), default_crs = st_crs(4326)) +
+  scale_color_manual(name = "Class",
+                     values = c("black", "royalblue3", "seagreen1"),
+                     guide = guide_legend(override.aes = list(size = 1,
+                                                              alpha = 1))) +
+  theme_void()
+```
+
+Well, in hindsight this might not be much better with all of the overlap...I'll leave it to you to decide how to best display this information.
+
 ## Spatial summaries
 
 There are also lots of functions available in the `sf` package to perform spatial summaries. Let's go ahead and calculate the number of fossil occurrences in this dataset that have been found within each country across the world. First we find the intersection of the two spatial objects (`st_intersection()`), which identifies which country each occurrence is in. Then we tabulate the number of occurrences per country (`table()`). Then we can go ahead and plot the results as a bar plot.

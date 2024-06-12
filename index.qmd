@@ -23,7 +23,8 @@ Please ensure that you have the latest version of R for the workshop, which can 
 ```{R install}
 #| eval: false
 install.packages("dplyr", "palaeoverse", "ggplot2", "deeptime", "sf",
-                 "rnaturalearth", "terra", "tidyterra", "rpaleoclim", "rgplates")
+                 "rnaturalearth", "rphylopic", "terra", "tidyterra",
+                 "rpaleoclim", "rgplates")
 ```
 
 ## Acknowledgements
