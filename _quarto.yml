@@ -53,6 +53,8 @@ website:
             text: Data visualization
           - href: resources.qmd
             text: Resources
+          - href: practice.qmd
+            text: Practice
       - href: conduct.qmd
         text: Code of Conduct
 
