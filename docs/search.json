@@ -719,5 +719,26 @@
     "title": "Code of Conduct",
     "section": "Attribution",
     "text": "Attribution\n\nThis Code of Conduct is adapted from the Contributor Covenant.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder."
+  },
+  {
+    "objectID": "materials/visualization/practical-spatial.html",
+    "href": "materials/visualization/practical-spatial.html",
+    "title": "Spatial Data Visualization Practical",
+    "section": "",
+    "text": "In this practical we’ll be visualizing spatial data. First, let’s load some packages that we’ve learned about from the previous practicals:\nlibrary(palaeoverse)\nlibrary(ggplot2)\nlibrary(deeptime)"
+  },
+  {
+    "objectID": "materials/visualization/practical-spatial.html#projections",
+    "href": "materials/visualization/practical-spatial.html#projections",
+    "title": "Spatial Data Visualization Practical",
+    "section": "Projections",
+    "text": "Projections\nWhen you plot latitude and longitude as y and x coordinates, respectively, this is called the geographical projection. However, this is a heavily distorted view of the Earth. Here, we’ll learn how to plot our spatial graphs in with a more appropriate projection (or “coordinate system”). Documentation for many different projections is available on the EPSG website. In this example, we’ll use the Robinson projection (i.e., “ESRI:54030”). Note that this projection still isn’t perfect. For example, distortion close to the poles is severe. However, due to the curvature of the meridians, distortion declines to moderate levels moving away from the poles. In order to change the overall projection of your ggplot plot, you simply use the coord_sf() function. Since the plot is no longer a rectangle, we also make our own bounding box to place on top of the plot.\n\n# Set up a bounding box\nbbox &lt;- st_graticule(crs = st_crs(\"ESRI:54030\"),\n                     lat = c(-89.9, 89.9), lon = c(-179.9, 179.9))\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = tetrapods_sf, aes(color = period), shape = 3) +\n  geom_sf(data = bbox) +\n  coord_sf(crs = st_crs(\"ESRI:54030\")) +\n  scale_color_geo(name = \"Period\", dat = \"periods\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nBoth visually appealing and more geographically accurate, nice! Let’s use this projection (and bounding box) for most of our future spatial plots."
+  },
+  {
+    "objectID": "materials/visualization/practical-spatial.html#spatial-summaries",
+    "href": "materials/visualization/practical-spatial.html#spatial-summaries",
+    "title": "Spatial Data Visualization Practical",
+    "section": "Spatial summaries",
+    "text": "Spatial summaries\nThere are also lots of functions available in the sf package to perform spatial summaries. Let’s go ahead and calculate the number of fossil occurrences in this dataset that have been found within each country across the world. First we find the intersection of the two spatial objects (st_intersection()), which identifies which country each occurrence is in. Then we tabulate the number of occurrences per country (table()). Then we can go ahead and plot the results as a bar plot.\n\nsf_use_s2(FALSE)\n# It takes a little of time\nfos_over_country &lt;- st_intersection(x = world, y = tetrapods_sf)\nfos_per_country &lt;- as.data.frame(sort(table(fos_over_country$sovereignt)))\nhead(fos_per_country)\n\n        Var1 Freq\n1      Chile    1\n2   Ethiopia    1\n3      Japan    1\n4 Mozambique    1\n5   Pakistan    1\n6    Somalia    1\n\n# Plot with ggplot\nggplot(fos_per_country, aes(x = Freq, y = Var1)) +\n  geom_col() +\n  scale_x_continuous(name = \"# of Occurrences\") +\n  scale_y_discrete(name = NULL) +\n  theme_classic()\n\n\n\n\n\n\n\n\nThe cool thing about spatial plots with ggplot2 is that you can use other aesthetics like color, fill, etc. just like you would with other types of plots. Let’s go ahead and combine our occurrence counts with our country spatial data, then plot the counts as the fill color of the countries.\n\n# Combine the fossil counts with the `world` spatial data\nworld$n_fossils &lt;- fos_per_country$Freq[match(world$sovereignt, fos_per_country$Var1)]\n\n# Fill in the countries just like you would in any other plot\nggplot() +\n  geom_sf(data = world, aes(fill = n_fossils)) +\n  geom_sf(data = bbox) +\n  coord_sf(crs = st_crs(\"ESRI:54030\")) +\n  scale_fill_viridis_c(name = \"# of Fossil\\nOccurrences\") +\n  theme_classic()"
   }
 ]
