@@ -45,6 +45,8 @@ website:
         text: Organising Team
       - section: "Workshop Materials"
         contents:
+          - href: materials/introduction/presentation.qmd
+            text: Introduction
           - href: acquisition.qmd
             text: Data acquisition
           - href: preparation.qmd

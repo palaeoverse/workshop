@@ -8,7 +8,7 @@ toc: true
 
 # Welcome
 
-Welcome to the second edition of **R for Palaeobiologists: Workshop**. R is one of the most popular languages in the world of Data Science and has been widely adopted by the palaeobiological community to clean, analyse and plot data. General familiarity with R allows users to expand the potential of their research and automate routine tasks. Importantly, it allows researchers to improve the reproducibility of their research and document their analyses. This workshop will introduce you to [palaeoverse](www.palaeoverse.palaeoverse.org), an R package which supports data preparation and exploration for palaeobiological analysis, improving code reproducibility and accessibility. The event will also introduce databases (e.g. Paleobiology Database) and building workflows in R (e.g. data cleaning) using palaeoverse. Additional packages will also be introduced along with the versatility R has to offer. 
+Welcome to the second edition of **R for Palaeobiologists: Workshop**. R is one of the most popular languages in the world of Data Science and has been widely adopted by the palaeobiological community to clean, analyse and plot data. General familiarity with R allows users to expand the potential of their research and automate routine tasks. Importantly, it allows researchers to improve the reproducibility of their research and document their analyses. This workshop will introduce you to [palaeoverse](www.palaeoverse.palaeoverse.org), an R package which supports data preparation and exploration for palaeobiological analysis, improving code reproducibility and accessibility. The event will also introduce databases (e.g. Paleobiology Database) and building workflows in R (e.g. data cleaning) using palaeoverse. Additional packages will also be introduced along with the versatility R has to offer.
 
 ## Arrival
 
@@ -28,6 +28,6 @@ install.packages("dplyr", "palaeoverse", "ggplot2", "deeptime", "sf",
 
 ## Acknowledgements
 
-This event is run by the [Palaeoverse](https://palaeoverse.org) development team and supported by the organizers of the 12^th^ North American Paleontological Convention. We thank the organizers for their support in facilitating this workshop. 
+This event is run by the [Palaeoverse](https://palaeoverse.org) development team and supported by the organizers of the 12^th^ North American Paleontological Convention. We thank the organizers for their support in facilitating this workshop.
 
 ![](images/logo.png){width="20%"} ![](images/NAPC.png){width="40%"}
