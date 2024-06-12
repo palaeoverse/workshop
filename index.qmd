@@ -10,6 +10,8 @@ toc: true
 
 Welcome to the second edition of **R for Palaeobiologists: Workshop**. R is one of the most popular languages in the world of Data Science and has been widely adopted by the palaeobiological community to clean, analyse and plot data. General familiarity with R allows users to expand the potential of their research and automate routine tasks. Importantly, it allows researchers to improve the reproducibility of their research and document their analyses. This workshop will introduce you to [palaeoverse](www.palaeoverse.palaeoverse.org), an R package which supports data preparation and exploration for palaeobiological analysis, improving code reproducibility and accessibility. The event will also introduce databases (e.g. Paleobiology Database) and building workflows in R (e.g. data cleaning) using palaeoverse. Additional packages will also be introduced along with the versatility R has to offer. 
 
+**THIS IS A TEST FOR WILL**
+
 ## Arrival
 
 The event starts at 08:00 on the 19^th^ June 2024 and will take place in [Room 1010, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085](https://maps.app.goo.gl/fU1zDr1Cu6T5hWWc8).
