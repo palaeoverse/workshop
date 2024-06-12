@@ -60,28 +60,40 @@
     "href": "visualisation.html",
     "title": "Data visualization",
     "section": "",
-    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here."
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "Workshop Materials",
+      "Data visualisation"
+    ]
   },
   {
     "objectID": "visualisation.html#summary",
     "href": "visualisation.html#summary",
     "title": "Data visualization",
     "section": "",
-    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here."
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "Workshop Materials",
+      "Data visualisation"
+    ]
   },
   {
     "objectID": "visualisation.html#resources",
     "href": "visualisation.html#resources",
     "title": "Data visualization",
     "section": "Resources",
-    "text": "Resources\n\nPresentation\nggplot2 Tutorial (html) | ggplot2 Tutorial (qmd)\nSpatial Tutorial (html) | Spatial Tutorial (qmd)"
+    "text": "Resources\n\nPresentation\nggplot2 Tutorial (html) | ggplot2 Tutorial (qmd)\nSpatial Tutorial (html) | Spatial Tutorial (qmd)",
+    "crumbs": [
+      "Workshop Materials",
+      "Data visualisation"
+    ]
   },
   {
     "objectID": "materials/preparation/presentation.html#development-team",
     "href": "materials/preparation/presentation.html#development-team",
     "title": "Introduction to palaeoverse",
-    "section": "Development team",
-    "text": "Development team\n\n\n\nLewis A. Jones, Universidade de Vigo\nWilliam Gearty, American Museum of Natural History\nBethany J. Allen, ETH Zürich\nKilian Eichenseer, University of Durham\nChristopher D. Dean, University College London\nSofía Galván, Universidade de Vigo\nMiranta Kouvari, University College London\n\n\n\nPedro L. Godoy, University of São Paulo\nCecily Nicholl, University College London\nLucas Buffan, École Normale Supérieure de Lyon\nErin M. Dillon, Smithsonian Tropical Research Institute\nAlfio A. Chiarenza, Universidade de Vigo\n\n\n\n\nBefore I jump into the presentation, I wanted to first note that the development of the palaeoverse R package was by no means a solo-effort. All of these fantastic people had a hand in getting it together and form the core team behind the Palaeoverse project."
+    "section": "",
+    "text": "Lewis A. Jones, Universidade de Vigo\nWilliam Gearty, American Museum of Natural History\nBethany J. Allen, ETH Zürich\nKilian Eichenseer, University of Durham\nChristopher D. Dean, University College London\nSofía Galván, Universidade de Vigo\nMiranta Kouvari, University College London\n\n\n\nPedro L. Godoy, University of São Paulo\nCecily Nicholl, University College London\nLucas Buffan, École Normale Supérieure de Lyon\nErin M. Dillon, Smithsonian Tropical Research Institute\nAlfio A. Chiarenza, Universidade de Vigo\n\n\n\n\nBefore I jump into the presentation, I wanted to first note that the development of the palaeoverse R package was by no means a solo-effort. All of these fantastic people had a hand in getting it together and form the core team behind the Palaeoverse project."
   },
   {
     "objectID": "materials/preparation/presentation.html#what-is-palaeoverse",
@@ -123,7 +135,7 @@
     "href": "materials/preparation/presentation.html#expected-input",
     "title": "Introduction to palaeoverse",
     "section": "Expected input",
-    "text": "Expected input\nA lot of data, a lot of sources, and a lot of unique features.\n    \n\n\n\n\n\n\nData structure, not source.\noccdf \\(\\rightarrow\\) function(x) \\(\\rightarrow\\) df\nOccurrence dataframe*\n\n\n\nFunctionality in palaeoverse was developed to be flexible and to work around the principle that most user’s data would be stored in an occurrence dataframe. That is, each row represents a unique occurrence and each column represents a unique variable. The reason for focusing on data structure is that many different databases exist, each with their own list of variables and quirks. We wanted to provide a package that could be used with data from many sources, not just popular databases, such as the PBDB.\n\n\n*Exceptions do exist."
+    "text": "Expected input\nA lot of data, a lot of sources, and a lot of unique features.\n    \n\n\n\n\n\n\nData structure, not source.\noccdf \\(\\rightarrow\\) function(x) \\(\\rightarrow\\) df\nOccurrence dataframe*\n\n\n\n*Exceptions do exist.\n\nFunctionality in palaeoverse was developed to be flexible and to work around the principle that most user’s data would be stored in an occurrence dataframe. That is, each row represents a unique occurrence and each column represents a unique variable. The reason for focusing on data structure is that many different databases exist, each with their own list of variables and quirks. We wanted to provide a package that could be used with data from many sources, not just popular databases, such as the PBDB."
   },
   {
     "objectID": "materials/preparation/presentation.html#installation",
@@ -151,21 +163,21 @@
     "href": "materials/preparation/presentation.html#stratigraphic-time-bins",
     "title": "Introduction to palaeoverse",
     "section": "Stratigraphic time bins",
-    "text": "Stratigraphic time bins\n\n# Get stage-level time bins\nbins &lt;- time_bins(interval = \"Phanerozoic\", rank = \"stage\", plot = TRUE)\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin interval_name  rank max_ma mid_ma min_ma duration_myr abbr  colour  font\n## 1   1     Fortunian stage    541  535.0    529           12   Fo #99B575 black\n## 2   2       Stage 2 stage    529  525.0    521            8   S2 #A6BA80 black\n## 3   3       Stage 3 stage    521  517.5    514            7   S3 #A6C583 black\n\n\nFirst up, we have the time bins function, which can be used to extract time bins based on the Geological Time Scale. The user can request different ranks of intervals such as stage, period, epoch, etc. The user can also call intervals based on interval names or an age range and plot the time bins if desired."
+    "text": "Stratigraphic time bins\n\n# Get stage-level time bins\nbins &lt;- time_bins(interval = \"Phanerozoic\", rank = \"stage\", plot = TRUE)\n\n\n\n\n\n\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin interval_name  rank max_ma mid_ma min_ma duration_myr abbr  colour  font\n## 1   1     Fortunian stage    541  535.0    529           12   Fo #99B575 black\n## 2   2       Stage 2 stage    529  525.0    521            8   S2 #A6BA80 black\n## 3   3       Stage 3 stage    521  517.5    514            7   S3 #A6C583 black\n\n\nFirst up, we have the time bins function, which can be used to extract time bins based on the Geological Time Scale. The user can request different ranks of intervals such as stage, period, epoch, etc. The user can also call intervals based on interval names or an age range and plot the time bins if desired."
   },
   {
     "objectID": "materials/preparation/presentation.html#macrostrat-time-bins",
     "href": "materials/preparation/presentation.html#macrostrat-time-bins",
     "title": "Introduction to palaeoverse",
     "section": "Macrostrat time bins",
-    "text": "Macrostrat time bins\n\n# Get North American Land Mammal Ages\nbins &lt;- time_bins(scale = \"North American Land Mammal Ages\", plot = TRUE)\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin interval_name                            rank max_ma mid_ma min_ma duration_myr abbr  colour  font\n## 1   1       Puercan North American Land Mammal Ages  66.00 65.375  64.75         1.25    P #FDB469 black\n## 2   2   Torrejonian North American Land Mammal Ages  64.75 63.500  62.25         2.50   To #FEBA64 black\n## 3   3     Tiffanian North American Land Mammal Ages  62.25 59.875  57.50         4.75   Ti #FEBF6A black\n\n\nThe user can also call time scales from Macrostrat."
+    "text": "Macrostrat time bins\n\n# Get North American Land Mammal Ages\nbins &lt;- time_bins(scale = \"North American Land Mammal Ages\", plot = TRUE)\n\n\n\n\n\n\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin interval_name                            rank max_ma mid_ma min_ma duration_myr abbr  colour  font\n## 1   1       Puercan North American Land Mammal Ages  66.00 65.375  64.75         1.25    P #FDB469 black\n## 2   2   Torrejonian North American Land Mammal Ages  64.75 63.500  62.25         2.50   To #FEBA64 black\n## 3   3     Tiffanian North American Land Mammal Ages  62.25 59.875  57.50         4.75   Ti #FEBF6A black\n\n\nThe user can also call time scales from Macrostrat."
   },
   {
     "objectID": "materials/preparation/presentation.html#near-equal-length-time-bins",
     "href": "materials/preparation/presentation.html#near-equal-length-time-bins",
     "title": "Introduction to palaeoverse",
     "section": "Near-equal-length time bins",
-    "text": "Near-equal-length time bins\n\n# Get stage-level time bins\nbins &lt;- time_bins(interval = \"Phanerozoic\", rank = \"stage\", size = 15, plot = TRUE)\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin max_ma mid_ma min_ma duration_myr grouping_rank                 intervals  colour  font\n## 1   1    541 535.00  529.0         12.0         stage                 Fortunian #80cdc1 black\n## 2   2    529 521.50  514.0         15.0         stage          Stage 3, Stage 2 #80cdc1 black\n## 3   3    514 507.25  500.5         13.5         stage Drumian, Wuliuan, Stage 4 #80cdc1 black\n\n\nIn the previous slides, you probably noticed from the plots that time bins (e.g. stratigraphic stages) can be extremely uneven in duration. Previous studies have tried to circumvent this by grouping intervals together towards a target bin size to try and even out temporal duration for conducting analyses. palaeoverse provides an implementation of this that can be defined by the size argument."
+    "text": "Near-equal-length time bins\n\n# Get stage-level time bins\nbins &lt;- time_bins(interval = \"Phanerozoic\", rank = \"stage\", size = 15, plot = TRUE)\n\n\n\n\n\n\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin max_ma mid_ma min_ma duration_myr grouping_rank                 intervals  colour  font\n## 1   1    541 535.00  529.0         12.0         stage                 Fortunian #80cdc1 black\n## 2   2    529 521.50  514.0         15.0         stage          Stage 3, Stage 2 #80cdc1 black\n## 3   3    514 507.25  500.5         13.5         stage Drumian, Wuliuan, Stage 4 #80cdc1 black\n\n\nIn the previous slides, you probably noticed from the plots that time bins (e.g. stratigraphic stages) can be extremely uneven in duration. Previous studies have tried to circumvent this by grouping intervals together towards a target bin size to try and even out temporal duration for conducting analyses. palaeoverse provides an implementation of this that can be defined by the size argument."
   },
   {
     "objectID": "materials/preparation/presentation.html#temporal-occurrence-binning",
@@ -179,14 +191,14 @@
     "href": "materials/preparation/presentation.html#latitudinal-occurrence-binning",
     "title": "Introduction to palaeoverse",
     "section": "Latitudinal occurrence binning",
-    "text": "Latitudinal occurrence binning\nGenerate and bin latitudinal data:\n\n# Generate latitudinal bins\nbins &lt;- lat_bins(size = 10, plot = TRUE)\n\n\n\n# Use reef example data\noccdf &lt;- reefs\n# Bin occurrences\noccdf &lt;- bin_lat(occdf = occdf, bins = bins, lat = \"lat\")\n\n\nAs a community, we are often interested in latitudinal analyses, such as studying the latitudinal biodiversity gradient. palaeoverse provides functionality for generating latitudinal bins of a given size, and binning those occurrences into the respective bins."
+    "text": "Latitudinal occurrence binning\nGenerate and bin latitudinal data:\n\n# Generate latitudinal bins\nbins &lt;- lat_bins(size = 10, plot = TRUE)\n\n\n\n\n\n\n\n\n\n# Use reef example data\noccdf &lt;- reefs\n# Bin occurrences\noccdf &lt;- bin_lat(occdf = occdf, bins = bins, lat = \"lat\")\n\n\nAs a community, we are often interested in latitudinal analyses, such as studying the latitudinal biodiversity gradient. palaeoverse provides functionality for generating latitudinal bins of a given size, and binning those occurrences into the respective bins."
   },
   {
     "objectID": "materials/preparation/presentation.html#spatial-occurrence-binning",
     "href": "materials/preparation/presentation.html#spatial-occurrence-binning",
     "title": "Introduction to palaeoverse",
     "section": "Spatial occurrence binning",
-    "text": "Spatial occurrence binning\nGenerate and bin spatial data:\n\n# Get reef data\noccdf &lt;- reefs[1:500, ]\n# Bin data using a hexagonal equal-area grid\noccdf &lt;- bin_space(occdf = occdf, spacing = 250, return = TRUE)\n# Plot world and grid using ggplot2\nlibrary(ggplot2)\nlibrary(rnaturalearth)\nworld &lt;- ne_countries(scale = \"small\",returnclass = \"sf\")\nggplot() +\n  geom_sf(data = world, colour = \"black\", fill = \"lightgrey\") + \n  geom_sf(data = occdf$grid, fill = \"orange\", colour = \"black\") + \n  theme_void()\n\n\n\nFunctionality is also provided to bin data spatially using a geospatial indexing system that partitions the world into equal-area hexagonal grid cells based on a given spacing between cells."
+    "text": "Spatial occurrence binning\nGenerate and bin spatial data:\n\n# Get reef data\noccdf &lt;- reefs[1:500, ]\n# Bin data using a hexagonal equal-area grid\noccdf &lt;- bin_space(occdf = occdf, spacing = 250, return = TRUE)\n# Plot world and grid using ggplot2\nlibrary(ggplot2)\nlibrary(rnaturalearth)\nworld &lt;- ne_countries(scale = \"small\",returnclass = \"sf\")\nggplot() +\n  geom_sf(data = world, colour = \"black\", fill = \"lightgrey\") + \n  geom_sf(data = occdf$grid, fill = \"orange\", colour = \"black\") + \n  theme_void()\n\n\n\n\n\n\n\n\n\nFunctionality is also provided to bin data spatially using a geospatial indexing system that partitions the world into equal-area hexagonal grid cells based on a given spacing between cells."
   },
   {
     "objectID": "materials/preparation/presentation.html#palaeogeographic-reconstruction",
@@ -214,7 +226,7 @@
     "href": "materials/preparation/presentation.html#temporal-range",
     "title": "Introduction to palaeoverse",
     "section": "Temporal range",
-    "text": "Temporal range\nCalculate and plot temporal range of taxa:\n\n# Grab tetrapod data\noccdf &lt;- tetrapods\n# Remove NAs\noccdf &lt;- subset(occdf, !is.na(order))\n# Temporal range\nex &lt;- tax_range_time(occdf = occdf, name = \"order\", plot = TRUE)\n\n\n\nTwo functions exist in palaeoverse for calculating taxon ranges. The first, tax range time, can be used to calculate and plot the temporal range of taxa."
+    "text": "Temporal range\nCalculate and plot temporal range of taxa:\n\n# Grab tetrapod data\noccdf &lt;- tetrapods\n# Remove NAs\noccdf &lt;- subset(occdf, !is.na(order))\n# Temporal range\nex &lt;- tax_range_time(occdf = occdf, name = \"order\", plot = TRUE)\n\n\n\n\n\n\n\n\n\nTwo functions exist in palaeoverse for calculating taxon ranges. The first, tax range time, can be used to calculate and plot the temporal range of taxa."
   },
   {
     "objectID": "materials/preparation/presentation.html#geographic-range",
@@ -242,7 +254,7 @@
     "href": "materials/preparation/presentation.html#phylogeny-wrangling",
     "title": "Introduction to palaeoverse",
     "section": "Phylogeny wrangling",
-    "text": "Phylogeny wrangling\nCompare a list of taxonomic names to tip names in a user-provided phylogeny:\n\n\n\n# Read in example tree of ceratopsians\n# from paleotree\nlibrary(paleotree)\ndata(RaiaCopesRule)\n# Set smaller margins for plotting\npar(mar = rep(0, 4))\n# Plot tree\nplot(ceratopsianTreeRaia)\n\n\n\n\n\n\n# Specify list of names\ndinosaurs &lt;- c(\"Nasutoceratops_titusi\", \n               \"Diabloceratops_eatoni\",\n               \"Zuniceratops_christopheri\",\n               \"Psittacosaurus_major\")\n\n# Table of taxon names in list, tree or both\nex1 &lt;- phylo_check(tree = ceratopsianTreeRaia,\n                   list = dinosaurs)\n# Get first few rows\nhead(ex1)\n##                   taxon_name present_in_tree present_in_list\n## 8      Diabloceratops_eatoni            TRUE            TRUE\n## 33      Psittacosaurus_major            TRUE            TRUE\n## 38     Nasutoceratops_titusi           FALSE            TRUE\n## 39 Zuniceratops_christopheri           FALSE            TRUE\n## 1       Centrosaurus_apertus            TRUE           FALSE\n## 2  Styracosaurus_albertensis            TRUE           FALSE\n\n\n\n\nWe don’t currently have much functionality for working with phylogenies, but one function that several members of the team felt would be useful is the ability to compare a list of taxonomic names to tip names in a user-provided phylogeny. As you can, this is what the phylo_check function does. Further functionality allows the user to also trim a phylogeny based on the input list."
+    "text": "Phylogeny wrangling\nCompare a list of taxonomic names to tip names in a user-provided phylogeny:\n\n\n\n# Read in example tree of ceratopsians\n# from paleotree\nlibrary(paleotree)\ndata(RaiaCopesRule)\n# Set smaller margins for plotting\npar(mar = rep(0, 4))\n# Plot tree\nplot(ceratopsianTreeRaia)\n\n\n\n\n\n\n\n\n\n\n# Specify list of names\ndinosaurs &lt;- c(\"Nasutoceratops_titusi\", \n               \"Diabloceratops_eatoni\",\n               \"Zuniceratops_christopheri\",\n               \"Psittacosaurus_major\")\n\n# Table of taxon names in list, tree or both\nex1 &lt;- phylo_check(tree = ceratopsianTreeRaia,\n                   list = dinosaurs)\n# Get first few rows\nhead(ex1)\n##                   taxon_name present_in_tree present_in_list\n## 8      Diabloceratops_eatoni            TRUE            TRUE\n## 33      Psittacosaurus_major            TRUE            TRUE\n## 38     Nasutoceratops_titusi           FALSE            TRUE\n## 39 Zuniceratops_christopheri           FALSE            TRUE\n## 1       Centrosaurus_apertus            TRUE           FALSE\n## 2  Styracosaurus_albertensis            TRUE           FALSE\n\n\n\n\nWe don’t currently have much functionality for working with phylogenies, but one function that several members of the team felt would be useful is the ability to compare a list of taxonomic names to tip names in a user-provided phylogeny. As you can, this is what the phylo_check function does. Further functionality allows the user to also trim a phylogeny based on the input list."
   },
   {
     "objectID": "materials/preparation/presentation.html#interval-linking",
@@ -256,7 +268,7 @@
     "href": "materials/preparation/presentation.html#plotting",
     "title": "Introduction to palaeoverse",
     "section": "Plotting",
-    "text": "Plotting\nAdd Geological Time Scale to plots:\n\n# Plot data\nplot(x = 541:0,\n     xlab = \"Time (Ma)\", ylab = \"User-variable\",\n     xlim = c(541, 0), xaxt = \"n\", type = \"l\", lwd = 5)\n\n# Add Geological Time Scale\naxis_geo(side = 1, intervals = \"periods\")\n\n\n\nA common request from our survey participants was the ability to add the Geological Time Scale to a base R plot. The axis_geo function in palaeoverse can be used to do just that."
+    "text": "Plotting\nAdd Geological Time Scale to plots:\n\n# Plot data\nplot(x = 541:0,\n     xlab = \"Time (Ma)\", ylab = \"User-variable\",\n     xlim = c(541, 0), xaxt = \"n\", type = \"l\", lwd = 5)\n\n# Add Geological Time Scale\naxis_geo(side = 1, intervals = \"periods\")\n\n\n\n\n\n\n\n\n\nA common request from our survey participants was the ability to add the Geological Time Scale to a base R plot. The axis_geo function in palaeoverse can be used to do just that."
   },
   {
     "objectID": "materials/preparation/presentation.html#wrapper",
@@ -277,7 +289,7 @@
     "href": "materials/preparation/presentation.html#thank-you-merci-gracias-danke-obrigado-grazie-ευχαριστώ",
     "title": "Introduction to palaeoverse",
     "section": "Thank-you / Merci / Gracias / Danke / Obrigado / Grazie / Ευχαριστώ",
-    "text": "Thank-you / Merci / Gracias / Danke / Obrigado / Grazie / Ευχαριστώ\n\n\n\n\n\n\n\n\nWebsite: General information\n\nhttps://palaeoverse.org\n\nTwitter: News and updates\n\n@ThePalaeoverse\n\nGoogle Group: A community space\n\nhttps://groups.google.com/g/palaeoverse\n\n\n\n\nPoint of contact: General contact\n\nLewisAlan.Jones@uvigo.es\n\nPublication: Open-access\n\nhttps://doi.org/10.1111/2041-210X.14099\n\n\n\n\n\nAll that is left to say is a big thank you from myself and the development team for listening. You can find general information about the palaeoverse R package on our website, and news and updates on the project on Twitter (providing Elon Musk doesn’t burn it to the ground). We have also established a Google Group to serve as a community space, which we welcome you all to join. This group is setup to act as a space to share ideas and resources, advertise opportunities, and generally network with colleagues. And a final bit of self promotion, our pre-print on palaeoverse is now available on EarthArXiv, if you wish to check it out! Thank you for listening.\n\n\n\n\npalaeoverse: A community-driven R package - North American Paleontological Convention 2024"
+    "text": "Thank-you / Merci / Gracias / Danke / Obrigado / Grazie / Ευχαριστώ\n\n\n\n\n\n\n\n\nWebsite: General information\n\nhttps://palaeoverse.org\n\nTwitter: News and updates\n\n@ThePalaeoverse\n\nGoogle Group: A community space\n\nhttps://groups.google.com/g/palaeoverse\n\n\n\n\nPoint of contact: General contact\n\nLewisAlan.Jones@uvigo.es\n\nPublication: Open-access\n\nhttps://doi.org/10.1111/2041-210X.14099\n\n\n\n\n\nAll that is left to say is a big thank you from myself and the development team for listening. You can find general information about the palaeoverse R package on our website, and news and updates on the project on Twitter (providing Elon Musk doesn’t burn it to the ground). We have also established a Google Group to serve as a community space, which we welcome you all to join. This group is setup to act as a space to share ideas and resources, advertise opportunities, and generally network with colleagues. And a final bit of self promotion, our pre-print on palaeoverse is now available on EarthArXiv, if you wish to check it out! Thank you for listening."
   },
   {
     "objectID": "materials/visualization/presentation.html#schedule",
@@ -740,5 +752,45 @@
     "title": "Spatial Data Visualization Practical",
     "section": "Spatial summaries",
     "text": "Spatial summaries\nThere are also lots of functions available in the sf package to perform spatial summaries. Let’s go ahead and calculate the number of fossil occurrences in this dataset that have been found within each country across the world. First we find the intersection of the two spatial objects (st_intersection()), which identifies which country each occurrence is in. Then we tabulate the number of occurrences per country (table()). Then we can go ahead and plot the results as a bar plot.\n\nsf_use_s2(FALSE)\n# It takes a little of time\nfos_over_country &lt;- st_intersection(x = world, y = tetrapods_sf)\nfos_per_country &lt;- as.data.frame(sort(table(fos_over_country$sovereignt)))\nhead(fos_per_country)\n\n        Var1 Freq\n1      Chile    1\n2   Ethiopia    1\n3      Japan    1\n4 Mozambique    1\n5   Pakistan    1\n6    Somalia    1\n\n# Plot with ggplot\nggplot(fos_per_country, aes(x = Freq, y = Var1)) +\n  geom_col() +\n  scale_x_continuous(name = \"# of Occurrences\") +\n  scale_y_discrete(name = NULL) +\n  theme_classic()\n\n\n\n\n\n\n\n\nThe cool thing about spatial plots with ggplot2 is that you can use other aesthetics like color, fill, etc. just like you would with other types of plots. Let’s go ahead and combine our occurrence counts with our country spatial data, then plot the counts as the fill color of the countries.\n\n# Combine the fossil counts with the `world` spatial data\nworld$n_fossils &lt;- fos_per_country$Freq[match(world$sovereignt, fos_per_country$Var1)]\n\n# Fill in the countries just like you would in any other plot\nggplot() +\n  geom_sf(data = world, aes(fill = n_fossils)) +\n  geom_sf(data = bbox) +\n  coord_sf(crs = st_crs(\"ESRI:54030\")) +\n  scale_fill_viridis_c(name = \"# of Fossil\\nOccurrences\") +\n  theme_classic()"
+  },
+  {
+    "objectID": "visualization.html",
+    "href": "visualization.html",
+    "title": "Data visualization",
+    "section": "",
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "Workshop Materials",
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "visualization.html#summary",
+    "href": "visualization.html#summary",
+    "title": "Data visualization",
+    "section": "",
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "Workshop Materials",
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "visualization.html#resources",
+    "href": "visualization.html#resources",
+    "title": "Data visualization",
+    "section": "Resources",
+    "text": "Resources\n\nPresentation\nggplot2 Tutorial (html) | ggplot2 Tutorial (qmd)\nSpatial Tutorial (html) | Spatial Tutorial (qmd)",
+    "crumbs": [
+      "Workshop Materials",
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "materials/preparation/presentation.html",
+    "href": "materials/preparation/presentation.html",
+    "title": "Introduction to palaeoverse",
+    "section": "",
+    "text": "Lewis A. Jones, Universidade de Vigo\nWilliam Gearty, American Museum of Natural History\nBethany J. Allen, ETH Zürich\nKilian Eichenseer, University of Durham\nChristopher D. Dean, University College London\nSofía Galván, Universidade de Vigo\nMiranta Kouvari, University College London\n\n\n\nPedro L. Godoy, University of São Paulo\nCecily Nicholl, University College London\nLucas Buffan, École Normale Supérieure de Lyon\nErin M. Dillon, Smithsonian Tropical Research Institute\nAlfio A. Chiarenza, Universidade de Vigo\n\n\n\n\nBefore I jump into the presentation, I wanted to first note that the development of the palaeoverse R package was by no means a solo-effort. All of these fantastic people had a hand in getting it together and form the core team behind the Palaeoverse project."
   }
 ]

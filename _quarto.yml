@@ -49,8 +49,8 @@ website:
             text: Data acquisition
           - href: preparation.qmd
             text: Data preparation
-          - href: visualisation.qmd
-            text: Data visualisation
+          - href: visualization.qmd
+            text: Data visualization
           - href: resources.qmd
             text: Resources
       - href: conduct.qmd
