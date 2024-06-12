@@ -1,5 +1,5 @@
 ---
-title: "Latitudinal trends in Phanerozoic reefs"
+title: "Alpha diversity and geographic range size of Carboniferous and Permian tetrapods"
 execute:
   echo: true
   eval: true
@@ -72,7 +72,6 @@ bins <- time_bins(interval = c("Carboniferous", "Permian"),
                   rank = "stage",
                   scale = "GTS2012",
                   plot = FALSE)
-
 head(bins)
 ```
 
@@ -281,8 +280,8 @@ Done. Now to plot alpha diversity through time! Let's start with a simple scatte
 
 ```{r alpha-div-plot-1}
 # Make a plot for alpha diversity in the Carboniferous and Permian
-plot(alpha_data$interval_mid_ma, alpha_data$n_taxa, # add the points
-     xlim = rev(range(alpha_data$interval_mid_ma, na.rm = TRUE)), # reverse the x-axis
+plot(alpha_data$interval_mid_ma, alpha_data$n_taxa, # add points
+     xlim = rev(range(alpha_data$interval_mid_ma, na.rm = TRUE)), # reverse x-axis
      xlab="Time (Ma)", ylab="No. taxa", # axes labels
      pch = 19, col = "#0e826f") # point style and colour
 ```

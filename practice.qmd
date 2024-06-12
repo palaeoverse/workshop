@@ -10,7 +10,7 @@ This session is led by Lewis A. Jones. If you encounter any issues while working
 
 ## Resources
 
--   [Tutorial (html)](./materials/practice/tetrapod-biodiversity.qmd) \| <a href="./materials/practice/tetrapod-biodiversity.qmd" download="tetrapod-biodiversity.qmd">Tutorial (qmd)</a>
+-   [Tutorial (html)](./materials/practice/tetrapod-biodiversity.qmd) \| <a href="https://github.com/palaeoverse/workshop/blob/main/materials/practice/tetrapod-biodiversity.qmd">Tutorial (qmd)</a>
 
 ![](images/logo.png){fig-align="right" width="25%"}
 
