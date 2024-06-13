@@ -44,6 +44,12 @@ These resources cover the acquisition of data for palaeontological analyses, inc
 
 -   [ESA WorldCover](http://esa-worldcover.org/en)
 
+#### Additional Lists of Databases
+
+-    [Examples of databases and online data portals used in paleo research](https://zenodo.org/records/7340036)
+
+-    [PAGES](https://pastglobalchanges.org/science/data/databases)
+
 ### Data Preparation
 
 These resources cover the preparation of data for palaeontological analyses, including data cleaning, organisation and transformation.
