@@ -140,6 +140,8 @@ These resources cover the various ways in which data can be visualised, from the
 
 -   [Palaeoverse Google Group](https://groups.google.com/g/palaeoverse){target="_blank"}: A Google group where users can ask questions about the functionality of the palaeoverse R package, post job listings, discuss papers and more. 
 
+-   [Palaeoverse Resources Database](https://bit.ly/palaeoverse-resources){target="_blank"}: A Google sheet of various resources related to paleobiology. Feel free to add your own suggestions!
+
 -   [Paleonet](https://paleonet.org/){target="_blank"}: A system of listservers, WWW pages, and ftp sites designed to enhance electronic communication among palaeontologists.
 
 #### Associations and Networks
