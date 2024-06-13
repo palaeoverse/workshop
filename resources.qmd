@@ -12,7 +12,7 @@ This session is led by Christopher Dean and Erin Dillon. If you encounter any is
 
 ### Workshop Slides
 
-[Presentation](./materials/resources/presentation.pdf)
+<a href="./materials/resources/PW_Resources.pdf" target="_blank" title="Presentation">Presentation</a>
 
 ### Data Acquisition
 
