@@ -76,7 +76,7 @@ These resources cover the acquisition of data for palaeontological analyses, inc
 
 -   [Examples of databases and online data portals used in paleo research (Table 1)](https://zenodo.org/records/7340036){target="_blank"}
 
--   [PAGES](https://pastglobalchanges.org/science/data/databases){target="_blank"}
+-   [PAGES working group databases](https://pastglobalchanges.org/science/data/databases){target="_blank"}
 
 ### Data Preparation
 
