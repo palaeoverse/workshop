@@ -90,9 +90,7 @@ These resources cover the preparation of data for palaeontological analyses, inc
 
 -   [Data cleaning](https://www.knowledgehut.com/blog/data-science/data-cleaning#what-is-data-cleaning-in-data-science?-%C2%){target="_blank"}: A quick intro to data cleaning in data science.
 
--   [Tidy data](https://www.dataone.org/webinars/tidy-ing-your-data-simple-steps-reproducible-research/){target="_blank"}: 
-
--   [R cheat sheets](https://posit.co/resources/cheatsheets/){target="_blank"}: A 1-hour lecture on setting up data for reproducible research.
+-   [Tidy data](https://www.dataone.org/webinars/tidy-ing-your-data-simple-steps-reproducible-research/){target="_blank"}: A 1-hour lecture on setting up data for reproducible research.
 
 #### Examples of Packages for Data Cleaning and Preparation
 
