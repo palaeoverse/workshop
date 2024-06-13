@@ -16,7 +16,7 @@ These resources cover the acquisition of data for palaeontological analyses, inc
 
 #### Occurrence Databases
 
--   [Paleobiology Database](http://paleobiodb.org)
+-   [Paleobiology Database](http://paleobiodb.org){target="_blank"}
 
 -   [Geobiodiversity database](http://giobiodiversity.com)
 
