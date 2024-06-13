@@ -8,7 +8,11 @@ This unit of the workshop introduces a variety of resources that are of relevanc
 
 This session is led by Christopher Dean and Erin Dillon. If you encounter any issues while working with these resources, please contact either [Chris](mailto:christopherdaviddean@gmail.com) or [Erin](mailto:emdillon23@gmail.com). Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please add them to the growing Palaeoverse resources database [here](https://bit.ly/palaeoverse-resources){target="_blank"}.
 
-## Workshop Content
+## Resources
+
+### Workshop Slides
+
+[Presentation](./materials/resources/presentation.pdf)
 
 ### Data Acquisition
 
@@ -160,10 +164,5 @@ These resources cover the various ways in which data can be visualised, from the
 
 ### General Programming Resources
 
-### \--
-
-### Problem Solving Tips
-
-\--
 
 ![](images/logo.png){fig-align="right" width="25%"}
