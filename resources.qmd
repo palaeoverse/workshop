@@ -34,7 +34,7 @@ These resources cover the acquisition of data for palaeontological analyses, inc
 
 -   [PARED](http://paleo-reefs.pal.uni-Erlangen.de){target="_blank"}
 
-#### 3D Datasets
+#### 3D Databases
 
 -   [DigiMorph](http://digimorph.org){target="_blank"}
 
@@ -46,7 +46,7 @@ These resources cover the acquisition of data for palaeontological analyses, inc
 
 -   [Digital Atlas of Ancient Life](https://www.digitalatlasofancientlife.org/){target="_blank"}
 
-#### Trait Datasets
+#### Trait Databases
 
 -   [Open Traits Network](https://opentraits.org){target="_blank"}
 
