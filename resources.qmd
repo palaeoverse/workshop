@@ -6,13 +6,13 @@ title: "Resources"
 
 This unit of the workshop introduces a variety of resources that are of relevance to palaeobiological analyses and palaeontologists more broadly. The slides for the unit are available here and provide an overview to these commonly used resources, along with links to relevant websites and other content. This acts as both a summary of the resources mentioned in the other Units, as well as including additional resources which may be of interest.
 
-This session is led by Christopher Dean. If you encounter any issues while working with these resources, please contact him [here](mailto:christopherdaviddean@gmail.com). Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please let Chris know and he will add them to the list.
+This session is led by Christopher Dean and Erin Dillon. If you encounter any issues while working with these resources, please contact either [Chris](mailto:christopherdaviddean@gmail.com) or [Erin](mailto:emdillon23@gmail.com). Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please add them [here](https://docs.google.com/spreadsheets/d/1ZwvmmBUEPZzGEcdE-ZWYPDGkafYcfSQkYwue9cQ_x9c/edit?usp=sharing).
 
 ## Content (under construction)
 
 ### Data Acquisition
 
-These resources cover the acquisition of data for palaeontological analyses, including occurrence datasets and covariate/associated data.
+These resources cover the acquisition of data for palaeontological analyses, including occurrence datasets as well as covariate and other associated data.
 
 #### Occurrence Databases
 
@@ -34,25 +34,75 @@ These resources cover the acquisition of data for palaeontological analyses, inc
 
 -   [PARED](http://paleo-reefs.pal.uni-Erlangen.de)
 
+#### 3D Datasets
+
+-   [DigiMorph](http://digimorph.org)
+
+-   [Morphobank](http://morphobank.org)
+
+-   [Phenome10k](http://www.phenome10k.org)
+
+-   [Morphosource](http://morphosource.org)
+
+-   [Digital Atlas of Ancient Life](https://www.digitalatlasofancientlife.org/)
+
+#### Trait Datasets
+
+-   [Open Traits Network](https://opentraits.org)
+
+-   [Coral Trait Database](https://www.coraltraits.org/)
+
 #### Covariate Datasets
 
 -   [Macrostrat](http://macrostrat.org)
 
 -   [USGS Geological Maps of North America](https://mrdata.usgs.gov/geology/state/)
 
+-   [Mindat](https://www.mindat.org/)
+
 -   [WorldClim](http://worldclim.org)
 
 -   [ESA WorldCover](http://esa-worldcover.org/en)
 
+-   [Digital Elevation Maps](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-global-30-arc-second-elevation-gtopo30?qt-science_center_objects=0#qt-science_center_objects)
+
+-   [Global Maximum Green Vegetation Fraction](https://doi.org/10.1175/JAMC-D-13-0356.1)
+
+-   [Deep Time Maps](https://deeptimemaps.com/about-us/)
+
+-   [Paleomap Project](http://www.scotese.com/)
+
 #### Additional Lists of Databases
 
--    [Examples of databases and online data portals used in paleo research](https://zenodo.org/records/7340036)
+-   [Examples of databases and online data portals used in paleo research (Table 1)](https://zenodo.org/records/7340036)
 
--    [PAGES](https://pastglobalchanges.org/science/data/databases)
+-   [PAGES](https://pastglobalchanges.org/science/data/databases)
 
 ### Data Preparation
 
 These resources cover the preparation of data for palaeontological analyses, including data cleaning, organisation and transformation.
+
+#### General Resources
+
+-   [Data cleaning](https://www.knowledgehut.com/blog/data-science/data-cleaning#what-is-data-cleaning-in-data-science?-%C2%)
+
+-   [Tidy data](https://www.dataone.org/webinars/tidy-ing-your-data-simple-steps-reproducible-research/)
+
+-   [R cheat sheets](https://posit.co/resources/cheatsheets/)
+
+#### Examples of Packages for Data Cleaning and Preparation
+
+-   [janitor]
+
+-   [Data.validator]
+
+-   [CoordinateCleaner]
+
+-   [Fossilbrush]
+
+-   [Palaeoverse]
+
+-   [Also check out this list of generally useful R packages here (Table 2)](https://zenodo.org/records/7340036)
 
 ### Data Visualisation
 
@@ -64,13 +114,25 @@ These resources cover the various ways in which data can be visualised, from the
 
 -   [R Graph Gallery](https://r-graph-gallery.com/)
 
+-   [Plotly](https://plotly.com/r/)
+
 -   [COBLIS (Colour Blindness Simulator)](https://www.color-blindness.com/coblis-color-blindness-simulator/)
 
 -   [Colorhunt](https://colorhunt.co/)
 
-### Writing Functions
+-   [Inkscape (vector graphics)](https://inkscape.org/)
 
-These resources cover how to write functions in R
+-   [GIMP (raster graphics)](https://www.gimp.org/)
+
+#### Examples of Packages for Data Visualisation
+
+-   [ggplot2]
+
+-   [Lattice]
+
+-   [deeptime]
+
+-   [geoscale]
 
 ### General Palaeontology Resources
 
@@ -79,6 +141,22 @@ These resources cover how to write functions in R
 -   [Palaeoverse Google Group](https://groups.google.com/g/palaeoverse)
 
 -   [Paleonet](https://paleonet.org/)
+
+#### Associations and Networks
+
+-   [Paleontological Society](https://www.paleosoc.org/)
+
+-   [Palaeontological Association](https://www.palass.org/)
+
+-   [PAGES (Past Global Changes) Network](https://pastglobalchanges.org/)
+
+-   [Conservation Paleobiology Network](https://conservationpaleorcn.org/)
+
+-   [Earth Science Women’s Network](https://eswnonline.org/)
+
+-   [PaleoSynthesis Project](https://www.paleosynthesis.nat.fau.de/)
+
+#### Workshops and Courses
 
 ### General Programming Resources
 
