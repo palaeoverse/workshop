@@ -11,8 +11,8 @@ This session is led by [William Gearty](https://williamgearty.com). If you encou
 ## Resources
 
 -   [Presentation](./materials/visualization/presentation.qmd)
--   [ggplot2 Tutorial (html)](./materials/visualization/practical-ggplot2.qmd) | <a href="./materials/visualization/practical-ggplot2.qmd" download="practical-ggplot2.qmd">ggplot2 Tutorial (qmd)</a>
--   [Spatial Tutorial (html)](./materials/visualization/practical-spatial.qmd) | <a href="./materials/visualization/practical-spatial.qmd" download="practical-spatial.qmd">Spatial Tutorial (qmd)</a>
+-   [ggplot2 Tutorial (html)](./materials/visualization/practical-ggplot2.qmd) | <a href="https://github.com/palaeoverse/workshop/blob/main/materials/visualization/practical-ggplot2.qmd" download="practical-ggplot2.qmd">ggplot2 Tutorial (qmd)</a>
+-   [Spatial Tutorial (html)](./materials/visualization/practical-spatial.qmd) | <a href="https://github.com/palaeoverse/workshop/blob/main/materials/visualization/practical-spatial.qmd" download="practical-spatial.qmd">Spatial Tutorial (qmd)</a>
 
 ![](images/logo.png){fig-align="right" width="25%"}
 
