@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome! This website serves as an index for all workshops organised by Palaeoverse, an organisation aiming to bring the palaeobiological community together to share resources, reach agreed standards, and improve reproducibility in palaeobiological research. Our workshops typically center around Open Science and training in the R programming language."
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "Welcome",
+    "section": "2025",
+    "text": "2025\n\nBuilding open data science skills in paleobiology and ecology\nOrganisers: Erin M. Dillon, Lewis A. Jones, Bethany J. Allen, William Gearty, Christopher D. Dean, Harriet B. Drage, Pedro Godoy\nLocation: 4th Crossing the Palaeontological-Ecological Gap & 3rd Conservation Paleobiology\nDate: 27th July 2025\nWebsite | Archived materials"
+  },
+  {
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
+    "title": "Welcome",
+    "section": "2024",
+    "text": "2024\n\nR for Paleobiologists: Getting Started with the Palaeoverse R Package\nOrganisers: Lewis A. Jones, Bethany J. Allen, William Gearty, Erin M. Dillon, Christopher D. Dean\nLocation: 12th North American Palaeontological Convention, University of Michigan, Michigan, U.S.A\nDate: 19th June 2024\nWebsite | Archived materials"
+  },
+  {
+    "objectID": "index.html#section-2",
+    "href": "index.html#section-2",
+    "title": "Welcome",
+    "section": "2023",
+    "text": "2023\n\nR for Palaeobiologists: Workshop and Hackathon\nOrganisers: Lewis A. Jones, Bethany J. Allen, Christopher D. Dean, Kilian Eichenseer, Cecily Nicholl, Sofía Galván, and Miranta Kouvari\nLocation: Department of Earth Sciences, University College London, London, UK\nDate: 7–8th September 2023"
+  }
+]
