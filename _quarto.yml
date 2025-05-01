@@ -3,7 +3,6 @@ project:
 
 website:
   title: "**Palaeoverse Workshops**"
-  site-url: https://workshop.palaeoverse.org
   image: "/images/favicon.png"
   favicon: "/images/favicon.png"
   page-navigation: false
