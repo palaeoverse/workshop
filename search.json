@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "test1/index.html",
+    "href": "test1/index.html",
+    "title": "this is test1",
+    "section": "",
+    "text": "this is test1"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
@@ -26,5 +33,12 @@
     "title": "Welcome",
     "section": "2023",
     "text": "2023\n\nR for Palaeobiologists: Workshop and Hackathon\nOrganisers: Lewis A. Jones, Bethany J. Allen, Christopher D. Dean, Kilian Eichenseer, Cecily Nicholl, Sofía Galván, and Miranta Kouvari\nLocation: Department of Earth Sciences, University College London, London, UK\nDate: 7–8th September 2023"
+  },
+  {
+    "objectID": "test2/index.html",
+    "href": "test2/index.html",
+    "title": "this is test2",
+    "section": "",
+    "text": "this is test2"
   }
 ]
