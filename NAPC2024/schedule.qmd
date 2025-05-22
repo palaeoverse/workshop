@@ -1,0 +1,19 @@
+---
+title: "Schedule"
+toc: true
+order: 2
+---
+
+| Time      | Event                                             |
+|-----------|---------------------------------------------------|
+| **08:00** | **Welcome and Introduction to Palaeoverse**       |
+| **08:15** | **Theory: Data acquisition/cleaning**             |
+| **08:30** | **Practical: Data acquisition/cleaning**          |
+| **09:00** | **Theory: Data preparation with palaeoverse**     |
+| **09:15** | **Practical: Data preparation with palaeoverse**  |
+| **09:45** | **Break** ☕                                      |
+| **10:00** | **Theory: Introduction to Data visualisation**    |
+| **10:15** | **Practical: Introduction to Data visualisation** |
+| **10:45** | **Independent practice time**                     |
+| **11:30** | **Resources**                                     |
+| **11:50** | **Questions & Wrap-up**                           |

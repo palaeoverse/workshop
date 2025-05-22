@@ -1,0 +1,25 @@
+/*-- scss:defaults --*/
+
+$body-bg: #fcfdfd;
+$presentation-heading-color: #ea6c40;
+$presentation-heading-font-weight: bold;
+
+/*-- scss:rules --*/
+.reveal .slide img {
+  margin: 0px;
+  max-width: fit-content;
+  max-height: fit-content;
+}
+
+.reveal .slide h3 {
+  color: #95668b;
+}
+
+.reveal .slide table {
+  font-size: 26px;
+}
+
+.reveal .slide tr th, .reveal .slide tr td {
+  border: 0px;
+  vertical-align: middle;
+}

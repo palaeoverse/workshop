@@ -1,0 +1,19 @@
+---
+title: "Data visualization"
+---
+
+## Summary
+
+This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.
+
+This session is led by [William Gearty](https://williamgearty.com). If you encounter any issues while working with these resources, please contact him [here](mailto:willgearty@gmail.com).
+
+## Resources
+
+-   [Presentation](presentation.qmd)
+-   [ggplot2 Tutorial (html)](practical-ggplot2.qmd) | <a href="https://github.com/palaeoverse/workshop/blob/main/materials/visualization/practical-ggplot2.qmd" download="practical-ggplot2.qmd">ggplot2 Tutorial (qmd)</a>
+-   [Spatial Tutorial (html)](practical-spatial.qmd) | <a href="https://github.com/palaeoverse/workshop/blob/main/materials/visualization/practical-spatial.qmd" download="practical-spatial.qmd">Spatial Tutorial (qmd)</a>
+
+![](images/logo.png){fig-align="right" width="25%"}
+
+

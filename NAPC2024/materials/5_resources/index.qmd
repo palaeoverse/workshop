@@ -1,0 +1,189 @@
+---
+title: "Resources"
+---
+
+## Summary
+
+This unit of the workshop introduces a variety of resources that are of relevance to palaeobiological analyses and palaeontologists more broadly. The slides for the unit are available here and provide an overview to these commonly used resources, along with links to relevant websites and other content. This acts as both a summary of the resources mentioned in the other Units, as well as including additional resources which may be of interest.
+
+This session is led by Christopher Dean and Erin Dillon. If you encounter any issues while working with these resources, please contact either [Chris](mailto:christopherdaviddean@gmail.com) or [Erin](mailto:emdillon23@gmail.com). Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please add them to the growing Palaeoverse resources database [here](https://bit.ly/palaeoverse-resources){target="_blank"}.
+
+## Resources
+
+### Workshop Slides
+
+<a href="./PW_Resources.pdf" target="_blank" title="Presentation">Presentation</a>
+
+### Data Acquisition
+
+These resources cover the acquisition of data for palaeontological analyses, including occurrence datasets as well as covariate and other associated data.
+
+#### Occurrence Databases
+
+-   [Paleobiology Database](http://paleobiodb.org){target="_blank"}: A public database of paleontological occurrence data gathered from the published record, maintained by an international non-governmental group of paleontologists.
+
+-   [Geobiodiversity database](http://giobiodiversity.com){target="_blank"}: An integrated system for the management and analysis of stratigraphic and paleontological information, mostly covering China. 
+
+-   [Neotoma](http://neotomadb.org){target="_blank"}: A database of fossil occurrences and other associated data primarily covering the Pliocene-Quaternary.
+
+-   [GBIF](http://gbif.org){target="_blank"}: An international network and data infrastructure funded by the world's governments and aimed at providing open access to data about a variety of life on Earth.
+
+-   [iDigBio](http://idigbio.org){target="_blank"}: Data and images for millions of biological specimens, curated, connected and made available in electronic format for the biological research community.
+
+-   [Neptune](http://nsb.mfn-berlin.de){target="_blank"}: A relational database of microfossil occurrence records from DSDP and ODP publications.
+
+-   [BioDeepTime](http://dio.org/10.1111/geb.13735){target="_blank"}: A database of biodiversity time series for modern and fossil assemblages.
+
+-   [Phylacine](http://megapast2future.github.io/PPHYLACINE_1.2/){target="_blank"}: The Phylogenetic Atlas of Mammal Macroecology which provides phylogenies, range maps, trait data, and threat status for all 5,831 known mammal species that lived since the last interglacial (~130,000 years ago until present).
+
+-   [PARED](http://paleo-reefs.pal.uni-Erlangen.de){target="_blank"}: Data for Phanerozoic reefs in a standardised format, with geological, geographic and paleontological information for each reef.
+
+#### 3D Databases
+
+-   [DigiMorph](http://digimorph.org){target="_blank"}: A dynamic archive of information on digital morphology and high-resolution X-ray computed tomography of biological specimens.
+
+-   [Morphobank](http://morphobank.org){target="_blank"}: Provides data related to phenotypes as well as peer reviewed morphological matrices.
+
+-   [Phenome10k](http://www.phenome10k.org){target="_blank"}: Provides 3D scans, both CT and surface, of biological and palaeontological specimens.
+
+-   [Morphosource](http://morphosource.org){target="_blank"}: A 3D data repository for physical object important to natural histyory, cultural heritage and scientific collections. 
+
+-   [Digital Atlas of Ancient Life](https://www.digitalatlasofancientlife.org/){target="_blank"}: Contains online fieldguides to fossils from particular times and regions, but also a virtual collection of 3D photogrammetry models of fossil and modern specimens from museum collections. 
+
+#### Trait Databases
+
+-   [Open Traits Network](https://opentraits.org){target="_blank"}: A global community of researchers/institutions, which provide links to a variety of open source trait databases.
+
+-   [Coral Trait Database](https://www.coraltraits.org/){target="_blank"}: A compilation of scleractinian coral life history trait, phylogenetic and biogeographic data.
+
+#### Covariate Datasets
+
+-   [Macrostrat](http://macrostrat.org){target="_blank"}: A platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them.
+
+-   [USGS Geological Maps of North America](https://mrdata.usgs.gov/geology/state/){target="_blank"}: Digital geologic maps of the US states with consistent lithology, age, GIS database structure, and format.
+
+-   [Mindat](https://www.mindat.org/){target="_blank"}: The world's largest open database of minerals, rocks, meteorites and the localities they come from.
+
+-   [WorldClim](http://worldclim.org){target="_blank"}: Maps, graphs, tables, and data of the global climate.
+
+-   [ESA WorldCover](http://esa-worldcover.org/en){target="_blank"}: A freely accessible global land cover product at 10 m resolution for 2020 based on both Sentinel-1 and Sentinel-2 dat.
+
+-   [Digital Elevation Maps](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-global-30-arc-second-elevation-gtopo30?qt-science_center_objects=0#qt-science_center_objects){target="_blank"}: Global 1-km digital elevation raster data derived from a variety of sources.
+
+-   [Global Maximum Green Vegetation Fraction](https://doi.org/10.1175/JAMC-D-13-0356.1){target="_blank"}: A MODIS-Based Global 1-km Maximum Green Vegetation Fraction dataset.
+
+-   [Deep Time Maps](https://deeptimemaps.com/about-us/){target="_blank"}: Global and regional paleogeographic maps for different times in Earth history.
+
+-   [Paleomap Project](http://www.scotese.com/){target="_blank"}: Global paleogeographic maps for different times in Earth history.
+
+#### Additional Lists of Databases
+
+-   [Examples of databases and online data portals used in paleo research (Table 1)](https://zenodo.org/records/7340036){target="_blank"}: Examples of databases and online data portals used for paleobiological and (paleo)ecological research, along with their primary temporal, spatial, and taxonomic scope.
+
+-   [PAGES working group databases](https://pastglobalchanges.org/science/data/databases){target="_blank"}: Databases and metadatabases compiled by PAGES Working Groups.
+
+### Data Preparation
+
+These resources cover the preparation of data for palaeontological analyses, including data cleaning, organisation and transformation.
+
+#### General Resources
+
+-   [Data cleaning](https://www.knowledgehut.com/blog/data-science/data-cleaning#what-is-data-cleaning-in-data-science?-%C2%){target="_blank"}: A quick intro to data cleaning in data science.
+
+-   [Tidy data](https://www.dataone.org/webinars/tidy-ing-your-data-simple-steps-reproducible-research/){target="_blank"}: A 1-hour lecture on setting up data for reproducible research.
+
+#### Examples of Packages for Data Cleaning and Preparation
+
+-   [Palaeoverse](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.14099){target="_blank"}: A community driven R package to support paleobiological data preparation and analysis. 
+
+-   [janitor](https://cran.r-project.org/web/packages/janitor/index.html){target="_blank"}: A package to clean and reformat columns names and explore duplicate records.
+
+-   [Data.validator](https://cran.rstudio.com/web/packages/data.validator/index.html){target="_blank"}: A package to make reports on where data doesn't fit a set of predetermined criteria. 
+
+-   [CoordinateCleaner](https://cran.r-project.org/web/packages/CoordinateCleaner/index.html){target="_blank"}: Automated flagging of common spatial and temporal errors in biological and paleontological collection data.
+
+-   [Fossilbrush](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13966){target="_blank"}: Automated detection and resolution of anomalies in paleontological occurrence datasets.
+
+-   [Also check out this list of generally useful R packages here (Table 2)](https://zenodo.org/records/7340036){target="_blank"}
+
+### Data Visualisation
+
+These resources cover the various ways in which data can be visualised, from theoretical, practical and ethical angles.
+
+#### General Resources
+
+-   [Best Practices for Data Visualisation (Royal Society Guide)](https://royal-statistical-society.github.io/datavisguide/){target="_blank"}: 
+
+-   [R Graph Gallery](https://r-graph-gallery.com/){target="_blank"}: A collection of charts made with the R programming language, and guides on making these plots.
+
+-   [Plotly](https://plotly.com/r/){target="_blank"}: A library for making publication-quality graphs in R.
+
+-   [COBLIS (Colour Blindness Simulator)](https://www.color-blindness.com/coblis-color-blindness-simulator/){target="_blank"}: A service to test what images look like to those with colourblindness. 
+
+-   [Colorhunt](https://colorhunt.co/){target="_blank"}: Color palettes for designers and artists.
+
+-   [Inkscape (vector graphics)](https://inkscape.org/){target="_blank"}: A free and open-source vector graphics editor.
+
+-   [GIMP (raster graphics)](https://www.gimp.org/){target="_blank"}: A free and open-source raster graphics editor used for image manipulation and image editing.
+
+#### Examples of Packages for Data Visualisation
+
+-   [ggplot2](https://ggplot2.tidyverse.org/){target="_blank"}: A commonly used package for making plots in R.
+
+-   [Lattice](https://cran.r-project.org/web/packages/lattice/index.html){target="_blank"}: An alternate graphics package for R, specialising in visualising multivariate data. 
+
+-   [deeptime](https://cran.r-project.org/web/packages/deeptime/index.html){target="_blank"}: A package to add customisable geological timescales to plots in R.
+
+### General Palaeontology Resources
+
+-   [Palaeoverse](http://palaeoverse.org){target="_blank"}: An initiative which aims to bring the palaeobiology community together to share resources, reach agreed standards, and improve reproducibility in palaeobiological research.
+
+-   [Palaeoverse Google Group](https://groups.google.com/g/palaeoverse){target="_blank"}: A Google group where users can ask questions about the functionality of the palaeoverse R package, post job listings, discuss papers and more. 
+
+-   [Palaeoverse Resources Database](https://bit.ly/palaeoverse-resources){target="_blank"}: A Google sheet of various resources related to paleobiology. Feel free to add your own suggestions!
+
+-   [Paleonet](https://paleonet.org/){target="_blank"}: A system of listservers, WWW pages, and ftp sites designed to enhance electronic communication among palaeontologists.
+
+#### Associations and Networks
+
+-   [Paleontological Society](https://www.paleosoc.org/){target="_blank"}: A US based society for advancing knowledge and understanding of paleontology and life’s evolution through research, education, and advocacy.
+
+-   [Palaeontological Association](https://www.palass.org/){target="_blank"}: A UK based registered charity to promote the study of palaeontology through academic journals, fieldtrips/guides, newsletters, grants and awards.
+
+-   [PAGES (Past Global Changes) Network](https://pastglobalchanges.org/){target="_blank"}: An international effort to coordinate and promote past global change research.
+
+-   [Conservation Paleobiology Network](https://conservationpaleorcn.org/){target="_blank"}: A network aiming to transform conservation paleobiology into an applied science that informs conservation and restoration efforts.
+
+-   [Earth Science Women’s Network](https://eswnonline.org/){target="_blank"}: A grassroots, member-driven organization, dedicated to moving the geosciences forward.
+
+-   [PaleoSynthesis Project](https://www.paleosynthesis.nat.fau.de/){target="_blank"}: A project aiming to strengthen paleontology through building a long-term research vision for scientific cooperation.
+
+#### Workshops and Courses
+
+-   [Analytical Paleobiology Workshop](https://www.cnidaria.nat.uni-erlangen.de/shortcourse/){target="_blank"}: A three week workshop run once a year to introduce graduate students to a range of analytical methods that are foundational to or at the cutting edge of paleobiological research.
+
+-   [Physalia Courses](https://www.physalia-courses.org/){target="_blank"}: Provide scientific training courses and Workshops in Bioinformatics, Genomics, and related fields.
+
+-   [PaleoCAMP](https://paleoclimate.camp){target="_blank"}: A summer school for graduate student providing paleoclimate training in climate archives, models, and proxies.
+
+-   [Transmitting Science Workshops](https://www.transmittingscience.com/){target="_blank"}: Organise courses and peer-to-peer events that support the exchange of scientific skills, methods, and advances in the fields of life and earth sciences. 
+
+### General Programming Resources
+
+-   [CRAN Taskviews](https://cran.r-project.org/web/views/){target="_blank"}: Provide guidance which packages on CRAN are relevant for tasks related to a certain topic. A paleontology specific taskview is currently being put together by the Palaeoverse team.
+
+-   [Posit Cheatsheets](https://posit.co/resources/cheatsheets/){target="_blank"}: Cheatsheets for popular R packages.
+
+### Free R Books
+
+-   [Hands-On Programming with R](https://rstudio-education.github.io/hopr/){target="_blank"}: An overview of R as a programming language, to guide complete beginners
+
+-   [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf){target="_blank"}: A broad introduction to the R environment
+
+-   [R for Data Science](https://r4ds.hadley.nz/){target="_blank"}: General overview of how to carry out data analysis using R
+
+-   [R Packages](https://r-pkgs.org/){target="_blank"}: A complete guide to making R packages.
+
+-   [Cookbook for R](http://www.cookbook-r.com/){target="_blank"}: A quick start guide for solving specific issues in R.
+
+![](images/logo.png){fig-align="right" width="25%"}

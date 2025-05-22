@@ -1,0 +1,565 @@
+---
+title: | 
+  An intro to data visualization
+subtitle: |
+  by William Gearty\
+  \
+  Presented at the\
+  North American Paleontological Convention 2024
+  
+  ![](images/NAPC_logo.png){fig-align="center" height=150}
+author: | 
+  [William Gearty](https://williamgearty.com), American Museum of Natural History
+  
+  ![](images/AMNH.png){fig-align="center" height=80}
+affiliation: "American Museum of Natural History"
+execute:
+  echo: true
+  eval: true
+  freeze: auto
+format: 
+  revealjs:
+    logo: "images/logo.png"
+    #footer: "[palaeoverse: A community-driven R package](https://palaeoverse.org)"
+    theme: [simple, custom.scss]
+    embed-resources: true
+    output-file: "presentation.html"
+order: 2
+---
+
+## Schedule
+\
+10 - 10:15 AM: Theory of data visualization\
+\
+10:15 - 10:45 AM: Practical data visualization
+
+## Theory of data visualization
+
+1. What is data visualization?
+2. Basic design principles (color & font)
+3. Picking a graph type
+4. Common mistakes
+5. File types
+
+<center>
+![](images/data-viz.jpg){fig-align="center" height="200"}
+</center>
+
+::: notes
+:::
+
+# What is data visualization?
+
+## What is data visualization?
+
+\
+The representation of data through the use of __graphs__ and __figures__.\
+\
+Often the data is __complex__, but the representation should be __approachable__ and __easy-to-understand__.
+
+## What is data visualization?
+
+For example, here is some __data__:
+<center>
+[![](images/broadcast-time-data.png){height="500"}](https://fivethirtyeight.com/features/how-much-football-is-even-in-a-football-broadcast/)
+(even this is a data visualization)
+</center>
+
+::: notes
+Relative YouTube listening of Rihanna compared to the other Billboard Top 100 in 2017 across the US. Made by the New York Times using geocoded streaming data from YouTube.
+:::
+
+## What is data visualization?
+
+And here is a __data visualization__ of that data:
+<center>
+[![](images/broadcast-time.png){height="550"}](https://fivethirtyeight.com/features/how-much-football-is-even-in-a-football-broadcast/)
+</center>
+
+::: notes
+Relative proportions of a sports game that entails "game action", "game inaction", or "commercials". English Premier League shows the highest proportion of game action. NHL games have the most (total) game action.
+:::
+
+## What is data visualization?
+Here's another example. What data is being represented?
+<center>
+[![](images/nytimes-rihanna.png){height="500"}](https://www.nytimes.com/interactive/2017/08/07/upshot/music-fandom-maps.html)\
+![](images/nytimes-rihanna-scale.png){height="50"}\
+</center>
+
+::: notes
+Relative YouTube listening of Rihanna compared to the other Billboard Top 100 in 2017 across the US. Made by the New York Times using geocoded streaming data from YouTube.
+:::
+
+# Basic design principles
+
+## Basic design principles
+
+\
+
+- <span style="color: blue;">C</span><span style="color: red;">o</span><span style="color: orange;">l</span><span style="color: purple;">o</span><span style="color: green;">r</span>\
+\
+
+- <span style="font-family: serif;">T</span><span style="font-family: cursive;">y</span><span style="font-family: fantasy;">p</span><span style="font-family: sans-serif;">e</span> (aka font)\
+\
+
+- Positioning (R takes care of most of this)
+
+::: notes
+Don't actually alternate colors and fonts like this unless you are trying to make a point
+:::
+
+## Color
+
+### Lots of colors exist!
+
+<center>
+[![](images/swatches.png){height="500"}](https://create.microsoft.com/en-us/learn/articles/what-is-color-theory)
+</center>
+
+::: notes
+:::
+
+## Color
+
+### Picking colors
+
+- Value (lightness/darkness)
+
+<center>
+[![](images/colors-value.png){height="400"}](https://create.microsoft.com/en-us/learn/articles/what-is-color-theory)
+</center>
+
+::: notes
+:::
+
+## Color
+
+###  Picking colors
+
+- Temperature (cool vs warm)
+
+<center>
+[![](images/colors-temperature.png){height="400"}](https://create.microsoft.com/en-us/learn/articles/what-is-color-theory)
+</center>
+
+::: notes
+:::
+
+## Color
+
+### Picking colors
+
+- Saturation (intensity of color)
+
+<center>
+[![](images/colors-saturation.png){height="400"}](https://create.microsoft.com/en-us/learn/articles/what-is-color-theory)
+</center>
+
+::: notes
+:::
+
+## Color
+
+### Picking colors
+
+- Palettes (collections of colors that work well together)
+
+<center>
+[![](images/colors-analagous.png){width="900"}](https://create.microsoft.com/en-us/learn/articles/what-is-color-theory)
+</center>
+
+::: notes
+Analogous colors are three colors next to each other on the color wheel, composed of one dominant color (usually a primary or secondary color), then a supporting color (a secondary or tertiary color), and a third color that is either a mix of the two first colors, or an accent color that pops.
+:::
+
+## Color
+
+### Picking colors
+
+- Palettes (collections of colors that work well together)
+
+<center>
+[![](images/colors-complementary.png){width="900"}](https://create.microsoft.com/en-us/learn/articles/what-is-color-theory)
+</center>
+
+::: notes
+A complementary color scheme is created by using two colors opposite each other on the color wheel. This type of palette attracts the most attention because of its bold contrast, but that also makes it the most difficult to find a harmonious balance. One way to achieve good balance when using complementary colors is to identify two opposite colors (as shown in the image below) and then create the rest of your palette by creating slightly darker or lighter versions of those same colors.
+:::
+
+## Color
+
+### Declaring colors in R
+
+- Names (see [cheat sheet](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf))
+
+- HEX codes
+
+<center>
+![](images/hex-codes.png){height="350"}
+</center>
+
+::: notes
+
+:::
+
+## Color
+
+### Getting HEX codes
+
+- In software (e.g., PowerPoint, Illustrator, Inkscape)
+- Online (e.g., [Google](https://g.co/kgs/YAVBHVg), [HTML color codes](https://htmlcolorcodes.com/color-chart/), [coolers](https://coolors.co/))
+
+<center>
+![](images/hex-codes.png){height="350"}
+</center>
+
+::: notes
+:::
+
+## Color
+
+### Or use premade color palette packages!
+
+- [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+- geological timescale palettes in [deeptime](https://cran.r-project.org/web/packages/wesanderson/index.html)
+- [viridis](https://cran.r-project.org/web/packages/viridis/index.html)
+  - designed for accessibility
+- [wesanderson](https://cran.r-project.org/web/packages/wesanderson/index.html)
+<center>
+![](images/lifeaquatic-1.png){height="100"}
+</center>
+
+::: notes
+:::
+
+## Color
+
+### Color accessibility is important!
+
+The more <span style="color: #2271B2;">color</span> <span style="color: #d55e00;">contrast</span> the better!
+
+<center>
+![](images/contrastexample.png){height="500"}
+</center>
+
+::: notes
+:::
+
+## Color
+
+### Don't forget about color blindness!
+
+Check your graphs with a color blindness simulator (e.g., [ColourSimulations](http://www.coloursimulations.com/) or [ColorOracle](https://www.colororacle.org/)).\
+\
+<center>
+![](images/viridis1.png){height="350"}
+![](images/viridis2.png){height="350"}
+</center>
+
+::: notes
+Right is with Deuteranopia (red-green color blindness, 6% of males, .4% of females)
+:::
+
+## Color
+
+### Your graphs should even be legible in grayscale.
+\
+<center>
+![](images/viridis1.png){height="350"}
+![](images/viridis3.png){height="350"}
+</center>
+
+::: notes
+Right is desaturated
+:::
+
+## Font
+
+### There are lots of fonts/types, too!
+
+<center>
+[![](images/fonts.png){height="500"}](https://fonts.google.com/knowledge/choosing_type/emotive_considerations_for_choosing_typefaces)
+</center>
+
+::: notes
+
+:::
+
+## Font
+
+### We want easily readable fonts:
+
+- <span style="font-family: 'Tahoma';">Tahoma</span>
+- <span style="font-family: 'Calibri';">Calibri</span>
+- <span style="font-family: 'Helvetica';">Helvetica</span>
+- <span style="font-family: 'Arial';">Arial</span>\
+\
+
+- Find more at [Google Fonts](https://fonts.google.com/)
+  - Can import these into R using the [<code>sysfonts</code> package](https://babichmorrowc.github.io/post/2019-10-11-google-fonts/)
+
+::: notes
+
+:::
+
+## Font
+
+### Tips
+
+- One font is usually enough (max two)
+- Make sure font size is big enough (who is the audience?)
+- Use __bold__ for emphasis, but avoid _italics_ and <u>underlines</u>
+- Left-aligned text is most readable
+- Use size as a tool to hierarchize content
+- Use 1.5 line spacing for better readability
+
+::: notes
+Italics and underlines decrease accessibility (e.g., dyslexia)
+:::
+
+# Picking a graph type
+
+## Graph type depends on data type
+
+<center>
+[![](images/pick-graph.png){height="650"}](https://extremepresentation.typepad.com/blog/2006/09/choosing_a_good.html)
+</center>
+
+::: notes
+We don't have time to go over this entire chart, but it should be a good reference for the future. Note that the first question is what aspect of the data you would like to show: relationships, comparisons, distributions, or compositions. From there, we need to decide how many variables we want to include and/or whether we are showing changes over time.
+:::
+
+## Common mistakes
+
+- Our brains cannot compare angles, so avoid pie charts
+
+<center>
+![](images/pie-chart3.png){width="800"}\
+</center>
+
+:::fragment
+<center>
+![](images/pie-chart4.png){width="800"}
+</center>
+:::
+
+::: notes
+Look at each of these pie charts and try to identify the increasing/decreasing order of section sizes...
+Were you right?
+:::
+
+## Common mistakes
+
+- Volumes and perspective can be tough too, so best to avoid 3D plots
+
+<center>
+![](images/pie-chart1.png){height="350"}
+![](images/pie-chart2.png){height="350"}
+</center>
+
+::: notes
+The two pie charts are the same, but the blue segment in the right pie chart appears smaller because of perspective.
+What does this 3D chart provide that thhe 2D version does not? (nothing, except maybe aesthetics)
+:::
+
+## Common mistakes
+
+- Never truncate your X/Y axes or zoom on one part of them without showing the overall pattern as well
+
+<center>
+[![](images/economist1.png){height="450"}](https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368)
+</center>
+
+::: notes
+
+:::
+
+## Common mistakes
+
+- Don't overcomplicate your graphs!\
+  - Is the main point of the graph clear?
+
+<center>
+[![](images/economist4.png){height="450"}](https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368)
+</center>
+
+::: notes
+Having too many colors or too many symbols can often be a major point of confusion or misunderstanding in data visualizations. If you are getting to the point where you find it hard to distinguish between two symbols or colors, you probably have too many.
+
+In the article this was included in, they only discussed Germany, Greece, Netherlands, and Spain. Therefore, including the other countries as separate colors overcomplicated the figure and made the main point harder to discern. Condensing them to a single "Others" category makes the plot easier to digest and makes the point clearer.
+:::
+
+## Common mistakes
+
+- Don't overcomplicate your graphs!\
+  - Think about how much data to show
+
+<center>
+[![](images/economist5.png){height="450"}](https://medium.economist.com/mistakes-weve-drawn-a-few-8cdd8a42d368)
+</center>
+
+::: notes
+Confined by the limited space on a page, we are often tempted to force all the data we have into a slot that’s way too small. Although this saves valuable space on the page, it has consequences — as shown in this chart, from March 2017. The story is about how scientific publishing is dominated by men. All data points are equally interesting and relevant to the story. But by presenting such a lot of data — four research-field categories as well as the share of inventors — the information is hard to take in.
+:::
+
+# Image and file types
+
+## Image types
+
+<center>
+[![](images/raster-vector.png){height="300"}](https://vectorwiz.com/raster-vs-vector-images/)
+</center>
+
+| Raster      | Vector      |
+| :---------: | :---------: |
+| Scale-dependent | Not scale-dependent |
+| Large size files | Smaller size files |
+| Not easily editable | Easily editable |
+| Can have lots of detail | Usually fewer details/textures |
+| Can not be converted easily to vector files | Can easily be converted to raster files |
+| (e.g., made in Photoshop) | (e.g., made in Illustrator) |
+
+::: notes
+
+:::
+
+## File formats
+
+You can export plots from R in many file formats (we'll mostly use <code>ggsave()</code>):\
+\
+
+| File format | Image type | Notes |
+| :- | :- | :----- |
+| .jpg | Raster | Can't have transparent parts |
+| .png | Raster | Can also have transparent parts |
+| .svg | Vector | Can edit in Inkscape/Illustrator |
+| .pdf | Vector | Not actually an image file type, but can be used |
+
+::: notes
+I personally like .pdfs because they are easily shareable and are a pretty common file format for everyone. Pdfs can even be imported into inkscape and illustrator for editing (I'd encourage you to try to do all of your customization within R, but I know some things still aren't possible/easy in R). svgs are also great, but I find they are less supported by email clients and slack, etc. pngs are great, but don't scale (get pixellated), so never use them for publications, etc
+:::
+
+# Visualization in R
+
+[http://cran.nexr.com/web/views/Graphics.html](http://cran.nexr.com/web/views/Graphics.html)
+
+## Visualization in R
+
+### R already has lots of visualization functionality built-in:
+
+- <code>plot()</code>
+- <code>barplot()</code>
+- <code>hist()</code>
+- <code>boxplot()</code>
+- <code>axis()</code>
+- <code>legend()</code>
+- <code>lines()</code>, <code>segments()</code>, <code>rect()</code>, <code>text()</code>, etc.
+
+::: notes
+We call all of this 'base' graphics, because it is all included in the packages that come with R, including the 'graphics' and 'stats' packages.
+
+Note that `base` graphics is done on a static canvas and objects are drawn on the device through R plotting commands. The canvas has a set of global parameters such as margins and layouts which can be manipulated by the user using par() commands. The R graphics engine does not maintain a user visible graphics list. Ojects cannot be easily edited without redrawing a whole plot.
+:::
+
+## Visualization in R
+
+<center>
+[![](images/base-graphics.png){height="550"}](http://www.sthda.com/english/wiki/r-base-graphs)
+</center>
+
+::: notes
+You can make some pretty complex plots with 'base' R graphics!
+:::
+
+## Visualization in R
+
+### Many packages build on these 'base' graphics:
+
+- <code>{plotrix}</code>
+- <code>{rgl}</code>: for 3D interactive graphics
+- <code>{gplots}</code>
+- <code>{scatterplot3d}</code>: 3D scatterplots
+- <code>{palaeoverse}!</code>
+
+::: notes
+Some functions in the palaeoverse package produce base R plots. We've done this to reduce the number of dependencies that users need to install when they install the palaeoverse package. Note: It also has the axis_geo() function to add a timescale to an existing base R plot.
+:::
+
+## Visualization in R
+
+### Then 'grid' graphics came along:
+
+- More complex layouts
+- Scaling is maintained on resizing
+- Nested graphs and more interactivity
+
+<center>
+[![](images/grid-graphics.png){height="300"}](https://stat.ethz.ch/R-manual/R-devel/library/grid/doc/grid.pdf)
+</center>
+
+::: notes
+However, one can quickly run into trouble with R's base graphic system if one wants to design complex layouts where scaling is maintained properly on resizing, nested graphs are desired or more interactivity is needed. grid was designed by Paul Murrell to overcome some of these limitations.
+
+Note that each component has a size, if you were scale this larger or smaller, all of those relative sizes would be preserved (unlike in base R graphics).
+:::
+
+## Visualization in R
+
+### Many packages build on these 'grid' graphics:
+
+- <code>{lattice}</code>: trellis graphics
+- <code>{vcd}</code>: for categorical data
+- <code>{ggplot2}</code>: "grammar of graphics"
+- <code>{hexbin}</code>: hexagonal bins
+- <code>{patchwork}</code>: combine (ggplot2) plots
+- <code>{deeptime}!</code>
+
+::: notes
+In our practical, we'll be exploring ggplot2. The deeptime package that I've developed helps to make plots with ggplots2 (mostly). For example, it has the coord_geo() function which adds a timescale to an existing ggplot2 plot.
+:::
+
+## Visualization in R
+
+### Packages for spatial visualization:
+
+- <code>{sf}</code>: basic objects and methods for vector data
+- <code>{terra}</code>: basic objects and methods for raster data
+- <code>{ggplot2}</code>: works for plotting spatial data, too
+- <code>{raster}</code>: plotting raster data
+
+<center>
+![](images/ggplot-sf.png){height="200"}
+</center>
+
+::: notes
+In our practical, we'll also be exploring using and visualizing spatial objects.
+:::
+
+## Data visualization books
+\
+
+|  |  |  |  |
+| :-- | :---- | :-- | :---- |
+| [![](images/book1.jpg){width="210"}](https://www.amazon.com/dp/0961392142) | The Visual Display of Quantitative Information by Edward R. Tufte | [![](images/book2.jpg){width="210"}](https://www.amazon.com/Better-Data-Visualizations-Scholars-Researchers/dp/0231193114) | Better Data Visualizations by Jonathan Schwabish |
+| [![](images/book3.jpg){width="210"}](https://www.amazon.com/Fundamentals-Data-Visualization-Informative-Compelling/dp/1492031089) | Fundamentals of Data Visualization by Claus O. Wilke | [![](images/book4.jpg){width="210"}](https://www.amazon.com/Building-Science-Graphics-Communicating-Visualizations/dp/1032106743/) | Building Science Graphics by Jen Christiansen |
+
+::: notes
+Here are some books that cover more of the theory of data visualization. Remember all of these slides will be available after the workshop for reference.
+:::
+
+## Practical data visualization
+
+### 1. Data visualization using ggplot2
+<center>
+![](images/deeptime1.png){fig-align="center" height="225"}
+</center>
+
+### 2. Data visualization of spatial data
+<center>
+![](images/rphylopic1.png){fig-align="center" height="225"}
+</center>
+
+::: notes
+So now that we've covered the theory of data visualization, let's move on to some brief practical examples!
+:::

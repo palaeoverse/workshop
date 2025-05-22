@@ -1,0 +1,51 @@
+---
+title: "Meet the event organisers"
+fig-align: left
+toc: false
+order: 3
+---
+
+This edition of the Workshop event is organised and led by the following members of the Palaeoverse team.
+
+
+::: {.grid}
+
+::: {.g-col-4}
+![Dr Lewis A. Jones <br> Universidade de Vigo, Spain](./images/team/Lewis.jpeg){width="100%"} 
+
+![Dr Erin Dillon <br> Smithsonian Tropical Research Institute, Panama  ](./images/team/Erin.jpeg){width="100%"}  
+
+:::
+
+::: {.g-col-4}
+![Dr Bethany J. Allen <br> ETH Zürich, Switzerland  ](./images/team/Bethany.jpeg){width="100%"}  
+
+![Dr Christopher D. Dean <br> University College London, UK ](./images/team/Chris.jpeg){width="100%"}  
+
+:::
+
+::: {.g-col-4}
+![Dr William Gearty <br> American Museum of Natural History, USA ](./images/team/Will.jpeg){width="100%"}  
+
+:::
+
+:::
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+

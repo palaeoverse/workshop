@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "**Palaeoverse Workshops**"
+  title: "Palaeoverse Workshops"
   image: "/images/favicon.png"
   favicon: "/images/favicon.png"
   page-navigation: false
@@ -12,29 +12,29 @@ website:
   page-footer:
     background: "#c1e0e2"
     border: true
-    left: "&copy; Copyright 2025, Palaeoverse"
-    right:
-      - text: "{{< iconify fa6-brands:bluesky >}}"
-        href: https://bsky.app/profile/palaeoverse.bsky.social
-      - text: "{{< iconify fa6-brands:github >}}"
-        href: https://github.com/palaeoverse
-      - text: "{{< iconify fa6-brands:youtube >}}"
-        href: https://www.youtube.com/@ThePalaeoverse
+    center: "&copy; Copyright 2025, <a href='https://palaeoverse.org/'>Palaeoverse</a>"
   navbar:
     border: true
     background: "#c1e0e2"
     logo: "images/favicon.png"
-    pinned: true
-    align: center
+    collapse: false
     right:
+      - icon: github
+        href: https://github.com/palaeoverse
+      - icon: youtube
+        href: https://www.youtube.com/@ThePalaeoverse
       - text: "{{< iconify fa6-brands:bluesky >}}"
         href: https://bsky.app/profile/palaeoverse.bsky.social
-      - text: "{{< iconify fa6-brands:github >}}"
-        href: https://github.com/palaeoverse
-      - text: "{{< iconify fa6-brands:youtube >}}"
-        href: https://www.youtube.com/@ThePalaeoverse
+      - text: "<img src='/images/favicon.png' height=23.5 style='padding-bottom:3px'>"
+        href: https://palaeoverse.org
+  sidebar:
+    background: "#c1e0e2"
+    border: true
+    title: false
+    pinned: true
     style: "docked"
-    search: true
+    collapse-level: 1
+    contents: auto
 
 format:
   html:
@@ -43,6 +43,9 @@ format:
       - custom.scss
     css: styles.css
     toc: true
+
+execute:
+  freeze: auto
 
 
 

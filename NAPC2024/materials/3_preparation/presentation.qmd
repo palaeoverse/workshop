@@ -1,0 +1,837 @@
+---
+title: | 
+  Introduction to palaeoverse
+subtitle: |
+  **A community-driven R package**\
+  By Lewis A. Jones\
+  \
+  ![](images/NAPC.png){fig-align="center" height=150}\
+  North American Paleontological Convention 2024
+author: | 
+  [Lewis A. Jones](mailto:LewisAlan.Jones@uvigo.es), Universidade de Vigo
+  
+  ![](images/mapas.png){fig-align="center" height=80}
+affiliation: "Universidade de Vigo"
+execute:
+  echo: true
+  eval: true
+  freeze: true
+format: 
+  revealjs:
+    logo: "images/logo.png"
+    footer: "[palaeoverse: A community-driven R package](https://palaeoverse.org) - [North American Paleontological Convention 2024](https://sites.lsa.umich.edu/napc2024/)"
+    theme: [default, custom.scss]
+    embed-resources: true
+    output-file: "presentation.html"
+order: 2
+---
+
+## Development team {.smaller}
+
+::: columns
+::: {.column width="50%"}
+-   [Lewis A. Jones](mailto:LewisAlan.Jones@uvigo.es), Universidade de Vigo
+-   [William Gearty](mailto:willgearty@gmail.com), American Museum of Natural History
+-   [Bethany J. Allen](mailto:Bethany.Allen@bsse.ethz.ch), ETH Zürich
+-   [Kilian Eichenseer](mailto:kilian.eichenseer@gmail.com), University of Durham
+-   [Christopher D. Dean](christopherdaviddean@gmail.com), University College London
+-   [Sofía Galván](mailto:sofia.galvan@uvigo.es), Universidade de Vigo
+-   [Miranta Kouvari](mailto:kouvari.miranta@gmail.com), University College London
+:::
+
+::: {.column width="50%"}
+-   [Pedro L. Godoy](mailto:pedrolorenagodoy@gmail.com), University of São Paulo
+-   [Cecily Nicholl](cecily.nicholl@ucl.ac.uk), University College London
+-   [Lucas Buffan](mailto:lucas.buffan@ens-lyon.fr), École Normale Supérieure de Lyon
+-   [Erin M. Dillon](mailto:erinmdillon@ucsb.edu), Smithsonian Tropical Research Institute
+-   [Alfio A. Chiarenza](mailto:a.chiarenza15@gmail.com), Universidade de Vigo
+:::
+:::
+
+::: notes
+Before I jump into the presentation, I wanted to first note that the development of the palaeoverse R package was by no means a solo-effort. All of these fantastic people had a hand in getting it together and form the core team behind the Palaeoverse project.
+:::
+
+# Introduction {.smaller}
+
+*The long and the short of it* 📏*...*
+
+## What is Palaeoverse?
+
+<br>
+
+<br>
+
+<center>
+
+*Palaeoverse is a project that aims to **bring the palaeobiology community together.***
+
+![](images/hands.png){fig-align="center" height="150"}
+
+</center>
+
+::: notes
+So, what exactly is palaeoverse? Well, the Palaeoverse project aims to bring the palaeobiology community together through various means. The overall intention is to encourage the field to work more closely together rather than in competition. We believe this to be a critical step in improving research as a working environment, but also for the progress of the field.
+:::
+
+## What is the palaeoverse R package? {.smaller}
+
+<center>
+
+![](images/claddis.jpeg){fig-align="center" height="200"} ![](images/divdyn.png){fig-align="center" height="200"}
+
+**palaeoverse** provides auxiliary functions to support data preparation and exploration.
+
+![](images/logo.png){fig-align="center" height="200"}
+
+*Improve code readability, reusability and reproducibility.*
+
+</center>
+
+::: notes
+One such effort on this front is the palaeoverse R package.
+
+R and R packages are an integral part of quantitative research in palaeobiology today, with R code frequently used for data cleaning, analyses, and data visualisation. In palaeobiology, these tools are frequently borrowed or repurposed from ecology (e.g. vegan and iNEXT). While packages exist to support fossil data analyses (e.g. claddis and divDyn), there is a lack of packages to support fossil data preparation or exploration. This results in the community often producing their own custom scripts.
+
+The palaeoverse package provides auxiliary functions to support data preparation and exploration, with the intention of improving code readability, reusability, and reproducibility.
+:::
+
+## What makes palaeoverse different? {.smaller}
+
+![](images/another-r-package.jpg){fig-align="center" height="500"}
+
+::: notes
+So, just another R package?
+:::
+
+## What makes palaeoverse different? {.smaller}
+
+-   **Community-informed development**
+    -   Authors (*n* = 13)
+    -   Survey participants (*n* = 35)
+
+::: fragment
+-   **Well-documented & peer-reviewed code**
+    -   Formal review process
+:::
+
+::: fragment
+-   **A community-driven package**
+    -   <http://palaeoverse.palaeoverse.org> ![](images/chris-pratt.jpg){.absolute top="80" right="30" width="480" height="300"}
+:::
+
+::: notes
+Not quite, the idea behind palaeoverse is a little different.
+
+For the development of the package, we formulated a large working group, and conducted an online survey, to combine our experience and perspectives with that of the community to deduce what tools were needed.
+
+As part of the development of the package, we also established a formal review process for both code and documentation.
+
+Finally, palaeoverse is envisioned as a community package. While the initial package has been released by development team, we hope that over time, we will gain contributions from the community to broaden functionality. To support this goal, we have established several resources including a guide to contribution over at our website.
+:::
+
+# Functionality
+
+*A whistle-stop tour of palaeoverse* 🚋*...*
+
+## What's available? {.smaller}
+
+::: columns
+::: {.column width="50%"}
+-   `axis_geo`
+-   `bin_lat`
+-   `bin_time`
+-   `data`
+-   `group_apply`
+-   `lat_bins`
+-   `look_up`
+-   `palaeorotate`
+-   `phylo_check`
+:::
+
+::: {.column width="50%"}
+-   `tax_check`
+-   `tax_expand_lat`
+-   `tax_expand_time`
+-   `tax_range_space`
+-   `tax_range_time`
+-   `tax_range_strat`
+-   `tax_unique`
+-   `time_bins`
+:::
+:::
+
+::: notes
+Currently, 15 different functions are available in palaeoverse, plus some example and reference datasets.
+:::
+
+## Expected input {.smaller}
+
+A lot of data, a lot of sources, and a lot of unique features.
+
+![](images/gbdb.png){.absolute top="150" left="0" width="150" height="150"}
+![](images/pbdb.png){.absolute top="150" left="200" width="150" height="150"}
+![](images/pared.png){.absolute top="150" left="380" width="240" height="150"}
+![](images/neotoma.png){.absolute top="150" left="630" width="200" height="150"}
+![](images/neptune.png){.absolute top="150" left="850" width="200" height="150"}
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<center>
+
+**Data structure, not source.**
+
+`occdf` $\rightarrow$ `function(x)` $\rightarrow$ `df`
+
+Occurrence dataframe\*
+
+</center>
+
+::: aside
+\*Exceptions do exist.
+:::
+
+::: notes
+Functionality in palaeoverse was developed to be flexible and to work around the principle that most user's data would be stored in an occurrence dataframe. That is, each row represents a unique occurrence and each column represents a unique variable. The reason for focusing on data structure is that many different databases exist, each with their own list of variables and quirks. We wanted to provide a package that could be used with data from many sources, not just popular databases, such as the PBDB.
+:::
+
+# Getting started
+
+*Let's dive in 🤿...*
+
+::: notes
+As I've got limited time, I'll now give you a brief overview of all the functionality available in palaeoverse. I'll be happy to answer any questions at the end you might have, and I should note that we have extensive documentation available for each function covering the specifics of each.
+:::
+
+## Installation {.smaller}
+
+::: fragment
+**palaeoverse** can be installed from the CRAN using:
+
+```{r install, eval = FALSE}
+install.packages("palaeoverse")
+```
+:::
+
+<br>
+
+::: fragment
+The development version can be installed using devtools:
+
+```{r install-github, eval = FALSE}
+devtools::install_github("palaeoverse/palaeoverse")
+```
+:::
+
+<br>
+
+::: fragment
+Once installed, load the package in the usual manner:
+
+```{r load, eval = TRUE}
+library(palaeoverse)
+```
+:::
+
+::: notes
+palaeoverse is available on CRAN and can be installed using the default install.packages function. The development version can be installed using the devtools (or remotes) package. Once installed, the package can be loaded in the usual manner.
+:::
+
+## Example datasets {.smaller}
+
+Two example occurrence datasets are available.
+
+Carboniferous--Early Triassic tetrapods (*n* = 5270, [Paleobiology Database](https://paleobiodb.org/#/)).
+
+```{r tetrapods}
+#| code-fold: true
+#| collapse: true
+# Get details on dataset
+?tetrapods
+# Load dataset
+data("tetrapods")
+# Available variables
+colnames(tetrapods)
+```
+
+Phanerozoic reef occurrences (*n* = 4363, [PaleoReefs Database](https://www.paleo-reefs.pal.uni-erlangen.de)).
+
+```{r reefs}
+#| code-fold: true
+#| collapse: true
+# Get details on dataset
+?reefs
+# Load dataset
+data("reefs")
+# Available variables
+colnames(reefs)
+```
+
+::: notes
+Two example occurrence datasets are available in palaeoverse to provide reproducible examples in the function documentation. The first provides a dataset of Carboniferous-Early Triassic Tetrapods from the Paleobiology Database. The second provides a dataset of Phanerozoic reef occurrences from the Paleoreefs Database. Note that both datasets have different variables available, but are still based around the structure of an occurrence dataframe.
+:::
+
+## Reference datasets {.smaller}
+
+Two reference datasets are available.
+
+Geological Time Scale 2012 & 2020 (Gradstein et al. 2012; 2020).
+
+```{r timescales}
+#| collapse: true
+# Get details on dataset
+?GTS2012
+?GTS2020
+# Load dataset
+data("GTS2012")
+data("GTS2020")
+# Increase output width
+options(width = 120)
+# Print first few rows
+head(GTS2012, n = 3)
+head(GTS2020, n = 3)
+```
+
+::: notes
+Two reference datasets are also made available to the user in palaeoverse. These are the Geological Time Scales 2012 & 2020 which are frequently used in research studies and by online databases. In palaeoverse, they are also used in several functions, which we will get on to now.
+:::
+
+## Stratigraphic time bins {.smaller}
+
+```{r stage-bins}
+#| collapse: true
+#| out-width: 50%
+#| fig-width: 8
+#| fig-align: center
+# Get stage-level time bins
+bins <- time_bins(interval = "Phanerozoic", rank = "stage", plot = TRUE)
+```
+
+```{r head-stage-bins}
+#| collapse: true
+# Get first few rows
+head(bins, n = 3)
+```
+
+::: notes
+First up, we have the time bins function, which can be used to extract time bins based on the Geological Time Scale. The user can request different ranks of intervals such as stage, period, epoch, etc. The user can also call intervals based on interval names or an age range and plot the time bins if desired.
+:::
+
+## Macrostrat time bins {.smaller}
+
+```{r NALMA-bins}
+#| collapse: true
+#| out-width: 50%
+#| fig-width: 8
+#| fig-align: center
+# Get North American Land Mammal Ages
+bins <- time_bins(scale = "North American Land Mammal Ages", plot = TRUE)
+```
+
+```{r head-NALMA-bins}
+#| collapse: true
+# Get first few rows
+head(bins, n = 3)
+```
+
+::: notes
+The user can also call time scales from Macrostrat.
+:::
+
+## Near-equal-length time bins {.smaller}
+
+```{r equal-bins}
+#| collapse: true
+#| out-width: 50%
+#| fig-width: 8
+#| fig-align: center
+# Get stage-level time bins
+bins <- time_bins(interval = "Phanerozoic", rank = "stage", size = 15, plot = TRUE)
+```
+
+```{r head-equal-bins}
+#| collapse: true
+# Get first few rows
+head(bins, n = 3)
+```
+
+::: notes
+In the previous slides, you probably noticed from the plots that time bins (e.g. stratigraphic stages) can be extremely uneven in duration. Previous studies have tried to circumvent this by grouping intervals together towards a target bin size to try and even out temporal duration for conducting analyses. palaeoverse provides an implementation of this that can be defined by the size argument.
+:::
+
+## Temporal occurrence binning {.smaller}
+
+Five temporal binning methods for age range data:
+
+```{r bin-occs}
+#| collapse: true
+# Use tetrapod example data
+occdf <- tetrapods
+
+# Get stage-level time bins
+bins <- time_bins(interval = "Phanerozoic", rank = "stage")
+
+# Assign via midpoint age of fossil occurrence data
+ex1 <- bin_time(occdf = occdf, bins = bins, method = "mid")
+
+# Assign to all bins that age range covers
+ex2 <- bin_time(occdf = occdf, bins = bins, method = "all")
+
+# Assign via majority overlap based on fossil occurrence age range
+ex3 <- bin_time(occdf = occdf, bins = bins, method = "majority")
+
+# Randomly assign to overlapping bins based on fossil occurrence age range
+ex4 <- bin_time(occdf = occdf, bins = bins, method = "random", reps = 10)
+
+# Randomly assign point estimates (e.g. uniform distribution) based on fossil occurrence age range
+ex5 <- bin_time(occdf = occdf, bins = bins, method = "point", reps = 10)
+```
+
+::: notes
+Fossil occurrences are usually provided with an age range (a minimum and maximum possible age), which is used to bin occurrences into time bins. palaeoverse provides functionality for five of the most common methods in the literature.
+
+The first method uses the midpoint age of the fossil occurrence to bin the occurrence.
+
+The second method bins the occurrence into every bin the age range covers.
+
+The third method bins the occurrence into the bin the majority of the age range covers.
+
+The fourth method bins the occurrence randomly into bins the age range overlaps with.
+
+The fifth method assigns a point age estimates to the occurrence, which is sampled from a uniform distribution defined by the occurrence age range, and bins the occurrence.
+:::
+
+## Latitudinal occurrence binning {.smaller}
+
+Generate and bin latitudinal data:
+
+```{r lat-bin}
+#| collapse: true
+#| out-width: 50%
+#| fig-width: 8
+#| fig-align: center
+# Generate latitudinal bins
+bins <- lat_bins(size = 10, plot = TRUE)
+```
+
+```{r bin-lat}
+#| collapse: true
+# Use reef example data
+occdf <- reefs
+# Bin occurrences
+occdf <- bin_lat(occdf = occdf, bins = bins, lat = "lat")
+```
+
+::: notes
+As a community, we are often interested in latitudinal analyses, such as studying the latitudinal biodiversity gradient. palaeoverse provides functionality for generating latitudinal bins of a given size, and binning those occurrences into the respective bins.
+:::
+
+## Spatial occurrence binning {.smaller}
+
+Generate and bin spatial data:
+
+```{r bin-space}
+#| collapse: true
+#| out-width: 65%
+#| fig-width: 8
+#| fig-align: center
+# Get reef data
+occdf <- reefs[1:500, ]
+# Bin data using a hexagonal equal-area grid
+occdf <- bin_space(occdf = occdf, spacing = 250, return = TRUE)
+# Plot world and grid using ggplot2
+library(ggplot2)
+library(rnaturalearth)
+world <- ne_countries(scale = "small",returnclass = "sf")
+ggplot() +
+  geom_sf(data = world, colour = "black", fill = "lightgrey") + 
+  geom_sf(data = occdf$grid, fill = "orange", colour = "black") + 
+  theme_void()
+```
+
+::: notes
+Functionality is also provided to bin data spatially using a geospatial indexing system that partitions the world into equal-area hexagonal grid cells based on a given spacing between cells.
+:::
+
+## Palaeogeographic reconstruction {.smaller}
+
+Palaeorotate fossil occurrences (multiple models available):
+
+```{r palaeorotate}
+#| collapse: true
+# Example with a few occurrences
+occdf <- data.frame(lng = c(2, -103, -66),
+                    lat = c(46, 35, -7),
+                    age = c(88, 125, 200))
+
+# Estimate palaeocoordinates using the GPlates API
+ex1 <- palaeorotate(occdf = occdf, method = "point")
+
+# Estimate palaeocoordinates using reconstruction files
+ex2 <- palaeorotate(occdf = occdf, method = "grid")
+
+# Estimate palaeocoordinates and uncertainty using reconstruction files
+ex3 <- palaeorotate(occdf = occdf, method = "grid", uncertainty = TRUE)
+
+# Increase output width
+options(width = 400)
+# Get first few rows
+head(ex3)
+```
+
+::: notes
+In order to study the past distribution of taxa, the palaeogeographic position of fossil occurrences need to be reconstructed using plate rotation models. The palaeorotate function provides two methods to reconstruct palaeocoordinates for fossil occurrences. The first method, "point", uses the GPlates Web Service, which estimates palaeocoordinates for point data, with eight different models available. The second method, "grid", uses pre-generated reconstruction files to estimate palaeocoordinates. This approach is much faster than the point method for large datasets, and also allows easy exploration. Additional functionality for the second method allows the user to calculate the palaeogeographic uncertainty in reconstructions from across the eight available models with the palaeolatitudinal range and maximum circle distance between points calculated.
+:::
+
+## Taxonomic spell check {.smaller}
+
+Identify and count potential spelling variations of the same taxon:
+
+```{r tax-check1}
+#| code-fold: true
+#| collapse: true
+# load occurrence data
+data("tetrapods")
+# Check taxon names alphabetically
+ex1 <- tax_check(taxdf = tetrapods, name = "genus", dis = 0.05, verbose = FALSE)
+# Get first few rows
+head(ex1)
+```
+
+```{r tax-check2}
+#| code-fold: true
+#| collapse: true
+# Check taxon names by group
+ex2 <- tax_check(taxdf = tetrapods, name = "genus", group = "family", dis = 0.05, verbose = FALSE)
+# Get first few rows
+head(ex2)
+```
+
+In this example dataset:
+
+-   Dinosaurus belongs to the Phthinosuchidae
+-   Dvinosaurus belongs to the Dvinosauridae
+-   Varanops belongs to the Varanopidae
+-   Varanopus belongs to the Captorhinidae
+
+::: notes
+When working with large occurrence datasets, errors can easily creep into data. One frequently encountered issue is spelling variations of the same taxon name. This can have undesirable consequences when calculating metrics such as taxonomic richness. The tax check function computes character string distances between taxonomic names and returns those under a user-defined dissimilarity threshold. The function can also be used within groups such as here with family. As you can see this might be appropriate in some instances. While flagged taxonomic names can be similar in spelling, taxa can belong to different families.
+:::
+
+## Unique taxa {.smaller}
+
+Identifying unique taxa:
+
+```{r tax-unique}
+#| collapse: true
+# Create dataframe
+occdf <- data.frame(species = c("rex", "aegyptiacus", NA),
+                    genus = c("Tyrannosaurus", "Spinosaurus", NA),
+                    family = c("Tyrannosauridae", "Spinosauridae", "Diplodocidae"))
+# Retain unique taxa
+dinosaur_species <- tax_unique(occdf = occdf,
+                               species = "species",
+                               genus = "genus",
+                               family = "family",
+                               resolution = "species")
+head(dinosaur_species)
+```
+
+::: notes
+When calculating taxonomic richness, palaeobiologists routinely discard occurrences not identified to their desired taxonomic resolution. For example, if studying species richness, occurrences identified to genus level or above will be discarded. The tax unique function reduces the number of occurrences being discarded by retaining fossils identified to coarser taxonomic resolutions but must represent a clade not already in the filtered dataset. As you can see in this example, Diplodocidae is retained as it evidently represents a different species from those other occurrences as it belongs to a different family.
+:::
+
+## Temporal range {.smaller}
+
+Calculate and plot temporal range of taxa:
+
+```{r range-time}
+#| collapse: true
+#| out-width: 50%
+#| fig-width: 7
+#| fig-align: center
+# Grab tetrapod data
+occdf <- tetrapods
+# Remove NAs
+occdf <- subset(occdf, !is.na(order))
+# Temporal range
+ex <- tax_range_time(occdf = occdf, name = "order", plot = TRUE)
+```
+
+::: notes
+Two functions exist in palaeoverse for calculating taxon ranges. The first, tax range time, can be used to calculate and plot the temporal range of taxa.
+:::
+
+## Geographic range {.smaller}
+
+Four approaches to calculate geographic range of taxa:
+
+```{r range-geo}
+#| collapse: true
+# Grab internal data
+occdf <- tetrapods
+# Remove NAs
+occdf <- subset(occdf, !is.na(genus))
+# Convex hull
+ex1 <- tax_range_space(occdf = occdf, name = "genus", method = "con")
+# Latitudinal range
+ex2 <- tax_range_space(occdf = occdf, name = "genus", method = "lat")
+# Great Circle Distance
+ex3 <- tax_range_space(occdf = occdf, name = "genus", method = "gcd")
+# Occupied grid cells
+ex4 <- tax_range_space(occdf = occdf, name = "genus", method = "occ", spacing = 250)
+# See first few rows
+head(ex2)
+```
+
+::: notes
+The second, tax range space, calculates the geographic range of taxa. In tax range space, four different approaches are available for calculating geographic ranges: convex hull, latitudinal range, maximum great circle distance and the number of occupied equal-area grid cells.
+:::
+
+## Temporal pseudo-occurrences {.smaller}
+
+Convert range data to bin-level pseudo-occurrences:
+
+```{r expand-time}
+#| collapse: true
+# Generate example df
+taxdf <- data.frame(name = c("A", "B", "C"),
+                    max_age = c(150, 60, 30),
+                    min_age = c(110, 20, 0))
+# Generate pseudo-occurrences
+ex1 <- tax_expand_time(taxdf = taxdf, max_ma = "max_age", min_ma = "min_age")
+# Increase output width
+options(width = 200)
+# See first few rows
+head(ex1)
+```
+
+::: notes
+As complementary to the taxonomic range functions, two functions are provided for generating pseudo-occurrences from temporal and latitudinal range data. These pseudo-occurrences serve to fill in ghost ranges, in which a taxon is presumed to be present, but no record exists.
+:::
+
+## Latitudinal pseudo-occurrences {.smaller}
+
+Convert range data to bin-level pseudo-occurrences:
+
+```{r expand-lat}
+#| collapse: true
+# Generate latitudinal bins
+bins <- lat_bins()
+# Generate example df
+taxdf <- data.frame(name = c("A", "B", "C"),
+                    max_lat = c(60, 20, -10),
+                    min_lat = c(20, -40, -60))
+# Generate pseudo-occurrences
+ex1 <- tax_expand_lat(taxdf = taxdf, bins = bins)
+# See first few rows
+head(ex1)
+```
+
+## Phylogeny wrangling {.smaller}
+
+Compare a list of taxonomic names to tip names in a user-provided phylogeny:
+
+::: columns
+::: {.column width="40%"}
+```{r paleotree}
+#| collapse: true
+#| out-width: 100%
+#| fig-width: 6
+# Read in example tree of ceratopsians
+# from paleotree
+library(paleotree)
+data(RaiaCopesRule)
+# Set smaller margins for plotting
+par(mar = rep(0, 4))
+# Plot tree
+plot(ceratopsianTreeRaia)
+```
+:::
+
+::: {.column width="60%"}
+```{r phylo-check}
+#| collapse: true
+# Specify list of names
+dinosaurs <- c("Nasutoceratops_titusi", 
+               "Diabloceratops_eatoni",
+               "Zuniceratops_christopheri",
+               "Psittacosaurus_major")
+
+# Table of taxon names in list, tree or both
+ex1 <- phylo_check(tree = ceratopsianTreeRaia,
+                   list = dinosaurs)
+# Get first few rows
+head(ex1)
+```
+:::
+:::
+
+::: notes
+We don't currently have much functionality for working with phylogenies, but one function that several members of the team felt would be useful is the ability to compare a list of taxonomic names to tip names in a user-provided phylogeny. As you can, this is what the phylo_check function does. Further functionality allows the user to also trim a phylogeny based on the input list.
+:::
+
+## Interval linking {.smaller}
+
+Link and match interval names to the Geological Time Scale:
+
+```{r look-up}
+#| collapse: true
+## Link numeric age values
+# Create exemplary df
+occdf <- data.frame(name = c("A", "B", "C"),
+                    early_interval = c("Maastrichtian",
+                                       "Campanian",
+                                       "Sinemurian"),
+                    late_interval = c("Maastrichtian",
+                                      "Campanian",
+                                      "Bartonian"))
+# Assign stages and numerical ages
+occdf <- look_up(occdf)
+
+## Use exemplary int_key
+# Get internal reef data
+occdf <- reefs
+# Get internal interval key
+int_key <- interval_key
+# Assign stages and numerical ages
+occdf <- look_up(occdf,
+                early_interval = "interval",
+                late_interval = "interval",
+                int_key = int_key)
+```
+
+::: notes
+A common difficultly faced by palaeobiologists is that temporal information associated with fossil occurrences is often asynchronous, and not directly comparable. Temporal data might be provided as either character-based interval names or numeric ages, and might conform to different timescales. The look_up function is provided to help assign a common timescale. The function can be used to generate numeric ages from GTS interval names or an interval key can be provided by the user to link interval names to the Geological Time Scale. This interval key consist of three columns with the first containing the interval name followed by the early and late international stage the interval name correlates with. Interval key is provided an example dataset in palaeoverse.
+:::
+
+## Plotting {.smaller}
+
+Add Geological Time Scale to plots:
+
+```{r axis-geo}
+#| collapse: true
+#| out-width: 50%
+#| fig-width: 7
+#| fig-align: center
+# Plot data
+plot(x = 541:0,
+     xlab = "Time (Ma)", ylab = "User-variable",
+     xlim = c(541, 0), xaxt = "n", type = "l", lwd = 5)
+
+# Add Geological Time Scale
+axis_geo(side = 1, intervals = "periods")
+```
+
+::: notes
+A common request from our survey participants was the ability to add the Geological Time Scale to a base R plot. The axis_geo function in palaeoverse can be used to do just that.
+:::
+
+## Wrapper {.smaller}
+
+Run functions over groups of data:
+
+```{r wrapper}
+#| collapse: true
+# Get tetrapod data
+occdf <- tetrapods
+
+# Count number of occurrences from each country
+ex1 <- group_apply(occdf = occdf, group = "cc", fun = nrow)
+
+# Remove NA data
+occdf <- subset(occdf, !is.na(genus))
+
+# Unique genera per collection with group_apply and input arguments
+ex2 <- group_apply(occdf = occdf,
+                   group = c("collection_no"),
+                   fun = tax_unique,
+                   genus = "genus",
+                   family = "family",
+                   order = "order",
+                   class = "class",
+                   resolution = "genus")
+
+# Use multiple variables (number of occurrences per collection & formation)
+ex3 <- group_apply(occdf = occdf,
+                   group = c("collection_no", "formation"),
+                   fun = nrow)
+```
+
+::: notes
+As with most fields, we often want to analyse our data in groups. In palaeoverse, we provide the function group_apply as a wrapper function to run functions over groups of data. For example, if we want to calculate the number of occurrences per country in this example, or use the function tax unique per collection in this example. The group apply function also allows the user to run function over multiple grouping variables, for example in the third example we calculate the number of occurrences per unique collection and geological formation combination.
+:::
+
+# What's next? {.smaller}
+
+*Onwards and upwards* 🏔️*...*
+
+::: notes
+So, that's it on current functionality. I appreciate that was slapdash introduction to the package, but I thought it best to cover all the functions in the time I had rather than focus on a few. If you have any specific questions at the end I'd be happy to answer them and we also have quite thorough documentation for each of the functions. But for now, what's next? Onwards and upwards... we hope.
+:::
+
+## What's next? {.smaller}
+
+![](images/logo.png){.absolute top="50" right="50" height="50%"}
+
+::: fragment
+-   Palaeobiology CRAN Task View
+:::
+
+::: fragment
+-   Shiny App
+:::
+
+::: fragment
+-   Workshops and Hackathons
+:::
+
+::: fragment
+-   Further package development
+:::
+
+::: fragment
+-   Funding
+:::
+
+::: fragment
+-   Your involvement!
+:::
+
+::: notes
+We have quite a lot of plans going forward! The team is currently in the process of putting together a Palaeobiology CRAN Task view and has started development on a Shiny App for non-R users. We also plan to host a workshop and hackathon next September at UCL, funding depdendent. Which is something we are also actively working on now, securing funds to continue our work on this project and support its growth. Finally, we hope your involvement is what's next! If you have functions which you think would be useful for the broader palaeobiological community, please do consider submitting a pull request on the palaeoverse repository! We would also love to hear any feedback on the package you might have.
+:::
+
+## Thank-you / Merci / Gracias / Danke / Obrigado / Grazie / Ευχαριστώ {.smaller}
+
+![](images/logo.png){fig-align="center" height="150"}
+
+::: columns
+::: {.column width="50%"}
+-   **Website**: General information
+    -   <https://palaeoverse.org>
+-   **Twitter**: News and updates
+    -   [\@ThePalaeoverse](https://twitter.com/ThePalaeoverse)
+-   **Google Group**: A community space
+    -   <https://groups.google.com/g/palaeoverse>
+:::
+
+::: {.column width="50%"}
+-   **Point of contact**: General contact
+    -   [LewisAlan.Jones\@uvigo.es](mailto:LewisA.Jones@outlook.com)
+-   **Publication**: Open-access
+    -   <https://doi.org/10.1111/2041-210X.14099>
+:::
+:::
+
+::: notes
+All that is left to say is a big thank you from myself and the development team for listening. You can find general information about the palaeoverse R package on our website, and news and updates on the project on Twitter (providing Elon Musk doesn't burn it to the ground). We have also established a Google Group to serve as a community space, which we welcome you all to join. This group is setup to act as a space to share ideas and resources, advertise opportunities, and generally network with colleagues. And a final bit of self promotion, our pre-print on palaeoverse is now available on EarthArXiv, if you wish to check it out! Thank you for listening.
+:::

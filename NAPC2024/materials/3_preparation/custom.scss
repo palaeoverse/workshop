@@ -1,0 +1,17 @@
+/*-- scss:defaults --*/
+
+$body-bg: #fcfdfd;
+$body-color: #373E40;
+$link-color: #488286;
+$presentation-heading-color: #488286;
+$presentation-heading-font-weight: bold;
+
+/*-- scss:rules --*/
+
+.reveal .title {
+  font-size: 2em;
+}
+
+.reveal .h1 {
+  font-size: 1.5em;
+}

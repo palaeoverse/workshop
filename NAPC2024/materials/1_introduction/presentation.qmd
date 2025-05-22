@@ -1,0 +1,99 @@
+---
+title: | 
+  R for Palaeobiologists\
+subtitle: |
+  Getting started with the palaeoverse R package (and more!)\
+  \
+  ![](./images/NAPC.png){fig-align="center" height=250}\
+author: | 
+  [Lewis A. Jones](https://lewisajones.com), Universidade de Vigo
+  
+  ![](./images/uvigo.png){fig-align="center" height=80}
+affiliation: "Universidade de Vigo"
+execute:
+  echo: true
+  eval: true
+  freeze: true
+format: 
+  revealjs:
+    logo: "./images/logo.png"
+    footer: "[palaeoverse: A community-driven R package](https://palaeoverse.org)"
+    theme: [simple, custom.scss]
+    embed-resources: true
+    output-file: "presentation.html"
+---
+
+## Introductions
+
+::: {.columns .h4}
+::: {.column width="20%"}
+![Dr Lewis A. Jones <br> Universidade de Vigo, Spain](./images/team/Lewis.jpeg){width="100%"}
+
+![Dr Erin Dillon <br> Smithsonian Tropical Research Institute, Panama](./images/team/Erin.jpeg){width="100%"}
+:::
+
+::: {.column width="20%"}
+![Dr Christopher D. Dean <br> University College London, UK](./images/team/Chris.jpeg){width="100%"}
+
+![Dr William Gearty <br> American Museum of Natural History, USA](./images/team/Will.jpeg){width="100%"}
+:::
+
+::: {.column width="20%"}
+![Dr Bethany J. Allen <br> ETH Zürich, Switzerland](./images/team/Bethany.jpeg){width="100%"}
+:::
+
+::: {.column width="40%"}
+![](./images/logo.png){width="100%"}
+:::
+:::
+
+## Orientation
+
+::: columns
+::: {.column width="50%"}
+![](./images/exit.jpg){width="100%"}
+:::
+
+::: {.column width="50%"}
+![](./images/restroom.jpg){width="100%"}
+:::
+:::
+
+## Schedule
+
+::: {.columns .h3}
+::: {.column width="20%"}
+:::
+
+::: {.column width="70%"}
+| Time      | Event                                             |
+|-----------|---------------------------------------------------|
+| **08:00** | **Welcome and Introduction to Palaeoverse**       |
+| **08:15** | **Theory: Data acquisition/cleaning**             |
+| **08:30** | **Practical: Data acquisition/cleaning**          |
+| **09:00** | **Theory: Data preparation with palaeoverse**     |
+| **09:15** | **Practical: Data preparation with palaeoverse**  |
+| **09:45** | **Break** ☕                                      |
+| **10:00** | **Theory: Introduction to Data visualisation**    |
+| **10:15** | **Practical: Introduction to Data visualisation** |
+| **10:45** | **Independent practice time**                     |
+| **11:30** | **Resources**                                     |
+| **11:50** | **Questions & Wrap-up**                           |
+:::
+:::
+
+## Resources
+
+<https://workshop.palaeoverse.org>
+
+## What is palaeoverse?
+
+![](./images/issue_cover.jpg)
+
+## Introductions
+
+-   Name
+-   Institution
+-   Career stage
+-   Research interests
+-   What are you hoping to learn today?
