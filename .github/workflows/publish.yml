@@ -49,6 +49,8 @@ jobs:
 
       - name: Install packages (needed for tutorials)
         run: |
+          install.packages("pak", repos = "https://r-lib.github.io/p/pak/dev/")
+          options(renv.config.pak.enabled = TRUE)
           renv::install(unique(renv::dependencies()$Package))
         shell: Rscript {0}
 
