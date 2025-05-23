@@ -2,3 +2,9 @@
 .navbar-logo {
   max-height: 45px;
 }
+
+.slide-deck {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 1em;
+}

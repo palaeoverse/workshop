@@ -1,10 +1,759 @@
 [
   {
-    "objectID": "test1/index.html",
-    "href": "test1/index.html",
-    "title": "this is test1",
+    "objectID": "NAPC2024/conduct.html",
+    "href": "NAPC2024/conduct.html",
+    "title": "Code of Conduct",
     "section": "",
-    "text": "this is test1"
+    "text": "As with any community project, society, meeting, or event we feel it is important to established some expectations of behaviour.\nWe as members, contributors, and leaders pledge to make participation in this event a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/conduct.html#our-pledge",
+    "href": "NAPC2024/conduct.html#our-pledge",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "As with any community project, society, meeting, or event we feel it is important to established some expectations of behaviour.\nWe as members, contributors, and leaders pledge to make participation in this event a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/conduct.html#our-standards",
+    "href": "NAPC2024/conduct.html#our-standards",
+    "title": "Code of Conduct",
+    "section": "Our Standards",
+    "text": "Our Standards\n\nExamples of behavior that contributes to a positive environment for our community include:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nExamples of unacceptable behavior include:\n\nThe use of sexualized language or imagery, and sexual attention or advances of any kind\nTrolling, insulting or derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or email address, without their explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/conduct.html#enforcement-responsibilities",
+    "href": "NAPC2024/conduct.html#enforcement-responsibilities",
+    "title": "Code of Conduct",
+    "section": "Enforcement Responsibilities",
+    "text": "Enforcement Responsibilities\n\nCommunity leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.\nCommunity leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/conduct.html#scope",
+    "href": "NAPC2024/conduct.html#scope",
+    "title": "Code of Conduct",
+    "section": "Scope",
+    "text": "Scope\n\nThis Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/conduct.html#enforcement",
+    "href": "NAPC2024/conduct.html#enforcement",
+    "title": "Code of Conduct",
+    "section": "Enforcement",
+    "text": "Enforcement\n\nInstances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement: Lewis A. Jones and Bethany Allen. All complaints will be reviewed and investigated promptly and fairly.\nAll community leaders are obligated to respect the privacy and security of the reporter of any incident.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/conduct.html#enforcement-guidelines",
+    "href": "NAPC2024/conduct.html#enforcement-guidelines",
+    "title": "Code of Conduct",
+    "section": "Enforcement Guidelines",
+    "text": "Enforcement Guidelines\n\nCommunity leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:\n\n1. Correction\nCommunity Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.\nConsequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.\n\n\n2. Warning\nCommunity Impact: A violation through a single incident or series of actions.\nConsequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.\n\n\n3. Temporary Ban\nCommunity Impact: A serious violation of community standards, including sustained inappropriate behavior.\nConsequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.\n\n\n4. Permanent Ban\nCommunity Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.\nConsequence: A permanent ban from any sort of public interaction within the community.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/conduct.html#attribution",
+    "href": "NAPC2024/conduct.html#attribution",
+    "title": "Code of Conduct",
+    "section": "Attribution",
+    "text": "Attribution\n\nThis Code of Conduct is adapted from the Contributor Covenant.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/schedule.html",
+    "href": "NAPC2024/schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Time\nEvent\n\n\n\n\n08:00\nWelcome and Introduction to Palaeoverse\n\n\n08:15\nTheory: Data acquisition/cleaning\n\n\n08:30\nPractical: Data acquisition/cleaning\n\n\n09:00\nTheory: Data preparation with palaeoverse\n\n\n09:15\nPractical: Data preparation with palaeoverse\n\n\n09:45\nBreak ☕\n\n\n10:00\nTheory: Introduction to Data visualisation\n\n\n10:15\nPractical: Introduction to Data visualisation\n\n\n10:45\nIndependent practice time\n\n\n11:30\nResources\n\n\n11:50\nQuestions & Wrap-up",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-spatial.html",
+    "href": "NAPC2024/materials/4_visualization/practical-spatial.html",
+    "title": "Spatial Data Visualization Practical",
+    "section": "",
+    "text": "In this practical we’ll be visualizing spatial data. First, let’s load some packages that we’ve learned about from the previous practicals:\nlibrary(palaeoverse)\nlibrary(ggplot2)\nlibrary(deeptime)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "Spatial Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-spatial.html#projections",
+    "href": "NAPC2024/materials/4_visualization/practical-spatial.html#projections",
+    "title": "Spatial Data Visualization Practical",
+    "section": "Projections",
+    "text": "Projections\nWhen you plot latitude and longitude as y and x coordinates, respectively, this is called the geographical projection. However, this is a heavily distorted view of the Earth. Here, we’ll learn how to plot our spatial graphs in with a more appropriate projection (or “coordinate system”). Documentation for many different projections is available on the EPSG website. In this example, we’ll use the Robinson projection (i.e., “ESRI:54030”). Note that this projection still isn’t perfect. For example, distortion close to the poles is severe. However, due to the curvature of the meridians, distortion declines to moderate levels moving away from the poles. In order to change the overall projection of your ggplot plot, you simply use the coord_sf() function. Since the plot is no longer a rectangle, we also make our own bounding box to place on top of the plot.\n\n# Set up a bounding box\nbbox &lt;- st_graticule(crs = st_crs(\"ESRI:54030\"),\n                     lat = c(-89.9, 89.9), lon = c(-179.9, 179.9))\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = tetrapods_sf, aes(color = period), shape = 3) +\n  geom_sf(data = bbox) +\n  coord_sf(crs = st_crs(\"ESRI:54030\")) +\n  scale_color_geo(name = \"Period\", dat = \"periods\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nBoth visually appealing and more geographically accurate, nice! Let’s use this projection (and bounding box) for most of our future spatial plots.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "Spatial Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-spatial.html#organismal-silhouettes",
+    "href": "NAPC2024/materials/4_visualization/practical-spatial.html#organismal-silhouettes",
+    "title": "Spatial Data Visualization Practical",
+    "section": "Organismal silhouettes",
+    "text": "Organismal silhouettes\nWe could also color the points based on taxonomy. For example, here they are colored by the Class of the fossil occurrence:\n\nggplot() +\n  geom_sf(data = world) +\n  geom_sf(data = tetrapods_sf, aes(color = class)) +\n  geom_sf(data = bbox) +\n  coord_sf(crs = st_crs(\"ESRI:54030\")) +\n  scale_color_manual(values = c(\"black\", \"royalblue3\", \"seagreen1\"),\n                     name = \"Class\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nThat looks nice! However, one concern might be that people don’t know what those taxonomic names refer to. Instead (or in addition to the taxonomy), we could use organism silhouettes for the points using the rphylopic package. Note that this might take a while to render because of all of the individual silhouettes.\n\nlibrary(rphylopic)\n\n# Remove duplicates\ntetrapods_unique &lt;- unique(tetrapods[, c(\"class\", \"lat\", \"lng\")])\n\nggplot() +\n  geom_sf(data = world) +\n  geom_phylopic(data = tetrapods_unique,\n                aes(x = lng, y = lat, name = class, color = class),\n                size = 4E5, alpha = 0.75, show.legend = TRUE,\n                key_glyph = phylopic_key_glyph(name = c(\"Osteichthyes\",\n                                                        \"Reptilia\",\n                                                        \"Saurischia\"))) +\n  geom_sf(data = bbox) +\n  coord_sf(crs = st_crs(\"ESRI:54030\"), default_crs = st_crs(4326)) +\n  scale_color_manual(name = \"Class\",\n                     values = c(\"black\", \"royalblue3\", \"seagreen1\"),\n                     guide = guide_legend(override.aes = list(size = 1,\n                                                              alpha = 1))) +\n  theme_void()\n\n\n\n\n\n\n\n\nWell, in hindsight this might not be much better with all of the overlap…I’ll leave it to you to decide how to best display this information.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "Spatial Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-spatial.html#spatial-summaries",
+    "href": "NAPC2024/materials/4_visualization/practical-spatial.html#spatial-summaries",
+    "title": "Spatial Data Visualization Practical",
+    "section": "Spatial summaries",
+    "text": "Spatial summaries\nThere are also lots of functions available in the sf package to perform spatial summaries. Let’s go ahead and calculate the number of fossil occurrences in this dataset that have been found within each country across the world. First we find the intersection of the two spatial objects (st_intersection()), which identifies which country each occurrence is in. Then we tabulate the number of occurrences per country (table()). Then we can go ahead and plot the results as a bar plot.\n\nsf_use_s2(FALSE)\n# It takes a little of time\nfos_over_country &lt;- st_intersection(x = world, y = tetrapods_sf)\nfos_per_country &lt;- as.data.frame(sort(table(fos_over_country$sovereignt)))\nhead(fos_per_country)\n\n        Var1 Freq\n1      Chile    1\n2   Ethiopia    1\n3      Japan    1\n4 Mozambique    1\n5   Pakistan    1\n6    Somalia    1\n\n# Plot with ggplot\nggplot(fos_per_country, aes(x = Freq, y = Var1)) +\n  geom_col() +\n  scale_x_continuous(name = \"# of Occurrences\") +\n  scale_y_discrete(name = NULL) +\n  theme_classic()\n\n\n\n\n\n\n\n\nThe cool thing about spatial plots with ggplot2 is that you can use other aesthetics like color, fill, etc. just like you would with other types of plots. Let’s go ahead and combine our occurrence counts with our country spatial data, then plot the counts as the fill color of the countries.\n\n# Combine the fossil counts with the `world` spatial data\nworld$n_fossils &lt;- fos_per_country$Freq[match(world$sovereignt, fos_per_country$Var1)]\n\n# Fill in the countries just like you would in any other plot\nggplot() +\n  geom_sf(data = world, aes(fill = n_fossils)) +\n  geom_sf(data = bbox) +\n  coord_sf(crs = st_crs(\"ESRI:54030\")) +\n  scale_fill_viridis_c(name = \"# of Fossil\\nOccurrences\") +\n  theme_classic()",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "Spatial Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/index.html",
+    "href": "NAPC2024/materials/4_visualization/index.html",
+    "title": "Data visualization",
+    "section": "",
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/index.html#summary",
+    "href": "NAPC2024/materials/4_visualization/index.html#summary",
+    "title": "Data visualization",
+    "section": "",
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as color and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting spatial data.\nThis session is led by William Gearty. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/index.html#resources",
+    "href": "NAPC2024/materials/4_visualization/index.html#resources",
+    "title": "Data visualization",
+    "section": "Resources",
+    "text": "Resources\n\nPresentation\nggplot2 Tutorial (html) | ggplot2 Tutorial (qmd)\nSpatial Tutorial (html) | Spatial Tutorial (qmd)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/5_resources/index.html",
+    "href": "NAPC2024/materials/5_resources/index.html",
+    "title": "Resources",
+    "section": "",
+    "text": "This unit of the workshop introduces a variety of resources that are of relevance to palaeobiological analyses and palaeontologists more broadly. The slides for the unit are available here and provide an overview to these commonly used resources, along with links to relevant websites and other content. This acts as both a summary of the resources mentioned in the other Units, as well as including additional resources which may be of interest.\nThis session is led by Christopher Dean and Erin Dillon. If you encounter any issues while working with these resources, please contact either Chris or Erin. Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please add them to the growing Palaeoverse resources database here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/5_resources/index.html#summary",
+    "href": "NAPC2024/materials/5_resources/index.html#summary",
+    "title": "Resources",
+    "section": "",
+    "text": "This unit of the workshop introduces a variety of resources that are of relevance to palaeobiological analyses and palaeontologists more broadly. The slides for the unit are available here and provide an overview to these commonly used resources, along with links to relevant websites and other content. This acts as both a summary of the resources mentioned in the other Units, as well as including additional resources which may be of interest.\nThis session is led by Christopher Dean and Erin Dillon. If you encounter any issues while working with these resources, please contact either Chris or Erin. Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please add them to the growing Palaeoverse resources database here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/5_resources/index.html#resources",
+    "href": "NAPC2024/materials/5_resources/index.html#resources",
+    "title": "Resources",
+    "section": "Resources",
+    "text": "Resources\n\nWorkshop Slides\nPresentation\n\n\nData Acquisition\nThese resources cover the acquisition of data for palaeontological analyses, including occurrence datasets as well as covariate and other associated data.\n\nOccurrence Databases\n\nPaleobiology Database: A public database of paleontological occurrence data gathered from the published record, maintained by an international non-governmental group of paleontologists.\nGeobiodiversity database: An integrated system for the management and analysis of stratigraphic and paleontological information, mostly covering China.\nNeotoma: A database of fossil occurrences and other associated data primarily covering the Pliocene-Quaternary.\nGBIF: An international network and data infrastructure funded by the world’s governments and aimed at providing open access to data about a variety of life on Earth.\niDigBio: Data and images for millions of biological specimens, curated, connected and made available in electronic format for the biological research community.\nNeptune: A relational database of microfossil occurrence records from DSDP and ODP publications.\nBioDeepTime: A database of biodiversity time series for modern and fossil assemblages.\nPhylacine: The Phylogenetic Atlas of Mammal Macroecology which provides phylogenies, range maps, trait data, and threat status for all 5,831 known mammal species that lived since the last interglacial (~130,000 years ago until present).\nPARED: Data for Phanerozoic reefs in a standardised format, with geological, geographic and paleontological information for each reef.\n\n\n\n3D Databases\n\nDigiMorph: A dynamic archive of information on digital morphology and high-resolution X-ray computed tomography of biological specimens.\nMorphobank: Provides data related to phenotypes as well as peer reviewed morphological matrices.\nPhenome10k: Provides 3D scans, both CT and surface, of biological and palaeontological specimens.\nMorphosource: A 3D data repository for physical object important to natural histyory, cultural heritage and scientific collections.\nDigital Atlas of Ancient Life: Contains online fieldguides to fossils from particular times and regions, but also a virtual collection of 3D photogrammetry models of fossil and modern specimens from museum collections.\n\n\n\nTrait Databases\n\nOpen Traits Network: A global community of researchers/institutions, which provide links to a variety of open source trait databases.\nCoral Trait Database: A compilation of scleractinian coral life history trait, phylogenetic and biogeographic data.\n\n\n\nCovariate Datasets\n\nMacrostrat: A platform for the aggregation and distribution of geological data relevant to the spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks as well as data extracted from them.\nUSGS Geological Maps of North America: Digital geologic maps of the US states with consistent lithology, age, GIS database structure, and format.\nMindat: The world’s largest open database of minerals, rocks, meteorites and the localities they come from.\nWorldClim: Maps, graphs, tables, and data of the global climate.\nESA WorldCover: A freely accessible global land cover product at 10 m resolution for 2020 based on both Sentinel-1 and Sentinel-2 dat.\nDigital Elevation Maps: Global 1-km digital elevation raster data derived from a variety of sources.\nGlobal Maximum Green Vegetation Fraction: A MODIS-Based Global 1-km Maximum Green Vegetation Fraction dataset.\nDeep Time Maps: Global and regional paleogeographic maps for different times in Earth history.\nPaleomap Project: Global paleogeographic maps for different times in Earth history.\n\n\n\nAdditional Lists of Databases\n\nExamples of databases and online data portals used in paleo research (Table 1): Examples of databases and online data portals used for paleobiological and (paleo)ecological research, along with their primary temporal, spatial, and taxonomic scope.\nPAGES working group databases: Databases and metadatabases compiled by PAGES Working Groups.\n\n\n\n\nData Preparation\nThese resources cover the preparation of data for palaeontological analyses, including data cleaning, organisation and transformation.\n\nGeneral Resources\n\nData cleaning: A quick intro to data cleaning in data science.\nTidy data: A 1-hour lecture on setting up data for reproducible research.\n\n\n\nExamples of Packages for Data Cleaning and Preparation\n\nPalaeoverse: A community driven R package to support paleobiological data preparation and analysis.\njanitor: A package to clean and reformat columns names and explore duplicate records.\nData.validator: A package to make reports on where data doesn’t fit a set of predetermined criteria.\nCoordinateCleaner: Automated flagging of common spatial and temporal errors in biological and paleontological collection data.\nFossilbrush: Automated detection and resolution of anomalies in paleontological occurrence datasets.\nAlso check out this list of generally useful R packages here (Table 2)\n\n\n\n\nData Visualisation\nThese resources cover the various ways in which data can be visualised, from theoretical, practical and ethical angles.\n\nGeneral Resources\n\nBest Practices for Data Visualisation (Royal Society Guide):\nR Graph Gallery: A collection of charts made with the R programming language, and guides on making these plots.\nPlotly: A library for making publication-quality graphs in R.\nCOBLIS (Colour Blindness Simulator): A service to test what images look like to those with colourblindness.\nColorhunt: Color palettes for designers and artists.\nInkscape (vector graphics): A free and open-source vector graphics editor.\nGIMP (raster graphics): A free and open-source raster graphics editor used for image manipulation and image editing.\n\n\n\nExamples of Packages for Data Visualisation\n\nggplot2: A commonly used package for making plots in R.\nLattice: An alternate graphics package for R, specialising in visualising multivariate data.\ndeeptime: A package to add customisable geological timescales to plots in R.\n\n\n\n\nGeneral Palaeontology Resources\n\nPalaeoverse: An initiative which aims to bring the palaeobiology community together to share resources, reach agreed standards, and improve reproducibility in palaeobiological research.\nPalaeoverse Google Group: A Google group where users can ask questions about the functionality of the palaeoverse R package, post job listings, discuss papers and more.\nPalaeoverse Resources Database: A Google sheet of various resources related to paleobiology. Feel free to add your own suggestions!\nPaleonet: A system of listservers, WWW pages, and ftp sites designed to enhance electronic communication among palaeontologists.\n\n\nAssociations and Networks\n\nPaleontological Society: A US based society for advancing knowledge and understanding of paleontology and life’s evolution through research, education, and advocacy.\nPalaeontological Association: A UK based registered charity to promote the study of palaeontology through academic journals, fieldtrips/guides, newsletters, grants and awards.\nPAGES (Past Global Changes) Network: An international effort to coordinate and promote past global change research.\nConservation Paleobiology Network: A network aiming to transform conservation paleobiology into an applied science that informs conservation and restoration efforts.\nEarth Science Women’s Network: A grassroots, member-driven organization, dedicated to moving the geosciences forward.\nPaleoSynthesis Project: A project aiming to strengthen paleontology through building a long-term research vision for scientific cooperation.\n\n\n\nWorkshops and Courses\n\nAnalytical Paleobiology Workshop: A three week workshop run once a year to introduce graduate students to a range of analytical methods that are foundational to or at the cutting edge of paleobiological research.\nPhysalia Courses: Provide scientific training courses and Workshops in Bioinformatics, Genomics, and related fields.\nPaleoCAMP: A summer school for graduate student providing paleoclimate training in climate archives, models, and proxies.\nTransmitting Science Workshops: Organise courses and peer-to-peer events that support the exchange of scientific skills, methods, and advances in the fields of life and earth sciences.\n\n\n\n\nGeneral Programming Resources\n\nCRAN Taskviews: Provide guidance which packages on CRAN are relevant for tasks related to a certain topic. A paleontology specific taskview is currently being put together by the Palaeoverse team.\nPosit Cheatsheets: Cheatsheets for popular R packages.\n\n\n\nFree R Books\n\nHands-On Programming with R: An overview of R as a programming language, to guide complete beginners\nAn Introduction to R: A broad introduction to the R environment\nR for Data Science: General overview of how to carry out data analysis using R\nR Packages: A complete guide to making R packages.\nCookbook for R: A quick start guide for solving specific issues in R.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/1_introduction/presentation.html#introductions",
+    "href": "NAPC2024/materials/1_introduction/presentation.html#introductions",
+    "title": "R for Palaeobiologists",
+    "section": "Introductions",
+    "text": "Introductions\n\n\n\n\n\nDr Lewis A. Jones  Universidade de Vigo, Spain\n\n\n\n\n\nDr Erin Dillon  Smithsonian Tropical Research Institute, Panama\n\n\n\n\n\n\nDr Christopher D. Dean  University College London, UK\n\n\n\n\n\nDr William Gearty  American Museum of Natural History, USA\n\n\n\n\n\n\nDr Bethany J. Allen  ETH Zürich, Switzerland",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Introduction",
+      "R for Palaeobiologists"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/1_introduction/presentation.html#orientation",
+    "href": "NAPC2024/materials/1_introduction/presentation.html#orientation",
+    "title": "R for Palaeobiologists",
+    "section": "Orientation",
+    "text": "Orientation",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Introduction",
+      "R for Palaeobiologists"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/1_introduction/presentation.html#schedule",
+    "href": "NAPC2024/materials/1_introduction/presentation.html#schedule",
+    "title": "R for Palaeobiologists",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\n\n\n\n\nTime\nEvent\n\n\n\n\n08:00\nWelcome and Introduction to Palaeoverse\n\n\n08:15\nTheory: Data acquisition/cleaning\n\n\n08:30\nPractical: Data acquisition/cleaning\n\n\n09:00\nTheory: Data preparation with palaeoverse\n\n\n09:15\nPractical: Data preparation with palaeoverse\n\n\n09:45\nBreak ☕\n\n\n10:00\nTheory: Introduction to Data visualisation\n\n\n10:15\nPractical: Introduction to Data visualisation\n\n\n10:45\nIndependent practice time\n\n\n11:30\nResources\n\n\n11:50\nQuestions & Wrap-up",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Introduction",
+      "R for Palaeobiologists"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/1_introduction/presentation.html#resources",
+    "href": "NAPC2024/materials/1_introduction/presentation.html#resources",
+    "title": "R for Palaeobiologists",
+    "section": "Resources",
+    "text": "Resources\nhttps://workshop.palaeoverse.org",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Introduction",
+      "R for Palaeobiologists"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/1_introduction/presentation.html#what-is-palaeoverse",
+    "href": "NAPC2024/materials/1_introduction/presentation.html#what-is-palaeoverse",
+    "title": "R for Palaeobiologists",
+    "section": "What is palaeoverse?",
+    "text": "What is palaeoverse?",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Introduction",
+      "R for Palaeobiologists"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/1_introduction/presentation.html#introductions-1",
+    "href": "NAPC2024/materials/1_introduction/presentation.html#introductions-1",
+    "title": "R for Palaeobiologists",
+    "section": "Introductions",
+    "text": "Introductions\n\nName\nInstitution\nCareer stage\nResearch interests\nWhat are you hoping to learn today?",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Introduction",
+      "R for Palaeobiologists"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/6_practice/tetrapod-biodiversity.html",
+    "href": "NAPC2024/materials/6_practice/tetrapod-biodiversity.html",
+    "title": "Alpha diversity and geographic range size of Carboniferous and Permian tetrapods",
+    "section": "",
+    "text": "palaeoverse is an R package developed by palaeobiologists, for palaeobiologists. The aim of the package is to generate a community-driven toolkit of generic functions for the palaeobiological community. The package does not provide implementations of statistical analyses, rather it provides auxiliary functions to help streamline analyses and improve code readability and reproducibility. This vignette (or tutorial if you prefer) is provided to guide you through the installation process and some of the functionality available within palaeoverse. To do so, we will focus on a usage example looking at various trends in tetrapods across the Carboniferous/Permian boundary.\n\n\nThe palaeoverse package can be installed via CRAN or its dedicated GitHub repository if the development version is preferred. To install via the CRAN, simply use:\n\ninstall.packages(\"palaeoverse\")\n\nTo install the development version, first install the devtools package, and then use install_github to install palaeoverse directly from GitHub.\n\ninstall.packages(\"devtools\")\ndevtools::install_github(\"palaeoverse/palaeoverse\")\n\nYou can now load palaeoverse using the default library function:\n\nlibrary(palaeoverse)\n\nBefore we get onto the good stuff, the development team has a small request. If you use palaeoverse in your research, please cite the associated publication. This will help us to continue our work in supporting you to do yours. You can access the appropriate citation via:\n\ncitation(\"palaeoverse\")\n\nTo cite palaeoverse in publications, use the following citation:\n\n  Jones, L.A., Gearty, W., Allen, B.J., Eichenseer, K., Dean, C.D.,\n  Galván S., Kouvari, M., Godoy, P.L., Nicholl, C.S.C., Dillon, E.M.,\n  Flannery-Sutherland, J.T., Chiarenza, A.A. 2023. palaeoverse: A\n  community-driven R package to support palaeobiological analysis.\n  Methods in Ecology and Evolution. 14(9), 2205--2215. doi:\n  10.1111/2041-210X.14099\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {palaeoverse: A community-driven R package to support palaeobiological analysis},\n    author = {Lewis A. Jones and William Gearty and Bethany J. Allen and Kilian Eichenseer and Christopher D. Dean and Sofía Galván and Miranta Kouvari and Pedro L. Godoy and Cecily S. C. Nicholl and Lucas Buffan and Erin M. Dillon and Joseph T. Flannery-Sutherland and Alfio Alessandro Chiarenza},\n    year = {2023},\n    journal = {Methods in Ecology and Evolution},\n    volume = {14(9)},\n    pages = {2205--2215},\n    doi = {10.1111/2041-210X.14099},\n  }\n\n\n\n\n\nThe Carboniferous and early Permian have been regarded as critical intervals for early four-limbed vertebrates, in terms of both diversification and biogeography. During this time several major groups of tetrapods emerged (including crown amniotes), and the extensive tropical rainforests of the Carboniferous gave way to dryland vegetation during the Permian, in what’s known as the ‘Carboniferous Rainforest Collapse’ (CRC) (for more information, see Dunne et al., 2018).\nIn this vignette we’ll use the tetrapods dataset to demonstrate how to use palaeoverse functions to examine how alpha diversity and range size vary across this interval.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Independent practice",
+      "Alpha diversity and geographic range size of Carboniferous and Permian tetrapods"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/6_practice/tetrapod-biodiversity.html#installation",
+    "href": "NAPC2024/materials/6_practice/tetrapod-biodiversity.html#installation",
+    "title": "Alpha diversity and geographic range size of Carboniferous and Permian tetrapods",
+    "section": "",
+    "text": "The palaeoverse package can be installed via CRAN or its dedicated GitHub repository if the development version is preferred. To install via the CRAN, simply use:\n\ninstall.packages(\"palaeoverse\")\n\nTo install the development version, first install the devtools package, and then use install_github to install palaeoverse directly from GitHub.\n\ninstall.packages(\"devtools\")\ndevtools::install_github(\"palaeoverse/palaeoverse\")\n\nYou can now load palaeoverse using the default library function:\n\nlibrary(palaeoverse)\n\nBefore we get onto the good stuff, the development team has a small request. If you use palaeoverse in your research, please cite the associated publication. This will help us to continue our work in supporting you to do yours. You can access the appropriate citation via:\n\ncitation(\"palaeoverse\")\n\nTo cite palaeoverse in publications, use the following citation:\n\n  Jones, L.A., Gearty, W., Allen, B.J., Eichenseer, K., Dean, C.D.,\n  Galván S., Kouvari, M., Godoy, P.L., Nicholl, C.S.C., Dillon, E.M.,\n  Flannery-Sutherland, J.T., Chiarenza, A.A. 2023. palaeoverse: A\n  community-driven R package to support palaeobiological analysis.\n  Methods in Ecology and Evolution. 14(9), 2205--2215. doi:\n  10.1111/2041-210X.14099\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {palaeoverse: A community-driven R package to support palaeobiological analysis},\n    author = {Lewis A. Jones and William Gearty and Bethany J. Allen and Kilian Eichenseer and Christopher D. Dean and Sofía Galván and Miranta Kouvari and Pedro L. Godoy and Cecily S. C. Nicholl and Lucas Buffan and Erin M. Dillon and Joseph T. Flannery-Sutherland and Alfio Alessandro Chiarenza},\n    year = {2023},\n    journal = {Methods in Ecology and Evolution},\n    volume = {14(9)},\n    pages = {2205--2215},\n    doi = {10.1111/2041-210X.14099},\n  }",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Independent practice",
+      "Alpha diversity and geographic range size of Carboniferous and Permian tetrapods"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/6_practice/tetrapod-biodiversity.html#now-that-thats-out-of-the-way-lets-begin",
+    "href": "NAPC2024/materials/6_practice/tetrapod-biodiversity.html#now-that-thats-out-of-the-way-lets-begin",
+    "title": "Alpha diversity and geographic range size of Carboniferous and Permian tetrapods",
+    "section": "",
+    "text": "The Carboniferous and early Permian have been regarded as critical intervals for early four-limbed vertebrates, in terms of both diversification and biogeography. During this time several major groups of tetrapods emerged (including crown amniotes), and the extensive tropical rainforests of the Carboniferous gave way to dryland vegetation during the Permian, in what’s known as the ‘Carboniferous Rainforest Collapse’ (CRC) (for more information, see Dunne et al., 2018).\nIn this vignette we’ll use the tetrapods dataset to demonstrate how to use palaeoverse functions to examine how alpha diversity and range size vary across this interval.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Independent practice",
+      "Alpha diversity and geographic range size of Carboniferous and Permian tetrapods"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/phanerozoic-reefs.html",
+    "href": "NAPC2024/materials/3_preparation/phanerozoic-reefs.html",
+    "title": "Latitudinal trends in Phanerozoic reefs",
+    "section": "",
+    "text": "palaeoverse is an R package developed by palaeobiologists, for palaeobiologists. The aim of the package is to generate a community-driven toolkit of generic functions for the palaeobiological community. The package does not provide implementations of statistical analyses, rather it provides auxiliary functions to help streamline analyses and improve code readability and reproducibility. This tutorial is provided to guide you through the installation process and some of the functionality available within palaeoverse. To do so, we will focus on a usage example looking at latitudinal trends in Phanerozoic reefs.\n\n\nThe palaeoverse package can be installed via CRAN or its dedicated GitHub repository if the development version is preferred. To install via the CRAN, simply use:\n\ninstall.packages(\"palaeoverse\")\n\nTo install the development version, first install the devtools package, and then use install_github to install palaeoverse directly from GitHub.\n\ninstall.packages(\"devtools\")\ndevtools::install_github(\"palaeoverse/palaeoverse\")\n\nYou can now load palaeoverse using the default library function:\n\nlibrary(palaeoverse)\n\nBefore we get onto the good stuff, the development team has a small request. If you use palaeoverse in your research, please cite the associated publication. This will help us to continue our work in supporting you to do yours. You can access the appropriate citation via:\n\ncitation(\"palaeoverse\")\n\nTo cite palaeoverse in publications, use the following citation:\n\n  Jones, L.A., Gearty, W., Allen, B.J., Eichenseer, K., Dean, C.D.,\n  Galván S., Kouvari, M., Godoy, P.L., Nicholl, C.S.C., Dillon, E.M.,\n  Flannery-Sutherland, J.T., Chiarenza, A.A. 2023. palaeoverse: A\n  community-driven R package to support palaeobiological analysis.\n  Methods in Ecology and Evolution. 14(9), 2205--2215. doi:\n  10.1111/2041-210X.14099\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {palaeoverse: A community-driven R package to support palaeobiological analysis},\n    author = {Lewis A. Jones and William Gearty and Bethany J. Allen and Kilian Eichenseer and Christopher D. Dean and Sofía Galván and Miranta Kouvari and Pedro L. Godoy and Cecily S. C. Nicholl and Lucas Buffan and Erin M. Dillon and Joseph T. Flannery-Sutherland and Alfio Alessandro Chiarenza},\n    year = {2023},\n    journal = {Methods in Ecology and Evolution},\n    volume = {14(9)},\n    pages = {2205--2215},\n    doi = {10.1111/2041-210X.14099},\n  }\n\n\n\n\n\nFunctions in palaeoverse are designed around the assumption that most users’ data are stored in an occurrence data.frame. As such, this is the expected input data format for most functions. We provide two example occurrence datasets (tetrapods and reefs) within the package from different data sources. In this vignette, we will focus on the reefs dataset which is a compilation of Phanerozoic reef occurrences (n = 4,363) from the PaleoReefs Database (Kiessling & Krause, 2022).\n\n# Load the dataset\ndata(reefs)\n# View the first five rows & columns of reefs\nreefs[1:5, 1:5]\n\n  r_number               name             formation   system         series\n1        1   Tilkideligi Tepe                       Triassic Upper Triassic\n2        2              Hydra Pantokrator Limestone Triassic Upper Triassic\n3        3 Shiraho, W-Pacific                        Neogene       Holocene\n4        4 Aksu-Terziler area                       Triassic Upper Triassic\n5        5    Adnet, Salzburg                       Triassic Upper Triassic\n\n\nNote the structure of the dataset. Each row contains a unique occurrence and each column contains a unique variable.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Latitudinal trends in Phanerozoic reefs"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/phanerozoic-reefs.html#installation",
+    "href": "NAPC2024/materials/3_preparation/phanerozoic-reefs.html#installation",
+    "title": "Latitudinal trends in Phanerozoic reefs",
+    "section": "",
+    "text": "The palaeoverse package can be installed via CRAN or its dedicated GitHub repository if the development version is preferred. To install via the CRAN, simply use:\n\ninstall.packages(\"palaeoverse\")\n\nTo install the development version, first install the devtools package, and then use install_github to install palaeoverse directly from GitHub.\n\ninstall.packages(\"devtools\")\ndevtools::install_github(\"palaeoverse/palaeoverse\")\n\nYou can now load palaeoverse using the default library function:\n\nlibrary(palaeoverse)\n\nBefore we get onto the good stuff, the development team has a small request. If you use palaeoverse in your research, please cite the associated publication. This will help us to continue our work in supporting you to do yours. You can access the appropriate citation via:\n\ncitation(\"palaeoverse\")\n\nTo cite palaeoverse in publications, use the following citation:\n\n  Jones, L.A., Gearty, W., Allen, B.J., Eichenseer, K., Dean, C.D.,\n  Galván S., Kouvari, M., Godoy, P.L., Nicholl, C.S.C., Dillon, E.M.,\n  Flannery-Sutherland, J.T., Chiarenza, A.A. 2023. palaeoverse: A\n  community-driven R package to support palaeobiological analysis.\n  Methods in Ecology and Evolution. 14(9), 2205--2215. doi:\n  10.1111/2041-210X.14099\n\nA BibTeX entry for LaTeX users is\n\n  @Article{,\n    title = {palaeoverse: A community-driven R package to support palaeobiological analysis},\n    author = {Lewis A. Jones and William Gearty and Bethany J. Allen and Kilian Eichenseer and Christopher D. Dean and Sofía Galván and Miranta Kouvari and Pedro L. Godoy and Cecily S. C. Nicholl and Lucas Buffan and Erin M. Dillon and Joseph T. Flannery-Sutherland and Alfio Alessandro Chiarenza},\n    year = {2023},\n    journal = {Methods in Ecology and Evolution},\n    volume = {14(9)},\n    pages = {2205--2215},\n    doi = {10.1111/2041-210X.14099},\n  }",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Latitudinal trends in Phanerozoic reefs"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/phanerozoic-reefs.html#using-the-package",
+    "href": "NAPC2024/materials/3_preparation/phanerozoic-reefs.html#using-the-package",
+    "title": "Latitudinal trends in Phanerozoic reefs",
+    "section": "",
+    "text": "Functions in palaeoverse are designed around the assumption that most users’ data are stored in an occurrence data.frame. As such, this is the expected input data format for most functions. We provide two example occurrence datasets (tetrapods and reefs) within the package from different data sources. In this vignette, we will focus on the reefs dataset which is a compilation of Phanerozoic reef occurrences (n = 4,363) from the PaleoReefs Database (Kiessling & Krause, 2022).\n\n# Load the dataset\ndata(reefs)\n# View the first five rows & columns of reefs\nreefs[1:5, 1:5]\n\n  r_number               name             formation   system         series\n1        1   Tilkideligi Tepe                       Triassic Upper Triassic\n2        2              Hydra Pantokrator Limestone Triassic Upper Triassic\n3        3 Shiraho, W-Pacific                        Neogene       Holocene\n4        4 Aksu-Terziler area                       Triassic Upper Triassic\n5        5    Adnet, Salzburg                       Triassic Upper Triassic\n\n\nNote the structure of the dataset. Each row contains a unique occurrence and each column contains a unique variable.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Latitudinal trends in Phanerozoic reefs"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#development-team",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#development-team",
+    "title": "Introduction to palaeoverse",
+    "section": "Development team",
+    "text": "Development team\n\n\n\nLewis A. Jones, Universidade de Vigo\nWilliam Gearty, American Museum of Natural History\nBethany J. Allen, ETH Zürich\nKilian Eichenseer, University of Durham\nChristopher D. Dean, University College London\nSofía Galván, Universidade de Vigo\nMiranta Kouvari, University College London\n\n\n\nPedro L. Godoy, University of São Paulo\nCecily Nicholl, University College London\nLucas Buffan, École Normale Supérieure de Lyon\nErin M. Dillon, Smithsonian Tropical Research Institute\nAlfio A. Chiarenza, Universidade de Vigo\n\n\n\nBefore I jump into the presentation, I wanted to first note that the development of the palaeoverse R package was by no means a solo-effort. All of these fantastic people had a hand in getting it together and form the core team behind the Palaeoverse project.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#what-is-palaeoverse",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#what-is-palaeoverse",
+    "title": "Introduction to palaeoverse",
+    "section": "What is Palaeoverse?",
+    "text": "What is Palaeoverse?\n\n\n\nPalaeoverse is a project that aims to bring the palaeobiology community together.\n\n\n\n\n\n\n\nSo, what exactly is palaeoverse? Well, the Palaeoverse project aims to bring the palaeobiology community together through various means. The overall intention is to encourage the field to work more closely together rather than in competition. We believe this to be a critical step in improving research as a working environment, but also for the progress of the field.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#what-is-the-palaeoverse-r-package",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#what-is-the-palaeoverse-r-package",
+    "title": "Introduction to palaeoverse",
+    "section": "What is the palaeoverse R package?",
+    "text": "What is the palaeoverse R package?\n\n \npalaeoverse provides auxiliary functions to support data preparation and exploration.\n\n\n\n\n\nImprove code readability, reusability and reproducibility.\n\n\nOne such effort on this front is the palaeoverse R package.\nR and R packages are an integral part of quantitative research in palaeobiology today, with R code frequently used for data cleaning, analyses, and data visualisation. In palaeobiology, these tools are frequently borrowed or repurposed from ecology (e.g. vegan and iNEXT). While packages exist to support fossil data analyses (e.g. claddis and divDyn), there is a lack of packages to support fossil data preparation or exploration. This results in the community often producing their own custom scripts.\nThe palaeoverse package provides auxiliary functions to support data preparation and exploration, with the intention of improving code readability, reusability, and reproducibility.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#what-makes-palaeoverse-different",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#what-makes-palaeoverse-different",
+    "title": "Introduction to palaeoverse",
+    "section": "What makes palaeoverse different?",
+    "text": "What makes palaeoverse different?\n\n\n\n\n\n\nSo, just another R package?",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#what-makes-palaeoverse-different-1",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#what-makes-palaeoverse-different-1",
+    "title": "Introduction to palaeoverse",
+    "section": "What makes palaeoverse different?",
+    "text": "What makes palaeoverse different?\n\nCommunity-informed development\n\nAuthors (n = 13)\nSurvey participants (n = 35)\n\n\n\n\nWell-documented & peer-reviewed code\n\nFormal review process\n\n\n\n\n\nA community-driven package\n\nhttp://palaeoverse.palaeoverse.org \n\n\n\n\nNot quite, the idea behind palaeoverse is a little different.\nFor the development of the package, we formulated a large working group, and conducted an online survey, to combine our experience and perspectives with that of the community to deduce what tools were needed.\nAs part of the development of the package, we also established a formal review process for both code and documentation.\nFinally, palaeoverse is envisioned as a community package. While the initial package has been released by development team, we hope that over time, we will gain contributions from the community to broaden functionality. To support this goal, we have established several resources including a guide to contribution over at our website.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#whats-available",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#whats-available",
+    "title": "Introduction to palaeoverse",
+    "section": "What’s available?",
+    "text": "What’s available?\n\n\n\naxis_geo\nbin_lat\nbin_time\ndata\ngroup_apply\nlat_bins\nlook_up\npalaeorotate\nphylo_check\n\n\n\ntax_check\ntax_expand_lat\ntax_expand_time\ntax_range_space\ntax_range_time\ntax_range_strat\ntax_unique\ntime_bins\n\n\n\nCurrently, 15 different functions are available in palaeoverse, plus some example and reference datasets.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#expected-input",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#expected-input",
+    "title": "Introduction to palaeoverse",
+    "section": "Expected input",
+    "text": "Expected input\nA lot of data, a lot of sources, and a lot of unique features.\n    \n\n\n\n\n\n\nData structure, not source.\noccdf \\(\\rightarrow\\) function(x) \\(\\rightarrow\\) df\nOccurrence dataframe*\n\n\n\nFunctionality in palaeoverse was developed to be flexible and to work around the principle that most user’s data would be stored in an occurrence dataframe. That is, each row represents a unique occurrence and each column represents a unique variable. The reason for focusing on data structure is that many different databases exist, each with their own list of variables and quirks. We wanted to provide a package that could be used with data from many sources, not just popular databases, such as the PBDB.\n\n\n*Exceptions do exist.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#installation",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#installation",
+    "title": "Introduction to palaeoverse",
+    "section": "Installation",
+    "text": "Installation\n\npalaeoverse can be installed from the CRAN using:\n\ninstall.packages(\"palaeoverse\")\n\n\n\n\nThe development version can be installed using devtools:\n\ndevtools::install_github(\"palaeoverse/palaeoverse\")\n\n\n\n\nOnce installed, load the package in the usual manner:\n\nlibrary(palaeoverse)\n\n\n\npalaeoverse is available on CRAN and can be installed using the default install.packages function. The development version can be installed using the devtools (or remotes) package. Once installed, the package can be loaded in the usual manner.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#example-datasets",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#example-datasets",
+    "title": "Introduction to palaeoverse",
+    "section": "Example datasets",
+    "text": "Example datasets\nTwo example occurrence datasets are available.\nCarboniferous–Early Triassic tetrapods (n = 5270, Paleobiology Database).\n\n\nCode\n# Get details on dataset\n?tetrapods\n# Load dataset\ndata(\"tetrapods\")\n# Available variables\ncolnames(tetrapods)\n##  [1] \"occurrence_no\"     \"collection_no\"     \"identified_name\"  \n##  [4] \"identified_rank\"   \"accepted_name\"     \"accepted_rank\"    \n##  [7] \"early_interval\"    \"late_interval\"     \"max_ma\"           \n## [10] \"min_ma\"            \"phylum\"            \"class\"            \n## [13] \"order\"             \"family\"            \"genus\"            \n## [16] \"abund_value\"       \"abund_unit\"        \"lng\"              \n## [19] \"lat\"               \"collection_name\"   \"cc\"               \n## [22] \"formation\"         \"stratgroup\"        \"member\"           \n## [25] \"zone\"              \"lithology1\"        \"environment\"      \n## [28] \"pres_mode\"         \"taxon_environment\" \"motility\"         \n## [31] \"life_habit\"        \"diet\"\n\n\nPhanerozoic reef occurrences (n = 4363, PaleoReefs Database).\n\n\nCode\n# Get details on dataset\n?reefs\n# Load dataset\ndata(\"reefs\")\n# Available variables\ncolnames(reefs)\n##  [1] \"r_number\"   \"name\"       \"formation\"  \"system\"     \"series\"    \n##  [6] \"interval\"   \"biota_main\" \"biota_sec\"  \"lng\"        \"lat\"       \n## [11] \"country\"    \"authors\"    \"title\"      \"year\"\n\n\n\nTwo example occurrence datasets are available in palaeoverse to provide reproducible examples in the function documentation. The first provides a dataset of Carboniferous-Early Triassic Tetrapods from the Paleobiology Database. The second provides a dataset of Phanerozoic reef occurrences from the Paleoreefs Database. Note that both datasets have different variables available, but are still based around the structure of an occurrence dataframe.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#reference-datasets",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#reference-datasets",
+    "title": "Introduction to palaeoverse",
+    "section": "Reference datasets",
+    "text": "Reference datasets\nTwo reference datasets are available.\nGeological Time Scale 2012 & 2020 (Gradstein et al. 2012; 2020).\n\n# Get details on dataset\n?GTS2012\n?GTS2020\n# Load dataset\ndata(\"GTS2012\")\ndata(\"GTS2020\")\n# Increase output width\noptions(width = 120)\n# Print first few rows\nhead(GTS2012, n = 3)\n##   interval_number      interval_name  rank max_ma mid_ma min_ma duration_myr  font  colour abbr\n## 1               1           Holocene stage 0.0117 0.0059 0.0000       0.0117 black #FDEDEC &lt;NA&gt;\n## 2               2  Upper Pleistocene stage 0.1260 0.0688 0.0117       0.1143 black #FFF2D3 &lt;NA&gt;\n## 3               3 Middle Pleistocene stage 0.7810 0.4535 0.1260       0.6550 black #FFF2C7 &lt;NA&gt;\nhead(GTS2020, n = 3)\n##   interval_number interval_name  rank max_ma  mid_ma min_ma duration_myr  font  colour abbr\n## 1               1    Meghalayan stage 0.0042 0.00210 0.0000       0.0042 black #FDEDEC &lt;NA&gt;\n## 2               2 Northgrippian stage 0.0082 0.00620 0.0042       0.0040 black #FDECE4 &lt;NA&gt;\n## 3               3  Greenlandian stage 0.0117 0.00995 0.0082       0.0035 black #FEECDB &lt;NA&gt;\n\n\nTwo reference datasets are also made available to the user in palaeoverse. These are the Geological Time Scales 2012 & 2020 which are frequently used in research studies and by online databases. In palaeoverse, they are also used in several functions, which we will get on to now.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#stratigraphic-time-bins",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#stratigraphic-time-bins",
+    "title": "Introduction to palaeoverse",
+    "section": "Stratigraphic time bins",
+    "text": "Stratigraphic time bins\n\n# Get stage-level time bins\nbins &lt;- time_bins(interval = \"Phanerozoic\", rank = \"stage\", plot = TRUE)\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin interval_name  rank max_ma mid_ma min_ma duration_myr abbr  colour  font\n## 1   1     Fortunian stage    541  535.0    529           12   Fo #99B575 black\n## 2   2       Stage 2 stage    529  525.0    521            8   S2 #A6BA80 black\n## 3   3       Stage 3 stage    521  517.5    514            7   S3 #A6C583 black\n\n\nFirst up, we have the time bins function, which can be used to extract time bins based on the Geological Time Scale. The user can request different ranks of intervals such as stage, period, epoch, etc. The user can also call intervals based on interval names or an age range and plot the time bins if desired.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#macrostrat-time-bins",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#macrostrat-time-bins",
+    "title": "Introduction to palaeoverse",
+    "section": "Macrostrat time bins",
+    "text": "Macrostrat time bins\n\n# Get North American Land Mammal Ages\nbins &lt;- time_bins(scale = \"North American Land Mammal Ages\", plot = TRUE)\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin interval_name                            rank max_ma mid_ma min_ma duration_myr abbr  colour  font\n## 1   1       Puercan North American Land Mammal Ages  66.00 65.375  64.75         1.25    P #FDB469 black\n## 2   2   Torrejonian North American Land Mammal Ages  64.75 63.500  62.25         2.50   To #FEBA64 black\n## 3   3     Tiffanian North American Land Mammal Ages  62.25 59.875  57.50         4.75   Ti #FEBF6A black\n\n\nThe user can also call time scales from Macrostrat.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#near-equal-length-time-bins",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#near-equal-length-time-bins",
+    "title": "Introduction to palaeoverse",
+    "section": "Near-equal-length time bins",
+    "text": "Near-equal-length time bins\n\n# Get stage-level time bins\nbins &lt;- time_bins(interval = \"Phanerozoic\", rank = \"stage\", size = 15, plot = TRUE)\n\n\n\n# Get first few rows\nhead(bins, n = 3)\n##   bin max_ma mid_ma min_ma duration_myr grouping_rank                 intervals  colour  font\n## 1   1    541 535.00  529.0         12.0         stage                 Fortunian #80cdc1 black\n## 2   2    529 521.50  514.0         15.0         stage          Stage 3, Stage 2 #80cdc1 black\n## 3   3    514 507.25  500.5         13.5         stage Drumian, Wuliuan, Stage 4 #80cdc1 black\n\n\nIn the previous slides, you probably noticed from the plots that time bins (e.g. stratigraphic stages) can be extremely uneven in duration. Previous studies have tried to circumvent this by grouping intervals together towards a target bin size to try and even out temporal duration for conducting analyses. palaeoverse provides an implementation of this that can be defined by the size argument.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#temporal-occurrence-binning",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#temporal-occurrence-binning",
+    "title": "Introduction to palaeoverse",
+    "section": "Temporal occurrence binning",
+    "text": "Temporal occurrence binning\nFive temporal binning methods for age range data:\n\n# Use tetrapod example data\noccdf &lt;- tetrapods\n\n# Get stage-level time bins\nbins &lt;- time_bins(interval = \"Phanerozoic\", rank = \"stage\")\n\n# Assign via midpoint age of fossil occurrence data\nex1 &lt;- bin_time(occdf = occdf, bins = bins, method = \"mid\")\n\n# Assign to all bins that age range covers\nex2 &lt;- bin_time(occdf = occdf, bins = bins, method = \"all\")\n\n# Assign via majority overlap based on fossil occurrence age range\nex3 &lt;- bin_time(occdf = occdf, bins = bins, method = \"majority\")\n\n# Randomly assign to overlapping bins based on fossil occurrence age range\nex4 &lt;- bin_time(occdf = occdf, bins = bins, method = \"random\", reps = 10)\n\n# Randomly assign point estimates (e.g. uniform distribution) based on fossil occurrence age range\nex5 &lt;- bin_time(occdf = occdf, bins = bins, method = \"point\", reps = 10)\n\n\nFossil occurrences are usually provided with an age range (a minimum and maximum possible age), which is used to bin occurrences into time bins. palaeoverse provides functionality for five of the most common methods in the literature.\nThe first method uses the midpoint age of the fossil occurrence to bin the occurrence.\nThe second method bins the occurrence into every bin the age range covers.\nThe third method bins the occurrence into the bin the majority of the age range covers.\nThe fourth method bins the occurrence randomly into bins the age range overlaps with.\nThe fifth method assigns a point age estimates to the occurrence, which is sampled from a uniform distribution defined by the occurrence age range, and bins the occurrence.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#latitudinal-occurrence-binning",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#latitudinal-occurrence-binning",
+    "title": "Introduction to palaeoverse",
+    "section": "Latitudinal occurrence binning",
+    "text": "Latitudinal occurrence binning\nGenerate and bin latitudinal data:\n\n# Generate latitudinal bins\nbins &lt;- lat_bins(size = 10, plot = TRUE)\n\n\n\n# Use reef example data\noccdf &lt;- reefs\n# Bin occurrences\noccdf &lt;- bin_lat(occdf = occdf, bins = bins, lat = \"lat\")\n\n\nAs a community, we are often interested in latitudinal analyses, such as studying the latitudinal biodiversity gradient. palaeoverse provides functionality for generating latitudinal bins of a given size, and binning those occurrences into the respective bins.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#spatial-occurrence-binning",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#spatial-occurrence-binning",
+    "title": "Introduction to palaeoverse",
+    "section": "Spatial occurrence binning",
+    "text": "Spatial occurrence binning\nGenerate and bin spatial data:\n\n# Get reef data\noccdf &lt;- reefs[1:500, ]\n# Bin data using a hexagonal equal-area grid\noccdf &lt;- bin_space(occdf = occdf, spacing = 250, return = TRUE)\n# Plot world and grid using ggplot2\nlibrary(ggplot2)\nlibrary(rnaturalearth)\nworld &lt;- ne_countries(scale = \"small\",returnclass = \"sf\")\nggplot() +\n  geom_sf(data = world, colour = \"black\", fill = \"lightgrey\") + \n  geom_sf(data = occdf$grid, fill = \"orange\", colour = \"black\") + \n  theme_void()\n\n\n\nFunctionality is also provided to bin data spatially using a geospatial indexing system that partitions the world into equal-area hexagonal grid cells based on a given spacing between cells.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#palaeogeographic-reconstruction",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#palaeogeographic-reconstruction",
+    "title": "Introduction to palaeoverse",
+    "section": "Palaeogeographic reconstruction",
+    "text": "Palaeogeographic reconstruction\nPalaeorotate fossil occurrences (multiple models available):\n\n# Example with a few occurrences\noccdf &lt;- data.frame(lng = c(2, -103, -66),\n                    lat = c(46, 35, -7),\n                    age = c(88, 125, 200))\n\n# Estimate palaeocoordinates using the GPlates API\nex1 &lt;- palaeorotate(occdf = occdf, method = \"point\")\n\n# Estimate palaeocoordinates using reconstruction files\nex2 &lt;- palaeorotate(occdf = occdf, method = \"grid\")\n\n# Estimate palaeocoordinates and uncertainty using reconstruction files\nex3 &lt;- palaeorotate(occdf = occdf, method = \"grid\", uncertainty = TRUE)\n\n# Increase output width\noptions(width = 400)\n# Get first few rows\nhead(ex3)\n##    lng lat age   rot_model rot_age     rot_lng   rot_lat    p_lng    p_lat\n## 1    2  46  88 MERDITH2021      88    1.799344 46.416665  13.0129  37.6373\n## 2 -103  35 125 MERDITH2021     125 -102.611909 34.626954 -42.5332  35.4060\n## 3  -66  -7 200 MERDITH2021     200  -65.523249 -6.954445 -22.5235 -16.7763\n\n\nIn order to study the past distribution of taxa, the palaeogeographic position of fossil occurrences need to be reconstructed using plate rotation models. The palaeorotate function provides two methods to reconstruct palaeocoordinates for fossil occurrences. The first method, “point”, uses the GPlates Web Service, which estimates palaeocoordinates for point data, with eight different models available. The second method, “grid”, uses pre-generated reconstruction files to estimate palaeocoordinates. This approach is much faster than the point method for large datasets, and also allows easy exploration. Additional functionality for the second method allows the user to calculate the palaeogeographic uncertainty in reconstructions from across the eight available models with the palaeolatitudinal range and maximum circle distance between points calculated.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#taxonomic-spell-check",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#taxonomic-spell-check",
+    "title": "Introduction to palaeoverse",
+    "section": "Taxonomic spell check",
+    "text": "Taxonomic spell check\nIdentify and count potential spelling variations of the same taxon:\n\n\nCode\n# load occurrence data\ndata(\"tetrapods\")\n# Check taxon names alphabetically\nex1 &lt;- tax_check(taxdf = tetrapods, name = \"genus\", dis = 0.05, verbose = FALSE)\n# Get first few rows\nhead(ex1)\n##   group     greater     lesser count_greater count_lesser\n## 1     D Dvinosaurus Dinosaurus            23            2\n## 2     V   Varanopus   Varanops             5            3\n\n\n\n\nCode\n# Check taxon names by group\nex2 &lt;- tax_check(taxdf = tetrapods, name = \"genus\", group = \"family\", dis = 0.05, verbose = FALSE)\n# Get first few rows\nhead(ex2)\n## NULL\n\n\nIn this example dataset:\n\nDinosaurus belongs to the Phthinosuchidae\nDvinosaurus belongs to the Dvinosauridae\nVaranops belongs to the Varanopidae\nVaranopus belongs to the Captorhinidae\n\n\nWhen working with large occurrence datasets, errors can easily creep into data. One frequently encountered issue is spelling variations of the same taxon name. This can have undesirable consequences when calculating metrics such as taxonomic richness. The tax check function computes character string distances between taxonomic names and returns those under a user-defined dissimilarity threshold. The function can also be used within groups such as here with family. As you can see this might be appropriate in some instances. While flagged taxonomic names can be similar in spelling, taxa can belong to different families.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#unique-taxa",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#unique-taxa",
+    "title": "Introduction to palaeoverse",
+    "section": "Unique taxa",
+    "text": "Unique taxa\nIdentifying unique taxa:\n\n# Create dataframe\noccdf &lt;- data.frame(species = c(\"rex\", \"aegyptiacus\", NA),\n                    genus = c(\"Tyrannosaurus\", \"Spinosaurus\", NA),\n                    family = c(\"Tyrannosauridae\", \"Spinosauridae\", \"Diplodocidae\"))\n# Retain unique taxa\ndinosaur_species &lt;- tax_unique(occdf = occdf,\n                               species = \"species\",\n                               genus = \"genus\",\n                               family = \"family\",\n                               resolution = \"species\")\nhead(dinosaur_species)\n##            family         genus           genus_species             unique_name\n## 1   Spinosauridae   Spinosaurus Spinosaurus aegyptiacus Spinosaurus aegyptiacus\n## 2 Tyrannosauridae Tyrannosaurus       Tyrannosaurus rex       Tyrannosaurus rex\n## 3    Diplodocidae          &lt;NA&gt;                    &lt;NA&gt;     Diplodocidae indet.\n\n\nWhen calculating taxonomic richness, palaeobiologists routinely discard occurrences not identified to their desired taxonomic resolution. For example, if studying species richness, occurrences identified to genus level or above will be discarded. The tax unique function reduces the number of occurrences being discarded by retaining fossils identified to coarser taxonomic resolutions but must represent a clade not already in the filtered dataset. As you can see in this example, Diplodocidae is retained as it evidently represents a different species from those other occurrences as it belongs to a different family.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#temporal-range",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#temporal-range",
+    "title": "Introduction to palaeoverse",
+    "section": "Temporal range",
+    "text": "Temporal range\nCalculate and plot temporal range of taxa:\n\n# Grab tetrapod data\noccdf &lt;- tetrapods\n# Remove NAs\noccdf &lt;- subset(occdf, !is.na(order))\n# Temporal range\nex &lt;- tax_range_time(occdf = occdf, name = \"order\", plot = TRUE)\n\n\n\nTwo functions exist in palaeoverse for calculating taxon ranges. The first, tax range time, can be used to calculate and plot the temporal range of taxa.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#geographic-range",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#geographic-range",
+    "title": "Introduction to palaeoverse",
+    "section": "Geographic range",
+    "text": "Geographic range\nFour approaches to calculate geographic range of taxa:\n\n# Grab internal data\noccdf &lt;- tetrapods\n# Remove NAs\noccdf &lt;- subset(occdf, !is.na(genus))\n# Convex hull\nex1 &lt;- tax_range_space(occdf = occdf, name = \"genus\", method = \"con\")\n# Latitudinal range\nex2 &lt;- tax_range_space(occdf = occdf, name = \"genus\", method = \"lat\")\n# Great Circle Distance\nex3 &lt;- tax_range_space(occdf = occdf, name = \"genus\", method = \"gcd\")\n# Occupied grid cells\nex4 &lt;- tax_range_space(occdf = occdf, name = \"genus\", method = \"occ\", spacing = 250)\n# See first few rows\nhead(ex2)\n##                taxon taxon_id max_lat min_lat range_lat\n## 1           Abajudon        1 -10.624 -16.524       5.9\n## 2          Abdalodon        2 -31.925 -31.925       0.0\n## 3        Abyssomedon        3  34.776  34.776       0.0\n## 4   Acanthostomatops        4  51.000  51.000       0.0\n## 5          Acerastea        5 -24.833 -24.833       0.0\n## 6 Acerosodontosaurus        6 -24.000 -24.000       0.0\n\n\nThe second, tax range space, calculates the geographic range of taxa. In tax range space, four different approaches are available for calculating geographic ranges: convex hull, latitudinal range, maximum great circle distance and the number of occupied equal-area grid cells.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#temporal-pseudo-occurrences",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#temporal-pseudo-occurrences",
+    "title": "Introduction to palaeoverse",
+    "section": "Temporal pseudo-occurrences",
+    "text": "Temporal pseudo-occurrences\nConvert range data to bin-level pseudo-occurrences:\n\n# Generate example df\ntaxdf &lt;- data.frame(name = c(\"A\", \"B\", \"C\"),\n                    max_age = c(150, 60, 30),\n                    min_age = c(110, 20, 0))\n# Generate pseudo-occurrences\nex1 &lt;- tax_expand_time(taxdf = taxdf, max_ma = \"max_age\", min_ma = \"min_age\")\n# Increase output width\noptions(width = 200)\n# See first few rows\nhead(ex1)\n##   name max_age min_age   ext  orig bin interval_name  rank max_ma mid_ma min_ma duration_myr abbr  colour  font\n## 1    A     150     110 FALSE  TRUE  66     Tithonian stage  152.1 148.55  145.0          7.1   Ti #D9F1F7 black\n## 2    A     150     110 FALSE FALSE  67    Berriasian stage  145.0 142.40  139.8          5.2   Be #8CCD60 black\n## 3    A     150     110 FALSE FALSE  68   Valanginian stage  139.8 136.20  132.6          7.2   Va #99D36A black\n## 4    A     150     110 FALSE FALSE  69   Hauterivian stage  132.6 131.00  129.4          3.2   Ha #A6D975 black\n## 5    A     150     110 FALSE FALSE  70     Barremian stage  129.4 127.20  125.0          4.4 Barr #B3DF7F black\n## 6    A     150     110 FALSE FALSE  71        Aptian stage  125.0 119.00  113.0         12.0   Ap #BFE48A black\n\n\nAs complementary to the taxonomic range functions, two functions are provided for generating pseudo-occurrences from temporal and latitudinal range data. These pseudo-occurrences serve to fill in ghost ranges, in which a taxon is presumed to be present, but no record exists.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#latitudinal-pseudo-occurrences",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#latitudinal-pseudo-occurrences",
+    "title": "Introduction to palaeoverse",
+    "section": "Latitudinal pseudo-occurrences",
+    "text": "Latitudinal pseudo-occurrences\nConvert range data to bin-level pseudo-occurrences:\n\n# Generate latitudinal bins\nbins &lt;- lat_bins()\n# Generate example df\ntaxdf &lt;- data.frame(name = c(\"A\", \"B\", \"C\"),\n                    max_lat = c(60, 20, -10),\n                    min_lat = c(20, -40, -60))\n# Generate pseudo-occurrences\nex1 &lt;- tax_expand_lat(taxdf = taxdf, bins = bins)\n# See first few rows\nhead(ex1)\n##   name max_lat min_lat bin min mid max\n## 1    A      60      20   4  50  55  60\n## 2    A      60      20   5  40  45  50\n## 3    A      60      20   6  30  35  40\n## 4    A      60      20   7  20  25  30\n## 5    B      20     -40   8  10  15  20\n## 6    B      20     -40   9   0   5  10",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#phylogeny-wrangling",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#phylogeny-wrangling",
+    "title": "Introduction to palaeoverse",
+    "section": "Phylogeny wrangling",
+    "text": "Phylogeny wrangling\nCompare a list of taxonomic names to tip names in a user-provided phylogeny:\n\n\n\n# Read in example tree of ceratopsians\n# from paleotree\nlibrary(paleotree)\ndata(RaiaCopesRule)\n# Set smaller margins for plotting\npar(mar = rep(0, 4))\n# Plot tree\nplot(ceratopsianTreeRaia)\n\n\n\n\n\n\n\n\n\n\n# Specify list of names\ndinosaurs &lt;- c(\"Nasutoceratops_titusi\", \n               \"Diabloceratops_eatoni\",\n               \"Zuniceratops_christopheri\",\n               \"Psittacosaurus_major\")\n\n# Table of taxon names in list, tree or both\nex1 &lt;- phylo_check(tree = ceratopsianTreeRaia,\n                   list = dinosaurs)\n# Get first few rows\nhead(ex1)\n##                   taxon_name present_in_tree present_in_list\n## 8      Diabloceratops_eatoni            TRUE            TRUE\n## 33      Psittacosaurus_major            TRUE            TRUE\n## 38     Nasutoceratops_titusi           FALSE            TRUE\n## 39 Zuniceratops_christopheri           FALSE            TRUE\n## 1       Centrosaurus_apertus            TRUE           FALSE\n## 2  Styracosaurus_albertensis            TRUE           FALSE\n\n\n\nWe don’t currently have much functionality for working with phylogenies, but one function that several members of the team felt would be useful is the ability to compare a list of taxonomic names to tip names in a user-provided phylogeny. As you can, this is what the phylo_check function does. Further functionality allows the user to also trim a phylogeny based on the input list.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#interval-linking",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#interval-linking",
+    "title": "Introduction to palaeoverse",
+    "section": "Interval linking",
+    "text": "Interval linking\nLink and match interval names to the Geological Time Scale:\n\n## Link numeric age values\n# Create exemplary df\noccdf &lt;- data.frame(name = c(\"A\", \"B\", \"C\"),\n                    early_interval = c(\"Maastrichtian\",\n                                       \"Campanian\",\n                                       \"Sinemurian\"),\n                    late_interval = c(\"Maastrichtian\",\n                                      \"Campanian\",\n                                      \"Bartonian\"))\n# Assign stages and numerical ages\noccdf &lt;- look_up(occdf)\n\n## Use exemplary int_key\n# Get internal reef data\noccdf &lt;- reefs\n# Get internal interval key\nint_key &lt;- interval_key\n# Assign stages and numerical ages\noccdf &lt;- look_up(occdf,\n                early_interval = \"interval\",\n                late_interval = \"interval\",\n                int_key = int_key)\n\n\nA common difficultly faced by palaeobiologists is that temporal information associated with fossil occurrences is often asynchronous, and not directly comparable. Temporal data might be provided as either character-based interval names or numeric ages, and might conform to different timescales. The look_up function is provided to help assign a common timescale. The function can be used to generate numeric ages from GTS interval names or an interval key can be provided by the user to link interval names to the Geological Time Scale. This interval key consist of three columns with the first containing the interval name followed by the early and late international stage the interval name correlates with. Interval key is provided an example dataset in palaeoverse.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#plotting",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#plotting",
+    "title": "Introduction to palaeoverse",
+    "section": "Plotting",
+    "text": "Plotting\nAdd Geological Time Scale to plots:\n\n# Plot data\nplot(x = 541:0,\n     xlab = \"Time (Ma)\", ylab = \"User-variable\",\n     xlim = c(541, 0), xaxt = \"n\", type = \"l\", lwd = 5)\n\n# Add Geological Time Scale\naxis_geo(side = 1, intervals = \"periods\")\n\n\n\nA common request from our survey participants was the ability to add the Geological Time Scale to a base R plot. The axis_geo function in palaeoverse can be used to do just that.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#wrapper",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#wrapper",
+    "title": "Introduction to palaeoverse",
+    "section": "Wrapper",
+    "text": "Wrapper\nRun functions over groups of data:\n\n# Get tetrapod data\noccdf &lt;- tetrapods\n\n# Count number of occurrences from each country\nex1 &lt;- group_apply(occdf = occdf, group = \"cc\", fun = nrow)\n\n# Remove NA data\noccdf &lt;- subset(occdf, !is.na(genus))\n\n# Unique genera per collection with group_apply and input arguments\nex2 &lt;- group_apply(occdf = occdf,\n                   group = c(\"collection_no\"),\n                   fun = tax_unique,\n                   genus = \"genus\",\n                   family = \"family\",\n                   order = \"order\",\n                   class = \"class\",\n                   resolution = \"genus\")\n\n# Use multiple variables (number of occurrences per collection & formation)\nex3 &lt;- group_apply(occdf = occdf,\n                   group = c(\"collection_no\", \"formation\"),\n                   fun = nrow)\n\n\nAs with most fields, we often want to analyse our data in groups. In palaeoverse, we provide the function group_apply as a wrapper function to run functions over groups of data. For example, if we want to calculate the number of occurrences per country in this example, or use the function tax unique per collection in this example. The group apply function also allows the user to run function over multiple grouping variables, for example in the third example we calculate the number of occurrences per unique collection and geological formation combination.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#whats-next-1",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#whats-next-1",
+    "title": "Introduction to palaeoverse",
+    "section": "What’s next?",
+    "text": "What’s next?\n\n\n\nPalaeobiology CRAN Task View\n\n\n\n\nShiny App\n\n\n\n\nWorkshops and Hackathons\n\n\n\n\nFurther package development\n\n\n\n\nFunding\n\n\n\n\nYour involvement!\n\n\n\nWe have quite a lot of plans going forward! The team is currently in the process of putting together a Palaeobiology CRAN Task view and has started development on a Shiny App for non-R users. We also plan to host a workshop and hackathon next September at UCL, funding depdendent. Which is something we are also actively working on now, securing funds to continue our work on this project and support its growth. Finally, we hope your involvement is what’s next! If you have functions which you think would be useful for the broader palaeobiological community, please do consider submitting a pull request on the palaeoverse repository! We would also love to hear any feedback on the package you might have.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/presentation.html#thank-you-merci-gracias-danke-obrigado-grazie-ευχαριστώ",
+    "href": "NAPC2024/materials/3_preparation/presentation.html#thank-you-merci-gracias-danke-obrigado-grazie-ευχαριστώ",
+    "title": "Introduction to palaeoverse",
+    "section": "Thank-you / Merci / Gracias / Danke / Obrigado / Grazie / Ευχαριστώ",
+    "text": "Thank-you / Merci / Gracias / Danke / Obrigado / Grazie / Ευχαριστώ\n\n\n\n\n\n\n\n\nWebsite: General information\n\nhttps://palaeoverse.org\n\nTwitter: News and updates\n\n@ThePalaeoverse\n\nGoogle Group: A community space\n\nhttps://groups.google.com/g/palaeoverse\n\n\n\n\nPoint of contact: General contact\n\nLewisAlan.Jones@uvigo.es\n\nPublication: Open-access\n\nhttps://doi.org/10.1111/2041-210X.14099\n\n\n\n\nAll that is left to say is a big thank you from myself and the development team for listening. You can find general information about the palaeoverse R package on our website, and news and updates on the project on Twitter (providing Elon Musk doesn’t burn it to the ground). We have also established a Google Group to serve as a community space, which we welcome you all to join. This group is setup to act as a space to share ideas and resources, advertise opportunities, and generally network with colleagues. And a final bit of self promotion, our pre-print on palaeoverse is now available on EarthArXiv, if you wish to check it out! Thank you for listening.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package",
+      "Introduction to palaeoverse"
+    ]
   },
   {
     "objectID": "index.html",
@@ -35,10 +784,747 @@
     "text": "2023\n\nR for Palaeobiologists: Workshop and Hackathon\nOrganisers: Lewis A. Jones, Bethany J. Allen, Christopher D. Dean, Kilian Eichenseer, Cecily Nicholl, Sofía Galván, and Miranta Kouvari\nLocation: Department of Earth Sciences, University College London, London, UK\nDate: 7–8th September 2023"
   },
   {
-    "objectID": "test2/index.html",
-    "href": "test2/index.html",
-    "title": "this is test2",
+    "objectID": "NAPC2024/materials/3_preparation/index.html",
+    "href": "NAPC2024/materials/3_preparation/index.html",
+    "title": "Data preparation with the palaeoverse R package",
     "section": "",
-    "text": "this is test2"
+    "text": "This unit of the workshop covers preparation and exploration of fossil occurrence data using the palaeoverse R package. The slides for the unit are available here and provide an introduction to palaeoverse and the available functionality. The code for the tutorial is available here and provides usage examples for helping you get started with the package.\nThis session is led by Lewis A. Jones. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/index.html#summary",
+    "href": "NAPC2024/materials/3_preparation/index.html#summary",
+    "title": "Data preparation with the palaeoverse R package",
+    "section": "",
+    "text": "This unit of the workshop covers preparation and exploration of fossil occurrence data using the palaeoverse R package. The slides for the unit are available here and provide an introduction to palaeoverse and the available functionality. The code for the tutorial is available here and provides usage examples for helping you get started with the package.\nThis session is led by Lewis A. Jones. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/3_preparation/index.html#resources",
+    "href": "NAPC2024/materials/3_preparation/index.html#resources",
+    "title": "Data preparation with the palaeoverse R package",
+    "section": "Resources",
+    "text": "Resources\n\nPresentation\nTutorial (html) | Tutorial (qmd)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data preparation with the palaeoverse R package"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/6_practice/index.html",
+    "href": "NAPC2024/materials/6_practice/index.html",
+    "title": "Independent practice",
+    "section": "",
+    "text": "This unit of the workshop is reserved for your independent practice. We provide a vignette below on reconstructing the alpha diversity and geographic range size of Carboniferous and Permian tetrapods to work through at your leisure. If preferred, you are also free to work on your own data applying what you have learnt today. Either way, we will be around to help and guide you through anything you need help with. The code for the tutorial is available here and provides usage examples for helping you get started with the package.\nThis session is led by Lewis A. Jones. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Independent practice"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/6_practice/index.html#summary",
+    "href": "NAPC2024/materials/6_practice/index.html#summary",
+    "title": "Independent practice",
+    "section": "",
+    "text": "This unit of the workshop is reserved for your independent practice. We provide a vignette below on reconstructing the alpha diversity and geographic range size of Carboniferous and Permian tetrapods to work through at your leisure. If preferred, you are also free to work on your own data applying what you have learnt today. Either way, we will be around to help and guide you through anything you need help with. The code for the tutorial is available here and provides usage examples for helping you get started with the package.\nThis session is led by Lewis A. Jones. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Independent practice"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/6_practice/index.html#resources",
+    "href": "NAPC2024/materials/6_practice/index.html#resources",
+    "title": "Independent practice",
+    "section": "Resources",
+    "text": "Resources\n\nTutorial (html) | Tutorial (qmd)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Independent practice"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/2_acquisition/index.html",
+    "href": "NAPC2024/materials/2_acquisition/index.html",
+    "title": "Data acquisition and cleaning",
+    "section": "",
+    "text": "This unit of the workshop covers existing databases, and other resources, from which data relevant to palaeobiological analyses can be obtained. The slides for the unit are available here and provide an introduction to some of the most commonly used resources. The tutorial focuses on how to access occurrence data from the Paleobiology Database directly through R, and highlights some characteristics of this data and some problems this can pose for subsequent data analysis. The code for the tutorial is available here.\nThis session is led by Bethany Allen. If you encounter any issues while working with these resources, please contact her here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data acquisition and cleaning"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/2_acquisition/index.html#summary",
+    "href": "NAPC2024/materials/2_acquisition/index.html#summary",
+    "title": "Data acquisition and cleaning",
+    "section": "",
+    "text": "This unit of the workshop covers existing databases, and other resources, from which data relevant to palaeobiological analyses can be obtained. The slides for the unit are available here and provide an introduction to some of the most commonly used resources. The tutorial focuses on how to access occurrence data from the Paleobiology Database directly through R, and highlights some characteristics of this data and some problems this can pose for subsequent data analysis. The code for the tutorial is available here.\nThis session is led by Bethany Allen. If you encounter any issues while working with these resources, please contact her here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data acquisition and cleaning"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/2_acquisition/index.html#resources",
+    "href": "NAPC2024/materials/2_acquisition/index.html#resources",
+    "title": "Data acquisition and cleaning",
+    "section": "Resources",
+    "text": "Resources\n\nTutorial slides\nTutorial R code",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data acquisition and cleaning"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#schedule",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#schedule",
+    "title": "An intro to data visualization",
+    "section": "Schedule",
+    "text": "Schedule\n\n10 - 10:15 AM: Theory of data visualization\n\n10:15 - 10:45 AM: Practical data visualization",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#theory-of-data-visualization",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#theory-of-data-visualization",
+    "title": "An intro to data visualization",
+    "section": "Theory of data visualization",
+    "text": "Theory of data visualization\n\nWhat is data visualization?\nBasic design principles (color & font)\nPicking a graph type\nCommon mistakes\nFile types",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#what-is-data-visualization-1",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#what-is-data-visualization-1",
+    "title": "An intro to data visualization",
+    "section": "What is data visualization?",
+    "text": "What is data visualization?\n\nThe representation of data through the use of graphs and figures.\n\nOften the data is complex, but the representation should be approachable and easy-to-understand.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#what-is-data-visualization-2",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#what-is-data-visualization-2",
+    "title": "An intro to data visualization",
+    "section": "What is data visualization?",
+    "text": "What is data visualization?\nFor example, here is some data:\n\n (even this is a data visualization)\n\n\nRelative YouTube listening of Rihanna compared to the other Billboard Top 100 in 2017 across the US. Made by the New York Times using geocoded streaming data from YouTube.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#what-is-data-visualization-3",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#what-is-data-visualization-3",
+    "title": "An intro to data visualization",
+    "section": "What is data visualization?",
+    "text": "What is data visualization?\nAnd here is a data visualization of that data:\n\n\n\n\nRelative proportions of a sports game that entails “game action”, “game inaction”, or “commercials”. English Premier League shows the highest proportion of game action. NHL games have the most (total) game action.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#what-is-data-visualization-4",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#what-is-data-visualization-4",
+    "title": "An intro to data visualization",
+    "section": "What is data visualization?",
+    "text": "What is data visualization?\nHere’s another example. What data is being represented?\n\n\n\n\n\n\nRelative YouTube listening of Rihanna compared to the other Billboard Top 100 in 2017 across the US. Made by the New York Times using geocoded streaming data from YouTube.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#basic-design-principles-1",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#basic-design-principles-1",
+    "title": "An intro to data visualization",
+    "section": "Basic design principles",
+    "text": "Basic design principles\n\n\n\nColor\n\n\nType (aka font)\n\n\nPositioning (R takes care of most of this)\n\n\nDon’t actually alternate colors and fonts like this unless you are trying to make a point",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nLots of colors exist!",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-1",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-1",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nValue (lightness/darkness)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-2",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-2",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nTemperature (cool vs warm)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-3",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-3",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nSaturation (intensity of color)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-4",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-4",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nPalettes (collections of colors that work well together)\n\n\n\n\n\nAnalogous colors are three colors next to each other on the color wheel, composed of one dominant color (usually a primary or secondary color), then a supporting color (a secondary or tertiary color), and a third color that is either a mix of the two first colors, or an accent color that pops.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-5",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-5",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nPicking colors\n\nPalettes (collections of colors that work well together)\n\n\n\n\n\nA complementary color scheme is created by using two colors opposite each other on the color wheel. This type of palette attracts the most attention because of its bold contrast, but that also makes it the most difficult to find a harmonious balance. One way to achieve good balance when using complementary colors is to identify two opposite colors (as shown in the image below) and then create the rest of your palette by creating slightly darker or lighter versions of those same colors.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-6",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-6",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nDeclaring colors in R\n\nNames (see cheat sheet)\nHEX codes",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-7",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-7",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nGetting HEX codes\n\nIn software (e.g., PowerPoint, Illustrator, Inkscape)\nOnline (e.g., Google, HTML color codes, coolers)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-8",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-8",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nOr use premade color palette packages!\n\nRColorBrewer\ngeological timescale palettes in deeptime\nviridis\n\ndesigned for accessibility\n\nwesanderson",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-9",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-9",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nColor accessibility is important!\nThe more color contrast the better!",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-10",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-10",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nDon’t forget about color blindness!\nCheck your graphs with a color blindness simulator (e.g., ColourSimulations or ColorOracle).\n\n\n\n \n\n\nRight is with Deuteranopia (red-green color blindness, 6% of males, .4% of females)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#color-11",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#color-11",
+    "title": "An intro to data visualization",
+    "section": "Color",
+    "text": "Color\nYour graphs should even be legible in grayscale.\n\n\n\n \n\n\nRight is desaturated",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#font",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#font",
+    "title": "An intro to data visualization",
+    "section": "Font",
+    "text": "Font\nThere are lots of fonts/types, too!",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#font-1",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#font-1",
+    "title": "An intro to data visualization",
+    "section": "Font",
+    "text": "Font\nWe want easily readable fonts:\n\nTahoma\nCalibri\nHelvetica\nArial\n\n\nFind more at Google Fonts\n\nCan import these into R using the sysfonts package",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#font-2",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#font-2",
+    "title": "An intro to data visualization",
+    "section": "Font",
+    "text": "Font\nTips\n\nOne font is usually enough (max two)\nMake sure font size is big enough (who is the audience?)\nUse bold for emphasis, but avoid italics and underlines\nLeft-aligned text is most readable\nUse size as a tool to hierarchize content\nUse 1.5 line spacing for better readability\n\n\nItalics and underlines decrease accessibility (e.g., dyslexia)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#graph-type-depends-on-data-type",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#graph-type-depends-on-data-type",
+    "title": "An intro to data visualization",
+    "section": "Graph type depends on data type",
+    "text": "Graph type depends on data type\n\n\n\n\nWe don’t have time to go over this entire chart, but it should be a good reference for the future. Note that the first question is what aspect of the data you would like to show: relationships, comparisons, distributions, or compositions. From there, we need to decide how many variables we want to include and/or whether we are showing changes over time.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nOur brains cannot compare angles, so avoid pie charts\n\n\n\n\n\n\n\n\n\n\n\nLook at each of these pie charts and try to identify the increasing/decreasing order of section sizes… Were you right?",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes-1",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes-1",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nVolumes and perspective can be tough too, so best to avoid 3D plots\n\n\n \n\n\nThe two pie charts are the same, but the blue segment in the right pie chart appears smaller because of perspective. What does this 3D chart provide that thhe 2D version does not? (nothing, except maybe aesthetics)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes-2",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes-2",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nNever truncate your X/Y axes or zoom on one part of them without showing the overall pattern as well",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes-3",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes-3",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nDon’t overcomplicate your graphs!\n\n\nIs the main point of the graph clear?\n\n\n\n\n\n\nHaving too many colors or too many symbols can often be a major point of confusion or misunderstanding in data visualizations. If you are getting to the point where you find it hard to distinguish between two symbols or colors, you probably have too many.\nIn the article this was included in, they only discussed Germany, Greece, Netherlands, and Spain. Therefore, including the other countries as separate colors overcomplicated the figure and made the main point harder to discern. Condensing them to a single “Others” category makes the plot easier to digest and makes the point clearer.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes-4",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#common-mistakes-4",
+    "title": "An intro to data visualization",
+    "section": "Common mistakes",
+    "text": "Common mistakes\n\nDon’t overcomplicate your graphs!\n\n\nThink about how much data to show\n\n\n\n\n\n\nConfined by the limited space on a page, we are often tempted to force all the data we have into a slot that’s way too small. Although this saves valuable space on the page, it has consequences — as shown in this chart, from March 2017. The story is about how scientific publishing is dominated by men. All data points are equally interesting and relevant to the story. But by presenting such a lot of data — four research-field categories as well as the share of inventors — the information is hard to take in.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#image-types",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#image-types",
+    "title": "An intro to data visualization",
+    "section": "Image types",
+    "text": "Image types\n\n\n\n\n\n\n\n\n\n\nRaster\nVector\n\n\n\n\nScale-dependent\nNot scale-dependent\n\n\nLarge size files\nSmaller size files\n\n\nNot easily editable\nEasily editable\n\n\nCan have lots of detail\nUsually fewer details/textures\n\n\nCan not be converted easily to vector files\nCan easily be converted to raster files\n\n\n(e.g., made in Photoshop)\n(e.g., made in Illustrator)",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#file-formats",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#file-formats",
+    "title": "An intro to data visualization",
+    "section": "File formats",
+    "text": "File formats\nYou can export plots from R in many file formats (we’ll mostly use ggsave()):\n\n\n\n\n\nFile format\nImage type\nNotes\n\n\n\n\n.jpg\nRaster\nCan’t have transparent parts\n\n\n.png\nRaster\nCan also have transparent parts\n\n\n.svg\nVector\nCan edit in Inkscape/Illustrator\n\n\n.pdf\nVector\nNot actually an image file type, but can be used\n\n\n\n\nI personally like .pdfs because they are easily shareable and are a pretty common file format for everyone. Pdfs can even be imported into inkscape and illustrator for editing (I’d encourage you to try to do all of your customization within R, but I know some things still aren’t possible/easy in R). svgs are also great, but I find they are less supported by email clients and slack, etc. pngs are great, but don’t scale (get pixellated), so never use them for publications, etc",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-1",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-1",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nR already has lots of visualization functionality built-in:\n\nplot()\nbarplot()\nhist()\nboxplot()\naxis()\nlegend()\nlines(), segments(), rect(), text(), etc.\n\n\nWe call all of this ‘base’ graphics, because it is all included in the packages that come with R, including the ‘graphics’ and ‘stats’ packages.\nNote that base graphics is done on a static canvas and objects are drawn on the device through R plotting commands. The canvas has a set of global parameters such as margins and layouts which can be manipulated by the user using par() commands. The R graphics engine does not maintain a user visible graphics list. Ojects cannot be easily edited without redrawing a whole plot.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-2",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-2",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\n\n\n\n\nYou can make some pretty complex plots with ‘base’ R graphics!",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-3",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-3",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nMany packages build on these ‘base’ graphics:\n\n{plotrix}\n{rgl}: for 3D interactive graphics\n{gplots}\n{scatterplot3d}: 3D scatterplots\n{palaeoverse}!\n\n\nSome functions in the palaeoverse package produce base R plots. We’ve done this to reduce the number of dependencies that users need to install when they install the palaeoverse package. Note: It also has the axis_geo() function to add a timescale to an existing base R plot.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-4",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-4",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nThen ‘grid’ graphics came along:\n\nMore complex layouts\nScaling is maintained on resizing\nNested graphs and more interactivity\n\n\n\n\n\nHowever, one can quickly run into trouble with R’s base graphic system if one wants to design complex layouts where scaling is maintained properly on resizing, nested graphs are desired or more interactivity is needed. grid was designed by Paul Murrell to overcome some of these limitations.\nNote that each component has a size, if you were scale this larger or smaller, all of those relative sizes would be preserved (unlike in base R graphics).",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-5",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-5",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nMany packages build on these ‘grid’ graphics:\n\n{lattice}: trellis graphics\n{vcd}: for categorical data\n{ggplot2}: “grammar of graphics”\n{hexbin}: hexagonal bins\n{patchwork}: combine (ggplot2) plots\n{deeptime}!\n\n\nIn our practical, we’ll be exploring ggplot2. The deeptime package that I’ve developed helps to make plots with ggplots2 (mostly). For example, it has the coord_geo() function which adds a timescale to an existing ggplot2 plot.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-6",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#visualization-in-r-6",
+    "title": "An intro to data visualization",
+    "section": "Visualization in R",
+    "text": "Visualization in R\nPackages for spatial visualization:\n\n{sf}: basic objects and methods for vector data\n{terra}: basic objects and methods for raster data\n{ggplot2}: works for plotting spatial data, too\n{raster}: plotting raster data\n\n\n\n\n\nIn our practical, we’ll also be exploring using and visualizing spatial objects.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#data-visualization-books",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#data-visualization-books",
+    "title": "An intro to data visualization",
+    "section": "Data visualization books",
+    "text": "Data visualization books\n\n\n\n\n\n\nThe Visual Display of Quantitative Information by Edward R. Tufte\n\nBetter Data Visualizations by Jonathan Schwabish\n\n\n\nFundamentals of Data Visualization by Claus O. Wilke\n\nBuilding Science Graphics by Jen Christiansen\n\n\n\n\nHere are some books that cover more of the theory of data visualization. Remember all of these slides will be available after the workshop for reference.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/presentation.html#practical-data-visualization",
+    "href": "NAPC2024/materials/4_visualization/presentation.html#practical-data-visualization",
+    "title": "An intro to data visualization",
+    "section": "Practical data visualization",
+    "text": "Practical data visualization\n1. Data visualization using ggplot2\n\n\n\n2. Data visualization of spatial data\n\n\n\n\nSo now that we’ve covered the theory of data visualization, let’s move on to some brief practical examples!",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "An intro to data visualization"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-ggplot2.html",
+    "href": "NAPC2024/materials/4_visualization/practical-ggplot2.html",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "",
+    "text": "ggplot2 is designed around the “grammar of graphics”. In most cases you start with ggplot() and then supply a dataset and “aesthetic” mappings (with aes()). You then add on individual layers (like geom_point() or geom_histogram()) to add the visualization(s) that you want. Let’s first try making a scatterplot using some built-in data about car mileage (mpg). In this case, we’ll plot the highway mileage with respect to the engine size (displacement). Note that in this case, instead of calling functions separately, we chain them together with the + operator.\n\n# load the ggplot2 package\nlibrary(ggplot2)\n\n\n# check out the mileage data\nhead(mpg)\n\n# A tibble: 6 × 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa…\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa…\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa…\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa…\n5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa…\n6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa…\n\n\n\nggplot(mpg, aes(x = displ, y = hwy)) + \n  geom_point()\n\n\n\n\n\n\n\n\nYou’ll notice that with just a couple of lines, we’ve already made a pretty nice visualization. ggplot2 does most of the work for us once we specify our x and y variables. Let’s go a step further and color the points by another variable (e.g., the class of the car). With ggplot2, all that requires is specifying another aesthetic:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point()\n\n\n\n\n\n\n\n\nNotice that ggplot2 comes with its own default color scheme. I would strongly discourage you from using the default colors. Instead, we’ll try out some of the accessible color palettes we talked about earlier. First, let’s try one of the viridis color palettes. Since this palette is included in ggplot2, all we need to do is add the proper “scale” to our ggplot() call.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_viridis_d()\n\n\n\n\n\n\n\n\nHmm…with this many colors, it becomes a little hard to distinguish between the colors with this color palette. Let’s try one of the brewer color palettes.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(palette = \"Set1\")\n\n\n\n\n\n\n\n\nOutside of color, there are many other aspects of the graph that we can modify using “scale”s. For example, we can modify the x and y axes:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\")\n\n\n\n\n\n\n\n\n\n\nThe last basic thing you might want to do with ggplot2 is modify the style of the visualization. This is extremely customizable, but the first place to start is with a built-in theme. I personally prefer the classic theme:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nUsing this built-in theme has changed many visual aspects of the graph, including changing the plot background color, adding axis lines, and removing the internal grid lines. If you look very closely, however, the axis tick labels are still a slight grey. We can use the theme() function to further customize the appearance and change this. In this case, we’ll make the axis text elements have a black color.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nAnd there we have it! With just 7 lines we’ve created what I would say is a publication quality graph! ggplot does a lot of the tedious work for you, giving you time to focus on the more important aspects, such as labeling and color. Admittedly, I’ve spent a LOT of time on these aspects in the past…\nMore information about all of the hierarchical theme components that you can customize is available here. In order to change many of these components, you need to use theme elements like we did above with element_text(). That and other theme elements are documented here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "ggplot2 Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-ggplot2.html#theming",
+    "href": "NAPC2024/materials/4_visualization/practical-ggplot2.html#theming",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "",
+    "text": "The last basic thing you might want to do with ggplot2 is modify the style of the visualization. This is extremely customizable, but the first place to start is with a built-in theme. I personally prefer the classic theme:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nUsing this built-in theme has changed many visual aspects of the graph, including changing the plot background color, adding axis lines, and removing the internal grid lines. If you look very closely, however, the axis tick labels are still a slight grey. We can use the theme() function to further customize the appearance and change this. In this case, we’ll make the axis text elements have a black color.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nAnd there we have it! With just 7 lines we’ve created what I would say is a publication quality graph! ggplot does a lot of the tedious work for you, giving you time to focus on the more important aspects, such as labeling and color. Admittedly, I’ve spent a LOT of time on these aspects in the past…\nMore information about all of the hierarchical theme components that you can customize is available here. In order to change many of these components, you need to use theme elements like we did above with element_text(). That and other theme elements are documented here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "ggplot2 Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-ggplot2.html#other-layers",
+    "href": "NAPC2024/materials/4_visualization/practical-ggplot2.html#other-layers",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Other layers",
+    "text": "Other layers\nThere are many other types of plots that we can make with ggplot2.\n\nHistograms\nWe can visualize the density of values for a single variable with a histogram:\n\nggplot(mpg, aes(x = hwy)) + \n  geom_histogram() +\n  scale_x_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote how histograms don’t require a y-axis aesthetic by default. The counts are tabulated for you.\n\n\nBoxplots and Violin Plotss\nWe can visualize the density of values for a single variable across a discrete variable with boxplots or violin plots:\n\nggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + \n  geom_boxplot() +\n  scale_x_discrete(name = \"# Cylinders\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + \n  geom_violin(scale = \"width\", draw_quantiles = c(0.25, 0.5, 0.75)) +\n  scale_x_discrete(name = \"# Cylinders\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote that many of these “geom”s have lots of options. For example, we’ve decided to scale all of the violin plots to the same width and to draw the quartiles on them (mimicking the boxplots above).\n\n\n2D Contours\nWe can also visualize the density of values across two continuos variables using a 2D contour. Here we’ll use the built-in Old Faithful waiting time/eruption duration data (faithful). We’ll expand the axes a little bit to better show the contours:\n\nggplot(faithful, aes(x = eruptions, y = waiting)) +\n  geom_density_2d(linewidth = 0.25, colour = \"black\") +\n  xlim(0.5, 6) +\n  ylim(35, 110) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\n\nTime Series\nWe’ll use the built-in economics dataset to explore visualizing a time series. In this case, we are looking at unemployment over time:\n\nggplot(economics, aes(x = date, y = unemploy)) +\n  geom_line() +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\ngeom_path() lets you explore how two variables are related over time. For example, unemployment and personal savings rate:\n\nggplot(economics, aes(x = unemploy/pop, y = psavert)) +\n  geom_path(aes(colour = as.numeric(date))) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote how we’ve used multiple columns of the data to define the x-axis here.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "ggplot2 Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-ggplot2.html#combining-layers",
+    "href": "NAPC2024/materials/4_visualization/practical-ggplot2.html#combining-layers",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Combining layers",
+    "text": "Combining layers\nWe can also combine multiple layers to show the same data in different ways in the same plot. For example, we could show the raw data for the above contour plot in addition to the contours:\n\nggplot(faithful, aes(x = eruptions, y = waiting)) +\n  geom_point() +\n  geom_density_2d_filled(alpha = 0.5) +\n  geom_density_2d(linewidth = 0.25, colour = \"black\") +\n  xlim(0.5, 6) +\n  ylim(35, 110) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote that, when combining layers, the layers are added to the plot in order, so in this case the points are the bottom layer and the contour lines are the top layer. We changed the alpha of the middle layer to prevent the points from being blocked.",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "ggplot2 Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-ggplot2.html#facetting",
+    "href": "NAPC2024/materials/4_visualization/practical-ggplot2.html#facetting",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Facetting",
+    "text": "Facetting\nLet’s take our scatterplot example from earlier and make it a little more complex with another aesthetic:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNow, what if we wanted to also split the data by the years the cars were manufactured? We’re already using color and shape, so what other aesthetic could we use? We could possible use some shapes that have both a fill and outline color, but that sounds messy. Instead of using another aesthetic, we could also use a facet. This splits the chart into multiple panels:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  facet_wrap(vars(year)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe can get even crazier by faceting by multiple variables:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  facet_grid(rows = vars(cyl), cols = vars(year)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nOK, maybe we’ve gone a little too far here, but you get the picture!",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "ggplot2 Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-ggplot2.html#timescales",
+    "href": "NAPC2024/materials/4_visualization/practical-ggplot2.html#timescales",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Timescales",
+    "text": "Timescales\nThe deeptime package allows us to add a timescale to a ggplot2 plot with a single line (just like palaeoverse does in base R graphics). coord_geo() is one of many coordinate systems that exist in the ggplot2 ecosystems. Often coordinate systems are used to alter the positions of aesthetics, but in this case coord_geo() adds a timescale to one or more of the axes:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe can stack multiple timescales or have timescales on multiple sides:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(\n    dat = list(\"periods\", \"eras\"), xlim = c(542, 0),\n    pos = list(\"b\", \"b\"), abbrv = list(TRUE, FALSE)\n  ) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(\n    dat = list(\"periods\", \"eras\"), xlim = c(542, 0),\n    pos = list(\"b\", \"t\"), abbrv = list(TRUE, FALSE)\n  ) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nTimescale color palettes\nInstead of a line graph/time series, we could plot these reef counts as a bar graph (geom_col() in this case). However, to give a little more life to our graph, we’ll go ahead and color each bar based on the official geological timescale color palette (included in deeptime). First we need to get the stage names and the beginnings and ends of the bins.\n\n# Get stage names\nreefs_time$stage &lt;- bins$interval_name[reefs_time$bin_assignment]\n\n# Get beginning and end of bins\nreefs_time$bin_max_ma &lt;- bins$max_ma[reefs_time$bin_assignment]\nreefs_time$bin_min_ma &lt;- bins$min_ma[reefs_time$bin_assignment]\n\nThen we can go ahead and make the desired bar graph:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow, fill = stage)) +\n  geom_col(aes(width = bin_max_ma - bin_min_ma)) +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  scale_fill_geo(dat = \"stages\", guide = \"none\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe could also group the stages by era and color them based on that:\n\nreefs_time$era &lt;- cut(reefs_time$bin_midpoint,\n                      breaks = c(0, 66, 252, 542),\n                      labels = c(\"Cenozoic\", \"Mesozoic\", \"Paleozoic\"))\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow, fill = era)) +\n  geom_col(aes(width = bin_max_ma - bin_min_ma)) +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  scale_fill_geo(dat = \"eras\", guide = \"none\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "ggplot2 Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/materials/4_visualization/practical-ggplot2.html#plot-occurrences-through-time",
+    "href": "NAPC2024/materials/4_visualization/practical-ggplot2.html#plot-occurrences-through-time",
+    "title": "ggplot2 Data Visualization Practical",
+    "section": "Plot occurrences through time",
+    "text": "Plot occurrences through time\nA common graph in paleontology is stratigraphic occurrences of taxa through time. The palaeoverse and deeptime packages have functions to instantly create graphs like these based on occurrence data. I’ll focus on the deeptime version here since it uses ggplot2. First we’ll grab some tetrapod occurrence data from the palaeoverse package and clean it up a little:\n\noccdf &lt;- subset(tetrapods, accepted_rank == \"genus\")\noccdf &lt;- subset(occdf, select = c(occurrence_no, accepted_name,\n                                  max_ma, min_ma))\noccdf$age &lt;- (occdf$max_ma + occdf$min_ma) / 2\noccdf &lt;- subset(occdf, accepted_name %in% c(\"Eryops\", \"Dimetrodon\",\n                                            \"Diadectes\", \"Diictodon\",\n                                            \"Ophiacodon\", \"Diplocaulus\",\n                                            \"Benthosuchus\"))\n\nNow we’ll use geom_points_range() to plot the occurrences as points and ranges:\n\n# plot those occurrences\nggplot(data = occdf) +\n  geom_points_range(aes(x = age, y = accepted_name)) +\n  scale_x_reverse(name = \"Time (Ma)\") +\n  coord_geo(pos = list(\"bottom\", \"bottom\"),\n            dat = list(\"stages\", \"periods\"),\n            abbrv = list(TRUE, FALSE), expand = TRUE, size = \"auto\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nAnd that’s that!",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Materials",
+      "Data visualization",
+      "ggplot2 Data Visualization Practical"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/team.html",
+    "href": "NAPC2024/team.html",
+    "title": "Meet the event organisers",
+    "section": "",
+    "text": "This edition of the Workshop event is organised and led by the following members of the Palaeoverse team.\n\n\n\n\n\nDr Lewis A. Jones  Universidade de Vigo, Spain\n\n\n\n\n\nDr Erin Dillon  Smithsonian Tropical Research Institute, Panama\n\n\n\n\n\n\n\nDr Bethany J. Allen  ETH Zürich, Switzerland\n\n\n\n\n\nDr Christopher D. Dean  University College London, UK\n\n\n\n\n\n\n\nDr William Gearty  American Museum of Natural History, USA",
+    "crumbs": [
+      "NAPC 2024 Workshop",
+      "Meet the event organisers"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/index.html",
+    "href": "NAPC2024/index.html",
+    "title": "NAPC 2024 Workshop",
+    "section": "",
+    "text": "08:00–12:00 - 19th June 2024\nRoom 1010, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085",
+    "crumbs": [
+      "NAPC 2024 Workshop"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/index.html#arrival",
+    "href": "NAPC2024/index.html#arrival",
+    "title": "NAPC 2024 Workshop",
+    "section": "Arrival",
+    "text": "Arrival\nThe event starts at 08:00 on the 19th June 2024 and will take place in Room 1010, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085.\nThe full schedule for the workshop is available here.",
+    "crumbs": [
+      "NAPC 2024 Workshop"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/index.html#installation",
+    "href": "NAPC2024/index.html#installation",
+    "title": "NAPC 2024 Workshop",
+    "section": "Installation",
+    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"dplyr\", \"palaeoverse\", \"ggplot2\", \"deeptime\", \"sf\",\n                 \"rnaturalearth\", \"rphylopic\", \"terra\", \"tidyterra\",\n                 \"rpaleoclim\", \"rgplates\")",
+    "crumbs": [
+      "NAPC 2024 Workshop"
+    ]
+  },
+  {
+    "objectID": "NAPC2024/index.html#acknowledgements",
+    "href": "NAPC2024/index.html#acknowledgements",
+    "title": "NAPC 2024 Workshop",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis event is run by the Palaeoverse development team and supported by the organizers of the 12th North American Paleontological Convention. We thank the organizers for their support in facilitating this workshop.",
+    "crumbs": [
+      "NAPC 2024 Workshop"
+    ]
   }
 ]
