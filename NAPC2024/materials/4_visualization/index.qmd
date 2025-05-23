@@ -1,5 +1,6 @@
 ---
 title: "Data visualization"
+order: 4
 ---
 
 ## Summary

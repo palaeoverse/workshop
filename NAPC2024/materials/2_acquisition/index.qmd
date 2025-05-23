@@ -1,5 +1,6 @@
 ---
 title: "Data acquisition and cleaning"
+order: 2
 ---
 
 ## Summary
@@ -13,4 +14,4 @@ This session is led by Bethany Allen. If you encounter any issues while working 
 -   [Tutorial slides](https://github.com/bethany-j-allen/get_fossil_data/blob/main/ObtainingData_hackathon.pdf)
 -   [Tutorial R code](https://github.com/bethany-j-allen/get_fossil_data/blob/main/PBDB_API.R)
 
-![](images/logo.png){fig-align="right" width="25%"}
+![](/images/logo.png){fig-align="right" width="25%"}

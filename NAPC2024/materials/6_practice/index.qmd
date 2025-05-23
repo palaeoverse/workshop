@@ -1,16 +1,17 @@
 ---
 title: "Independent practice"
+order: 6
 ---
 
 ## Summary
 
-This unit of the workshop is reserved for your independent practice. We provide a vignette below on reconstructing the alpha diversity and geographic range size of Carboniferous and Permian tetrapods to work through at your leisure. If preferred, you are also free to work on your own data applying what you have learnt today. Either way, we will be around to help and guide you through anything you need help with. The code for the tutorial is available [here](./materials/practice/tetrapod-biodiversity.qmd) and provides usage examples for helping you get started with the package.
+This unit of the workshop is reserved for your independent practice. We provide a vignette below on reconstructing the alpha diversity and geographic range size of Carboniferous and Permian tetrapods to work through at your leisure. If preferred, you are also free to work on your own data applying what you have learnt today. Either way, we will be around to help and guide you through anything you need help with. The code for the tutorial is available [here](tetrapod-biodiversity.qmd) and provides usage examples for helping you get started with the package.
 
 This session is led by Lewis A. Jones. If you encounter any issues while working with these resources, please contact him [here](mailto:LewisA.Jones@outlook.com).
 
 ## Resources
 
--   [Tutorial (html)](./materials/practice/tetrapod-biodiversity.qmd) \| <a href="https://github.com/palaeoverse/workshop/blob/main/materials/practice/tetrapod-biodiversity.qmd">Tutorial (qmd)</a>
+-   [Tutorial (html)](tetrapod-biodiversity.qmd) \| <a href="https://github.com/palaeoverse/workshop/blob/main/materials/practice/tetrapod-biodiversity.qmd">Tutorial (qmd)</a>
 
-![](images/logo.png){fig-align="right" width="25%"}
+![](/images/palaeoverse.png){fig-align="right" width="25%"}
 

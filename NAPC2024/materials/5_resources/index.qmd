@@ -1,5 +1,6 @@
 ---
 title: "Resources"
+order: 5
 ---
 
 ## Summary
@@ -186,4 +187,4 @@ These resources cover the various ways in which data can be visualised, from the
 
 -   [Cookbook for R](http://www.cookbook-r.com/){target="_blank"}: A quick start guide for solving specific issues in R.
 
-![](images/logo.png){fig-align="right" width="25%"}
+![](/images/logo.png){fig-align="right" width="25%"}

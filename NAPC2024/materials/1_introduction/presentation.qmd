@@ -1,6 +1,6 @@
 ---
 title: | 
-  R for Palaeobiologists\
+  R for Palaeobiologists
 subtitle: |
   Getting started with the palaeoverse R package (and more!)\
   \

@@ -16,7 +16,6 @@ website:
   navbar:
     border: true
     background: "#c1e0e2"
-    logo: "images/favicon.png"
     collapse: false
     right:
       - icon: github
@@ -29,6 +28,8 @@ website:
         href: https://palaeoverse.org
   sidebar:
     background: "#c1e0e2"
+    logo: "images/favicon.png"
+    align: center
     border: true
     title: false
     pinned: true
