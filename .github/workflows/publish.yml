@@ -24,7 +24,7 @@ jobs:
         run: |
           install.packages("pak", repos = "https://r-lib.github.io/p/pak/dev/")
           install.packages("renv")
-          pak::pkg_install(renv::dependencies()$Package)
+          pak::pkg_install(unique(renv::dependencies()$Package))
         shell: Rscript {0}
 
       - name: Install packages (needed for Rmd)
