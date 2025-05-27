@@ -756,6 +756,534 @@
     ]
   },
   {
+    "objectID": "UCL2023/food.html",
+    "href": "UCL2023/food.html",
+    "title": "Food and Drink",
+    "section": "",
+    "text": "UCL benefits very heavily from its central London location, and is only a short walk, bus, or tube away from areas such as Soho, Covent Garden, Islington, and Camden. For the closest lunch or dinner options within around five minutes of campus, we recommend the following:\n\nBloomsbury Farmers’ Market (Thursday only) – a big favourite with everybody in the office. Taking place in Torrington Square from around 12–2pm every Thursday, there are usually over 20 stalls selling a huge range of cuisines. Prices generally fall just under &lt;£10.\nRoti King – very tasty Malaysian and Singaporean street food. You can’t book here, and queues often form outside if you want a table, but it’s worth it. You can pre-order and collect, or they will also deliver to UCL. Prices for main dishes range from £5–10.\nNoodle & Snack 面道坊 - amazing handmade noodles and broths! The restaurant is small, and it can get very busy around lunch and dinner if you’re hoping to sit in, but they also do takeaway. A main and a side should cost £10–20.\nFranco Manca – Good quality sourdough pizzas for &lt;£10. Both eat in and takeaway options are available.\nRosa’s Thai – A large selection of tasty Thai dishes with a sizeable number of vegetarian and vegan options. Lunch will likely cost £10–20 per person. Eat in and takeaway options are available.\nMestizo – delicious Mexican food with a large number of items on the menu. Expect a meal for one to cost around £20.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Food and Drink"
+    ]
+  },
+  {
+    "objectID": "UCL2023/food.html#our-favourites-near-campus",
+    "href": "UCL2023/food.html#our-favourites-near-campus",
+    "title": "Food and Drink",
+    "section": "",
+    "text": "UCL benefits very heavily from its central London location, and is only a short walk, bus, or tube away from areas such as Soho, Covent Garden, Islington, and Camden. For the closest lunch or dinner options within around five minutes of campus, we recommend the following:\n\nBloomsbury Farmers’ Market (Thursday only) – a big favourite with everybody in the office. Taking place in Torrington Square from around 12–2pm every Thursday, there are usually over 20 stalls selling a huge range of cuisines. Prices generally fall just under &lt;£10.\nRoti King – very tasty Malaysian and Singaporean street food. You can’t book here, and queues often form outside if you want a table, but it’s worth it. You can pre-order and collect, or they will also deliver to UCL. Prices for main dishes range from £5–10.\nNoodle & Snack 面道坊 - amazing handmade noodles and broths! The restaurant is small, and it can get very busy around lunch and dinner if you’re hoping to sit in, but they also do takeaway. A main and a side should cost £10–20.\nFranco Manca – Good quality sourdough pizzas for &lt;£10. Both eat in and takeaway options are available.\nRosa’s Thai – A large selection of tasty Thai dishes with a sizeable number of vegetarian and vegan options. Lunch will likely cost £10–20 per person. Eat in and takeaway options are available.\nMestizo – delicious Mexican food with a large number of items on the menu. Expect a meal for one to cost around £20.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Food and Drink"
+    ]
+  },
+  {
+    "objectID": "UCL2023/food.html#on-campus",
+    "href": "UCL2023/food.html#on-campus",
+    "title": "Food and Drink",
+    "section": "On Campus",
+    "text": "On Campus\nUCL’s cafes all serve a similar selection of hot and cold drinks, sandwiches, salads, and microwaveable meals averaging around £5–6. All of those listed here are within 3-4 minutes of the Kathleen Lonsdale Building, and are open from 8am onwards.\nThe main canteen (Wilkins Terrace and Lower Refectory) is open throughout the day, and offers a variety of cooked meals costing around £5–7.\n\nGeorge Farha Café (8am–6pm) – the neighbour to the Kathleen Lonsdale Building\nPrint Room Café (8am–8pm) – perhaps the nicest setting if the sun’s out as there’s seating in a nice courtyard. As well as the usual sandwiches and salads, this café also serves a few cooked options such as pasta dishes.\nGordon’s Café (8am–7pm) – Similar to George Farha, but with the bonus addition of pizza!\nWilkins Terrace and Lower Refectory (8–10:30am, 11:30am–7pm) – located on the lower level of campus, the canteen houses 3 or 4 different outlets selling a variety of cooked dishes.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Food and Drink"
+    ]
+  },
+  {
+    "objectID": "UCL2023/accommodation.html",
+    "href": "UCL2023/accommodation.html",
+    "title": "Accommodation",
+    "section": "",
+    "text": "For the cheapest accommodation options, we recommend reserving a room at one of several university halls which are hired out to visitors over the summer. A single room with shared bathroom facilities can be acquired from £45 a night, with the cheapest ensuite options starting from £65. You can use the following links to assess options:\n\nUniversity College London (UCL)\nLondon School of Economics (LSE)\nKing’s College London (KCL)\nImperial College London (ICL)\n\nMany major chain hotels can also be found within 10–15 minutes walking distance of UCL, with rates for a double ensuite starting from around £100 a night. Some suggestions include:\n\nPremier Inn London Euston\nPremier Inn London St. Pancras\nHub by Premier Inn Goodge Street\n\nMultiple independent hotels also operate in the area, which can be viewed on booking.com.\nWe recommend booking as soon as possible to keep prices lower!",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Accommodation"
+    ]
+  },
+  {
+    "objectID": "UCL2023/hackathon.html",
+    "href": "UCL2023/hackathon.html",
+    "title": "Day 2: Hackathon",
+    "section": "",
+    "text": "The aim of this event is to provide an opportunity for attendees to work with different early career researchers and gain experience working collaboratively in R to generate reproducible research. For the event, you will develop a function with your team to clean, explore, and/or visualise palaeontological data.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 2: Hackathon"
+    ]
+  },
+  {
+    "objectID": "UCL2023/hackathon.html#brief-1-geo_check",
+    "href": "UCL2023/hackathon.html#brief-1-geo_check",
+    "title": "Day 2: Hackathon",
+    "section": "Brief 1: geo_check",
+    "text": "Brief 1: geo_check\n\nContext\nWhen working with fossil datasets, we typically use age information associated with occurrences. This age information can be numerical values, interval names, or in some cases, a mixture of both. As with all datasets, errors and inconsistencies can exist.\n\n\nObjective\n\nDevelop a function (e.g. geo_check) which delivers automatic checking (and potentially cleaning) for common errors and inconsistencies in age data.\n\n\n\nStarting points to consider\n\nHow is the data structured? One (e.g. early_interval/late_interval) or two data columns (e.g. max_ma and min_ma)?\nWhat data errors might arise (e.g. spelling mistakes, data in the wrong columns)?\nWhat inconsistencies might arise (e.g. “early interval” vs. “early_interval”)?",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 2: Hackathon"
+    ]
+  },
+  {
+    "objectID": "UCL2023/hackathon.html#brief-2-ghost_ranges",
+    "href": "UCL2023/hackathon.html#brief-2-ghost_ranges",
+    "title": "Day 2: Hackathon",
+    "section": "Brief 2: ghost_ranges",
+    "text": "Brief 2: ghost_ranges\n\nContext\nFossil taxa are often only sampled periodically between their first and last occurrences. The periods of absence - known as ghost ranges - represent known failed sampling events, and can be useful for understanding sampling bias in an occurrence dataset.\n\n\nObjective\n\nDevelop a function (e.g. ghost_ranges) which quantifies the ghost ranges in an occurrence dataset.\n\n\n\nStarting points to consider\n\nShould times of absence be treated as continuous or as discrete geological intervals?\nWhat is useful to know about these ranges - their frequency, their length, their placement relative to the range, or something else?\nShould this information be collected per-taxon and/or as averages across a set of taxa?\nHow is it best to present or visualise the output?",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 2: Hackathon"
+    ]
+  },
+  {
+    "objectID": "UCL2023/hackathon.html#brief-3-abundance_distr",
+    "href": "UCL2023/hackathon.html#brief-3-abundance_distr",
+    "title": "Day 2: Hackathon",
+    "section": "Brief 3: abundance_distr",
+    "text": "Brief 3: abundance_distr\n\nContext\nSummarising the abundances of taxa is fundamental for understanding occurrence data. Abundance distributions are frequently used for ecological analyses and to inform diversity metrics.\n\n\nObjective\n\nDevelop a function (e.g. abundance_distr) which summarises the abundances of taxa in an occurrence dataset.\n\n\n\nStarting points to consider\n\nShould the function be flexible enough to provide both absolute and relative abundance distributions?\nHow should the abundances be ordered and visualised?\nWhat is a useful output format to use the abundances for further analysis, for example with the vegan package?\nHow should data sets be handled that contain occurrences from different time intervals?",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 2: Hackathon"
+    ]
+  },
+  {
+    "objectID": "UCL2023/hackathon.html#brief-4-stack_plot",
+    "href": "UCL2023/hackathon.html#brief-4-stack_plot",
+    "title": "Day 2: Hackathon",
+    "section": "Brief 4: stack_plot",
+    "text": "Brief 4: stack_plot\n\nContext\nVisualising abundances, diversities or other metrics through time can be a challenge when showing several different groups in the same plot. Stacked area plots allow for a quick visual assessment of changing patterns.\n\n\nObjective\n\nDevelop a function (e.g. stack_plot) which plots a metric like abundance for different groups, stacked on top of each other\n\n\n\nStarting points to consider\n\nWhat input data does the function expect?\nHow does the function handle relative (summing to 1) and absolute metrics, and where can the legend be placed in either case?\nWhat defines the order in which different groups are stacked?\nWhat colour schemes could be used, and how should the colours be ordered for optimal visibility?",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 2: Hackathon"
+    ]
+  },
+  {
+    "objectID": "UCL2023/hackathon.html#brief-5-lat_bins",
+    "href": "UCL2023/hackathon.html#brief-5-lat_bins",
+    "title": "Day 2: Hackathon",
+    "section": "Brief 5: lat_bins",
+    "text": "Brief 5: lat_bins\n\nContext\nPalaeobiologists are often interested in latitudinal trends through time. To study such patterns, fossil occurrence data are typically binned into latitudinal bins (e.g. palaeoverse::lat_bins and palaeoverse::bin_lat). At the equator, a degree of longitude is the same as a degree of latitude, approximately 111 km. However, this length decreases as you move away from the equator. Consequently, standard latitudinal bins (e.g. 5º bins) have an unequal amount of area within each bin.\n\n\nObjective\n\nDevelop a function (e.g. lat_bins) which creates equal-area latitudinal bins\n\n\n\nStarting points to consider\n\nHow might users want to define their bins? Number of bins or size of bins?\nDo users want the entire latitudinal range?\nWhat output might users want?\nThe Earth is not a perfect sphere\nThe distribution of land and ocean area changes through time",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 2: Hackathon"
+    ]
+  },
+  {
+    "objectID": "UCL2023/hackathon.html#brief-6-your-own-idea",
+    "href": "UCL2023/hackathon.html#brief-6-your-own-idea",
+    "title": "Day 2: Hackathon",
+    "section": "Brief 6: your own idea!",
+    "text": "Brief 6: your own idea!",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 2: Hackathon"
+    ]
+  },
+  {
+    "objectID": "UCL2023/entertainment.html",
+    "href": "UCL2023/entertainment.html",
+    "title": "Entertainment",
+    "section": "",
+    "text": "Prince of Wales Feathers – bustling pub with a roof terrace perfect for a summer’s eve!\nSmuggler’s Tavern – A cosy, nautical themed pub serving some very decent pizzas. On the second Friday of every month, the tavern has a karaoke night. We’re still unsure whether this is a good or bad thing. Probably both.\nCarpenter’s Arms – Cosy and slightly off the beaten track so doesn’t get busy too quickly.\nLore of the Land – A very appealing wood panelled pub with a fancy restaurant upstairs. They win the award for the best smelling hand sanitizer.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Entertainment"
+    ]
+  },
+  {
+    "objectID": "UCL2023/entertainment.html#our-favourite-pubs-tried-and-tested-of-course",
+    "href": "UCL2023/entertainment.html#our-favourite-pubs-tried-and-tested-of-course",
+    "title": "Entertainment",
+    "section": "",
+    "text": "Prince of Wales Feathers – bustling pub with a roof terrace perfect for a summer’s eve!\nSmuggler’s Tavern – A cosy, nautical themed pub serving some very decent pizzas. On the second Friday of every month, the tavern has a karaoke night. We’re still unsure whether this is a good or bad thing. Probably both.\nCarpenter’s Arms – Cosy and slightly off the beaten track so doesn’t get busy too quickly.\nLore of the Land – A very appealing wood panelled pub with a fancy restaurant upstairs. They win the award for the best smelling hand sanitizer.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Entertainment"
+    ]
+  },
+  {
+    "objectID": "UCL2023/entertainment.html#things-to-do-in-the-immediate-area",
+    "href": "UCL2023/entertainment.html#things-to-do-in-the-immediate-area",
+    "title": "Entertainment",
+    "section": "Things to do in the immediate area",
+    "text": "Things to do in the immediate area\n\nUCL’s Grant Museum of Zoology (1–5pm Tues to Fri) – a five-minute walk from the workshop, this little museum hosts thousands of Zoological specimens in cabinets and jars. Highlights include the Micrarium and the (in)famous Jar of Moles.\nGreen Spaces – Head just a few minutes away from Euston Road and you’ll find a variety of green spaces perfect for a short stroll, reading a book, or a picnic. Close to UCL you can find Gordon Square, Tavistock Square Gardens, and Russell Square. For a larger space, we’d recommend the trip to Regent’s Park, home to London Zoo.\nWellcome Collection (10am–6pm) – Located opposite the Kathleen Lonsdale Building, the Wellcome Collection hosts a series of rotating exhibitions focused on science, medicine, life, and art. Apparently there’s a lovely library open to everyone too!",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Entertainment"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/functions.html",
+    "href": "UCL2023/day1/functions.html",
+    "title": "Writing functions",
+    "section": "",
+    "text": "This unit of the workshop covers the writing of R functions. It consists of four themes, each with a small practical:\n\nFunction basics (e.g. the structure of functions)\nBest practices (e.g. documentation with roxygen2)\nTesting and debugging (e.g. the testthat package)\nAdvanced tools (e.g. profiling)\n\nThe slides for the workshop, including the instructions for the practicals, can be found here:\n\nWriting functions in R - slides\n\nHere is a link the source code that was used to generate the presentation:\n\nWriting functions in R - source code\n\nThis session is led by Kilian Eichenseer. If you encounter any issues while working with the material, please contact him here.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Writing functions"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/functions.html#summary",
+    "href": "UCL2023/day1/functions.html#summary",
+    "title": "Writing functions",
+    "section": "",
+    "text": "This unit of the workshop covers the writing of R functions. It consists of four themes, each with a small practical:\n\nFunction basics (e.g. the structure of functions)\nBest practices (e.g. documentation with roxygen2)\nTesting and debugging (e.g. the testthat package)\nAdvanced tools (e.g. profiling)\n\nThe slides for the workshop, including the instructions for the practicals, can be found here:\n\nWriting functions in R - slides\n\nHere is a link the source code that was used to generate the presentation:\n\nWriting functions in R - source code\n\nThis session is led by Kilian Eichenseer. If you encounter any issues while working with the material, please contact him here.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Writing functions"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/visualisation.html",
+    "href": "UCL2023/day1/visualisation.html",
+    "title": "Data visualisation",
+    "section": "",
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as colour and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting vector and raster spatial data. The slides for the unit are available here and provide an introduction to some of the most commonly used resources. The code for the ggplot2 tutorial is available here, as well as for the spatial data tutorial here.\nThis session is led by Sofía Galván and Miranta Kouvari. If you encounter any issues while working with the tutorials, please contact Sofía here. If you have any questions or further enquiries on the theory covered, please contact Miranta here.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data visualisation"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/visualisation.html#summary",
+    "href": "UCL2023/day1/visualisation.html#summary",
+    "title": "Data visualisation",
+    "section": "",
+    "text": "This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as colour and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting vector and raster spatial data. The slides for the unit are available here and provide an introduction to some of the most commonly used resources. The code for the ggplot2 tutorial is available here, as well as for the spatial data tutorial here.\nThis session is led by Sofía Galván and Miranta Kouvari. If you encounter any issues while working with the tutorials, please contact Sofía here. If you have any questions or further enquiries on the theory covered, please contact Miranta here.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data visualisation"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/visualisation.html#resources",
+    "href": "UCL2023/day1/visualisation.html#resources",
+    "title": "Data visualisation",
+    "section": "Resources",
+    "text": "Resources\n\nData visualization slides\nData visualization 0: base R html\nData visualization 0: base R Rmd\nData visualization 1: ggplot2 html\nData visualization 1: ggplot2 Rmd\nData visualization 2: spatial data html\nData visualization 2: spatial data Rmd",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data visualisation"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/index.html",
+    "href": "UCL2023/day1/index.html",
+    "title": "Day 1: Workshop",
+    "section": "",
+    "text": "Goal\nThe workshop component of this event will provide an introduction to data acquisition, preparation, and visualisation in R.\n\nData acquisition\nData preparation\nData visualisation\nWriting functions\nResources",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop"
+    ]
+  },
+  {
+    "objectID": "UCL2023/team.html",
+    "href": "UCL2023/team.html",
+    "title": "Organising Team",
+    "section": "",
+    "text": "This edition of the Workshop and Hackathon event is organised and led by the following members of the Palaeoverse team.\n\n\n\n  Dr Lewis A. Jones  Universidade de Vigo, Spain\n\n\n  Dr Bethany J. Allen  ETH Zürich, Switzerland\n\n\n  Dr Christopher D. Dean  University College London, UK\n\n\n\n\n  Dr Kilian Eichenseer  University of Durham, UK\n\n\n  Cecily Nicholl  University College London, UK\n\n\n  Sofía Galván  Universidade de Vigo, Spain\n\n\n\n\n  Miranta Kouvari  Science Graphic Design, UK",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Organising Team"
+    ]
+  },
+  {
+    "objectID": "UCL2023/schedule.html",
+    "href": "UCL2023/schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Time\nDay 1 (September 7th)\nDay 2 (September 8th)\n\n\n\n\n09:00\nTea and Coffee ☕\nTea and Coffee ☕\n\n\n09:30\nWelcome and Introduction to Palaeoverse\nHackathon\n\n\n10:00\nTheory: Data acquisition/cleaning\nHackathon\n\n\n10:30\nPractical: Data acquisition/cleaning\nHackathon\n\n\n11:00\nTea and Coffee ☕\nTea and Coffee ☕\n\n\n11:30\nTheory: Data preparation with palaeoverse\nHackathon\n\n\n12:00\nPractical: Data preparation with palaeoverse\nHackathon\n\n\n12:30\nLunch\nLunch\n\n\n13:30\nTheory: Introduction to Data visualisation\nHackathon\n\n\n14:00\nPractical: Introduction to Data visualisation\nHackathon\n\n\n14:30\nTheory: Resources\nHackathon\n\n\n15:00\nTheory: Writing functions in R\nHackathon\n\n\n15:30\nTea and Coffee ☕\nTea and Coffee ☕\n\n\n16:00\nPractical: Writing functions in R\nHackathon\n\n\n16:30\nPractical: Writing functions in R\nHackathon\n\n\n17:00\nIntroduction to the Hackathon\nPresentations\n\n\n17:30\nWorking group discussion\nPresentations\n\n\n18:00\nConcluding Remarks\nConcluding Remarks\n\n\n19:30\nDinner 🥘\nDinner 🥘",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/preparation.html",
+    "href": "UCL2023/day1/preparation.html",
+    "title": "Data preparation",
+    "section": "",
+    "text": "This unit of the workshop covers preparation and exploration of fossil occurrence data using the palaeoverse R package. The slides for the unit are available here and provide an introduction to palaeoverse and the available functionality. The code for the tutorial is available here and provides usage examples for helping you get started with the package.\nThis session is led by Lewis A. Jones. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data preparation"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/preparation.html#summary",
+    "href": "UCL2023/day1/preparation.html#summary",
+    "title": "Data preparation",
+    "section": "",
+    "text": "This unit of the workshop covers preparation and exploration of fossil occurrence data using the palaeoverse R package. The slides for the unit are available here and provide an introduction to palaeoverse and the available functionality. The code for the tutorial is available here and provides usage examples for helping you get started with the package.\nThis session is led by Lewis A. Jones. If you encounter any issues while working with these resources, please contact him here.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data preparation"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/preparation.html#resources",
+    "href": "UCL2023/day1/preparation.html#resources",
+    "title": "Data preparation",
+    "section": "Resources",
+    "text": "Resources\n\nTutorial slides\nTutorial code html\nTutorial code qmd",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data preparation"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/resources.html",
+    "href": "UCL2023/day1/resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "This unit of the workshop introduces a variety of resources that are of relevance to palaeobiological analyses and palaeontologists more broadly. The slides for the unit are available here and provide an overview to these commonly used resources, along with links to relevant websites and other content. This acts as both a summary of the resources mentioned in the other Units, as well as including additional resources which may be of interest.\nThis session is led by Christopher Dean. If you encounter any issues while working with these resources, please contact him here. Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please let Chris know and he will add them to the list.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/resources.html#summary",
+    "href": "UCL2023/day1/resources.html#summary",
+    "title": "Resources",
+    "section": "",
+    "text": "This unit of the workshop introduces a variety of resources that are of relevance to palaeobiological analyses and palaeontologists more broadly. The slides for the unit are available here and provide an overview to these commonly used resources, along with links to relevant websites and other content. This acts as both a summary of the resources mentioned in the other Units, as well as including additional resources which may be of interest.\nThis session is led by Christopher Dean. If you encounter any issues while working with these resources, please contact him here. Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please let Chris know and he will add them to the list.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/resources.html#tutorial-content",
+    "href": "UCL2023/day1/resources.html#tutorial-content",
+    "title": "Resources",
+    "section": "Tutorial Content",
+    "text": "Tutorial Content\n\nTutorial slides",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/resources.html#resources-content",
+    "href": "UCL2023/day1/resources.html#resources-content",
+    "title": "Resources",
+    "section": "Resources Content",
+    "text": "Resources Content\n\nData Acquisition\nThese resources cover the acquisition of data for palaeontological analyses, including occurrence datasets and covariate/associated data.\n\nOccurrence Databases\n\nPaleobiology Database\nGeobiodiversity database\nNeotoma\nGBIF\niDigBio\nNeptune\nBioDeepTime\nPhylacine\nPARED\n\n\n\nOther Relevant Datasets\n\nMacrostrat\nMindat\nUSGS Geological Maps of North America\nGlobal Maximum Green Vegetation Fraction\n1km Resolution Global Digital Elevation Map\nWorldClim - can be accessed via the ‘getData’ function of the ‘raster’ package.\nESA WorldCover\n\n\n\nPalaeogeographies\n\nDeep Time Maps\nPaleomap Project\n\n\n\nOther places to find datasets\n\nZenodo\n\n\n\nRelevant Packages\n\n\n\nData Preparation\nThese resources cover the preparation of data for palaeontological analyses, including data cleaning, organisation and transformation.\n\nGeneral Packages\n\n\nPalaeontological Packages\n\nPalaeoverse\nCoordinateCleaner\nFossilBrush\n\n\n\n\nData Visualisation\nThese resources cover the various ways in which data can be visualised, from theoretical, practical and ethical angles.\n\nGeneral Resources\n\nBest Practices for Data Visualisation (Royal Society Guide)\nR Graph Gallery\nCOBLIS (Colour Blindness Simulator)\nColorhunt\nInkscape\nGnu Image Manipulation Program (GIMP)\n\n\n\nPackages\n\nggplot2\nlattice\nscatterplot3d\nhighcharter\nplotly\nRgl\nviridis\nRColorBrewer\nwesanderson\ncolorspace\nggsci\n\n\n\n\nWriting Functions\nR and function development\n\nAn Introduction to R\nMastering software development in R - functions\n\nStyle and Documentation\n\nTidyverse’s style guide\nGoogle’s R style guide\nlintr\nDocumentation with roxygen2\n\nTesting\n\nTesting basics\ntestthat\n\nEnvironment\n\nEnvironments\nScoping rules\n\nEfficiency\n\nBest coding practices in R\nR tools\nRcpp: Seamless R and C++ Integration\nAdvanced R\n\n\n\nGeneral Palaeontology Resources\n\nPalaeoverse\nPalaeoverse Google Group\nPaleonet\n\n\n\nGeneral Programming Resources\n\nCRAN Task Views\n\nPhylogenetics\nSpatial Data\nEcological and Environmental Data\nTime Series Analysis\n\n\n\nFree R Books\n\nR for Data Science (2nd Edition)\nHands-On Programming with R\nR Packages\nCookbook for R\nGeocomputation with R\n\n\n\n\n--\n\n\nProblem Solving Tips\n--",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Resources"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/acquisition.html",
+    "href": "UCL2023/day1/acquisition.html",
+    "title": "Data acquisition",
+    "section": "",
+    "text": "This unit of the workshop covers existing databases, and other resources, from which data relevant to palaeobiological analyses can be obtained. The slides for the unit are available here and provide an introduction to some of the most commonly used resources. The tutorial focuses on how to access occurrence data from the Paleobiology Database directly through R, and highlights some characteristics of this data and some problems this can pose for subsequent data analysis. The code for the tutorial is available here.\nThis session is led by Bethany Allen. If you encounter any issues while working with these resources, please contact her here.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data acquisition"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/acquisition.html#summary",
+    "href": "UCL2023/day1/acquisition.html#summary",
+    "title": "Data acquisition",
+    "section": "",
+    "text": "This unit of the workshop covers existing databases, and other resources, from which data relevant to palaeobiological analyses can be obtained. The slides for the unit are available here and provide an introduction to some of the most commonly used resources. The tutorial focuses on how to access occurrence data from the Paleobiology Database directly through R, and highlights some characteristics of this data and some problems this can pose for subsequent data analysis. The code for the tutorial is available here.\nThis session is led by Bethany Allen. If you encounter any issues while working with these resources, please contact her here.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data acquisition"
+    ]
+  },
+  {
+    "objectID": "UCL2023/day1/acquisition.html#resources",
+    "href": "UCL2023/day1/acquisition.html#resources",
+    "title": "Data acquisition",
+    "section": "Resources",
+    "text": "Resources\n\nTutorial slides\nTutorial R code",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Day 1: Workshop",
+      "Data acquisition"
+    ]
+  },
+  {
+    "objectID": "UCL2023/index.html",
+    "href": "UCL2023/index.html",
+    "title": "UCL 2023 Workshop",
+    "section": "",
+    "text": "7–8th September 2023, Kathleen Lonsdale Building, University College London",
+    "crumbs": [
+      "UCL 2023 Workshop"
+    ]
+  },
+  {
+    "objectID": "UCL2023/index.html#arrival",
+    "href": "UCL2023/index.html#arrival",
+    "title": "UCL 2023 Workshop",
+    "section": "Arrival",
+    "text": "Arrival\nThe event starts at 09:00 on the 7th September 2023 and will take place in Teaching Lab 1 (126), Kathleen Lonsdale Building, University College London. You should enter the building from the Gower Place entrance. We will meet you there from 08:55. See Getting Here for more information.\nThe full schedule for the event is available here.",
+    "crumbs": [
+      "UCL 2023 Workshop"
+    ]
+  },
+  {
+    "objectID": "UCL2023/index.html#installation",
+    "href": "UCL2023/index.html#installation",
+    "title": "UCL 2023 Workshop",
+    "section": "Installation",
+    "text": "Installation\nPlease ensure that you have the latest version of R (4.3.1) for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be download here. To minimise any installation issues during the workshop and hackathon, please also install the following R packages:\n\ninstall.packages(\"deeptime\", \"dplyr\", \"extrafont\", \"ggplot2\", \"ggpubr\", \n                 \"maps\", \"microbenchmark\", \"palaeoverse\", \"profvis\",\"raster\", \n                 \"RColorBrewer\", \"rgplates\", \"roxygen2\", \"rpaleoclim\",\n                 \"sf\", \"svglite\", \"terra\", \"testthat\", \"usethis\")",
+    "crumbs": [
+      "UCL 2023 Workshop"
+    ]
+  },
+  {
+    "objectID": "UCL2023/index.html#sponsors",
+    "href": "UCL2023/index.html#sponsors",
+    "title": "UCL 2023 Workshop",
+    "section": "Sponsors",
+    "text": "Sponsors\nThis event is run by the Palaeoverse development team and sponsored by the Palaeontological Association through a Grant-in-Aid (PA-GA202203) and the Paleontological Society through a small conference support grant.\n  \nThe Palaeontological Association, Transmitting Science, PRStatistics, and Jumping Rivers have also sponsored prizes for the hackathon.",
+    "crumbs": [
+      "UCL 2023 Workshop"
+    ]
+  },
+  {
+    "objectID": "UCL2023/location.html",
+    "href": "UCL2023/location.html",
+    "title": "Getting Here",
+    "section": "",
+    "text": "The event is hosted within the Kathleen Lonsdale Building at University College London.\nThe nearest major stations to the UCL campus are Euston and King’s Cross St. Pancras. The Kathleen Lonsdale Building is a relatively short walk from both stations (7 and 15 minutes respectively). Alternatively, Buses 30, 73, and 205 run along Euston Road between the Kathleen Lonsdale Building and King’s Cross St Pancras.\nThe closest tube stations to UCL are:\n\nWarren Street – Victoria Line - Northern Line\nEuston Square – Circle Line - Hammersmith & City Line - Metropolitan Line\nRussell Square – Piccadilly Line\n\nWe highly recommend downloading the Citymapper app if you intend on travelling around London!",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Getting Here"
+    ]
+  },
+  {
+    "objectID": "UCL2023/location.html#university-college-london",
+    "href": "UCL2023/location.html#university-college-london",
+    "title": "Getting Here",
+    "section": "",
+    "text": "The event is hosted within the Kathleen Lonsdale Building at University College London.\nThe nearest major stations to the UCL campus are Euston and King’s Cross St. Pancras. The Kathleen Lonsdale Building is a relatively short walk from both stations (7 and 15 minutes respectively). Alternatively, Buses 30, 73, and 205 run along Euston Road between the Kathleen Lonsdale Building and King’s Cross St Pancras.\nThe closest tube stations to UCL are:\n\nWarren Street – Victoria Line - Northern Line\nEuston Square – Circle Line - Hammersmith & City Line - Metropolitan Line\nRussell Square – Piccadilly Line\n\nWe highly recommend downloading the Citymapper app if you intend on travelling around London!",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Getting Here"
+    ]
+  },
+  {
+    "objectID": "UCL2023/location.html#finding-the-workshop-and-hackathon",
+    "href": "UCL2023/location.html#finding-the-workshop-and-hackathon",
+    "title": "Getting Here",
+    "section": "Finding the Workshop and Hackathon",
+    "text": "Finding the Workshop and Hackathon\nThe event will be held in the same room within the Kathleen Lonsdale Building. To enter the building, you can either use steps from Gower Pl, or by ramp through the eastern entrance via UCL’s main quad on Gower Street (see map for both). We will be working in Teaching Lab 1 (126) on the 1st floor of the Kathleen Lonsdale Building (signs will be in place upon arrival). Both stairs and an elevator can be accessed from the main lobby area near to the Deinonychus mount. Once on the first floor, take a left from the elevator or a right from the top of the stairs, before following the corridor all the way to its end!\nClick here for an interactive map or see map below.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Getting Here"
+    ]
+  },
+  {
+    "objectID": "UCL2023/conduct.html",
+    "href": "UCL2023/conduct.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "As with any community project, society, meeting, or event we feel it is important to established some expectations of behaviour.\nWe as members, contributors, and leaders pledge to make participation in this event a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "UCL2023/conduct.html#our-pledge",
+    "href": "UCL2023/conduct.html#our-pledge",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "As with any community project, society, meeting, or event we feel it is important to established some expectations of behaviour.\nWe as members, contributors, and leaders pledge to make participation in this event a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "UCL2023/conduct.html#our-standards",
+    "href": "UCL2023/conduct.html#our-standards",
+    "title": "Code of Conduct",
+    "section": "Our Standards",
+    "text": "Our Standards\n\nExamples of behavior that contributes to a positive environment for our community include:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nExamples of unacceptable behavior include:\n\nThe use of sexualized language or imagery, and sexual attention or advances of any kind\nTrolling, insulting or derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or email address, without their explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "UCL2023/conduct.html#enforcement-responsibilities",
+    "href": "UCL2023/conduct.html#enforcement-responsibilities",
+    "title": "Code of Conduct",
+    "section": "Enforcement Responsibilities",
+    "text": "Enforcement Responsibilities\n\nCommunity leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.\nCommunity leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "UCL2023/conduct.html#scope",
+    "href": "UCL2023/conduct.html#scope",
+    "title": "Code of Conduct",
+    "section": "Scope",
+    "text": "Scope\n\nThis Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "UCL2023/conduct.html#enforcement",
+    "href": "UCL2023/conduct.html#enforcement",
+    "title": "Code of Conduct",
+    "section": "Enforcement",
+    "text": "Enforcement\n\nInstances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement: Lewis A. Jones and Bethany Allen. All complaints will be reviewed and investigated promptly and fairly.\nAll community leaders are obligated to respect the privacy and security of the reporter of any incident.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "UCL2023/conduct.html#enforcement-guidelines",
+    "href": "UCL2023/conduct.html#enforcement-guidelines",
+    "title": "Code of Conduct",
+    "section": "Enforcement Guidelines",
+    "text": "Enforcement Guidelines\n\nCommunity leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:\n\n1. Correction\nCommunity Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.\nConsequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.\n\n\n2. Warning\nCommunity Impact: A violation through a single incident or series of actions.\nConsequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.\n\n\n3. Temporary Ban\nCommunity Impact: A serious violation of community standards, including sustained inappropriate behavior.\nConsequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.\n\n\n4. Permanent Ban\nCommunity Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.\nConsequence: A permanent ban from any sort of public interaction within the community.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "UCL2023/conduct.html#attribution",
+    "href": "UCL2023/conduct.html#attribution",
+    "title": "Code of Conduct",
+    "section": "Attribution",
+    "text": "Attribution\n\nThis Code of Conduct is adapted from the Contributor Covenant.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.",
+    "crumbs": [
+      "UCL 2023 Workshop",
+      "Code of Conduct"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
