@@ -1,0 +1,19 @@
+---
+title: "Data preparation"
+subtitle: "with the palaeoverse R package"
+order: 2
+---
+
+## Summary
+
+This unit of the workshop covers preparation and exploration of fossil occurrence data using the `palaeoverse` R package. The slides for the unit are available [here](https://lewisajones.github.io/palaeoverse-tutorial/) and provide an introduction to `palaeoverse` and the available functionality. The code for the tutorial is available [here](https://htmlpreview.github.io/?https://github.com/LewisAJones/palaeoverse-tutorial/blob/main/demo/phanerozoic-reefs.html) and provides usage examples for helping you get started with the package.
+
+This session is led by Lewis A. Jones. If you encounter any issues while working with these resources, please contact him [here](mailto:LewisA.Jones@outlook.com).
+
+## Resources
+
+-   [Tutorial slides](https://lewisajones.github.io/palaeoverse-tutorial/)
+-   [Tutorial code html](https://htmlpreview.github.io/?https://github.com/LewisAJones/palaeoverse-tutorial/blob/main/demo/phanerozoic-reefs.html)
+-   [Tutorial code qmd](https://github.com/LewisAJones/palaeoverse-tutorial/blob/f9144d141c674e03822d4f2e88cccb115e5ac8d5/demo/phanerozoic-reefs.qmd)
+
+![](/images/palaeoverse.png){fig-align="right" width="25%"}

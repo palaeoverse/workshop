@@ -1,0 +1,28 @@
+---
+title: "Schedule"
+order: 1
+---
+
+| Time      | Day 1 (September 7^th^)                           | Day 2 (September 8^th^) |
+|-----------|---------------------------------------------------|-------------------------|
+| **09:00** | **Tea and Coffee** ☕                              | **Tea and Coffee** ☕   |
+| **09:30** | **Welcome and Introduction to Palaeoverse**       | **Hackathon**           |
+| **10:00** | **Theory: Data acquisition/cleaning**             | **Hackathon**           |
+| **10:30** | **Practical: Data acquisition/cleaning**          | **Hackathon**           |
+| **11:00** | **Tea and Coffee** ☕                             | **Tea and Coffee** ☕   |
+| **11:30** | **Theory: Data preparation with palaeoverse**     | **Hackathon**           |
+| **12:00** | **Practical: Data preparation with palaeoverse**  | **Hackathon**           |
+| **12:30** | **Lunch**                                         | **Lunch**               |
+| **13:30** | **Theory: Introduction to Data visualisation**    | **Hackathon**           |
+| **14:00** | **Practical: Introduction to Data visualisation** | **Hackathon**           |
+| **14:30** | **Theory: Resources**                             | **Hackathon**           |
+| **15:00** | **Theory: Writing functions in R**                | **Hackathon**           |
+| **15:30** | **Tea and Coffee** ☕                             | **Tea and Coffee** ☕   |
+| **16:00** | **Practical: Writing functions in R**             | **Hackathon**           |
+| **16:30** | **Practical: Writing functions in R**             | **Hackathon**           |
+| **17:00** | **Introduction to the Hackathon**                 | **Presentations**       |
+| **17:30** | **Working group discussion**                      | **Presentations**       |
+| **18:00** | **Concluding Remarks**                            | **Concluding Remarks**  |
+| **19:30** | **Dinner** 🥘                                     | **Dinner** 🥘           |
+
+

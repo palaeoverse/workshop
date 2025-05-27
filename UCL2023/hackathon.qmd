@@ -1,0 +1,121 @@
+---
+title: "Day 2: Hackathon"
+order: 4
+---
+
+# Goal
+
+The aim of this event is to provide an opportunity for attendees to work with different early career researchers and gain experience working collaboratively in R to generate reproducible research. For the event, you will develop a function with your team to clean, explore, and/or visualise palaeontological data.
+
+# Briefs
+
+We have prepared five project briefs for the hackathon. You and your group are free to choose whichever brief you wish to work on (first-come, first-served basis). Alternatively, you are free to work on your own project idea.
+
+## Brief 1: geo_check
+
+### Context
+
+When working with fossil datasets, we typically use age information associated with occurrences. This age information can be numerical values, interval names, or in some cases, a mixture of both. As with all datasets, errors and inconsistencies can exist.
+
+### Objective
+
+-   Develop a function (e.g. `geo_check`) which delivers automatic checking (and potentially cleaning) for common errors and inconsistencies in age data.
+
+### Starting points to consider
+
+-   How is the data structured? One (e.g. early_interval/late_interval) or two data columns (e.g. max_ma and min_ma)?
+-   What data errors might arise (e.g. spelling mistakes, data in the wrong columns)?
+-   What inconsistencies might arise (e.g. "early interval" vs. "early_interval")?
+
+## Brief 2: ghost_ranges
+
+### Context
+
+Fossil taxa are often only sampled periodically between their first and last occurrences. The periods of absence - known as ghost ranges - represent known failed sampling events, and can be useful for understanding sampling bias in an occurrence dataset.
+
+### Objective
+
+-   Develop a function (e.g. `ghost_ranges`) which quantifies the ghost ranges in an occurrence dataset.
+
+### Starting points to consider
+
+-   Should times of absence be treated as continuous or as discrete geological intervals?
+-   What is useful to know about these ranges - their frequency, their length, their placement relative to the range, or something else?
+-   Should this information be collected per-taxon and/or as averages across a set of taxa?
+-   How is it best to present or visualise the output?
+
+## Brief 3: abundance_distr
+
+### Context
+
+Summarising the abundances of taxa is fundamental for understanding occurrence data. Abundance distributions are frequently used for ecological analyses and to inform diversity metrics.
+
+### Objective
+
+-   Develop a function (e.g. `abundance_distr`) which summarises the abundances of taxa in an occurrence dataset.
+
+### Starting points to consider
+
+-   Should the function be flexible enough to provide both absolute and relative abundance distributions?
+-   How should the abundances be ordered and visualised?
+-   What is a useful output format to use the abundances for further analysis, for example with the `vegan` package?
+-   How should data sets be handled that contain occurrences from different time intervals? 
+
+## Brief 4: stack_plot
+
+### Context
+
+Visualising abundances, diversities or other metrics through time can be a challenge when showing several different groups in the same plot. Stacked area plots allow for a quick visual assessment of changing patterns.
+
+### Objective
+
+-   Develop a function (e.g. `stack_plot`) which plots a metric like abundance for different groups, stacked on top of each other
+
+### Starting points to consider
+
+-   What input data does the function expect?
+-   How does the function handle relative (summing to 1) and absolute metrics, and where can the legend be placed in either case?
+-   What defines the order in which different groups are stacked?
+-   What colour schemes could be used, and how should the colours be ordered for optimal visibility?
+
+## Brief 5: lat_bins
+
+### Context
+
+Palaeobiologists are often interested in latitudinal trends through time. To study such patterns, fossil occurrence data are typically binned into latitudinal bins (e.g. `palaeoverse::lat_bins` and `palaeoverse::bin_lat`). At the equator, a degree of longitude is the same as a degree of latitude, approximately 111 km. However, this length decreases as you move away from the equator. Consequently, standard latitudinal bins (e.g. 5º bins) have an unequal amount of area within each bin.
+
+### Objective
+
+- Develop a function (e.g. `lat_bins`) which creates equal-area latitudinal bins
+
+### Starting points to consider 
+
+- How might users want to define their bins? Number of bins or size of bins? 
+- Do users want the entire latitudinal range?
+- What output might users want?
+- The Earth is not a perfect sphere
+- The distribution of land and ocean area changes through time
+
+## Brief 6: your own idea!
+
+# Tips and suggestions
+
+You can view the palaeoverse standards and structure for code [here](https://palaeoverse.palaeoverse.org/articles/structure-and-standards.html).
+
+Some platforms you may wish to use for collaborative work include:
+
+- [Posit Cloud](https://posit.cloud)
+- [GitHub](https://docs.github.com/en)
+- Google Docs
+
+# Presentations
+
+At the end of the hackathon, each group will give a ten minute presentation, followed by five minutes of questions. In the presentation, you should include:
+
+- Outline of the goal
+- Description of the inputs and outputs
+- Brief code walk-through
+- Example usage
+- Contributions of each group member
+
+Voting will then take place to determine the winning team (EuroVision style). 

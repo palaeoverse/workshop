@@ -1,0 +1,25 @@
+---
+title: "Writing functions"
+order: 4
+---
+
+## Summary
+
+This unit of the workshop covers the writing of R functions. It consists of four themes, each with a small practical:
+
+- [Function basics](https://keichenseer.github.io/Writing_functions_in_R/#/function-basics) (e.g. the structure of functions)
+- [Best practices](https://keichenseer.github.io/Writing_functions_in_R/#/best-practices) (e.g. documentation with roxygen2)
+- [Testing and debugging](https://keichenseer.github.io/Writing_functions_in_R/#/testing-and-debugging) (e.g. the testthat package)
+- [Advanced tools](https://keichenseer.github.io/Writing_functions_in_R/#/advanced-tools) (e.g. profiling)
+
+The slides for the workshop, including the instructions for the practicals, can be found here:
+
+- [Writing functions in R - slides](https://keichenseer.github.io/Writing_functions_in_R/)
+
+Here is a link the source code that was used to generate the presentation:
+
+- [Writing functions in R - source code](https://github.com/KEichenseer/Writing_functions_in_R/blob/main/functions.qmd)
+
+This session is led by Kilian Eichenseer. If you encounter any issues while working with the material, please contact him [here](mailto:kilian.eichenseer@gmail.com).
+
+![](/images/logo.png){fig-align="right" width="25%"}

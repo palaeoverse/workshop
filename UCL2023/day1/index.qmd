@@ -1,0 +1,16 @@
+---
+title: "Day 1: Workshop"
+format: html
+order: 3
+toc: false
+---
+
+# Goal
+
+The workshop component of this event will provide an introduction to data acquisition, preparation, and visualisation in R.
+
+- [Data acquisition](acquisition.qmd)
+- [Data preparation](preparation.qmd)
+- [Data visualisation](visualisation.qmd)
+- [Writing functions](functions.qmd)
+- [Resources](resources.qmd)

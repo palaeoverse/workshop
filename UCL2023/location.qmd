@@ -1,0 +1,26 @@
+---
+title: "Getting Here"
+order: 5
+---
+
+## University College London
+
+The event is hosted within the [Kathleen Lonsdale Building at University College London](https://goo.gl/maps/CseD7br5SF9xLEQE6).
+
+The nearest major stations to the UCL campus are Euston and King’s Cross St. Pancras. The Kathleen Lonsdale Building is a relatively short walk from both stations (7 and 15 minutes respectively). Alternatively, Buses 30, 73, and 205 run along Euston Road between the Kathleen Lonsdale Building and King’s Cross St Pancras. 
+
+The closest tube stations to UCL are:        
+
+* **Warren Street** – <span style="color:#0098D4">**Victoria Line**</span> - <span style="color:#000000">**Northern Line**</span>
+* **Euston Square** – <span style="color:#FFD300">**Circle Line**</span> - <span style="color:#F3A9BB">**Hammersmith & City Line**</span> - <span style="color:#9B0056">**Metropolitan Line**</span>
+* **Russell Square** – <span style="color:#003688">**Piccadilly Line**</span> 
+
+We highly recommend downloading the [Citymapper app](https://citymapper.com/?lang=en) if you intend on travelling around London! 
+
+## Finding the Workshop and Hackathon
+
+The event will be held in the same room within the Kathleen Lonsdale Building. To enter the building, you can either use steps from Gower Pl, or by ramp through the eastern entrance via UCL’s main quad on Gower Street (see map for both). We will be working in Teaching Lab 1 (126) on the 1st floor of the Kathleen Lonsdale Building (signs will be in place upon arrival). Both stairs and an elevator can be accessed from the main lobby area near to the Deinonychus mount. Once on the first floor, take a left from the elevator or a right from the top of the stairs, before following the corridor all the way to its end!
+
+[Click here for an interactive map](https://www.ucl.ac.uk/maps) or see map below.
+
+![](images/campus.jpg)

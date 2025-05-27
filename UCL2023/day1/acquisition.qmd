@@ -1,0 +1,17 @@
+---
+title: "Data acquisition"
+order: 1
+---
+
+## Summary
+
+This unit of the workshop covers existing databases, and other resources, from which data relevant to palaeobiological analyses can be obtained. The slides for the unit are available [here](https://github.com/bethany-j-allen/get_fossil_data/blob/main/ObtainingData_hackathon.pdf) and provide an introduction to some of the most commonly used resources. The tutorial focuses on how to access occurrence data from the Paleobiology Database directly through R, and highlights some characteristics of this data and some problems this can pose for subsequent data analysis. The code for the tutorial is available [here](https://github.com/bethany-j-allen/get_fossil_data/blob/main/PBDB_API.R).
+
+This session is led by Bethany Allen. If you encounter any issues while working with these resources, please contact her [here](mailto:bethany.allen@bsse.ethz.ch).
+
+## Resources
+
+-   [Tutorial slides](https://github.com/bethany-j-allen/get_fossil_data/blob/main/ObtainingData_hackathon.pdf)
+-   [Tutorial R code](https://github.com/bethany-j-allen/get_fossil_data/blob/main/PBDB_API.R)
+
+![](/images/logo.png){fig-align="right" width="25%"}

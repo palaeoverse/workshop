@@ -1,0 +1,41 @@
+---
+title: "UCL 2023 Workshop"
+subtitle: "R for Palaeobiologists: Workshop and Hackathon"
+toc: true
+---
+
+7--8^th^ September 2023, [Kathleen Lonsdale Building, University College London](https://goo.gl/maps/CseD7br5SF9xLEQE6)
+
+# Welcome
+
+Welcome to the first edition of **R for Palaeobiologists: Workshop and Hackathon**. R is one of the most popular languages in the world of Data Science and has been widely adopted by the palaeobiology community to clean, analyse and plot data. General familiarity with R allows users to expand the potential of their research and automate routine tasks. Importantly, it allows researchers to improve the reproducibility of their research and document their analyses. The workshop component of this event will provide an introduction to data acquisition, preparation, and visualisation in R. The hackathon component of this event will provide the opportunity for attendees to work together in small focus groups to develop workflows, functions, and novel tools to address challenges in palaeobiology. This event provides an opportunity for attendees to work with different early career researchers and gain experience working collaboratively in R to generate reproducible research.
+
+## Arrival
+
+The event starts at 09:00 on the 7^th^ September 2023 and will take place in Teaching Lab 1 (126), [Kathleen Lonsdale Building, University College London](https://goo.gl/maps/CseD7br5SF9xLEQE6). You should enter the building from the Gower Place entrance. We will meet you there from 08:55. See [Getting Here](location.qmd) for more information. 
+
+The full schedule for the event is available [here](schedule.qmd).
+
+## Installation
+
+Please ensure that you have the latest version of R (4.3.1) for the workshop, which can be downloaded [here](https://cran.r-project.org/bin/windows/base/). We also recommend installing the latest version of RStudio, which can be download [here](https://posit.co/download/rstudio-desktop/). To minimise any installation issues during the workshop and hackathon, please also install the following R packages:
+
+```{R}
+#| eval: false
+install.packages("deeptime", "dplyr", "extrafont", "ggplot2", "ggpubr", 
+                 "maps", "microbenchmark", "palaeoverse", "profvis","raster", 
+                 "RColorBrewer", "rgplates", "roxygen2", "rpaleoclim",
+                 "sf", "svglite", "terra", "testthat", "usethis")
+```
+
+
+## Sponsors
+
+This event is run by the [Palaeoverse](https://palaeoverse.org) development team and sponsored by the [Palaeontological Association](https://www.palass.org) through a Grant-in-Aid (PA-GA202203) and the [Paleontological Society](https://www.paleosoc.org) through a small conference support grant.
+
+![](images/logo.png){height="3cm"} ![](images/palass-logo.png){height="3cm"} ![](images/palsoc-logo.png){height="3cm"}
+
+The [Palaeontological Association](https://www.palass.org), [Transmitting Science](https://www.transmittingscience.com), [PRStatistics](https://www.prstatistics.com), and [Jumping Rivers](https://www.jumpingrivers.com) have also sponsored prizes for the hackathon.  
+
+![](images/palass-logo.png){height="2cm"} ![](images/ts-logo.png){height="2cm"} &nbsp;&nbsp; ![](images/pr-logo.png){height="1.5cm"} &nbsp;&nbsp; ![](images/jr-logo.png){height="2cm"}
+

@@ -1,0 +1,187 @@
+---
+title: "Resources"
+order: 5
+---
+
+## Summary
+
+This unit of the workshop introduces a variety of resources that are of relevance to palaeobiological analyses and palaeontologists more broadly. The slides for the unit are available here and provide an overview to these commonly used resources, along with links to relevant websites and other content. This acts as both a summary of the resources mentioned in the other Units, as well as including additional resources which may be of interest.
+
+This session is led by Christopher Dean. If you encounter any issues while working with these resources, please contact him [here](mailto:christopherdaviddean@gmail.com). Additionally, our aim is to expand upon this content to make it a more widely available resource; if you have any resources that you use that you think might be helpful to others, please let Chris know and he will add them to the list.
+
+## Tutorial Content
+
+-   [Tutorial slides](https://github.com/palaeoverse-community/resources/blob/main/Resources.pdf)
+
+## Resources Content
+
+### Data Acquisition
+
+These resources cover the acquisition of data for palaeontological analyses, including occurrence datasets and covariate/associated data.
+
+#### Occurrence Databases
+
+-   [Paleobiology Database](http://paleobiodb.org)
+
+-   [Geobiodiversity database](http://geobiodiversity.com)
+
+-   [Neotoma](http://neotomadb.org)
+
+-   [GBIF](http://gbif.org)
+
+-   [iDigBio](http://idigbio.org)
+
+-   [Neptune](http://nsb.mfn-berlin.de)
+
+-   [BioDeepTime](https://doi.org/10.1111/geb.13735)
+
+-   [Phylacine](http://megapast2future.github.io/PHYLACINE_1.2/)
+
+-   [PARED](http://paleo-reefs.pal.uni-Erlangen.de)
+
+#### Other Relevant Datasets
+
+-   [Macrostrat](http://macrostrat.org)
+
+-   [Mindat](http://mindat.org)
+
+-   [USGS Geological Maps of North America](https://mrdata.usgs.gov/geology/state/)
+
+-   [Global Maximum Green Vegetation Fraction](https://doi.org/10.1175/JAMC-D-13-0356.1)
+
+-   [1km Resolution Global Digital Elevation Map](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-global-30-arc-second-elevation-gtopo30?qt-science_center_objects=0#qt-science_center_objects)
+
+-   [WorldClim](http://worldclim.org) - can be accessed via the 'getData' function of the 'raster' package.
+
+-   [ESA WorldCover](http://esa-worldcover.org/en)
+
+#### Palaeogeographies
+
+-   [Deep Time Maps](https://deeptimemaps.com/about-us/)
+
+-   [Paleomap Project](http://www.scotese.com/)
+
+#### Other places to find datasets
+
+-   [Zenodo](https://zenodo.org/)
+
+#### Relevant Packages
+
+
+
+### Data Preparation
+
+These resources cover the preparation of data for palaeontological analyses, including data cleaning, organisation and transformation.
+
+#### General Packages
+
+#### Palaeontological Packages
+
+-   [Palaeoverse](https://doi.org/10.1111/2041-210X.14099)
+
+-   [CoordinateCleaner](https://doi.org/10.1111/2041-210X.13152)
+
+-   [FossilBrush](https://doi.org/10.1111/2041-210X.13966)
+
+### Data Visualisation
+
+These resources cover the various ways in which data can be visualised, from theoretical, practical and ethical angles.
+
+#### General Resources
+
+-   [Best Practices for Data Visualisation (Royal Society Guide)](https://royal-statistical-society.github.io/datavisguide/)
+
+-   [R Graph Gallery](https://r-graph-gallery.com/)
+
+-   [COBLIS (Colour Blindness Simulator)](https://www.color-blindness.com/coblis-color-blindness-simulator/)
+
+-   [Colorhunt](https://colorhunt.co/)
+
+-   [Inkscape](https://inkscape.org/)
+
+-   [Gnu Image Manipulation Program (GIMP)](https://www.gimp.org/)
+
+#### Packages
+
+-   ggplot2
+-   lattice
+-   scatterplot3d
+-   highcharter
+-   plotly
+-   Rgl
+-   viridis
+-   RColorBrewer
+-   wesanderson
+-   colorspace
+-   ggsci
+
+### Writing Functions
+
+R and function development
+
+-   [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf)
+-   [Mastering software development in R - functions](https://bookdown.org/rdpeng/RProgDA/functions.html)
+
+Style and Documentation
+
+-   [Tidyverse's style guide](https://style.tidyverse.org/index.html)
+-   [Google’s R style guide](https://google.github.io/styleguide/Rguide.html)
+-   [lintr](https://cran.r-project.org/web/packages/lintr/vignettes/lintr.html)
+-   [Documentation with roxygen2](https://roxygen2.r-lib.org/)
+
+Testing
+
+-   [Testing basics](https://r-pkgs.org/testing-basics.html)
+-   [testthat](https://testthat.r-lib.org/)
+
+Environment
+
+-   [Environments](https://adv-r.hadley.nz/environments.html)
+-   [Scoping rules](https://bookdown.org/rdpeng/rprogdatascience/scoping-rules-of-r.html)
+
+Efficiency
+
+-   [Best coding practices in R](https://bookdown.org/content/d1e53ac9-28ce-472f-bc2c-f499f18264a3/speedtips.html)
+-   [R tools](https://cran.r-project.org/bin/windows/Rtools/)
+-   [Rcpp: Seamless R and C++ Integration](https://dirk.eddelbuettel.com/code/rcpp.html)
+-   [Advanced R](http://adv-r.had.co.nz/Rcpp.html) 
+
+### General Palaeontology Resources
+
+-   [Palaeoverse](http://palaeoverse.org)
+
+-   [Palaeoverse Google Group](https://groups.google.com/g/palaeoverse)
+
+-   [Paleonet](https://paleonet.org/)
+
+### General Programming Resources
+
+#### CRAN Task Views
+
+-   [Phylogenetics](https://cran.r-project.org/web/views/Phylogenetics.html)
+
+-   [Spatial Data](https://cran.r-project.org/web/views/Spatial.html)
+
+-   [Ecological and Environmental Data](https://cran.r-project.org/web/views/Environmetrics.html)
+
+-   [Time Series Analysis](https://cran.r-project.org/web/views/TimeSeries.html)
+
+#### Free R Books
+
+-   [R for Data Science (2nd Edition)](https://r4ds.hadley.nz/)
+
+-   [Hands-On Programming with R](https://rstudio-education.github.io/hopr/)
+
+-   [R Packages](https://r-pkgs.org/)
+
+-   [Cookbook for R](http://www.cookbook-r.com/)
+
+-   [Geocomputation with R](http://r.geocompx.org)
+
+### \--
+
+### Problem Solving Tips
+
+\--
+
+![](/images/logo.png){fig-align="right" width="25%"}

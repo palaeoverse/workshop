@@ -1,0 +1,25 @@
+---
+title: Organising Team
+subtitle: "Meet the event organisers"
+fig-align: left
+toc: false
+order: 2
+---
+
+This edition of the Workshop and Hackathon event is organised and led by the following members of the Palaeoverse team.
+
+::: {layout-ncol="3"}
+![](./images/team/Lewis.jpeg){width="7cm"} <br> Dr Lewis A. Jones <br> Universidade de Vigo, Spain
+
+![](./images/team/Bethany.jpeg){width="7cm"} <br> Dr Bethany J. Allen <br> ETH Zürich, Switzerland
+
+![](./images/team/Chris.jpeg){width="7cm"} <br> Dr Christopher D. Dean <br> University College London, UK
+
+![](./images/team/Kilian.jpeg){width="7cm"} <br> Dr Kilian Eichenseer <br> University of Durham, UK
+
+![](./images/team/Cecily.jpeg){width="7cm"} <br> Cecily Nicholl <br> University College London, UK
+
+![](./images/team/Sofia.jpeg){width="7cm"} <br> Sofía Galván <br> Universidade de Vigo, Spain
+
+![](./images/team/Miranta.jpeg){width="7cm"} <br> Miranta Kouvari <br> Science Graphic Design, UK
+:::
