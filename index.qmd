@@ -20,7 +20,7 @@ Website | Archived materials
 **Location:** 12^th^ North American Palaeontological Convention, University of Michigan, Michigan, U.S.A  
 **Date:** 19^th^ June 2024
 
-Website | Archived materials
+[Website](/NAPC2024/index.qmd) | [Archived materials](https://github.com/palaeoverse/2024-NAPC-workshop)
 
 ## 2023
 
@@ -28,5 +28,7 @@ Website | Archived materials
 **Organisers:** Lewis A. Jones, Bethany J. Allen, Christopher D. Dean, Kilian Eichenseer, Cecily Nicholl, Sofía Galván, and Miranta Kouvari  
 **Location:** Department of Earth Sciences, University College London, London, UK  
 **Date:** 7--8^th^ September 2023
+
+[Website](/UCL2023/index.qmd) | [Archived materials](https://github.com/palaeoverse/2023-UCL-hackathon)
 
 
