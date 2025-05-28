@@ -20,12 +20,20 @@ website:
     right:
       - icon: github
         href: https://github.com/palaeoverse
+        aria-label: "Palaeoverse on GitHub"
+        target: _blank
       - icon: youtube
         href: https://www.youtube.com/@ThePalaeoverse
+        aria-label: "Palaeoverse on YouTube"
+        target: _blank
       - text: "{{< iconify fa6-brands:bluesky >}}"
         href: https://bsky.app/profile/palaeoverse.bsky.social
+        aria-label: "Palaeoverse on Bluesky"
+        target: _blank
       - text: "<img src='/images/favicon.png' height=23.5 style='padding-bottom:3px'>"
         href: https://palaeoverse.org
+        aria-label: "Palaeoverse homepage"
+        target: _blank
   sidebar:
     background: "#c1e0e2"
     logo: "images/favicon.png"
