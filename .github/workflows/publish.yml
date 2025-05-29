@@ -31,7 +31,6 @@ jobs:
           if (!requireNamespace("renv", quietly=TRUE)) install.packages("renv")
           renv::activate(profile = ${{ inputs.profile }})
         shell: Rscript {0}
-        working-directory: ${{ inputs.working-directory }}
 
       - name: Get R and OS version
         id: get-version
@@ -41,24 +40,13 @@ jobs:
         shell: Rscript {0}
 
       - name: Restore Renv package cache
-        if: ${{ inputs.bypass-cache == 'false' }}
-        uses: actions/cache@v4
-        with:
-          path: |
-            ${{ env.RENV_PATHS_ROOT }}
-            renv/library
-          key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-${{ hashFiles(format('{0}/renv.lock', inputs.working-directory)) }}
-          restore-keys: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-
-
-      - name: Restore Renv package cache
         id: cache-packages-restore
-        if: ${{ inputs.bypass-cache == 'always' || inputs.bypass-cache == 'never' }}
         uses: actions/cache/restore@v4
         with:
           path: |
             ${{ env.RENV_PATHS_ROOT }}
             renv/library
-          key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-${{ hashFiles(format('{0}/renv.lock', inputs.working-directory)) }}
+          key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-${{ hashFiles('renv.lock') }}
           restore-keys: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-
 
       - name: Install dependencies with renv and pak
@@ -68,7 +56,6 @@ jobs:
           renv::install(unique(renv::dependencies()$Package))
           renv::install(c("knitr", "rmarkdown"))
         shell: Rscript {0}
-        working-directory: ${{ inputs.working-directory }}
 
       - name: Don't use tar 1.30 from Rtools35 to store the cache
         shell: bash
@@ -78,7 +65,7 @@ jobs:
           fi
 
       - name: Save Renv package cache
-        if: ${{ always() && steps.cache-packages-restore.outputs.cache-hit != 'true' && (inputs.bypass-cache == 'always' || inputs.bypass-cache == 'never') }}
+        if: ${{ always() && steps.cache-packages-restore.outputs.cache-hit != 'true' }}
         uses: actions/cache/save@v4
         with:
           path: |
