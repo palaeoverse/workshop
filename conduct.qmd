@@ -1,7 +1,7 @@
 ---
 title: Code of Conduct
 subtitle: Mutual respect and integrity are at the heart of Palaeoverse
-order: 9
+order: 100
 ---
 
 ## Our Pledge
