@@ -74,9 +74,21 @@ jobs:
           key: ${{ steps.cache-packages-restore.outputs.cache-primary-key }}
       # end modified steps
 
-      - name: Render and Publish
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Save _freeze folder
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update _freeze
+          file_pattern: '_freeze'
+          add_options: '--force'
+
+
+      - name: Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
