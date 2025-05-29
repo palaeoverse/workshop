@@ -61,20 +61,14 @@ jobs:
           key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-${{ hashFiles(format('{0}/renv.lock', inputs.working-directory)) }}
           restore-keys: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-
 
-      - name: Install renv dependencies
+      - name: Install dependencies with renv and pak
         run: |
           install.packages("pak", repos = "https://r-lib.github.io/p/pak/dev/")
           options(renv.config.pak.enabled = TRUE)
           renv::install(unique(renv::dependencies()$Package))
+          renv::install(c("knitr", "rmarkdown"))
         shell: Rscript {0}
         working-directory: ${{ inputs.working-directory }}
-
-      - name: Install packages (needed for Rmd)
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages:
-            any::knitr
-            any::rmarkdown
 
       - name: Don't use tar 1.30 from Rtools35 to store the cache
         shell: bash
