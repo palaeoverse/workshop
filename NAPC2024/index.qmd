@@ -2,7 +2,7 @@
 title: "NAPC 2024 Workshop"
 subtitle: "R for Paleobiologists: Getting started with the palaeoverse R package (and more!)"
 toc: true
-order: 1
+order: 98
 ---
 
 **08:00--12:00 - 19^th^ June 2024**\
