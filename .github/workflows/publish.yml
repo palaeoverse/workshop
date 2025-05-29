@@ -77,14 +77,18 @@ jobs:
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
 
+      - name: Rename .gitignore
+        run: mv .gitignore .gitignore_tmp
+
       - name: Save _freeze folder
         uses: stefanzweifel/git-auto-commit-action@v5
         if: ${{ always() }}
         with:
           commit_message: Update _freeze
           file_pattern: '_freeze'
-          add_options: '--force'
 
+      - name: Rename .gitignore back
+        run: mv .gitignore_tmp .gitignore
 
       - name: Publish
         uses: quarto-dev/quarto-actions/publish@v2
