@@ -46,7 +46,7 @@ Hmm...with this many colors, it becomes a little hard to distinguish between the
 ```{r}
 ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
   geom_point() +
-  scale_color_brewer(palette = "Set2")
+  scale_color_brewer(palette = "Set1")
 ```
 
 Outside of color, there are many other [aspects of the graph](https://ggplot2.tidyverse.org/articles/ggplot2-specs.html) that we can modify using "scale"s. For example, we can modify the x and y axes:
