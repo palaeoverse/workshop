@@ -108,15 +108,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../../styles.css">
 <meta property="og:title" content="Latitudinal trends in Phanerozoic reefs – Palaeoverse Workshops">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://workshop.palaeoverse.org/NAPC2024/materials/3_preparation/phanerozoic-reefs_files/figure-html/plotcounts-1.png">
+<meta property="og:image" content="phanerozoic-reefs_files/figure-html/plotcounts-1.png">
 <meta property="og:site_name" content="Palaeoverse Workshops">
-<meta property="og:image:height" content="960">
-<meta property="og:image:width" content="1344">
 <meta name="twitter:title" content="Latitudinal trends in Phanerozoic reefs – Palaeoverse Workshops">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://workshop.palaeoverse.org/NAPC2024/materials/3_preparation/phanerozoic-reefs_files/figure-html/plotcounts-1.png">
-<meta name="twitter:image-height" content="960">
-<meta name="twitter:image-width" content="1344">
+<meta name="twitter:image" content="phanerozoic-reefs_files/figure-html/plotcounts-1.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -310,12 +306,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
       </ul>
   </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../conduct.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Code of Conduct</span></a>
-  </div>
-</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../../../UCL2023/index.html" class="sidebar-item-text sidebar-link">
@@ -410,6 +400,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../conduct.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Code of Conduct</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -895,7 +891,7 @@ A BibTeX entry for LaTeX users is
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/workshop\.palaeoverse\.org");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
