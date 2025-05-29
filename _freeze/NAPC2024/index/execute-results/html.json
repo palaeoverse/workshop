@@ -1,0 +1,15 @@
+{
+  "hash": "a5dd304b94165f906cc5e24779cc6c22",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"NAPC 2024 Workshop\"\nsubtitle: \"R for Paleobiologists: Getting started with the palaeoverse R package (and more!)\"\ntoc: true\norder: 98\n---\n\n**08:00--12:00 - 19^th^ June 2024**\\\n[Room 1010, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085](https://maps.app.goo.gl/fU1zDr1Cu6T5hWWc8)\n\n# Welcome\n\nWelcome to the second edition of **R for Palaeobiologists: Workshop**. R is one of the most popular languages in the world of Data Science and has been widely adopted by the palaeobiological community to clean, analyse and plot data. General familiarity with R allows users to expand the potential of their research and automate routine tasks. Importantly, it allows researchers to improve the reproducibility of their research and document their analyses. This workshop will introduce you to [palaeoverse](www.palaeoverse.palaeoverse.org), an R package which supports data preparation and exploration for palaeobiological analysis, improving code reproducibility and accessibility. The event will also introduce databases (e.g. Paleobiology Database) and building workflows in R (e.g. data cleaning) using palaeoverse. Additional packages will also be introduced along with the versatility R has to offer.\n\n## Arrival\n\nThe event starts at 08:00 on the 19^th^ June 2024 and will take place in [Room 1010, Biological Sciences Building, 1105 North University Avenue, Ann Arbor, MI 48109-1085](https://maps.app.goo.gl/fU1zDr1Cu6T5hWWc8).\n\nThe full schedule for the workshop is available [here](schedule.qmd).\n\n## Installation\n\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded [here](https://cran.r-project.org/bin/windows/base/). We also recommend installing the latest version of RStudio, which can be downloaded [here](https://posit.co/download/rstudio-desktop/). To minimize any installation issues during the workshop, please also install the following R packages:\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"dplyr\", \"palaeoverse\", \"ggplot2\", \"deeptime\", \"sf\",\n                 \"rnaturalearth\", \"rphylopic\", \"terra\", \"tidyterra\",\n                 \"rpaleoclim\", \"rgplates\")\n```\n:::\n\n\n## Acknowledgements\n\nThis event is run by the [Palaeoverse](https://palaeoverse.org) development team and supported by the organizers of the 12^th^ North American Paleontological Convention. We thank the organizers for their support in facilitating this workshop.\n\n![](images/logo.png){width=\"20%\"} ![](images/NAPC.png){width=\"40%\"}\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
