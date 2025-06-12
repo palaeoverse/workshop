@@ -394,6 +394,88 @@
     "text": "2023\n\nR for Palaeobiologists: Workshop and Hackathon\nOrganisers: Lewis A. Jones, Bethany J. Allen, Christopher D. Dean, Kilian Eichenseer, Cecily Nicholl, Sofía Galván, and Miranta Kouvari\nLocation: Department of Earth Sciences, University College London, London, UK\nDate: 7–8th September 2023\nWebsite | Archived materials"
   },
   {
+    "objectID": "workshop-test/index.html",
+    "href": "workshop-test/index.html",
+    "title": "[INSERT WORKSHOP SHORT TITLE]",
+    "section": "",
+    "text": "[INSERT WORKSHOP DATE/TIME]\n[INSERT WORKSHOP LOCATION]",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/index.html#arrival",
+    "href": "workshop-test/index.html#arrival",
+    "title": "[INSERT WORKSHOP SHORT TITLE]",
+    "section": "Arrival",
+    "text": "Arrival\nThe event starts at XXX on the XXX and will take place at XXX.\nThe full schedule for the workshop is available here.",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/index.html#schedule",
+    "href": "workshop-test/index.html#schedule",
+    "title": "[INSERT WORKSHOP SHORT TITLE]",
+    "section": "Schedule",
+    "text": "Schedule\n\n\n\nTime\nEvent\n\n\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/index.html#instructors",
+    "href": "workshop-test/index.html#instructors",
+    "title": "[INSERT WORKSHOP SHORT TITLE]",
+    "section": "Instructors",
+    "text": "Instructors\nThis edition of the Workshop event is organised and led by the following members of the Palaeoverse team.\n\n\n\n\n\nINSTRUCTOR 1\n\n\n\n\n\n\n\nINSTRUCTOR 2\n\n\n\n\n\n\n\nINSTRUCTOR 3",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/index.html#installation",
+    "href": "workshop-test/index.html#installation",
+    "title": "[INSERT WORKSHOP SHORT TITLE]",
+    "section": "Installation",
+    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages()",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/index.html#acknowledgements",
+    "href": "workshop-test/index.html#acknowledgements",
+    "title": "[INSERT WORKSHOP SHORT TITLE]",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis event is run by the Palaeoverse and supported by…",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/03_UNIT_NAME/index.html",
+    "href": "workshop-test/03_UNIT_NAME/index.html",
+    "title": "[UNIT SHORT NAME]",
+    "section": "",
+    "text": "Add content",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]",
+      "[UNIT SHORT NAME]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/05_UNIT_NAME/index.html",
+    "href": "workshop-test/05_UNIT_NAME/index.html",
+    "title": "[UNIT SHORT NAME]",
+    "section": "",
+    "text": "Add content",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]",
+      "[UNIT SHORT NAME]"
+    ]
+  },
+  {
     "objectID": "UCL2023/team.html",
     "href": "UCL2023/team.html",
     "title": "Organising Team",
@@ -911,6 +993,39 @@
     "text": "Attribution\n\nThis Code of Conduct is adapted from the Contributor Covenant.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.",
     "crumbs": [
       "Code of Conduct"
+    ]
+  },
+  {
+    "objectID": "workshop-test/04_UNIT_NAME/index.html",
+    "href": "workshop-test/04_UNIT_NAME/index.html",
+    "title": "[UNIT SHORT NAME]",
+    "section": "",
+    "text": "Add content",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]",
+      "[UNIT SHORT NAME]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/02_UNIT_NAME/index.html",
+    "href": "workshop-test/02_UNIT_NAME/index.html",
+    "title": "[UNIT SHORT NAME]",
+    "section": "",
+    "text": "Add content",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]",
+      "[UNIT SHORT NAME]"
+    ]
+  },
+  {
+    "objectID": "workshop-test/01_UNIT_NAME/index.html",
+    "href": "workshop-test/01_UNIT_NAME/index.html",
+    "title": "[UNIT SHORT NAME]",
+    "section": "",
+    "text": "Add content",
+    "crumbs": [
+      "[INSERT WORKSHOP SHORT TITLE]",
+      "[UNIT SHORT NAME]"
     ]
   },
   {
