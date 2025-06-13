@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data visualisation – Palaeoverse Workshops</title>
+<title>Open Data Science Skills – Palaeoverse Workshops</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../..//images/favicon.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-4f4aae32257d87e9b97dc0f7076176aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="..//images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4f4aae32257d87e9b97dc0f7076176aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,14 +105,14 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Data visualisation – Palaeoverse Workshops">
-<meta property="og:description" content="">
-<meta property="og:image" content="../../images/logo.png">
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Open Data Science Skills – Palaeoverse Workshops">
+<meta property="og:description" content="Building Open Data Science Skills in Paleobiology and Ecology">
+<meta property="og:image" content="/images/favicon.png">
 <meta property="og:site_name" content="Palaeoverse Workshops">
-<meta name="twitter:title" content="Data visualisation – Palaeoverse Workshops">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="../../images/logo.png">
+<meta name="twitter:title" content="Open Data Science Skills – Palaeoverse Workshops">
+<meta name="twitter:description" content="Building Open Data Science Skills in Paleobiology and Ecology">
+<meta name="twitter:image" content="/images/favicon.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -88,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Palaeoverse Workshops</span>
     </a>
   </div>
@@ -109,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="https://palaeoverse.org" target="_blank"> 
-<span class="menu-text"><img src="../../images/favicon.png" height="23.5" style="padding-bottom:3px"></span></a>
+<span class="menu-text"><img src="../images/favicon.png" height="23.5" style="padding-bottom:3px"></span></a>
   </li>  
 </ul>
           <div class="quarto-navbar-tools">
@@ -122,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../UCL2023/index.html">UCL 2023 Workshop</a></li><li class="breadcrumb-item"><a href="../../UCL2023/day1/index.html">Day 1: Workshop</a></li><li class="breadcrumb-item"><a href="../../UCL2023/day1/visualisation.html">Data visualisation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2025-CPEG-workshop/index.html">Open Data Science Skills</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -133,54 +168,54 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../images/favicon.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/favicon.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../2025-CPEG-workshop/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../2025-CPEG-workshop/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Open Data Science Skills</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../2025-CPEG-workshop/01_introduction/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../2025-CPEG-workshop/01_introduction/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to the workshop</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../2025-CPEG-workshop/02_workflow/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../2025-CPEG-workshop/02_workflow/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Setting up a reproducible workflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../2025-CPEG-workshop/03_acquisition/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../2025-CPEG-workshop/03_acquisition/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data acquisition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../2025-CPEG-workshop/04_exploration/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../2025-CPEG-workshop/04_exploration/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data processing I: Exploration and cleaning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../2025-CPEG-workshop/05_harmonization/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../2025-CPEG-workshop/05_harmonization/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data processing II: Data harmonization and synthesis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../2025-CPEG-workshop/06_archiving/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../2025-CPEG-workshop/06_archiving/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Archiving &amp; Publishing</span></a>
   </div>
 </li>
@@ -188,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../NAPC2024/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../NAPC2024/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">NAPC 2024 Workshop</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -197,13 +232,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/team.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Meet the event organisers</span></a>
   </div>
 </li>
@@ -218,7 +253,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../NAPC2024/materials/1_introduction/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../NAPC2024/materials/1_introduction/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -227,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/1_introduction/presentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/1_introduction/presentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R for Palaeobiologists</span></a>
   </div>
 </li>
@@ -235,13 +270,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/2_acquisition/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/2_acquisition/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data acquisition and cleaning</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../NAPC2024/materials/3_preparation/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../NAPC2024/materials/3_preparation/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data preparation with the palaeoverse R package</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -250,13 +285,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/3_preparation/presentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/3_preparation/presentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction to palaeoverse</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/3_preparation/phanerozoic-reefs.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/3_preparation/phanerozoic-reefs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Latitudinal trends in Phanerozoic reefs</span></a>
   </div>
 </li>
@@ -264,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../NAPC2024/materials/4_visualization/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../NAPC2024/materials/4_visualization/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualization</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -273,19 +308,19 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/4_visualization/presentation.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/4_visualization/presentation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">An intro to data visualization</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/4_visualization/practical-ggplot2.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/4_visualization/practical-ggplot2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ggplot2 Data Visualization Practical</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/4_visualization/practical-spatial.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/4_visualization/practical-spatial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Spatial Data Visualization Practical</span></a>
   </div>
 </li>
@@ -293,13 +328,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/5_resources/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/5_resources/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../NAPC2024/materials/6_practice/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../NAPC2024/materials/6_practice/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Independent practice</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -308,7 +343,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../NAPC2024/materials/6_practice/tetrapod-biodiversity.html" class="sidebar-item-text sidebar-link">
+  <a href="../NAPC2024/materials/6_practice/tetrapod-biodiversity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Alpha diversity and geographic range size of Carboniferous and Permian tetrapods</span></a>
   </div>
 </li>
@@ -320,61 +355,61 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../UCL2023/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../UCL2023/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">UCL 2023 Workshop</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/schedule.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/schedule.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/team.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/team.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Organising Team</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../../UCL2023/day1/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../UCL2023/day1/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 1: Workshop</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/day1/acquisition.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/day1/acquisition.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data acquisition</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/day1/preparation.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/day1/preparation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data preparation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/day1/visualisation.html" class="sidebar-item-text sidebar-link active">
+  <a href="../UCL2023/day1/visualisation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualisation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/day1/functions.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/day1/functions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/day1/resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/day1/resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Resources</span></a>
   </div>
 </li>
@@ -382,31 +417,31 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/hackathon.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/hackathon.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Day 2: Hackathon</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/location.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/location.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting Here</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/accommodation.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/accommodation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Accommodation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/food.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/food.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Food and Drink</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../UCL2023/entertainment.html" class="sidebar-item-text sidebar-link">
+  <a href="../UCL2023/entertainment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Entertainment</span></a>
   </div>
 </li>
@@ -414,7 +449,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../conduct.html" class="sidebar-item-text sidebar-link">
+  <a href="../conduct.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code of Conduct</span></a>
   </div>
 </li>
@@ -428,17 +463,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <ul class="collapse">
+  <li><a href="#arrival" id="toc-arrival" class="nav-link" data-scroll-target="#arrival">Arrival</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
+  <li><a href="#instructors" id="toc-instructors" class="nav-link" data-scroll-target="#instructors">Instructors</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../UCL2023/index.html">UCL 2023 Workshop</a></li><li class="breadcrumb-item"><a href="../../UCL2023/day1/index.html">Day 1: Workshop</a></li><li class="breadcrumb-item"><a href="../../UCL2023/day1/visualisation.html">Data visualisation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data visualisation</h1>
+<h1 class="title">Open Data Science Skills</h1>
+<p class="subtitle lead">Building Open Data Science Skills in Paleobiology and Ecology</p>
 </div>
 
 
@@ -455,34 +497,100 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>This unit of the workshop covers the basics of data visualization. The theory includes basic design principles, such as colour and type, how to choose graphs according to your data, file types to export your graphs in, and common mistakes to avoid in data visualization. The practical focuses on visualizing data using ggplot2, as well as plotting vector and raster spatial data. The slides for the unit are available <a href="https://github.com/SofiaGalv/DataVis/blob/d7ece9a5cf63df24b84409e4e1999fa0f6be5da3/palaeoverse%20hackathon%202023%20-%20data%20viz%20theory.pdf">here</a> and provide an introduction to some of the most commonly used resources. The code for the ggplot2 tutorial is available <a href="https://htmlpreview.github.io/?https://github.com/SofiaGalv/DataVis/blob/88af00b772c7401ae7b9eba649d611ccae16eacf/DV_ggplot2.html">here</a>, as well as for the spatial data tutorial <a href="https://htmlpreview.github.io/?https://github.com/SofiaGalv/DataVis/blob/117ff947250a0c5b0e0f44a764edb0d0036d0374/DV_spatialdata.html">here</a>.</p>
-<p>This session is led by Sofía Galván and Miranta Kouvari. If you encounter any issues while working with the tutorials, please contact Sofía <a href="mailto:sofia.galvan@uvigo.es">here</a>. If you have any questions or further enquiries on the theory covered, please contact Miranta <a href="mailto:kouvari.miranta@gmail.com">here</a>.</p>
+<blockquote class="blockquote">
+<p><strong>WORKSHOP MATERIALS CURRENTLY UNDER CONSTRUCTION</strong></p>
+</blockquote>
+<p><strong>July 27<sup>th</sup>, 2025</strong></p>
+<p>University of Zürich (Zürich, Switzerland)</p>
+<section id="welcome" class="level1">
+<h1>Welcome</h1>
+<p>R is one of the most popular languages in the world of data science and has been widely adopted by the paleobiological and ecological communities for data analysis. General familiarity with R allows users to automate routine tasks, create reproducible analytical workflows, and expand the potential of their research. This workshop aims to introduce participants to the versatility of R for cleaning, analyzing, and visualizing paleobiological and ecological data. It will cover topics including: data acquisition from biodiversity databases such the Paleobiology Database, Neotoma Paleoecology Database, and Global Biodiversity Information Facility; building workflows in R to clean and analyze data; data visualization and synthesis; and guidelines (e.g., FAIR and CARE principles) and tools (e.g., GitHub) for creating more reproducible code and accessible documentation. In doing so, this workshop will introduce attendees to palaeoverse, an R package that supports data preparation and exploration for paleobiological analysis. Participants will also become familiar with additional packages developed by Palaeoverse <a href="www.palaeoverse.org">www.palaeoverse.org</a>, such as rphylopic. More broadly, this event aims to connect participants working in different fields who share a common interest in data science and provide a platform for participants to gain experience working collaboratively in R to generate reproducible interdisciplinary research.</p>
+<section id="arrival" class="level2">
+<h2 class="anchored" data-anchor-id="arrival">Arrival</h2>
+<p>The event starts at XXX on the XXX and will take place at XXX.</p>
+<p>The full schedule for the workshop is available <a href="#schedule">here</a>.</p>
 </section>
-<section id="resources" class="level2">
-<h2 class="anchored" data-anchor-id="resources">Resources</h2>
-<ul>
-<li><p><a href="https://github.com/SofiaGalv/DataVis/blob/d7ece9a5cf63df24b84409e4e1999fa0f6be5da3/palaeoverse%20hackathon%202023%20-%20data%20viz%20theory.pdf">Data visualization slides</a></p></li>
-<li><p><a href="https://htmlpreview.github.io/?https://github.com/SofiaGalv/DataVis/blob/117ff947250a0c5b0e0f44a764edb0d0036d0374/DV_BaseR.html">Data visualization 0: base R html</a></p></li>
-<li><p><a href="https://github.com/SofiaGalv/DataVis/blob/117ff947250a0c5b0e0f44a764edb0d0036d0374/DV_BaseR.Rmd">Data visualization 0: base R Rmd</a></p></li>
-<li><p><a href="https://htmlpreview.github.io/?https://github.com/SofiaGalv/DataVis/blob/88af00b772c7401ae7b9eba649d611ccae16eacf/DV_ggplot2.html">Data visualization 1: ggplot2 html</a></p></li>
-<li><p><a href="https://github.com/SofiaGalv/DataVis/blob/117ff947250a0c5b0e0f44a764edb0d0036d0374/DV_ggplot2.Rmd">Data visualization 1: ggplot2 Rmd</a></p></li>
-<li><p><a href="https://htmlpreview.github.io/?https://github.com/SofiaGalv/DataVis/blob/117ff947250a0c5b0e0f44a764edb0d0036d0374/DV_spatialdata.html">Data visualization 2: spatial data html</a></p></li>
-<li><p><a href="https://github.com/SofiaGalv/DataVis/blob/117ff947250a0c5b0e0f44a764edb0d0036d0374/DV_spatialdata.Rmd">Data visualization 2: spatial data Rmd</a></p></li>
-</ul>
-<div class="quarto-figure quarto-figure-left">
+<section id="schedule" class="level2">
+<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Event</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PLACEHOLDER</strong></td>
+<td><strong>PLACEHOLDER</strong></td>
+</tr>
+<tr class="even">
+<td><strong>PLACEHOLDER</strong></td>
+<td><strong>PLACEHOLDER</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>PLACEHOLDER</strong></td>
+<td><strong>PLACEHOLDER</strong></td>
+</tr>
+<tr class="even">
+<td><strong>PLACEHOLDER</strong></td>
+<td><strong>PLACEHOLDER</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>PLACEHOLDER</strong></td>
+<td><strong>PLACEHOLDER</strong></td>
+</tr>
+<tr class="even">
+<td><strong>PLACEHOLDER</strong></td>
+<td><strong>PLACEHOLDER</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="instructors" class="level2">
+<h2 class="anchored" data-anchor-id="instructors">Instructors</h2>
+<p>This edition of the Workshop event is organised and led by the following members of the Palaeoverse team.</p>
+<div class="grid">
+<div class="g-col-4">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://raw.githubusercontent.com/SofiaGalv/DataVis/main/DV_Resources.png" class="img-fluid quarto-figure quarto-figure-left figure-img" style="width:75.0%"></p>
+<p><img src="https://palaeoverse.org/images/logo.png" class="img-fluid figure-img"></p>
+<figcaption>INSTRUCTOR 1</figcaption>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-right">
+</div>
+<div class="g-col-4">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../../images/logo.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:25.0%"></p>
+<p><img src="https://palaeoverse.org/images/logo.png" class="img-fluid figure-img"></p>
+<figcaption>INSTRUCTOR 2</figcaption>
 </figure>
 </div>
+</div>
+<div class="g-col-4">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://palaeoverse.org/images/logo.png" class="img-fluid figure-img"></p>
+<figcaption>INSTRUCTOR 3</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>Please ensure that you have the latest version of R for the workshop, which can be downloaded <a href="https://cran.r-project.org/bin/windows/base/">here</a>. We also recommend installing the latest version of RStudio, which can be downloaded <a href="https://posit.co/download/rstudio-desktop/">here</a>. To minimize any installation issues during the workshop, please also install the following R packages:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>This event is run by the <a href="https://palaeoverse.org">Palaeoverse</a> and supported by…</p>
+<p><img src="https://palaeoverse.org/images/logo.png" class="img-fluid" style="width:20.0%"></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
