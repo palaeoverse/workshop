@@ -1,0 +1,74 @@
+---
+title: "Open Data Science Skills"
+subtitle: "Building Open Data Science Skills in Paleobiology and Ecology"
+toc: true
+order: 97
+---
+
+> **WORKSHOP MATERIALS CURRENTLY UNDER CONSTRUCTION**
+
+**July 27^th^, 2025**
+
+University of Zürich (Zürich, Switzerland)
+
+# Welcome
+
+R is one of the most popular languages in the world of data science and has been widely adopted by the paleobiological and ecological communities for data analysis. General familiarity with R allows users to automate routine tasks, create reproducible analytical workflows, and expand the potential of their research. This workshop aims to introduce participants to the versatility of R for cleaning, analyzing, and visualizing paleobiological and ecological data. It will cover topics including: data acquisition from biodiversity databases such the Paleobiology Database, Neotoma Paleoecology Database, and Global Biodiversity Information Facility; building workflows in R to clean and analyze data; data visualization and synthesis; and guidelines (e.g., FAIR and CARE principles) and tools (e.g., GitHub) for creating more reproducible code and accessible documentation. In doing so, this workshop will introduce attendees to palaeoverse, an R package that supports data preparation and exploration for paleobiological analysis. Participants will also become familiar with additional packages developed by Palaeoverse [www.palaeoverse.org](www.palaeoverse.org), such as rphylopic. More broadly, this event aims to connect participants working in different fields who share a common interest in data science and provide a platform for participants to gain experience working collaboratively in R to generate reproducible interdisciplinary research.
+
+## Arrival
+
+The event starts at XXX on the XXX and will take place at XXX.
+
+The full schedule for the workshop is available [here](#schedule).
+
+## Schedule
+
+| Time            | Event                       |
+|-----------------|-----------------------------|
+| **PLACEHOLDER** | **PLACEHOLDER**             |
+| **PLACEHOLDER** | **PLACEHOLDER**             |
+| **PLACEHOLDER** | **PLACEHOLDER**             |
+| **PLACEHOLDER** | **PLACEHOLDER**             |
+| **PLACEHOLDER** | **PLACEHOLDER**             |
+| **PLACEHOLDER** | **PLACEHOLDER**             |
+
+## Instructors
+
+This edition of the Workshop event is organised and led by the following members of the Palaeoverse team.
+
+::: {.grid}
+
+::: {.g-col-4}
+
+![INSTRUCTOR 1](https://palaeoverse.org/images/logo.png)
+
+:::
+
+::: {.g-col-4}
+
+![INSTRUCTOR 2](https://palaeoverse.org/images/logo.png)
+
+:::
+
+::: {.g-col-4}
+
+![INSTRUCTOR 3](https://palaeoverse.org/images/logo.png)
+
+:::
+
+:::
+
+## Installation
+
+Please ensure that you have the latest version of R for the workshop, which can be downloaded [here](https://cran.r-project.org/bin/windows/base/). We also recommend installing the latest version of RStudio, which can be downloaded [here](https://posit.co/download/rstudio-desktop/). To minimize any installation issues during the workshop, please also install the following R packages:
+
+```{R install}
+#| eval: false
+install.packages()
+```
+
+## Acknowledgements
+
+This event is run by the [Palaeoverse](https://palaeoverse.org) and supported by...
+
+![](https://palaeoverse.org/images/logo.png){width="20%"}
