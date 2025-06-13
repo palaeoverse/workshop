@@ -11,7 +11,7 @@ Welcome! This website serves as an index for all workshops organised by [Palaeov
 **Location:** 4^th^ Crossing the Palaeontological-Ecological Gap & 3rd Conservation Paleobiology   
 **Date:** 27^th^ July 2025
 
-Website | Archived materials
+[Website](/2025-CPEG-workshop/index.qmd) | [Archived materials](https://github.com/palaeoverse/2025-CPEG-workshop)
 
 ## 2024  
 
