@@ -400,68 +400,68 @@
     "section": "",
     "text": "Add content",
     "crumbs": [
-      "Open Data Science Skills",
+      "CPEG 2025 Workshop",
       "Data acquisition"
     ]
   },
   {
     "objectID": "2025-CPEG-workshop/index.html",
     "href": "2025-CPEG-workshop/index.html",
-    "title": "Open Data Science Skills",
+    "title": "CPEG 2025 Workshop",
     "section": "",
     "text": "WORKSHOP MATERIALS CURRENTLY UNDER CONSTRUCTION\nJuly 27th, 2025\nUniversity of Zürich (Zürich, Switzerland)",
     "crumbs": [
-      "Open Data Science Skills"
+      "CPEG 2025 Workshop"
     ]
   },
   {
     "objectID": "2025-CPEG-workshop/index.html#arrival",
     "href": "2025-CPEG-workshop/index.html#arrival",
-    "title": "Open Data Science Skills",
+    "title": "CPEG 2025 Workshop",
     "section": "Arrival",
     "text": "Arrival\nThe event starts at XXX on the XXX and will take place at XXX.\nThe full schedule for the workshop is available here.",
     "crumbs": [
-      "Open Data Science Skills"
+      "CPEG 2025 Workshop"
     ]
   },
   {
     "objectID": "2025-CPEG-workshop/index.html#schedule",
     "href": "2025-CPEG-workshop/index.html#schedule",
-    "title": "Open Data Science Skills",
+    "title": "CPEG 2025 Workshop",
     "section": "Schedule",
     "text": "Schedule\n\n\n\nTime\nEvent\n\n\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER",
     "crumbs": [
-      "Open Data Science Skills"
+      "CPEG 2025 Workshop"
     ]
   },
   {
     "objectID": "2025-CPEG-workshop/index.html#instructors",
     "href": "2025-CPEG-workshop/index.html#instructors",
-    "title": "Open Data Science Skills",
+    "title": "CPEG 2025 Workshop",
     "section": "Instructors",
     "text": "Instructors\nThis edition of the Workshop event is organised and led by the following members of the Palaeoverse team.\n\n\n\n\n\nINSTRUCTOR 1\n\n\n\n\n\n\n\nINSTRUCTOR 2\n\n\n\n\n\n\n\nINSTRUCTOR 3",
     "crumbs": [
-      "Open Data Science Skills"
+      "CPEG 2025 Workshop"
     ]
   },
   {
     "objectID": "2025-CPEG-workshop/index.html#installation",
     "href": "2025-CPEG-workshop/index.html#installation",
-    "title": "Open Data Science Skills",
+    "title": "CPEG 2025 Workshop",
     "section": "Installation",
     "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages()",
     "crumbs": [
-      "Open Data Science Skills"
+      "CPEG 2025 Workshop"
     ]
   },
   {
     "objectID": "2025-CPEG-workshop/index.html#acknowledgements",
     "href": "2025-CPEG-workshop/index.html#acknowledgements",
-    "title": "Open Data Science Skills",
+    "title": "CPEG 2025 Workshop",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nThis event is run by the Palaeoverse and supported by…",
     "crumbs": [
-      "Open Data Science Skills"
+      "CPEG 2025 Workshop"
     ]
   },
   {
@@ -471,7 +471,7 @@
     "section": "",
     "text": "Add content",
     "crumbs": [
-      "Open Data Science Skills",
+      "CPEG 2025 Workshop",
       "Data processing I: Exploration and cleaning"
     ]
   },
@@ -482,7 +482,7 @@
     "section": "",
     "text": "Add content",
     "crumbs": [
-      "Open Data Science Skills",
+      "CPEG 2025 Workshop",
       "Setting up a reproducible workflow"
     ]
   },
@@ -933,7 +933,7 @@
     "section": "",
     "text": "Add content",
     "crumbs": [
-      "Open Data Science Skills",
+      "CPEG 2025 Workshop",
       "Introduction to the workshop"
     ]
   },
@@ -944,7 +944,7 @@
     "section": "",
     "text": "Add content",
     "crumbs": [
-      "Open Data Science Skills",
+      "CPEG 2025 Workshop",
       "Data processing II: Data harmonization and synthesis"
     ]
   },
@@ -955,7 +955,7 @@
     "section": "",
     "text": "Add content",
     "crumbs": [
-      "Open Data Science Skills",
+      "CPEG 2025 Workshop",
       "Archiving & Publishing"
     ]
   },
