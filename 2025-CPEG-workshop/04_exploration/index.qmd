@@ -1,8 +1,63 @@
 ---
-title: "Data processing I: Exploration and cleaning"
-subtitle: "[UNIT LONG NAME]"
+title: "Data Processing I"
+subtitle: "Data Processing I: Data Exploration and Cleaning"
 toc: true
 order: 4
 ---
 
-# Add content
+# Data processing I: Data exploration and cleaning
+
+**Aim:**
+
+- Understand why data exploration and cleaning is key for data analyses
+- Develop the skills and knowledge needed to explore and clean data
+
+**Schedule:** 11:15-12:30 [1.25 hrs]
+
+# Data exploration
+
+- Why do we explore our data? How do we explore our data? [20 min instruction & code-along, Will]
+Based on https://tenrules.palaeoverse.org/#rule-4-explore-your-data
+Guided freeform practical [15 min, Will]
+
+# Data cleaning
+
+## Identify and handle incomplete data records
+
+Datasets are rarely perfect. A common issue you may encounter when exploring your data is ambiguous, incomplete, or missing data entries. These incomplete or missing data records can occur due to various reasons. In some cases, the data truly do not exist or cannot be estimated due to issues relating to taphonomy, collection approaches, or biases in the fossil record. In other cases, discrepancies may arise because data were collected when definitions or contexts differed, such as shifts in geopolitical boundaries and country names over time. Additionally, data may be incomplete for some records, but can be inferred through other available data. 
+
+## Why is it important?
+
+Missing information can bias the results of palaeobiological studies. Occurrence data are inherently based on the existence of a particular fossil, but missing data associated with that fossil occurrence can also affect analyses that rely on that associated data. For instance, missing temporal or spatial data may prevent you from including occurrences in your time series or spatial analyses.
+
+## What should we do with incomplete data records?
+
+Depending on your research goals, incomplete entries may either be removed through filtering or addressed through imputation techniques. Data imputation approaches can be used to replace missing data with values modelled on the observed data using various methods. These can range from simple approaches, like replacing missing values with the mean for continuous variables, to more advanced statistical or machine learning techniques. If you do decide to impute missing data, it is essential that this process and its effects on the dataset are clearly justified and documented so that future users of the dataset or analytical results are aware of these decisions. Although missing data can reduce the statistical power of analyses and bias the results, imputing missing values can introduce new biases, potentially also skewing results and interpretations of the examined data.
+
+To decide how to handle missing data, start by identifying the gaps in your dataset, which are often represented by empty entries or ‘NA’. For imputing missing values, numerous methods and tools are available in your coding language of choice, such as missForest, mice, and kNN. Removing missing data can be straightforward when working with small datasets. For manual removal, tools such as spreadsheet software can be sufficient. In R, built-in functions such as `complete.cases()` and `na.omit()` quickly identify and remove missing values. The tidyr package also provides the `drop_na()` function for this purpose.
+
+### Identifying incomplete data records
+
+- Basic
+- Advanced
+
+### Handling incomplete data records
+
+- Basic
+- Advanced
+
+https://tenrules.palaeoverse.org/#rule-5-identify-and-handle-incomplete-data-records
+
+## Identify and handle outliers [Lewis]
+
+
+## Identify and handle inconsistencies [Pedro]
+
+
+## Identify and handle duplicates [Pedro]
+
+# Resources
+
+
+
+
