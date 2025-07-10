@@ -10,12 +10,12 @@ website:
   twitter-card: true
   repo-url: https://github.com/palaeoverse/workshop
   page-footer:
-    background: "#c1e0e2"
+    background: $brand-light-blue
     border: true
     center: "&copy; Copyright 2025, <a href='https://palaeoverse.org/'>Palaeoverse</a>"
   navbar:
     border: true
-    background: "#c1e0e2"
+    background: $brand-light-blue
     collapse: false
     right:
       - icon: github
@@ -35,7 +35,7 @@ website:
         aria-label: "Palaeoverse homepage"
         target: _blank
   sidebar:
-    background: "#c1e0e2"
+    background: $brand-light-blue
     logo: "images/favicon.png"
     align: center
     border: true
@@ -48,8 +48,8 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - custom.scss
+      - cosmo # a predefined bootswatch theme
+      - brand # theming derived from `_brand.yml`
     css: styles.css
     toc: true
 
