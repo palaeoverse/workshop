@@ -2,7 +2,7 @@
 title: "CPEG Workshop Afternoon Session"
 format: html
 editor: visual
-author: 'Erin M. Dillion & Christopher D. Dean'
+author: 'Erin M. Dillon & Christopher D. Dean'
 date: 2025-07-27
 title-block-banner: true
 description: 'Data Processing II: Harmonization and Synthesis'
@@ -10,21 +10,21 @@ description: 'Data Processing II: Harmonization and Synthesis'
 
 ## Learning Objectives
 
-In this section, we're going to walk you through how to combine and use different datasets from deep-time and the modern to answer questions that cross the palaeo-ecological divide. We'll cover:
+In this section, we'll walk through how to combine and use different deep-time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
 
-1.  Understanding the power of harmonizing data from different sources.
-2.  The considerations and complications that have to be made when combining datasets.
-3.  Sourcing and using spatially explicit climatic data for the past and modern.
+1.  The power of harmonizing data from different sources.
+2.  The considerations and complications that arise when combining datasets.
+3.  How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences.
 4.  How to plan, write code for, and carry out projects covering multiple time frames.
 
-To do this, we'll continue using the Crocodylia data we've been working with earlier today. If you've not quite finished working on your dataset, you can find a cleaned version that's ready for this next step **HERE**.
+To do this, we'll continue using the Crocodylia dataset we've been working with earlier today. If you've not quite finished cleaning your dataset, you can find a cleaned version that's ready for this next step **HERE**.
 
 ## Plan for the Session
 
 1.  Introduction to harmonization and synthesis
-2.  Planning, Setup, and Finding Your Data
-3.  Merging Datasets: Building a Workflow
-4.  Data Visualisation and Synthesis
+2.  Planning, setup, and finding your data
+3.  Building a workflow to merge datasets
+4.  Data visualisation and synthesis
 
 ## 1. Introduction to Harmonization and Synthesis
 
@@ -34,50 +34,52 @@ Presentation goes here??
 
 ### Our Research Question
 
-Before doing anything else, we first have to define our research question, which will be based around the dataset of Cenozoic Crocodylia that we've been working on this morning. As mentioned previously, Crocs are an excellent group to use for studies comparing the modern and deep-time records: they have a very tight association with temperature, are well represented in the fossil record spatially and temporally, and many extant species require conservation due to anthropogenic impacts.
+Before starting, we first need to define our research question, which will be framed around the dataset of Cenozoic Crocodylia that we've been working on this morning. As mentioned previously, Crocs are an excellent group to use for studies comparing modern and deep-time records: they have a very tight association with temperature, are well represented in the fossil record spatially and temporally, and many extant species are threatened by anthropogenic impacts including habitat loss and climate change.
 
-In this section, we'll be trying to answer the following research question: **How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?**
+In this section, we'll aim to answer the following research question: **How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?**
 
-### Making a plan
+We'll focus our deep-time analysis on the Miocene, a climatically dynamic epoch in Earth's history that can serve as an analog for future climate scenarios (e.g., Steinthorsdottir et al. 2020, https://doi.org/10.1029/2020PA004037).
 
-Before we start, it's helpful to write out a step-by-step plan of what we want to accomplish to ensure that the approach we're taking and the code that we write will appropriately answer the question(s) that we are interested in. Think of this as a kind of "logical flow": what are all the steps needed to get from our research idea to our finalised analysis. This can be as extensive as you wish and can be done in any fashion---even writing out your code on pen and paper! We'll be doing this a few times today, so let's start by considering our research question and what materials we will need to resolve it.
+### Making a Plan
 
-As we will be comparing the distributions of Crocodylia in deep-time compared to the present, there are some key basic datasets that we will require:
+Before we start, it's helpful to write out a step-by-step plan of what we want to accomplish to ensure that the approach we're taking and the code that we write will appropriately answer the question(s) that we are interested in. Think of this as a kind of "logical flow." In other words, what are all the steps needed to get from our research idea to our finalised analysis? This can be as extensive as you wish and can be done in any fashion---even writing out your code or general approach on pen and paper! We'll be doing this a few times today, so let's start by considering our research question and what materials we will need to address it.
+
+As we aim to compare the distributions of Crocodylia in deep-time compared to the present, there are a couple of key datasets that we will require:
 
 1.  A spatially explicit dataset of modern Crocodylia
-2.  A spatially explicit dataset of Crocodylia in the deep-time intervals we are assessing.
+2.  A spatially explicit dataset of Crocodylia in the deep-time intervals we will assess
 3.  A spatially explicit dataset of modern climatic variables
-4.  A spatially explicit dataset of climatic variables for the deep-time intervals we choose, likely generated from palaeoclimatic modelling.
+4.  A spatially explicit dataset of climatic variables for the deep-time intervals we choose, likely generated from palaeoclimatic modelling
 
-Even at this first step, we will have to start making decisions that will have consequences for our research and findings. The choice of dataset and how it's handled can have an impact on the results that we eventually obtain.
+👀 Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results.
 
 ## **BREAKOUT SESSION 1**
 
 **Organize yourselves into groups of 4-6 and discuss the following questions:**
 
-***- What issues might we encounter when sourcing, obtaining and working with these types of data?***
+***- What issues might we encounter when sourcing, gathering, and working with these various datasets?***
 
-***-What caveats should we be aware of, and how can these be addressed?***
+***-What caveats should we be aware of, and how can they be addressed?***
 
-## 3. Merging Datasets: Building a Workflow
+## 3. Building a Workflow to Merge Datasets
 
-We'll now walk through an example for how we might acquire and harmonize our climatic data. First, let's make a plan of the steps we 'll have to take and some of the questions that we'll have to consider along the way.
+We'll now walk through an example for how we might acquire and harmonize our climatic data. First, let's make a plan of the steps we'll take and some of the decisions we'll need to consider along the way.
 
 1.  **Decide what climate data to use.** What will be most appropriate for the taxonomic group we are studying? Some potential choices might be:
 
--   The mean annual temperature.
--   The mean annual range of temperature.
--   The annual standard deviation of temperature.
--   The temperature of the hottest or coldest quarter.
+-   The mean annual temperature
+-   The mean annual range of temperature
+-   The annual standard deviation of temperature
+-   The temperature of the hottest or coldest quarter
 
-2.  **Find a suitable source of data**. We will need to find spatially climatic data for each time interval we are interested in and acquire it in an appropriate format (.nc). What factors might we consider?
+2.  **Find a suitable source of data.** We will need to find spatially climatic data for each time interval we are interested in and acquire it in an appropriate format (.nc). What factors might we consider?
 
 -   Spatial resolution
 -   Temporal resolution
 
-3.  **Sort file structure.** Ensure that your R project is set up appropriately and that the downloaded files are in an appropriate place
+3.  **Sort file structure.** Ensure that your R project is set up appropriately and that the downloaded files are in an appropriate place.
 
-4.  **Load data.** Read our data into R in an appropriate format to work with (e.g. raster). How might we do this? What packages might we need?
+4.  **Load data.** Read our data into R in an appropriate format to work with (e.g., raster). How might we do this? What packages might we need?
 
 5.  **Check formatting.** Ensure that the data are formatted appropriately. How might this impact our results or interpretations? What issues should we be aware of?
 
@@ -87,11 +89,12 @@ We'll now walk through an example for how we might acquire and harmonize our cli
 -   Are they capturing the same climatic information?
 
 6.  **Prepare for analysis.** Ensure that the data are ready to be used in our next stages of analysis.To do this, we might want to break down our steps further:
-7.  Check the format of the data using the 'class()' function.
-8.  Make a reference raster with appropriate resolution and extent.
-9.  Ensure climate raster doesn't have wrapping/extent issues, and rotate if necessary.
-10. Re-sample raster to our reference raster.
-11. Ensure that all rasters are capturing the same climatic information.
+
+-   Check the format of the data using the 'class()' function
+-   Make a reference raster with appropriate resolution and extent
+-   Ensure climate raster doesn't have wrapping/extent issues, and rotate if necessary
+-   Re-sample raster to our reference raster
+-   Ensure that all rasters are capturing the same climatic information
 
 Now that we have a basic plan, we can start to put it into action. Let's write some code!
 
