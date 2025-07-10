@@ -217,9 +217,9 @@ As we can see here, this modern climatic data are considerably higher resolution
 
 **Now it's your turn to give it a go!**
 
-***-First, Take a couple minutes to jot down a similar workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R.***
+***-First, take a couple minutes to jot down a similar workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R.***
 
-***-Then, get into the same groups and discuss your approach and how you might address potential pitfalls when merging datasets.*** 
+***-Then, get into the same groups and discuss your approach and where you might encounter potential pitfalls.*** 
 
 
 ### Solution
@@ -294,7 +294,7 @@ head(modern_occ)
 ```
 
 
-## 2. Filtering
+### 2. Filtering
 
 These datasets contain occurrences that are relevant to our research question, but they also contain occurrences that fall outside of the scope of our planned analysis. Let's filter the datasets to just keep the relevant occurrences. What were some of the filtering criteria you brainstormed during the breakout session?
 
@@ -330,7 +330,7 @@ nrow(modern_occ_filter)
 After filtering, we have 114 fossil occurrences and 2501 modern occurrences to potentially work with. How might we deal with this unequal sampling?
 
 
-## 3. Cleaning
+### 3. Cleaning
 
 We'll then want to explore and clean our data to check for outliers, inconsistencies, duplicates, and other potential issues.
 
@@ -343,34 +343,32 @@ Our fossil occurrence dataset has already gone through this process.
 ```
 
 
-## 4. Merging
+### 4. Merging
 
 Now we come to the fun part. How do we align these data, which were sampled in different ways with different temporal and spatial resolutions and coverage?
 
-Let's start by returning to the structure of each dataset. Note that the header names differ, and that the datasets contain different types of metadata and/or metadata reported in different ways (units, formats) and at different resolutions.
+Let's begin by returning to the structure of each dataset. Note that the header names differ, and that the datasets contain variables reported in different ways (units, formats) and with different resolutions.
 ```{r}
-
 head(fossil_occ_filter)
 head(modern_occ_filter)
-
-str(fossil_occ_filter)
-str(modern_occ_filter)
-
 ```
 
-*DISCUSSION QUESTIONS:*
-*-What factors that might introduce bias when we try to make comparisons across datasets?*
+## **BREAKOUT SESSION 3**
 
-*-What are some sources of uncertainty?*
+**Reassemble your discussion groups and discuss the following questions:**
 
-*-How might we address these potential confounds prior to analysis and/or what should we keep in mind as we're interpreting our results?*
+***-What factors that might introduce bias when we try to make comparisons across these datasets?*
 
+***-What are some sources of uncertainty?***
 
-As we move forward, we'll need to make some practical and philosophical decisions about how we bin the data. We'll also want to consider the sensitivity of our results to these various decisions. 
+***-How might we address these potential confounds prior to analysis and/or what should we keep in mind as we're interpreting our results?***
+
 
 Here, we'll touch on several key taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.
 
-### 4A. Taxonomy
+The resolution and coverage of the data is likely one aspect that came up in your group discussions. As we move forward, we'll need to make some practical and philosophical decisions about how we bin the data given their varying resolutions. We'll also want to consider the sensitivity of our results to these various decisions.  
+
+#### Taxonomy
 
 We'll be using higher-level taxonomic groups for our analysis. Let's take a quick look to see what's here.
 ```{r}
@@ -387,7 +385,7 @@ We'll be using higher-level taxonomic groups for our analysis. Let's take a quic
 
 The same families are represented but there are differences at the genus level.
 
-### 4B. Temporal Bins
+#### Temporal Bins
 
 We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions, which are available for ~5-million-year intervals.
 
@@ -467,7 +465,7 @@ modern_occ_filter <- modern_occ_filter %>%
 Ok, so now we have some temporal bins to facilitate our comparisons over time.
 
 
-### 4C. Spatial Bins
+#### Spatial Bins
 
 We also want to assign the occurrences to spatial bins so we can match them up to the climate layer, which have different spatial resolutions.
 
