@@ -53,7 +53,7 @@ As we aim to compare the distributions of Crocodylia in deep-time compared to th
 3.  A spatially explicit dataset of modern climatic variables
 4.  A spatially explicit dataset of climatic variables for the deep-time intervals we choose, likely generated from palaeoclimatic modelling
 
-::: {.callout-caution title="Heads Up!"}
+::: {.callout-note title="Heads Up!"}
 Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results.
 :::
 
@@ -61,7 +61,7 @@ Even at this first step, the decisions we make will have consequences for our re
 
 **Organize yourselves into groups of 4-6 and discuss the following questions:**
 
-***- What issues might we encounter when sourcing, gathering, and working with these various datasets?***
+***- What issues might we encounter when sourcing, gathering, and working with these various climatic and occurrence datasets?***
 
 ***-What caveats should we be aware of, and how can they be addressed?***
 
@@ -69,7 +69,7 @@ Even at this first step, the decisions we make will have consequences for our re
 
 We'll now walk through an example for how we might acquire and harmonize our climatic data. First, let's make a plan of the steps we'll take and some of the decisions we'll need to consider along the way.
 
-1.  **Decide what climate data to use.** What will be most appropriate for the taxonomic group we are studying? Some potential choices might be:
+1.  **Decide which climate data to use.** What will be most appropriate for the taxonomic group we are studying? Some potential choices might be:
 
 -   The mean annual temperature
 -   The mean annual range of temperature
@@ -160,14 +160,14 @@ prep.raster <- function(file_path, ref.raster){
 }
 ```
 
-After exploring some potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic, based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publically available and accessible via Zenodo (https://zenodo.org/records/5718392).
+After exploring several potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2022), based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publically accessible via Zenodo: https://zenodo.org/records/5718392.
 
 Citations:
 Scotese, C. R., Song, H., Mills, B. J. W., & van der Meer, D. G. (2021). Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503
 
 Valdes, P.J., Scotese, C.R., and Lunt, D.J. (2021). Deep Ocean Temperatures through Time, Climates of the Past, Discussions, https://doi.org/10.5194/cp-2020-83. 
 
-While this climatic dataset offers decently high resolution (for deep time), one thing we'll need to keep in mind is that the 5-million-year intervals don't align perfectly with geological stages. This will come into play later when we start working with the occurrence data.
+This climatic dataset offers decently high temporal resolution (for deep time), but one thing we'll need to keep in mind is that the 5-million-year intervals don't align perfectly with geological stages. This will come into play later when we start working with the occurrence data.
 
 For our study, we'll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition.
 
@@ -215,11 +215,12 @@ As we can see here, this modern climatic data are considerably higher resolution
 
 ## **BREAKOUT SESSION 2**
 
-**Now it's your turn to give it a go! **
+**Now it's your turn to give it a go!**
 
-***- What issues might we encounter when sourcing, obtaining and working with these types of data?***
+***-First, Take a couple minutes to jot down a similar workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R.***
 
-***-What caveats should we be aware of, and how can these be addressed?***
+***-Then, get into the same groups and discuss your approach and how you might address potential pitfalls when merging datasets.*** 
+
 
 ### Solution
 
@@ -227,164 +228,124 @@ As we can see here, this modern climatic data are considerably higher resolution
 
 Let's start by thinking about what we need from our occurrence datasets. To answer our question, we aim to compare Crocodylia occurrences in the past and present in relation to temperature data from the same points.
 
-How do we get there? Let's outline the steps:
+How do we get there? Let's outline some potential steps:
 
-1.  We'll need to download and read in our fossil occurrences from PBDB and our modern occurrences from GBIF.
+1.  **Decide which occurrence data to use and where to source it.** The PBDB Crocodylia dataset we've been working with contains occurrences that span our interval of interest. Where might we find a comparable dataset of modern occurrences? Earlier today, we learned about the Global Biodiversity Information Facility (GBIF). This could be a good source!
 
-2\. We'll need to do some filtering, for example to our time period of interest and to remove types of occurrences that aren't comparable between the datasets.
+2.  **Filtering.** We'll need to do some filtering, for example to our time period of interest and to remove occurrences that have high uncertainty or aren't comparable between the datasets. What other filtering criteria might we consider?
 
-3\. We'll also want to spend some time cleaning and exploring our data (covered in the previous module).
+3.  **Cleaning.** As we learned in the previous session, we'll also want to spend some time cleaning and exploring our data.
 
-4\. Next, we'll need to merge the datasets. This will involve assessing the dataframe structures, identifying common data fields that we want to keep, binning the data as needed given their differing resolutions, and then combining the dataframes. In particular, we'll need to address temporal and spatial resolution and harmonize taxonomy. We'll also want to consider potential sampling biases that might influence our comparisons.
+4.  **Merging data.** We'll next want to combine our occurrence and climatic datasets to extract the mean temperature values at the same points in space and time as the occurrences. When doing this, what are some factors we need to consider? This might involving binning our data given differences in temporal and spatial resolutions and making some decisions about which taxonomic level to run our analysis. Along the way, we'll likely need to think carefully about the dataframe structures and identify common data fields that are relevant for our study (time designations, taxonomy, coordinates, collection numbers, etc). We'll also want to consider potential sampling biases that might influence our comparisons.
 
-5\. Finally, we'll align our occurrence dataset with the climate layers (more on this below!) and do some plotting. At this point, we'll have binned fossil and modern occurrences with geographic coordinates and associated temperature data. Returning to our question, this will allow us to determine whether the fossil occurrences cover a broader range of temperatures than the modern occurrences.
+5. **Data extraction and visualisation.** At this point, we'll have binned fossil and modern occurrences with geographic coordinates and associated temperature data. Returning to our question, this will allow us to determine whether the fossil occurrences cover a broader range of temperatures than the modern occurrences.
+:::
 
 Let's begin!
 
-### 1. Load occurrence data
+### 1. Sourcing occurrence data
 
-#### 1A. Load fossil occurrence data
+#### 1A. Organise fossil occurrence data
 
-Next, we'll load in our palaeontological data. Luckily for us, we've already been working with a Crocodylia fossil occurrence dataset. We'll use these data in our analysis. (If needed, you can read in the cleaned dataset below.)
+First, we'll load in our palaeontological data. Luckily for us, we've already been working with a Crocodylia fossil occurrence dataset. We'll use these data in our analysis. If needed, you can read in the cleaned dataset below.
 
 NOTE: This will be the dataset from part I...using the raw copy for now but plan is to read in the clean df.
 
 ```{r}
-
-#Load fossil data for order Crocodylia
-#url: https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&base_name=Crocodylia&interval=Cenozoic&pgm=gplates,scotese,seton&show=full
-
+#Load cleaned fossil data for order Crocodylia
 fossil_occ <- read.csv("Test_crocs3.csv")
 
 #Let's take a quick look
 head(fossil_occ)
-
 ```
 
-#### 1B. Load modern occurrence data
+#### 1B. Organise modern occurrence data
 
-Download from GBIF
+After looking at the number and coverage of available records, we've decided to use the GBIF data.
 
+We'll start by doing a quick data download using the `rgbif` package for the purposes of this exploratory exercise. Note that this method for retrieving occurrences has some limitations, and we'd want to do a formal download query before running our full analysis for publication. For that, you'd need to make a GBIF account.
+
+Here's how we can do this. Scroll down to load the dataset we've previously downloaded.
 ```{r}
+#set taxa key to order Crocodylia
+#crocodile_key <- name_backbone(name = "Crocodylia")$usageKey
 
-#NOTE: Quick way to get data for now (do the formal download later - although i think this is the whole dataset so maybe not needed)
-
-#set taxa key
-crocodile_key <- name_backbone(name = "Crocodylia")$usageKey #order Crocodylia
-
-
-#download this subset of preserved specimens
-modern_download <- occ_search(
-  taxonKey = crocodile_key,
-  hasCoordinate = TRUE, #needs to have coordinates
-  basisOfRecord = "PRESERVED_SPECIMEN", #filtering to keep just preserved specimens, which are most comparable to PBDB data (note that GBIF contains multiple types of records)
-  limit = 10000)  #adjust limit (if you set limit to 0, you can check the metadata to see #records available)
+#download subset of preserved specimens
+#modern_download <- occ_search(
+  #taxonKey = crocodile_key,
+  #hasCoordinate = TRUE, #needs to have coordinates
+  #basisOfRecord = "PRESERVED_SPECIMEN", #keeping just preserved specimens for better comparability with the PBDB data
+  #limit = 10000)  #adjust limit (if you set limit to 0, you can check the metadata to see how many records are available)
 
 #extract data
-modern_occ <- modern_download$data
+#modern_occ <- modern_download$data
 
 #metadata
-modern_meta <- modern_download$meta
-
-#saving for later
-#write.csv(modern_occ,"crocs_modern.csv")
-
+#modern_meta <- modern_download$meta
 ```
 
-Read in the GBIF data for Crocodylia
-
+For ease, here's a csv of the raw data:
 ```{r warning=F}
-
 #Load modern data
 #modern_occ <- read_csv("crocs_modern.csv") 
 
 #Let's take a quick look
 head(modern_occ)
-
 ```
 
 
 ## 2. Filtering
 
-These datasets contain occurrences that are relevant to our research question, but they also contain additional occurrences that fall outside of the scope of our planned analysis. Let's filter the datasets to just keep the relevant occurrences.
+These datasets contain occurrences that are relevant to our research question, but they also contain occurrences that fall outside of the scope of our planned analysis. Let's filter the datasets to just keep the relevant occurrences. What were some of the filtering criteria you brainstormed during the breakout session?
 
-*Taxonomic level: We'll run the analysis at the order level (Crocodylia) given taxonomic differences between the fossil and modern datasets at finer taxonomic levels (e.g. extinct taxa), but let's keep occurrences that have been identified at least to genus (i.e., removing indet. taxa from the fossil dataset).
+*-Data type:* Note that we've already queried GBIF for just the preserved specimens to optimize comparability with the PBDB dataset. For instance, GBIF also contains fossil specimens, living specimens, and human observations that either aren't entirely comparable with a fossil occurrence or don't represent our modern time interval.
 
-*Spatial scale: Our analysis is global, so we can keep everything. However, we will still want to check for potential outliers or inconsistencies when cleaning the data.
+*-Taxonomic:* We'll run our analysis at the order level (Crocodylia) given taxonomic differences between the fossil and modern datasets at finer taxonomic levels (e.g., extinct taxa). That said, let's just retain occurrences that have been identified at least to genus (i.e., removing indet. taxa from the fossil dataset) given uncertainty in their taxonomy.
 
-*Temporal scale: We'll constrain our fossil dataset to the early-middle Miocene, which represents a climatically dynamic time that will be an interesting focus for our question (e.g., see Steinthorsdottir et al. 2020, https://doi.org/10.1029/2020PA004037). Note that our climate data are available in ~5-million-year intervals. We've chosen to use the 15-20 Ma and 20-25 Ma intervals for our study, which include the Oligocene-Miocene Climate Transition (cooling interval) and Mid Miocene Climatic Optimum (warming interval), and which is immediately preceded by the Middle Miocene Climatic Transition (cooling interval).
+*-Spatial:* Our research question is posed at a global scale, so we can keep everything. However, we will still want to check for potential geographic outliers or inconsistencies while cleaning the data.
 
-Our modern dataset includes occurrences from the 1800s to today. The WorldClim climate data spans 1970-modern so we'll filter the occurrence dataset to that time range for consistency.
+*-Temporal:* We'll constrain our palaeontological dataset to the same time intervals as our climatic dataset (25-15 Ma). Earlier, we downloaded Crocodylia occurrences for the whole of the Cenozoic, so we'll need to do some filtering. Our modern dataset includes occurrences from the 1800s to today, whereas the WorldClim dataset starts at 1970, so we can also filter the occurrence dataset to that time range for consistency.
 
-
-### 2A. PBDB dataset
 
 ```{r}
-
-### taxonomic filtering
+## PBDB filtering
 fossil_occ_filter <- fossil_occ %>%
-  dplyr::filter(accepted_rank == "genus" | accepted_rank =="species") 
+  dplyr::filter(accepted_rank == "genus" | accepted_rank =="species") %>% #taxonomic filtering
+  dplyr::filter(max_ma<=25 & min_ma>=15) #temporal filtering
 
-
-### temporal filtering to time range of interest (15-25 Ma) 
-fossil_occ_filter <- fossil_occ_filter %>%
-  dplyr::filter(max_ma<=25 & min_ma>=15)
-
-```
-
-
-### 2B. GBIF dataset
-
-For the GBIF data, we'll filter the temporal range to include data from 1970-modern to be consistent with WorldClim dataset.
-
-Note that we've already just pulled the data corresponding to "preserved specimens" to be most comparable with the PBDB dataset.
-
-```{r}
-
-## taxonomic filtering
+## GBIF filtering
 modern_occ_filter <- modern_occ %>%
-  filter(!is.na(genus))
-
-## temporal filtering
-modern_occ_filter <- modern_occ_filter %>% 
-  filter(year >= 1970)
-
-## we'll also remove points with coordinates that have high uncertainty
-modern_occ_filter <- modern_occ_filter %>% 
-filter(coordinateUncertaintyInMeters < 10000 | is.na(coordinateUncertaintyInMeters))
+  filter(!is.na(genus)) %>% #taxonomic filtering
+  filter(year >= 1970) %>% #temporal filtering
+  filter(coordinateUncertaintyInMeters < 10000 | is.na(coordinateUncertaintyInMeters)) #we could also remove data with uncertain geographic coordinates
 
 ```
 
-
-### Sampling effort
-
-How many occurrences are there in each filtered dataset?
+This filtering step could have removed a fair amount of data. How many occurrences remain in each filtered dataset?
 ```{r}
 nrow(fossil_occ_filter)
 nrow(modern_occ_filter)
 ```
 
-After filtering, we have 114 fossil occurrences and 2501 modern occurrences to potentially work with.
-*How might we deal with this statistically?*
+After filtering, we have 114 fossil occurrences and 2501 modern occurrences to potentially work with. How might we deal with this unequal sampling?
 
 
 ## 3. Cleaning
 
-We'll then want to explore and clean the data to check for outliers, inconsistencies, duplicates, and other potential issues.
+We'll then want to explore and clean our data to check for outliers, inconsistencies, duplicates, and other potential issues.
 
-Our fossil occurrence dataset has already gone through this process in the previous module.
-We'll take a quick look at the modern dataset here so you can get familiar with it but encourage you to run through the same cleaning steps as above.
+Our fossil occurrence dataset has already gone through this process.
+
+**Let's spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session. For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates.**
 
 ```{r}
-
-#holding off on this for now, we could skip if we're short on time
-
+#Practice cleaning the dataset here!
 ```
 
 
-## 4. Binning and Merging
+## 4. Merging
 
-Now we come to the fun part. How do we align these data, which were sampled in different ways with different temporal and spatial resolution and coverage?
+Now we come to the fun part. How do we align these data, which were sampled in different ways with different temporal and spatial resolutions and coverage?
 
 Let's start by returning to the structure of each dataset. Note that the header names differ, and that the datasets contain different types of metadata and/or metadata reported in different ways (units, formats) and at different resolutions.
 ```{r}
