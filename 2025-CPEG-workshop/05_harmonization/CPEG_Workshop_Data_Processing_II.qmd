@@ -5,6 +5,43 @@ editor: visual
 author: 'Erin M. Dillon & Christopher D. Dean'
 date: 2025-07-27
 title-block-banner: true
+color:
+  palette:
+    light-blue: "#BFEOE2"
+    mid-blue: "#98D3DC"
+    dark-blue: "#64BDD8"
+    light-pink: "#E4BEDB"
+    dark-pink: "#CDA6C5"
+    light-green: "#56B367"
+    dark-green: "#0D725A"
+    light-peach: "#F18661"
+    dark-peach: "#DB755A"
+    yellow: "#FEC703"
+    light-orange: "#F39200"
+    dark-orange: "#ED8D3A"
+    beige: "#EACDB9"
+    brown: "#704C32"
+    light-grey: "#EBEBEB"
+    mid-grey: "#C6C5C4"
+    dark-grey: "#575756"
+    black: "#1D1D1B"
+    white: "#FFFFFF"
+  background: white
+  foreground: dark-grey
+  primary: light-blue
+  secondary: dark-green
+
+typography:
+  fonts:
+    - family: Atkinson Hyperlegible
+      source: google
+  base: 
+    family: Atkinson Hyperlegible
+    weight: 400
+  headings: Atkinson Hyperlegible
+  monospace: Space Mono
+  link:
+    decoration: underline
 description: 'Data Processing II: Harmonization and Synthesis'
 ---
 
@@ -53,8 +90,8 @@ As we aim to compare the distributions of Crocodylia in deep-time compared to th
 3.  A spatially explicit dataset of modern climatic variables
 4.  A spatially explicit dataset of climatic variables for the deep-time intervals we choose, likely generated from palaeoclimatic modelling
 
-::: {.callout-note title="Heads Up!"}
-Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results.
+::: {.callout-caution title="Heads Up!"}
+Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results. This will be a recurring theme throughout the session.
 :::
 
 ## **BREAKOUT SESSION 1**
