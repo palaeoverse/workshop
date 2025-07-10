@@ -10,27 +10,29 @@ description: 'Data Processing II: Harmonization and Synthesis'
 
 ## Learning Objectives
 
-In this section, we'll walk through how to combine and use different deep-time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
+In this session, we'll walk through how to combine and use different deep-time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
 
-1.  The power of harmonizing data from different sources.
-2.  The considerations and complications that arise when combining datasets.
-3.  How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences.
-4.  How to plan, write code for, and carry out projects covering multiple time frames.
+-  The power of harmonizing data from different sources.
+-  The considerations and complications that arise when combining datasets.
+-  How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences.
+-  How to plan, write code for, and carry out projects covering multiple time frames.
 
 To do this, we'll continue using the Crocodylia dataset we've been working with earlier today. If you've not quite finished cleaning your dataset, you can find a cleaned version that's ready for this next step **HERE**.
 
 ## Plan for the Session
 
-1.  Introduction to harmonization and synthesis
-2.  Planning, setup, and finding your data
-3.  Building a workflow to merge datasets
-4.  Data visualisation and synthesis
+The session will be split into the following sections:
 
-## 1. Introduction to Harmonization and Synthesis
+I.   Introduction to harmonization and synthesis
+II.  Planning, setup, and finding your data
+III. Building a workflow to merge datasets
+IV.  Data visualisation and synthesis
+
+## I. Introduction to Harmonization and Synthesis
 
 Presentation goes here??
 
-## 2. Planning, Setup, and Finding Your Data
+## II. Planning, Setup, and Finding Your Data
 
 ### Our Research Question
 
@@ -51,7 +53,9 @@ As we aim to compare the distributions of Crocodylia in deep-time compared to th
 3.  A spatially explicit dataset of modern climatic variables
 4.  A spatially explicit dataset of climatic variables for the deep-time intervals we choose, likely generated from palaeoclimatic modelling
 
-👀 Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results.
+::: {.callout-caution title="Heads Up!"}
+Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results.
+:::
 
 ## **BREAKOUT SESSION 1**
 
@@ -61,7 +65,7 @@ As we aim to compare the distributions of Crocodylia in deep-time compared to th
 
 ***-What caveats should we be aware of, and how can they be addressed?***
 
-## 3. Building a Workflow to Merge Datasets
+## III. Building a Workflow to Merge Datasets
 
 We'll now walk through an example for how we might acquire and harmonize our climatic data. First, let's make a plan of the steps we'll take and some of the decisions we'll need to consider along the way.
 
@@ -100,7 +104,7 @@ Now that we have a basic plan, we can start to put it into action. Let's write s
 
 ### 0. Set-up
 
-First, we'll need to install and load some packages that will allow us to format and organise our data appropriately:
+First, we'll need to install and load some packages that will allow us to work with our data:
 
 ```{r}
 # Install necessary packages
@@ -116,7 +120,7 @@ First, we'll need to install and load some packages that will allow us to format
 ```
 
 ```{r}
-# Load Packages
+# Load packages
 library(rgbif)
 library(tidyverse)
 library(ggplot2)
@@ -127,7 +131,6 @@ library(geodata)
 library(rnaturalearth)
 library(ncdf4)
 ```
-
 
 ```{r}
 # Set resolution
@@ -157,14 +160,24 @@ prep.raster <- function(file_path, ref.raster){
 }
 ```
 
+After exploring some potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic, based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publically available and accessible via Zenodo (https://zenodo.org/records/5718392).
 
+Citations:
+Scotese, C. R., Song, H., Mills, B. J. W., & van der Meer, D. G. (2021). Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503
+
+Valdes, P.J., Scotese, C.R., and Lunt, D.J. (2021). Deep Ocean Temperatures through Time, Climates of the Past, Discussions, https://doi.org/10.5194/cp-2020-83. 
+
+While this climatic dataset offers decently high resolution (for deep time), one thing we'll need to keep in mind is that the 5-million-year intervals don't align perfectly with geological stages. This will come into play later when we start working with the occurrence data.
+
+For our study, we'll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition.
 
 ```{r}
-# Langhian 
+# Load in our data
+# 20-15 Ma interval
 scotese15 <- prep.raster(file_path = "gmst_scotese02a_v21321_nc/015_tas_scotese02a_v21321.nc", 
                          ref.raster = r)
 
-# Burdigalian
+# 25-20 Ma interval
 scotese20 <- prep.raster(file_path = "gmst_scotese02a_v21321_nc/020_tas_scotese02a_v21321.nc", 
                          ref.raster = r)
 # Stack rasters
@@ -177,10 +190,13 @@ plot(scotese.temp)
 
 ### 2. Organising Modern Climatic Data
 
+We'll source our modern climatic data from WorldClim: https://www.worldclim.org/
+To keep our climatic variables consistent, we'll also work with the mean annual temperature data.
+
 NOTE: in here include option for pre-downloaded data
 
 ```{r}
-# Load data from worldclim and make into raster
+# Load data from WorldClim and make into raster
 modern <- worldclim_global(var = "tavg", res = 2.5, path = tempdir())
 modern <- as(modern, "Raster")
 
@@ -194,7 +210,7 @@ modern.mean <- calc(x = modern, fun = mean)
 plot(modern.mean)
 ```
 
-As we can see here, this modern data is considerably higher resolution than what we have available for our deep-time data. What issues might this cause? What actions could we take to resolve this? What could we test?
+As we can see here, this modern climatic data are considerably higher resolution than what we have available for our deep-time data. What issues might this cause? What actions could we take to resolve this? What could we test?
 
 
 ## **BREAKOUT SESSION 2**
