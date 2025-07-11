@@ -492,7 +492,7 @@ Another challenge stems from aligning these occurrences with the spatial explici
 We'll keep things simple and show the first approach here.
 
 
-## IV. Data extraction and visualisation
+## IV. Data Extraction and Visualisation
 
 We have our data binned to match the climate layers, so let's create separate datasets for each time bin.
 ```{r}
