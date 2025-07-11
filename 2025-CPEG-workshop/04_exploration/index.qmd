@@ -287,8 +287,43 @@ So to sum up, it seems that our outliers are not concerning, so we will leave th
 
 ## Identify and handle duplicates [Pedro]
 
+## Practical
+
+Now it's time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.
+
+### Can you find any additional **missing data**? What will you do with them?
+
+```{r}
+
+```
+
+### Can you find any additional **data outliers**? What will you do with them?
+
+```{r}
+
+```
+
+### Can you find any additional **data inconsistencies**? What will you do with them?
+
+```{r}
+
+```
+
+### Can you find any additional **data duplicates**? What will you do with them?
+
+```{r}
+
+```
+
 # Resources
 
+1. AGGARWAL, C. C. 2017. Outlier Analysis. Springer.
+2. CHAPMAN, A. D. 2005. Principles and methods of data cleaning. Global Biodiversity Information Facility.
+3. HAMMER, Ø. and HARPER, D. A. 2024. Paleontological data analysis. John Wiley & Sons.
+4. NEWMAN, D. A. 2014. Missing data: Five practical guidelines. Organizational research methods, 17, 372–411.
+5. RIBEIRO, B. R., VELAZCO, S. J. E., GUIDONI-MARTINS, K., TESSAROLO, G., JARDIM, L., BACHMAN, S. P. and LOYOLA, R. 2022. bdc: A toolkit for standardizing, integrating and cleaning biodiversity data. Methods in Ecology and Evolution, 13, 1421–1428.
+6. TUKEY, J. W. 1977. Exploratory data analysis. Vol. 1. Springer.
+7. VAN BUUREN, S. 2018. Flexible imputation of missing data. Chapman & Hall/CRC, Boca Raton,.
 
 
 
