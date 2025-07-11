@@ -40,7 +40,7 @@ Our first step will be to define our research question, which will be framed aro
 
 In this section, we'll aim to answer the following research question: **How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?**
 
-We'll focus our deep-time analysis on the Miocene, a climatically dynamic epoch in Earth's history that can serve as an analog for future climate scenarios (e.g., Steinthorsdottir et al. 2020, https://doi.org/10.1029/2020PA004037).
+We'll focus our deep-time analysis on the Miocene, a climatically dynamic epoch in Earth's history that can serve as an analog for future climate scenarios (e.g., [Steinthorsdottir et al. 2020](https://doi.org/10.1029/2020PA004037)).
 
 ### Making a Plan
 
