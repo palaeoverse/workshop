@@ -5,43 +5,6 @@ editor: visual
 author: 'Erin M. Dillon & Christopher D. Dean'
 date: 2025-07-27
 title-block-banner: true
-color:
-  palette:
-    light-blue: "#BFEOE2"
-    mid-blue: "#98D3DC"
-    dark-blue: "#64BDD8"
-    light-pink: "#E4BEDB"
-    dark-pink: "#CDA6C5"
-    light-green: "#56B367"
-    dark-green: "#0D725A"
-    light-peach: "#F18661"
-    dark-peach: "#DB755A"
-    yellow: "#FEC703"
-    light-orange: "#F39200"
-    dark-orange: "#ED8D3A"
-    beige: "#EACDB9"
-    brown: "#704C32"
-    light-grey: "#EBEBEB"
-    mid-grey: "#C6C5C4"
-    dark-grey: "#575756"
-    black: "#1D1D1B"
-    white: "#FFFFFF"
-  background: white
-  foreground: dark-grey
-  primary: light-blue
-  secondary: dark-green
-
-typography:
-  fonts:
-    - family: Atkinson Hyperlegible
-      source: google
-  base: 
-    family: Atkinson Hyperlegible
-    weight: 400
-  headings: Atkinson Hyperlegible
-  monospace: Space Mono
-  link:
-    decoration: underline
 description: 'Data Processing II: Harmonization and Synthesis'
 ---
 
@@ -90,7 +53,7 @@ As we aim to compare the distributions of Crocodylia in deep-time compared to th
 3.  A spatially explicit dataset of modern climatic variables
 4.  A spatially explicit dataset of climatic variables for the deep-time intervals we choose, likely generated from palaeoclimatic modelling
 
-::: {.callout-caution title="Heads Up!"}
+::: {.callout-note title="Heads Up!"}
 Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results. This will be a recurring theme throughout the session.
 :::
 
@@ -156,7 +119,7 @@ First, we'll need to install and load some packages that will allow us to work w
 #install.packages("ncdf4")
 ```
 
-```{r}
+```{r warning=F}
 # Load packages
 library(rgbif)
 library(tidyverse)
@@ -211,11 +174,11 @@ For our study, we'll work with two files from this dataset: one covering 25-20 M
 ```{r}
 # Load in our data
 # 20-15 Ma interval
-scotese15 <- prep.raster(file_path = "gmst_scotese02a_v21321_nc/015_tas_scotese02a_v21321.nc", 
+scotese15 <- prep.raster(file_path = "015_tas_scotese02a_v21321.nc", 
                          ref.raster = r)
 
 # 25-20 Ma interval
-scotese20 <- prep.raster(file_path = "gmst_scotese02a_v21321_nc/020_tas_scotese02a_v21321.nc", 
+scotese20 <- prep.raster(file_path = "020_tas_scotese02a_v21321.nc", 
                          ref.raster = r)
 # Stack rasters
 scotese.temp <- stack(scotese15, scotese20)
@@ -227,7 +190,7 @@ plot(scotese.temp)
 
 ### 2. Organising Modern Climatic Data
 
-We'll source our modern climatic data from WorldClim: https://www.worldclim.org/
+We'll obtain our modern climatic data from WorldClim: https://www.worldclim.org/
 To keep our climatic variables consistent, we'll also work with the mean annual temperature data.
 
 NOTE: in here include option for pre-downloaded data
@@ -237,9 +200,6 @@ NOTE: in here include option for pre-downloaded data
 modern <- worldclim_global(var = "tavg", res = 2.5, path = tempdir())
 modern <- as(modern, "Raster")
 
-# Plot raster
-plot(modern)
-
 # Calculate mean annual temperature
 modern.mean <- calc(x = modern, fun = mean)
 
@@ -247,14 +207,14 @@ modern.mean <- calc(x = modern, fun = mean)
 plot(modern.mean)
 ```
 
-As we can see here, this modern climatic data are considerably higher resolution than what we have available for our deep-time data. What issues might this cause? What actions could we take to resolve this? What could we test?
+This modern climatic data are considerably higher resolution than what we have available for our deep-time data. What issues might this cause? What actions could we take to resolve this? What could we test?
 
 
 ## **BREAKOUT SESSION 2**
 
 **Now it's your turn to give it a go!**
 
-***-First, take a couple minutes to jot down a similar workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R.***
+***-First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R.***
 
 ***-Then, get into the same groups and discuss your approach and where you might encounter potential pitfalls.*** 
 
@@ -285,12 +245,9 @@ Let's begin!
 #### 1A. Organise fossil occurrence data
 
 First, we'll load in our palaeontological data. Luckily for us, we've already been working with a Crocodylia fossil occurrence dataset. We'll use these data in our analysis. If needed, you can read in the cleaned dataset below.
-
-NOTE: This will be the dataset from part I...using the raw copy for now but plan is to read in the clean df.
-
 ```{r}
 # Load cleaned fossil data for order Crocodylia
-fossil_occ <- read.csv("Test_crocs3.csv")
+fossil_occ <- read.csv("crocs_fossil_test.csv")
 
 # Let's take a quick look
 head(fossil_occ)
@@ -324,7 +281,7 @@ Here's how we can do this. Scroll down to load the dataset we've previously down
 For ease, here's a csv of the raw data:
 ```{r warning=F}
 # Load modern data
-modern_occ <- read_csv("crocs_modern.csv") 
+modern_occ <- read.csv("crocs_modern.csv") 
 
 # Let's take a quick look
 head(modern_occ)
@@ -363,7 +320,7 @@ nrow(fossil_occ_filter)
 nrow(modern_occ_filter)
 ```
 
-After filtering, we have 114 fossil occurrences and 2501 modern occurrences to potentially work with. How might we deal with this unequal sampling?
+After filtering, we have 114 fossil occurrences and 2504 modern occurrences to potentially work with. How might we deal with this unequal sampling?
 
 
 ### 3. Cleaning
@@ -372,10 +329,10 @@ We'll then want to explore and clean our data to check for outliers, inconsisten
 
 Our fossil occurrence dataset has already gone through this process.
 
-**Let's spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session. For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates.**
+**Let's spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session.** For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates.
 
 ```{r}
-# Practice cleaning the dataset here!
+# Practice cleaning the modern occurrence dataset here!
 ```
 
 
@@ -391,16 +348,17 @@ head(modern_occ_filter)
 
 ## **BREAKOUT SESSION 3**
 
-**Reassemble into your discussion groups and discuss the following questions:**
+**Return to your discussion groups and discuss the following questions:**
 
-***-What factors that might introduce bias when we try to make comparisons across these datasets?*
+***-What factors that might introduce bias when we try to make comparisons across these datasets?***
 
 ***-What are some sources of uncertainty?***
 
 ***-How might we address these potential confounds prior to analysis and/or what should we keep in mind as we're interpreting our results?***
 
-
+::: {.callout-tip collapse="true"}
 The resolution and coverage of the data is likely one aspect that came up in your group discussions. As we move forward, we'll need to make some practical and philosophical decisions about how we bin the data given their varying resolutions. We'll also want to consider the sensitivity of our results to these various decisions. 
+:::
 
 Here, we'll touch on several key taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.
 
@@ -476,8 +434,8 @@ table(fossil_occ_bin$bin_assignment)
 
 We see that most of the data falls into bin 3 (20.44-13.82 Ma, midpoint=17.130 Ma), with some occurrences in bin 2 (23.03-20.44 Ma, midpoint=21.735 Ma).
 
-Bin 2 overlaps with our 20-25 Ma climate raster
-Bin 3 overlaps with our 15-20 Ma climate raster
+-  Bin 2 overlaps with our 25-20 Ma climate raster
+-  Bin 3 overlaps with our 20-15 Ma climate raster
 
 Our GBIF dataset already contains just modern data, which overlaps with our WorldClim climate layer, so no additional binning is needed. 
 
@@ -486,7 +444,7 @@ OK, so now we have some temporal bins to facilitate our comparisons over time wi
 
 #### Spatial Bins
 
-We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences will differ, especially since we'll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. How might we deal with this?
+We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we'll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. How might we deal with this?
 
 Like before, let's take a look at the spatial distribution of our fossil occurrences.
 ```{r}
@@ -511,13 +469,17 @@ fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
                                    age = "bin_midpoint", 
                                    model  = "PALEOMAP")
 
+# Remove NAs
+fossil_occ_bin_rot <- fossil_occ_bin_rot %>%
+  dplyr::filter(!is.na(p_lng) & !is.na(p_lat))
+
 # Plot palaeorotated coordinates
 world <- ne_countries(scale = "small", returnclass = "sf")
 ggplot(fossil_occ_bin_rot) +
   geom_sf(data = world) +
-  geom_point(aes(x = paleolng, y = paleolat)) +
-  labs(x = "Longitude (º)",
-       y = "Latitude (º)")+ 
+  geom_point(aes(x = p_lng, y = p_lat)) +
+  labs(x = "Paleolongitude (º)",
+       y = "Paleolatitude (º)")+ 
   theme_void()
 ```
 
@@ -542,7 +504,7 @@ Another challenge stems from aligning these occurrences with the spatial explici
 We'll keep things simple and show the first approach here.
 
 
-### 5. Data extraction and visualisation
+## IV. Data extraction and visualisation
 
 We have our data binned temporally to match the climate layers, so let's create separate datasets for each time bin.
 ```{r}
@@ -594,16 +556,16 @@ modern_temp <- raster::extract(x = modern.mean,
 Let's take a look! How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?
 ```{r}
 # Aquitanian range (25-20 Ma)
-range(scotese_temp_20$Aquitanian)
-diff(range(scotese_temp_20$Aquitanian))
+range(scotese_temp_20$Aquitanian, na.rm=T)
+diff(range(scotese_temp_20$Aquitanian, na.rm=T))
 
 # Burdigalian/Langhian range (20-15 Ma)
-range(scotese_temp_15$Burdigalian)
-diff(range(scotese_temp_15$Burdigalian))
+range(scotese_temp_15$Burdigalian, na.rm=T)
+diff(range(scotese_temp_15$Burdigalian, na.rm=T))
 
 # Modern range
-range(modern_temp)
-diff(range(modern_temp))
+range(modern_temp@data$layer, na.rm=T)
+diff(range(modern_temp@data$layer, na.rm=T))
 ```
 
 Finally, let's plot the data.
@@ -613,12 +575,18 @@ palaeo_temp <- rbind(data.frame(Bin = rep("Burdigalian", length(scotese_temp_15$
                            Temperature = scotese_temp_15$Burdigalian), 
                       data.frame(Bin = rep("Aquitanian", length(scotese_temp_20$Aquitanian)), 
                                   Temperature = scotese_temp_20$Aquitanian),
-                      data.frame(Bin = rep("Modern", length(modern_temp)), 
-                                  Temperature = modern_temp))
+                      data.frame(Bin = rep("Modern", length(modern_temp@data$layer)), 
+                                  Temperature = modern_temp@data$layer))
 
 # Make box plot of temperature range
 ggplot(palaeo_temp, aes(x = Bin, y = Temperature)) +
-  geom_boxplot()
+  geom_jitter(color="gray80",size=2,alpha=0.5)+
+  geom_boxplot(width=0.5,outlier.shape = NA)+
+  labs(x="Time interval", y="Temperature (ºC)")+
+  theme_bw()
 ```
 
-We find....
+When looking in particular at the better sampled intervals, we find that the mean temperature and range of Crocodylia were quite similar between the Miocene and Modern.
+How might we interpret these results? How might this interpretation be shaped by the caveats we pointed out along the way?
+
+Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of these caveats. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general---but particularly studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting reserach questions and datasets!
