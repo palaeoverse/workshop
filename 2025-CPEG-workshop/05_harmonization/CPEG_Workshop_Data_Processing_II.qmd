@@ -12,12 +12,12 @@ description: 'Data Processing II: Harmonization and Synthesis'
 
 In this session, we'll walk through how to combine and use different deep-time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
 
--  The power of harmonizing data from different sources.
--  The considerations and complications that arise when combining datasets.
--  How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences.
--  How to plan, write code for, and carry out projects covering multiple time frames.
+-  The power of harmonizing data from different sources
+-  The considerations and complications that arise when combining datasets
+-  How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences
+-  How to plan, write code for, and carry out projects covering multiple time frames
 
-To do this, we'll continue using the Crocodylia dataset we've been working with earlier today. If you've not quite finished cleaning your dataset, you can find a cleaned version that's ready for this next step **HERE**.
+To do this, we'll continue working with the Crocodylia dataset. If you've not quite finished cleaning your dataset, you can find a cleaned version that's ready for this next step **HERE**.
 
 ## Plan for the Session
 
@@ -36,7 +36,7 @@ Presentation goes here??
 
 ### Our Research Question
 
-Before starting, we first need to define our research question, which will be framed around the dataset of Cenozoic Crocodylia that we've been working on this morning. As mentioned previously, Crocs are an excellent group to use for studies comparing modern and deep-time records: they have a very tight association with temperature, are well represented in the fossil record spatially and temporally, and many extant species are threatened by anthropogenic impacts including habitat loss and climate change.
+Our first step will be to define our research question, which will be framed around the dataset of Cenozoic Crocodylia that we've been working on this morning. As mentioned previously, Crocs are an excellent group to use for studies comparing modern and deep-time records: they have a very tight association with temperature, are well represented in the fossil record spatially and temporally, and many extant species are threatened by anthropogenic impacts including habitat loss and climate change.
 
 In this section, we'll aim to answer the following research question: **How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?**
 
@@ -248,9 +248,6 @@ First, we'll load in our palaeontological data. Luckily for us, we've already be
 ```{r}
 # Load cleaned fossil data for order Crocodylia
 fossil_occ <- read.csv("crocs_fossil_test.csv")
-
-# Let's take a quick look
-head(fossil_occ)
 ```
 
 #### 1B. Organise modern occurrence data
@@ -282,9 +279,6 @@ For ease, here's a csv of the raw data:
 ```{r warning=F}
 # Load modern data
 modern_occ <- read.csv("crocs_modern.csv") 
-
-# Let's take a quick look
-head(modern_occ)
 ```
 
 
@@ -292,13 +286,13 @@ head(modern_occ)
 
 These datasets contain occurrences that are relevant to our research question, but they also contain occurrences that fall outside of the scope of our planned analysis. Let's filter the datasets to just keep the relevant occurrences. What were some of the filtering criteria you brainstormed during the breakout session?
 
-*-Data type:* Note that we've already queried GBIF for just the preserved specimens to optimize comparability with the PBDB dataset. For instance, GBIF also contains fossil specimens, living specimens, and human observations that either aren't entirely comparable with a fossil occurrence or don't represent our modern time interval.
+**-Data type:** Note that we've already queried GBIF for just the preserved specimens to optimize comparability with the PBDB dataset. For instance, GBIF also contains fossil specimens, living specimens, and human observations that either aren't entirely comparable with a fossil occurrence or don't represent our modern time interval.
 
-*-Taxonomic:* We'll run our analysis at the order level (Crocodylia) given taxonomic differences between the fossil and modern datasets at finer taxonomic levels (e.g., extinct taxa). That said, let's just retain occurrences that have been identified at least to genus (i.e., removing indet. taxa from the fossil dataset) given uncertainty in their taxonomy.
+**-Taxonomic:** We'll run our analysis at the order level (Crocodylia) given taxonomic differences between the fossil and modern datasets at finer taxonomic levels (e.g., extinct taxa). That said, let's just retain occurrences that have been identified at least to genus (i.e., removing indet. taxa from the fossil dataset) given uncertainty in their taxonomy.
 
-*-Spatial:* Our research question is posed at a global scale, so we can keep everything. However, we will still want to check for potential geographic outliers or inconsistencies while cleaning the data.
+**-Spatial:** Our research question is posed at a global scale, so we can keep everything. However, we will still want to check for potential geographic outliers or inconsistencies while cleaning the data.
 
-*-Temporal:* We'll constrain our palaeontological dataset to the same time intervals as our climatic dataset (25-15 Ma). Earlier, we downloaded Crocodylia occurrences for the whole of the Cenozoic, so we'll need to do some filtering. Our modern dataset includes occurrences from the 1800s to today, whereas the WorldClim dataset starts at 1970, so we can also filter the occurrence dataset to that time range for consistency.
+**-Temporal:** We'll constrain our palaeontological dataset to the same time intervals as our climatic dataset (25-15 Ma). Earlier, we downloaded Crocodylia occurrences for the whole of the Cenozoic, so we'll need to do some filtering. Our modern dataset includes occurrences from the 1800s to today, whereas the WorldClim dataset starts at 1970, so we can also filter the occurrence dataset to that time range for consistency.
 
 
 ```{r}
@@ -338,13 +332,7 @@ Our fossil occurrence dataset has already gone through this process.
 
 ### 4. Merging
 
-Now we come to the fun part. How do we align these data, which were sampled in different ways with different temporal and spatial resolutions and coverage?
-
-Let's begin by returning to the structure of each dataset. Note that the header names differ, and that the datasets contain variables reported in different ways (units, formats) and with different resolutions.
-```{r}
-head(fossil_occ_filter)
-head(modern_occ_filter)
-```
+Now we come to the fun part. How do we align these data, which were sampled in different ways with different temporal and spatial resolutions and coverage? Note that the header names differ, and that the datasets contain variables reported in different ways (units, formats) and with different resolutions.
 
 ## **BREAKOUT SESSION 3**
 
@@ -364,7 +352,7 @@ Here, we'll touch on several key taxonomic, temporal, and spatial considerations
 
 #### Taxonomy
 
-We'll be using higher-level taxonomic groups for our analysis. Let's take a quick look to see what's here.
+We'll be using higher-level taxonomic groups for our analysis. Let's take a look to see what's here.
 ```{r}
 # Fossil occurrences
 table(fossil_occ_filter$family)
@@ -373,11 +361,11 @@ table(fossil_occ_filter$family)
 table(modern_occ_filter$family)
 ```
 
-We see that the same families are represented in our datasets. If you look at genera, you'll notice some differences. If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?
+We see that the same families are represented in our datasets. If you were to look at the genera, you'll notice some differences. If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?
 
 #### Temporal Bins
 
-Earlier, we noticed that our climatic data are available for 5-million-year intervals, which don't align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. Each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. How might we approach this?
+Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don't align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. Each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. How might we approach this?
 
 First, let's take a look at the temporal distribution of our fossil occurrences.
 ```{r}
@@ -439,7 +427,7 @@ We see that most of the data falls into bin 3 (20.44-13.82 Ma, midpoint=17.130 M
 
 Our GBIF dataset already contains just modern data, which overlaps with our WorldClim climate layer, so no additional binning is needed. 
 
-OK, so now we have some temporal bins to facilitate our comparisons over time with the climatic data.
+OK, so now we have some temporal bins to facilitate our comparisons with the climatic data.
 
 
 #### Spatial Bins
@@ -499,14 +487,14 @@ ggplot(modern_occ_filter) +
 
 Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. How might we account for the spatial structure of the data in our analysis?
 
-Another challenge stems from aligning these occurrences with the spatial explicit climate layers. A simple approach would be to just extract the mean temperature value at each of the (palaeo)coordinates. Alternatively, we might consider adding a bit of a buffer around each point to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset.
+Another challenge stems from aligning these occurrences with the spatial explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset.
 
 We'll keep things simple and show the first approach here.
 
 
 ## IV. Data extraction and visualisation
 
-We have our data binned temporally to match the climate layers, so let's create separate datasets for each time bin.
+We have our data binned to match the climate layers, so let's create separate datasets for each time bin.
 ```{r}
 # 25-20 Ma climate interval
 points_20 <- fossil_occ_bin_rot %>%
@@ -553,7 +541,7 @@ modern_temp <- raster::extract(x = modern.mean,
                                      cellnumbers = TRUE)
 ```
 
-Let's take a look! How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?
+Let's take a look. How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?
 ```{r}
 # Aquitanian range (25-20 Ma)
 range(scotese_temp_20$Aquitanian, na.rm=T)
@@ -578,15 +566,15 @@ palaeo_temp <- rbind(data.frame(Bin = rep("Burdigalian", length(scotese_temp_15$
                       data.frame(Bin = rep("Modern", length(modern_temp@data$layer)), 
                                   Temperature = modern_temp@data$layer))
 
-# Make box plot of temperature range
+# Make box plot of temperature
 ggplot(palaeo_temp, aes(x = Bin, y = Temperature)) +
   geom_jitter(color="gray80",size=2,alpha=0.5)+
-  geom_boxplot(width=0.5,outlier.shape = NA)+
+  geom_boxplot(width=0.5,alpha=0.7,outlier.shape = NA)+
   labs(x="Time interval", y="Temperature (ºC)")+
   theme_bw()
 ```
 
-When looking in particular at the better sampled intervals, we find that the mean temperature and range of Crocodylia were quite similar between the Miocene and Modern.
-How might we interpret these results? How might this interpretation be shaped by the caveats we pointed out along the way?
+When looking at the better sampled intervals in particular, we find that the mean temperature range of Crocodylia occurrences was quite similar between the Miocene and Modern.
+How might we interpret our results? How might this interpretation be shaped by the caveats we pointed out along the way?
 
-Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of these caveats. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general---but particularly studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting reserach questions and datasets!
+Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of the caveats that arise when doing so. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general---but particularly in studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting reserach questions and datasets!
