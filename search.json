@@ -55,6 +55,17 @@
     ]
   },
   {
+    "objectID": "2025-CPEG-workshop/04_exploration/index.html#practical",
+    "href": "2025-CPEG-workshop/04_exploration/index.html#practical",
+    "title": "Data Processing I",
+    "section": "Practical",
+    "text": "Practical\nNow it’s time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.\n\nCan you find any additional missing data? What will you do with them?\n\n\nCan you find any additional data outliers? What will you do with them?\n\n\nCan you find any additional data inconsistencies? What will you do with them?\n\n\nCan you find any additional data duplicates? What will you do with them?",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Data Processing I"
+    ]
+  },
+  {
     "objectID": "2025-CPEG-workshop/06_archiving/index.html",
     "href": "2025-CPEG-workshop/06_archiving/index.html",
     "title": "Archiving & Publishing",
