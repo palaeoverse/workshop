@@ -38,6 +38,8 @@ typography:
   fonts:
     - family: Atkinson Hyperlegible
       source: google
+    - family: Space Mono
+      source: google
   base: 
     family: Atkinson Hyperlegible
     weight: 400
