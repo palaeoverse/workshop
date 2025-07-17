@@ -136,7 +136,7 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#cloning-your-new-repository",
     "title": "Reproducible and Collaborative Workflows",
     "section": "Cloning your new repository",
-    "text": "Cloning your new repository\nNow we’re going to “clone” this repo to our local machine using GitHub Desktop. You can also do this in RStudio, but we will use GitHub Desktop for this example.\n\n\n\n\n\n\n\n\n\n\n\nWalk through this process with everyone. You will need",
+    "text": "Cloning your new repository\nNow we’re going to “clone” this repo to our local machine using GitHub Desktop. You can also do this in RStudio, but we will use GitHub Desktop for this example.\n\n\n\n\n\n\n\n\n\n\n\nWalk through this process with everyone. You will need to select the folder where you want to clone the repository. Make sure everyone has cloned the repository before moving on.",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -147,8 +147,20 @@
     "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#making-a-new-r-project",
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#making-a-new-r-project",
     "title": "Reproducible and Collaborative Workflows",
-    "section": "Making a New R Project",
-    "text": "Making a New R Project",
+    "section": "Making a new R project",
+    "text": "Making a new R project",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#advanced-github",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#advanced-github",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Advanced GitHub",
+    "text": "Advanced GitHub\nSome other topics that you can explore on your own:\n\nBranching and Merging: Manage changes to your codebase with branches and merge them back into the main branch\nGitHub Issues: Track bugs and feature requests (yes, this applies to research code!)\nPull Requests: Propose changes to a repository and collaborate with others\nGitHub Actions: Automate workflows\nGitHub Pages: Host websites directly from your GitHub repository",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
