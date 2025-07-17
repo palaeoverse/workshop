@@ -377,10 +377,62 @@ We can now see that none of our occurrences are being flagged as outliers. Witho
 
 So to sum up, it seems that our outliers are not concerning, so we will leave them in our dataset and continue with our analytical pipeline.
 
-## Identify and handle inconsistencies [Pedro]
+## Identify and handle inconsistencies
 
+We’re now going to look for inconsistencies in our dataset. Let’s start by revisiting its structure, focusing on whether the class types of the variables make sense.
 
-## Identify and handle duplicates [Pedro]
+```{r}
+# Check the data class of each field in our dataset
+str(fossils)
+```
+This looks reasonable. For example, we can see that our collection IDs are `numerical`, and our `identified_name` column contains `character` strings.
+
+Now let’s dive in further to look for inconsistencies in spelling, which could cause taxonomic names or geological units to be grouped separately when they are really the same thing. We’ll start by checking for potential taxonomic misspellings.
+
+We can use the table() function to look at the frequencies of various taxonomic names in the dataset. Here, inconsistencies like misspellings or antiquated taxonomic names might be recognised. We will check the columns `family`, `genus`, and `accepted_name`, the latter of which gives the name of the identification regardless of taxonomic level, and is the only column to give species binomials.
+
+```{r}
+# Tabulate the frequency of values in the "family" and "genus" columns
+table(fossils$family)
+```
+
+```{r}
+table(fossils$genus)
+```
+
+```{r}
+# Filter occurrences to those identified at species level, then tabulate species
+# names
+fossils_sp <- filter(fossils, accepted_rank == "species")
+table(fossils_sp$accepted_name)
+```
+
+Alternatively, we can use the `tax_check()` function in the `palaeoverse` package, which systematically searches for and flags potential spelling variation using a defined dissimilarity threshold.
+
+```{r}
+# Check for close spellings in the "genus" column
+tax_check(taxdf = fossils, name = "genus", dis = 0.1)
+```
+
+```{r}
+# Check for close spellings in the "accepted_name" column
+tax_check(taxdf = fossils_sp, name = "accepted_name" , dis = 0.1)
+```
+
+No names are flagged here, so that seems fine.
+We can also check formatting and spelling using the `fossilbrush` package.
+
+```{r}
+# Create a list of taxonomic ranks to check
+fossil_ranks <- c("phylum", "class", "order", "family", "genus")
+
+# Run checks
+check_taxonomy(as.data.frame(fossils), ranks = fossil_ranks)
+```
+
+As before, no major inconsistencies or potential spelling errors were flagged.
+
+## Identify and handle duplicates
 
 ## Practical
 
