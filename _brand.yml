@@ -46,5 +46,5 @@ typography:
   headings: Atkinson Hyperlegible
   monospace: Space Mono
   link:
-    color: dark-blue
+    color: dark-green
     decoration: underline
