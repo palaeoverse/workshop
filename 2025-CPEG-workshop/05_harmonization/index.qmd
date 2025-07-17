@@ -206,7 +206,7 @@ Whilst below we show you code to access this data directly within R, it can take
 
 ```{r}
 # Load data from WorldClim and make into raster
-modern <- worldclim_global(var = "tavg", res = 2.5, path = tempdir())
+modern <- worldclim_global(var = "tavg", res = 10, path = tempdir())
 modern <- as(modern, "Raster")
 modern
 ```
