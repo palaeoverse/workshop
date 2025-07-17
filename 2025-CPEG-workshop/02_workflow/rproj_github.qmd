@@ -11,14 +11,11 @@ format:
     footer: |
       4th Crossing the Paleontological-Ecological Gap (CPEG) Meeting &\
       3rd Conservation Paleobiology Symposium
-    theme:
-      - simple
-      - brand
+    theme: simple
     embed-resources: true
     output-file: "rproj_github.html"
     mermaid:
       theme: default
-brand: _brand.yml
 ---
 
 ## Goals
@@ -58,4 +55,103 @@ brand: _brand.yml
 ::: notes
 Version history is not the same as version control. Version history is a record of changes made to a file, while version control is a system that manages changes to files and allows for collaboration among multiple users. Version control systems like Git provide features such as branching, merging, and conflict resolution, which are essential for collaborative work.
 :::
+
+## Why we need version control
+
+- Track changes to code and data
+- Easier collaboration
+- Prevents feature breakage
+
+::: notes
+:::
+
+##
+
+```{mermaid}
+%%| echo: false
+
+gitGraph
+    commit
+    commit id: "Fixed Issue #42"
+    commit
+```
+
+```{mermaid}
+%%| echo: false
+
+gitGraph
+    commit
+    commit id: "Fixed Issue #42"
+    branch feature
+    commit id: "Dark Theme"
+    checkout main
+    commit
+```
+
+## GitHub
+
+<center>
+![](images/github.png){fig-align="center" width="100%"}
+</center>
+
+## Repositories
+
+<center>
+[![](images/repos.png){fig-align="center" width="60%"}](https://github.com/willgearty?tab=repositories)
+[https://github.com/willgearty?tab=repositories](https://github.com/willgearty?tab=repositories)
+</center>
+
+## Repositories (cont.)
+
+<center>
+[![](images/cpeg_repo.png){fig-align="center" width="60%"}](https://github.com/palaeoverse/2025-CPEG-workshop)
+[https://github.com/palaeoverse/2025-CPEG-workshop](https://github.com/palaeoverse/2025-CPEG-workshop)
+</center>
+
+::: notes
+Point out:
+- file structure: has files and folders
+- README: emphasize the importance of a README file for providing context and instructions for the repository
+- license: mention that the license file is important for specifying how others can use the code and data in the repository
+- contributors: can see who has contributed to the repository and their contributions
+:::
+
+## Forking a repository
+
+You can easily make your own copy of a repository by "forking" it
+
+<center>
+![](images/cpeg_repo_fork.png){fig-align="center" width="80%"}
+</center>
+
+::: notes
+Walk through this process with everyone. Make sure everyone has forked the repository before moving on.
+:::
+
+## Cloning your new repository
+
+Now we're going to "clone" this repo to our local machine using GitHub Desktop. You can also do this in RStudio, but we will use GitHub Desktop for this example.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<center>
+![](images/github_clone.png)
+</center>
+:::
+
+::: {.column width="50%"}
+<center>
+![](images/github_desktop_clone.png)
+</center>
+:::
+
+::::
+
+::: notes
+Walk through this process with everyone. You will need 
+:::
+
+## Making a New R Project
+
 

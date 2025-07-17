@@ -10,8 +10,8 @@ order: 2
 In order to follow along with this module, you will need the following:
 
 1. [R and RStudio](https://posit.co/download/rstudio-desktop/) installed on your computer (see Steps 1 and 2 on that page).
-2. [GitHub Desktop](https://desktop.github.com/) installed on your computer.
-3. A [GitHub account](https://github.com/signup).
+2. A [GitHub account](https://github.com/signup).
+3. [GitHub Desktop](https://desktop.github.com/) installed on your computer. You should be signed into GitHub Desktop with your GitHub account.
 
 ## Presentation
 
