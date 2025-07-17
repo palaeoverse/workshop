@@ -15,4 +15,4 @@ In order to follow along with this module, you will need the following:
 
 ## Presentation
 
-<iframe class="slide-deck" src="rproj_github.html"></iframe>
+<iframe class="slide-deck" width="100%" height="800px" src="rproj_github.html"></iframe>

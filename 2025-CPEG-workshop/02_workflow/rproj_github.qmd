@@ -149,9 +149,23 @@ Now we're going to "clone" this repo to our local machine using GitHub Desktop. 
 ::::
 
 ::: notes
-Walk through this process with everyone. You will need 
+Walk through this process with everyone. You will need to select the folder where you want to clone the repository. Make sure everyone has cloned the repository before moving on.
 :::
 
-## Making a New R Project
+## Making a new R project
 
+::: notes
+
+:::
+
+
+## Advanced GitHub {.smaller}
+
+Some other topics that you can explore on your own:
+
+- [Branching and Merging](https://docs.github.com/en/get-started/using-github/github-flow): Manage changes to your codebase with branches and merge them back into the main branch
+- [GitHub Issues](https://docs.github.com/en/issues): Track bugs and feature requests (yes, this applies to research code!)
+- [Pull Requests](https://docs.github.com/en/pull-requests): Propose changes to a repository and collaborate with others
+- [GitHub Actions](https://docs.github.com/en/actions): Automate workflows
+- [GitHub Pages](https://pages.github.com/): Host websites directly from your GitHub repository
 
