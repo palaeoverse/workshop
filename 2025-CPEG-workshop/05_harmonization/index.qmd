@@ -115,6 +115,7 @@ First, we'll need to install and load some packages that will allow us to work w
 #install.packages("geodata")
 #install.packages("rnaturalearth")
 #install.packages("ncdf4")
+#install.packages("rgplates")
 ```
 
 ```{r warning=F}
@@ -128,6 +129,7 @@ library(sf)
 library(geodata)
 library(rnaturalearth)
 library(ncdf4)
+library(rgplates)
 ```
 
 We'll also set some default values to ensure that our spatial datasets conform with one another. 
@@ -333,11 +335,9 @@ We'll then want to explore and clean our data to check for outliers, inconsisten
 
 Our fossil occurrence dataset has already gone through this process.
 
+::: {.callout-note title="Practise Time!"}
 **Let's spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session.** For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates.
-
-```{r}
-# Practice cleaning the modern occurrence dataset here!
-```
+:::
 
 
 ### 4. Merging
@@ -440,8 +440,7 @@ Our GBIF dataset already contains just modern data, which overlaps with our Worl
 
 OK, so now we have some temporal bins to facilitate our comparisons with the climatic data.
 
-
-#### Spatial Bins
+#### 4C. Spatial Bins
 
 We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we'll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. How might we deal with this?
 
@@ -459,7 +458,7 @@ ggplot(fossil_occ_bin) +
   theme_void()
 ```
 
-But wait, remember that we need to paleorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity.
+But wait, remember that we need to paleorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we'll just use the PALEOMAP rotation, which will also match up to our paleoclimatic data. 
 ```{r}
 # Palaeorotation
 fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
@@ -467,15 +466,23 @@ fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
                                    lat = "lat",
                                    age = "bin_midpoint", 
                                    model  = "PALEOMAP")
+```
 
+After some cleaning, we can then plot our rotated occurrences on a palaeogeographic map (here we're going to use our bin 3):
+
+```{r}
 # Remove NAs
 fossil_occ_bin_rot <- fossil_occ_bin_rot %>%
   dplyr::filter(!is.na(p_lng) & !is.na(p_lat))
 
-# Plot palaeorotated coordinates
-world <- ne_countries(scale = "small", returnclass = "sf")
-ggplot(fossil_occ_bin_rot) +
-  geom_sf(data = world) +
+# Use the rgplates package to reconstruct a palaeogeographic map
+coastlines <- reconstruct("coastlines", age=15, model="PALEOMAP")
+
+# Plot palaeorotated coordinates for bin 3
+fossil_occ_bin_rot %>%
+  dplyr::filter(bin_assignment == 3) %>%
+  ggplot() +
+  geom_sf(data = coastlines) +
   geom_point(aes(x = p_lng, y = p_lat)) +
   labs(x = "Paleolongitude (º)",
        y = "Paleolatitude (º)")+ 
