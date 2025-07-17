@@ -49,7 +49,7 @@ format:
   html:
     theme:
       - cosmo # a predefined bootswatch theme
-      - "https://raw.githubusercontent.com/palaeoverse/community/refs/heads/main/_brand.yml" # theming derived from `_brand.yml`
+      - _brand # theming derived from `_brand.yml`
     css: styles.css
     toc: true
 
