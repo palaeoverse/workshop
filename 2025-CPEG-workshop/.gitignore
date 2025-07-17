@@ -42,6 +42,8 @@ vignettes/*.pdf
 # quarto output files
 docs/
 /.quarto/
+*.html
+*/index_files/
 
 # translation temp files
 po/*~

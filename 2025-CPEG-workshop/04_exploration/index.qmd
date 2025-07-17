@@ -19,6 +19,101 @@ execute:
 
 # Data exploration
 
+## Why do we explore our data?
+
+After acquiring the raw data to address your research question, a practical next step is to explore your data. Exploratory data analysis involves using graphical tools and basic statistical techniques to better understand the characteristics of your dataset, identify anomalies, and uncover patterns. This step is important for a variety of reasons:
+
+- Reveal the structure and attributes of your dataset, such as variable types and distributions, numbers of observations, and spatial or temporal dependencies between observations.
+- Highlight relationships between variables to guide future analyses and maximise statistical insights.
+- Help you select appropriate statistical tools and verify their assumptions to avoid type I (false positive) and II (false negative) errors that might lead to incorrect conclusions.
+- Flag systematic biases (e.g. taphonomic or sampling biases) that warrant careful consideration when interpreting your results.
+- Reveal missing values, outliers, inconsistencies, duplication, and other unusual or erroneous values that require [cleaning](#data-cleaning).
+
+Together, exploratory data analysis is used to assess the quality and completeness of your dataset and gauge whether it can provide a meaningful and representative sample to address your research question. Without this step, you run the risk of applying inappropriate statistical techniques or making faulty inferences.
+
+## How do we explore our data?
+
+The first thing we want to do with our data is generate summary statistics and plots to help us understand the data and its various characteristics.
+
+For example, we can look at the distribution of identification levels for our fossils.
+
+```{r ID_distribution}
+# Count the frequency of taxonomic ranks
+table(fossils$accepted_rank)
+
+# Calculate as percentages
+(table(fossils$accepted_rank) / nrow(fossils)) * 100
+```
+
+We can see that of our 886 occurrences, 250 (28%) are identified to species level. A further 254 (29%) are identified to genus level. The remaining fossils are more coarsely identified, including 365 (41%) which are identified to the mysterious level of "unranked clade".
+
+Next, let's look at the distribution of fossils across localities. In the PBDB, fossils are placed within collections, each of which can roughly be considered a separate locality (they can also represent different sampling horizons at the same locality; more on this later). First, we can count the number of unique `collection_no` values to find out how many unique collections are in the dataset.
+
+```{r unique_colls}
+# What is the length of a vector of unique collection numbers?
+length(unique(fossils$collection_no))
+```
+
+Our dataset contains 720 unique collections.
+
+We can also create a plot showing us the distribution of occurrences across these collections. First let's tally up the number of occurrences in each collection.
+
+```{r abundance_distribution}
+# Count the number of times each collection number appears in the dataset
+coll_no_freq <- as.data.frame(table(fossils$collection_no))
+```
+
+Next, we'll use the [ggplot2 package](https://ggplot2.tidyverse.org/), the go-to for professional-looking data visualizations in R, to visualize the frequency of collections with various numbers of occurrences.
+
+```{r abundance_distribution_plot}
+# Plot the distribution of number of occurrences per collection
+ggplot(coll_no_freq, aes(x = Freq)) +
+  geom_bar() +
+  labs(x = "Number of occurrences",
+       y = "Frequency")
+```
+
+We can see that the collection containing the most occurrences has 7, while the vast majority only contain a single occurrence.
+
+::: {.callout-note}
+
+### Building ggplot2 visualizations
+
+Let's take a moment to break down the above ggplot2 code, since we'll be using the package a lot in the rest of the workshop:
+
+- The first component of any ggplot2 plot is the `ggplot()` function, which sets up the plot. The first argument of this function here is the data frame that we want to plot, and the second argument is a set of aesthetic mappings, which define how variables in our data are mapped to visual properties of the plot. In this case, we are mapping the `Freq` column to the x-axis.
+- The next component is the `geom_bar()` function, which adds a bar plot layer to the ggplot. This function does not require any additional arguments, as it will automatically use the data and x aesthetic mapping defined in the `ggplot()` function.
+- The final component is the `labs()` function, which adds labels to the x and y axes of the plot. This function takes named arguments for each label, allowing us to customize the appearance of the plot.
+- All of the these components are combined together using the `+` operator, allowing us to build up the plot step by step.
+
+We'll end up using lots of other ggplot2 components moving forward, which we'll explain when we get to them, but this is the basic structure of a ggplot2 plot. Note that multiple layers (e.g., `geom_bar()`, `geom_point()`, etc.) can be added to the same plot, and that the order in which they are added can affect the final appearance of the plot. 
+
+You can also modify other aesthetics of the plot, such as the colour, size, and shape of the points, by adding additional arguments to the `aes()` function (which, by the way, can go within the `ggplot` function, within `geom_` functions, or even on its own). The way these aesthetics are then displayed in the plot can be modified using scale functions (e.g., `scale_color_manual()`, `scale_size_continuous()`, etc.).
+
+For more information on how to use ggplot2, check out the [ggplot2 documentation](https://ggplot2.tidyverse.org/articles/ggplot2.html).
+
+:::
+
+What about the countries in which these fossils were found? We can investigate this using the "cc", or "country code" column.
+
+```{r countries}
+# List unique country codes, and count them
+unique(fossils$cc)
+length(unique(fossils$cc))
+```
+
+Here we can see that Paleogene crocodiles have been found in 46 different countries. Let's sort those values alphabetically to help us find specific countries.
+
+```{r countries_2}
+# List and sort unique country codes, and count them
+sort(unique(fossils$cc))
+length(sort(unique(fossils$cc)))
+```
+
+Something weird has happened here: we can see that once the countries have been sorted, one of them has disappeared. Why? We will come back to this during our [data cleaning](#data-cleaning).
+
+## Practical
+
 - Why do we explore our data? How do we explore our data? [20 min instruction & code-along, Will]
 Based on https://tenrules.palaeoverse.org/#rule-4-explore-your-data
 Guided freeform practical [15 min, Will]
