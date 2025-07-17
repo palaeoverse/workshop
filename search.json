@@ -2240,22 +2240,22 @@
     ]
   },
   {
-    "objectID": "2025-CPEG-workshop/04_exploration/index.html#identify-and-handle-inconsistencies-pedro",
-    "href": "2025-CPEG-workshop/04_exploration/index.html#identify-and-handle-inconsistencies-pedro",
+    "objectID": "2025-CPEG-workshop/04_exploration/index.html#identify-and-handle-inconsistencies",
+    "href": "2025-CPEG-workshop/04_exploration/index.html#identify-and-handle-inconsistencies",
     "title": "Data Processing I",
-    "section": "Identify and handle inconsistencies [Pedro]",
-    "text": "Identify and handle inconsistencies [Pedro]",
+    "section": "Identify and handle inconsistencies",
+    "text": "Identify and handle inconsistencies\nWe’re now going to look for inconsistencies in our dataset. Let’s start by revisiting its structure, focusing on whether the class types of the variables make sense.\n\n# Check the data class of each field in our dataset\nstr(fossils)\n\nThis looks reasonable. For example, we can see that our collection IDs are numerical, and our identified_name column contains character strings.\nNow let’s dive in further to look for inconsistencies in spelling, which could cause taxonomic names or geological units to be grouped separately when they are really the same thing. We’ll start by checking for potential taxonomic misspellings.\nWe can use the table() function to look at the frequencies of various taxonomic names in the dataset. Here, inconsistencies like misspellings or antiquated taxonomic names might be recognised. We will check the columns family, genus, and accepted_name, the latter of which gives the name of the identification regardless of taxonomic level, and is the only column to give species binomials.\n\n# Tabulate the frequency of values in the \"family\" and \"genus\" columns\ntable(fossils$family)\n\n\ntable(fossils$genus)\n\n\n# Filter occurrences to those identified at species level, then tabulate species\n# names\nfossils_sp &lt;- filter(fossils, accepted_rank == \"species\")\ntable(fossils_sp$accepted_name)\n\nAlternatively, we can use the tax_check() function in the palaeoverse package, which systematically searches for and flags potential spelling variation using a defined dissimilarity threshold.\n\n# Check for close spellings in the \"genus\" column\ntax_check(taxdf = fossils, name = \"genus\", dis = 0.1)\n\n\n# Check for close spellings in the \"accepted_name\" column\ntax_check(taxdf = fossils_sp, name = \"accepted_name\" , dis = 0.1)\n\nNo names are flagged here, so that seems fine. We can also check formatting and spelling using the fossilbrush package.\n\n# Create a list of taxonomic ranks to check\nfossil_ranks &lt;- c(\"phylum\", \"class\", \"order\", \"family\", \"genus\")\n\n# Run checks\ncheck_taxonomy(as.data.frame(fossils), ranks = fossil_ranks)\n\nAs before, no major inconsistencies or potential spelling errors were flagged.",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Data Processing I"
     ]
   },
   {
-    "objectID": "2025-CPEG-workshop/04_exploration/index.html#identify-and-handle-duplicates-pedro",
-    "href": "2025-CPEG-workshop/04_exploration/index.html#identify-and-handle-duplicates-pedro",
+    "objectID": "2025-CPEG-workshop/04_exploration/index.html#identify-and-handle-duplicates",
+    "href": "2025-CPEG-workshop/04_exploration/index.html#identify-and-handle-duplicates",
     "title": "Data Processing I",
-    "section": "Identify and handle duplicates [Pedro]",
-    "text": "Identify and handle duplicates [Pedro]",
+    "section": "Identify and handle duplicates",
+    "text": "Identify and handle duplicates",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Data Processing I"

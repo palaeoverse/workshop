@@ -483,8 +483,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#what-should-we-do-with-outliers" id="toc-what-should-we-do-with-outliers" class="nav-link" data-scroll-target="#what-should-we-do-with-outliers">What should we do with outliers?</a></li>
   <li><a href="#identify-and-handle-outliers" id="toc-identify-and-handle-outliers" class="nav-link" data-scroll-target="#identify-and-handle-outliers">Identify and handle outliers</a></li>
   </ul></li>
-  <li><a href="#identify-and-handle-inconsistencies-pedro" id="toc-identify-and-handle-inconsistencies-pedro" class="nav-link" data-scroll-target="#identify-and-handle-inconsistencies-pedro">Identify and handle inconsistencies [Pedro]</a></li>
-  <li><a href="#identify-and-handle-duplicates-pedro" id="toc-identify-and-handle-duplicates-pedro" class="nav-link" data-scroll-target="#identify-and-handle-duplicates-pedro">Identify and handle duplicates [Pedro]</a></li>
+  <li><a href="#identify-and-handle-inconsistencies" id="toc-identify-and-handle-inconsistencies" class="nav-link" data-scroll-target="#identify-and-handle-inconsistencies">Identify and handle inconsistencies</a></li>
+  <li><a href="#identify-and-handle-duplicates" id="toc-identify-and-handle-duplicates" class="nav-link" data-scroll-target="#identify-and-handle-duplicates">Identify and handle duplicates</a></li>
   <li><a href="#practical-1" id="toc-practical-1" class="nav-link" data-scroll-target="#practical-1">Practical</a>
   <ul class="collapse">
   <li><a href="#can-you-find-any-additional-missing-data-what-will-you-do-with-them" id="toc-can-you-find-any-additional-missing-data-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong>missing data</strong>? What will you do with them?</a></li>
@@ -855,11 +855,50 @@ Answer
 <p>So to sum up, it seems that our outliers are not concerning, so we will leave them in our dataset and continue with our analytical pipeline.</p>
 </section>
 </section>
-<section id="identify-and-handle-inconsistencies-pedro" class="level2">
-<h2 class="anchored" data-anchor-id="identify-and-handle-inconsistencies-pedro">Identify and handle inconsistencies [Pedro]</h2>
+<section id="identify-and-handle-inconsistencies" class="level2">
+<h2 class="anchored" data-anchor-id="identify-and-handle-inconsistencies">Identify and handle inconsistencies</h2>
+<p>We’re now going to look for inconsistencies in our dataset. Let’s start by revisiting its structure, focusing on whether the class types of the variables make sense.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the data class of each field in our dataset</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This looks reasonable. For example, we can see that our collection IDs are <code>numerical</code>, and our <code>identified_name</code> column contains <code>character</code> strings.</p>
+<p>Now let’s dive in further to look for inconsistencies in spelling, which could cause taxonomic names or geological units to be grouped separately when they are really the same thing. We’ll start by checking for potential taxonomic misspellings.</p>
+<p>We can use the table() function to look at the frequencies of various taxonomic names in the dataset. Here, inconsistencies like misspellings or antiquated taxonomic names might be recognised. We will check the columns <code>family</code>, <code>genus</code>, and <code>accepted_name</code>, the latter of which gives the name of the identification regardless of taxonomic level, and is the only column to give species binomials.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabulate the frequency of values in the "family" and "genus" columns</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>genus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter occurrences to those identified at species level, then tabulate species</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># names</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, accepted_rank <span class="sc">==</span> <span class="st">"species"</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils_sp<span class="sc">$</span>accepted_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Alternatively, we can use the <code>tax_check()</code> function in the <code>palaeoverse</code> package, which systematically searches for and flags potential spelling variation using a defined dissimilarity threshold.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for close spellings in the "genus" column</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tax_check</span>(<span class="at">taxdf =</span> fossils, <span class="at">name =</span> <span class="st">"genus"</span>, <span class="at">dis =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for close spellings in the "accepted_name" column</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tax_check</span>(<span class="at">taxdf =</span> fossils_sp, <span class="at">name =</span> <span class="st">"accepted_name"</span> , <span class="at">dis =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>No names are flagged here, so that seems fine. We can also check formatting and spelling using the <code>fossilbrush</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of taxonomic ranks to check</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>fossil_ranks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"phylum"</span>, <span class="st">"class"</span>, <span class="st">"order"</span>, <span class="st">"family"</span>, <span class="st">"genus"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run checks</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">check_taxonomy</span>(<span class="fu">as.data.frame</span>(fossils), <span class="at">ranks =</span> fossil_ranks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As before, no major inconsistencies or potential spelling errors were flagged.</p>
 </section>
-<section id="identify-and-handle-duplicates-pedro" class="level2">
-<h2 class="anchored" data-anchor-id="identify-and-handle-duplicates-pedro">Identify and handle duplicates [Pedro]</h2>
+<section id="identify-and-handle-duplicates" class="level2">
+<h2 class="anchored" data-anchor-id="identify-and-handle-duplicates">Identify and handle duplicates</h2>
 </section>
 <section id="practical-1" class="level2">
 <h2 class="anchored" data-anchor-id="practical-1">Practical</h2>
