@@ -58,13 +58,13 @@ Even at this first step, the decisions we make will have consequences for our re
 
 **Organize yourselves into groups of 4-6 and discuss the following questions:**
 
-***- What issues might we encounter when sourcing, gathering, and working with these various climatic and occurrence datasets?***
+***1. What issues might we encounter when sourcing, gathering, and working with these various climatic and occurrence datasets?***
 
-***-What caveats should we be aware of, and how can they be addressed?***
+***2. What caveats should we be aware of, and how can they be addressed?***
 
 ## III. Building a Workflow to Merge Datasets
 
-We'll now walk through an example for how we might acquire and harmonize our climatic data. First, let's make a plan of the steps we'll take and some of the decisions we'll need to consider along the way.
+To help you get an idea for the process of using data from different sources, we'll now walk through an example for how we might acquire and harmonize our climatic data. First, let's make a plan of the steps we'll take and some of the decisions we'll need to consider along the way.
 
 1.  **Decide which climate data to use.** What will be most appropriate for the taxonomic group we are studying? Some potential choices might be:
 
@@ -75,10 +75,11 @@ We'll now walk through an example for how we might acquire and harmonize our cli
 
 2.  **Find a suitable source of data.** We will need to find spatially climatic data for each time interval we are interested in and acquire it in an appropriate format (.nc). What factors might we consider?
 
+-   Availability of specifications listed above
 -   Spatial resolution
 -   Temporal resolution
 
-3.  **Sort file structure.** Ensure that your R project is set up appropriately and that the downloaded files are in an appropriate place.
+3.  **Sort file structure.** Ensure that your R project is set up appropriately and that the downloaded files are in an appropriate place to be used in your project, remembering to follow some of the guidance that we've covered earlier on today (e.g. ensuring there are raw versions of your data saved).
 
 4.  **Load data.** Read our data into R in an appropriate format to work with (e.g., raster). How might we do this? What packages might we need?
 
@@ -129,74 +130,87 @@ library(rnaturalearth)
 library(ncdf4)
 ```
 
+We'll also set some default values to ensure that our spatial datasets conform with one another. 
+
 ```{r}
-# Set resolution
+# Set spatial resolution
 res <- 1
 
-# Set extent
+# Set spatial extent
 e <- extent(-180, 180, -90, 90)
 
-# Make generic raster
-r <- raster(res = res, ext = e)
+# Make generic raster using these values
+ref.raster <- raster(res = res, ext = e)
 ```
 
+Now lets find some climate data!
 
 ### 1. Organising Palaeo-climatic Data
 
-```{r}
-# Make function to carry out action faster
-prep.raster <- function(file_path, ref.raster){
-  # Load .nc file
-  raster2prep <- raster(file_path)
-  # Rotate data to solve world wrapping issue (if necessary)
-  raster.rotated <- raster::rotate(raster2prep)
-  # Resample data (the extent and resolution must be updated to avoid rgdal issue)
-  raster.resampled <- resample(x = raster.rotated, y = ref.raster)
-  # Return data
-  return(raster.resampled)
-}
-```
+After exploring several potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2022), based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: https://zenodo.org/records/5718392.
 
-After exploring several potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2022), based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publically accessible via Zenodo: https://zenodo.org/records/5718392.
-
-Citations:
-Scotese, C. R., Song, H., Mills, B. J. W., & van der Meer, D. G. (2021). Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503
-
-Valdes, P.J., Scotese, C.R., and Lunt, D.J. (2021). Deep Ocean Temperatures through Time, Climates of the Past, Discussions, https://doi.org/10.5194/cp-2020-83. 
+  Scotese, C. R., Song, H., Mills, B. J. W., & van der Meer, D. G. (2021). Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503
+  
+  Valdes, P.J., Scotese, C.R., and Lunt, D.J. (2021). Deep Ocean Temperatures through Time, Climates of the Past, Discussions, https://doi.org/10.5194/cp-2020-83. 
 
 This climatic dataset offers decently high temporal resolution (for deep time), but one thing we'll need to keep in mind is that the 5-million-year intervals don't align perfectly with geological stages. This will come into play later when we start working with the occurrence data.
 
-For our study, we'll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition.
+For our study, we'll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition. 
+
+First, we need to load in our data, which is currently stored as a .nc file, and have a look at it. This can be read into R as a raster using the 'raster' package:
 
 ```{r}
-# Load in our data
-# 20-15 Ma interval
-scotese15 <- prep.raster(file_path = "015_tas_scotese02a_v21321.nc", 
-                         ref.raster = r)
 
-# 25-20 Ma interval
-scotese20 <- prep.raster(file_path = "020_tas_scotese02a_v21321.nc", 
-                         ref.raster = r)
+# Load in rasters of palaeoclimate for each time interval
+raster2prep.15 <- raster(x = "015_tas_scotese02a_v21321.nc")
+raster2prep.20 <- raster(x = "015_tas_scotese02a_v21321.nc")
+
+raster2prep.15
+raster2prep.20
+
+```
+As you can see, the resolution and extent of these rasters doesn't quite match our reference one that we made above. We'll have to resample our data to match our reference raster:
+
+```{r}
+
+# Resample data to match our set extent and resolution
+raster.resampled.15 <- resample(x = raster2prep.15, y = ref.raster)
+raster.resampled.20 <- resample(x = raster2prep.20, y = ref.raster)
+
+```
+
+Finally, we can stack these rasters into one file, name them, and see what they look like:
+
+```{r}
 # Stack rasters
-scotese.temp <- stack(scotese15, scotese20)
+scotese.temp <- stack(raster.resampled.15, raster.resampled.20)
 
 # Name and plot rasters
 names(scotese.temp) <- c("Burdigalian","Aquitanian")
 plot(scotese.temp)
 ```
 
+Now we'll move on to our modern data!
+
 ### 2. Organising Modern Climatic Data
 
-We'll obtain our modern climatic data from WorldClim: https://www.worldclim.org/
+We'll obtain our modern climatic data from WorldClim: 
+
+https://www.worldclim.org/
+
 To keep our climatic variables consistent, we'll also work with the mean annual temperature data.
 
-NOTE: in here include option for pre-downloaded data
+Whilst below we show you code to access this data directly within R, it can take a while to download. We've therefore also included it alongside the other materials for the workshop, which can be accessed HERE.
 
 ```{r}
 # Load data from WorldClim and make into raster
 modern <- worldclim_global(var = "tavg", res = 2.5, path = tempdir())
 modern <- as(modern, "Raster")
+modern
+```
+As you can see, whilst the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep-time data. They're also provided on a monthly basis, so we'll have to calculate the mean temperature before we can use this for comparison:
 
+```{r}
 # Calculate mean annual temperature
 modern.mean <- calc(x = modern, fun = mean)
 
@@ -204,23 +218,22 @@ modern.mean <- calc(x = modern, fun = mean)
 plot(modern.mean)
 ```
 
-This modern climatic data are considerably higher resolution than what we have available for our deep-time data. What issues might this cause? What actions could we take to resolve this? What could we test?
-
+What issues might this higher resolution cause? What actions could we take to resolve this? What could we test?
 
 ## **BREAKOUT SESSION 2**
 
-**Now it's your turn to give it a go!**
+**Now it's your turn to give it a go! Let's go through the same process for our occurrence data:** 
 
-***-First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R.***
+***1. First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R. If you're an experienced R user, you can also start to plan your code.***
 
-***-Then, get into the same groups and discuss your approach and where you might encounter potential pitfalls.*** 
+***2. Then, get into the same groups you were in previously to discuss your approach. Where you might encounter potential pitfalls? What packages or approaches might make this process easier?*** 
 
 
 ### Solution
 
 ::: {.callout-tip title="Solution" collapse="true"}
 
-Let's start by thinking about what we need from our occurrence datasets. To answer our question, we aim to compare Crocodylia occurrences in the past and present in relation to temperature data from the same points.
+Let's start by thinking about what we need from our occurrence datasets. To answer our question, we aim to compare Crocodylia occurrences in the past and present in relation to temperature data from the same geographic coordinates.
 
 How do we get there? Let's outline some potential steps:
 
@@ -335,11 +348,11 @@ Now we come to the fun part. How do we align these data, which were sampled in d
 
 **Return to your discussion groups and discuss the following questions:**
 
-***-What factors that might introduce bias when we try to make comparisons across these datasets?***
+***1. What factors that might introduce bias when we try to make comparisons across these datasets?***
 
-***-What are some sources of uncertainty?***
+***2. What are some sources of uncertainty?***
 
-***-How might we address these potential confounds prior to analysis and/or what should we keep in mind as we're interpreting our results?***
+***3. How might we address these potential confounds prior to analysis and/or what should we keep in mind as we're interpreting our results?***
 
 ::: {.callout-tip collapse="true"}
 The resolution and coverage of the data is likely one aspect that came up in your group discussions. As we move forward, we'll need to make some practical and philosophical decisions about how we bin the data given their varying resolutions. We'll also want to consider the sensitivity of our results to these various decisions. 
@@ -347,7 +360,7 @@ The resolution and coverage of the data is likely one aspect that came up in you
 
 Here, we'll touch on several key taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.
 
-#### Taxonomy
+#### 4A. Taxonomy
 
 We'll be using higher-level taxonomic groups for our analysis. Let's take a look to see what's here.
 ```{r}
@@ -360,22 +373,23 @@ table(modern_occ_filter$family)
 
 We see that the same families are represented in our datasets. If you were to look at the genera, you'll notice some differences. If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?
 
-#### Temporal Bins
+#### 4B. Temporal Bins
 
 Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don't align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. Each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. How might we approach this?
 
 First, let's take a look at the temporal distribution of our fossil occurrences.
 ```{r}
-tax_range_time(occdf = fossil_occ_filter, 
+head(x = tax_range_time(occdf = fossil_occ_filter, 
                name = "occurrence_no",
                min_ma = "min_ma", 
                max_ma = "max_ma", 
-               plot = TRUE)
+               plot = TRUE))
 axis_geo(intervals = "stages")
 ```
 
 One option would be to bin the data by stage and use those as proxies for our 5-million-year climatic intervals.
 Another approach might be to make near-equal-length bins within the 25-15 Ma range, and then assign occurrences to those bins. Let's try that here. 
+
 ```{r}
 # Generate time bins of ~5 million years within 25 and 15 Ma
 bins <- time_bins(interval = c(15,25), 
@@ -574,4 +588,4 @@ ggplot(palaeo_temp, aes(x = Bin, y = Temperature)) +
 When looking at the better sampled intervals in particular, we find that the mean temperature range of Crocodylia occurrences was quite similar between the Miocene and Modern.
 How might we interpret our results? How might this interpretation be shaped by the caveats we pointed out along the way?
 
-Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of the caveats that arise when doing so. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general---but particularly in studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting reserach questions and datasets!
+Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of the caveats that arise when doing so. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general---but particularly in studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting research questions and datasets!
