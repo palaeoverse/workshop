@@ -49,7 +49,7 @@ format:
   html:
     theme:
       - cosmo # a predefined bootswatch theme
-      - _brand # theming derived from `_brand.yml`
+      - brand # theming derived from `_brand.yml`
     css: styles.css
     toc: true
 
