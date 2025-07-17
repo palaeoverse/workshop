@@ -16,6 +16,9 @@ format:
       - brand
     embed-resources: true
     output-file: "rproj_github.html"
+    mermaid:
+      theme: default
+brand: _brand.yml
 ---
 
 ## Goals
