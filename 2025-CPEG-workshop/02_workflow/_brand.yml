@@ -1,0 +1,50 @@
+meta:
+  name: Palaeoverse
+  link: https://palaeoverse.org
+  
+logo: 
+  images:
+    logo-image: logos/logo.png
+    logo-text: logos/logo-text.png
+    favicon: logos/favicon.png
+  
+color:
+  palette:
+    light-blue: "#BFE0E2"
+    mid-blue: "#98D3DC"
+    dark-blue: "#64BDD8"
+    light-pink: "#E4BEDB"
+    dark-pink: "#CDA6C5"
+    light-green: "#56B367"
+    dark-green: "#0D725A"
+    light-peach: "#F18661"
+    dark-peach: "#DB755A"
+    yellow: "#FEC703"
+    light-orange: "#F39200"
+    dark-orange: "#ED8D3A"
+    beige: "#EACDB9"
+    brown: "#704C32"
+    light-grey: "#EBEBEB"
+    mid-grey: "#C6C5C4"
+    dark-grey: "#575756"
+    black: "#1D1D1B"
+    white: "#FFFFFF"
+  background: white
+  foreground: dark-grey
+  primary: light-blue
+  secondary: dark-green
+
+typography:
+  fonts:
+    - family: Atkinson Hyperlegible
+      source: google
+    - family: Space Mono
+      source: google
+  base: 
+    family: Atkinson Hyperlegible
+    weight: 400
+  headings: Atkinson Hyperlegible
+  monospace: Space Mono
+  link:
+    color: dark-green
+    decoration: underline

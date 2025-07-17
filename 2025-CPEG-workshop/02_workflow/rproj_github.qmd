@@ -1,0 +1,58 @@
+---
+title: "Reproducible and Collaborative Workflows"
+subtitle: "Using RStudio and GitHub"
+execute:
+  echo: true
+  eval: true
+  freeze: true
+format: 
+  revealjs:
+    logo: "../images/logo.png"
+    footer: |
+      4th Crossing the Paleontological-Ecological Gap (CPEG) Meeting &\
+      3rd Conservation Paleobiology Symposium
+    theme:
+      - simple
+      - brand
+    embed-resources: true
+    output-file: "rproj_github.html"
+---
+
+## Goals
+
+- Understand the importance of reproducible workflows and version control
+- Learn how to set up a project in RStudio
+- Explore version control with GitHub and GitHub Desktop
+- Fork, edit, and publish a GitHub repository
+
+::: notes
+:::
+
+## Why reproducible workflows are important
+
+
+::: notes
+:::
+
+## What makes a workflow reproducible?
+
+
+::: notes
+:::
+
+## RStudio and Projects
+
+
+::: notes
+:::
+
+## Version History is NOT Version Control
+
+<center>
+![](images/version_history_and_control.jpeg){fig-align="center" width="60%"}
+</center>
+
+::: notes
+Version history is not the same as version control. Version history is a record of changes made to a file, while version control is a system that manages changes to files and allows for collaboration among multiple users. Version control systems like Git provide features such as branching, merging, and conflict resolution, which are essential for collaborative work.
+:::
+
