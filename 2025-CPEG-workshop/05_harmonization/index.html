@@ -108,11 +108,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Data processing II – Palaeoverse Workshops">
 <meta property="og:description" content="Data processing II: Data harmonization and synthesis">
-<meta property="og:image" content="index_files/figure-html/unnamed-chunk-5-1.png">
+<meta property="og:image" content="index_files/figure-html/unnamed-chunk-6-1.png">
 <meta property="og:site_name" content="Palaeoverse Workshops">
 <meta name="twitter:title" content="Data processing II – Palaeoverse Workshops">
 <meta name="twitter:description" content="Data processing II: Data harmonization and synthesis">
-<meta name="twitter:image" content="index_files/figure-html/unnamed-chunk-5-1.png">
+<meta name="twitter:image" content="index_files/figure-html/unnamed-chunk-6-1.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -575,12 +575,12 @@ Heads Up!
 <section id="breakout-session-1" class="level2">
 <h2 class="anchored" data-anchor-id="breakout-session-1"><strong>BREAKOUT SESSION 1</strong></h2>
 <p><strong>Organize yourselves into groups of 4-6 and discuss the following questions:</strong></p>
-<p><strong><em>- What issues might we encounter when sourcing, gathering, and working with these various climatic and occurrence datasets?</em></strong></p>
-<p><strong><em>-What caveats should we be aware of, and how can they be addressed?</em></strong></p>
+<p><strong><em>1. What issues might we encounter when sourcing, gathering, and working with these various climatic and occurrence datasets?</em></strong></p>
+<p><strong><em>2. What caveats should we be aware of, and how can they be addressed?</em></strong></p>
 </section>
 <section id="iii.-building-a-workflow-to-merge-datasets" class="level2">
 <h2 class="anchored" data-anchor-id="iii.-building-a-workflow-to-merge-datasets">III. Building a Workflow to Merge Datasets</h2>
-<p>We’ll now walk through an example for how we might acquire and harmonize our climatic data. First, let’s make a plan of the steps we’ll take and some of the decisions we’ll need to consider along the way.</p>
+<p>To help you get an idea for the process of using data from different sources, we’ll now walk through an example for how we might acquire and harmonize our climatic data. First, let’s make a plan of the steps we’ll take and some of the decisions we’ll need to consider along the way.</p>
 <ol type="1">
 <li><strong>Decide which climate data to use.</strong> What will be most appropriate for the taxonomic group we are studying? Some potential choices might be:</li>
 </ol>
@@ -594,11 +594,12 @@ Heads Up!
 <li><strong>Find a suitable source of data.</strong> We will need to find spatially climatic data for each time interval we are interested in and acquire it in an appropriate format (.nc). What factors might we consider?</li>
 </ol>
 <ul>
+<li>Availability of specifications listed above</li>
 <li>Spatial resolution</li>
 <li>Temporal resolution</li>
 </ul>
 <ol start="3" type="1">
-<li><p><strong>Sort file structure.</strong> Ensure that your R project is set up appropriately and that the downloaded files are in an appropriate place.</p></li>
+<li><p><strong>Sort file structure.</strong> Ensure that your R project is set up appropriately and that the downloaded files are in an appropriate place to be used in your project, remembering to follow some of the guidance that we’ve covered earlier on today (e.g.&nbsp;ensuring there are raw versions of your data saved).</p></li>
 <li><p><strong>Load data.</strong> Read our data into R in an appropriate format to work with (e.g., raster). How might we do this? What packages might we need?</p></li>
 <li><p><strong>Check formatting.</strong> Ensure that the data are formatted appropriately. How might this impact our results or interpretations? What issues should we be aware of?</p></li>
 </ol>
@@ -680,80 +681,69 @@ The following object is masked from 'package:tidyr':
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ncdf4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>We’ll also set some default values to ensure that our spatial datasets conform with one another.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set resolution</span></span>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set spatial resolution</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set extent</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set spatial extent</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">extent</span>(<span class="sc">-</span><span class="dv">180</span>, <span class="dv">180</span>, <span class="sc">-</span><span class="dv">90</span>, <span class="dv">90</span>)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make generic raster</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">res =</span> res, <span class="at">ext =</span> e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make generic raster using these values</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>ref.raster <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">res =</span> res, <span class="at">ext =</span> e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Now lets find some climate data!</p>
 </section>
 <section id="organising-palaeo-climatic-data" class="level3">
 <h3 class="anchored" data-anchor-id="organising-palaeo-climatic-data">1. Organising Palaeo-climatic Data</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make function to carry out action faster</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>prep.raster <span class="ot">&lt;-</span> <span class="cf">function</span>(file_path, ref.raster){</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Load .nc file</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  raster2prep <span class="ot">&lt;-</span> <span class="fu">raster</span>(file_path)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rotate data to solve world wrapping issue (if necessary)</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  raster.rotated <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">rotate</span>(raster2prep)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Resample data (the extent and resolution must be updated to avoid rgdal issue)</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  raster.resampled <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster.rotated, <span class="at">y =</span> ref.raster)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Return data</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(raster.resampled)</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>After exploring several potential palaeo-climatic datasets, we’ve decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2022), based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publically accessible via Zenodo: https://zenodo.org/records/5718392.</p>
-<p>Citations: Scotese, C. R., Song, H., Mills, B. J. W., &amp; van der Meer, D. G. (2021). Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503</p>
+<p>After exploring several potential palaeo-climatic datasets, we’ve decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2022), based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: https://zenodo.org/records/5718392.</p>
+<p>Scotese, C. R., Song, H., Mills, B. J. W., &amp; van der Meer, D. G. (2021). Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503</p>
 <p>Valdes, P.J., Scotese, C.R., and Lunt, D.J. (2021). Deep Ocean Temperatures through Time, Climates of the Past, Discussions, https://doi.org/10.5194/cp-2020-83.</p>
 <p>This climatic dataset offers decently high temporal resolution (for deep time), but one thing we’ll need to keep in mind is that the 5-million-year intervals don’t align perfectly with geological stages. This will come into play later when we start working with the occurrence data.</p>
 <p>For our study, we’ll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition.</p>
+<p>First, we need to load in our data, which is currently stored as a .nc file, and have a look at it. This can be read into R as a raster using the ‘raster’ package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in our data</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 20-15 Ma interval</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>scotese15 <span class="ot">&lt;-</span> <span class="fu">prep.raster</span>(<span class="at">file_path =</span> <span class="st">"015_tas_scotese02a_v21321.nc"</span>, </span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ref.raster =</span> r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in .local(x, ...): xmin is much smaller than zero. No rotation done</code></pre>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in rasters of palaeoclimate for each time interval</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.15</span> <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"015_tas_scotese02a_v21321.nc"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.20</span> <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"015_tas_scotese02a_v21321.nc"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class      : RasterLayer 
+dimensions : 180, 361, 64980  (nrow, ncol, ncell)
+resolution : 1, 1.005556  (x, y)
+extent     : -180.5, 180.5, -90.5, 90.5  (xmin, xmax, ymin, ymax)
+crs        : NA 
+source     : 015_tas_scotese02a_v21321.nc 
+names      : X015_tas_scotese02a_v21321 
+zvar       : 015_tas_scotese02a_v21321 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 25-20 Ma interval</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>scotese20 <span class="ot">&lt;-</span> <span class="fu">prep.raster</span>(<span class="at">file_path =</span> <span class="st">"020_tas_scotese02a_v21321.nc"</span>, </span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">ref.raster =</span> r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in .local(x, ...): xmin is much smaller than zero. No rotation done</code></pre>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.20</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class      : RasterLayer 
+dimensions : 180, 361, 64980  (nrow, ncol, ncell)
+resolution : 1, 1.005556  (x, y)
+extent     : -180.5, 180.5, -90.5, 90.5  (xmin, xmax, ymin, ymax)
+crs        : NA 
+source     : 015_tas_scotese02a_v21321.nc 
+names      : X015_tas_scotese02a_v21321 
+zvar       : 015_tas_scotese02a_v21321 </code></pre>
 </div>
+</div>
+<p>As you can see, the resolution and extent of these rasters doesn’t quite match our reference one that we made above. We’ll have to resample our data to match our reference raster:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample data to match our set extent and resolution</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>raster.resampled<span class="fl">.15</span> <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep<span class="fl">.15</span>, <span class="at">y =</span> ref.raster)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>raster.resampled<span class="fl">.20</span> <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep<span class="fl">.20</span>, <span class="at">y =</span> ref.raster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, we can stack these rasters into one file, name them, and see what they look like:</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stack rasters</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>scotese.temp <span class="ot">&lt;-</span> <span class="fu">stack</span>(scotese15, scotese20)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>scotese.temp <span class="ot">&lt;-</span> <span class="fu">stack</span>(raster.resampled<span class="fl">.15</span>, raster.resampled<span class="fl">.20</span>)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Name and plot rasters</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scotese.temp) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Burdigalian"</span>,<span class="st">"Aquitanian"</span>)</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(scotese.temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="organising-modern-climatic-data" class="level3">
-<h3 class="anchored" data-anchor-id="organising-modern-climatic-data">2. Organising Modern Climatic Data</h3>
-<p>We’ll obtain our modern climatic data from WorldClim: https://www.worldclim.org/ To keep our climatic variables consistent, we’ll also work with the mean annual temperature data.</p>
-<p>NOTE: in here include option for pre-downloaded data</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data from WorldClim and make into raster</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>modern <span class="ot">&lt;-</span> <span class="fu">worldclim_global</span>(<span class="at">var =</span> <span class="st">"tavg"</span>, <span class="at">res =</span> <span class="fl">2.5</span>, <span class="at">path =</span> <span class="fu">tempdir</span>())</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>modern <span class="ot">&lt;-</span> <span class="fu">as</span>(modern, <span class="st">"Raster"</span>)</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean annual temperature</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>modern.mean <span class="ot">&lt;-</span> <span class="fu">calc</span>(<span class="at">x =</span> modern, <span class="at">fun =</span> mean)</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot raster</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modern.mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -762,14 +752,53 @@ The following object is masked from 'package:tidyr':
 </div>
 </div>
 </div>
-<p>This modern climatic data are considerably higher resolution than what we have available for our deep-time data. What issues might this cause? What actions could we take to resolve this? What could we test?</p>
+<p>Now we’ll move on to our modern data!</p>
+</section>
+<section id="organising-modern-climatic-data" class="level3">
+<h3 class="anchored" data-anchor-id="organising-modern-climatic-data">2. Organising Modern Climatic Data</h3>
+<p>We’ll obtain our modern climatic data from WorldClim:</p>
+<p>https://www.worldclim.org/</p>
+<p>To keep our climatic variables consistent, we’ll also work with the mean annual temperature data.</p>
+<p>Whilst below we show you code to access this data directly within R, it can take a while to download. We’ve therefore also included it alongside the other materials for the workshop, which can be accessed HERE.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data from WorldClim and make into raster</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>modern <span class="ot">&lt;-</span> <span class="fu">worldclim_global</span>(<span class="at">var =</span> <span class="st">"tavg"</span>, <span class="at">res =</span> <span class="fl">2.5</span>, <span class="at">path =</span> <span class="fu">tempdir</span>())</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>modern <span class="ot">&lt;-</span> <span class="fu">as</span>(modern, <span class="st">"Raster"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>modern</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>class      : RasterStack 
+dimensions : 4320, 8640, 37324800, 12  (nrow, ncol, ncell, nlayers)
+resolution : 0.04166667, 0.04166667  (x, y)
+extent     : -180, 180, -90, 90  (xmin, xmax, ymin, ymax)
+crs        : +proj=longlat +datum=WGS84 +no_defs 
+names      : wc2.1_2.5m_tavg_01, wc2.1_2.5m_tavg_02, wc2.1_2.5m_tavg_03, wc2.1_2.5m_tavg_04, wc2.1_2.5m_tavg_05, wc2.1_2.5m_tavg_06, wc2.1_2.5m_tavg_07, wc2.1_2.5m_tavg_08, wc2.1_2.5m_tavg_09, wc2.1_2.5m_tavg_10, wc2.1_2.5m_tavg_11, wc2.1_2.5m_tavg_12 
+min values :            -46.096,            -44.800,            -58.000,            -64.200,            -64.872,            -64.432,            -68.500,            -66.600,            -64.600,            -55.900,            -43.500,            -45.448 
+max values :             34.100,             32.960,             33.100,             34.300,             36.348,             38.512,             39.800,             38.660,             36.048,             32.864,             33.216,             33.012 </code></pre>
+</div>
+</div>
+<p>As you can see, whilst the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep-time data. They’re also provided on a monthly basis, so we’ll have to calculate the mean temperature before we can use this for comparison:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean annual temperature</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>modern.mean <span class="ot">&lt;-</span> <span class="fu">calc</span>(<span class="at">x =</span> modern, <span class="at">fun =</span> mean)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot raster</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modern.mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>What issues might this higher resolution cause? What actions could we take to resolve this? What could we test?</p>
 </section>
 </section>
 <section id="breakout-session-2" class="level2">
 <h2 class="anchored" data-anchor-id="breakout-session-2"><strong>BREAKOUT SESSION 2</strong></h2>
-<p><strong>Now it’s your turn to give it a go!</strong></p>
-<p><strong><em>-First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you’ll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R.</em></strong></p>
-<p><strong><em>-Then, get into the same groups and discuss your approach and where you might encounter potential pitfalls.</em></strong></p>
+<p><strong>Now it’s your turn to give it a go! Let’s go through the same process for our occurrence data:</strong></p>
+<p><strong><em>1. First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you’ll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R. If you’re an experienced R user, you can also start to plan your code.</em></strong></p>
+<p><strong><em>2. Then, get into the same groups you were in previously to discuss your approach. Where you might encounter potential pitfalls? What packages or approaches might make this process easier?</em></strong></p>
 <section id="solution" class="level3">
 <h3 class="anchored" data-anchor-id="solution">Solution</h3>
 <div class="callout callout-style-default callout-tip callout-titled" title="Solution">
@@ -784,7 +813,7 @@ Solution
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Let’s start by thinking about what we need from our occurrence datasets. To answer our question, we aim to compare Crocodylia occurrences in the past and present in relation to temperature data from the same points.</p>
+<p>Let’s start by thinking about what we need from our occurrence datasets. To answer our question, we aim to compare Crocodylia occurrences in the past and present in relation to temperature data from the same geographic coordinates.</p>
 <p>How do we get there? Let’s outline some potential steps:</p>
 <ol type="1">
 <li><p><strong>Decide which occurrence data to use and where to source it.</strong> The PBDB Crocodylia dataset we’ve been working with contains occurrences that span our interval of interest. Where might we find a comparable dataset of modern occurrences? Earlier today, we learned about the Global Biodiversity Information Facility (GBIF). This could be a good source!</p></li>
@@ -804,8 +833,8 @@ Solution
 <h4 class="anchored" data-anchor-id="a.-organise-fossil-occurrence-data">1A. Organise fossil occurrence data</h4>
 <p>First, we’ll load in our palaeontological data. Luckily for us, we’ve already been working with a Crocodylia fossil occurrence dataset. We’ll use these data in our analysis. If needed, you can read in the cleaned dataset below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load cleaned fossil data for order Crocodylia</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>fossil_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crocs_fossil_test.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load cleaned fossil data for order Crocodylia</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fossil_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crocs_fossil_test.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="b.-organise-modern-occurrence-data" class="level4">
@@ -814,26 +843,26 @@ Solution
 <p>We’ll start by doing a quick data download using the <code>rgbif</code> package for the purposes of this exploratory exercise. Note that this method for retrieving occurrences has some limitations, and we’d want to do a formal download query before running our full analysis for publication. For that, you’d need to make a GBIF account.</p>
 <p>Here’s how we can do this. Scroll down to load the dataset we’ve previously downloaded.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set taxa key to order Crocodylia</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#crocodile_key &lt;- name_backbone(name = "Crocodylia")$usageKey</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download data</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_download &lt;- occ_search(</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#taxonKey = crocodile_key,</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#hasCoordinate = TRUE, #needs to have coordinates</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#basisOfRecord = "PRESERVED_SPECIMEN", #keeping just preserved specimens for better comparability with the PBDB data</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#limit = 10000)  #adjust limit (if you set limit to 0, you can check the metadata to see how many records are available)</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract data</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_occ &lt;- modern_download$data</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract metadata</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_meta &lt;- modern_download$meta</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set taxa key to order Crocodylia</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#crocodile_key &lt;- name_backbone(name = "Crocodylia")$usageKey</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download data</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_download &lt;- occ_search(</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="co">#taxonKey = crocodile_key,</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#hasCoordinate = TRUE, #needs to have coordinates</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#basisOfRecord = "PRESERVED_SPECIMEN", #keeping just preserved specimens for better comparability with the PBDB data</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#limit = 10000)  #adjust limit (if you set limit to 0, you can check the metadata to see how many records are available)</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract data</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_occ &lt;- modern_download$data</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract metadata</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_meta &lt;- modern_download$meta</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For ease, here’s a csv of the raw data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load modern data</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>modern_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crocs_modern.csv"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load modern data</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>modern_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crocs_modern.csv"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -845,24 +874,24 @@ Solution
 <p><strong>-Spatial:</strong> Our research question is posed at a global scale, so we can keep everything. However, we will still want to check for potential geographic outliers or inconsistencies while cleaning the data.</p>
 <p><strong>-Temporal:</strong> We’ll constrain our palaeontological dataset to the same time intervals as our climatic dataset (25-15 Ma). Earlier, we downloaded Crocodylia occurrences for the whole of the Cenozoic, so we’ll need to do some filtering. Our modern dataset includes occurrences from the 1800s to today, whereas the WorldClim dataset starts at 1970, so we can also filter the occurrence dataset to that time range for consistency.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="do">## PBDB filtering</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_filter <span class="ot">&lt;-</span> fossil_occ <span class="sc">%&gt;%</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(accepted_rank <span class="sc">==</span> <span class="st">"genus"</span> <span class="sc">|</span> accepted_rank <span class="sc">==</span><span class="st">"species"</span>) <span class="sc">%&gt;%</span> <span class="co">#taxonomic filtering</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(max_ma<span class="sc">&lt;=</span><span class="dv">25</span> <span class="sc">&amp;</span> min_ma<span class="sc">&gt;=</span><span class="dv">15</span>) <span class="co">#temporal filtering</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="do">## GBIF filtering</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>modern_occ_filter <span class="ot">&lt;-</span> modern_occ <span class="sc">%&gt;%</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(genus)) <span class="sc">%&gt;%</span> <span class="co">#taxonomic filtering</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1970</span>) <span class="sc">%&gt;%</span> <span class="co">#temporal filtering</span></span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(coordinateUncertaintyInMeters <span class="sc">&lt;</span> <span class="dv">10000</span> <span class="sc">|</span> <span class="fu">is.na</span>(coordinateUncertaintyInMeters)) <span class="co">#we could also remove data with uncertain geographic coordinates</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">## PBDB filtering</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_filter <span class="ot">&lt;-</span> fossil_occ <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(accepted_rank <span class="sc">==</span> <span class="st">"genus"</span> <span class="sc">|</span> accepted_rank <span class="sc">==</span><span class="st">"species"</span>) <span class="sc">%&gt;%</span> <span class="co">#taxonomic filtering</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(max_ma<span class="sc">&lt;=</span><span class="dv">25</span> <span class="sc">&amp;</span> min_ma<span class="sc">&gt;=</span><span class="dv">15</span>) <span class="co">#temporal filtering</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="do">## GBIF filtering</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>modern_occ_filter <span class="ot">&lt;-</span> modern_occ <span class="sc">%&gt;%</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(genus)) <span class="sc">%&gt;%</span> <span class="co">#taxonomic filtering</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1970</span>) <span class="sc">%&gt;%</span> <span class="co">#temporal filtering</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(coordinateUncertaintyInMeters <span class="sc">&lt;</span> <span class="dv">10000</span> <span class="sc">|</span> <span class="fu">is.na</span>(coordinateUncertaintyInMeters)) <span class="co">#we could also remove data with uncertain geographic coordinates</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This filtering step could have removed a fair amount of data. How many occurrences remain in each filtered dataset?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossil_occ_filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossil_occ_filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 114</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(modern_occ_filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(modern_occ_filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2504</code></pre>
 </div>
@@ -875,7 +904,7 @@ Solution
 <p>Our fossil occurrence dataset has already gone through this process.</p>
 <p><strong>Let’s spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session.</strong> For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Practice cleaning the modern occurrence dataset here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Practice cleaning the modern occurrence dataset here!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="merging" class="level3">
@@ -886,9 +915,9 @@ Solution
 <section id="breakout-session-3" class="level2">
 <h2 class="anchored" data-anchor-id="breakout-session-3"><strong>BREAKOUT SESSION 3</strong></h2>
 <p><strong>Return to your discussion groups and discuss the following questions:</strong></p>
-<p><strong><em>-What factors that might introduce bias when we try to make comparisons across these datasets?</em></strong></p>
-<p><strong><em>-What are some sources of uncertainty?</em></strong></p>
-<p><strong><em>-How might we address these potential confounds prior to analysis and/or what should we keep in mind as we’re interpreting our results?</em></strong></p>
+<p><strong><em>1. What factors that might introduce bias when we try to make comparisons across these datasets?</em></strong></p>
+<p><strong><em>2. What are some sources of uncertainty?</em></strong></p>
+<p><strong><em>3. How might we address these potential confounds prior to analysis and/or what should we keep in mind as we’re interpreting our results?</em></strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -906,19 +935,19 @@ Tip
 </div>
 </div>
 <p>Here, we’ll touch on several key taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.</p>
-<section id="taxonomy" class="level4">
-<h4 class="anchored" data-anchor-id="taxonomy">Taxonomy</h4>
+<section id="a.-taxonomy" class="level4">
+<h4 class="anchored" data-anchor-id="a.-taxonomy">4A. Taxonomy</h4>
 <p>We’ll be using higher-level taxonomic groups for our analysis. Let’s take a look to see what’s here.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fossil occurrences</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_filter<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fossil occurrences</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_filter<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
       Alligatoridae        Crocodylidae          Gavialidae NO_FAMILY_SPECIFIED 
                  24                  27                  23                  40 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern occurrences</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(modern_occ_filter<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern occurrences</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(modern_occ_filter<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Alligatoridae  Crocodylidae    Gavialidae 
@@ -927,150 +956,42 @@ Alligatoridae  Crocodylidae    Gavialidae
 </div>
 <p>We see that the same families are represented in our datasets. If you were to look at the genera, you’ll notice some differences. If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?</p>
 </section>
-<section id="temporal-bins" class="level4">
-<h4 class="anchored" data-anchor-id="temporal-bins">Temporal Bins</h4>
+<section id="b.-temporal-bins" class="level4">
+<h4 class="anchored" data-anchor-id="b.-temporal-bins">4B. Temporal Bins</h4>
 <p>Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don’t align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. Each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. How might we approach this?</p>
 <p>First, let’s take a look at the temporal distribution of our fossil occurrences.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tax_range_time</span>(<span class="at">occdf =</span> fossil_occ_filter, </span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">name =</span> <span class="st">"occurrence_no"</span>,</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">min_ma =</span> <span class="st">"min_ma"</span>, </span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">max_ma =</span> <span class="st">"max_ma"</span>, </span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="at">x =</span> <span class="fu">tax_range_time</span>(<span class="at">occdf =</span> fossil_occ_filter, </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">name =</span> <span class="st">"occurrence_no"</span>,</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">min_ma =</span> <span class="st">"min_ma"</span>, </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">max_ma =</span> <span class="st">"max_ma"</span>, </span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">plot =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      taxon taxon_id max_ma min_ma range_myr n_occ
-10   643927        1  16.90  15.98      0.92     1
-16   650903        2  16.90  15.98      0.92     1
-29   742606        3  16.90  15.98      0.92     1
-30   742607        4  16.90  15.98      0.92     1
-31   742608        5  16.90  15.98      0.92     1
-73  1193267        6  16.90  15.98      0.92     1
-84  1386573        7  17.50  15.50      2.00     1
-21   707383        8  18.50  16.30      2.20     1
-35   897780        9  18.50  16.30      2.20     1
-38  1126562       10  18.50  16.30      2.20     1
-39  1126564       11  18.50  16.30      2.20     1
-40  1126567       12  18.50  16.30      2.20     1
-41  1126569       13  18.50  16.30      2.20     1
-42  1126589       14  18.50  16.30      2.20     1
-50  1132855       15  18.50  16.30      2.20     1
-79  1317496       16  18.50  16.30      2.20     1
-80  1332026       17  18.50  16.30      2.20     1
-94  1419304       18  18.50  16.30      2.20     1
-95  1419305       19  18.50  16.30      2.20     1
-99  1492206       20  18.50  16.30      2.20     1
-100 1511338       21  18.50  16.30      2.20     1
-26   724280       22  20.00  16.90      3.10     1
-27   724301       23  20.00  16.90      3.10     1
-103 1545816       24  20.00  15.98      4.02     1
-104 1545817       25  20.00  15.98      4.02     1
-3    395640       26  20.45  15.98      4.47     1
-5    442243       27  20.45  15.98      4.47     1
-6    474026       28  20.45  15.98      4.47     1
-7    474083       29  20.45  15.98      4.47     1
-8    544677       30  20.45  15.98      4.47     1
-9    544678       31  20.45  15.98      4.47     1
-11   650525       32  20.45  15.98      4.47     1
-13   650742       33  20.45  15.98      4.47     1
-14   650847       34  20.45  15.98      4.47     1
-19   656614       35  20.45  15.98      4.47     1
-20   663790       36  20.45  15.98      4.47     1
-28   724344       37  20.45  15.98      4.47     1
-32   834084       38  20.45  15.98      4.47     1
-33   834085       39  20.45  15.98      4.47     1
-34   834086       40  20.45  15.98      4.47     1
-36   966808       41  20.45  15.98      4.47     1
-37  1118091       42  20.45  15.98      4.47     1
-43  1129951       43  20.45  15.98      4.47     1
-44  1129952       44  20.45  15.98      4.47     1
-45  1129953       45  20.45  15.98      4.47     1
-46  1129954       46  20.45  15.98      4.47     1
-48  1130242       47  20.45  15.98      4.47     1
-51  1134802       48  20.45  15.98      4.47     1
-52  1134981       49  20.45  15.98      4.47     1
-53  1134982       50  20.45  15.98      4.47     1
-54  1156718       51  20.45  15.98      4.47     1
-74  1194149       52  20.45  15.98      4.47     1
-75  1200115       53  20.45  15.98      4.47     1
-78  1317147       54  20.45  15.98      4.47     1
-83  1382273       55  20.45  15.98      4.47     1
-85  1404977       56  20.45  15.98      4.47     1
-86  1404978       57  20.45  15.98      4.47     1
-87  1404979       58  20.45  15.98      4.47     1
-88  1404981       59  20.45  15.98      4.47     1
-89  1404983       60  20.45  15.98      4.47     1
-90  1404984       61  20.45  15.98      4.47     1
-91  1404985       62  20.45  15.98      4.47     1
-92  1404986       63  20.45  15.98      4.47     1
-93  1404987       64  20.45  15.98      4.47     1
-98  1474085       65  20.45  15.98      4.47     1
-101 1526494       66  20.45  15.98      4.47     1
-102 1526495       67  20.45  15.98      4.47     1
-105 1588137       68  20.45  15.98      4.47     1
-106 1594384       69  20.45  15.98      4.47     1
-107 1594392       70  20.45  15.98      4.47     1
-108 1598548       71  20.45  15.98      4.47     1
-109 1598549       72  20.45  15.98      4.47     1
-110 1598550       73  20.45  15.98      4.47     1
-111 1598551       74  20.45  15.98      4.47     1
-76  1312413       75  21.00  17.50      3.50     1
-77  1312414       76  21.00  17.50      3.50     1
-23   724262       77  22.40  20.00      2.40     1
-24   724267       78  22.40  20.00      2.40     1
-25   724271       79  22.40  20.00      2.40     1
-1    287884       80  23.04  20.45      2.59     1
-2    287885       81  23.04  20.45      2.59     1
-4    431435       82  23.04  15.98      7.06     1
-12   650612       83  23.04  15.98      7.06     1
-15   650889       84  23.04  15.98      7.06     1
-17   655656       85  23.04  15.98      7.06     1
-18   655657       86  23.04  15.98      7.06     1
-22   711270       87  23.04  20.45      2.59     1
-47  1130065       88  23.04  20.45      2.59     1
-49  1132854       89  23.04  15.98      7.06     1
-55  1190785       90  23.04  15.98      7.06     1
-56  1190787       91  23.04  15.98      7.06     1
-57  1190788       92  23.04  15.98      7.06     1
-58  1190789       93  23.04  15.98      7.06     1
-59  1190790       94  23.04  15.98      7.06     1
-60  1190792       95  23.04  15.98      7.06     1
-61  1190793       96  23.04  15.98      7.06     1
-62  1190794       97  23.04  15.98      7.06     1
-63  1190796       98  23.04  15.98      7.06     1
-64  1190798       99  23.04  15.98      7.06     1
-65  1190799      100  23.04  15.98      7.06     1
-66  1190800      101  23.04  15.98      7.06     1
-67  1190801      102  23.04  15.98      7.06     1
-68  1190802      103  23.04  15.98      7.06     1
-69  1190804      104  23.04  15.98      7.06     1
-70  1190805      105  23.04  15.98      7.06     1
-71  1190806      106  23.04  15.98      7.06     1
-72  1190807      107  23.04  15.98      7.06     1
-81  1341472      108  23.04  15.98      7.06     1
-82  1355143      109  23.04  15.98      7.06     1
-96  1448003      110  23.04  15.98      7.06     1
-97  1455432      111  23.04  20.00      3.04     1
-112 1605551      112  23.04  15.98      7.06     1
-113 1646318      113  23.04  20.45      2.59     1
-114 1691471      114  23.04  15.98      7.06     1</code></pre>
+<pre><code>     taxon taxon_id max_ma min_ma range_myr n_occ
+10  643927        1   16.9  15.98      0.92     1
+16  650903        2   16.9  15.98      0.92     1
+29  742606        3   16.9  15.98      0.92     1
+30  742607        4   16.9  15.98      0.92     1
+31  742608        5   16.9  15.98      0.92     1
+73 1193267        6   16.9  15.98      0.92     1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">intervals =</span> <span class="st">"stages"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">intervals =</span> <span class="st">"stages"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>One option would be to bin the data by stage and use those as proxies for our 5-million-year climatic intervals. Another approach might be to make near-equal-length bins within the 25-15 Ma range, and then assign occurrences to those bins. Let’s try that here.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate time bins of ~5 million years within 25 and 15 Ma</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">time_bins</span>(<span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">25</span>), </span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">rank =</span> <span class="st">"stage"</span>,</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="dv">5</span>, <span class="co">#here's where we specify the equal-length bins to approximate the resolution of our climatic data</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">scale =</span> <span class="st">"GTS2020"</span>,</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate time bins of ~5 million years within 25 and 15 Ma</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">time_bins</span>(<span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">25</span>), </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">rank =</span> <span class="st">"stage"</span>,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="dv">5</span>, <span class="co">#here's where we specify the equal-length bins to approximate the resolution of our climatic data</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">scale =</span> <span class="st">"GTS2020"</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Target equal length time bins was set to 4.67 Myr. 
 Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2.02 Myr.</code></pre>
@@ -1078,12 +999,12 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check bins</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check bins</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  bin max_ma mid_ma min_ma duration_myr grouping_rank             intervals
 1   1  27.82 25.425  23.03         4.79         stage              Chattian
@@ -1097,30 +1018,30 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </div>
 <p>Additionally, there are a couple methods that we could use to bin the occurrences. Let’s test out two approaches here to see how they differ. Hopefully you’re starting to get a sense of how these various decisions might propagate to affect our results.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `mid` method = uses the midpoint of age range to bin the occurrence</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_mid <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> fossil_occ_filter,</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">bins =</span> bins,</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">'mid'</span>)</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co"># `majority` method = bins an occurrence into the bin which it most overlaps with</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>fossil_occ_maj <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> fossil_occ_filter,</span>
-<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">bins =</span> bins,</span>
-<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">'majority'</span>) </span>
-<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare the bin assignments</span></span>
-<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>bin_comparison <span class="ot">&lt;-</span> fossil_occ_mid[<span class="fu">c</span>(<span class="st">'occurrence_no'</span>,<span class="st">'bin_assignment'</span>,<span class="st">'n_bins'</span>)] <span class="sc">%&gt;%</span> </span>
-<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(fossil_occ_maj[<span class="fu">c</span>(<span class="st">'occurrence_no'</span>,<span class="st">'bin_assignment'</span>,<span class="st">'n_bins'</span>)],<span class="at">by=</span><span class="st">'occurrence_no'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">agreement =</span> <span class="fu">case_when</span>(</span>
-<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>    bin_assignment.x <span class="sc">==</span> bin_assignment.y <span class="sc">~</span> <span class="st">"yes"</span></span>
-<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `mid` method = uses the midpoint of age range to bin the occurrence</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_mid <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> fossil_occ_filter,</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">bins =</span> bins,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">'mid'</span>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># `majority` method = bins an occurrence into the bin which it most overlaps with</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>fossil_occ_maj <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> fossil_occ_filter,</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">bins =</span> bins,</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">'majority'</span>) </span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare the bin assignments</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>bin_comparison <span class="ot">&lt;-</span> fossil_occ_mid[<span class="fu">c</span>(<span class="st">'occurrence_no'</span>,<span class="st">'bin_assignment'</span>,<span class="st">'n_bins'</span>)] <span class="sc">%&gt;%</span> </span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(fossil_occ_maj[<span class="fu">c</span>(<span class="st">'occurrence_no'</span>,<span class="st">'bin_assignment'</span>,<span class="st">'n_bins'</span>)],<span class="at">by=</span><span class="st">'occurrence_no'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-14"><a href="#cb41-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">agreement =</span> <span class="fu">case_when</span>(</span>
+<span id="cb41-15"><a href="#cb41-15" aria-hidden="true" tabindex="-1"></a>    bin_assignment.x <span class="sc">==</span> bin_assignment.y <span class="sc">~</span> <span class="st">"yes"</span></span>
+<span id="cb41-16"><a href="#cb41-16" aria-hidden="true" tabindex="-1"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In this case, they actually match up! Since these approaches yielded the same results, we’ll use the ‘maj’ dataset moving forward.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin <span class="ot">&lt;-</span> fossil_occ_maj</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># How many occurrences per bin?</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_bin<span class="sc">$</span>bin_assignment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin <span class="ot">&lt;-</span> fossil_occ_maj</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># How many occurrences per bin?</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_bin<span class="sc">$</span>bin_assignment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   2   3 
@@ -1140,71 +1061,71 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <p>We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we’ll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. How might we deal with this?</p>
 <p>Like before, let’s take a look at the spatial distribution of our fossil occurrences.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the geographic coordinates of each locality over the world map</span></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossil_occ_bin) <span class="sc">+</span></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude (º)"</span>,</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>)<span class="sc">+</span> </span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the geographic coordinates of each locality over the world map</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossil_occ_bin) <span class="sc">+</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude (º)"</span>,</span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>)<span class="sc">+</span> </span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>But wait, remember that we need to paleorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotation</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin_rot <span class="ot">&lt;-</span> <span class="fu">palaeorotate</span>(fossil_occ_bin,</span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">lng =</span> <span class="st">"lng"</span>,</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">lat =</span> <span class="st">"lat"</span>,</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">age =</span> <span class="st">"bin_midpoint"</span>, </span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">model  =</span> <span class="st">"PALEOMAP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotation</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin_rot <span class="ot">&lt;-</span> <span class="fu">palaeorotate</span>(fossil_occ_bin,</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">lng =</span> <span class="st">"lng"</span>,</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">lat =</span> <span class="st">"lat"</span>,</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">age =</span> <span class="st">"bin_midpoint"</span>, </span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">model  =</span> <span class="st">"PALEOMAP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>PALEOMAP</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove NAs</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin_rot <span class="ot">&lt;-</span> fossil_occ_bin_rot <span class="sc">%&gt;%</span></span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(p_lng) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(p_lat))</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot palaeorotated coordinates</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossil_occ_bin_rot) <span class="sc">+</span></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_lng, <span class="at">y =</span> p_lat)) <span class="sc">+</span></span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Paleolongitude (º)"</span>,</span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Paleolatitude (º)"</span>)<span class="sc">+</span> </span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove NAs</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin_rot <span class="ot">&lt;-</span> fossil_occ_bin_rot <span class="sc">%&gt;%</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(p_lng) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(p_lat))</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot palaeorotated coordinates</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossil_occ_bin_rot) <span class="sc">+</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_lng, <span class="at">y =</span> p_lat)) <span class="sc">+</span></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Paleolongitude (º)"</span>,</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Paleolatitude (º)"</span>)<span class="sc">+</span> </span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>For comparison, let’s also plot the modern occurrences.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the geographic coordinates of each locality over the world map</span></span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(modern_occ_filter) <span class="sc">+</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> decimalLongitude, <span class="at">y =</span> decimalLatitude)) <span class="sc">+</span></span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude (º)"</span>,</span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>)<span class="sc">+</span> </span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the geographic coordinates of each locality over the world map</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(modern_occ_filter) <span class="sc">+</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> decimalLongitude, <span class="at">y =</span> decimalLatitude)) <span class="sc">+</span></span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude (º)"</span>,</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>)<span class="sc">+</span> </span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1218,94 +1139,94 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <h2 class="anchored" data-anchor-id="iv.-data-extraction-and-visualisation">IV. Data Extraction and Visualisation</h2>
 <p>We have our data binned to match the climate layers, so let’s create separate datasets for each time bin.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 25-20 Ma climate interval</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>points_20 <span class="ot">&lt;-</span> fossil_occ_bin_rot <span class="sc">%&gt;%</span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(bin_assignment <span class="sc">==</span> <span class="dv">2</span>)</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 20-15 Ma climate interval</span></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>points_15 <span class="ot">&lt;-</span> fossil_occ_bin_rot <span class="sc">%&gt;%</span></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(bin_assignment <span class="sc">==</span> <span class="dv">3</span>) </span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern interval (whole dataset)</span></span>
-<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>points_mod <span class="ot">&lt;-</span> modern_occ_filter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 25-20 Ma climate interval</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>points_20 <span class="ot">&lt;-</span> fossil_occ_bin_rot <span class="sc">%&gt;%</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(bin_assignment <span class="sc">==</span> <span class="dv">2</span>)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 20-15 Ma climate interval</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>points_15 <span class="ot">&lt;-</span> fossil_occ_bin_rot <span class="sc">%&gt;%</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(bin_assignment <span class="sc">==</span> <span class="dv">3</span>) </span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern interval (whole dataset)</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>points_mod <span class="ot">&lt;-</span> modern_occ_filter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, let’s set up our points and ensure they’re on the same coordinate system. Recall that this was one of the things we wanted to check when we outlined our workflow for the climatic data at the beginning of the session.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn points into spatial features</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>points_sf_20 <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_20, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"p_lng"</span>, <span class="st">"p_lat"</span>))</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>points_sf_15 <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_15, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"p_lng"</span>, <span class="st">"p_lat"</span>))</span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>points_sf_mod <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_mod, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"decimalLongitude"</span>, <span class="st">"decimalLatitude"</span>))</span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set coordinate system (WGS84) for occurrences</span></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_20) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_15) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_mod) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn points into spatial features</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>points_sf_20 <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_20, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"p_lng"</span>, <span class="st">"p_lat"</span>))</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>points_sf_15 <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_15, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"p_lng"</span>, <span class="st">"p_lat"</span>))</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>points_sf_mod <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_mod, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"decimalLongitude"</span>, <span class="st">"decimalLatitude"</span>))</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set coordinate system (WGS84) for occurrences</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_20) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_15) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_mod) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We’re now ready to extract the climatic data at each coordinate!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Past temperature (Scotese 2022)</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>scotese_temp_20 <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(<span class="at">x =</span> scotese.temp<span class="sc">$</span>Aquitanian, </span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y =</span> points_sf_20, </span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>scotese_temp_15 <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(<span class="at">x =</span> scotese.temp<span class="sc">$</span>Burdigalian, </span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">y =</span> points_sf_15, </span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern temperature (WorldClim)</span></span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>modern_temp <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(<span class="at">x =</span> modern.mean, </span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">y =</span> points_sf_mod, </span>
-<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Past temperature (Scotese 2022)</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>scotese_temp_20 <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(<span class="at">x =</span> scotese.temp<span class="sc">$</span>Aquitanian, </span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y =</span> points_sf_20, </span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>                           <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>scotese_temp_15 <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(<span class="at">x =</span> scotese.temp<span class="sc">$</span>Burdigalian, </span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">y =</span> points_sf_15, </span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern temperature (WorldClim)</span></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>modern_temp <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(<span class="at">x =</span> modern.mean, </span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">y =</span> points_sf_mod, </span>
+<span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s take a look. How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aquitanian range (25-20 Ma)</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aquitanian range (25-20 Ma)</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 18.43755 26.87847</code></pre>
+<pre><code>[1] 17.99979 28.13364</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 8.440919</code></pre>
+<pre><code>[1] 10.13385</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Burdigalian/Langhian range (20-15 Ma)</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Burdigalian/Langhian range (20-15 Ma)</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 14.28417 33.11024</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 18.82607</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern range</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern range</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  8.465333 30.584333</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 22.119</code></pre>
 </div>
 </div>
 <p>Finally, let’s plot the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Organise data for plotting</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>palaeo_temp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">data.frame</span>(<span class="at">Bin =</span> <span class="fu">rep</span>(<span class="st">"Burdigalian"</span>, <span class="fu">length</span>(scotese_temp_15<span class="sc">$</span>Burdigalian)), <span class="co">#</span></span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">Temperature =</span> scotese_temp_15<span class="sc">$</span>Burdigalian), </span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">data.frame</span>(<span class="at">Bin =</span> <span class="fu">rep</span>(<span class="st">"Aquitanian"</span>, <span class="fu">length</span>(scotese_temp_20<span class="sc">$</span>Aquitanian)), </span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">Temperature =</span> scotese_temp_20<span class="sc">$</span>Aquitanian),</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">data.frame</span>(<span class="at">Bin =</span> <span class="fu">rep</span>(<span class="st">"Modern"</span>, <span class="fu">length</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer)), </span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">Temperature =</span> modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer))</span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Make box plot of temperature</span></span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(palaeo_temp, <span class="fu">aes</span>(<span class="at">x =</span> Bin, <span class="at">y =</span> Temperature)) <span class="sc">+</span></span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">color=</span><span class="st">"gray80"</span>,<span class="at">size=</span><span class="dv">2</span>,<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width=</span><span class="fl">0.5</span>,<span class="at">alpha=</span><span class="fl">0.7</span>,<span class="at">outlier.shape =</span> <span class="cn">NA</span>)<span class="sc">+</span></span>
-<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Time interval"</span>, <span class="at">y=</span><span class="st">"Temperature (ºC)"</span>)<span class="sc">+</span></span>
-<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Organise data for plotting</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>palaeo_temp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">data.frame</span>(<span class="at">Bin =</span> <span class="fu">rep</span>(<span class="st">"Burdigalian"</span>, <span class="fu">length</span>(scotese_temp_15<span class="sc">$</span>Burdigalian)), <span class="co">#</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">Temperature =</span> scotese_temp_15<span class="sc">$</span>Burdigalian), </span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">data.frame</span>(<span class="at">Bin =</span> <span class="fu">rep</span>(<span class="st">"Aquitanian"</span>, <span class="fu">length</span>(scotese_temp_20<span class="sc">$</span>Aquitanian)), </span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">Temperature =</span> scotese_temp_20<span class="sc">$</span>Aquitanian),</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">data.frame</span>(<span class="at">Bin =</span> <span class="fu">rep</span>(<span class="st">"Modern"</span>, <span class="fu">length</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer)), </span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">Temperature =</span> modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer))</span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Make box plot of temperature</span></span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(palaeo_temp, <span class="fu">aes</span>(<span class="at">x =</span> Bin, <span class="at">y =</span> Temperature)) <span class="sc">+</span></span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">color=</span><span class="st">"gray80"</span>,<span class="at">size=</span><span class="dv">2</span>,<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width=</span><span class="fl">0.5</span>,<span class="at">alpha=</span><span class="fl">0.7</span>,<span class="at">outlier.shape =</span> <span class="cn">NA</span>)<span class="sc">+</span></span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Time interval"</span>, <span class="at">y=</span><span class="st">"Temperature (ºC)"</span>)<span class="sc">+</span></span>
+<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 12 rows containing non-finite outside the scale range
 (`stat_boxplot()`).</code></pre>
@@ -1317,13 +1238,13 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>When looking at the better sampled intervals in particular, we find that the mean temperature range of Crocodylia occurrences was quite similar between the Miocene and Modern. How might we interpret our results? How might this interpretation be shaped by the caveats we pointed out along the way?</p>
-<p>Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of the caveats that arise when doing so. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general—but particularly in studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting reserach questions and datasets!</p>
+<p>Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of the caveats that arise when doing so. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general—but particularly in studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting research questions and datasets!</p>
 
 
 </section>
