@@ -48,35 +48,11 @@
     ]
   },
   {
-    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#version-history-is-not-version-control",
-    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#version-history-is-not-version-control",
-    "title": "Reproducible and Collaborative Workflows",
-    "section": "Version History is NOT Version Control",
-    "text": "Version History is NOT Version Control\n\n\n\n\nVersion history is not the same as version control. Version history is a record of changes made to a file, while version control is a system that manages changes to files and allows for collaboration among multiple users. Version control systems like Git provide features such as branching, merging, and conflict resolution, which are essential for collaborative work.",
-    "crumbs": [
-      "CPEG 2025 Workshop",
-      "Setting up a reproducible workflow",
-      "Reproducible and Collaborative Workflows"
-    ]
-  },
-  {
-    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#why-we-need-version-control",
-    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#why-we-need-version-control",
-    "title": "Reproducible and Collaborative Workflows",
-    "section": "Why we need version control",
-    "text": "Why we need version control\n\nTrack changes to code and data\nEasier collaboration\nPrevents feature breakage",
-    "crumbs": [
-      "CPEG 2025 Workshop",
-      "Setting up a reproducible workflow",
-      "Reproducible and Collaborative Workflows"
-    ]
-  },
-  {
-    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#section",
-    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#section",
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#version-history-vs-version-control",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#version-history-vs-version-control",
     "title": "Reproducible and Collaborative Workflows",
     "section": "",
-    "text": "gitGraph\n    commit\n    commit id: \"Fixed Issue #42\"\n    commit\n\n\n\n\n\n\n\n\n\n\n\ngitGraph\n    commit\n    commit id: \"Fixed Issue #42\"\n    branch feature\n    commit id: \"Dark Theme\"\n    checkout main\n    commit",
+    "text": "Version history\n\n\n\n\n\ngitGraph\n    commit id: \"Initial commit\"\n    commit id: \"Add data\"\n    commit id: \"Add analysis script\"\n    commit id: \"Update analysis script\"\n\n\n\n\n\n\n\n\nTracked changes\nAllows for rollbacks\nEasy collaboration, but with potential conflicts\nSoftware determines save points\nNo experimentation\nCan lead to feature breakage\n\n\n\nvs\n\nVersion control\n\n\n\n\n\ngitGraph\n    commit id: \"Initial commit\"\n    commit id: \"Add data\"\n    commit id: \"Add analysis script\"\n    branch will\n    commit id: \"Add viz script\"\n    checkout main\n    commit id: \"Update analysis script\"\n    merge will\n    \n\n\n\n\n\n\n\n\nTracked changes\nAllows for rollbacks\nEasier collaboration without direct conflicts\nUsers determine save points\nAllows for experimentation\nPrevents feature breakage",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -84,11 +60,23 @@
     ]
   },
   {
-    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#github",
-    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#github",
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#version-control-and-collaboration",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#version-control-and-collaboration",
     "title": "Reproducible and Collaborative Workflows",
-    "section": "GitHub",
-    "text": "GitHub",
+    "section": "Version control and collaboration",
+    "text": "Version control and collaboration\n\n\nVersion history is not the same as version control. Version history is a record of changes made to a file, while version control is a system that manages changes to files and allows for collaboration among multiple users. Version control systems like Git provide features such as branching, merging, and conflict resolution, which are essential for collaborative work.",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#version-control-with-git-and-github",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#version-control-with-git-and-github",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Version control with git and GitHub",
+    "text": "Version control with git and GitHub",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -100,7 +88,7 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#repositories",
     "title": "Reproducible and Collaborative Workflows",
     "section": "Repositories",
-    "text": "Repositories\n\n https://github.com/willgearty?tab=repositories",
+    "text": "Repositories\n\n\n\n\n\n\nhttps://github.com/willgearty?tab=repositories\n\n\nRepositories, aka “repos”, represent independent file environments on GitHub.",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -112,7 +100,7 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#repositories-cont.",
     "title": "Reproducible and Collaborative Workflows",
     "section": "Repositories (cont.)",
-    "text": "Repositories (cont.)\n\n https://github.com/palaeoverse/2025-CPEG-workshop\n\n\nPoint out: - file structure: has files and folders - README: emphasize the importance of a README file for providing context and instructions for the repository - license: mention that the license file is important for specifying how others can use the code and data in the repository - contributors: can see who has contributed to the repository and their contributions",
+    "text": "Repositories (cont.)\n\n\nhttps://github.com/palaeoverse/2025-CPEG-workshop\n\n\nPoint out: - file structure: has files and folders - README: emphasize the importance of a README file for providing context and instructions for the repository - license: mention that the license file is important for specifying how others can use the code and data in the repository - contributors: can see who has contributed to the repository and their contributions",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -124,7 +112,7 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#forking-a-repository",
     "title": "Reproducible and Collaborative Workflows",
     "section": "Forking a repository",
-    "text": "Forking a repository\nYou can easily make your own copy of a repository by “forking” it\n\n\n\n\nWalk through this process with everyone. Make sure everyone has forked the repository before moving on.",
+    "text": "Forking a repository\nYou can easily make your own copy of a repository by “forking” it\n\n\nWalk through this process with everyone. Make sure everyone has forked the repository before moving on.",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -136,7 +124,7 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#cloning-your-new-repository",
     "title": "Reproducible and Collaborative Workflows",
     "section": "Cloning your new repository",
-    "text": "Cloning your new repository\nNow we’re going to “clone” this repo to our local machine using GitHub Desktop. You can also do this in RStudio, but we will use GitHub Desktop for this example.\n\n\n\n\n\n\n\n\n\n\n\nWalk through this process with everyone. You will need to select the folder where you want to clone the repository. Make sure everyone has cloned the repository before moving on.",
+    "text": "Cloning your new repository\nNow we’re going to “clone” this repo to our local machine using GitHub Desktop. You can also do this in RStudio, but we will use GitHub Desktop for this example.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWalk through this process with everyone. You will need to select the folder where you want to clone the repository. Make sure everyone has cloned the repository before moving on.",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -148,7 +136,31 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#making-a-new-r-project",
     "title": "Reproducible and Collaborative Workflows",
     "section": "Making a new R project",
-    "text": "Making a new R project",
+    "text": "Making a new R project\nNow let’s make a new R project based on this cloned repository…",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#git-in-rstudio",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#git-in-rstudio",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Git in RStudio",
+    "text": "Git in RStudio",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#making-and-committing-changes",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#making-and-committing-changes",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Making and committing changes",
+    "text": "Making and committing changes\nNow let’s make some changes to the repository:\n\nOpen the README.md file in RStudio and add some text to it. Perhaps your name or today’s date. Make sure to save the file.\nYou’ll now see that the README.md file has been modified in the Git panel in RStudio.\nClick the checkbox next to the README.md file in the Git panel to stage the changes.\nIn the “Commit message” box, write a brief description of the changes you made (e.g., “Added my name to README”).\nClick the “Commit” button to commit the changes to your local repository.\nClick the “Push” button in the Git panel to upload your changes to GitHub.",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
