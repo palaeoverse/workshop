@@ -508,8 +508,6 @@ If data are altered or filtered at any point, this can change the overall summar
 
 :::
 
-::: {.callout-tip collapse="true"}
-
 ## Practical
 
 Now it's time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.
