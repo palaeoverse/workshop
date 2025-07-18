@@ -496,14 +496,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#identify-and-handle-inconsistencies" id="toc-identify-and-handle-inconsistencies" class="nav-link" data-scroll-target="#identify-and-handle-inconsistencies">Identify and handle inconsistencies</a></li>
   <li><a href="#identify-and-handle-duplicates" id="toc-identify-and-handle-duplicates" class="nav-link" data-scroll-target="#identify-and-handle-duplicates">Identify and handle duplicates</a></li>
-  <li><a href="#practical-1" id="toc-practical-1" class="nav-link" data-scroll-target="#practical-1">Practical</a>
-  <ul class="collapse">
-  <li><a href="#can-you-find-any-additional-missing-data-what-will-you-do-with-them" id="toc-can-you-find-any-additional-missing-data-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong><em>missing data</em></strong>? What will you do with them?</a></li>
-  <li><a href="#can-you-find-any-additional-data-outliers-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-outliers-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-outliers-what-will-you-do-with-them">Can you find any additional <strong><em>data outliers</em></strong>? What will you do with them?</a></li>
-  <li><a href="#can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong><em>data inconsistencies</em></strong>? What will you do with them?</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -913,9 +906,77 @@ Answer
 <h2 class="anchored" data-anchor-id="identify-and-handle-duplicates">Identify and handle duplicates</h2>
 <p>Our next step is to remove duplicates. This is an important step for count data, as duplicated values will artificially inflate our counts. Here, the function <code>dplyr::distinct()</code> is incredibly useful, as we can provide it with the columns we want it to check, and it removes rows for which data within those columns is identical.</p>
 <p>First, we will remove <em>absolute</em> duplicates: by this, we mean occurrences within a single collection which have identical taxonomic names. This can occur when, for example, two species are named within a collection, one of which is later synonymised with the other.</p>
-</section>
-<section id="practical-1" class="level2">
-<h2 class="anchored" data-anchor-id="practical-1">Practical</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show number of rows in dataset before duplicates are removed</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove occurrences with the same collection number and `accepted_name`</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">distinct</span>(fossils, collection_no, accepted_name, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show number of rows in dataset after duplicates are removed</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The number of rows dropped, which means that some of our occurrences were absolute duplicates and have now been removed.</p>
+<p>Next, we can look at geographic duplicates. We mentioned earlier that sometimes PBDB collections are entered separately for different beds from the same locality, and this means that the number of collections can be higher than the number of geographic sampling localities. Let’s check whether this is the case in our dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicates based on geographic coordinates</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fossils_localities <span class="ot">&lt;-</span> <span class="fu">distinct</span>(fossils, lng, lat, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare length of vector of unique collection numbers with and without this</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># filter</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils_localities<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here we can see that the number collections of our original dataset dropped after we removed latitude-longitude repeats. This means that, in some cases, more than fossil sampling event have taken place at the same locality. In other words, we have more geographically distinct localities than collections in the dataset.</p>
+<p>If we are interested in taxonomic diversity, we can also look at repeated names in our dataset. For example, we might want to identify taxa which are represented multiple times in order to then return to the literature and check that they definitely represent the same taxon. We can do this by flagging species names which are represented more than once in the dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update dataset of occurrences identified to species level</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, accepted_rank <span class="sc">==</span> <span class="st">"species"</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify and flag taxonomic duplicates</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> fossils_sp <span class="sc">%&gt;%</span> </span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(accepted_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">duplicate_flag =</span> <span class="fu">n</span>() <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Show counts of flagged occurrences</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils_sp<span class="sc">$</span>duplicate_flag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Some <code>FALSE</code> values are shown, indicating that some species are represented by a single occurrence. We also have <code>TRUE</code> values, for which the species are represented two or more times. We can then filter our dataset to those flagged, and sort them by their name, enabling easier checking.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter table to flagged occurrences</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils_sp, duplicate_flag <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort table by genus name</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">arrange</span>(fossils_sp, accepted_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If data are altered or filtered at any point, this can change the overall summary statistics, and affect how we perceive the data. We recommend double-checking the data before proceeding to analytical processes relating to your research question.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Practical
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Now it’s time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.</p>
 <section id="can-you-find-any-additional-missing-data-what-will-you-do-with-them" class="level3">
 <h3 class="anchored" data-anchor-id="can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong><em>missing data</em></strong>? What will you do with them?</h3>
@@ -926,29 +987,62 @@ Answer
 <section id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" class="level3">
 <h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong><em>data inconsistencies</em></strong>? What will you do with them?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the table() function to tabulate the frequency of each interval</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>early_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the table() function to tabulate the frequency of each interval</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>early_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the ages associated with each interval? Any issues with the date </span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># formats?</span></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(early_interval) <span class="sc">%&gt;%</span> <span class="co"># Grouping by interval</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(max_ma) <span class="sc">%&gt;%</span>  <span class="co"># Pulling out the distinct values</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(early_interval) <span class="co"># Putting list in order to scan for inconsistencies</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the ages associated with each interval? Any issues with the date </span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># formats?</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(early_interval) <span class="sc">%&gt;%</span> <span class="co"># Grouping by interval</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(max_ma) <span class="sc">%&gt;%</span>  <span class="co"># Pulling out the distinct values</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(early_interval) <span class="co"># Putting list in order to scan for inconsistencies</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(late_interval) <span class="sc">%&gt;%</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(min_ma) <span class="sc">%&gt;%</span> </span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(late_interval) <span class="sc">%&gt;%</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(min_ma) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can also use the <code>CoordinateCleaner</code> package to check the coordinates.</p>
 </section>
-</section>
+<section id="how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time" class="level3">
+<h3 class="anchored" data-anchor-id="how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time">How does the latitudinal distribution of occurrences looks like over time?</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List geological stages in dataset</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>time_bins <span class="ot">&lt;-</span> <span class="fu">unique</span>(fossils<span class="sc">$</span>interval_name)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create object to hold values</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>lat_ranges <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For each stage, identify maximum and minimum latitudinal values</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(time_bins)) {</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  one_stage <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, interval_name <span class="sc">==</span> time_bins[i])</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  max <span class="ot">&lt;-</span> <span class="fu">max</span>(one_stage<span class="sc">$</span>paleolat)</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  min <span class="ot">&lt;-</span> <span class="fu">min</span>(one_stage<span class="sc">$</span>paleolat)</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  midpoint <span class="ot">&lt;-</span> one_stage<span class="sc">$</span>bin_midpoint[<span class="dv">1</span>]</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  lat_ranges <span class="ot">&lt;-</span> <span class="fu">rbind</span>(lat_ranges, <span class="fu">c</span>(time_bins[i], midpoint, min, max))</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up dataframe</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>lat_ranges <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(lat_ranges)</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(lat_ranges) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"stage"</span>, <span class="st">"midpoint"</span>, <span class="st">"min"</span>, <span class="st">"max"</span>)</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>midpoint <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>midpoint)</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>max <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>max)</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>min <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>min)</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the palaeolatitudinal range by stage</span></span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(lat_ranges, <span class="fu">aes</span>(<span class="at">x =</span> midpoint, <span class="at">ymin =</span> min, <span class="at">ymax =</span> max)) <span class="sc">+</span></span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>() <span class="sc">+</span></span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="resources" class="level1">
 <h1>Resources</h1>
@@ -963,6 +1057,11 @@ Answer
 </ol>
 
 
+</section>
+</div>
+</div>
+</div>
+</section>
 </section>
 
 </main> <!-- /main -->
