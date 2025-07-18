@@ -442,6 +442,74 @@ Our next step is to remove duplicates. This is an important step for count data,
 
 First, we will remove *absolute* duplicates: by this, we mean occurrences within a single collection which have identical taxonomic names. This can occur when, for example, two species are named within a collection, one of which is later synonymised with the other.
 
+```{r}
+# Show number of rows in dataset before duplicates are removed
+nrow(fossils)
+```
+
+```{r}
+# Remove occurrences with the same collection number and `accepted_name`
+fossils <- distinct(fossils, collection_no, accepted_name, .keep_all = TRUE)
+
+# Show number of rows in dataset after duplicates are removed
+nrow(fossils)
+```
+
+The number of rows dropped, which means that some of our occurrences were absolute duplicates and have now been removed.
+
+Next, we can look at geographic duplicates. We mentioned earlier that sometimes PBDB collections are entered separately for different beds from the same locality, and this means that the number of collections can be higher than the number of geographic sampling localities. Let’s check whether this is the case in our dataset.
+
+```{r}
+# Remove duplicates based on geographic coordinates
+fossils_localities <- distinct(fossils, lng, lat, .keep_all = TRUE)
+
+# Compare length of vector of unique collection numbers with and without this
+# filter
+length(unique(fossils$collection_no))
+```
+
+```{r}
+length(unique(fossils_localities$collection_no))
+```
+
+Here we can see that the number collections of our original dataset dropped after we removed latitude-longitude repeats. This means that, in some cases, more than fossil sampling event have taken place at the same locality. In other words, we have more geographically distinct localities than collections in the dataset.
+
+If we are interested in taxonomic diversity, we can also look at repeated names in our dataset. For example, we might want to identify taxa which are represented multiple times in order to then return to the literature and check that they definitely represent the same taxon. We can do this by flagging species names which are represented more than once in the dataset.
+
+```{r}
+# Update dataset of occurrences identified to species level
+fossils_sp <- filter(fossils, accepted_rank == "species")
+  
+# Identify and flag taxonomic duplicates
+fossils_sp <- fossils_sp %>% 
+  group_by(accepted_name) %>% 
+  mutate(duplicate_flag = n() > 1)
+
+# Show counts of flagged occurrences
+table(fossils_sp$duplicate_flag)
+```
+
+Some `FALSE` values are shown, indicating that some species are represented by a single occurrence. We also have `TRUE` values, for which the species are represented two or more times. We can then filter our dataset to those flagged, and sort them by their name, enabling easier checking.
+
+```{r}
+# Filter table to flagged occurrences
+fossils_sp <- filter(fossils_sp, duplicate_flag == TRUE)
+
+# Sort table by genus name
+fossils_sp <- arrange(fossils_sp, accepted_name)
+```
+
+
+::: {.callout-important}
+
+#### Caution
+
+If data are altered or filtered at any point, this can change the overall summary statistics, and affect how we perceive the data. We recommend double-checking the data before proceeding to analytical processes relating to your research question.
+
+:::
+
+::: {.callout-tip collapse="true"}
+
 ## Practical
 
 Now it's time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.
@@ -491,6 +559,41 @@ fossils %>%
 
 You can also use the `CoordinateCleaner` package to check the coordinates. 
 
+
+### How does the latitudinal distribution of occurrences looks like over time?
+
+```{r}
+# List geological stages in dataset
+time_bins <- unique(fossils$interval_name)
+
+# Create object to hold values
+lat_ranges <- c()
+
+# For each stage, identify maximum and minimum latitudinal values
+for (i in 1:length(time_bins)) {
+  one_stage <- filter(fossils, interval_name == time_bins[i])
+  max <- max(one_stage$paleolat)
+  min <- min(one_stage$paleolat)
+  midpoint <- one_stage$bin_midpoint[1]
+  lat_ranges <- rbind(lat_ranges, c(time_bins[i], midpoint, min, max))
+}
+
+# Clean up dataframe
+lat_ranges <- as.data.frame(lat_ranges)
+colnames(lat_ranges) <- c("stage", "midpoint", "min", "max")
+lat_ranges$midpoint <- as.numeric(lat_ranges$midpoint)
+lat_ranges$max <- as.numeric(lat_ranges$max)
+lat_ranges$min <- as.numeric(lat_ranges$min)
+
+# Plot the palaeolatitudinal range by stage
+ggplot(lat_ranges, aes(x = midpoint, ymin = min, ymax = max)) +
+  geom_ribbon() +
+  labs(x = "Age (Ma)",
+       y = "Palaeolatitude (º)") +
+  scale_x_reverse() +
+  geom_hline(yintercept = 0) +
+  coord_geo(dat = "stages", expand = TRUE)
+```
 
 # Resources
 
