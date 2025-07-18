@@ -432,35 +432,65 @@ check_taxonomy(as.data.frame(fossils), ranks = fossil_ranks)
 
 As before, no major inconsistencies or potential spelling errors were flagged.
 
+The PBDB has an integrated taxonomy system which limits the extent to which taxon name inconsistencies can arise. However, this is not the case for some other data fields. Therefore, we should certainly check for inconsistencies in other of these fields. 
+
+For now, let's proceed to the next step of the analytical pipeline, but be sure to further explore the data looking for inconsistencies during the practical (below). 
+
 ## Identify and handle duplicates
+
+Our next step is to remove duplicates. This is an important step for count data, as duplicated values will artificially inflate our counts. Here, the function `dplyr::distinct()` is incredibly useful, as we can provide it with the columns we want it to check, and it removes rows for which data within those columns is identical.
+
+First, we will remove *absolute* duplicates: by this, we mean occurrences within a single collection which have identical taxonomic names. This can occur when, for example, two species are named within a collection, one of which is later synonymised with the other.
 
 ## Practical
 
 Now it's time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.
 
-### Can you find any additional **missing data**? What will you do with them?
+### Can you find any additional ***missing data***? What will you do with them?
 
 ```{r}
 
 ```
 
-### Can you find any additional **data outliers**? What will you do with them?
+### Can you find any additional ***data outliers***? What will you do with them?
 
 ```{r}
 
 ```
 
-### Can you find any additional **data inconsistencies**? What will you do with them?
+### Can you find any additional ***data inconsistencies***? What will you do with them?
 
 ```{r}
+# We can use the table() function to tabulate the frequency of each interval
+table(fossils$early_interval)
 
 ```
 
-### Can you find any additional **data duplicates**? What will you do with them?
-
 ```{r}
+table(fossils$late_interval)
 
 ```
+
+```{r}
+# What are the ages associated with each interval? Any issues with the date 
+# formats?
+fossils %>% 
+  group_by(early_interval) %>% # Grouping by interval
+  distinct(max_ma) %>%  # Pulling out the distinct values
+  arrange(early_interval) # Putting list in order to scan for inconsistencies
+
+```
+
+```{r}
+fossils %>% 
+  group_by(late_interval) %>%
+  distinct(min_ma) %>% 
+  arrange(late_interval)
+
+```
+
+You can also use the `CoordinateCleaner` package to check the coordinates. 
+
 
 # Resources
 
