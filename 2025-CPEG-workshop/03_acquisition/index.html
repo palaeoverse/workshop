@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -72,11 +107,11 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Data acquisition – Palaeoverse Workshops">
-<meta property="og:description" content="[UNIT LONG NAME]">
+<meta property="og:description" content="Acquiring data from the Paleobiology Database">
 <meta property="og:image" content="/images/favicon.png">
 <meta property="og:site_name" content="Palaeoverse Workshops">
 <meta name="twitter:title" content="Data acquisition – Palaeoverse Workshops">
-<meta name="twitter:description" content="[UNIT LONG NAME]">
+<meta name="twitter:description" content="Acquiring data from the Paleobiology Database">
 <meta name="twitter:image" content="/images/favicon.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -439,7 +474,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#add-content" id="toc-add-content" class="nav-link active" data-scroll-target="#add-content">Add content</a></li>
+  <li><a href="#data-acquisition" id="toc-data-acquisition" class="nav-link active" data-scroll-target="#data-acquisition">Data Acquisition</a></li>
+  <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load packages</a></li>
+  <li><a href="#rule-1-choose-the-right-data-for-your-question" id="toc-rule-1-choose-the-right-data-for-your-question" class="nav-link" data-scroll-target="#rule-1-choose-the-right-data-for-your-question">Rule 1: Choose the right data for your question</a></li>
+  <li><a href="#rule-2-keep-raw-data-raw" id="toc-rule-2-keep-raw-data-raw" class="nav-link" data-scroll-target="#rule-2-keep-raw-data-raw">Rule 2: Keep raw data raw</a></li>
   </ul>
 </nav>
     </div>
@@ -449,7 +487,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../2025-CPEG-workshop/index.html">CPEG 2025 Workshop</a></li><li class="breadcrumb-item"><a href="../../2025-CPEG-workshop/03_acquisition/index.html">Data acquisition</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Data acquisition</h1>
-<p class="subtitle lead">[UNIT LONG NAME]</p>
+<p class="subtitle lead">Acquiring data from the Paleobiology Database</p>
 </div>
 
 
@@ -466,8 +504,185 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="add-content" class="level1">
-<h1>Add content</h1>
+<section id="data-acquisition" class="level2">
+<h2 class="anchored" data-anchor-id="data-acquisition">Data Acquisition</h2>
+<p>Note: you will need internet access to run this script, as we will pull data directly from the Paleobiology Database API.</p>
+</section>
+<section id="load-packages" class="level2">
+<h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
+<p>Before starting, we will load the R package we need, dplyr.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("dplyr")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("readr")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="rule-1-choose-the-right-data-for-your-question" class="level2">
+<h2 class="anchored" data-anchor-id="rule-1-choose-the-right-data-for-your-question">Rule 1: Choose the right data for your question</h2>
+<p>In this example, we are interested in the fossil record of crocodiles. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates, so their fossil record is commonly used as an indicator of palaeoclimate. Here we will investigate the palaeodiversity of crocodiles, with the specific goal of reconstructing their latitudinal range throughout the Paleogene.</p>
+<p>To meet this goal, we need to acquire occurrence data for fossil crocodiles during the Paleogene. Initially we have decided not to place further taxonomic constraints on our search, so we will include all occurrences belonging to the order ‘Crocodylia’. We are interested in the clade’s biogeography, so we will need all occurrences globally, and we need to ensure that we have geographic coordinates associated with our occurrences.</p>
+<p>We will turn to one of the largest sources of fossil occurrence data, the <a href="https://paleobiodb.org">Paleobiology Database</a>. To access our fossil data, we are going to take advantage of the Paleobiology Database’s “API” (short for Application Programming Interface), which lets us “download” data directly into R. For our dataset, we will pull all occurrences associated with the taxon name ‘Crocodylia’, dated to the ‘Cenozoic’.</p>
+<p>We can begin by setting up some variables:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Taxa <span class="ot">&lt;-</span> <span class="st">"Crocodylia"</span> <span class="co"># Set "Taxa" as the taxonomic group of interest</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Interval <span class="ot">&lt;-</span> <span class="st">"Cenozoic"</span> <span class="co"># Set interval for sampling window</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In case you want to alter these for your own purposes, you should also run the following lines which will ensure things get formatted properly for use with the API:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Taxa <span class="ot">&lt;-</span> <span class="fu">paste</span>(Taxa, <span class="at">collapse =</span> <span class="st">","</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Interval <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">"%20"</span>, Interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We are now ready to use the API, but to do that we have to produce a formatted URL (Uniform Resource Locator; i.e., a web address). These will always begin with: “https://paleobiodb.org/data1.2”</p>
+<p>This is simply the top-level of the database, with ‘data1.2’ indicating that we are using version 1.2 (the latest version) of the API.</p>
+<p>Next we want the type of query, here we want some fossil occurrences (which is what most queries are going to be). Here we are going to ask for them as a CSV (comma-separated values): “https://paleobiodb.org/data1.2/occs/list.csv”</p>
+<p>It is important to note that this means R will assume any comma it finds in the output represents a division between columns of data. If any of the data fields we want to output contain a comma, things are going to break, and hence why other formats (e.g., JSON) are also available. Here we should be fine though.</p>
+<p>Next we need to tell the database what taxon we actually want data for, so we can use our Taxa variable from above with:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"https://paleobiodb.org/data1.2/occs/list.csv?base_name="</span>, Taxa)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "https://paleobiodb.org/data1.2/occs/list.csv?base_name=Crocodylia"</code></pre>
+</div>
+</div>
+<p>The next thing to do is add any additional options we want to add to our query. The obvious one here is the sampling window. We can do this with the interval= option and as this is an addition to the query we proceed it with an ampersand (&amp;):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"https://paleobiodb.org/data1.2/occs/list.csv?base_name="</span>, Taxa, <span class="st">"&amp;interval="</span>, Interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "https://paleobiodb.org/data1.2/occs/list.csv?base_name=Crocodylia&amp;interval=Cenozoic"</code></pre>
+</div>
+</div>
+<p>We can now determine what we want the output to include with show=. We will indicate that we want to include all of the default outputs, using “show=full”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"https://paleobiodb.org/data1.2/occs/list.csv?base_name="</span>, Taxa, <span class="st">"&amp;interval="</span>, Interval, <span class="st">"&amp;show=full"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "https://paleobiodb.org/data1.2/occs/list.csv?base_name=Crocodylia&amp;interval=Cenozoic&amp;show=full"</code></pre>
+</div>
+</div>
+<p>We also want to request that the metadata is retained, as a header at the top of the dataset, using “datainfo&amp;rowcount”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>(<span class="st">"https://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowcount&amp;base_name="</span>, Taxa, <span class="st">"&amp;interval="</span>, Interval, <span class="st">"&amp;show=full"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "https://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowcount&amp;base_name=Crocodylia&amp;interval=Cenozoic&amp;show=full"</code></pre>
+</div>
+</div>
+<p>For a full list of all the options you should consult the API documentation at https://paleobiodb.org/data1.2/.</p>
+<p>Now we have a complete URL we can store it in a variable…:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>URL <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"https://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowcount&amp;base_name="</span>, Taxa, <span class="st">"&amp;interval="</span>, Interval, <span class="st">"&amp;show=full"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>…and then use the download.file function to download and save the file:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(URL, <span class="at">destfile =</span> <span class="st">"../03_acquisition/Cenozoic_crocs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And now we have obtained our dataset.</p>
+</section>
+<section id="rule-2-keep-raw-data-raw" class="level2">
+<h2 class="anchored" data-anchor-id="rule-2-keep-raw-data-raw">Rule 2: Keep raw data raw</h2>
+<p>For reproducibility, we want to make sure that we have a copy of the full dataset as initially downloaded - this is the “raw” data.</p>
+<p>We can load and view this file to take a look at it.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data file</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../03_acquisition/Cenozoic_crocs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 2260 Columns: 2
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): Data Provider, The Paleobiology Database
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>When we use <code>read_csv()</code>, we get a message explaining how the data have been parsed into R. It’s worth checking this for anything unusual, because if parsing has not occurred how we expected, it could lead to errors in the data. We can see that this time, there have been parsing issues. This is because the file contains the metadata header, which has a different format to the data table. Let’s take a look at the metadata to see what it includes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trim to metadata</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>metadata <span class="ot">&lt;-</span> fossils[<span class="dv">1</span><span class="sc">:</span><span class="dv">23</span>, ]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>metadata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 23 × 2
+   `Data Provider`   `The Paleobiology Database`                                
+   &lt;chr&gt;             &lt;chr&gt;                                                      
+ 1 Data Source       The Paleobiology Database                                  
+ 2 Data License      Creative Commons CC0                                       
+ 3 License URL       https://creativecommons.org/publicdomain/zero/1.0/         
+ 4 Documentation URL http://paleobiodb.org/data1.2/occs/list_doc.html           
+ 5 Data URL          http://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowco…
+ 6 Access Time       Fri 2025-07-18 13:14:40 GMT                                
+ 7 Title             PBDB Data Service                                          
+ 8 Parameters:       &lt;NA&gt;                                                       
+ 9 &lt;NA&gt;              base_name,Crocodylia                                       
+10 &lt;NA&gt;              interval,Cenozoic                                          
+# ℹ 13 more rows</code></pre>
+</div>
+</div>
+<p>The metadata are strangely formatted here, but we can see that they include information about the data license (CC0), the API call used (under the label ‘Data URL’), the date and time at which the data were accessed, and the total number of records contained within the dataset (here, 886 fossil occurrences).</p>
+<p>These metadata elements are all important information to retain alongside our data, allowing others to better understand what the dataset contains, and when and how it was downloaded. The Paleobiology Database is fully dynamic, not only in that new data is continually being added, but also in that any record can be changed retrospectively by an Editor. It cannot be assumed that the ‘present’ state of any data record was the same in the (historical) past. So, for example, if someone wanted to see how the data associated with this API call had changed in the time elapsed since our download, they could do this, and directly in R if desired:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View API URL</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">5</span>, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  `The Paleobiology Database`                                                   
+  &lt;chr&gt;                                                                         
+1 http://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowcount&amp;base_name=Croco…</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use API call (this is not enacted here)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(metadata[<span class="dv">5</span>, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>While the metadata is important to keep in the raw file, for the purposes of analysis, we want to be able to just read in the data beneath it. We can do this using the <code>skip</code> parameter in <code>read_csv</code>, which tells R to ignore a given number of rows at the top of the file.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data file, skipping metadata</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../03_acquisition/Cenozoic_crocs.csv"</span>, <span class="at">skip =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `cc` -&gt; `cc...35`
+• `cc` -&gt; `cc...49`</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
+e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 2242 Columns: 136
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (102): record_type, identified_name, identified_rank, difference, accept...
+dbl  (22): occurrence_no, reid_no, collection_no, identified_no, accepted_no...
+lgl  (12): flags, accepted_attr, plant_organ, regionalbedunit, environment_b...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+<p>Here, we can see that we still have parsing issues, specifically that there were two columns in the <code>csv</code> file named “cc”, for “country code”. Their column number has been appended to their column name, in order to keep these distinct. Is this column simply duplicated? We can check this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Are the two `cc` columns identical?</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">identical</span>(fossils<span class="sc">$</span>cc...<span class="dv">35</span>, fossils<span class="sc">$</span>cc...<span class="dv">49</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>This is true, so to keep our dataframe tidy, we will remove one of these columns and rename the other.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove one `cc` column</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>fossils<span class="sc">$</span>cc...<span class="dv">49</span> <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename other column</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(fossils)[<span class="fu">colnames</span>(fossils) <span class="sc">==</span> <span class="st">'cc...35'</span>] <span class="ot">&lt;-</span> <span class="st">'cc'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And now we are ready to commence our data exploration and cleaning.</p>
 
 
 </section>
