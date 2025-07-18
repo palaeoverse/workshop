@@ -46,65 +46,99 @@ format:
 ::: notes
 :::
 
-## Version History is NOT Version Control
+## {.smaller #version-history-vs-version-control data-menu-title="Version history vs version control"}
 
-<center>
+:::: {.columns}
+
+::: {.column width="45%"}
+### Version history
+
+```{mermaid}
+%%| echo: false
+gitGraph
+    commit id: "Initial commit"
+    commit id: "Add data"
+    commit id: "Add analysis script"
+    commit id: "Update analysis script"
+```
+
+:::: {.absolute top=300 width="45%"}
+- Tracked changes
+- Allows for rollbacks
+- Easy collaboration, but with potential conflicts
+- Software determines save points
+- No experimentation
+- Can lead to feature breakage
+::::
+
+:::
+
+::: {.column width="10%" .fragment fragment-index=1}
+### vs
+:::
+
+::: {.column width="45%" .fragment fragment-index=1}
+### Version control
+
+```{mermaid}
+%%| echo: false
+gitGraph
+    commit id: "Initial commit"
+    commit id: "Add data"
+    commit id: "Add analysis script"
+    branch will
+    commit id: "Add viz script"
+    checkout main
+    commit id: "Update analysis script"
+    merge will
+    
+```
+
+::::{.absolute top=300}
+- Tracked changes
+- Allows for rollbacks
+- Easier collaboration without direct conflicts
+- Users determine save points
+- Allows for experimentation
+- Prevents feature breakage
+::::
+
+:::
+
+::::
+
+::: notes
+:::
+
+## Version control and collaboration
+
 ![](images/version_history_and_control.jpeg){fig-align="center" width="60%"}
-</center>
 
 ::: notes
 Version history is not the same as version control. Version history is a record of changes made to a file, while version control is a system that manages changes to files and allows for collaboration among multiple users. Version control systems like Git provide features such as branching, merging, and conflict resolution, which are essential for collaborative work.
 :::
 
-## Why we need version control
+## Version control with git and GitHub
 
-- Track changes to code and data
-- Easier collaboration
-- Prevents feature breakage
-
-::: notes
-:::
-
-##
-
-```{mermaid}
-%%| echo: false
-
-gitGraph
-    commit
-    commit id: "Fixed Issue #42"
-    commit
-```
-
-```{mermaid}
-%%| echo: false
-
-gitGraph
-    commit
-    commit id: "Fixed Issue #42"
-    branch feature
-    commit id: "Dark Theme"
-    checkout main
-    commit
-```
-
-## GitHub
-
-<center>
 ![](images/github.png){fig-align="center" width="100%"}
-</center>
 
 ## Repositories
 
-<center>
 [![](images/repos.png){fig-align="center" width="60%"}](https://github.com/willgearty?tab=repositories)
+
+<center>
 [https://github.com/willgearty?tab=repositories](https://github.com/willgearty?tab=repositories)
 </center>
 
+::: notes
+Repositories, aka "repos", represent independent file environments on GitHub.
+:::
+
 ## Repositories (cont.)
 
+![](images/cpeg_repo.png){fig-align="center" width="60%"}
+
 <center>
-[![](images/cpeg_repo.png){fig-align="center" width="60%"}](https://github.com/palaeoverse/2025-CPEG-workshop)
 [https://github.com/palaeoverse/2025-CPEG-workshop](https://github.com/palaeoverse/2025-CPEG-workshop)
 </center>
 
@@ -120,9 +154,7 @@ Point out:
 
 You can easily make your own copy of a repository by "forking" it
 
-<center>
 ![](images/cpeg_repo_fork.png){fig-align="center" width="80%"}
-</center>
 
 ::: notes
 Walk through this process with everyone. Make sure everyone has forked the repository before moving on.
@@ -135,15 +167,11 @@ Now we're going to "clone" this repo to our local machine using GitHub Desktop. 
 :::: {.columns}
 
 ::: {.column width="50%"}
-<center>
-![](images/github_clone.png)
-</center>
+![](images/github_clone.png){fig-align="center"}
 :::
 
 ::: {.column width="50%"}
-<center>
-![](images/github_desktop_clone.png)
-</center>
+![](images/github_desktop_clone.png){fig-align="center"}
 :::
 
 ::::
@@ -154,10 +182,46 @@ Walk through this process with everyone. You will need to select the folder wher
 
 ## Making a new R project
 
+Now let's make a new R project based on this cloned repository...
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![](images/new_project_menu.png){fig-align="center"}
+:::
+
+::: {.column width="35%"}
+![](images/existing_directory.png){fig-align="center"}
+:::
+
+::: {.column width="35%"}
+![](images/create_project.png){fig-align="center"}
+:::
+
+::::
+
 ::: notes
 
 :::
 
+## Git in RStudio
+
+![](images/git_panel.png){fig-align="center"}
+
+## Making and committing changes {.smaller}
+
+Now let's make some changes to the repository:
+
+1. Open the `README.md` file in RStudio and add some text to it. Perhaps your name or today's date. Make sure to save the file.
+2. You'll now see that the `README.md` file has been modified in the Git panel in RStudio.
+3. Click the checkbox next to the `README.md` file in the Git panel to stage the changes.
+4. In the "Commit message" box, write a brief description of the changes you made (e.g., "Added my name to README").
+5. Click the "Commit" button to commit the changes to your local repository.
+6. Click the "Push" button in the Git panel to upload your changes to GitHub.
+
+::: notes
+
+:::
 
 ## Advanced GitHub {.smaller}
 
