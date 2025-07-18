@@ -498,10 +498,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#identify-and-handle-duplicates" id="toc-identify-and-handle-duplicates" class="nav-link" data-scroll-target="#identify-and-handle-duplicates">Identify and handle duplicates</a></li>
   <li><a href="#practical-1" id="toc-practical-1" class="nav-link" data-scroll-target="#practical-1">Practical</a>
   <ul class="collapse">
-  <li><a href="#can-you-find-any-additional-missing-data-what-will-you-do-with-them" id="toc-can-you-find-any-additional-missing-data-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong>missing data</strong>? What will you do with them?</a></li>
-  <li><a href="#can-you-find-any-additional-data-outliers-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-outliers-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-outliers-what-will-you-do-with-them">Can you find any additional <strong>data outliers</strong>? What will you do with them?</a></li>
-  <li><a href="#can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong>data inconsistencies</strong>? What will you do with them?</a></li>
-  <li><a href="#can-you-find-any-additional-data-duplicates-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-duplicates-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-duplicates-what-will-you-do-with-them">Can you find any additional <strong>data duplicates</strong>? What will you do with them?</a></li>
+  <li><a href="#can-you-find-any-additional-missing-data-what-will-you-do-with-them" id="toc-can-you-find-any-additional-missing-data-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong><em>missing data</em></strong>? What will you do with them?</a></li>
+  <li><a href="#can-you-find-any-additional-data-outliers-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-outliers-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-outliers-what-will-you-do-with-them">Can you find any additional <strong><em>data outliers</em></strong>? What will you do with them?</a></li>
+  <li><a href="#can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong><em>data inconsistencies</em></strong>? What will you do with them?</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
@@ -907,24 +906,47 @@ Answer
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">check_taxonomy</span>(<span class="fu">as.data.frame</span>(fossils), <span class="at">ranks =</span> fossil_ranks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>As before, no major inconsistencies or potential spelling errors were flagged.</p>
+<p>The PBDB has an integrated taxonomy system which limits the extent to which taxon name inconsistencies can arise. However, this is not the case for some other data fields. Therefore, we should certainly check for inconsistencies in other of these fields.</p>
+<p>For now, let’s proceed to the next step of the analytical pipeline, but be sure to further explore the data looking for inconsistencies during the practical (below).</p>
 </section>
 <section id="identify-and-handle-duplicates" class="level2">
 <h2 class="anchored" data-anchor-id="identify-and-handle-duplicates">Identify and handle duplicates</h2>
+<p>Our next step is to remove duplicates. This is an important step for count data, as duplicated values will artificially inflate our counts. Here, the function <code>dplyr::distinct()</code> is incredibly useful, as we can provide it with the columns we want it to check, and it removes rows for which data within those columns is identical.</p>
+<p>First, we will remove <em>absolute</em> duplicates: by this, we mean occurrences within a single collection which have identical taxonomic names. This can occur when, for example, two species are named within a collection, one of which is later synonymised with the other.</p>
 </section>
 <section id="practical-1" class="level2">
 <h2 class="anchored" data-anchor-id="practical-1">Practical</h2>
 <p>Now it’s time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.</p>
 <section id="can-you-find-any-additional-missing-data-what-will-you-do-with-them" class="level3">
-<h3 class="anchored" data-anchor-id="can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong>missing data</strong>? What will you do with them?</h3>
+<h3 class="anchored" data-anchor-id="can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong><em>missing data</em></strong>? What will you do with them?</h3>
 </section>
 <section id="can-you-find-any-additional-data-outliers-what-will-you-do-with-them" class="level3">
-<h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-outliers-what-will-you-do-with-them">Can you find any additional <strong>data outliers</strong>? What will you do with them?</h3>
+<h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-outliers-what-will-you-do-with-them">Can you find any additional <strong><em>data outliers</em></strong>? What will you do with them?</h3>
 </section>
 <section id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" class="level3">
-<h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong>data inconsistencies</strong>? What will you do with them?</h3>
-</section>
-<section id="can-you-find-any-additional-data-duplicates-what-will-you-do-with-them" class="level3">
-<h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-duplicates-what-will-you-do-with-them">Can you find any additional <strong>data duplicates</strong>? What will you do with them?</h3>
+<h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong><em>data inconsistencies</em></strong>? What will you do with them?</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the table() function to tabulate the frequency of each interval</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>early_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the ages associated with each interval? Any issues with the date </span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># formats?</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(early_interval) <span class="sc">%&gt;%</span> <span class="co"># Grouping by interval</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(max_ma) <span class="sc">%&gt;%</span>  <span class="co"># Pulling out the distinct values</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(early_interval) <span class="co"># Putting list in order to scan for inconsistencies</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(late_interval) <span class="sc">%&gt;%</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(min_ma) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can also use the <code>CoordinateCleaner</code> package to check the coordinates.</p>
 </section>
 </section>
 </section>
