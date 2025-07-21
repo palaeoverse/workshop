@@ -5,6 +5,7 @@ toc: true
 order: 5
 ---
 
+
 ## Learning Objectives
 
 In this session, we'll walk through how to combine and use different deep-time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
@@ -126,6 +127,7 @@ Now that we have a basic plan, we can start to put it into action. Let's write s
 
 First, we'll need to install and load some packages that will allow us to work with our data:
 
+
 ```{r}
 # Install necessary packages
 #install.packages("rgbif")
@@ -154,7 +156,9 @@ library(ncdf4)
 library(rgplates)
 ```
 
+
 We'll also set some default values to ensure that our spatial datasets conform with one another. 
+
 
 ```{r}
 # Set spatial resolution
@@ -166,6 +170,7 @@ e <- extent(-180, 180, -90, 90)
 # Make generic raster using these values
 ref.raster <- raster(res = res, ext = e)
 ```
+
 
 Now lets find some climate data!
 
@@ -183,6 +188,7 @@ For our study, we'll work with two files from this dataset: one covering 25-20 M
 
 First, we need to load in our data, which is currently stored as a .nc file, and have a look at it. This can be read into R as a raster using the 'raster' package:
 
+
 ```{r}
 
 # Load in rasters of palaeoclimate for each time interval
@@ -193,7 +199,9 @@ raster2prep.15
 raster2prep.20
 
 ```
+
 As you can see, the resolution and extent of these rasters doesn't quite match our reference one that we made above. We'll have to resample our data to match our reference raster:
+
 
 ```{r}
 
@@ -203,7 +211,9 @@ raster.resampled.20 <- resample(x = raster2prep.20, y = ref.raster)
 
 ```
 
+
 Finally, we can stack these rasters into one file, name them, and see what they look like:
+
 
 ```{r}
 # Stack rasters
@@ -213,6 +223,7 @@ scotese.temp <- stack(raster.resampled.15, raster.resampled.20)
 names(scotese.temp) <- c("Burdigalian","Aquitanian")
 plot(scotese.temp)
 ```
+
 
 Now we'll move on to our modern data!
 
@@ -226,13 +237,16 @@ To keep our climatic variables consistent, we'll also work with the mean annual 
 
 Whilst below we show you code to access this data directly within R, it can take a while to download. We've therefore also included it alongside the other materials for the workshop, which can be accessed HERE.
 
+
 ```{r}
 # Load data from WorldClim and make into raster
 modern <- worldclim_global(var = "tavg", res = 10, path = tempdir())
 modern <- as(modern, "Raster")
 modern
 ```
+
 As you can see, whilst the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep-time data. They're also provided on a monthly basis, so we'll have to calculate the mean temperature before we can use this for comparison:
+
 
 ```{r}
 # Calculate mean annual temperature
@@ -241,6 +255,7 @@ modern.mean <- calc(x = modern, fun = mean)
 # Plot raster
 plot(modern.mean)
 ```
+
 
 What issues might this higher resolution cause? What actions could we take to resolve this? What could we test?
 
@@ -279,10 +294,12 @@ Let's begin!
 #### 1A. Organise fossil occurrence data
 
 First, we'll load in our palaeontological data. Luckily for us, we've already been working with a Crocodylia fossil occurrence dataset. We'll use these data in our analysis. If needed, you can read in the cleaned dataset below.
+
 ```{r}
 # Load cleaned fossil data for order Crocodylia
 fossil_occ <- read.csv("crocs_fossil_test.csv")
 ```
+
 
 #### 1B. Organise modern occurrence data
 
@@ -291,6 +308,7 @@ After looking at the number and coverage of available records, we've decided to 
 We'll start by doing a quick data download using the `rgbif` package for the purposes of this exploratory exercise. Note that this method for retrieving occurrences has some limitations, and we'd want to do a formal download query before running our full analysis for publication. For that, you'd need to make a GBIF account.
 
 Here's how we can do this. Scroll down to load the dataset we've previously downloaded.
+
 ```{r}
 # Set taxa key to order Crocodylia
 #crocodile_key <- name_backbone(name = "Crocodylia")$usageKey
@@ -309,11 +327,14 @@ Here's how we can do this. Scroll down to load the dataset we've previously down
 #modern_meta <- modern_download$meta
 ```
 
+
 For ease, here's a csv of the raw data:
+
 ```{r warning=F}
 # Load modern data
 modern_occ <- read.csv("crocs_modern.csv") 
 ```
+
 
 ::: {.callout-important}
 
@@ -335,6 +356,7 @@ These datasets contain occurrences that are relevant to our research question, b
 **-Temporal:** We'll constrain our palaeontological dataset to the same time intervals as our climatic dataset (25-15 Ma). Earlier, we downloaded Crocodylia occurrences for the whole of the Cenozoic, so we'll need to do some filtering. Our modern dataset includes occurrences from the 1800s to today, whereas the WorldClim dataset starts at 1970, so we can also filter the occurrence dataset to that time range for consistency.
 
 
+
 ```{r}
 ## PBDB filtering
 fossil_occ_filter <- fossil_occ %>%
@@ -348,11 +370,14 @@ modern_occ_filter <- modern_occ %>%
   filter(coordinateUncertaintyInMeters < 10000 | is.na(coordinateUncertaintyInMeters)) #we could also remove data with uncertain geographic coordinates
 ```
 
+
 This filtering step could have removed a fair amount of data. How many occurrences remain in each filtered dataset?
+
 ```{r}
 nrow(fossil_occ_filter)
 nrow(modern_occ_filter)
 ```
+
 
 After filtering, we have 114 fossil occurrences and 2504 modern occurrences to potentially work with. How might we deal with this unequal sampling?
 
@@ -391,6 +416,7 @@ Here, we'll touch on several key taxonomic, temporal, and spatial considerations
 #### 4A. Taxonomy
 
 We'll be using higher-level taxonomic groups for our analysis. Let's take a look to see what's here.
+
 ```{r}
 # Fossil occurrences
 table(fossil_occ_filter$family)
@@ -399,6 +425,7 @@ table(fossil_occ_filter$family)
 table(modern_occ_filter$family)
 ```
 
+
 We see that the same families are represented in our datasets. If you were to look at the genera, you'll notice some differences. If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?
 
 #### 4B. Temporal Bins
@@ -406,6 +433,7 @@ We see that the same families are represented in our datasets. If you were to lo
 Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don't align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. Each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. How might we approach this?
 
 First, let's take a look at the temporal distribution of our fossil occurrences.
+
 ```{r}
 head(x = tax_range_time(occdf = fossil_occ_filter, 
                name = "occurrence_no",
@@ -415,8 +443,10 @@ head(x = tax_range_time(occdf = fossil_occ_filter,
 axis_geo(intervals = "stages")
 ```
 
+
 One option would be to bin the data by stage and use those as proxies for our 5-million-year climatic intervals.
 Another approach might be to make near-equal-length bins within the 25-15 Ma range, and then assign occurrences to those bins. Let's try that here. 
+
 
 ```{r}
 # Generate time bins of ~5 million years within 25 and 15 Ma
@@ -429,7 +459,9 @@ bins <- time_bins(interval = c(15,25),
 head(bins)
 ```
 
+
 Additionally, there are a couple methods that we could use to bin the occurrences. Let's test out two approaches here to see how they differ. Hopefully you're starting to get a sense of how these various decisions might propagate to affect our results.
+
 ```{r}
 # `mid` method = uses the midpoint of age range to bin the occurrence
 fossil_occ_mid <- bin_time(occdf = fossil_occ_filter,
@@ -450,7 +482,9 @@ bin_comparison <- fossil_occ_mid[c('occurrence_no','bin_assignment','n_bins')] %
 
 ```
 
+
 In this case, they actually match up! Since these approaches yielded the same results, we'll use the 'maj' dataset moving forward.
+
 ```{r}
 # Renaming
 fossil_occ_bin <- fossil_occ_maj
@@ -458,6 +492,7 @@ fossil_occ_bin <- fossil_occ_maj
 # How many occurrences per bin?
 table(fossil_occ_bin$bin_assignment)
 ```
+
 
 We see that most of the data falls into bin 3 (20.44-13.82 Ma, midpoint=17.130 Ma), with some occurrences in bin 2 (23.03-20.44 Ma, midpoint=21.735 Ma).
 
@@ -473,6 +508,7 @@ OK, so now we have some temporal bins to facilitate our comparisons with the cli
 We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we'll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. How might we deal with this?
 
 Like before, let's take a look at the spatial distribution of our fossil occurrences.
+
 ```{r}
 # Load in a world map
 world <- ne_countries(scale = "small", returnclass = "sf")
@@ -486,7 +522,9 @@ ggplot(fossil_occ_bin) +
   theme_void()
 ```
 
+
 But wait, remember that we need to paleorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we'll just use the PALEOMAP rotation, which will also match up to our paleoclimatic data. 
+
 ```{r}
 # Palaeorotation
 fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
@@ -496,7 +534,9 @@ fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
                                    model  = "PALEOMAP")
 ```
 
+
 After some cleaning, we can then plot our rotated occurrences on a palaeogeographic map (here we're going to use our bin 3):
+
 
 ```{r}
 # Remove NAs
@@ -517,7 +557,9 @@ fossil_occ_bin_rot %>%
   theme_void()
 ```
 
+
 For comparison, let's also plot the modern occurrences.
+
 ```{r}
 # Load in a world map
 world <- ne_countries(scale = "small", returnclass = "sf")
@@ -531,6 +573,7 @@ ggplot(modern_occ_filter) +
   theme_void()
 ```
 
+
 Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. How might we account for the spatial structure of the data in our analysis?
 
 Another challenge stems from aligning these occurrences with the spatial explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We'll keep things simple and show the first approach here.
@@ -542,6 +585,7 @@ Now it's onto the final section: using the combination of these datasets to carr
 We're nearly there folks. It's time to put all these data sources together to answer our research question! 
 
 We have our data binned to match the climate layers, so let's create separate datasets for each time bin. 
+
 ```{r}
 # 25-20 Ma climate interval
 points_20 <- fossil_occ_bin_rot %>%
@@ -555,7 +599,9 @@ points_15 <- fossil_occ_bin_rot %>%
 points_mod <- modern_occ_filter
 ```
 
+
 Next, let's set up our points and ensure they're on the same coordinate system. Recall that this was one of the things we wanted to check when we outlined our workflow for the climatic data at the beginning of the session.
+
 ```{r}
 # Turn points into spatial features
 points_sf_20 <- st_as_sf(x = points_20, coords = c("p_lng", "p_lat"))
@@ -568,7 +614,9 @@ st_crs(points_sf_15) <- st_crs(4326)
 st_crs(points_sf_mod) <- st_crs(4326)
 ```
 
+
 We're now ready to extract the climatic data at each coordinate!
+
 ```{r}
 # Past temperature (Scotese 2022)
 scotese_temp_20 <- raster::extract(x = scotese.temp$Aquitanian, 
@@ -588,7 +636,9 @@ modern_temp <- raster::extract(x = modern.mean,
                                      cellnumbers = TRUE)
 ```
 
+
 Let's take a look. How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?
+
 ```{r}
 # Aquitanian range (25-20 Ma)
 range(scotese_temp_20$Aquitanian, na.rm=T)
@@ -603,7 +653,9 @@ range(modern_temp@data$layer, na.rm=T)
 diff(range(modern_temp@data$layer, na.rm=T))
 ```
 
+
 Finally, let's plot the data.
+
 ```{r}
 # Organise data for plotting
 palaeo_temp <- rbind(data.frame(Bin = rep("Burdigalian", length(scotese_temp_15$Burdigalian)), #
@@ -620,6 +672,7 @@ ggplot(palaeo_temp, aes(x = Bin, y = Temperature)) +
   labs(x="Time interval", y="Temperature (ºC)")+
   theme_bw()
 ```
+
 
 When looking at the better sampled intervals in particular, we find that the mean temperature range of Crocodylia occurrences was quite similar between the Miocene and Modern.
 How might we interpret our results? How might this interpretation be shaped by the caveats we pointed out along the way?
