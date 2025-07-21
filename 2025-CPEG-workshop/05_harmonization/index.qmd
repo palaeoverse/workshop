@@ -1,6 +1,6 @@
 ---
-title: "Data processing II"
-subtitle: "Data processing II: Data harmonization and synthesis"
+title: "Data Processing II"
+subtitle: "Data Processing II: Data Harmonization and Synthesis"
 toc: true
 order: 5
 ---
@@ -27,7 +27,29 @@ IV.  Data visualisation and synthesis
 
 ## I. Introduction to Harmonization and Synthesis
 
-Presentation goes here??
+So far today, we've used R to carry out a variety of operations for preparing research projects, as well as for acquiring and preparing palaeontological data. However, we can also use R to carry out various analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.
+
+It will be of no surprise to anyone in this room that we are in the midst of a biodiversity crisis. Understanding and anticipating the changes that will occur to organisms, their communities, and the environments that they inhabit as a result of climate change and other anthropogenic processes has emerged as a primary goal of our disciplines. Traditionally, modern ecologists have focused on studying current or recent historical processes to address question related to biodiversity loss and the impacts of climate change, while paleoecologists have studied long-term processes in the fossil record (Nieto-Lugilde et al. 2021). However, it is becoming increasingly clear that the answers to some of the most important questions relate to the fuzzy area between our modern and palaeo records:
+
+- Can past ecosystems be used as analogues for ones in the present day? Can we understand future changes to biodiversity by examining past losses?
+- What are the main drivers and impacts of collapse within communities and ecosystems?
+- When examining modern ecosystems, have crucial elements been lost? How can we ensure we are using accurate baselines for conservation efforts?
+
+To answer these questions, we have to turn to data. As you've seen earlier, there are a wealth of available datasets that contain information about organisms and climate in both the modern and past, be that across shallow or deep time. Individually these datasets show the outcome of various processes that operate on a range of different spatial and temporal scales. For instance, the below figure from Darroch et al. 2022 shows the potential drivers of geographic range in organisms across modern, historical and palaeontological datasets:
+
+![Figure from Darroch et al. 2022](Figure1.png)
+
+This figure emphasizes that ecological patterns such as geographic range are driven by processes operating on a continuum. The past and present are interconnected, and both can provide valuable information that can be combined to improve our understanding of underlying ecological processes. By developing approaches to harmonize data across timescales, we can begin to utilize this information to better understand drivers of ecological change, improve predictions of future biodiversity responses, and bridge the palaeo-ecological divide.
+
+One research area that is particularly impacted by the harmonization of palaeo and modern occurrence data is that of Species Distribution Models, or SDMs. These models correlate occurrences of species with climatic and environmental variables, and then use these associations to predict the distribution of that species across time and space. Consequently, they are frequently used to forecast species range shifts and understand potential losses in biodiversity as a result of future climate change. However, only including modern occurrences in these models excludes a vast amount of data of where organisms may have occupied in the past, running the risk of only predicting the occupied niche as opposed to gaining an understanding of the fundamental niche of a species. This can have serious knock-on effects when attempting to predict the distribution of species under different climate scenarios. Consequently, studies have started to use the historical and palaeontological distibution of occurrences within these models. As you can see below, including coral occurrences from the last interglacial drastically changes the predicted habitability of corals under different IPCC forecasted climate scenarios:
+
+![](Figure2.jpg)
+
+![Figures from Jones et al. 2019](Figure3.jpg)
+
+Another clear example of the harmonization of palaeo and modern data is in understanding long-term baselines of species distributions for conservation. 
+
+However, there are many considerations that have to be taken into account when carrying out this type of research, and a number of practical challenges that have to be overcome to ensure that the results we get are meaningful and useful. Differences in spatial and temporal scales, data types, and various biases that impact our data sources all make this research difficult to carry out. Today, we are going to give you a brief introduction to this very broad area of research, in particular focusing on the considerations that have to be made regarding our data and research approaches. Let's dig in!
 
 ## II. Planning, Setup, and Finding Your Data
 
@@ -56,7 +78,7 @@ Even at this first step, the decisions we make will have consequences for our re
 
 ## **BREAKOUT SESSION 1**
 
-**Organize yourselves into groups of 4-6 and discuss the following questions:**
+**Organize yourselves into groups of 4-6 and take 10 minutes to discuss the following questions:**
 
 ***1. What issues might we encounter when sourcing, gathering, and working with these various climatic and occurrence datasets?***
 
@@ -224,7 +246,7 @@ What issues might this higher resolution cause? What actions could we take to re
 
 ## **BREAKOUT SESSION 2**
 
-**Now it's your turn to give it a go! Let's go through the same process for our occurrence data:** 
+**Now it's your turn to give it a go! Over the next 15-20 minutes we're going to go through the same process for our occurrence data:** 
 
 ***1. First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R. If you're an experienced R user, you can also start to plan your code.***
 
@@ -293,6 +315,12 @@ For ease, here's a csv of the raw data:
 modern_occ <- read.csv("crocs_modern.csv") 
 ```
 
+::: {.callout-important}
+
+#### Don't forget!
+
+Remember what we learnt in our session earlier: keep raw data raw! Make sure to always keep a copy of the raw data that you have used for your analyses, be that occurrence data or covariate data (such as climatic data).
+:::
 
 ### 2. Filtering
 
@@ -346,7 +374,7 @@ Now we come to the fun part. How do we align these data, which were sampled in d
 
 ## **BREAKOUT SESSION 3**
 
-**Return to your discussion groups and discuss the following questions:**
+**Return to your discussion groups and take 5 minutes to discuss the following questions:**
 
 ***1. What factors that might introduce bias when we try to make comparisons across these datasets?***
 
@@ -505,14 +533,15 @@ ggplot(modern_occ_filter) +
 
 Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. How might we account for the spatial structure of the data in our analysis?
 
-Another challenge stems from aligning these occurrences with the spatial explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset.
+Another challenge stems from aligning these occurrences with the spatial explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We'll keep things simple and show the first approach here.
 
-We'll keep things simple and show the first approach here.
-
+Now it's onto the final section: using the combination of these datasets to carry out our analysis, and visualising our results!
 
 ## IV. Data Extraction and Visualisation
 
-We have our data binned to match the climate layers, so let's create separate datasets for each time bin.
+We're nearly there folks. It's time to put all these data sources together to answer our research question! 
+
+We have our data binned to match the climate layers, so let's create separate datasets for each time bin. 
 ```{r}
 # 25-20 Ma climate interval
 points_20 <- fossil_occ_bin_rot %>%
