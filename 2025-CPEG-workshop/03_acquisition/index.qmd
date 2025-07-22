@@ -19,7 +19,13 @@ In this session, we'll discuss a few different online databases with relevant da
 
 ## I. Databases and raw data
 
-First, we'll learn about online databases and raw data: EMBED SLIDES
+First, we'll learn about online databases and raw data:
+
+<object data="./CPEGDataAcquisition.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf">
+    <embed src="./CPEGDataAcquisition.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf" />
+</object>
+
+(You can download the slides [here](./CPEGDataAcquisition.pdf).)
 
 ## II. Data Acquisition
 
