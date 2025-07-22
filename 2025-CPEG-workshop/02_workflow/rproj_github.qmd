@@ -30,20 +30,136 @@ format:
 
 ## Why reproducible workflows are important
 
+::: {.incremental}
+
+- Its good science
+- Improves uptake of methods
+- Ease of collaborations
+- Funders love Open Science
+
+:::
 
 ::: notes
 :::
 
 ## What makes a workflow reproducible?
 
+- Works on any machine
+- Yields identical results every time
+- Can be understood by externals (and future self)
+
 
 ::: notes
 :::
 
-## RStudio and Projects
+## Workspace Hygiene
 
+. . .
+
+**Start from a clean slate!**
+
+. . .
+
+
+Your workspace is your laboratory - keep it free of contamination!
+
+. . .
+
+***Tools > Global Options > General***
+
+In the "Basic" tab
+
+- Unceck "Restore .RData into workspace at startup"
+- Set "Save workspace to .RData on exit" to "Never"
+
+## Workspace Hygiene {.nostretch}
+
+![](images/workspace_hygiene.jpg){fig-align="center" width="60%"}
+
+## Absolute and Relative Paths
+
+. . .
+
+Your code should run on any machine!
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+# BAD PRACTICE: path and data does not exist on other machines
+read.csv("C:/path/to/important/raw/data.csv")
+```
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+# BAD PRACTICE: works only on one specific machine
+setwd("C:/path/to/folder/that/only/exists/on/my/machine")
+```
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+# BAD PRACTICE: requires manual work
+# to run this script, go to
+# Session -> Set Working Directory -> To Source File Location
+# to set your working directory correctly
+```
+
+
+## Introducing: RProjects
+
+::: {.incremental}
+
+- Project files that set working directory automatically after opening the project
+- Whole project folder can be passed between machines and people
+- Specific to RStudio
+
+:::
+
+
+## Working with RProjects
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+File > Open Project > Select RProject file
+
+Work in Rstudio as usual
+
+All paths are set relative to the .RProject file
+
+:::
+
+::: {.column width="50%"}
+
+![](images/new_proj.jpg){fig-align="center" width="100%"}
+
+:::
+
+::::
 
 ::: notes
+:::
+
+## Advanced RProjects
+
+RProjects are critical infrastructure for R code
+
+::: {.incremental}
+- [Multiple projects in parallel](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
+- [Reproducible environments & package versioning using `renv`](https://rstudio.github.io/renv/articles/renv.html)
+- [Packaging of R code](https://r-pkgs.org/)
+
+
 :::
 
 ## {.smaller #version-history-vs-version-control data-menu-title="Version history vs version control"}
