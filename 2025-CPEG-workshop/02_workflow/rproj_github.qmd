@@ -4,7 +4,7 @@ subtitle: "Using RStudio and GitHub"
 execute:
   echo: true
   eval: true
-  freeze: true
+  freeze: auto
 format: 
   revealjs:
     logo: "../images/logo.png"
@@ -12,7 +12,7 @@ format:
       4th Crossing the Paleontological-Ecological Gap (CPEG) Meeting &\
       3rd Conservation Paleobiology Symposium
     theme: simple
-    embed-resources: false
+    embed-resources: true
     output-file: "rproj_github.html"
     mermaid:
       theme: default
