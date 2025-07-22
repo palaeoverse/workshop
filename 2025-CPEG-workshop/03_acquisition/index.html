@@ -474,10 +474,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-acquisition" id="toc-data-acquisition" class="nav-link active" data-scroll-target="#data-acquisition">Data Acquisition</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#i.-databases-and-raw-data" id="toc-i.-databases-and-raw-data" class="nav-link" data-scroll-target="#i.-databases-and-raw-data">I. Databases and raw data</a></li>
+  <li><a href="#ii.-data-acquisition" id="toc-ii.-data-acquisition" class="nav-link" data-scroll-target="#ii.-data-acquisition">II. Data Acquisition</a>
+  <ul class="collapse">
   <li><a href="#load-packages" id="toc-load-packages" class="nav-link" data-scroll-target="#load-packages">Load packages</a></li>
-  <li><a href="#rule-1-choose-the-right-data-for-your-question" id="toc-rule-1-choose-the-right-data-for-your-question" class="nav-link" data-scroll-target="#rule-1-choose-the-right-data-for-your-question">Rule 1: Choose the right data for your question</a></li>
-  <li><a href="#rule-2-keep-raw-data-raw" id="toc-rule-2-keep-raw-data-raw" class="nav-link" data-scroll-target="#rule-2-keep-raw-data-raw">Rule 2: Keep raw data raw</a></li>
+  <li><a href="#choose-the-right-data-for-your-question" id="toc-choose-the-right-data-for-your-question" class="nav-link" data-scroll-target="#choose-the-right-data-for-your-question">Choose the right data for your question</a></li>
+  <li><a href="#keep-raw-data-raw" id="toc-keep-raw-data-raw" class="nav-link" data-scroll-target="#keep-raw-data-raw">Keep raw data raw</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -504,12 +508,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="data-acquisition" class="level2">
-<h2 class="anchored" data-anchor-id="data-acquisition">Data Acquisition</h2>
-<p>Note: you will need internet access to run this script, as we will pull data directly from the Paleobiology Database API.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>In this session, we’ll discuss a few different online databases with relevant data, raw data and why/how to keep raw data raw, and acquire today’s fossil dataset using the Paleobiology Database API. In this first short section, we’ll therefore cover:</p>
+<ul>
+<li>Examples of different types of databases</li>
+<li>How to access raw data</li>
+<li>Why it is important to keep raw data raw</li>
+<li>Acquiring and loading example fossil dataset into R</li>
+</ul>
+<p><strong>Schedule</strong></p>
+<ul>
+<li>10:45–11:15</li>
+</ul>
 </section>
-<section id="load-packages" class="level2">
-<h2 class="anchored" data-anchor-id="load-packages">Load packages</h2>
+<section id="i.-databases-and-raw-data" class="level2">
+<h2 class="anchored" data-anchor-id="i.-databases-and-raw-data">I. Databases and raw data</h2>
+<p>First, we’ll learn about online databases and raw data: EMBED SLIDES</p>
+</section>
+<section id="ii.-data-acquisition" class="level2">
+<h2 class="anchored" data-anchor-id="ii.-data-acquisition">II. Data Acquisition</h2>
+<p>Note: you will need internet access to run this script, as we will pull data directly from the Paleobiology Database API.</p>
+<section id="load-packages" class="level3">
+<h3 class="anchored" data-anchor-id="load-packages">Load packages</h3>
 <p>Before starting, we will load the R package we need, dplyr.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("dplyr")</span></span>
@@ -518,10 +539,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="rule-1-choose-the-right-data-for-your-question" class="level2">
-<h2 class="anchored" data-anchor-id="rule-1-choose-the-right-data-for-your-question">Rule 1: Choose the right data for your question</h2>
-<p>In this example, we are interested in the fossil record of crocodiles. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates, so their fossil record is commonly used as an indicator of palaeoclimate. Here we will investigate the palaeodiversity of crocodiles, with the specific goal of reconstructing their latitudinal range throughout the Paleogene.</p>
-<p>To meet this goal, we need to acquire occurrence data for fossil crocodiles during the Paleogene. Initially we have decided not to place further taxonomic constraints on our search, so we will include all occurrences belonging to the order ‘Crocodylia’. We are interested in the clade’s biogeography, so we will need all occurrences globally, and we need to ensure that we have geographic coordinates associated with our occurrences.</p>
+<section id="choose-the-right-data-for-your-question" class="level3">
+<h3 class="anchored" data-anchor-id="choose-the-right-data-for-your-question">Choose the right data for your question</h3>
+<p>In this example, we are interested in the fossil record of crocodiles. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates, so their fossil record is commonly used as an indicator of palaeoclimate. Here we will investigate the palaeodiversity of crocodiles, with the specific goal of reconstructing their latitudinal range throughout the Cenozoic.</p>
+<p>To meet this goal, we need to acquire occurrence data for fossil crocodiles during the Cenozoic. Initially we have decided not to place further taxonomic constraints on our search, so we will include all occurrences belonging to the order ‘Crocodylia’. We are interested in the clade’s biogeography, so we will need all occurrences globally, and we need to ensure that we have geographic coordinates associated with our occurrences.</p>
 <p>We will turn to one of the largest sources of fossil occurrence data, the <a href="https://paleobiodb.org">Paleobiology Database</a>. To access our fossil data, we are going to take advantage of the Paleobiology Database’s “API” (short for Application Programming Interface), which lets us “download” data directly into R. For our dataset, we will pull all occurrences associated with the taxon name ‘Crocodylia’, dated to the ‘Cenozoic’.</p>
 <p>We can begin by setting up some variables:</p>
 <div class="cell">
@@ -576,8 +597,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>And now we have obtained our dataset.</p>
 </section>
-<section id="rule-2-keep-raw-data-raw" class="level2">
-<h2 class="anchored" data-anchor-id="rule-2-keep-raw-data-raw">Rule 2: Keep raw data raw</h2>
+<section id="keep-raw-data-raw" class="level3">
+<h3 class="anchored" data-anchor-id="keep-raw-data-raw">Keep raw data raw</h3>
 <p>For reproducibility, we want to make sure that we have a copy of the full dataset as initially downloaded - this is the “raw” data.</p>
 <p>We can load and view this file to take a look at it.</p>
 <div class="cell">
@@ -615,7 +636,7 @@ chr (2): Data Provider, The Paleobiology Database
  3 License URL       https://creativecommons.org/publicdomain/zero/1.0/         
  4 Documentation URL http://paleobiodb.org/data1.2/occs/list_doc.html           
  5 Data URL          http://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowco…
- 6 Access Time       Fri 2025-07-18 13:14:40 GMT                                
+ 6 Access Time       Tue 2025-07-22 13:31:36 GMT                                
  7 Title             PBDB Data Service                                          
  8 Parameters:       &lt;NA&gt;                                                       
  9 &lt;NA&gt;              base_name,Crocodylia                                       
@@ -685,6 +706,7 @@ lgl  (12): flags, accepted_attr, plant_organ, regionalbedunit, environment_b...
 <p>And now we are ready to commence our data exploration and cleaning.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
