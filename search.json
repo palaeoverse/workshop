@@ -16,7 +16,7 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#why-reproducible-workflows-are-important",
     "title": "Reproducible and Collaborative Workflows",
     "section": "Why reproducible workflows are important",
-    "text": "Why reproducible workflows are important",
+    "text": "Why reproducible workflows are important\n\nIts good science\nImproves uptake of methods\nEase of collaborations\nFunders love Open Science",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -28,7 +28,7 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#what-makes-a-workflow-reproducible",
     "title": "Reproducible and Collaborative Workflows",
     "section": "What makes a workflow reproducible?",
-    "text": "What makes a workflow reproducible?",
+    "text": "What makes a workflow reproducible?\n\nWorks on any machine\nYields identical results every time\nCan be understood by externals (and future self)",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -36,11 +36,71 @@
     ]
   },
   {
-    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#rstudio-and-projects",
-    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#rstudio-and-projects",
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#workspace-hygiene",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#workspace-hygiene",
     "title": "Reproducible and Collaborative Workflows",
-    "section": "RStudio and Projects",
-    "text": "RStudio and Projects",
+    "section": "Workspace Hygiene",
+    "text": "Workspace Hygiene\n\nStart from a clean slate!\n\n\nYour workspace is your laboratory - keep it free of contamination!\n\n\nTools &gt; Global Options &gt; General\nIn the “Basic” tab\n\nUnceck “Restore .RData into workspace at startup”\nSet “Save workspace to .RData on exit” to “Never”",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#workspace-hygiene-1",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#workspace-hygiene-1",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Workspace Hygiene",
+    "text": "Workspace Hygiene",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#absolute-and-relative-paths",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#absolute-and-relative-paths",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Absolute and Relative Paths",
+    "text": "Absolute and Relative Paths\n\nYour code should run on any machine!\n\n\n\n# BAD PRACTICE: path and data does not exist on other machines\nread.csv(\"C:/path/to/important/raw/data.csv\")\n\n\n\n\n# BAD PRACTICE: works only on one specific machine\nsetwd(\"C:/path/to/folder/that/only/exists/on/my/machine\")\n\n\n\n\n# BAD PRACTICE: requires manual work\n# to run this script, go to\n# Session -&gt; Set Working Directory -&gt; To Source File Location\n# to set your working directory correctly",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#introducing-rprojects",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#introducing-rprojects",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Introducing: RProjects",
+    "text": "Introducing: RProjects\n\nProject files that set working directory automatically after opening the project\nWhole project folder can be passed between machines and people\nSpecific to RStudio",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#working-with-rprojects",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#working-with-rprojects",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Working with RProjects",
+    "text": "Working with RProjects\n\n\nFile &gt; Open Project &gt; Select RProject file\nWork in Rstudio as usual\nAll paths are set relative to the .RProject file",
+    "crumbs": [
+      "CPEG 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/02_workflow/rproj_github.html#advanced-rprojects",
+    "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#advanced-rprojects",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Advanced RProjects",
+    "text": "Advanced RProjects\nRProjects are critical infrastructure for R code\n\nMultiple projects in parallel\nReproducible environments & package versioning using renv\nPackaging of R code",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
@@ -2417,17 +2477,6 @@
     "crumbs": [
       "UCL 2023 Workshop",
       "Entertainment"
-    ]
-  },
-  {
-    "objectID": "2025-CPEG-workshop/01_introduction/index.html",
-    "href": "2025-CPEG-workshop/01_introduction/index.html",
-    "title": "Introduction to the workshop",
-    "section": "",
-    "text": "Add content",
-    "crumbs": [
-      "CPEG 2025 Workshop",
-      "Introduction to the workshop"
     ]
   },
   {
