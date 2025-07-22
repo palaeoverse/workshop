@@ -74,7 +74,7 @@ In the "Basic" tab
 
 ## Workspace Hygiene {.nostretch}
 
-![](images/workspace_hygiene.jpg){fig-align="center" width="60%"}
+![](images/workspace_hygiene.JPG){fig-align="center" width="60%"}
 
 ## Absolute and Relative Paths
 
@@ -141,7 +141,7 @@ All paths are set relative to the .RProject file
 
 ::: {.column width="50%"}
 
-![](images/new_proj.jpg){fig-align="center" width="100%"}
+![](images/new_proj.JPG){fig-align="center" width="100%"}
 
 :::
 
