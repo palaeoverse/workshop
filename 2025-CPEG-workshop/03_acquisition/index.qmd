@@ -4,12 +4,28 @@ subtitle: "Acquiring data from the Paleobiology Database"
 toc: true
 order: 3
 ---
+## Learning Objectives
 
-## Data Acquisition
+In this session, we'll discuss a few different online databases with relevant data, raw data and why/how to keep raw data raw, and acquire today's fossil dataset using the Paleobiology Database API. In this first short section, we'll therefore cover:
+
+- Examples of different types of databases
+- How to access raw data
+- Why it is important to keep raw data raw
+- Acquiring and loading example fossil dataset into R
+
+**Schedule** 
+
+- 10:45--11:15
+
+## I. Databases and raw data
+
+First, we'll learn about online databases and raw data: EMBED SLIDES
+
+## II. Data Acquisition
 
 Note: you will need internet access to run this script, as we will pull data directly from the Paleobiology Database API.
 
-## Load packages
+### Load packages
 
 Before starting, we will load the R package we need, dplyr.
 
@@ -20,11 +36,11 @@ library(dplyr)
 library(readr)
 ```
 
-## Rule 1: Choose the right data for your question
+### Choose the right data for your question
 
-In this example, we are interested in the fossil record of crocodiles. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates, so their fossil record is commonly used as an indicator of palaeoclimate. Here we will investigate the palaeodiversity of crocodiles, with the specific goal of reconstructing their latitudinal range throughout the Paleogene.
+In this example, we are interested in the fossil record of crocodiles. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates, so their fossil record is commonly used as an indicator of palaeoclimate. Here we will investigate the palaeodiversity of crocodiles, with the specific goal of reconstructing their latitudinal range throughout the Cenozoic.
 
-To meet this goal, we need to acquire occurrence data for fossil crocodiles during the Paleogene. Initially we have decided not to place further taxonomic constraints on our search, so we will include all occurrences belonging to the order 'Crocodylia'. We are interested in the clade's biogeography, so we will need all occurrences globally, and we need to ensure that we have geographic coordinates associated with our occurrences.
+To meet this goal, we need to acquire occurrence data for fossil crocodiles during the Cenozoic. Initially we have decided not to place further taxonomic constraints on our search, so we will include all occurrences belonging to the order 'Crocodylia'. We are interested in the clade's biogeography, so we will need all occurrences globally, and we need to ensure that we have geographic coordinates associated with our occurrences.
 
 We will turn to one of the largest sources of fossil occurrence data, the [Paleobiology Database](https://paleobiodb.org). To access our fossil data, we are going to take advantage of the Paleobiology Database's "API" (short for Application Programming Interface), which lets us "download" data directly into R. For our dataset, we will pull all occurrences associated with the taxon name 'Crocodylia', dated to the 'Cenozoic'.
 
@@ -92,7 +108,7 @@ download.file(URL, destfile = "../03_acquisition/Cenozoic_crocs.csv")
 
 And now we have obtained our dataset.
 
-## Rule 2: Keep raw data raw
+### Keep raw data raw
 
 For reproducibility, we want to make sure that we have a copy of the full dataset as initially downloaded - this is the "raw" data.
 
