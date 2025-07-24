@@ -92,7 +92,7 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![**Lewis Jones** <br> University College London, UK](images/Lewis.jpg)
+![**Lewis Jones** <br> University College London, UK](images/Lewis.JPG)
 
 :::
 
@@ -105,8 +105,24 @@ Please ensure that you have the latest version of R for the workshop, which can 
 
 ```{R install}
 #| eval: false
-install.packages()
+install.packages("dplyr")
+install.packages("readr")
+install.packages("palaeoverse")
+install.packages("ggplot2")
+install.packages("rnaturalearth")
+install.packages("rnaturalearthdata")
+install.packages("deeptime")
+install.packages("rgplates")
+install.packages("fossilbrush")
+install.packages("rgbif")
+install.packages("raster")
+install.packages("sf")
+install.packages("geodata")
+install.packages("ncdf4")
 ```
+## GitHub
+
+This workshop will include a brief introduction to GitHub. We recommend that you [make a GitHub account](https://github.com/) in advance, if you don't already have one, so you can follow along during the workshop. Note that you can get additional benefits if you apply to GitHub Education as a [researcher](https://docs.github.com/en/education/about-github-education/github-education-for-teachers/apply-to-github-education-as-a-teacher) or [student](https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student) once you've set up a personal account.
 
 ## Acknowledgements
 
