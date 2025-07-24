@@ -48,19 +48,19 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![Bethany Allen <br> GFZ Helmholtz Centre for Geosciences, Germany]((./images/Bethany.jpeg){width="100%"}
+![Bethany Allen <br> GFZ Helmholtz Centre for Geosciences, Germany]((images/Bethany.jpeg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Chris Dean <br> University College London, UK](./images/Chris.jpeg){width="100%"}
+![Chris Dean <br> University College London, UK](images/Chris.jpeg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Erin Dillon <br> Smithsonian Tropical Research Institute, Panama](./images/Erin.jpeg){width="100%"}
+![Erin Dillon <br> Smithsonian Tropical Research Institute, Panama](images/Erin.png){width="100%"}
 
 :::
 
@@ -69,19 +69,19 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![Harriet Drage <br> University of Lausanne, Switzerland](./images/Harriet.jpeg){width="100%"}
+![Harriet Drage <br> University of Lausanne, Switzerland](images/Harriet.jpg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Will Gearty <br> Syracuse University, USA](./images/Will.jpeg){width="100%"}
+![Will Gearty <br> Syracuse University, USA](images/Will.jpeg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Pedro Godoy <br> University of São Paulo, Brazil](./images/Pedro.jpeg){width="100%"}
+![Pedro Godoy <br> University of São Paulo, Brazil](images/Pedro.jpeg){width="100%"}
 
 :::
 
@@ -90,13 +90,13 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![Niklas Hohmann <br> Utrecht University, Netherlands](./images/Niklas.jpeg){width="100%"}
+![Niklas Hohmann <br> Utrecht University, Netherlands](images/Niklas.png){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Lewis Jones <br> University College London, UK](./images/Lewis.jpeg){width="100%"}
+![Lewis Jones <br> University College London, UK](images/Lewis.JPG){width="100%"}
 
 :::
 
