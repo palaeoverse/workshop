@@ -484,7 +484,7 @@ ggplot(fossil_occ_bin) +
   theme_void()
 ```
 
-But wait, remember that we need to palaeorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we'll just use the palaeoMAP rotation, which will also match up to our palaeoclimatic data. 
+But wait, remember that we need to palaeorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we'll just use the paleoMAP rotation, which will also match up to our palaeoclimatic data. 
 ```{r}
 # Palaeorotation
 fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
