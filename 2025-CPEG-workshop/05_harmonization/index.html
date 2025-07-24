@@ -508,7 +508,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#breakout-session-2" id="toc-breakout-session-2" class="nav-link" data-scroll-target="#breakout-session-2"><strong>BREAKOUT SESSION 2</strong></a>
   <ul class="collapse">
-  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
   <li><a href="#sourcing-occurrence-data" id="toc-sourcing-occurrence-data" class="nav-link" data-scroll-target="#sourcing-occurrence-data">1. Sourcing occurrence data</a></li>
   <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering">2. Filtering</a></li>
   <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">3. Cleaning</a></li>
@@ -545,14 +544,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<p>In this session, we’ll walk through how to combine and use different deep-time and modern datasets to answer questions that cross the palaeo-ecological divide. We’ll cover:</p>
+<p>In this session, we’ll walk through how to combine different deep time and modern datasets to answer questions that cross the palaeo-ecological divide. We’ll cover:</p>
 <ul>
 <li>The power of harmonizing data from different sources</li>
 <li>The considerations and complications that arise when combining datasets</li>
 <li>How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences</li>
 <li>How to plan, write code for, and carry out projects covering multiple time frames</li>
 </ul>
-<p>To do this, we’ll continue working with the Crocodylia dataset. If you’ve not quite finished cleaning your dataset, you can find a cleaned version that’s ready for this next step <strong>HERE</strong>.</p>
+<p>To do this, we’ll continue working with the Crocodylia dataset. If you’ve not quite finished cleaning your dataset, you can find a cleaned version that’s ready for this next step <strong><a href="https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization">HERE</a></strong>.</p>
 </section>
 <section id="plan-for-the-session" class="level2">
 <h2 class="anchored" data-anchor-id="plan-for-the-session">Plan for the Session</h2>
@@ -566,8 +565,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="i.-introduction-to-harmonization-and-synthesis" class="level2">
 <h2 class="anchored" data-anchor-id="i.-introduction-to-harmonization-and-synthesis">I. Introduction to Harmonization and Synthesis</h2>
-<p>So far today, we’ve used R to carry out a variety of operations for preparing research projects, as well as for acquiring and preparing palaeontological data. However, we can also use R to carry out various analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.</p>
-<p>It will be of no surprise to anyone in this room that we are in the midst of a biodiversity crisis. Understanding and anticipating the changes that will occur to organisms, their communities, and the environments that they inhabit as a result of climate change and other anthropogenic processes has emerged as a primary goal of our disciplines. Traditionally, modern ecologists have focused on studying current or recent historical processes to address question related to biodiversity loss and the impacts of climate change, while paleoecologists have studied long-term processes in the fossil record (Nieto-Lugilde et al.&nbsp;2021). However, it is becoming increasingly clear that the answers to some of the most important questions relate to the fuzzy area between our modern and palaeo records:</p>
+<p>So far today, we’ve used R to carry out a variety of operations for acquiring and preparing palaeontological data. We can also use R to run analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.</p>
+<p>It will be of no surprise to anyone in this room that we are in the midst of a biodiversity crisis. Understanding and anticipating the changes that will occur to organisms, their communities, and the environments that they inhabit as a result of climate change and other anthropogenic processes has emerged as a primary goal of our disciplines. Traditionally, modern ecologists have focused on studying current or recent historical processes to address question related to biodiversity loss and the impacts of climate change, while palaeoecologists have studied long-term processes in the fossil record (Nieto-Lugilde et al.&nbsp;2021). However, it is becoming increasingly clear that the answers to some of the most important questions relate to the fuzzy area between our modern and palaeo records:</p>
 <ul>
 <li>Can past ecosystems be used as analogues for ones in the present day? Can we understand future changes to biodiversity by examining past losses?</li>
 <li>What are the main drivers and impacts of collapse within communities and ecosystems?</li>
@@ -580,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption>Figure from Darroch et al.&nbsp;2022</figcaption>
 </figure>
 </div>
-<p>This figure emphasizes that ecological patterns such as geographic range are driven by processes operating on a continuum. The past and present are interconnected, and both can provide valuable information that can be combined to improve our understanding of underlying ecological processes. By developing approaches to harmonize data across timescales, we can begin to utilize this information to better understand drivers of ecological change, improve predictions of future biodiversity responses, and bridge the palaeo-ecological divide.</p>
+<p>This figure emphasizes that ecological patterns such as geographic range are driven by processes operating on a continuum. The past and present are interconnected, and both can provide valuable information that can be combined to improve our understanding of underlying ecological processes. By developing approaches to harmonize data across timescales, we can begin to utilize this information to better understand drivers of ecological change, improve predictions of future biodiversity responses, and cross the palaeontological-ecological gap.</p>
 <p>One research area that is particularly impacted by the harmonization of palaeo and modern occurrence data is that of Species Distribution Models, or SDMs. These models correlate occurrences of species with climatic and environmental variables, and then use these associations to predict the distribution of that species across time and space. Consequently, they are frequently used to forecast species range shifts and understand potential losses in biodiversity as a result of future climate change. However, only including modern occurrences in these models excludes a vast amount of data of where organisms may have occupied in the past, running the risk of only predicting the occupied niche as opposed to gaining an understanding of the fundamental niche of a species (e.g.&nbsp;Veloz et al.&nbsp;2012). This can have serious knock-on effects when attempting to predict the distribution of species under different climate scenarios. Consequently, studies have started to use the historical and palaeontological distribution of occurrences within these models. As you can see below, including coral occurrences from the last interglacial drastically changes the predicted habitability of corals under different IPCC forecasted climate scenarios (Jones et al.&nbsp;2019):</p>
 <p><img src="Figure2.jpg" class="img-fluid"></p>
 <div class="quarto-figure quarto-figure-center">
@@ -596,19 +595,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="ii.-planning-setup-and-finding-your-data">II. Planning, Setup, and Finding Your Data</h2>
 <section id="our-research-question" class="level3">
 <h3 class="anchored" data-anchor-id="our-research-question">Our Research Question</h3>
-<p>Our first step will be to define our research question, which will be framed around the dataset of Cenozoic Crocodylia that we’ve been working on this morning. As mentioned previously, Crocs are an excellent group to use for studies comparing modern and deep-time records: they have a very tight association with temperature, are well represented in the fossil record spatially and temporally, and many extant species are threatened by anthropogenic impacts including habitat loss and climate change.</p>
-<p>In this section, we’ll aim to answer the following research question: <strong>How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?</strong></p>
-<p>We’ll focus our deep-time analysis on the Miocene, a climatically dynamic epoch in Earth’s history that can serve as an analog for future climate scenarios (e.g., <a href="https://doi.org/10.1029/2020PA004037">Steinthorsdottir et al.&nbsp;2020</a>).</p>
+<p>Our first step will be to define our research question, which will be framed around the dataset of Cenozoic Crocodylia that we’ve been working on this morning. As mentioned previously, Crocs are an excellent group to use for studies comparing modern and deep time records: they have a very tight association with temperature, are well represented in the fossil record spatially and temporally, and many extant species are threatened by anthropogenic impacts including habitat loss and climate change.</p>
+<p>In this section, we’ll aim to answer the following research question: <strong>How does the temperature range inhabited by Crocodylia in deep time compare to that seen in the present?</strong></p>
+<p>We’ll focus our deep time analysis on the Miocene, a climatically dynamic epoch in Earth’s history that can serve as an analog for future climate scenarios (e.g., <a href="https://doi.org/10.1029/2020PA004037">Steinthorsdottir et al.&nbsp;2020</a>).</p>
 </section>
 <section id="making-a-plan" class="level3">
 <h3 class="anchored" data-anchor-id="making-a-plan">Making a Plan</h3>
 <p>Before we start, it’s helpful to write out a step-by-step plan of what we want to accomplish to ensure that the approach we’re taking and the code that we write will appropriately answer the question(s) that we are interested in. Think of this as a kind of “logical flow.” In other words, what are all the steps needed to get from our research idea to our finalised analysis? This can be as extensive as you wish and can be done in any fashion—even writing out your code or general approach on pen and paper! We’ll be doing this a few times today, so let’s start by considering our research question and what materials we will need to address it.</p>
-<p>As we aim to compare the distributions of Crocodylia in deep-time compared to the present, there are a couple of key datasets that we will require:</p>
+<p>As we aim to compare the distributions of Crocodylia in deep time compared to the present, there are a couple of key datasets that we will require:</p>
 <ol type="1">
 <li>A spatially explicit dataset of modern Crocodylia</li>
-<li>A spatially explicit dataset of Crocodylia in the deep-time intervals we will assess</li>
+<li>A spatially explicit dataset of Crocodylia in the deep time intervals we will assess</li>
 <li>A spatially explicit dataset of modern climatic variables</li>
-<li>A spatially explicit dataset of climatic variables for the deep-time intervals we choose, likely generated from palaeoclimatic modelling</li>
+<li>A spatially explicit dataset of climatic variables for the deep time intervals we choose, likely generated from palaeoclimatic modelling</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled" title="Heads Up!">
 <div class="callout-header d-flex align-content-center">
@@ -663,7 +662,7 @@ Heads Up!
 <li>Are they capturing the same climatic information?</li>
 </ul>
 <ol start="6" type="1">
-<li><strong>Prepare for analysis.</strong> Ensure that the data are ready to be used in our next stages of analysis.To do this, we might want to break down our steps further:</li>
+<li><strong>Prepare for analysis.</strong> Ensure that the data are ready to be used in our next stages of analysis. To do this, we might want to break down our steps further:</li>
 </ol>
 <ul>
 <li>Check the format of the data using the ‘class()’ function</li>
@@ -745,14 +744,14 @@ The following object is masked from 'package:tidyr':
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">extent</span>(<span class="sc">-</span><span class="dv">180</span>, <span class="dv">180</span>, <span class="sc">-</span><span class="dv">90</span>, <span class="dv">90</span>)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make generic raster using these values</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>ref.raster <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">res =</span> res, <span class="at">ext =</span> e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>ref_raster <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">res =</span> res, <span class="at">ext =</span> e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now lets find some climate data!</p>
 </section>
 <section id="organising-palaeo-climatic-data" class="level3">
 <h3 class="anchored" data-anchor-id="organising-palaeo-climatic-data">1. Organising Palaeo-climatic Data</h3>
-<p>After exploring several potential palaeo-climatic datasets, we’ve decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: https://zenodo.org/records/5718392.</p>
-<p>Scotese, C. R., Song, H., Mills, B. J. W., &amp; van der Meer, D. G. (2021). Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503</p>
+<p>After exploring several potential palaeo-climatic datasets, we’ve decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: https://zenodo.org/records/5718392.</p>
+<p>Scotese, C. R., Song, H., Mills, B. J. W., &amp; van der Meer, D. G. (2021). Phanerozoic palaeotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503</p>
 <p>Valdes, P.J., Scotese, C.R., and Lunt, D.J. (2021). Deep Ocean Temperatures through Time, Climates of the Past, Discussions, https://doi.org/10.5194/cp-2020-83.</p>
 <p>This climatic dataset offers decently high temporal resolution (for deep time), but one thing we’ll need to keep in mind is that the 5-million-year intervals don’t align perfectly with geological stages. This will come into play later when we start working with the occurrence data.</p>
 <p>For our study, we’ll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition.</p>
@@ -760,7 +759,7 @@ The following object is masked from 'package:tidyr':
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in rasters of palaeoclimate for each time interval</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.15</span> <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"015_tas_scotese02a_v21321.nc"</span>)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.20</span> <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"015_tas_scotese02a_v21321.nc"</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.20</span> <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"020_tas_scotese02a_v21321.nc"</span>)</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -780,16 +779,16 @@ dimensions : 180, 361, 64980  (nrow, ncol, ncell)
 resolution : 1, 1.005556  (x, y)
 extent     : -180.5, 180.5, -90.5, 90.5  (xmin, xmax, ymin, ymax)
 crs        : NA 
-source     : 015_tas_scotese02a_v21321.nc 
-names      : X015_tas_scotese02a_v21321 
-zvar       : 015_tas_scotese02a_v21321 </code></pre>
+source     : 020_tas_scotese02a_v21321.nc 
+names      : X020_tas_scotese02a_v21321 
+zvar       : 020_tas_scotese02a_v21321 </code></pre>
 </div>
 </div>
 <p>As you can see, the resolution and extent of these rasters doesn’t quite match our reference one that we made above. We’ll have to resample our data to match our reference raster:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample data to match our set extent and resolution</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>raster.resampled<span class="fl">.15</span> <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep<span class="fl">.15</span>, <span class="at">y =</span> ref.raster)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>raster.resampled<span class="fl">.20</span> <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep<span class="fl">.20</span>, <span class="at">y =</span> ref.raster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>raster.resampled<span class="fl">.15</span> <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep<span class="fl">.15</span>, <span class="at">y =</span> ref_raster)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>raster.resampled<span class="fl">.20</span> <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep<span class="fl">.20</span>, <span class="at">y =</span> ref_raster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Finally, we can stack these rasters into one file, name them, and see what they look like:</p>
 <div class="cell">
@@ -814,7 +813,7 @@ zvar       : 015_tas_scotese02a_v21321 </code></pre>
 <p>We’ll obtain our modern climatic data from WorldClim:</p>
 <p>https://www.worldclim.org/</p>
 <p>To keep our climatic variables consistent, we’ll also work with the mean annual temperature data.</p>
-<p>Whilst below we show you code to access this data directly within R, it can take a while to download. We’ve therefore also included it alongside the other materials for the workshop, which can be accessed HERE.</p>
+<p>Whilst below we show you code to access this data directly within R, it can take a while to download. We’ve therefore also included it alongside the other materials for the workshop, which can be accessed <strong><a href="https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization">HERE</a></strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data from WorldClim and make into raster</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>modern <span class="ot">&lt;-</span> <span class="fu">worldclim_global</span>(<span class="at">var =</span> <span class="st">"tavg"</span>, <span class="at">res =</span> <span class="dv">10</span>, <span class="at">path =</span> <span class="fu">tempdir</span>())</span>
@@ -831,7 +830,7 @@ min values :         -45.88400,         -44.80000,         -57.92575,         -6
 max values :          34.00950,          32.82425,          32.90950,          34.19375,          36.25325,          38.35550,          39.54950,          38.43275,          35.79000,          32.65125,          32.78800,          32.82525 </code></pre>
 </div>
 </div>
-<p>As you can see, whilst the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep-time data. They’re also provided on a monthly basis, so we’ll have to calculate the mean temperature before we can use this for comparison:</p>
+<p>As you can see, whilst the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep time data. They’re also provided on a monthly basis, so we’ll have to calculate the mean temperature before we can use this for comparison:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean annual temperature</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>modern.mean <span class="ot">&lt;-</span> <span class="fu">calc</span>(<span class="at">x =</span> modern, <span class="at">fun =</span> mean)</span>
@@ -851,11 +850,9 @@ max values :          34.00950,          32.82425,          32.90950,          3
 </section>
 <section id="breakout-session-2" class="level2">
 <h2 class="anchored" data-anchor-id="breakout-session-2"><strong>BREAKOUT SESSION 2</strong></h2>
-<p><strong>Now it’s your turn to give it a go! Over the next 15-20 minutes we’re going to go through the same process for our occurrence data:</strong></p>
+<p><strong>Now it’s your turn to give it a go! Over the next 10-15 minutes we’re going to go through the same process for our occurrence data:</strong></p>
 <p><strong><em>1. First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you’ll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R. If you’re an experienced R user, you can also start to plan your code.</em></strong></p>
 <p><strong><em>2. Then, get into the same groups you were in previously to discuss your approach. Where you might encounter potential pitfalls? What packages or approaches might make this process easier?</em></strong></p>
-<section id="solution" class="level3">
-<h3 class="anchored" data-anchor-id="solution">Solution</h3>
 <div class="callout callout-style-default callout-tip callout-titled" title="Solution">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -881,15 +878,14 @@ Solution
 </div>
 </div>
 <p>Let’s begin!</p>
-</section>
 <section id="sourcing-occurrence-data" class="level3">
 <h3 class="anchored" data-anchor-id="sourcing-occurrence-data">1. Sourcing occurrence data</h3>
 <section id="a.-organise-fossil-occurrence-data" class="level4">
 <h4 class="anchored" data-anchor-id="a.-organise-fossil-occurrence-data">1A. Organise fossil occurrence data</h4>
 <p>First, we’ll load in our palaeontological data. Luckily for us, we’ve already been working with a Crocodylia fossil occurrence dataset. We’ll use these data in our analysis. If needed, you can read in the cleaned dataset below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load cleaned fossil data for order Crocodylia</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fossil_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crocs_fossil_test.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load cleaned fossil data for order Crocodylia that we worked on earlier</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fossil_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"cenozoic_crocs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="b.-organise-modern-occurrence-data" class="level4">
@@ -957,7 +953,7 @@ Don’t forget!
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossil_occ_filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 114</code></pre>
+<pre><code>[1] 102</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(modern_occ_filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1021,7 +1017,7 @@ Tip
 <div class="cell-output cell-output-stdout">
 <pre><code>
       Alligatoridae        Crocodylidae          Gavialidae NO_FAMILY_SPECIFIED 
-                 24                  27                  23                  40 </code></pre>
+                 18                  26                  18                  40 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern occurrences</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(modern_occ_filter<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1050,7 +1046,7 @@ Alligatoridae  Crocodylidae    Gavialidae
 29  742606        3   16.9  15.98      0.92     1
 30  742607        4   16.9  15.98      0.92     1
 31  742608        5   16.9  15.98      0.92     1
-73 1193267        6   16.9  15.98      0.92     1</code></pre>
+65 1193267        6   16.9  15.98      0.92     1</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">intervals =</span> <span class="st">"stages"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1121,8 +1117,8 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_bin<span class="sc">$</span>bin_assignment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-  2   3 
-  9 105 </code></pre>
+ 2  3 
+ 9 93 </code></pre>
 </div>
 </div>
 <p>We see that most of the data falls into bin 3 (20.44-13.82 Ma, midpoint=17.130 Ma), with some occurrences in bin 2 (23.03-20.44 Ma, midpoint=21.735 Ma).</p>
@@ -1156,7 +1152,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </div>
 </div>
 </div>
-<p>But wait, remember that we need to paleorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we’ll just use the PALEOMAP rotation, which will also match up to our paleoclimatic data.</p>
+<p>But wait, remember that we need to palaeorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we’ll just use the paleoMAP rotation, which will also match up to our palaeoclimatic data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotation</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin_rot <span class="ot">&lt;-</span> <span class="fu">palaeorotate</span>(fossil_occ_bin,</span>
@@ -1183,8 +1179,8 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> coastlines) <span class="sc">+</span></span>
 <span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_lng, <span class="at">y =</span> p_lat)) <span class="sc">+</span></span>
-<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Paleolongitude (º)"</span>,</span>
-<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Paleolatitude (º)"</span>)<span class="sc">+</span> </span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"palaeolongitude (º)"</span>,</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"palaeolatitude (º)"</span>)<span class="sc">+</span> </span>
 <span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
@@ -1266,16 +1262,16 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
 <span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Let’s take a look. How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?</p>
+<p>Let’s take a look. How does the temperature range inhabited by Crocodylia in deep time compare to that seen in the present?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aquitanian range (25-20 Ma)</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 17.99979 28.13364</code></pre>
+<pre><code>[1] 18.43755 26.87847</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.13385</code></pre>
+<pre><code>[1] 8.440919</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Burdigalian/Langhian range (20-15 Ma)</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1335,9 +1331,9 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <p>Darroch, S.A., Saupe, E.E., Casey, M.M. and Jorge, M.L., 2022. Integrating geographic ranges across temporal scales. Trends in Ecology &amp; Evolution, 37(10), pp.851-860.</p>
 <p>Jones, L.A., Mannion, P.D., Farnsworth, A., Valdes, P.J., Kelland, S.J. and Allison, P.A., 2019. Coupling of palaeontological and neontological reef coral data improves forecasts of biodiversity responses under global climatic change. Royal Society Open Science, 6(4), p.182111.</p>
-<p>Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A., 2021. Time to better integrate paleoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), p.095005.</p>
-<p>Scotese, C.R., Song, H., Mills, B.J. and van der Meer, D.G., 2021. Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, p.103503.</p>
-<p>Steinthorsdottir, M., Coxall, H.K., De Boer, A.M., Huber, M., Barbolini, N., Bradshaw, C.D., Burls, N.J., Feakins, S.J., Gasson, E., Henderiks, J. and Holbourn, A.E., 2021. The Miocene: The future of the past. Paleoceanography and Paleoclimatology, 36(4), p.e2020PA004037.</p>
+<p>Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A., 2021. Time to better integrate palaeoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), p.095005.</p>
+<p>Scotese, C.R., Song, H., Mills, B.J. and van der Meer, D.G., 2021. Phanerozoic palaeotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, p.103503.</p>
+<p>Steinthorsdottir, M., Coxall, H.K., De Boer, A.M., Huber, M., Barbolini, N., Bradshaw, C.D., Burls, N.J., Feakins, S.J., Gasson, E., Henderiks, J. and Holbourn, A.E., 2021. The Miocene: The future of the past. palaeoceanography and palaeoclimatology, 36(4), p.e2020PA004037.</p>
 <p>Valdes, P.J., Scotese, C.R. and Lunt, D.J., 2020. Deep ocean temperatures through time. Climate of the Past Discussions, 2020, pp.1-37.</p>
 <p>Veloz, S.D., Williams, J.W., Blois, J.L., He, F., Otto‐Bliesner, B. and Liu, Z., 2012. No‐analog climates and shifting realized niches during the late quaternary: implications for 21st‐century predictions by species distribution models. Global Change Biology, 18(5), pp.1698-1713.</p>
 
