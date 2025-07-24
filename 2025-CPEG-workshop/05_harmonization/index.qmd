@@ -14,7 +14,7 @@ In this session, we'll walk through how to combine and use different deep time a
 -  How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences
 -  How to plan, write code for, and carry out projects covering multiple time frames
 
-To do this, we'll continue working with the Crocodylia dataset. If you've not quite finished cleaning your dataset, you can find a cleaned version that's ready for this next step **HERE**.
+To do this, we'll continue working with the Crocodylia dataset. If you've not quite finished cleaning your dataset, you can find a cleaned version that's ready for this next step **[HERE](https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization)**.
 
 ## Plan for the Session
 
@@ -187,7 +187,7 @@ First, we need to load in our data, which is currently stored as a .nc file, and
 
 # Load in rasters of palaeoclimate for each time interval
 raster2prep.15 <- raster(x = "015_tas_scotese02a_v21321.nc")
-raster2prep.20 <- raster(x = "015_tas_scotese02a_v21321.nc")
+raster2prep.20 <- raster(x = "020_tas_scotese02a_v21321.nc")
 
 raster2prep.15
 raster2prep.20
@@ -224,7 +224,7 @@ https://www.worldclim.org/
 
 To keep our climatic variables consistent, we'll also work with the mean annual temperature data.
 
-Whilst below we show you code to access this data directly within R, it can take a while to download. We've therefore also included it alongside the other materials for the workshop, which can be accessed HERE.
+Whilst below we show you code to access this data directly within R, it can take a while to download. We've therefore also included it alongside the other materials for the workshop, which can be accessed **[HERE](https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization)**.
 
 ```{r}
 # Load data from WorldClim and make into raster
@@ -280,8 +280,8 @@ Let's begin!
 
 First, we'll load in our palaeontological data. Luckily for us, we've already been working with a Crocodylia fossil occurrence dataset. We'll use these data in our analysis. If needed, you can read in the cleaned dataset below.
 ```{r}
-# Load cleaned fossil data for order Crocodylia
-fossil_occ <- read.csv("crocs_fossil_test.csv")
+# Load cleaned fossil data for order Crocodylia that we worked on earlier
+fossil_occ <- read.csv("cenozoic_crocs.csv")
 ```
 
 #### 1B. Organise modern occurrence data
