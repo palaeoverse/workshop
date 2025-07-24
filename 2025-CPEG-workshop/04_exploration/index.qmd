@@ -44,6 +44,7 @@ Before we start, we will load the R packages and data we need:
 # install.packages("palaeoverse")
 # install.packages("ggplot2")
 # install.packages("rnaturalearth")
+# install.packages("rnaturalearthdata")
 # install.packages("deeptime")
 # install.packages("rgplates")
 # install.packages("fossilbrush")
