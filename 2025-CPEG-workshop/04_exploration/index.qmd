@@ -621,6 +621,13 @@ ggplot(lat_ranges, aes(x = midpoint, ymin = min, ymax = max)) +
   coord_geo(dat = "stages", expand = TRUE)
 ```
 
+Let's save our data for the next unit!
+
+```{r save_data}
+# Save data
+write.csv(x = fossils, file = "../05_harmonization/cenozoic_crocs.csv", row.names = FALSE)
+```
+
 # Resources
 
 1. AGGARWAL, C. C. 2017. Outlier Analysis. Springer.
