@@ -64,14 +64,14 @@ This edition of the Workshop event is organised and led by the following members
 
 :::
 
-:::
-::: {.grid}
-
 ::: {.g-col-4}
 
 ![Harriet Drage <br> University of Lausanne, Switzerland](images/Harriet.jpg){width="100%"}
 
 :::
+
+:::
+::: {.grid}
 
 ::: {.g-col-4}
 
@@ -84,9 +84,6 @@ This edition of the Workshop event is organised and led by the following members
 ![Pedro Godoy <br> University of São Paulo, Brazil](images/Pedro.jpeg){width="100%"}
 
 :::
-
-:::
-::: {.grid}
 
 ::: {.g-col-4}
 
