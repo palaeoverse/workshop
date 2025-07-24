@@ -1,6 +1,5 @@
 ---
-title: | 
-  CPEG 2025 workshop\
+title: "CPEG 2025 workshop"
 subtitle: |
   Building open data science skills in paleobiology and ecology\
   \
