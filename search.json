@@ -2224,7 +2224,17 @@
     "href": "2025-CPEG-workshop/index.html#installation",
     "title": "CPEG 2025 Workshop",
     "section": "Installation",
-    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here for Windows or here for MacOS. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages()",
+    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here for Windows or here for MacOS. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"dplyr\")\ninstall.packages(\"readr\")\ninstall.packages(\"palaeoverse\")\ninstall.packages(\"ggplot2\")\ninstall.packages(\"rnaturalearth\")\ninstall.packages(\"rnaturalearthdata\")\ninstall.packages(\"deeptime\")\ninstall.packages(\"rgplates\")\ninstall.packages(\"fossilbrush\")\ninstall.packages(\"rgbif\")\ninstall.packages(\"raster\")\ninstall.packages(\"sf\")\ninstall.packages(\"geodata\")\ninstall.packages(\"ncdf4\")",
+    "crumbs": [
+      "CPEG 2025 Workshop"
+    ]
+  },
+  {
+    "objectID": "2025-CPEG-workshop/index.html#github",
+    "href": "2025-CPEG-workshop/index.html#github",
+    "title": "CPEG 2025 Workshop",
+    "section": "GitHub",
+    "text": "GitHub\nThis workshop will include a brief introduction to GitHub. We recommend that you make a GitHub account in advance, if you don’t already have one, so you can follow along during the workshop. Note that you can get additional benefits if you apply to GitHub Education as a researcher or student once you’ve set up a personal account.",
     "crumbs": [
       "CPEG 2025 Workshop"
     ]
