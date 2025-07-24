@@ -1,24 +1,11 @@
 ---
 title: "Introduction to the workshop"
-subtitle: |
-Building open data science skills in paleobiology and ecology\
-  \
-  ![](./images/cpeg_cpg25_visual_for_web.jpg){fig-align="center" height=250}\
+subtitle: "Building open data science skills in paleobiology and ecology"
 toc: true
 order: 1
-execute:
-  echo: true
-  eval: true
-  freeze: true
-format: 
-  revealjs:
-    logo: "./images/logo.png"
-    footer: "[palaeoverse: A community-driven R package](https://palaeoverse.org)"
-    theme: [simple, custom.scss]
-    embed-resources: true
-    output-file: "presentation.html"
 ---
 
+![](images/cpeg_cpg25_visual_for_web.jpg){fig-align="center" height=250}
 
 ## Introductions
 
@@ -30,13 +17,13 @@ format:
 :::
 
 ::: {.column width="20%"}
-![Lewis Jones <br> University College London, UK](images/Lewis.JPG){width="100%"}
+![Lewis Jones <br> University College London, UK](images/Lewis.jpg){width="100%"}
 
 ![Will Gearty <br> Syracuse University, USA](images/Will.jpeg){width="100%"}
 :::
 
 ::: {.column width="20%"}
-![Bethany Allen <br> GFZ Helmholtz Centre for Geosciences, Germany]((images/Bethany.jpeg){width="100%"}
+![Bethany Allen <br> GFZ Helmholtz Centre for Geosciences, Germany](images/Bethany.jpeg){width="100%"}
 
 ![Pedro Godoy <br> University of São Paulo, Brazil](images/Pedro.jpeg){width="100%"}
 :::
@@ -46,18 +33,34 @@ format:
 
 ![Niklas Hohmann <br> Utrecht University, Netherlands](images/Niklas.png){width="100%"}
 :::
-
-::: {.column width="20%"}
-![](images/logo.png){width="100%"}
-:::
 :::
 
-## Orientation
+## What is Palaeoverse?
 
-- Room KO2-F-152
-- Restrooms
-- Exits
-- Internet
+![](images/issue_cover.jpg)
+
+## Why open science?
+
+- open science aims to make research and its outcomes—at all stages—more accessible
+    - increases transparency and reproducibility
+    - facilitates collaboration
+    - broadens access to scientific knowledge
+    - enhance the impact and reach of our science
+
+## Objectives
+
+Goal: Overview of how to process your data in an open, reproducible way
+
+Learning objectives:
+-  Gain exposure to tools and best practices for developing and sharing reproducible workflows
+-  Build confidence working with data in R
+-  Practice coding collaboratively
+-  Connect with other participants
+
+You'll walk away with:
+-  Template for creating a workflow and example code that you can adapt to your own work
+-  Workshop materials and resources
+-  An expanded network of colleagues
 
 ## Schedule
 
@@ -86,18 +89,17 @@ format:
 
 <https://workshop.palaeoverse.org>
 
-## What is Palaeoverse?
+## Orientation
 
-![](images/issue_cover.jpg)
+-  Room KO2-F-152
+-  Restrooms
+-  Exits
+-  Internet
 
-## Introductions
+## Meet your colleagues
 
 -   Name
 -   Institution
 -   Career stage
 -   Research interests
--   What are you hoping to learn today?
-
-## Objectives
-
-
+-   Example of open science in action?
