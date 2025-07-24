@@ -108,11 +108,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Data Processing I – Palaeoverse Workshops">
 <meta property="og:description" content="Data Processing I: Data Exploration and Cleaning">
-<meta property="og:image" content="/images/favicon.png">
+<meta property="og:image" content="index_files/figure-html/abundance_distribution_plot-1.png">
 <meta property="og:site_name" content="Palaeoverse Workshops">
 <meta name="twitter:title" content="Data Processing I – Palaeoverse Workshops">
 <meta name="twitter:description" content="Data Processing I: Data Exploration and Cleaning">
-<meta name="twitter:image" content="/images/favicon.png">
+<meta name="twitter:image" content="index_files/figure-html/abundance_distribution_plot-1.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -474,10 +474,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link active" data-scroll-target="#data-exploration">Data exploration</a>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
+  <li><a href="#data-exploration" id="toc-data-exploration" class="nav-link" data-scroll-target="#data-exploration">Data exploration</a>
   <ul class="collapse">
   <li><a href="#why-do-we-explore-our-data" id="toc-why-do-we-explore-our-data" class="nav-link" data-scroll-target="#why-do-we-explore-our-data">Why do we explore our data?</a></li>
-  <li><a href="#how-do-we-explore-our-data" id="toc-how-do-we-explore-our-data" class="nav-link" data-scroll-target="#how-do-we-explore-our-data">How do we explore our data?</a></li>
+  <li><a href="#how-do-we-explore-our-data" id="toc-how-do-we-explore-our-data" class="nav-link" data-scroll-target="#how-do-we-explore-our-data">How do we explore our data?</a>
+  <ul class="collapse">
+  <li><a href="#load-packages-and-data" id="toc-load-packages-and-data" class="nav-link" data-scroll-target="#load-packages-and-data">Load packages and data</a></li>
+  </ul></li>
   <li><a href="#practical" id="toc-practical" class="nav-link" data-scroll-target="#practical">Practical</a></li>
   </ul></li>
   <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning">Data cleaning</a>
@@ -531,15 +536,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><strong>Aims</strong></p>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<p>In this session, the objectives are to (1) understand why data exploration and cleaning is key for data analyses and (2) develop the skills and knowledge needed to explore and clean data. We will cover:</p>
 <ul>
-<li>To understand why data exploration and cleaning is key for data analyses</li>
-<li>To develop the skills and knowledge needed to explore and clean data</li>
+<li>Exploratory data analyses</li>
+<li>Identifying and handling incomplete records</li>
+<li>Identifying and handling outliers</li>
+<li>Identifying and handling inconsistencies</li>
+<li>Identifying and handling duplicate records</li>
 </ul>
-<p><strong>Schedule</strong></p>
-<ul>
-<li>11:15–12:30</li>
-</ul>
+</section>
+<section id="schedule" class="level1">
+<h1>Schedule</h1>
+<p>11:15–12:30</p>
+</section>
 <section id="data-exploration" class="level1">
 <h1>Data exploration</h1>
 <section id="why-do-we-explore-our-data" class="level2">
@@ -556,36 +567,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="how-do-we-explore-our-data" class="level2">
 <h2 class="anchored" data-anchor-id="how-do-we-explore-our-data">How do we explore our data?</h2>
+<section id="load-packages-and-data" class="level3">
+<h3 class="anchored" data-anchor-id="load-packages-and-data">Load packages and data</h3>
+<p>Before we start, we will load the R packages and data we need:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("dplyr")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("palaeoverse")</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("ggplot2")</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rnaturalearth")</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rnaturalearthdata")</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("deeptime")</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rgplates")</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("fossilbrush")</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palaeoverse)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearthdata)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(deeptime)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgplates)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fossilbrush)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"cenozoic_crocs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>The first thing we want to do with our data is generate summary statistics and plots to help us understand the data and its various characteristics.</p>
 <p>For example, we can look at the distribution of identification levels for our fossils.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the frequency of taxonomic ranks</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>accepted_rank)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate as percentages</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>(<span class="fu">table</span>(fossils<span class="sc">$</span>accepted_rank) <span class="sc">/</span> <span class="fu">nrow</span>(fossils)) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the frequency of taxonomic ranks</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>accepted_rank)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+        family          genus        species      subfamily       subgenus 
+            15            625            849              3              1 
+    subspecies    superfamily unranked clade 
+             2             30            717 </code></pre>
 </div>
-<p>We can see that of our 886 occurrences, 250 (28%) are identified to species level. A further 254 (29%) are identified to genus level. The remaining fossils are more coarsely identified, including 365 (41%) which are identified to the mysterious level of “unranked clade”.</p>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate as percentages</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>(<span class="fu">table</span>(fossils<span class="sc">$</span>accepted_rank) <span class="sc">/</span> <span class="fu">nrow</span>(fossils)) <span class="sc">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+        family          genus        species      subfamily       subgenus 
+    0.66904550    27.87689563    37.86797502     0.13380910     0.04460303 
+    subspecies    superfamily unranked clade 
+    0.08920607     1.33809099    31.98037467 </code></pre>
+</div>
+</div>
+<p>We can see that of our 886 occurrences, 849 (~38%) are identified to species level. A further 625 (~28%) are identified to genus level. The remaining fossils are more coarsely identified, including 717 (~32%) which are identified to the mysterious level of “unranked clade”.</p>
 <p>Next, let’s look at the distribution of fossils across localities. In the PBDB, fossils are placed within collections, each of which can roughly be considered a separate locality (they can also represent different sampling horizons at the same locality; more on this later). First, we can count the number of unique <code>collection_no</code> values to find out how many unique collections are in the dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the length of a vector of unique collection numbers?</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What is the length of a vector of unique collection numbers?</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1691</code></pre>
 </div>
-<p>Our dataset contains 720 unique collections.</p>
+</div>
+<p>Our dataset contains 1691 unique collections.</p>
 <p>We can also create a plot showing us the distribution of occurrences across these collections. First let’s tally up the number of occurrences in each collection.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of times each collection number appears in the dataset</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>coll_no_freq <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of times each collection number appears in the dataset</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>coll_no_freq <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">table</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, we’ll use the <a href="https://ggplot2.tidyverse.org/">ggplot2 package</a>, the go-to for professional-looking data visualizations in R, to visualize the frequency of collections with various numbers of occurrences.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the distribution of number of occurrences per collection</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coll_no_freq, <span class="fu">aes</span>(<span class="at">x =</span> Freq)) <span class="sc">+</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of occurrences"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the distribution of number of occurrences per collection</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(coll_no_freq, <span class="fu">aes</span>(<span class="at">x =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Number of occurrences"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frequency"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/abundance_distribution_plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<p>We can see that the collection containing the most occurrences has 7, while the vast majority only contain a single occurrence.</p>
+</div>
+</div>
+<p>We can see that the collection containing the most occurrences has 15, while the vast majority only contain a single occurrence.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -610,17 +667,40 @@ Building ggplot2 visualizations
 </div>
 <p>What about the countries in which these fossils were found? We can investigate this using the “cc”, or “country code” column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List unique country codes, and count them</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(fossils<span class="sc">$</span>cc)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>cc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List unique country codes, and count them</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(fossils<span class="sc">$</span>cc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "US" "NC" "CN" "IN" "CA" "KE" "AU" NA   "TD" "TZ" "CD" "ET" "UG" "MW" "DJ"
+[16] "ZA" "PA" "FJ" "PE" "FR" "MA" "IT" "TN" "PK" "PG" "BE" "PT" "RU" "AR" "ES"
+[31] "UK" "IL" "DE" "IQ" "SA" "LY" "VE" "KZ" "NP" "BR" "MG" "PR" "AT" "JM" "EG"
+[46] "TH" "MX" "ID" "AQ" "CH" "CR" "SV" "TW" "NE" "TR" "CZ" "MM" "DK" "SE" "UA"
+[61] "PL" "CO" "SK" "GT" "VU" "SC" "JP" "KY" "AE" "CU" "MT" "BS" "VN" "NZ" "OM"
+[76] "GR" "ER" "PY" "EH" "DO" "RO" "SD" "ML" "BA" "SN" "MN" "BG" "HU" "LK"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>cc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 89</code></pre>
+</div>
 </div>
 <p>Here we can see that Paleogene crocodiles have been found in 46 different countries. Let’s sort those values alphabetically to help us find specific countries.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List and sort unique country codes, and count them</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>cc))</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">sort</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>cc)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List and sort unique country codes, and count them</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>cc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "AE" "AQ" "AR" "AT" "AU" "BA" "BE" "BG" "BR" "BS" "CA" "CD" "CH" "CN" "CO"
+[16] "CR" "CU" "CZ" "DE" "DJ" "DK" "DO" "EG" "EH" "ER" "ES" "ET" "FJ" "FR" "GR"
+[31] "GT" "HU" "ID" "IL" "IN" "IQ" "IT" "JM" "JP" "KE" "KY" "KZ" "LK" "LY" "MA"
+[46] "MG" "ML" "MM" "MN" "MT" "MW" "MX" "NC" "NE" "NP" "NZ" "OM" "PA" "PE" "PG"
+[61] "PK" "PL" "PR" "PT" "PY" "RO" "RU" "SA" "SC" "SD" "SE" "SK" "SN" "SV" "TD"
+[76] "TH" "TN" "TR" "TW" "TZ" "UA" "UG" "UK" "US" "VE" "VN" "VU" "ZA"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">sort</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>cc)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 88</code></pre>
+</div>
 </div>
 <p>Something weird has happened here: we can see that once the countries have been sorted, one of them has disappeared. Why? We will come back to this during our <a href="#data-cleaning">data cleaning</a>.</p>
+</section>
 </section>
 <section id="practical" class="level2">
 <h2 class="anchored" data-anchor-id="practical">Practical</h2>
@@ -648,31 +728,49 @@ Building ggplot2 visualizations
 <p>By default, when we read data tables into R, it recognises empty cells and takes some course of action to manage them. When we use base R functions, such as <code>read.csv()</code>, empty cells are given an NA value (‘not available’) only when the column is considered to contain numerical data. When we use Tidyverse functions, such as <code>readr::read_csv()</code>, all empty cells are given NA values. This is important to bear in mind when we want to find those missing values: here, we have done the latter, so all empty cells are NA.</p>
 <p>The extent of incompleteness of the different columns in our dataset is highly variable. For example, the number of NA values for the collection_no is 0.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of collection number values for which `is.na()` is TRUE</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of collection number values for which `is.na()` is TRUE</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
 </div>
 <p>This is because it is impossible to add an occurrence to the PBDB without putting it in a collection, which must in turn have an identification number.</p>
 <p>However, what about genus?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of genus IDs for which `is.na()` is TRUE</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>genus))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count the number of genus IDs for which `is.na()` is TRUE</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>genus))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 765</code></pre>
+</div>
 </div>
 <p>What other columns might we want to check?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Latitude</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>lat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Latitude</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>lat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeolatitude</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>paleolat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeolatitude</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>paleolat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 234</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Geological formations</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>formation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Geological formations</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>formation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 570</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Country code</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>cc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Country code</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>cc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
 </div>
 <p>OK, so we’ve identified some incomplete data records, what do we do now? We have three options:</p>
 <ul>
@@ -684,11 +782,14 @@ Building ggplot2 visualizations
 <h4 class="anchored" data-anchor-id="filter">Filter</h4>
 <p>While all occurrences have present-day coordinates, some are missing palaeocoordinates. We could easily remove these occurrences from the dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove occurrences which are missing palaeocoordinates</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, <span class="sc">!</span><span class="fu">is.na</span>(fossils<span class="sc">$</span>paleolng))</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether this has worked</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>paleolat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove occurrences which are missing palaeocoordinates</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, <span class="sc">!</span><span class="fu">is.na</span>(fossils<span class="sc">$</span>paleolng))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check whether this has worked</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(fossils<span class="sc">$</span>paleolng))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
 </div>
 <p>A further option applicable in some cases would be to fill in our missing data. We may be able to interpolate values from the rest of our data, or use additional data sources. For our palaeogeography example above, we could generate our own palaeocoordinates, for example using <code>palaeoverse::palaeorotate()</code>.</p>
 </section>
@@ -703,10 +804,10 @@ Building ggplot2 visualizations
 </section>
 <section id="complete" class="level4">
 <h4 class="anchored" data-anchor-id="complete">Complete</h4>
-<p>So, we’ve gone back to our source material (i.e.&nbsp;the publication the data is from) and we’ve discovered that these occurrences are from the XXX formation. We can now programmatically update our data. We could also do this manually in spreadsheet software, but through coding, we can track and document all the changes we’ve made to the dataset with ease!</p>
+<p>So, we’ve gone back to our source material (i.e.&nbsp;the publication the data is from) and we’ve discovered that occurrences from collection 18539 are from the Bone Valley Formation. We can now programmatically update our data. We could also do this manually in spreadsheet software, but through coding, we can track and document all the changes we’ve made to the dataset with ease!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add formation name</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>fossils[<span class="fu">which</span>(fossils<span class="sc">$</span>collection_no <span class="sc">==</span> <span class="st">"XXX"</span>), <span class="st">"formation"</span>] <span class="ot">&lt;-</span> <span class="st">""</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add formation name</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fossils[<span class="fu">which</span>(fossils<span class="sc">$</span>collection_no <span class="sc">==</span> <span class="st">"18539"</span>), <span class="st">"formation"</span>] <span class="ot">&lt;-</span> <span class="st">"Bone Valley Formation"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -714,7 +815,7 @@ Building ggplot2 visualizations
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-A word of caution
+A word of warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -763,104 +864,153 @@ Answer
 <h3 class="anchored" data-anchor-id="identify-and-handle-outliers">Identify and handle outliers</h3>
 <p>To provide an example on identifying and handling outliers, we we will focus in on the specific variables which relate to our scientific question, i.e.&nbsp;the geography of our fossil occurrences. First we’ll plot where the crocodile fossils have been found across the globe: how does this match what we already know from the country codes?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the geographic coordinates of each locality over the world map</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils) <span class="sc">+</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude (º)"</span>,</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the geographic coordinates of each locality over the world map</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils) <span class="sc">+</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat), </span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">size =</span> <span class="fl">0.75</span>, <span class="at">colour =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"purple3"</span>) <span class="sc">+</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude (º)"</span>,</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<p>We have a large density of crocodile occurrences in Europe and the western interior of the United States, along with a smattering of occurrences across the other continents. This distribution seems to fit our previous knowledge, that the occurrences are spread across 46 countries. However, the crocodile occurrences in Antarctica seem particularly suspicious: crocodiles need a warm climate, and modern-day Antarctica certainly doesn’t fit this description. Let’s investigate further. We’ll do this by plotting the latitude of the occurrences through time.</p>
+</div>
+</div>
+<p>We have a large density of crocodile occurrences in Europe and the western interior of the United States, along with a smattering of occurrences across the other continents. This distribution seems to fit our previous knowledge, that the occurrences are spread across 89 countries. However, the crocodile occurrences in Antarctica seem particularly suspicious: crocodiles need a warm climate, and modern-day Antarctica certainly doesn’t fit this description. Let’s investigate further. We’ll do this by plotting the latitude of the occurrences through time.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a column to the data frame with the midpoint of the fossil ages</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fossils, <span class="at">mid_ma =</span> (min_ma <span class="sc">+</span> max_ma) <span class="sc">/</span> <span class="dv">2</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create dataset containing only Antarctic fossils</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>Antarctic <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, cc <span class="sc">==</span> <span class="st">"AA"</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the age of each occurrence against its latitude</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils, <span class="fu">aes</span>(<span class="at">x =</span> mid_ma, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> Antarctic, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>) <span class="sc">+</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a column to the data frame with the midpoint of the fossil ages</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">mutate</span>(fossils, <span class="at">mid_ma =</span> (min_ma <span class="sc">+</span> max_ma) <span class="sc">/</span> <span class="dv">2</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create dataset containing only Antarctic fossils</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>antarctic <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, cc <span class="sc">==</span> <span class="st">"AQ"</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the age of each occurrence against its latitude</span></span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils, <span class="fu">aes</span>(<span class="at">x =</span> mid_ma, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> antarctic, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>) <span class="sc">+</span></span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="st">"auto"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>Here we can see the latitude of each occurrence, plotted against the temporal midpoint of the collection. We have highlighted our Antarctic occurrences in red - these points are still looking pretty anomalous.</p>
 <p>But, wait, we should actually be looking at palaeolatitude instead. Let’s plot that against time.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the age of each occurrence against its palaeolatitude</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils, <span class="fu">aes</span>(<span class="at">x =</span> mid_ma, <span class="at">y =</span> paleolat)) <span class="sc">+</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> Antarctic, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the age of each occurrence against its palaeolatitude</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils, <span class="fu">aes</span>(<span class="at">x =</span> mid_ma, <span class="at">y =</span> paleolat)) <span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> antarctic, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="st">"auto"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>Hmm… when we look at palaeolatitude the Antarctic occurrences are even further south. Time to really check out these occurrences. Which collections are they within?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find Antarctic collection numbers</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(Antarctic<span class="sc">$</span>collection_no)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find Antarctic collection numbers</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(antarctic<span class="sc">$</span>collection_no)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  43030 120887  31173</code></pre>
+</div>
 </div>
 <p>Well, upon further visual inspection using the PBDB website, all appear to be fairly legitimate. However, all three occurrences still appear to be outliers, especially as in the late Eocene <a href="https://doi.org/10.1038/s41586-018-0272-2">temperatures were dropping</a>. What about the taxonomic certainty of these occurrences?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List taxonomic names associated with Antarctic occurrences</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>Antarctic<span class="sc">$</span>identified_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List taxonomic names associated with Antarctic occurrences</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>antarctic<span class="sc">$</span>identified_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Crocodilia indet." "Crocodylia indet." "Crocodylia indet."</code></pre>
+</div>
 </div>
 <p>Since all three occurrences are listed as “Crocodylia indet.”, it may make sense to remove them from further analyses anyway.</p>
 <p>Let’s investigate if there are any other anomalies or outliers in our data. We’ll bin the occurrences by stage to look for stage-level outliers, using boxplots to show us any anomalous data points.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Put occurrences into stage bins</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">time_bins</span>(<span class="at">scale =</span> <span class="st">"international ages"</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> fossils, <span class="at">bins =</span> bins,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">min_ma =</span> <span class="st">"min_ma"</span>, <span class="at">max_ma =</span> <span class="st">"max_ma"</span>, <span class="at">method =</span> <span class="st">"majority"</span>)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add interval name labels to occurrences</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">select</span>(bins, bin, interval_name)</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">left_join</span>(fossils, bins, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"bin_assignment"</span> <span class="ot">=</span> <span class="st">"bin"</span>))</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot occurrences</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils, <span class="fu">aes</span>(<span class="at">x =</span> bin_midpoint, <span class="at">y =</span> paleolat, <span class="at">fill =</span> interval_name)) <span class="sc">+</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
-<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
-<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
-<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_geo</span>(<span class="st">"stages"</span>) <span class="sc">+</span></span>
-<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Put occurrences into stage bins</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">time_bins</span>(<span class="at">scale =</span> <span class="st">"international ages"</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> fossils, <span class="at">bins =</span> bins,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">min_ma =</span> <span class="st">"min_ma"</span>, <span class="at">max_ma =</span> <span class="st">"max_ma"</span>, <span class="at">method =</span> <span class="st">"majority"</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Add interval name labels to occurrences</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">select</span>(bins, bin, interval_name)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">left_join</span>(fossils, bins, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"bin_assignment"</span> <span class="ot">=</span> <span class="st">"bin"</span>))</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot occurrences</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils, <span class="fu">aes</span>(<span class="at">x =</span> bin_midpoint, <span class="at">y =</span> paleolat, <span class="at">fill =</span> interval_name)) <span class="sc">+</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_geo</span>(<span class="st">"stages"</span>) <span class="sc">+</span></span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="st">"auto"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>Box plots are a great way to look for outliers, because their calculation automatically includes outlier determination, and any such points can clearly be seen in the graph. At time of writing, the guidance for geom_boxplot() states that “The upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called ‘outlying’ points and are plotted individually.” 1.5 times the interquartile range seems a reasonable cut-off for determining outliers, so we will use these plots at face value to identify data points to check.</p>
 <p>Here, the Ypresian (“Y”) is looking pretty suspicious - it seems to have a lot of outliers. Let’s plot the Ypresian occurrences on a palaeogeographic map to investigate further.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load map of the Ypresian, and identify Ypresian fossils</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fossils_y <span class="ot">&lt;-</span> fossils <span class="sc">%&gt;%</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(interval_name <span class="sc">==</span> <span class="st">"Ypresian"</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>world_y <span class="ot">&lt;-</span> <span class="fu">reconstruct</span>(<span class="st">"coastlines"</span>, <span class="at">model =</span> <span class="st">"PALEOMAP"</span>, <span class="at">age =</span> <span class="fl">51.9</span>)</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot localities on the Ypresian map</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils_y) <span class="sc">+</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world_y) <span class="sc">+</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> paleolng, <span class="at">y =</span> paleolat)) <span class="sc">+</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Palaeolongitude (º)"</span>,</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load map of the Ypresian, and identify Ypresian fossils</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>fossils_y <span class="ot">&lt;-</span> fossils <span class="sc">%&gt;%</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(interval_name <span class="sc">==</span> <span class="st">"Ypresian"</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>world_y <span class="ot">&lt;-</span> <span class="fu">reconstruct</span>(<span class="st">"coastlines"</span>, <span class="at">model =</span> <span class="st">"PALEOMAP"</span>, <span class="at">age =</span> <span class="fl">51.9</span>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot localities on the Ypresian map</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils_y) <span class="sc">+</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> world_y) <span class="sc">+</span></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> paleolng, <span class="at">y =</span> paleolat)) <span class="sc">+</span></span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Palaeolongitude (º)"</span>,</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>Aha! There is a concentrated cluster of occurrences in the western interior of North America. This high number of occurrences is increasing the weight of data at this palaeolatitude, and narrowing the boundaries at which other points are considered outliers. We can check the effect this is having on our outlier identification by removing the US occurrences from the dataset and checking the distribution again.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove US fossils from the Ypresian dataset</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fossils_y <span class="ot">&lt;-</span> fossils_y <span class="sc">%&gt;%</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cc <span class="sc">!=</span> <span class="st">"US"</span>)</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot boxplot of non-US Ypresian fossil palaeolatitudes</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils_y) <span class="sc">+</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> paleolat)) <span class="sc">+</span></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove US fossils from the Ypresian dataset</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>fossils_y <span class="ot">&lt;-</span> fossils_y <span class="sc">%&gt;%</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(cc <span class="sc">!=</span> <span class="st">"US"</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot boxplot of non-US Ypresian fossil palaeolatitudes</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(fossils_y) <span class="sc">+</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> paleolat)) <span class="sc">+</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <p>We can now see that none of our occurrences are being flagged as outliers. Without this strong geographic bias towards the US, all of the occurrences in the Ypresian appear to be reasonable. This fits our prior knowledge, as <a href="https://doi.org/10.1038/s41586-018-0272-2">elevated global temperatures during this time</a> likely helped crocodiles to live at higher latitudes than was possible earlier in the Paleogene.</p>
 <p>So to sum up, it seems that our outliers are not concerning, so we will leave them in our dataset and continue with our analytical pipeline.</p>
@@ -870,41 +1020,621 @@ Answer
 <h2 class="anchored" data-anchor-id="identify-and-handle-inconsistencies">Identify and handle inconsistencies</h2>
 <p>We’re now going to look for inconsistencies in our dataset. Let’s start by revisiting its structure, focusing on whether the class types of the variables make sense.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the data class of each field in our dataset</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the data class of each field in our dataset</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   2008 obs. of  142 variables:
+ $ occurrence_no        : int  40163 40167 40168 40169 150323 168759 203975 205062 206351 211735 ...
+ $ record_type          : chr  "occ" "occ" "occ" "occ" ...
+ $ reid_no              : int  18506 NA NA NA NA NA 20034 NA 13474 NA ...
+ $ flags                : logi  NA NA NA NA NA NA ...
+ $ collection_no        : int  3113 3113 3113 3113 13346 15458 14764 22924 14830 15895 ...
+ $ identified_name      : chr  "Crocodylia indet." "Thoracosaurus basifissus" "Thoracosaurus basitruncatus" "Thoracosaurus neocesariensis" ...
+ $ identified_rank      : chr  "unranked clade" "species" "species" "species" ...
+ $ identified_no        : int  38309 216615 216614 184628 38435 110899 38309 110902 38424 274001 ...
+ $ difference           : chr  NA "nomen dubium, species not entered" "nomen dubium, species not entered" NA ...
+ $ accepted_name        : chr  "Crocodylia" "Gavialoidea" "Gavialoidea" "Thoracosaurus neocesariensis" ...
+ $ accepted_attr        : logi  NA NA NA NA NA NA ...
+ $ accepted_rank        : chr  "unranked clade" "superfamily" "superfamily" "species" ...
+ $ accepted_no          : int  36582 96627 96627 184627 38435 110899 36582 110902 38424 274001 ...
+ $ early_interval       : chr  "Thanetian" "Thanetian" "Thanetian" "Thanetian" ...
+ $ late_interval        : chr  NA NA NA NA ...
+ $ max_ma               : num  59.2 59.2 59.2 59.2 48.1 ...
+ $ min_ma               : num  56 56 56 56 41 ...
+ $ ref_author           : chr  "Alroy 2006" "Cook and Ramsdell 1991" "Cook and Ramsdell 1991" "Cook and Ramsdell 1991" ...
+ $ ref_pubyr            : int  2006 1991 1991 1991 1988 2001 2007 1932 1986 1988 ...
+ $ reference_no         : int  18120 140 140 140 688 7530 19636 34368 2930 766 ...
+ $ phylum               : chr  "Chordata" "Chordata" "Chordata" "Chordata" ...
+ $ class                : chr  "Reptilia" "Reptilia" "Reptilia" "Reptilia" ...
+ $ order                : chr  "Crocodylia" "Crocodylia" "Crocodylia" "Crocodylia" ...
+ $ family               : chr  NA NA NA "Gavialidae" ...
+ $ genus                : chr  NA NA NA "Thoracosaurus" ...
+ $ plant_organ          : logi  NA NA NA NA NA NA ...
+ $ abund_value          : int  NA NA NA NA 62 NA NA NA NA NA ...
+ $ abund_unit           : chr  NA NA NA NA ...
+ $ lng                  : num  -74.7 -74.7 -74.7 -74.7 -86.5 ...
+ $ lat                  : num  40 40 40 40 31.4 ...
+ $ occurrence_comments  : chr  "originally entered as \"Crocodylus? sp.\"" NA NA NA ...
+ $ collection_name      : chr  "Vincentown Formation, NJ" "Vincentown Formation, NJ" "Vincentown Formation, NJ" "Vincentown Formation, NJ" ...
+ $ collection_subset    : int  NA NA NA NA NA NA NA NA NA NA ...
+ $ collection_aka       : chr  NA NA NA NA ...
+ $ cc                   : chr  "US" "US" "US" "US" ...
+ $ state                : chr  "New Jersey" "New Jersey" "New Jersey" "New Jersey" ...
+ $ county               : chr  NA NA NA NA ...
+ $ latlng_basis         : chr  "estimated from map" "estimated from map" "estimated from map" "estimated from map" ...
+ $ latlng_precision     : chr  "seconds" "seconds" "seconds" "seconds" ...
+ $ altitude_value       : int  NA NA NA NA NA NA NA NA NA NA ...
+ $ altitude_unit        : chr  NA NA NA NA ...
+ $ geogscale            : chr  "local area" "local area" "local area" "local area" ...
+ $ geogcomments         : chr  "\"The Vincentown Fm. occurs in an irregular, narrow belt extending diagonally [NE-SW] across NJ through portion"| __truncated__ "\"The Vincentown Fm. occurs in an irregular, narrow belt extending diagonally [NE-SW] across NJ through portion"| __truncated__ "\"The Vincentown Fm. occurs in an irregular, narrow belt extending diagonally [NE-SW] across NJ through portion"| __truncated__ "\"The Vincentown Fm. occurs in an irregular, narrow belt extending diagonally [NE-SW] across NJ through portion"| __truncated__ ...
+ $ paleomodel           : chr  "gplates" "gplates" "gplates" "gplates" ...
+ $ geoplate             : chr  "109" "109" "109" "109" ...
+ $ paleoage             : chr  "mid" "mid" "mid" "mid" ...
+ $ paleolng             : num  -44.5 -44.5 -44.5 -44.5 -66.8 ...
+ $ paleolat             : num  40.1 40.1 40.1 40.1 34.7 ...
+ $ protected            : chr  NA NA NA NA ...
+ $ direct_ma_value      : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ direct_ma_error      : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ direct_ma_unit       : chr  NA NA NA NA ...
+ $ direct_ma_method     : chr  NA NA NA NA ...
+ $ max_ma_value         : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ max_ma_error         : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ max_ma_unit          : chr  NA NA NA NA ...
+ $ max_ma_method        : chr  NA NA NA NA ...
+ $ min_ma_value         : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ min_ma_error         : num  NA NA NA NA NA NA NA NA NA NA ...
+ $ min_ma_unit          : chr  NA NA NA NA ...
+ $ min_ma_method        : chr  NA NA NA NA ...
+ $ formation            : chr  "Vincentown" "Vincentown" "Vincentown" "Vincentown" ...
+ $ stratgroup           : chr  NA NA NA NA ...
+ $ member               : chr  NA NA NA NA ...
+ $ stratscale           : chr  "formation" "formation" "formation" "formation" ...
+ $ zone                 : chr  NA NA NA NA ...
+ $ zone_type            : chr  NA NA NA NA ...
+ $ localsection         : chr  "New Jersey" "New Jersey" "New Jersey" "New Jersey" ...
+ $ localbed             : chr  NA NA NA NA ...
+ $ localbedunit         : chr  NA NA NA NA ...
+ $ localorder           : chr  NA NA NA NA ...
+ $ regionalsection      : chr  NA NA NA NA ...
+ $ regionalbed          : chr  NA NA NA NA ...
+ $ regionalbedunit      : logi  NA NA NA NA NA NA ...
+ $ regionalorder        : chr  NA NA NA NA ...
+ $ stratcomments        : chr  NA NA NA NA ...
+ $ lithdescript         : chr  NA NA NA NA ...
+ $ lithology1           : chr  "sandstone" "sandstone" "sandstone" "sandstone" ...
+ $ lithadj1             : chr  "glauconitic" "glauconitic" "glauconitic" "glauconitic" ...
+ $ lithification1       : chr  NA NA NA NA ...
+ $ minor_lithology1     : chr  "sandy,calcareous" "sandy,calcareous" "sandy,calcareous" "sandy,calcareous" ...
+ $ fossilsfrom1         : chr  NA NA NA NA ...
+ $ lithology2           : chr  NA NA NA NA ...
+ $ lithadj2             : chr  NA NA NA NA ...
+ $ lithification2       : chr  NA NA NA NA ...
+ $ minor_lithology2     : chr  NA NA NA NA ...
+ $ fossilsfrom2         : chr  NA NA NA NA ...
+ $ environment          : chr  NA NA NA NA ...
+ $ tectonic_setting     : chr  NA NA NA NA ...
+ $ geology_comments     : chr  "lithology described as a calcareous \"lime sand\" interbedded with a quartz or \"yellow sand\"" "lithology described as a calcareous \"lime sand\" interbedded with a quartz or \"yellow sand\"" "lithology described as a calcareous \"lime sand\" interbedded with a quartz or \"yellow sand\"" "lithology described as a calcareous \"lime sand\" interbedded with a quartz or \"yellow sand\"" ...
+ $ size_classes         : chr  NA NA NA NA ...
+ $ articulated_parts    : chr  NA NA NA NA ...
+ $ associated_parts     : chr  NA NA NA NA ...
+ $ common_body_parts    : chr  NA NA NA NA ...
+ $ rare_body_parts      : chr  NA NA NA NA ...
+ $ feed_pred_traces     : chr  NA NA NA NA ...
+ $ artifacts            : chr  NA NA NA NA ...
+ $ component_comments   : chr  NA NA NA NA ...
+ $ pres_mode            : chr  NA NA NA NA ...
+  [list output truncated]</code></pre>
+</div>
 </div>
 <p>This looks reasonable. For example, we can see that our collection IDs are <code>numerical</code>, and our <code>identified_name</code> column contains <code>character</code> strings.</p>
 <p>Now let’s dive in further to look for inconsistencies in spelling, which could cause taxonomic names or geological units to be grouped separately when they are really the same thing. We’ll start by checking for potential taxonomic misspellings.</p>
 <p>We can use the table() function to look at the frequencies of various taxonomic names in the dataset. Here, inconsistencies like misspellings or antiquated taxonomic names might be recognised. We will check the columns <code>family</code>, <code>genus</code>, and <code>accepted_name</code>, the latter of which gives the name of the identification regardless of taxonomic level, and is the only column to give species binomials.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabulate the frequency of values in the "family" and "genus" columns</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabulate the frequency of values in the "family" and "genus" columns</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      Alligatoridae        Crocodylidae          Gavialidae NO_FAMILY_SPECIFIED 
+                466                 421                 210                 357 
+     Planocraniidae 
+                 24 </code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>genus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>genus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+                Acresuchus               Ahdeskatanka 
+                         7                          1 
+             Akanthosuchus              Aktiogavialis 
+                         3                          3 
+                 Alligator           Allognathosuchus 
+                        74                        129 
+            Antecrocodylus                Argochampsa 
+                         2                          4 
+              Asiatosuchus                  Asifcroco 
+                        32                          1 
+             Astorgosuchus             Australosuchus 
+                         2                          4 
+                      Baru              Borealosuchus 
+                        14                         48 
+               Bottosaurus               Boverisuchus 
+                         5                         21 
+             Brachychampsa         Brachygnathosuchus 
+                         1                          1 
+        Brachyuranochampsa              Brasilosuchus 
+                         1                          1 
+                Brochuchus                     Caiman 
+                         8                         31 
+              Ceratosuchus             Charactosuchus 
+                         5                          7 
+           Chinatichampsus              Chrysochampsa 
+                         1                          1 
+                Crocodylus Crocodylus (Leptorhynchus) 
+                       269                          1 
+                Dinosuchus               Diplocynodon 
+                         1                        127 
+            Dollosuchoides             Dongnanosuchus 
+                         1                          1 
+               Duerosuchus             Dzungarisuchus 
+                         1                          1 
+               Eoalligator                   Eocaiman 
+                         3                          7 
+                Eogavialis                   Eosuchus 
+                         4                          6 
+                Euthecodon                   Gavialis 
+                        57                         40 
+             Gavialosuchus           Globidentosuchus 
+                         9                          9 
+               Gnatusuchus                Gryposuchus 
+                         6                         31 
+             Gunggamarandu             Harpacochampsa 
+                         1                          1 
+            Hassiacosuchus            Hesperogavialis 
+                         2                          6 
+             Ikanogavialis                Kalthifrons 
+                         5                          1 
+                   Kambara                Kentisuchus 
+                         4                          3 
+                   Kinyang                Krabisuchus 
+                         5                          3 
+             Kuttanacaiman               Leidyosuchus 
+                         3                          1 
+             Leptorramphus              Lianghusuchus 
+                         1                          2 
+        Listrognathosuchus             Maomingosuchus 
+                         1                          4 
+             Maroccosuchus                  Mecistops 
+                         3                         11 
+           Megadontosuchus                 Mekosuchus 
+                         1                          5 
+              Melanosuchus             Menatalligator 
+                         4                          1 
+               Mourasuchus               Navajosuchus 
+                        38                          2 
+               Necrosuchus                Nihilichnus 
+                         1                          1 
+           Orientalosuchus            Orthogenysuchus 
+                         1                          1 
+               Osteolaemus                Paleosuchus 
+                         4                          3 
+                 Paludirex               Paranacaiman 
+                         7                          1 
+              Paranasuchus              Paratomistoma 
+                         2                          1 
+              Penghusuchus              Piscogavialis 
+                         1                          8 
+               Planocrania             Procaimanoidea 
+                         2                          5 
+            Protoalligator                Protocaiman 
+                         1                          1 
+               Purussaurus            Qianshanosuchus 
+                        60                          1 
+                  Quinkana           Rhamphostomopsis 
+                         8                          4 
+             Rhamphosuchus                 Rimasuchus 
+                         3                          8 
+              Sacacosuchus               Sakhibaghoon 
+                         8                          1 
+          Siquisiquesuchus               Sutekhsuchus 
+                         6                          5 
+              Thecachampsa              Thoracosaurus 
+                        38                         11 
+               Tienosuchus                  Tomistoma 
+                         1                         26 
+           Toyotamaphimeia             Trilophosuchus 
+                         3                          2 
+                 Tsoabichi              Tzaganosuchus 
+                         2                          1 
+               Ultrastenos            Wannaganosuchus 
+                         1                          1 </code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter occurrences to those identified at species level, then tabulate species</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># names</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, accepted_rank <span class="sc">==</span> <span class="st">"species"</span>)</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils_sp<span class="sc">$</span>accepted_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter occurrences to those identified at species level, then tabulate species</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># names</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, accepted_rank <span class="sc">==</span> <span class="st">"species"</span>)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils_sp<span class="sc">$</span>accepted_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      Acresuchus pachytemporalis    Ahdeskatanka russlanddeutsche 
+                               7                                1 
+         Akanthosuchus langstoni           Aktiogavialis caribesi 
+                               3                                1 
+    Aktiogavialis puertoricensis                Alligator darwini 
+                               2                                7 
+               Alligator gaudryi              Alligator hailensis 
+                               1                                2 
+          Alligator hantoniensis                 Alligator luicus 
+                               2                                1 
+               Alligator mcgrewi               Alligator mefferdi 
+                               1                                2 
+      Alligator mississippiensis               Alligator munensis 
+                              12                                1 
+                Alligator olseni             Alligator prenasalis 
+                               4                                8 
+              Alligator sinensis               Alligator thomsoni 
+                               2                                1 
+      Allognathosuchus heterodon      Allognathosuchus mlynarskii 
+                               2                                1 
+       Allognathosuchus polyodon        Allognathosuchus wartheni 
+                               2                                4 
+       Allognathosuchus woutersi   Antecrocodylus chiangmuanensis 
+                               1                                2 
+              Argochampsa krebsi       Asiatosuchus depressifrons 
+                               4                               11 
+         Asiatosuchus germanicus            Asiatosuchus grangeri 
+                               3                                1 
+       Asiatosuchus nanlingensis        Asiatosuchus oenotriensis 
+                               4                                1 
+                Asifcroco retrai         Astorgosuchus bugtiensis 
+                               1                                2 
+          Australosuchus clarkae                     Baru darrowi 
+                               4                                4 
+                     Baru huberi                  Baru iylwenpeny 
+                               1                                2 
+                    Baru wickeni      Borealosuchus acutidentatus 
+                               7                                1 
+      Borealosuchus formidabilis          Borealosuchus griffithi 
+                              17                                2 
+       Borealosuchus sternbergii            Borealosuchus wilsoni 
+                              12                                2 
+           Bottosaurus fustidens          Boverisuchus magnifrons 
+                               2                                2 
+              Boverisuchus vorax     Brachyuranochampsa eversolei 
+                              17                                1 
+           Brasilosuchus mendesi             Brochuchus parvidens 
+                               1                                1 
+              Brochuchus pigotti                 Caiman australis 
+                               4                                2 
+             Caiman brevirostris                Caiman crocodilus 
+                               3                                2 
+              Caiman latirostris                Caiman paranensis 
+                               5                                1 
+               Caiman praecursor             Caiman wannlangstoni 
+                               1                                4 
+                   Caiman yacare            Ceratosuchus burdoshi 
+                               3                                4 
+          Charactosuchus fieldsi           Charactosuchus sansoai 
+                               3                                1 
+      Chinatichampsus wilsonorum              Crocodilus antiquus 
+                               1                                1 
+              Crocodilus ebertsi              Crocodilus ziphodon 
+                               1                                2 
+                 Crocodylus acer                Crocodylus acutus 
+                               1                                1 
+              Crocodylus affinis        Crocodylus anthropophagus 
+                              23                                6 
+                Crocodylus aptus             Crocodylus checchiai 
+                               2                                5 
+             Crocodylus elliotti           Crocodylus falconensis 
+                               1                                1 
+          Crocodylus gariepensis            Crocodylus megarhinus 
+                               1                                3 
+            Crocodylus niloticus          Crocodylus palaeindicus 
+                              38                                5 
+            Crocodylus palustris               Crocodylus porosus 
+                               5                                4 
+            Crocodylus rhombifer             Crocodylus siamensis 
+                               5                               10 
+      Crocodylus thorbjarnarsoni       Diplocynodon buetikonensis 
+                               7                                1 
+            Diplocynodon darwini            Diplocynodon deponiae 
+                               1                                3 
+         Diplocynodon elavericus        Diplocynodon hantoniensis 
+                               1                                1 
+              Diplocynodon kochi        Diplocynodon levantinicum 
+                               4                                2 
+           Diplocynodon muelleri           Diplocynodon plenidens 
+                               6                                2 
+            Diplocynodon ratelii            Diplocynodon remensis 
+                               8                                2 
+             Diplocynodon tormis              Diplocynodon ungeri 
+                               4                               16 
+        Dollosuchoides densmorei              Dongnanosuchus hsui 
+                               1                                1 
+            Duerosuchus piscator        Dzungarisuchus manacensis 
+                               1                                1 
+             Eoalligator chunyii             Eocaiman cavernensis 
+                               3                                1 
+          Eocaiman itaboraiensis           Eocaiman palaeocenicus 
+                               1                                3 
+            Eogavialis africanum              Eogavialis andrewsi 
+                               1                                2 
+          Eogavialis gavialoides                Eosuchus lerichei 
+                               1                                1 
+                  Eosuchus minor           Euthecodon arambourgii 
+                               5                                1 
+              Euthecodon brumpti               Euthecodon nitriae 
+                              33                                3 
+           Gavialis bengawanicus                  Gavialis browni 
+                               7                                5 
+             Gavialis gangeticus                  Gavialis lewisi 
+                              10                                3 
+          Gavialosuchus antiquus     Gavialosuchus eggenburgensis 
+                               1                                1 
+  Globidentosuchus brachyrostris           Gnatusuchus pebasensis 
+                               9                                6 
+         Gryposuchus colombianus             Gryposuchus croizati 
+                               8                                5 
+              Gryposuchus jessei             Gryposuchus neogaeus 
+                               4                                1 
+          Gryposuchus pachakamue            Gunggamarandu maunala 
+                               7                                1 
+    Harpacochampsa camfieldensis            Hassiacosuchus haupti 
+                               1                                1 
+        Hesperogavialis cruxenti            Ikanogavialis gameroi 
+                               3                                3 
+       Kalthifrons aurivellensis              Kambara implexidens 
+                               1                                1 
+                 Kambara molnari              Kambara murgonensis 
+                               1                                1 
+                 Kambara taraina               Kentisuchus astrei 
+                               1                                1 
+            Kentisuchus spenceri              Kinyang mabokoensis 
+                               2                                1 
+               Kinyang tchernovi        Krabisuchus siamogallicus 
+                               2                                3 
+      Kuttanacaiman iquitosensis       Leptorramphus entrerrianus 
+                               3                                1 
+     Lianghusuchus hengyangensis Listrognathosuchus multidentatus 
+                               1                                1 
+     Maomingosuchus acutirostris         Maomingosuchus petrolica 
+                               1                                2 
+          Maroccosuchus zennaroi           Mecistops cataphractus 
+                               3                                2 
+           Mecistops nkondoensis          Megadontosuchus arduini 
+                               6                                1 
+              Mekosuchus sanderi      Mekosuchus whitehunterensis 
+                               1                                4 
+            Melanosuchus fisheri         Melanosuchus latrubessei 
+                               1                                1 
+              Melanosuchus niger      Menatalligator bergouniouxi 
+                               1                                1 
+         Mourasuchus amazonensis              Mourasuchus arendsi 
+                               4                                9 
+              Mourasuchus atopus           Mourasuchus pattersoni 
+                               8                                1 
+              Navajosuchus mooki             Necrosuchus ionensis 
+                               2                                1 
+           Nihilichnus nihilicus     Orientalosuchus naduongensis 
+                               1                                1 
+          Orthogenysuchus olseni              Osteolaemus osborni 
+                               1                                1 
+           Osteolaemus tetraspes               Paludirex gracilis 
+                               3                                3 
+              Paludirex vincenti            Paranacaiman bravardi 
+                               3                                1 
+         Paranasuchus gasparinae            Paratomistoma courtii 
+                               2                                1 
+               Penghusuchus pani   Piscogavialis jugaliperforatus 
+                               1                                3 
+         Planocrania datangensis        Planocrania hengdongensis 
+                               1                                1 
+             Procaimanoidea kayi         Procaimanoidea utahensis 
+                               2                                1 
+     Protoalligator huiningensis          Protocaiman peligrensis 
+                               1                                1 
+        Purussaurus brasiliensis             Purussaurus mirandai 
+                               4                                9 
+           Purussaurus neivensis           Qianshanosuchus youngi 
+                               9                                1 
+                Quinkana babarra            Quinkana fortirostrum 
+                               1                                1 
+                Quinkana meboldi                  Quinkana timara 
+                               1                                2 
+       Rhamphostomopsis neogaeus         Rhamphosuchus crassidens 
+                               2                                3 
+               Rimasuchus lloydi            Sacacosuchus cordovai 
+                               8                                3 
+            Sakhibaghoon khizari   Siquisiquesuchus venezuelensis 
+                               1                                2 
+            Sutekhsuchus dowsoni            Thecachampsa antiquus 
+                               5                                8 
+       Thecachampsa carolinensis         Thecachampsa marylandica 
+                               7                                2 
+          Thecachampsa sericodon        Thoracosaurus isorhynchus 
+                              16                                1 
+    Thoracosaurus neocesariensis              Tienosuchus hsiangi 
+                               5                                1 
+               Tomistoma brumpti               Tomistoma cairense 
+                               1                                1 
+           Tomistoma calaritanum               Tomistoma coppensi 
+                               1                                8 
+             Tomistoma kerunense             Tomistoma lusitanica 
+                               1                                2 
+            Tomistoma schlegelii                Tomistoma tandoni 
+                               1                                1 
+           Tomistoma tenuirostre       Toyotamaphimeia taiwanicus 
+                               1                                2 
+         Trilophosuchus rackhami        Tsoabichi greenriverensis 
+                               1                                2 
+          Tzaganosuchus infansis              Ultrastenos willisi 
+                               1                                1 
+     Wannaganosuchus brachymanus 
+                               1 </code></pre>
+</div>
 </div>
 <p>Alternatively, we can use the <code>tax_check()</code> function in the <code>palaeoverse</code> package, which systematically searches for and flags potential spelling variation using a defined dissimilarity threshold.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for close spellings in the "genus" column</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tax_check</span>(<span class="at">taxdf =</span> fossils, <span class="at">name =</span> <span class="st">"genus"</span>, <span class="at">dis =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for close spellings in the "genus" column</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tax_check</span>(<span class="at">taxdf =</span> fossils, <span class="at">name =</span> <span class="st">"genus"</span>, <span class="at">dis =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in tax_check(taxdf = fossils, name = "genus", dis = 0.1): Non-letter
+characters present in the taxon names</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$synonyms
+NULL
+
+$non_letter_name
+[1] "Crocodylus (Leptorhynchus)"
+
+$non_letter_group
+NULL</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for close spellings in the "accepted_name" column</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tax_check</span>(<span class="at">taxdf =</span> fossils_sp, <span class="at">name =</span> <span class="st">"accepted_name"</span> , <span class="at">dis =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for close spellings in the "accepted_name" column</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tax_check</span>(<span class="at">taxdf =</span> fossils_sp, <span class="at">name =</span> <span class="st">"accepted_name"</span> , <span class="at">dis =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$synonyms
+  group             greater                lesser count_greater count_lesser
+1     C    Crocodylus aptus     Crocodylus acutus             2            1
+2     D Diplocynodon ungeri Diplocynodon muelleri            16            6
+
+$non_letter_name
+NULL
+
+$non_letter_group
+NULL</code></pre>
+</div>
 </div>
 <p>No names are flagged here, so that seems fine. We can also check formatting and spelling using the <code>fossilbrush</code> package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of taxonomic ranks to check</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>fossil_ranks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"phylum"</span>, <span class="st">"class"</span>, <span class="st">"order"</span>, <span class="st">"family"</span>, <span class="st">"genus"</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run checks</span></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">check_taxonomy</span>(<span class="fu">as.data.frame</span>(fossils), <span class="at">ranks =</span> fossil_ranks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of taxonomic ranks to check</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>fossil_ranks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"phylum"</span>, <span class="st">"class"</span>, <span class="st">"order"</span>, <span class="st">"family"</span>, <span class="st">"genus"</span>)</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Run checks</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="fu">check_taxonomy</span>(<span class="fu">as.data.frame</span>(fossils), <span class="at">ranks =</span> fossil_ranks)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Checking formatting [1/4]</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - formatting errors detected (see $formatting in output)</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Checking spelling   [2/4]</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - no potential synonyms detected</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Checking ranks      [3/4]</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - no cross-rank names detected</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Checking taxonomy   [4/4]</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code> - conflicting classifications detected (see $duplicates in output)</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$formatting
+$formatting$`non-letter`
+$formatting$`non-letter`$phylum
+integer(0)
+
+$formatting$`non-letter`$class
+integer(0)
+
+$formatting$`non-letter`$order
+integer(0)
+
+$formatting$`non-letter`$family
+  [1]    6    8  179  183  184  187  188  191  208  214  218  232  270  281  282
+ [16]  288  298  299  314  315  328  329  331  332  335  336  367  368  369  370
+ [31]  504  534  538  542  562  563  565  567  568  569  570  571  572  573  578
+ [46]  579  580  581  582  583  584  588  589  590  601  607  608  614  615  616
+ [61]  619  620  629  631  663  665  666  679  703  704  705  706  707  708  709
+ [76]  710  711  713  714  715  720  721  722  723  727  735  750  751  753  754
+ [91]  758  761  785  795  796  814  823  826  827  828  829  839  840  841  845
+[106]  861  863  864  865  866  867  868  869  875  877  878  879  880  881  891
+[121]  892  893  894  895  897  898  900  901  903  904  905  906  908  922  923
+[136]  924  925  926  927  928  929  930  936  937  938  939  940  941  942  943
+[151]  944  945  946  947  957  958  959  960  961  963  964  965  977  978  979
+[166]  983  988 1000 1012 1028 1029 1030 1035 1036 1037 1038 1039 1040 1075 1076
+[181] 1077 1078 1083 1087 1099 1100 1101 1102 1103 1104 1105 1106 1108 1111 1130
+[196] 1131 1137 1138 1139 1153 1156 1157 1158 1159 1160 1162 1167 1211 1223 1227
+[211] 1234 1235 1236 1237 1238 1239 1240 1241 1242 1243 1244 1245 1246 1247 1248
+[226] 1249 1250 1251 1252 1253 1254 1269 1271 1272 1275 1282 1284 1285 1294 1295
+[241] 1296 1332 1335 1336 1338 1343 1389 1393 1400 1401 1402 1404 1405 1413 1419
+[256] 1452 1453 1454 1455 1456 1457 1458 1459 1463 1464 1466 1468 1493 1495 1497
+[271] 1498 1499 1501 1502 1503 1507 1509 1510 1511 1518 1519 1520 1521 1524 1532
+[286] 1580 1588 1595 1612 1613 1614 1619 1622 1629 1630 1642 1647 1658 1659 1661
+[301] 1679 1680 1702 1703 1725 1733 1736 1742 1777 1779 1780 1811 1812 1815 1825
+[316] 1827 1831 1832 1833 1834 1836 1837 1839 1880 1881 1882 1883 1884 1885 1886
+[331] 1887 1888 1889 1890 1891 1892 1932 1938 1939 1940 1941 1946 1947 1952 1953
+[346] 1957 1959 1960 1965 1981 1983 1984 1985 1986 1987 1988 1989
+
+$formatting$`non-letter`$genus
+[1] 1774
+
+
+$formatting$`word-count`
+$formatting$`word-count`$phylum
+integer(0)
+
+$formatting$`word-count`$class
+integer(0)
+
+$formatting$`word-count`$order
+integer(0)
+
+$formatting$`word-count`$family
+integer(0)
+
+$formatting$`word-count`$genus
+[1] 1774
+
+
+
+$ranks
+$ranks$crossed_adj
+$ranks$crossed_adj$`genus--family`
+character(0)
+
+$ranks$crossed_adj$`family--order`
+character(0)
+
+$ranks$crossed_adj$`order--class`
+character(0)
+
+$ranks$crossed_adj$`class--phylum`
+character(0)
+
+
+$ranks$crossed_all
+$ranks$crossed_all$genus
+character(0)
+
+$ranks$crossed_all$family
+character(0)
+
+$ranks$crossed_all$order
+character(0)
+
+$ranks$crossed_all$class
+character(0)
+
+
+
+$duplicates
+[1] taxon rank 
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+</div>
 </div>
 <p>As before, no major inconsistencies or potential spelling errors were flagged.</p>
 <p>The PBDB has an integrated taxonomy system which limits the extent to which taxon name inconsistencies can arise. However, this is not the case for some other data fields. Therefore, we should certainly check for inconsistencies in other of these fields.</p>
@@ -915,50 +1645,67 @@ Answer
 <p>Our next step is to remove duplicates. This is an important step for count data, as duplicated values will artificially inflate our counts. Here, the function <code>dplyr::distinct()</code> is incredibly useful, as we can provide it with the columns we want it to check, and it removes rows for which data within those columns is identical.</p>
 <p>First, we will remove <em>absolute</em> duplicates: by this, we mean occurrences within a single collection which have identical taxonomic names. This can occur when, for example, two species are named within a collection, one of which is later synonymised with the other.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show number of rows in dataset before duplicates are removed</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show number of rows in dataset before duplicates are removed</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2008</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove occurrences with the same collection number and `accepted_name`</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">distinct</span>(fossils, collection_no, accepted_name, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show number of rows in dataset after duplicates are removed</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove occurrences with the same collection number and `accepted_name`</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">distinct</span>(fossils, collection_no, accepted_name, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show number of rows in dataset after duplicates are removed</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossils)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1955</code></pre>
+</div>
 </div>
 <p>The number of rows dropped, which means that some of our occurrences were absolute duplicates and have now been removed.</p>
 <p>Next, we can look at geographic duplicates. We mentioned earlier that sometimes PBDB collections are entered separately for different beds from the same locality, and this means that the number of collections can be higher than the number of geographic sampling localities. Let’s check whether this is the case in our dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicates based on geographic coordinates</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fossils_localities <span class="ot">&lt;-</span> <span class="fu">distinct</span>(fossils, lng, lat, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare length of vector of unique collection numbers with and without this</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="co"># filter</span></span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove duplicates based on geographic coordinates</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>fossils_localities <span class="ot">&lt;-</span> <span class="fu">distinct</span>(fossils, lng, lat, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Compare length of vector of unique collection numbers with and without this</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="co"># filter</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1483</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils_localities<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(fossils_localities<span class="sc">$</span>collection_no))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1085</code></pre>
+</div>
 </div>
 <p>Here we can see that the number collections of our original dataset dropped after we removed latitude-longitude repeats. This means that, in some cases, more than fossil sampling event have taken place at the same locality. In other words, we have more geographically distinct localities than collections in the dataset.</p>
 <p>If we are interested in taxonomic diversity, we can also look at repeated names in our dataset. For example, we might want to identify taxa which are represented multiple times in order to then return to the literature and check that they definitely represent the same taxon. We can do this by flagging species names which are represented more than once in the dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update dataset of occurrences identified to species level</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, accepted_rank <span class="sc">==</span> <span class="st">"species"</span>)</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify and flag taxonomic duplicates</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> fossils_sp <span class="sc">%&gt;%</span> </span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(accepted_name) <span class="sc">%&gt;%</span> </span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">duplicate_flag =</span> <span class="fu">n</span>() <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Show counts of flagged occurrences</span></span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils_sp<span class="sc">$</span>duplicate_flag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Update dataset of occurrences identified to species level</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, accepted_rank <span class="sc">==</span> <span class="st">"species"</span>)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Identify and flag taxonomic duplicates</span></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> fossils_sp <span class="sc">%&gt;%</span> </span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(accepted_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">duplicate_flag =</span> <span class="fu">n</span>() <span class="sc">&gt;</span> <span class="dv">1</span>)</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Show counts of flagged occurrences</span></span>
+<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils_sp<span class="sc">$</span>duplicate_flag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+FALSE  TRUE 
+  100   603 </code></pre>
+</div>
 </div>
 <p>Some <code>FALSE</code> values are shown, indicating that some species are represented by a single occurrence. We also have <code>TRUE</code> values, for which the species are represented two or more times. We can then filter our dataset to those flagged, and sort them by their name, enabling easier checking.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter table to flagged occurrences</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils_sp, duplicate_flag <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort table by genus name</span></span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">arrange</span>(fossils_sp, accepted_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter table to flagged occurrences</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils_sp, duplicate_flag <span class="sc">==</span> <span class="cn">TRUE</span>)</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort table by genus name</span></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>fossils_sp <span class="ot">&lt;-</span> <span class="fu">arrange</span>(fossils_sp, accepted_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -986,61 +1733,212 @@ Caution
 <section id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" class="level3">
 <h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong><em>data inconsistencies</em></strong>? What will you do with them?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the table() function to tabulate the frequency of each interval</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>early_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the table() function to tabulate the frequency of each interval</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>early_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+                Agenian                Altonian              Aquitanian 
+                      4                       1                      29 
+             Arikareean               Arshantan              Barstovian 
+                      1                       1                      22 
+              Bartonian                 Blancan              Bridgerian 
+                     33                       6                      54 
+            Burdigalian               Calabrian                     Cf1 
+                     96                      41                       1 
+                    Cf2                     Cf3              Chadronian 
+                      2                       2                      12 
+               Chattian               Chibanian            Clarendonian 
+                     20                       1                      12 
+           Clarkforkian           Colhuehuapian             Colloncuran 
+                     28                       3                       1 
+                 Danian              Duchesnean        Early Barstovian 
+                     29                       2                       4 
+     Early Clarendonian early Early Hemphillian            Early Eocene 
+                      2                       3                      14 
+    Early Hemingfordian           Early Miocene         Early Oligocene 
+                      2                      40                      18 
+        Early Paleocene       Early Pleistocene          Early Pliocene 
+                      2                      38                      10 
+           Early Uintan                  Eocene                Gelasian 
+                      9                      10                      67 
+            Graybullian             Harrisonian           Hemingfordian 
+                      1                       1                       8 
+            Hemphillian             Huayquerian            Irvingtonian 
+                     13                      10                       6 
+               Langhian       Late Clarendonian             Late Eocene 
+                     38                       3                      25 
+       Late Hemphillian            Late Miocene          Late Oligocene 
+                      1                     124                      38 
+         Late Paleocene        Late Pleistocene           Late Pliocene 
+                      9                       2                      49 
+            Late Uintan                Laventan            Lostcabinian 
+                      6                      46                       3 
+               Lutetian               Messinian           Middle Eocene 
+                     52                      34                      17 
+         Middle Miocene      Middle Pleistocene                 Miocene 
+                     70                       3                       6 
+                   MN 1                    MN 2                    MN 3 
+                      1                       4                       3 
+                   MN 4                    MN 5                    MN 6 
+                      7                       9                       2 
+                  MP 10                   MP 11                   MP 13 
+                      3                       8                       1 
+                 MP 17A                   MP 18                   MP 21 
+                      2                       2                       1 
+                  MP 22                   MP 23                   MP 24 
+                      1                       1                       1 
+                  MP 25                   MP 26                   MP 28 
+                      1                       2                       2 
+                  MP 30                 Neogene               Oligocene 
+                      3                       3                      12 
+              Orleanian               Paleogene              Piacenzian 
+                      2                       1                      22 
+            Pleistocene                Pliocene              Priabonian 
+                     50                      23                      29 
+                    Pu1                 Puercan              Quaternary 
+                      1                      94                       3 
+               Rupelian            Santacrucian               Selandian 
+                     10                       1                       4 
+           Serravallian               Thanetian                     Ti3 
+                     38                      20                       3 
+                    Ti5               Tiffanian             Torrejonian 
+                      1                      19                      15 
+              Tortonian                Turolian                  Uintan 
+                     97                       4                       5 
+              Vallesian              Wasatchian               Whitneyan 
+                      3                     183                       1 
+               Ypresian                Zanclean 
+                     38                      34 </code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+             Bartonian                Blancan             Bridgerian 
+                     4                      1                      2 
+           Burdigalian              Calabrian               Chattian 
+                    19                     53                      5 
+          Clarkforkian             Duchesnean           Early Eocene 
+                     1                      1                      2 
+         Early Miocene        Early Oligocene      Early Pleistocene 
+                     2                      3                     18 
+        Early Pliocene               Friasian               Gelasian 
+                    24                      1                      2 
+           Hemphillian               Holocene           Irvingtonian 
+                     1                      4                      1 
+              Langhian late Early Hemphillian            Late Eocene 
+                     2                      3                      6 
+          Late Miocene       Late Pleistocene               Lutetian 
+                     1                      1                      7 
+             Messinian          Middle Eocene         Middle Miocene 
+                     7                      1                      9 
+    Middle Pleistocene                Miocene                   MN 1 
+                     4                      1                      2 
+                  MN 5                   MN 6                 MP 17B 
+                     1                      2                      2 
+                 MP 19             Piacenzian            Pleistocene 
+                     2                      9                      8 
+              Pliocene             Priabonian             Quaternary 
+                    14                      5                      1 
+              Rupelian              Selandian           Serravallian 
+                     4                      1                     18 
+             Thanetian            Torrejonian              Tortonian 
+                     2                      1                     19 
+              Turolian               Ypresian               Zanclean 
+                     2                      3                      9 </code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the ages associated with each interval? Any issues with the date </span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># formats?</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(early_interval) <span class="sc">%&gt;%</span> <span class="co"># Grouping by interval</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(max_ma) <span class="sc">%&gt;%</span>  <span class="co"># Pulling out the distinct values</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(early_interval) <span class="co"># Putting list in order to scan for inconsistencies</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the ages associated with each interval? Any issues with the date </span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="co"># formats?</span></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(early_interval) <span class="sc">%&gt;%</span> <span class="co"># Grouping by interval</span></span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(max_ma) <span class="sc">%&gt;%</span>  <span class="co"># Pulling out the distinct values</span></span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(early_interval) <span class="co"># Putting list in order to scan for inconsistencies</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 107 × 2
+# Groups:   early_interval [107]
+   early_interval max_ma
+   &lt;chr&gt;           &lt;dbl&gt;
+ 1 Agenian          23.0
+ 2 Altonian         18.7
+ 3 Aquitanian       23.0
+ 4 Arikareean       29.5
+ 5 Arshantan        56  
+ 6 Barstovian       16.3
+ 7 Bartonian        41.0
+ 8 Blancan           4.7
+ 9 Bridgerian       50.5
+10 Burdigalian      20.4
+# ℹ 97 more rows</code></pre>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(late_interval) <span class="sc">%&gt;%</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(min_ma) <span class="sc">%&gt;%</span> </span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(late_interval) <span class="sc">%&gt;%</span></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(min_ma) <span class="sc">%&gt;%</span> </span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 97 × 2
+# Groups:   late_interval [49]
+   late_interval min_ma
+   &lt;chr&gt;          &lt;dbl&gt;
+ 1 Bartonian     37.7  
+ 2 Blancan        1.4  
+ 3 Bridgerian    46.2  
+ 4 Burdigalian   16.0  
+ 5 Calabrian      0.774
+ 6 Chattian      23.0  
+ 7 Clarkforkian  54.9  
+ 8 Duchesnean    37    
+ 9 Early Eocene  48.1  
+10 Early Miocene 16.0  
+# ℹ 87 more rows</code></pre>
+</div>
 </div>
 <p>You can also use the <code>CoordinateCleaner</code> package to check the coordinates.</p>
 </section>
 <section id="how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time" class="level3">
 <h3 class="anchored" data-anchor-id="how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time">How does the latitudinal distribution of occurrences looks like over time?</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List geological stages in dataset</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>time_bins <span class="ot">&lt;-</span> <span class="fu">unique</span>(fossils<span class="sc">$</span>interval_name)</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create object to hold values</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>lat_ranges <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For each stage, identify maximum and minimum latitudinal values</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(time_bins)) {</span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  one_stage <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, interval_name <span class="sc">==</span> time_bins[i])</span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  max <span class="ot">&lt;-</span> <span class="fu">max</span>(one_stage<span class="sc">$</span>paleolat)</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  min <span class="ot">&lt;-</span> <span class="fu">min</span>(one_stage<span class="sc">$</span>paleolat)</span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  midpoint <span class="ot">&lt;-</span> one_stage<span class="sc">$</span>bin_midpoint[<span class="dv">1</span>]</span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  lat_ranges <span class="ot">&lt;-</span> <span class="fu">rbind</span>(lat_ranges, <span class="fu">c</span>(time_bins[i], midpoint, min, max))</span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up dataframe</span></span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>lat_ranges <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(lat_ranges)</span>
-<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(lat_ranges) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"stage"</span>, <span class="st">"midpoint"</span>, <span class="st">"min"</span>, <span class="st">"max"</span>)</span>
-<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>midpoint <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>midpoint)</span>
-<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>max <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>max)</span>
-<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>min <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>min)</span>
-<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the palaeolatitudinal range by stage</span></span>
-<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(lat_ranges, <span class="fu">aes</span>(<span class="at">x =</span> midpoint, <span class="at">ymin =</span> min, <span class="at">ymax =</span> max)) <span class="sc">+</span></span>
-<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>() <span class="sc">+</span></span>
-<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
-<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
-<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
-<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List geological stages in dataset</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>time_bins <span class="ot">&lt;-</span> <span class="fu">unique</span>(fossils<span class="sc">$</span>interval_name)</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create object to hold values</span></span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>lat_ranges <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For each stage, identify maximum and minimum latitudinal values</span></span>
+<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(time_bins)) {</span>
+<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>  one_stage <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, interval_name <span class="sc">==</span> time_bins[i])</span>
+<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>  max <span class="ot">&lt;-</span> <span class="fu">max</span>(one_stage<span class="sc">$</span>paleolat)</span>
+<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>  min <span class="ot">&lt;-</span> <span class="fu">min</span>(one_stage<span class="sc">$</span>paleolat)</span>
+<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>  midpoint <span class="ot">&lt;-</span> one_stage<span class="sc">$</span>bin_midpoint[<span class="dv">1</span>]</span>
+<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>  lat_ranges <span class="ot">&lt;-</span> <span class="fu">rbind</span>(lat_ranges, <span class="fu">c</span>(time_bins[i], midpoint, min, max))</span>
+<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up dataframe</span></span>
+<span id="cb85-17"><a href="#cb85-17" aria-hidden="true" tabindex="-1"></a>lat_ranges <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(lat_ranges)</span>
+<span id="cb85-18"><a href="#cb85-18" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(lat_ranges) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"stage"</span>, <span class="st">"midpoint"</span>, <span class="st">"min"</span>, <span class="st">"max"</span>)</span>
+<span id="cb85-19"><a href="#cb85-19" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>midpoint <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>midpoint)</span>
+<span id="cb85-20"><a href="#cb85-20" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>max <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>max)</span>
+<span id="cb85-21"><a href="#cb85-21" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>min <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>min)</span>
+<span id="cb85-22"><a href="#cb85-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-23"><a href="#cb85-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the palaeolatitudinal range by stage</span></span>
+<span id="cb85-24"><a href="#cb85-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(lat_ranges, <span class="fu">aes</span>(<span class="at">x =</span> midpoint, <span class="at">ymin =</span> min, <span class="at">ymax =</span> max)) <span class="sc">+</span></span>
+<span id="cb85-25"><a href="#cb85-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>() <span class="sc">+</span></span>
+<span id="cb85-26"><a href="#cb85-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
+<span id="cb85-27"><a href="#cb85-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
+<span id="cb85-28"><a href="#cb85-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
+<span id="cb85-29"><a href="#cb85-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb85-30"><a href="#cb85-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 </section>
 </section>

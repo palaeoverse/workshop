@@ -535,7 +535,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note: you will need internet access to run this script, as we will pull data directly from the Paleobiology Database API.</p>
 <section id="load-packages" class="level3">
 <h3 class="anchored" data-anchor-id="load-packages">Load packages</h3>
-<p>Before starting, we will load the R package we need, dplyr.</p>
+<p>Before starting, we will load the R packages we need:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("dplyr")</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("readr")</span></span>
@@ -597,7 +597,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>…and then use the download.file function to download and save the file:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(URL, <span class="at">destfile =</span> <span class="st">"../03_acquisition/Cenozoic_crocs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(URL, <span class="at">destfile =</span> <span class="st">"cenozoic_crocs_raw.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And now we have obtained our dataset.</p>
 </section>
@@ -607,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We can load and view this file to take a look at it.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data file</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../03_acquisition/Cenozoic_crocs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"cenozoic_crocs_raw.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
 e.g.:
@@ -640,7 +640,7 @@ chr (2): Data Provider, The Paleobiology Database
  3 License URL       https://creativecommons.org/publicdomain/zero/1.0/         
  4 Documentation URL http://paleobiodb.org/data1.2/occs/list_doc.html           
  5 Data URL          http://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowco…
- 6 Access Time       Tue 2025-07-22 15:45:30 GMT                                
+ 6 Access Time       Thu 2025-07-24 10:56:30 GMT                                
  7 Title             PBDB Data Service                                          
  8 Parameters:       &lt;NA&gt;                                                       
  9 &lt;NA&gt;              base_name,Crocodylia                                       
@@ -667,7 +667,7 @@ chr (2): Data Provider, The Paleobiology Database
 <p>While the metadata is important to keep in the raw file, for the purposes of analysis, we want to be able to just read in the data beneath it. We can do this using the <code>skip</code> parameter in <code>read_csv</code>, which tells R to ignore a given number of rows at the top of the file.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data file, skipping metadata</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"../03_acquisition/Cenozoic_crocs.csv"</span>, <span class="at">skip =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fossils <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"cenozoic_crocs_raw.csv"</span>, <span class="at">skip =</span> <span class="dv">18</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>New names:
 • `cc` -&gt; `cc...35`
@@ -708,6 +708,10 @@ lgl  (12): flags, accepted_attr, plant_organ, regionalbedunit, environment_b...
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(fossils)[<span class="fu">colnames</span>(fossils) <span class="sc">==</span> <span class="st">'cc...35'</span>] <span class="ot">&lt;-</span> <span class="st">'cc'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And now we are ready to commence our data exploration and cleaning.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> fossils, <span class="at">file =</span> <span class="st">"../04_exploration/cenozoic_crocs.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
