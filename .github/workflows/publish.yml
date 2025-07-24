@@ -55,6 +55,7 @@ jobs:
           options(renv.config.pak.enabled = TRUE)
           renv::install(unique(renv::dependencies()$Package))
           renv::install(c("knitr", "rmarkdown"))
+          renv::snapshot()
         shell: Rscript {0}
 
       - name: Don't use tar 1.30 from Rtools35 to store the cache
@@ -71,7 +72,7 @@ jobs:
           path: |
             ${{ env.RENV_PATHS_ROOT }}
             renv/library
-          key: ${{ steps.cache-packages-restore.outputs.cache-primary-key }}
+          key: ${{ steps.get-version.outputs.os-version }}-${{ steps.get-version.outputs.r-version }}-${{inputs.cache-version }}-${{ hashFiles('renv.lock') }}
       # end modified steps
 
       - name: Render Quarto Project
