@@ -7,7 +7,7 @@ order: 5
 
 ## Learning Objectives
 
-In this session, we'll walk through how to combine and use different deep-time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
+In this session, we'll walk through how to combine and use different deep time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
 
 -  The power of harmonizing data from different sources
 -  The considerations and complications that arise when combining datasets
@@ -29,7 +29,7 @@ IV.  Data visualisation and synthesis
 
 So far today, we've used R to carry out a variety of operations for preparing research projects, as well as for acquiring and preparing palaeontological data. However, we can also use R to carry out various analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.
 
-It will be of no surprise to anyone in this room that we are in the midst of a biodiversity crisis. Understanding and anticipating the changes that will occur to organisms, their communities, and the environments that they inhabit as a result of climate change and other anthropogenic processes has emerged as a primary goal of our disciplines. Traditionally, modern ecologists have focused on studying current or recent historical processes to address question related to biodiversity loss and the impacts of climate change, while paleoecologists have studied long-term processes in the fossil record (Nieto-Lugilde et al. 2021). However, it is becoming increasingly clear that the answers to some of the most important questions relate to the fuzzy area between our modern and palaeo records:
+It will be of no surprise to anyone in this room that we are in the midst of a biodiversity crisis. Understanding and anticipating the changes that will occur to organisms, their communities, and the environments that they inhabit as a result of climate change and other anthropogenic processes has emerged as a primary goal of our disciplines. Traditionally, modern ecologists have focused on studying current or recent historical processes to address question related to biodiversity loss and the impacts of climate change, while palaeoecologists have studied long-term processes in the fossil record (Nieto-Lugilde et al. 2021). However, it is becoming increasingly clear that the answers to some of the most important questions relate to the fuzzy area between our modern and palaeo records:
 
 - Can past ecosystems be used as analogues for ones in the present day? Can we understand future changes to biodiversity by examining past losses?
 - What are the main drivers and impacts of collapse within communities and ecosystems?
@@ -39,7 +39,7 @@ To answer these questions, we have to turn to data. As you've seen earlier, ther
 
 ![Figure from Darroch et al. 2022](Figure1.png)
 
-This figure emphasizes that ecological patterns such as geographic range are driven by processes operating on a continuum. The past and present are interconnected, and both can provide valuable information that can be combined to improve our understanding of underlying ecological processes. By developing approaches to harmonize data across timescales, we can begin to utilize this information to better understand drivers of ecological change, improve predictions of future biodiversity responses, and bridge the palaeo-ecological divide.
+This figure emphasizes that ecological patterns such as geographic range are driven by processes operating on a continuum. The past and present are interconnected, and both can provide valuable information that can be combined to improve our understanding of underlying ecological processes. By developing approaches to harmonize data across timescales, we can begin to utilize this information to better understand drivers of ecological change, improve predictions of future biodiversity responses, and cross the palaeontological-ecological gap.
 
 One research area that is particularly impacted by the harmonization of palaeo and modern occurrence data is that of Species Distribution Models, or SDMs. These models correlate occurrences of species with climatic and environmental variables, and then use these associations to predict the distribution of that species across time and space. Consequently, they are frequently used to forecast species range shifts and understand potential losses in biodiversity as a result of future climate change. However, only including modern occurrences in these models excludes a vast amount of data of where organisms may have occupied in the past, running the risk of only predicting the occupied niche as opposed to gaining an understanding of the fundamental niche of a species (e.g. Veloz et al. 2012). This can have serious knock-on effects when attempting to predict the distribution of species under different climate scenarios. Consequently, studies have started to use the historical and palaeontological distribution of occurrences within these models. As you can see below, including coral occurrences from the last interglacial drastically changes the predicted habitability of corals under different IPCC forecasted climate scenarios (Jones et al. 2019):
 
@@ -55,22 +55,22 @@ However, there are many considerations that have to be taken into account when c
 
 ### Our Research Question
 
-Our first step will be to define our research question, which will be framed around the dataset of Cenozoic Crocodylia that we've been working on this morning. As mentioned previously, Crocs are an excellent group to use for studies comparing modern and deep-time records: they have a very tight association with temperature, are well represented in the fossil record spatially and temporally, and many extant species are threatened by anthropogenic impacts including habitat loss and climate change.
+Our first step will be to define our research question, which will be framed around the dataset of Cenozoic Crocodylia that we've been working on this morning. As mentioned previously, Crocs are an excellent group to use for studies comparing modern and deep time records: they have a very tight association with temperature, are well represented in the fossil record spatially and temporally, and many extant species are threatened by anthropogenic impacts including habitat loss and climate change.
 
-In this section, we'll aim to answer the following research question: **How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?**
+In this section, we'll aim to answer the following research question: **How does the temperature range inhabited by Crocodylia in deep time compare to that seen in the present?**
 
-We'll focus our deep-time analysis on the Miocene, a climatically dynamic epoch in Earth's history that can serve as an analog for future climate scenarios (e.g., [Steinthorsdottir et al. 2020](https://doi.org/10.1029/2020PA004037)).
+We'll focus our deep time analysis on the Miocene, a climatically dynamic epoch in Earth's history that can serve as an analog for future climate scenarios (e.g., [Steinthorsdottir et al. 2020](https://doi.org/10.1029/2020PA004037)).
 
 ### Making a Plan
 
 Before we start, it's helpful to write out a step-by-step plan of what we want to accomplish to ensure that the approach we're taking and the code that we write will appropriately answer the question(s) that we are interested in. Think of this as a kind of "logical flow." In other words, what are all the steps needed to get from our research idea to our finalised analysis? This can be as extensive as you wish and can be done in any fashion---even writing out your code or general approach on pen and paper! We'll be doing this a few times today, so let's start by considering our research question and what materials we will need to address it.
 
-As we aim to compare the distributions of Crocodylia in deep-time compared to the present, there are a couple of key datasets that we will require:
+As we aim to compare the distributions of Crocodylia in deep time compared to the present, there are a couple of key datasets that we will require:
 
 1.  A spatially explicit dataset of modern Crocodylia
-2.  A spatially explicit dataset of Crocodylia in the deep-time intervals we will assess
+2.  A spatially explicit dataset of Crocodylia in the deep time intervals we will assess
 3.  A spatially explicit dataset of modern climatic variables
-4.  A spatially explicit dataset of climatic variables for the deep-time intervals we choose, likely generated from palaeoclimatic modelling
+4.  A spatially explicit dataset of climatic variables for the deep time intervals we choose, likely generated from palaeoclimatic modelling
 
 ::: {.callout-note title="Heads Up!"}
 Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results. This will be a recurring theme throughout the session.
@@ -112,7 +112,7 @@ To help you get an idea for the process of using data from different sources, we
 -   Are they in the right Coordinate Reference System?
 -   Are they capturing the same climatic information?
 
-6.  **Prepare for analysis.** Ensure that the data are ready to be used in our next stages of analysis.To do this, we might want to break down our steps further:
+6.  **Prepare for analysis.** Ensure that the data are ready to be used in our next stages of analysis. To do this, we might want to break down our steps further:
 
 -   Check the format of the data using the 'class()' function
 -   Make a reference raster with appropriate resolution and extent
@@ -164,18 +164,18 @@ res <- 1
 e <- extent(-180, 180, -90, 90)
 
 # Make generic raster using these values
-ref.raster <- raster(res = res, ext = e)
+ref_raster <- raster(res = res, ext = e)
 ```
 
 Now lets find some climate data!
 
 ### 1. Organising Palaeo-climatic Data
 
-After exploring several potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadleyCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: https://zenodo.org/records/5718392.
+After exploring several potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: https://zenodo.org/records/5718392.
 
-  Scotese, C. R., Song, H., Mills, B. J. W., & van der Meer, D. G. (2021). Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503
+Scotese, C. R., Song, H., Mills, B. J. W., & van der Meer, D. G. (2021). Phanerozoic palaeotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503. https://doi.org/10.1016/j.earscirev.2021.103503
   
-  Valdes, P.J., Scotese, C.R., and Lunt, D.J. (2021). Deep Ocean Temperatures through Time, Climates of the Past, Discussions, https://doi.org/10.5194/cp-2020-83. 
+Valdes, P.J., Scotese, C.R., and Lunt, D.J. (2021). Deep Ocean Temperatures through Time, Climates of the Past, Discussions, https://doi.org/10.5194/cp-2020-83. 
 
 This climatic dataset offers decently high temporal resolution (for deep time), but one thing we'll need to keep in mind is that the 5-million-year intervals don't align perfectly with geological stages. This will come into play later when we start working with the occurrence data.
 
@@ -198,8 +198,8 @@ As you can see, the resolution and extent of these rasters doesn't quite match o
 ```{r}
 
 # Resample data to match our set extent and resolution
-raster.resampled.15 <- resample(x = raster2prep.15, y = ref.raster)
-raster.resampled.20 <- resample(x = raster2prep.20, y = ref.raster)
+raster.resampled.15 <- resample(x = raster2prep.15, y = ref_raster)
+raster.resampled.20 <- resample(x = raster2prep.20, y = ref_raster)
 
 ```
 
@@ -232,7 +232,7 @@ modern <- worldclim_global(var = "tavg", res = 10, path = tempdir())
 modern <- as(modern, "Raster")
 modern
 ```
-As you can see, whilst the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep-time data. They're also provided on a monthly basis, so we'll have to calculate the mean temperature before we can use this for comparison:
+As you can see, whilst the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep time data. They're also provided on a monthly basis, so we'll have to calculate the mean temperature before we can use this for comparison:
 
 ```{r}
 # Calculate mean annual temperature
@@ -486,14 +486,14 @@ ggplot(fossil_occ_bin) +
   theme_void()
 ```
 
-But wait, remember that we need to paleorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we'll just use the PALEOMAP rotation, which will also match up to our paleoclimatic data. 
+But wait, remember that we need to palaeorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we'll just use the palaeoMAP rotation, which will also match up to our palaeoclimatic data. 
 ```{r}
 # Palaeorotation
 fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
                                    lng = "lng",
                                    lat = "lat",
                                    age = "bin_midpoint", 
-                                   model  = "PALEOMAP")
+                                   model  = "palaeoMAP")
 ```
 
 After some cleaning, we can then plot our rotated occurrences on a palaeogeographic map (here we're going to use our bin 3):
@@ -504,7 +504,7 @@ fossil_occ_bin_rot <- fossil_occ_bin_rot %>%
   dplyr::filter(!is.na(p_lng) & !is.na(p_lat))
 
 # Use the rgplates package to reconstruct a palaeogeographic map
-coastlines <- reconstruct("coastlines", age=15, model="PALEOMAP")
+coastlines <- reconstruct("coastlines", age=15, model="palaeoMAP")
 
 # Plot palaeorotated coordinates for bin 3
 fossil_occ_bin_rot %>%
@@ -512,8 +512,8 @@ fossil_occ_bin_rot %>%
   ggplot() +
   geom_sf(data = coastlines) +
   geom_point(aes(x = p_lng, y = p_lat)) +
-  labs(x = "Paleolongitude (º)",
-       y = "Paleolatitude (º)")+ 
+  labs(x = "palaeolongitude (º)",
+       y = "palaeolatitude (º)")+ 
   theme_void()
 ```
 
@@ -588,7 +588,7 @@ modern_temp <- raster::extract(x = modern.mean,
                                      cellnumbers = TRUE)
 ```
 
-Let's take a look. How does the temperature range inhabited by Crocodylia in deep-time compare to that seen in the present?
+Let's take a look. How does the temperature range inhabited by Crocodylia in deep time compare to that seen in the present?
 ```{r}
 # Aquitanian range (25-20 Ma)
 range(scotese_temp_20$Aquitanian, na.rm=T)
@@ -632,11 +632,11 @@ Darroch, S.A., Saupe, E.E., Casey, M.M. and Jorge, M.L., 2022. Integrating geogr
 
 Jones, L.A., Mannion, P.D., Farnsworth, A., Valdes, P.J., Kelland, S.J. and Allison, P.A., 2019. Coupling of palaeontological and neontological reef coral data improves forecasts of biodiversity responses under global climatic change. Royal Society Open Science, 6(4), p.182111.
 
-Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A., 2021. Time to better integrate paleoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), p.095005.
+Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A., 2021. Time to better integrate palaeoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), p.095005.
 
-Scotese, C.R., Song, H., Mills, B.J. and van der Meer, D.G., 2021. Phanerozoic paleotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, p.103503.
+Scotese, C.R., Song, H., Mills, B.J. and van der Meer, D.G., 2021. Phanerozoic palaeotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, p.103503.
 
-Steinthorsdottir, M., Coxall, H.K., De Boer, A.M., Huber, M., Barbolini, N., Bradshaw, C.D., Burls, N.J., Feakins, S.J., Gasson, E., Henderiks, J. and Holbourn, A.E., 2021. The Miocene: The future of the past. Paleoceanography and Paleoclimatology, 36(4), p.e2020PA004037.
+Steinthorsdottir, M., Coxall, H.K., De Boer, A.M., Huber, M., Barbolini, N., Bradshaw, C.D., Burls, N.J., Feakins, S.J., Gasson, E., Henderiks, J. and Holbourn, A.E., 2021. The Miocene: The future of the past. palaeoceanography and palaeoclimatology, 36(4), p.e2020PA004037.
 
 Valdes, P.J., Scotese, C.R. and Lunt, D.J., 2020. Deep ocean temperatures through time. Climate of the Past Discussions, 2020, pp.1-37.
 
