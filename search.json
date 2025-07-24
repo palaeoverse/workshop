@@ -464,7 +464,7 @@
     "href": "2025-CPEG-workshop/index.html",
     "title": "CPEG 2025 Workshop",
     "section": "",
-    "text": "WORKSHOP MATERIALS CURRENTLY UNDER CONSTRUCTION\nJuly 27th, 2025\nUniversity of Zürich (Zürich, Switzerland)",
+    "text": "WORKSHOP MATERIALS CURRENTLY UNDER CONSTRUCTION\nJuly 27th, 2025 09:00-17:00\nUniversity of Zürich (Zürich, Switzerland)",
     "crumbs": [
       "CPEG 2025 Workshop"
     ]
@@ -474,7 +474,7 @@
     "href": "2025-CPEG-workshop/index.html#arrival",
     "title": "CPEG 2025 Workshop",
     "section": "Arrival",
-    "text": "Arrival\nThe event starts at XXX on the XXX and will take place at XXX.\nThe full schedule for the workshop is available here.",
+    "text": "Arrival\nThe event starts at 09:00 on Sunday, July 27th, 2025 and will take place in room KO2-F-152 at the Natural History Museum, University of Zürich Central Campus. If you need additional assistance getting set-up, we’ll be in the room starting at 08:00.",
     "crumbs": [
       "CPEG 2025 Workshop"
     ]
@@ -484,7 +484,7 @@
     "href": "2025-CPEG-workshop/index.html#schedule",
     "title": "CPEG 2025 Workshop",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nEvent\n\n\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER\n\n\nPLACEHOLDER\nPLACEHOLDER",
+    "text": "Schedule\n\n\n\nTime\nEvent\n\n\n\n\n08:00\nInstallation assistance (optional)\n\n\n09:00\nWelcome and introduction to the Palaeoverse\n\n\n09:15\nSetting up a reproducible workflow\n\n\n10:30\nCoffee break\n\n\n10:45\nData acquisition\n\n\n11:15\nData exploration and cleaning\n\n\n12:30\nLunch break\n\n\n14:00\nData harmonization and synthesis\n\n\n15:30\nCoffee break\n\n\n15:45\nData archiving and publishing\n\n\n16:45\nQuestions and wrap-up",
     "crumbs": [
       "CPEG 2025 Workshop"
     ]
@@ -494,7 +494,7 @@
     "href": "2025-CPEG-workshop/index.html#instructors",
     "title": "CPEG 2025 Workshop",
     "section": "Instructors",
-    "text": "Instructors\nThis edition of the Workshop event is organised and led by the following members of the Palaeoverse team.\n\n\n\n\n\nINSTRUCTOR 1\n\n\n\n\n\n\n\nINSTRUCTOR 2\n\n\n\n\n\n\n\nINSTRUCTOR 3",
+    "text": "Instructors\nThis edition of the Workshop event is organised and led by the following members of the Palaeoverse team.\n\n\n\n\n\nBethany Allen\n\n\n\n\n\n\n\nChris Dean\n\n\n\n\n\n\n\nErin Dillon\n\n\n\n\n\n\n\n\n\nHarriet Drage\n\n\n\n\n\n\n\nWill Gearty\n\n\n\n\n\n\n\nPedro Godoy\n\n\n\n\n\n\n\n\n\nNiklas Hohmann\n\n\n\n\n\n\n\nLewis Jones",
     "crumbs": [
       "CPEG 2025 Workshop"
     ]
@@ -504,7 +504,7 @@
     "href": "2025-CPEG-workshop/index.html#installation",
     "title": "CPEG 2025 Workshop",
     "section": "Installation",
-    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages()",
+    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here for Windows or here for MacOS. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages()",
     "crumbs": [
       "CPEG 2025 Workshop"
     ]
@@ -514,7 +514,7 @@
     "href": "2025-CPEG-workshop/index.html#acknowledgements",
     "title": "CPEG 2025 Workshop",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis event is run by the Palaeoverse and supported by…",
+    "text": "Acknowledgements\nThis event is run by the Palaeoverse and is supported by the Crossing the Paleontological-Ecological Gap and Conservation Paleobiology Symposium and the University of Zürich. As a community-driven initiative, we’d also like to thank all of the participants for their support and engagement with the Palaeoverse.",
     "crumbs": [
       "CPEG 2025 Workshop"
     ]
