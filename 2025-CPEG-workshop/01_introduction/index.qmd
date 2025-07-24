@@ -5,7 +5,7 @@ toc: true
 order: 1
 ---
 
-![](images/cpeg_cpg25_visual_for_web.jpg){fig-align="center" height=250}
+![](../images/cpeg_cpg25_visual_for_web.jpg){fig-align="center" height=250}
 
 ## Introductions
 
@@ -37,7 +37,7 @@ order: 1
 
 ## What is Palaeoverse?
 
-![](images/issue_cover.jpg)
+![](../images/issue_cover.jpg)
 
 ## Why open science?
 
