@@ -19,28 +19,36 @@ format:
     output-file: "presentation.html"
 ---
 
-placeholder slides
+
 ## Introductions
 
 ::: {.columns .h4}
 ::: {.column width="20%"}
-![Dr Lewis A. Jones <br> Universidade de Vigo, Spain](./images/team/Lewis.jpeg){width="100%"}
+![Erin Dillon <br> Smithsonian Tropical Research Institute, Panama](images/Erin.png){width="100%"}
 
-![Dr Erin Dillon <br> Smithsonian Tropical Research Institute, Panama](./images/team/Erin.jpeg){width="100%"}
+![Harriet Drage <br> University of Lausanne, Switzerland](images/Harriet.jpg){width="100%"}
 :::
 
 ::: {.column width="20%"}
-![Dr Christopher D. Dean <br> University College London, UK](./images/team/Chris.jpeg){width="100%"}
+![Lewis Jones <br> University College London, UK](images/Lewis.JPG){width="100%"}
 
-![Dr William Gearty <br> American Museum of Natural History, USA](./images/team/Will.jpeg){width="100%"}
+![Will Gearty <br> Syracuse University, USA](images/Will.jpeg){width="100%"}
 :::
 
 ::: {.column width="20%"}
-![Dr Bethany J. Allen <br> ETH Zürich, Switzerland](./images/team/Bethany.jpeg){width="100%"}
+![Bethany Allen <br> GFZ Helmholtz Centre for Geosciences, Germany]((images/Bethany.jpeg){width="100%"}
+
+![Pedro Godoy <br> University of São Paulo, Brazil](images/Pedro.jpeg){width="100%"}
 :::
 
-::: {.column width="40%"}
-![](./images/logo.png){width="100%"}
+::: {.column width="20%"}
+![Chris Dean <br> University College London, UK](images/Chris.jpeg){width="100%"}
+
+![Niklas Hohmann <br> Utrecht University, Netherlands](images/Niklas.png){width="100%"}
+:::
+
+::: {.column width="20%"}
+![](images/logo.png){width="100%"}
 :::
 :::
 
@@ -80,7 +88,7 @@ placeholder slides
 
 ## What is Palaeoverse?
 
-![](./images/issue_cover.jpg)
+![](images/issue_cover.jpg)
 
 ## Introductions
 
