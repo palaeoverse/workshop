@@ -1,0 +1,14 @@
+---
+title: "Wrap-up and resources"
+toc: true
+order: 7
+---
+
+## Wrap-up
+
+
+
+## Resources
+
+
+Thanks for attending!
