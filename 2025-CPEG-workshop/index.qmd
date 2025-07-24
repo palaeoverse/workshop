@@ -7,7 +7,7 @@ order: 97
 
 > **WORKSHOP MATERIALS CURRENTLY UNDER CONSTRUCTION**
 
-**July 27^th^, 2025**
+**July 27^th^, 2025**<br>
 09:00-17:00
 
 University of Zürich (Zürich, Switzerland)
@@ -18,8 +18,8 @@ R is one of the most popular languages in the world of data science and has been
 
 ## Arrival
 
-The event starts at 09:00 on Sunday, July 27^th^, 2025 and will take place in room KO2-F-152 at the Natural History Museum, University of Zürich Central Campus.
-If you need additional assistance getting set-up, we'll be in the room starting at 08:00.
+<p>The event starts at 09:00 on Sunday, July 27^th^, 2025 and will take place in **room KO2-F-152** at the Natural History Museum, University of Zürich Central Campus.</p>
+<p>If you need additional assistance getting set-up, we'll be in the room starting at 08:00.</p>
 
 ## Schedule
 
@@ -28,14 +28,14 @@ If you need additional assistance getting set-up, we'll be in the room starting 
 | **08:00** | **Installation assistance** *(optional)*           |
 | **09:00** | **Welcome and introduction to the Palaeoverse**    |
 | **09:15** | **Setting up a reproducible workflow**             |
-| **10:30** | *Coffee break*                                     |
+| **10:30** | ***Coffee break***                                 |
 | **10:45** | **Data acquisition**                               |
 | **11:15** | **Data exploration and cleaning**                  |
-| **12:30** | *Lunch break*                                      |
+| **12:30** | ***Lunch break***                                  |
 | **14:00** | **Data harmonization and synthesis**               |
-| **15:30** | *Coffee break*                                     |
-| **15:45** | Data archiving and publishing                      |
-| **16:45** | Questions and wrap-up                              |
+| **15:30** | ***Coffee break***                                 |
+| **15:45** | **Data archiving and publishing**                  |
+| **16:45** | **Questions and wrap-up**                          |
 
 
 ## Instructors
