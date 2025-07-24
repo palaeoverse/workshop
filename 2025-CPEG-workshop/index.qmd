@@ -46,19 +46,19 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![Bethany Allen](https://palaeoverse.org/images/logo.png)
+![Bethany Allen <br> GFZ Helmholtz Centre for Geosciences, Germany]((./images/Bethany.jpeg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Chris Dean](https://palaeoverse.org/images/logo.png)
+![Chris Dean <br> University College London, UK](./images/Chris.jpeg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Erin Dillon](https://palaeoverse.org/images/logo.png)
+![Erin Dillon <br> Smithsonian Tropical Research Institute, Panama](./images/Erin.jpeg){width="100%"}
 
 :::
 
@@ -67,19 +67,19 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![Harriet Drage](https://palaeoverse.org/images/logo.png)
+![Harriet Drage <br> University of Lausanne, Switzerland](./images/Harriet.jpeg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Will Gearty](https://palaeoverse.org/images/logo.png)
+![Will Gearty <br> Syracuse University, USA](./images/Will.jpeg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Pedro Godoy](https://palaeoverse.org/images/logo.png)
+![Pedro Godoy <br> University of São Paulo, Brazil](./images/Pedro.jpeg){width="100%"}
 
 :::
 
@@ -88,13 +88,13 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![Niklas Hohmann](https://palaeoverse.org/images/logo.png)
+![Niklas Hohmann <br> Utrecht University, Netherlands](./images/Niklas.jpeg){width="100%"}
 
 :::
 
 ::: {.g-col-4}
 
-![Lewis Jones](https://palaeoverse.org/images/logo.png)
+![Lewis Jones <br> University College London, UK](./images/Lewis.jpeg){width="100%"}
 
 :::
 
