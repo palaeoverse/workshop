@@ -55,7 +55,7 @@ jobs:
           options(renv.config.pak.enabled = TRUE)
           renv::install(unique(renv::dependencies()$Package))
           renv::install(c("knitr", "rmarkdown"))
-          renv::snapshot()
+          renv::snapshot(force = TRUE)
         shell: Rscript {0}
 
       - name: Don't use tar 1.30 from Rtools35 to store the cache
