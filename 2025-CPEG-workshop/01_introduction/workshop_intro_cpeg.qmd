@@ -17,7 +17,7 @@ format:
       3rd Conservation Paleobiology Symposium
     theme: simple
     embed-resources: true
-    output-file: "intro_presentation.html"
+    output-file: "workshop_intro_cpeg.html"
     mermaid:
       theme: default
 ---
