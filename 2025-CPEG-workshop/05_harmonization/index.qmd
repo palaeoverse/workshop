@@ -246,14 +246,12 @@ What issues might this higher resolution cause? What actions could we take to re
 
 ## **BREAKOUT SESSION 2**
 
-**Now it's your turn to give it a go! Over the next 15-20 minutes we're going to go through the same process for our occurrence data:** 
+**Now it's your turn to give it a go! Over the next 10-15 minutes we're going to go through the same process for our occurrence data:** 
 
 ***1. First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you'll need to do any filtering, and how you might get them in the right format such that we can make fair comparisons across time with the climatic data that we just read into R. If you're an experienced R user, you can also start to plan your code.***
 
 ***2. Then, get into the same groups you were in previously to discuss your approach. Where you might encounter potential pitfalls? What packages or approaches might make this process easier?*** 
 
-
-### Solution
 
 ::: {.callout-tip title="Solution" collapse="true"}
 
@@ -493,7 +491,7 @@ fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
                                    lng = "lng",
                                    lat = "lat",
                                    age = "bin_midpoint", 
-                                   model  = "palaeoMAP")
+                                   model  = "PALEOMAP")
 ```
 
 After some cleaning, we can then plot our rotated occurrences on a palaeogeographic map (here we're going to use our bin 3):
