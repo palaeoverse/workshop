@@ -7,7 +7,7 @@ order: 5
 
 ## Learning Objectives
 
-In this session, we'll walk through how to combine and use different deep time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
+In this session, we'll walk through how to combine different deep time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
 
 -  The power of harmonizing data from different sources
 -  The considerations and complications that arise when combining datasets
@@ -27,7 +27,7 @@ IV.  Data visualisation and synthesis
 
 ## I. Introduction to Harmonization and Synthesis
 
-So far today, we've used R to carry out a variety of operations for preparing research projects, as well as for acquiring and preparing palaeontological data. However, we can also use R to carry out various analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.
+So far today, we've used R to carry out a variety of operations for acquiring and preparing palaeontological data. We can also use R to run analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.
 
 It will be of no surprise to anyone in this room that we are in the midst of a biodiversity crisis. Understanding and anticipating the changes that will occur to organisms, their communities, and the environments that they inhabit as a result of climate change and other anthropogenic processes has emerged as a primary goal of our disciplines. Traditionally, modern ecologists have focused on studying current or recent historical processes to address question related to biodiversity loss and the impacts of climate change, while palaeoecologists have studied long-term processes in the fossil record (Nieto-Lugilde et al. 2021). However, it is becoming increasingly clear that the answers to some of the most important questions relate to the fuzzy area between our modern and palaeo records:
 
@@ -502,7 +502,7 @@ fossil_occ_bin_rot <- fossil_occ_bin_rot %>%
   dplyr::filter(!is.na(p_lng) & !is.na(p_lat))
 
 # Use the rgplates package to reconstruct a palaeogeographic map
-coastlines <- reconstruct("coastlines", age=15, model="palaeoMAP")
+coastlines <- reconstruct("coastlines", age=15, model="PALEOMAP")
 
 # Plot palaeorotated coordinates for bin 3
 fossil_occ_bin_rot %>%
