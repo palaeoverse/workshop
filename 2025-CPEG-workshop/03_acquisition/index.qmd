@@ -4,6 +4,7 @@ subtitle: "Acquiring data from the Paleobiology Database"
 toc: true
 order: 3
 ---
+
 ## Learning Objectives
 
 In this session, we'll discuss a few different online databases with relevant data, raw data and why/how to keep raw data raw, and acquire today's fossil dataset using the Paleobiology Database API. In this first short section, we'll therefore cover:
@@ -33,7 +34,7 @@ Note: you will need internet access to run this script, as we will pull data dir
 
 ### Load packages
 
-Before starting, we will load the R package we need, dplyr.
+Before starting, we will load the R packages we need:
 
 ```{r load_packages, message = FALSE}
 # install.packages("dplyr")
@@ -109,7 +110,7 @@ URL <- paste0("https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&ba
 ...and then use the download.file function to download and save the file:
 
 ```{r obtain_data, message = FALSE}
-download.file(URL, destfile = "../03_acquisition/Cenozoic_crocs.csv")
+download.file(URL, destfile = "cenozoic_crocs_raw.csv")
 ```
 
 And now we have obtained our dataset.
@@ -122,7 +123,7 @@ We can load and view this file to take a look at it.
 
 ```{r read_raw}
 # Load data file
-fossils <- read_csv("../03_acquisition/Cenozoic_crocs.csv")
+fossils <- read_csv("cenozoic_crocs_raw.csv")
 ```
 
 When we use `read_csv()`, we get a message explaining how the data have been parsed into R. It's worth checking this for anything unusual, because if parsing has not occurred how we expected, it could lead to errors in the data. We can see that this time, there have been parsing issues. This is because the file contains the metadata header, which has a different format to the data table. Let's take a look at the metadata to see what it includes.
@@ -153,7 +154,7 @@ While the metadata is important to keep in the raw file, for the purposes of ana
 
 ```{r read_trimmed}
 # Load data file, skipping metadata
-fossils <- read_csv("../03_acquisition/Cenozoic_crocs.csv", skip = 18)
+fossils <- read_csv("cenozoic_crocs_raw.csv", skip = 18)
 ```
 
 Here, we can see that we still have parsing issues, specifically that there were two columns in the `csv` file named "cc", for "country code". Their column number has been appended to their column name, in order to keep these distinct. Is this column simply duplicated? We can check this.
@@ -174,3 +175,8 @@ colnames(fossils)[colnames(fossils) == 'cc...35'] <- 'cc'
 ```
 
 And now we are ready to commence our data exploration and cleaning.
+
+```{r save_data}
+# Save data
+write.csv(x = fossils, file = "../04_exploration/cenozoic_crocs.csv", row.names = FALSE)
+```

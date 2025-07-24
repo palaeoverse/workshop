@@ -3,19 +3,21 @@ title: "Data Processing I"
 subtitle: "Data Processing I: Data Exploration and Cleaning"
 toc: true
 order: 4
-execute:
-  enabled: false
-  code-fold: true
 ---
 
-**Aims**
+# Learning Objectives
 
-- To understand why data exploration and cleaning is key for data analyses
-- To develop the skills and knowledge needed to explore and clean data
+In this session, the objectives are to (1) understand why data exploration and cleaning is key for data analyses and (2) develop the skills and knowledge needed to explore and clean data. We will cover:
 
-**Schedule** 
+- Exploratory data analyses
+- Identifying and handling incomplete records
+- Identifying and handling outliers
+- Identifying and handling inconsistencies
+- Identifying and handling duplicate records
 
-- 11:15--12:30
+# Schedule
+
+11:15--12:30
 
 # Data exploration
 
@@ -33,6 +35,29 @@ Together, exploratory data analysis is used to assess the quality and completene
 
 ## How do we explore our data?
 
+### Load packages and data
+
+Before we start, we will load the R packages and data we need:
+
+```{r load_packages, message = FALSE}
+# install.packages("dplyr")
+# install.packages("palaeoverse")
+# install.packages("ggplot2")
+# install.packages("rnaturalearth")
+# install.packages("deeptime")
+# install.packages("rgplates")
+# install.packages("fossilbrush")
+library(dplyr)
+library(palaeoverse)
+library(ggplot2)
+library(rnaturalearth)
+library(deeptime)
+library(rgplates)
+library(fossilbrush)
+# Load data
+fossils <- read.csv("cenozoic_crocs.csv")
+```
+
 The first thing we want to do with our data is generate summary statistics and plots to help us understand the data and its various characteristics.
 
 For example, we can look at the distribution of identification levels for our fossils.
@@ -45,7 +70,7 @@ table(fossils$accepted_rank)
 (table(fossils$accepted_rank) / nrow(fossils)) * 100
 ```
 
-We can see that of our 886 occurrences, 250 (28%) are identified to species level. A further 254 (29%) are identified to genus level. The remaining fossils are more coarsely identified, including 365 (41%) which are identified to the mysterious level of "unranked clade".
+We can see that of our 886 occurrences, 849 (~38%) are identified to species level. A further 625 (~28%) are identified to genus level. The remaining fossils are more coarsely identified, including 717 (~32%) which are identified to the mysterious level of "unranked clade".
 
 Next, let's look at the distribution of fossils across localities. In the PBDB, fossils are placed within collections, each of which can roughly be considered a separate locality (they can also represent different sampling horizons at the same locality; more on this later). First, we can count the number of unique `collection_no` values to find out how many unique collections are in the dataset.
 
@@ -54,7 +79,7 @@ Next, let's look at the distribution of fossils across localities. In the PBDB, 
 length(unique(fossils$collection_no))
 ```
 
-Our dataset contains 720 unique collections.
+Our dataset contains 1691 unique collections.
 
 We can also create a plot showing us the distribution of occurrences across these collections. First let's tally up the number of occurrences in each collection.
 
@@ -73,7 +98,7 @@ ggplot(coll_no_freq, aes(x = Freq)) +
        y = "Frequency")
 ```
 
-We can see that the collection containing the most occurrences has 7, while the vast majority only contain a single occurrence.
+We can see that the collection containing the most occurrences has 15, while the vast majority only contain a single occurrence.
 
 ::: {.callout-note}
 
@@ -191,7 +216,7 @@ While all occurrences have present-day coordinates, some are missing palaeocoord
 fossils <- filter(fossils, !is.na(fossils$paleolng))
 
 # Check whether this has worked
-sum(is.na(fossils$paleolat))
+sum(is.na(fossils$paleolng))
 ```
 
 A further option applicable in some cases would be to fill in our missing data. We may be able to interpolate values from the rest of our data, or use additional data sources. For our palaeogeography example above, we could generate our own palaeocoordinates, for example using `palaeoverse::palaeorotate()`.
@@ -207,16 +232,16 @@ However, while a useful technique, data imputation does carry a level of uncerta
 
 #### Complete
 
-So, we've gone back to our source material (i.e. the publication the data is from) and we've discovered that these occurrences are from the XXX formation. We can now programmatically update our data. We could also do this manually in spreadsheet software, but through coding, we can track and document all the changes we've made to the dataset with ease!
+So, we've gone back to our source material (i.e. the publication the data is from) and we've discovered that occurrences from collection 18539 are from the Bone Valley Formation. We can now programmatically update our data. We could also do this manually in spreadsheet software, but through coding, we can track and document all the changes we've made to the dataset with ease!
 
 ```{r}
 # Add formation name
-fossils[which(fossils$collection_no == "XXX"), "formation"] <- ""
+fossils[which(fossils$collection_no == "18539"), "formation"] <- "Bone Valley Formation"
 ```
 
 ::: {.callout-important}
 
-#### A word of caution
+#### A word of warning
 
 We identified several data records without country codes. We could quickly filter this data, it's not that much data after all. But you've just remembered something! The country where the collection is located is a compulsory data entry field in the PBDB! **What on Earth has gone wrong?**
 
@@ -262,29 +287,30 @@ world <- ne_countries(scale = "medium", returnclass = "sf")
 # Plot the geographic coordinates of each locality over the world map
 ggplot(fossils) +
   geom_sf(data = world) +
-  geom_point(aes(x = lng, y = lat)) +
+  geom_point(aes(x = lng, y = lat), 
+             shape = 21, size = 0.75, colour = "black", fill = "purple3") +
   labs(x = "Longitude (º)",
        y = "Latitude (º)")
 ```
 
-We have a large density of crocodile occurrences in Europe and the western interior of the United States, along with a smattering of occurrences across the other continents. This distribution seems to fit our previous knowledge, that the occurrences are spread across 46 countries. However, the crocodile occurrences in Antarctica seem particularly suspicious: crocodiles need a warm climate, and modern-day Antarctica certainly doesn’t fit this description. Let’s investigate further. We’ll do this by plotting the latitude of the occurrences through time.
+We have a large density of crocodile occurrences in Europe and the western interior of the United States, along with a smattering of occurrences across the other continents. This distribution seems to fit our previous knowledge, that the occurrences are spread across 89 countries. However, the crocodile occurrences in Antarctica seem particularly suspicious: crocodiles need a warm climate, and modern-day Antarctica certainly doesn’t fit this description. Let’s investigate further. We’ll do this by plotting the latitude of the occurrences through time.
 
 ```{r}
 # Add a column to the data frame with the midpoint of the fossil ages
 fossils <- mutate(fossils, mid_ma = (min_ma + max_ma) / 2)
 
 # Create dataset containing only Antarctic fossils
-Antarctic <- filter(fossils, cc == "AA")
+antarctic <- filter(fossils, cc == "AQ")
 
 # Plot the age of each occurrence against its latitude
 ggplot(fossils, aes(x = mid_ma, y = lat)) +
   geom_point(colour = "black") +
-  geom_point(data = Antarctic, colour = "red") +
+  geom_point(data = antarctic, colour = "red") +
   labs(x = "Age (Ma)",
        y = "Latitude (º)") +
   scale_x_reverse() +
   geom_hline(yintercept = 0) +
-  coord_geo(dat = "stages", expand = TRUE)
+  coord_geo(dat = "stages", expand = TRUE, size = "auto")
 ```
 
 Here we can see the latitude of each occurrence, plotted against the temporal midpoint of the collection. We have highlighted our Antarctic occurrences in red - these points are still looking pretty anomalous.
@@ -295,26 +321,26 @@ But, wait, we should actually be looking at palaeolatitude instead. Let’s plot
 # Plot the age of each occurrence against its palaeolatitude
 ggplot(fossils, aes(x = mid_ma, y = paleolat)) +
   geom_point(colour = "black") +
-  geom_point(data = Antarctic, colour = "red") +
+  geom_point(data = antarctic, colour = "red") +
   labs(x = "Age (Ma)",
        y = "Palaeolatitude (º)") +
   scale_x_reverse() +
   geom_hline(yintercept = 0) +
-  coord_geo(dat = "stages", expand = TRUE)
+  coord_geo(dat = "stages", expand = TRUE, size = "auto")
 ```
 
 Hmm… when we look at palaeolatitude the Antarctic occurrences are even further south. Time to really check out these occurrences. Which collections are they within?
 
 ```{r}
 # Find Antarctic collection numbers
-unique(Antarctic$collection_no)
+unique(antarctic$collection_no)
 ```
 
 Well, upon further visual inspection using the PBDB website, all appear to be fairly legitimate. However, all three occurrences still appear to be outliers, especially as in the late Eocene [temperatures were dropping](https://doi.org/10.1038/s41586-018-0272-2). What about the taxonomic certainty of these occurrences?
 
 ```{r}
 # List taxonomic names associated with Antarctic occurrences
-Antarctic$identified_name
+antarctic$identified_name
 ```
 
 Since all three occurrences are listed as “Crocodylia indet.”, it may make sense to remove them from further analyses anyway.
@@ -338,7 +364,7 @@ ggplot(fossils, aes(x = bin_midpoint, y = paleolat, fill = interval_name)) +
        y = "Palaeolatitude (º)") +
   scale_x_reverse() +
   scale_fill_geo("stages") +
-  coord_geo(dat = "stages", expand = TRUE)
+  coord_geo(dat = "stages", expand = TRUE, size = "auto")
 ```
 
 Box plots are a great way to look for outliers, because their calculation automatically includes outlier determination, and any such points can clearly be seen in the graph. At time of writing, the guidance for geom_boxplot() states that “The upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles). The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge. Data beyond the end of the whiskers are called ‘outlying’ points and are plotted individually.” 1.5 times the interquartile range seems a reasonable cut-off for determining outliers, so we will use these plots at face value to identify data points to check.
