@@ -122,7 +122,9 @@ install.packages("ncdf4")
 ```
 ## GitHub
 
-This workshop will include a brief introduction to GitHub. We recommend that you [make a GitHub account](https://github.com/) in advance, if you don't already have one, so you can follow along during the workshop. Note that you can get additional benefits if you apply to GitHub Education as a [researcher](https://docs.github.com/en/education/about-github-education/github-education-for-teachers/apply-to-github-education-as-a-teacher) or [student](https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student) once you've set up a personal account.
+This workshop will include a brief introduction to GitHub. In advance of the workshop, we recommend that you make a [GitHub account](https://github.com/signup), if you don't already have one, so you can follow along during the workshop. Note that you can get additional benefits if you apply to GitHub Education as a [researcher](https://docs.github.com/en/education/about-github-education/github-education-for-teachers/apply-to-github-education-as-a-teacher) or [student](https://docs.github.com/en/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student) once you've set up a personal account.
+
+Additionally, you should have [GitHub Desktop](https://desktop.github.com/) installed on your computer. You can sign into GitHub Desktop with your GitHub account.
 
 ## Acknowledgements
 
