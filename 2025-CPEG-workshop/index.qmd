@@ -8,6 +8,7 @@ order: 97
 > **WORKSHOP MATERIALS CURRENTLY UNDER CONSTRUCTION**
 
 **July 27^th^, 2025**
+09:00-17:00
 
 University of Zürich (Zürich, Switzerland)
 
@@ -17,20 +18,25 @@ R is one of the most popular languages in the world of data science and has been
 
 ## Arrival
 
-The event starts at XXX on the XXX and will take place at XXX.
-
-The full schedule for the workshop is available [here](#schedule).
+The event starts at 09:00 on Sunday, July 27^th^, 2025 and will take place in room KO2-F-152 at the Natural History Museum, University of Zürich Central Campus.
+If you need additional assistance getting set-up, we'll be in the room starting at 08:00.
 
 ## Schedule
 
-| Time            | Event                       |
-|-----------------|-----------------------------|
-| **PLACEHOLDER** | **PLACEHOLDER**             |
-| **PLACEHOLDER** | **PLACEHOLDER**             |
-| **PLACEHOLDER** | **PLACEHOLDER**             |
-| **PLACEHOLDER** | **PLACEHOLDER**             |
-| **PLACEHOLDER** | **PLACEHOLDER**             |
-| **PLACEHOLDER** | **PLACEHOLDER**             |
+| Time      | Event                                              |
+|-----------|----------------------------------------------------|
+| **08:00** | **Installation assistance** *(optional)*           |
+| **09:00** | **Welcome and introduction to the Palaeoverse**    |
+| **09:15** | **Setting up a reproducible workflow**             |
+| **10:30** | *Coffee break*                                     |
+| **10:45** | **Data acquisition**                               |
+| **11:15** | **Data exploration and cleaning**                  |
+| **12:30** | *Lunch break*                                      |
+| **14:00** | **Data harmonization and synthesis**               |
+| **15:30** | *Coffee break*                                     |
+| **15:45** | Data archiving and publishing                      |
+| **16:45** | Questions and wrap-up                              |
+
 
 ## Instructors
 
@@ -40,19 +46,55 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![INSTRUCTOR 1](https://palaeoverse.org/images/logo.png)
+![Bethany Allen](https://palaeoverse.org/images/logo.png)
 
 :::
 
 ::: {.g-col-4}
 
-![INSTRUCTOR 2](https://palaeoverse.org/images/logo.png)
+![Chris Dean](https://palaeoverse.org/images/logo.png)
 
 :::
 
 ::: {.g-col-4}
 
-![INSTRUCTOR 3](https://palaeoverse.org/images/logo.png)
+![Erin Dillon](https://palaeoverse.org/images/logo.png)
+
+:::
+
+:::
+::: {.grid}
+
+::: {.g-col-4}
+
+![Harriet Drage](https://palaeoverse.org/images/logo.png)
+
+:::
+
+::: {.g-col-4}
+
+![Will Gearty](https://palaeoverse.org/images/logo.png)
+
+:::
+
+::: {.g-col-4}
+
+![Pedro Godoy](https://palaeoverse.org/images/logo.png)
+
+:::
+
+:::
+::: {.grid}
+
+::: {.g-col-4}
+
+![Niklas Hohmann](https://palaeoverse.org/images/logo.png)
+
+:::
+
+::: {.g-col-4}
+
+![Lewis Jones](https://palaeoverse.org/images/logo.png)
 
 :::
 
@@ -60,7 +102,7 @@ This edition of the Workshop event is organised and led by the following members
 
 ## Installation
 
-Please ensure that you have the latest version of R for the workshop, which can be downloaded [here](https://cran.r-project.org/bin/windows/base/). We also recommend installing the latest version of RStudio, which can be downloaded [here](https://posit.co/download/rstudio-desktop/). To minimize any installation issues during the workshop, please also install the following R packages:
+Please ensure that you have the latest version of R for the workshop, which can be downloaded [here for Windows](https://cran.r-project.org/bin/windows/base/) or [here for MacOS](https://cran.r-project.org/bin/macosx/). We also recommend installing the latest version of RStudio, which can be downloaded [here](https://posit.co/download/rstudio-desktop/). To minimize any installation issues during the workshop, please also install the following R packages:
 
 ```{R install}
 #| eval: false
@@ -69,6 +111,6 @@ install.packages()
 
 ## Acknowledgements
 
-This event is run by the [Palaeoverse](https://palaeoverse.org) and supported by...
+This event is run by the [Palaeoverse](https://palaeoverse.org) and is supported by the Crossing the Paleontological-Ecological Gap and Conservation Paleobiology Symposium and the University of Zürich. As a community-driven initiative, we'd also like to thank all of the participants for their support and engagement with the Palaeoverse.
 
 ![](https://palaeoverse.org/images/logo.png){width="20%"}
