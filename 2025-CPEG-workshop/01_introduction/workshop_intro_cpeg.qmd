@@ -148,6 +148,19 @@ format:
 - Exits
 - Internet
 
+## Raise your hand if...
+
+::: {.incremental}
+
+- you are just getting started in R
+- you feel comfortable coding in R
+- you work with R so much that you dream in ggplot
+- you have used GitHub before
+- you have downloaded data from a database
+- you have archived your data and/or code
+
+:::
+
 ## Meet your colleagues!
 
 - Name
