@@ -129,7 +129,7 @@ unique(fossils$cc)
 length(unique(fossils$cc))
 ```
 
-Here we can see that Paleogene crocodiles have been found in 46 different countries. Let's sort those values alphabetically to help us find specific countries.
+Here we can see that Cenozoic crocodiles have been found in 89 different countries. Let's sort those values alphabetically to help us find specific countries.
 
 ```{r countries_2}
 # List and sort unique country codes, and count them
@@ -141,9 +141,25 @@ Something weird has happened here: we can see that once the countries have been 
 
 ## Practical
 
-- Why do we explore our data? How do we explore our data? [20 min instruction & code-along, Will]
-Based on https://tenrules.palaeoverse.org/#rule-4-explore-your-data
-Guided freeform practical [15 min, Will]
+Now it's your turn! Explore the data yourself:
+
+What is the geographic scale of our data? (hint: geoscale column)
+
+```{r}
+
+```
+
+What is the stratigraphic scale of our data? (hint: stratscale column)
+
+```{r}
+
+```
+
+What proportion of our occurrences are marine crocodiles? (hit: taxon_environment column)
+
+```{r}
+
+```
 
 # Data cleaning
 
@@ -234,7 +250,7 @@ However, while a useful technique, data imputation does carry a level of uncerta
 
 #### Complete
 
-So, we've gone back to our source material (i.e. the publication the data is from) and we've discovered that occurrences from collection 18539 are from the Bone Valley Formation. We can now programmatically update our data. We could also do this manually in spreadsheet software, but through coding, we can track and document all the changes we've made to the dataset with ease!
+For example, the formation data for collection 18539 are missing, so we could go back to the original desciptive literature to complete the data for this collection. In doing so, we've discovered that occurrences from collection 18539 are from the Bone Valley Formation. We can now programmatically update our data. We could also do this manually in spreadsheet software, but through coding, we can track and document all the changes we've made to the dataset with ease!
 
 ```{r}
 # Add formation name
@@ -447,7 +463,8 @@ tax_check(taxdf = fossils, name = "genus", dis = 0.1)
 tax_check(taxdf = fossils_sp, name = "accepted_name" , dis = 0.1)
 ```
 
-No names are flagged here, so that seems fine.
+Two names are flagged here for our dissimilarity theshold. However, on further inspection from the literature, these are two distinct species and therefore not a spelling mistake.
+
 We can also check formatting and spelling using the `fossilbrush` package.
 
 ```{r}
@@ -538,94 +555,37 @@ If data are altered or filtered at any point, this can change the overall summar
 
 ## Practical
 
-Now it's time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.
+Now it's time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. You could modify some of the code above to help you, or write your own!
 
-### Can you find any additional ***missing data***? What will you do with them?
-
-```{r}
-
-```
-
-### Can you find any additional ***data outliers***? What will you do with them?
+Can you find any additional ***missing data***? What will you do with them?
 
 ```{r}
 
 ```
 
-### Can you find any additional ***data inconsistencies***? What will you do with them?
+Can you find any additional ***data outliers***? What will you do with them?
 
 ```{r}
-# We can use the table() function to tabulate the frequency of each interval
-table(fossils$early_interval)
 
 ```
 
+Can you find any additional ***data inconsistencies***? What will you do with them?
+
 ```{r}
-table(fossils$late_interval)
 
 ```
 
-```{r}
-# What are the ages associated with each interval? Any issues with the date 
-# formats?
-fossils %>% 
-  group_by(early_interval) %>% # Grouping by interval
-  distinct(max_ma) %>%  # Pulling out the distinct values
-  arrange(early_interval) # Putting list in order to scan for inconsistencies
-
-```
+Can you find any additional ***data duplicates***? What will you do with them?
 
 ```{r}
-fossils %>% 
-  group_by(late_interval) %>%
-  distinct(min_ma) %>% 
-  arrange(late_interval)
 
-```
-
-You can also use the `CoordinateCleaner` package to check the coordinates. 
-
-
-### How does the latitudinal distribution of occurrences looks like over time?
-
-```{r}
-# List geological stages in dataset
-time_bins <- unique(fossils$interval_name)
-
-# Create object to hold values
-lat_ranges <- c()
-
-# For each stage, identify maximum and minimum latitudinal values
-for (i in 1:length(time_bins)) {
-  one_stage <- filter(fossils, interval_name == time_bins[i])
-  max <- max(one_stage$paleolat)
-  min <- min(one_stage$paleolat)
-  midpoint <- one_stage$bin_midpoint[1]
-  lat_ranges <- rbind(lat_ranges, c(time_bins[i], midpoint, min, max))
-}
-
-# Clean up dataframe
-lat_ranges <- as.data.frame(lat_ranges)
-colnames(lat_ranges) <- c("stage", "midpoint", "min", "max")
-lat_ranges$midpoint <- as.numeric(lat_ranges$midpoint)
-lat_ranges$max <- as.numeric(lat_ranges$max)
-lat_ranges$min <- as.numeric(lat_ranges$min)
-
-# Plot the palaeolatitudinal range by stage
-ggplot(lat_ranges, aes(x = midpoint, ymin = min, ymax = max)) +
-  geom_ribbon() +
-  labs(x = "Age (Ma)",
-       y = "Palaeolatitude (º)") +
-  scale_x_reverse() +
-  geom_hline(yintercept = 0) +
-  coord_geo(dat = "stages", expand = TRUE)
 ```
 
 Let's save our data for the next unit!
 
 ```{r save_data}
 # Save data
-write.csv(x = fossils, file = "../05_harmonization/cenozoic_crocs.csv", row.names = FALSE)
+write.csv(x = fossils, file = "../05_harmonization/cenozoic_crocs_clean.csv", row.names = FALSE)
 ```
 
 # Resources
