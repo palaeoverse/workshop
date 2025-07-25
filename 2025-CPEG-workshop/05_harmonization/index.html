@@ -502,9 +502,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#breakout-session-1" id="toc-breakout-session-1" class="nav-link" data-scroll-target="#breakout-session-1"><strong>BREAKOUT SESSION 1</strong></a></li>
   <li><a href="#iii.-building-a-workflow-to-merge-datasets" id="toc-iii.-building-a-workflow-to-merge-datasets" class="nav-link" data-scroll-target="#iii.-building-a-workflow-to-merge-datasets">III. Building a Workflow to Merge Datasets</a>
   <ul class="collapse">
-  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">0. Set-up</a></li>
-  <li><a href="#organising-palaeo-climatic-data" id="toc-organising-palaeo-climatic-data" class="nav-link" data-scroll-target="#organising-palaeo-climatic-data">1. Organising Palaeo-climatic Data</a></li>
-  <li><a href="#organising-modern-climatic-data" id="toc-organising-modern-climatic-data" class="nav-link" data-scroll-target="#organising-modern-climatic-data">2. Organising Modern Climatic Data</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set-up</a></li>
+  <li><a href="#organising-palaeo-climatic-data" id="toc-organising-palaeo-climatic-data" class="nav-link" data-scroll-target="#organising-palaeo-climatic-data">Organising Palaeo-climatic Data</a></li>
+  <li><a href="#organising-modern-climatic-data" id="toc-organising-modern-climatic-data" class="nav-link" data-scroll-target="#organising-modern-climatic-data">Organising Modern Climatic Data</a></li>
   </ul></li>
   <li><a href="#breakout-session-2" id="toc-breakout-session-2" class="nav-link" data-scroll-target="#breakout-session-2"><strong>BREAKOUT SESSION 2</strong></a>
   <ul class="collapse">
@@ -591,7 +591,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Another clear example of the harmonization of palaeo and modern data is in understanding long-term baselines of species abundances and distributions for conservation. This often involves combining records of presence or abundance that were collected in different ways over different timescales, and finding common currencies or other statistical approaches to align them. For example, by combining modern, historical, and palaeontological records of coral presence, <a href="https://doi.org/10.1126/sciadv.aax9395">(Cramer et al.&nbsp;2020)</a> examined the timing of coral decline in the Caribbean response to various regional and local stressors. They were able to track trends in coral abundance and community composition before recent ecological surveys, providing important baseline data for understanding the drivers of ongoing coral loss and where to target conservation and restoration efforts:</p>
 <p><img src="Figure4.jpeg" class="img-fluid"></p>
 <p>A final example synthesizes pollen data from cores to quantify rates of vegetation change over thousands of years in different regions, which sets the stage for investigating feedbacks between various anthropogenic and environvental drivers <a href="https://doi.org/10.1126/science.abg1685">(Mottl et al.&nbsp;2021)</a>. Databases like Neotoma contain a wealth of palaeoecological records such as this, alongside chronological information, that can be leveraged to reconstruct community change with relatively high temporal resolution in shallow time.</p>
-<p>![Figure from <a href="https://doi.org/10.1111/geb.13693">Flantua et al.&nbsp;2023</a>] (Figure5.jpg)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figure5.jpg" class="img-fluid figure-img"></p>
+<figcaption>Figure from <a href="https://doi.org/10.1111/geb.13693">Flantua et al.&nbsp;2023</a></figcaption>
+</figure>
+</div>
 <p>However, there are many considerations that have to be taken into account when carrying out this type of research, and a number of practical challenges that have to be overcome to ensure that the results we get are meaningful. Differences in spatial and temporal scales, data types, and various biases that impact our data sources all make this research difficult to carry out. Today, we are going to provide a brief introduction to this broad area of research, focusing in particular on the decisions that have to be made regarding our data and research approaches. Let’s dig in!</p>
 </section>
 <section id="ii.-planning-setup-and-finding-your-data" class="level2">
@@ -676,7 +681,7 @@ Heads Up!
 </ul>
 <p>Now that we have a basic plan, we can start to put it into action. Let’s write some code!</p>
 <section id="set-up" class="level3">
-<h3 class="anchored" data-anchor-id="set-up">0. Set-up</h3>
+<h3 class="anchored" data-anchor-id="set-up">Set-up</h3>
 <p>First, we’ll need to install and load some packages that will allow us to work with our data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install necessary packages</span></span>
@@ -752,7 +757,7 @@ The following object is masked from 'package:tidyr':
 <p>Now let’s find some climate data!</p>
 </section>
 <section id="organising-palaeo-climatic-data" class="level3">
-<h3 class="anchored" data-anchor-id="organising-palaeo-climatic-data">1. Organising Palaeo-climatic Data</h3>
+<h3 class="anchored" data-anchor-id="organising-palaeo-climatic-data">Organising Palaeo-climatic Data</h3>
 <p>After exploring several potential palaeo-climatic datasets, we’ve decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: <a href="https://zenodo.org/records/5718392">https://zenodo.org/records/5718392</a>.</p>
 <p>This climatic dataset offers decently high temporal resolution (for deep time), but one thing we’ll need to keep in mind is that the 5-million-year intervals don’t align perfectly with geological stages. This will come into play later when we start working with the occurrence data.</p>
 <p>For our study, we’ll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition.</p>
@@ -810,7 +815,7 @@ zvar       : 020_tas_scotese02a_v21321 </code></pre>
 <p>Now we’ll move on to our modern data!</p>
 </section>
 <section id="organising-modern-climatic-data" class="level3">
-<h3 class="anchored" data-anchor-id="organising-modern-climatic-data">2. Organising Modern Climatic Data</h3>
+<h3 class="anchored" data-anchor-id="organising-modern-climatic-data">Organising Modern Climatic Data</h3>
 <p>We’ll obtain our modern climatic data from WorldClim: <a href="https://www.worldclim.org/">https://www.worldclim.org/</a></p>
 <p>To keep our climatic variables consistent, we’ll also work with the mean annual temperature data.</p>
 <p>Whilst below we show you code to access this data directly within R, it can take a while to download. We’ve therefore also included it alongside the other materials for the workshop, which can be accessed <strong><a href="https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization">HERE</a></strong>.</p>
