@@ -1,5 +1,5 @@
 ---
-title: "Data acquisition"
+title: "Data Acquisition"
 subtitle: "Acquiring data from the Paleobiology Database"
 toc: true
 order: 3
@@ -45,7 +45,7 @@ library(readr)
 
 ### Choose the right data for your question
 
-In this example, we are interested in the fossil record of crocodiles. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates, so their fossil record is commonly used as an indicator of palaeoclimate. Here we will investigate the palaeodiversity of crocodiles, with the specific goal of reconstructing their latitudinal range throughout the Cenozoic.
+Here at CPEG, we are interested in integrating palaeontological and modern biological data to address questions about the timescales over which changes in biodiversity and ecosystem dynamics take place. In today's practical sessions, we will be focusing on Cenozoic crocodiles as a case study. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates. Our goal is to investigate different facets of crocodilian biodiversity throughout the Cenozoic and to the present day, and test what role temperature might play in these patterns.
 
 To meet this goal, we need to acquire occurrence data for fossil crocodiles during the Cenozoic. Initially we have decided not to place further taxonomic constraints on our search, so we will include all occurrences belonging to the order 'Crocodylia'. We are interested in the clade's biogeography, so we will need all occurrences globally, and we need to ensure that we have geographic coordinates associated with our occurrences.
 
@@ -58,7 +58,7 @@ Taxa <- "Crocodylia" # Set "Taxa" as the taxonomic group of interest
 Interval <- "Cenozoic" # Set interval for sampling window
 ```
 
-In case you want to alter these for your own purposes, you should also run the following lines which will ensure things get formatted properly for use with the API:
+In case you want to alter these for your own purposes, you should also run the following lines which will ensure things get formatted properly for use with the API. We will make extensive use of `paste` and `paste0` (paste specifying no spaces) here, functions useful for creating, trimming, and generally manipulating character strings:
 
 ```{r reformat_inputs, message = FALSE}
 Taxa <- paste(Taxa, collapse = ",")
@@ -117,9 +117,9 @@ And now we have obtained our dataset.
 
 ### Keep raw data raw
 
-For reproducibility, we want to make sure that we have a copy of the full dataset as initially downloaded - this is the "raw" data.
+For reproducibility, we want to make sure that we have a copy of the full dataset as initially downloaded - this is the "raw" data. It is important to keep this as part of the formal data archive, which we will discuss in more detail later.
 
-We can load and view this file to take a look at it.
+We can load and view our raw data file to take a look at it.
 
 ```{r read_raw}
 # Load data file
