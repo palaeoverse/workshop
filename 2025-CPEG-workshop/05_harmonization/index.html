@@ -756,7 +756,7 @@ The following object is masked from 'package:tidyr':
 <p>After exploring several potential palaeo-climatic datasets, we’ve decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: <a href="https://zenodo.org/records/5718392">https://zenodo.org/records/5718392</a>.</p>
 <p>This climatic dataset offers decently high temporal resolution (for deep time), but one thing we’ll need to keep in mind is that the 5-million-year intervals don’t align perfectly with geological stages. This will come into play later when we start working with the occurrence data.</p>
 <p>For our study, we’ll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition.</p>
-<p>First, we need to load in our data, which is currently stored as a .nc file, and have a look at it. This can be read into R as a raster using the ‘raster’ package:</p>
+<p>First, we need to load in our data, which is currently stored as a .nc file, and have a look at it. This can be read into R as a raster using the <code>raster</code> package:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in rasters of palaeoclimate for each time interval</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>raster2prep<span class="fl">.15</span> <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"015_tas_scotese02a_v21321.nc"</span>)</span>
@@ -1213,7 +1213,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </div>
 </div>
 <p>Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. <em>How might we account for the spatial structure of the data in our analysis?</em></p>
-<p>Another challenge stems from aligning these occurrences with the spatially explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the <code>bin_space</code> function in the ‘palaeoverse’ package). We’d also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We’ll keep things simple and show the first approach here.</p>
+<p>Another challenge stems from aligning these occurrences with the spatially explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the <code>bin_space</code> function in the <code>palaeoverse</code> package). We’d also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We’ll keep things simple and show the first approach here.</p>
 <p>Now moving onto the final section: using the combination of these datasets to carry out our analysis and visualise our results!</p>
 </section>
 </section>
@@ -1331,16 +1331,16 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<p>Cramer et al 2020</p>
-<p>Darroch, S.A., Saupe, E.E., Casey, M.M. and Jorge, M.L., 2022. Integrating geographic ranges across temporal scales. Trends in Ecology &amp; Evolution, 37(10), pp.851-860.</p>
-<p>Flantua et al.&nbsp;2023</p>
-<p>Jones, L.A., Mannion, P.D., Farnsworth, A., Valdes, P.J., Kelland, S.J. and Allison, P.A., 2019. Coupling of palaeontological and neontological reef coral data improves forecasts of biodiversity responses under global climatic change. Royal Society Open Science, 6(4), p.182111.</p>
-<p>Mottl et al 2021</p>
-<p>Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A., 2021. Time to better integrate palaeoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), p.095005.</p>
-<p>Scotese, C.R., Song, H., Mills, B.J. and van der Meer, D.G., 2021. Phanerozoic palaeotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, p.103503.</p>
-<p>Steinthorsdottir, M., Coxall, H.K., De Boer, A.M., Huber, M., Barbolini, N., Bradshaw, C.D., Burls, N.J., Feakins, S.J., Gasson, E., Henderiks, J. and Holbourn, A.E., 2021. The Miocene: The future of the past. palaeoceanography and palaeoclimatology, 36(4), p.e2020PA004037.</p>
-<p>Valdes, P.J., Scotese, C.R. and Lunt, D.J., 2020. Deep ocean temperatures through time. Climate of the Past Discussions, 2020, pp.1-37.</p>
-<p>Veloz, S.D., Williams, J.W., Blois, J.L., He, F., Otto‐Bliesner, B. and Liu, Z., 2012. No‐analog climates and shifting realized niches during the late quaternary: implications for 21st‐century predictions by species distribution models. Global Change Biology, 18(5), pp.1698-1713.</p>
+<p>Cramer, K.L., Jackson, J.B., Donovan, M.K., Greenstein, B.J., Korpanty, C.A., Cook, G.M., &amp; Pandolfi, J.M. (2020). Widespread loss of Caribbean acroporid corals was underway before coral bleaching and disease outbreaks. Science Advances, 6(17), eaax9395.</p>
+<p>Darroch, S.A., Saupe, E.E., Casey, M.M. and Jorge, M.L. 2022. Integrating geographic ranges across temporal scales. Trends in Ecology &amp; Evolution, 37(10), 851-860.</p>
+<p>Flantua, S.G., Mottl, O., Felde, V.A., Bhatta, K.P., Birks, H.H., Grytnes, J.A., … &amp; Birks, H.J.B. (2023). A guide to the processing and standardization of global palaeoecological data for large‐scale syntheses using fossil pollen. Global Ecology and Biogeography, 32(8), 1377-1394.</p>
+<p>Jones, L.A., Mannion, P.D., Farnsworth, A., Valdes, P.J., Kelland, S.J. and Allison, P.A. (2019). Coupling of palaeontological and neontological reef coral data improves forecasts of biodiversity responses under global climatic change. Royal Society Open Science, 6(4), 182111.</p>
+<p>Mottl, O., Flantua, S.G., Bhatta, K.P., Felde, V.A., Giesecke, T., Goring, S., … &amp; Williams, J. W. (2021). Global acceleration in rates of vegetation change over the past 18,000 years. science, 372(6544), 860-864.</p>
+<p>Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A. (2021). Time to better integrate palaeoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), 095005.</p>
+<p>Scotese, C.R., Song, H., Mills, B.J. and van der Meer, D.G. (2021). Phanerozoic palaeotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503.</p>
+<p>Steinthorsdottir, M., Coxall, H.K., De Boer, A.M., Huber, M., Barbolini, N., Bradshaw, C.D., Burls, N.J., Feakins, S.J., Gasson, E., Henderiks, J. and Holbourn, A.E. (2021). The Miocene: The future of the past. palaeoceanography and palaeoclimatology, 36(4), e2020PA004037.</p>
+<p>Valdes, P.J., Scotese, C.R. and Lunt, D.J. 2020. Deep ocean temperatures through time. Climate of the Past Discussions (2020). 1-37.</p>
+<p>Veloz, S.D., Williams, J.W., Blois, J.L., He, F., Otto‐Bliesner, B. and Liu, Z. (2012). No‐analog climates and shifting realized niches during the late quaternary: implications for 21st‐century predictions by species distribution models. Global Change Biology, 18(5), 1698-1713.</p>
 
 
 </section>
