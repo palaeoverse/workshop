@@ -53,7 +53,7 @@ Another clear example of the harmonization of palaeo and modern data is in under
 
 A final example synthesizes pollen data from cores to quantify rates of vegetation change over thousands of years in different regions, which sets the stage for investigating feedbacks between various anthropogenic and environvental drivers [(Mottl et al. 2021)](https://doi.org/10.1126/science.abg1685). Databases like Neotoma contain a wealth of palaeoecological records such as this, alongside chronological information, that can be leveraged to reconstruct community change with relatively high temporal resolution in shallow time.
 
-![Figure from [Flantua et al. 2023](https://doi.org/10.1111/geb.13693)] (Figure5.jpg)
+![Figure from [Flantua et al. 2023](https://doi.org/10.1111/geb.13693)](Figure5.jpg)
 
 However, there are many considerations that have to be taken into account when carrying out this type of research, and a number of practical challenges that have to be overcome to ensure that the results we get are meaningful. Differences in spatial and temporal scales, data types, and various biases that impact our data sources all make this research difficult to carry out. Today, we are going to provide a brief introduction to this broad area of research, focusing in particular on the decisions that have to be made regarding our data and research approaches. Let's dig in!
 
@@ -128,7 +128,7 @@ To help you get an idea of the process of using data from different sources, we'
 
 Now that we have a basic plan, we can start to put it into action. Let's write some code!
 
-### 0. Set-up
+### Set-up
 
 First, we'll need to install and load some packages that will allow us to work with our data:
 
@@ -175,7 +175,7 @@ ref_raster <- raster(res = res, ext = e)
 
 Now let's find some climate data!
 
-### 1. Organising Palaeo-climatic Data
+### Organising Palaeo-climatic Data
 
 After exploring several potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: [https://zenodo.org/records/5718392](https://zenodo.org/records/5718392).
  
@@ -218,7 +218,7 @@ plot(scotese.temp)
 
 Now we'll move on to our modern data!
 
-### 2. Organising Modern Climatic Data
+### Organising Modern Climatic Data
 
 We'll obtain our modern climatic data from WorldClim: [https://www.worldclim.org/](https://www.worldclim.org/)
 
