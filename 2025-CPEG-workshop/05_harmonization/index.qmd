@@ -283,7 +283,7 @@ Let's begin!
 First, we'll load in our palaeontological data. Luckily for us, we've already been working with a Crocodylia fossil occurrence dataset. We'll use these data in our analysis. If needed, you can read in the cleaned dataset below.
 ```{r}
 # Load cleaned fossil data for order Crocodylia that we worked on earlier
-fossil_occ <- read.csv("cenozoic_crocs.csv")
+fossil_occ <- read.csv("cenozoic_crocs_clean.csv")
 ```
 
 #### 1B. Organise modern occurrence data
