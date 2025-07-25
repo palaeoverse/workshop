@@ -155,7 +155,7 @@ What is the stratigraphic scale of our data? (hint: stratscale column)
 
 ```
 
-What proportion of our occurrences are marine crocodiles? (hit: taxon_environment column)
+What proportion of our occurrences are marine crocodiles? (hint: taxon_environment column)
 
 ```{r}
 
