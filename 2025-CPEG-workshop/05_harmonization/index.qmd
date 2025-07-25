@@ -183,7 +183,7 @@ This climatic dataset offers decently high temporal resolution (for deep time), 
 
 For our study, we'll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition. 
 
-First, we need to load in our data, which is currently stored as a .nc file, and have a look at it. This can be read into R as a raster using the 'raster' package:
+First, we need to load in our data, which is currently stored as a .nc file, and have a look at it. This can be read into R as a raster using the `raster` package:
 
 ```{r}
 
@@ -531,7 +531,7 @@ ggplot(modern_occ_filter) +
 
 Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. *How might we account for the spatial structure of the data in our analysis?*
 
-Another challenge stems from aligning these occurrences with the spatially explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function in the 'palaeoverse' package). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We'll keep things simple and show the first approach here.
+Another challenge stems from aligning these occurrences with the spatially explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function in the `palaeoverse` package). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We'll keep things simple and show the first approach here.
 
 Now moving onto the final section: using the combination of these datasets to carry out our analysis and visualise our results!
 
@@ -626,22 +626,22 @@ Ultimately, our goal was to provide a workflow for merging different types of da
 
 ## References
 
-Cramer et al 2020
+Cramer, K.L., Jackson, J.B., Donovan, M.K., Greenstein, B.J., Korpanty, C.A., Cook, G.M., & Pandolfi, J.M. (2020). Widespread loss of Caribbean acroporid corals was underway before coral bleaching and disease outbreaks. Science Advances, 6(17), eaax9395.
 
-Darroch, S.A., Saupe, E.E., Casey, M.M. and Jorge, M.L., 2022. Integrating geographic ranges across temporal scales. Trends in Ecology & Evolution, 37(10), pp.851-860.
+Darroch, S.A., Saupe, E.E., Casey, M.M. and Jorge, M.L. 2022. Integrating geographic ranges across temporal scales. Trends in Ecology & Evolution, 37(10), 851-860.
 
-Flantua et al. 2023
+Flantua, S.G., Mottl, O., Felde, V.A., Bhatta, K.P., Birks, H.H., Grytnes, J.A., ... & Birks, H.J.B. (2023). A guide to the processing and standardization of global palaeoecological data for large‐scale syntheses using fossil pollen. Global Ecology and Biogeography, 32(8), 1377-1394.
 
-Jones, L.A., Mannion, P.D., Farnsworth, A., Valdes, P.J., Kelland, S.J. and Allison, P.A., 2019. Coupling of palaeontological and neontological reef coral data improves forecasts of biodiversity responses under global climatic change. Royal Society Open Science, 6(4), p.182111.
+Jones, L.A., Mannion, P.D., Farnsworth, A., Valdes, P.J., Kelland, S.J. and Allison, P.A. (2019). Coupling of palaeontological and neontological reef coral data improves forecasts of biodiversity responses under global climatic change. Royal Society Open Science, 6(4), 182111.
 
-Mottl et al 2021
+Mottl, O., Flantua, S.G., Bhatta, K.P., Felde, V.A., Giesecke, T., Goring, S., ... & Williams, J. W. (2021). Global acceleration in rates of vegetation change over the past 18,000 years. science, 372(6544), 860-864.
 
-Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A., 2021. Time to better integrate palaeoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), p.095005.
+Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A. (2021). Time to better integrate palaeoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), 095005.
 
-Scotese, C.R., Song, H., Mills, B.J. and van der Meer, D.G., 2021. Phanerozoic palaeotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, p.103503.
+Scotese, C.R., Song, H., Mills, B.J. and van der Meer, D.G. (2021). Phanerozoic palaeotemperatures: The earth’s changing climate during the last 540 million years. Earth-Science Reviews, 215, 103503.
 
-Steinthorsdottir, M., Coxall, H.K., De Boer, A.M., Huber, M., Barbolini, N., Bradshaw, C.D., Burls, N.J., Feakins, S.J., Gasson, E., Henderiks, J. and Holbourn, A.E., 2021. The Miocene: The future of the past. palaeoceanography and palaeoclimatology, 36(4), p.e2020PA004037.
+Steinthorsdottir, M., Coxall, H.K., De Boer, A.M., Huber, M., Barbolini, N., Bradshaw, C.D., Burls, N.J., Feakins, S.J., Gasson, E., Henderiks, J. and Holbourn, A.E. (2021). The Miocene: The future of the past. palaeoceanography and palaeoclimatology, 36(4), e2020PA004037.
 
-Valdes, P.J., Scotese, C.R. and Lunt, D.J., 2020. Deep ocean temperatures through time. Climate of the Past Discussions, 2020, pp.1-37.
+Valdes, P.J., Scotese, C.R. and Lunt, D.J. 2020. Deep ocean temperatures through time. Climate of the Past Discussions (2020). 1-37.
 
-Veloz, S.D., Williams, J.W., Blois, J.L., He, F., Otto‐Bliesner, B. and Liu, Z., 2012. No‐analog climates and shifting realized niches during the late quaternary: implications for 21st‐century predictions by species distribution models. Global Change Biology, 18(5), pp.1698-1713.
+Veloz, S.D., Williams, J.W., Blois, J.L., He, F., Otto‐Bliesner, B. and Liu, Z. (2012). No‐analog climates and shifting realized niches during the late quaternary: implications for 21st‐century predictions by species distribution models. Global Change Biology, 18(5), 1698-1713.
