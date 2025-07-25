@@ -518,13 +518,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#identify-and-handle-inconsistencies" id="toc-identify-and-handle-inconsistencies" class="nav-link" data-scroll-target="#identify-and-handle-inconsistencies">Identify and handle inconsistencies</a></li>
   <li><a href="#identify-and-handle-duplicates" id="toc-identify-and-handle-duplicates" class="nav-link" data-scroll-target="#identify-and-handle-duplicates">Identify and handle duplicates</a></li>
-  <li><a href="#practical-1" id="toc-practical-1" class="nav-link" data-scroll-target="#practical-1">Practical</a>
-  <ul class="collapse">
-  <li><a href="#can-you-find-any-additional-missing-data-what-will-you-do-with-them" id="toc-can-you-find-any-additional-missing-data-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong><em>missing data</em></strong>? What will you do with them?</a></li>
-  <li><a href="#can-you-find-any-additional-data-outliers-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-outliers-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-outliers-what-will-you-do-with-them">Can you find any additional <strong><em>data outliers</em></strong>? What will you do with them?</a></li>
-  <li><a href="#can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" id="toc-can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" class="nav-link" data-scroll-target="#can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong><em>data inconsistencies</em></strong>? What will you do with them?</a></li>
-  <li><a href="#how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time" id="toc-how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time" class="nav-link" data-scroll-target="#how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time">How does the latitudinal distribution of occurrences looks like over time?</a></li>
-  </ul></li>
+  <li><a href="#practical-1" id="toc-practical-1" class="nav-link" data-scroll-target="#practical-1">Practical</a></li>
   </ul></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
   </ul>
@@ -699,7 +693,7 @@ Building ggplot2 visualizations
 <pre><code>[1] 89</code></pre>
 </div>
 </div>
-<p>Here we can see that Paleogene crocodiles have been found in 46 different countries. Let’s sort those values alphabetically to help us find specific countries.</p>
+<p>Here we can see that Cenozoic crocodiles have been found in 89 different countries. Let’s sort those values alphabetically to help us find specific countries.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List and sort unique country codes, and count them</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">unique</span>(fossils<span class="sc">$</span>cc))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -721,9 +715,10 @@ Building ggplot2 visualizations
 </section>
 <section id="practical" class="level2">
 <h2 class="anchored" data-anchor-id="practical">Practical</h2>
-<ul>
-<li>Why do we explore our data? How do we explore our data? [20 min instruction &amp; code-along, Will] Based on https://tenrules.palaeoverse.org/#rule-4-explore-your-data Guided freeform practical [15 min, Will]</li>
-</ul>
+<p>Now it’s your turn! Explore the data yourself:</p>
+<p>What is the geographic scale of our data? (hint: geoscale column)</p>
+<p>What is the stratigraphic scale of our data? (hint: stratscale column)</p>
+<p>What proportion of our occurrences are marine crocodiles? (hit: taxon_environment column)</p>
 </section>
 </section>
 <section id="data-cleaning" class="level1">
@@ -821,7 +816,7 @@ Building ggplot2 visualizations
 </section>
 <section id="complete" class="level4">
 <h4 class="anchored" data-anchor-id="complete">Complete</h4>
-<p>So, we’ve gone back to our source material (i.e.&nbsp;the publication the data is from) and we’ve discovered that occurrences from collection 18539 are from the Bone Valley Formation. We can now programmatically update our data. We could also do this manually in spreadsheet software, but through coding, we can track and document all the changes we’ve made to the dataset with ease!</p>
+<p>For example, the formation data for collection 18539 are missing, so we could go back to the original desciptive literature to complete the data for this collection. In doing so, we’ve discovered that occurrences from collection 18539 are from the Bone Valley Formation. We can now programmatically update our data. We could also do this manually in spreadsheet software, but through coding, we can track and document all the changes we’ve made to the dataset with ease!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add formation name</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fossils[<span class="fu">which</span>(fossils<span class="sc">$</span>collection_no <span class="sc">==</span> <span class="st">"18539"</span>), <span class="st">"formation"</span>] <span class="ot">&lt;-</span> <span class="st">"Bone Valley Formation"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -894,7 +889,7 @@ Answer
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -919,7 +914,7 @@ Answer
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -939,7 +934,7 @@ Answer
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -983,7 +978,7 @@ Answer
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1005,7 +1000,7 @@ Answer
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1024,7 +1019,7 @@ Answer
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1527,7 +1522,8 @@ $non_letter_group
 NULL</code></pre>
 </div>
 </div>
-<p>No names are flagged here, so that seems fine. We can also check formatting and spelling using the <code>fossilbrush</code> package.</p>
+<p>Two names are flagged here for our dissimilarity theshold. However, on further inspection from the literature, these are two distinct species and therefore not a spelling mistake.</p>
+<p>We can also check formatting and spelling using the <code>fossilbrush</code> package.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a list of taxonomic ranks to check</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>fossil_ranks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"phylum"</span>, <span class="st">"class"</span>, <span class="st">"order"</span>, <span class="st">"family"</span>, <span class="st">"genus"</span>)</span>
@@ -1740,229 +1736,16 @@ Caution
 </section>
 <section id="practical-1" class="level2">
 <h2 class="anchored" data-anchor-id="practical-1">Practical</h2>
-<p>Now it’s time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. Second, prepare a statement on what data preparation steps you have made.</p>
-<section id="can-you-find-any-additional-missing-data-what-will-you-do-with-them" class="level3">
-<h3 class="anchored" data-anchor-id="can-you-find-any-additional-missing-data-what-will-you-do-with-them">Can you find any additional <strong><em>missing data</em></strong>? What will you do with them?</h3>
-</section>
-<section id="can-you-find-any-additional-data-outliers-what-will-you-do-with-them" class="level3">
-<h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-outliers-what-will-you-do-with-them">Can you find any additional <strong><em>data outliers</em></strong>? What will you do with them?</h3>
-</section>
-<section id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them" class="level3">
-<h3 class="anchored" data-anchor-id="can-you-find-any-additional-data-inconsistencies-what-will-you-do-with-them">Can you find any additional <strong><em>data inconsistencies</em></strong>? What will you do with them?</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the table() function to tabulate the frequency of each interval</span></span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>early_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-                Agenian                Altonian              Aquitanian 
-                      4                       1                      29 
-             Arikareean               Arshantan              Barstovian 
-                      1                       1                      22 
-              Bartonian                 Blancan              Bridgerian 
-                     33                       6                      54 
-            Burdigalian               Calabrian                     Cf1 
-                     96                      41                       1 
-                    Cf2                     Cf3              Chadronian 
-                      2                       2                      12 
-               Chattian               Chibanian            Clarendonian 
-                     20                       1                      12 
-           Clarkforkian           Colhuehuapian             Colloncuran 
-                     28                       3                       1 
-                 Danian              Duchesnean        Early Barstovian 
-                     29                       2                       4 
-     Early Clarendonian early Early Hemphillian            Early Eocene 
-                      2                       3                      14 
-    Early Hemingfordian           Early Miocene         Early Oligocene 
-                      2                      40                      18 
-        Early Paleocene       Early Pleistocene          Early Pliocene 
-                      2                      38                      10 
-           Early Uintan                  Eocene                Gelasian 
-                      9                      10                      67 
-            Graybullian             Harrisonian           Hemingfordian 
-                      1                       1                       8 
-            Hemphillian             Huayquerian            Irvingtonian 
-                     13                      10                       6 
-               Langhian       Late Clarendonian             Late Eocene 
-                     38                       3                      25 
-       Late Hemphillian            Late Miocene          Late Oligocene 
-                      1                     124                      38 
-         Late Paleocene        Late Pleistocene           Late Pliocene 
-                      9                       2                      49 
-            Late Uintan                Laventan            Lostcabinian 
-                      6                      46                       3 
-               Lutetian               Messinian           Middle Eocene 
-                     52                      34                      17 
-         Middle Miocene      Middle Pleistocene                 Miocene 
-                     70                       3                       6 
-                   MN 1                    MN 2                    MN 3 
-                      1                       4                       3 
-                   MN 4                    MN 5                    MN 6 
-                      7                       9                       2 
-                  MP 10                   MP 11                   MP 13 
-                      3                       8                       1 
-                 MP 17A                   MP 18                   MP 21 
-                      2                       2                       1 
-                  MP 22                   MP 23                   MP 24 
-                      1                       1                       1 
-                  MP 25                   MP 26                   MP 28 
-                      1                       2                       2 
-                  MP 30                 Neogene               Oligocene 
-                      3                       3                      12 
-              Orleanian               Paleogene              Piacenzian 
-                      2                       1                      22 
-            Pleistocene                Pliocene              Priabonian 
-                     50                      23                      29 
-                    Pu1                 Puercan              Quaternary 
-                      1                      94                       3 
-               Rupelian            Santacrucian               Selandian 
-                     10                       1                       4 
-           Serravallian               Thanetian                     Ti3 
-                     38                      20                       3 
-                    Ti5               Tiffanian             Torrejonian 
-                      1                      19                      15 
-              Tortonian                Turolian                  Uintan 
-                     97                       4                       5 
-              Vallesian              Wasatchian               Whitneyan 
-                      3                     183                       1 
-               Ypresian                Zanclean 
-                     38                      34 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossils<span class="sc">$</span>late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-             Bartonian                Blancan             Bridgerian 
-                     4                      1                      2 
-           Burdigalian              Calabrian               Chattian 
-                    19                     53                      5 
-          Clarkforkian             Duchesnean           Early Eocene 
-                     1                      1                      2 
-         Early Miocene        Early Oligocene      Early Pleistocene 
-                     2                      3                     18 
-        Early Pliocene               Friasian               Gelasian 
-                    24                      1                      2 
-           Hemphillian               Holocene           Irvingtonian 
-                     1                      4                      1 
-              Langhian late Early Hemphillian            Late Eocene 
-                     2                      3                      6 
-          Late Miocene       Late Pleistocene               Lutetian 
-                     1                      1                      7 
-             Messinian          Middle Eocene         Middle Miocene 
-                     7                      1                      9 
-    Middle Pleistocene                Miocene                   MN 1 
-                     4                      1                      2 
-                  MN 5                   MN 6                 MP 17B 
-                     1                      2                      2 
-                 MP 19             Piacenzian            Pleistocene 
-                     2                      9                      8 
-              Pliocene             Priabonian             Quaternary 
-                    14                      5                      1 
-              Rupelian              Selandian           Serravallian 
-                     4                      1                     18 
-             Thanetian            Torrejonian              Tortonian 
-                     2                      1                     19 
-              Turolian               Ypresian               Zanclean 
-                     2                      3                      9 </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="co"># What are the ages associated with each interval? Any issues with the date </span></span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="co"># formats?</span></span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(early_interval) <span class="sc">%&gt;%</span> <span class="co"># Grouping by interval</span></span>
-<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(max_ma) <span class="sc">%&gt;%</span>  <span class="co"># Pulling out the distinct values</span></span>
-<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(early_interval) <span class="co"># Putting list in order to scan for inconsistencies</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 107 × 2
-# Groups:   early_interval [107]
-   early_interval max_ma
-   &lt;chr&gt;           &lt;dbl&gt;
- 1 Agenian          23.0
- 2 Altonian         18.7
- 3 Aquitanian       23.0
- 4 Arikareean       29.5
- 5 Arshantan        56  
- 6 Barstovian       16.3
- 7 Bartonian        41.0
- 8 Blancan           4.7
- 9 Bridgerian       50.5
-10 Burdigalian      20.4
-# ℹ 97 more rows</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>fossils <span class="sc">%&gt;%</span> </span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(late_interval) <span class="sc">%&gt;%</span></span>
-<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(min_ma) <span class="sc">%&gt;%</span> </span>
-<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(late_interval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 97 × 2
-# Groups:   late_interval [49]
-   late_interval min_ma
-   &lt;chr&gt;          &lt;dbl&gt;
- 1 Bartonian     37.7  
- 2 Blancan        1.4  
- 3 Bridgerian    46.2  
- 4 Burdigalian   16.0  
- 5 Calabrian      0.774
- 6 Chattian      23.0  
- 7 Clarkforkian  54.9  
- 8 Duchesnean    37    
- 9 Early Eocene  48.1  
-10 Early Miocene 16.0  
-# ℹ 87 more rows</code></pre>
-</div>
-</div>
-<p>You can also use the <code>CoordinateCleaner</code> package to check the coordinates.</p>
-</section>
-<section id="how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time" class="level3">
-<h3 class="anchored" data-anchor-id="how-does-the-latitudinal-distribution-of-occurrences-looks-like-over-time">How does the latitudinal distribution of occurrences looks like over time?</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># List geological stages in dataset</span></span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>time_bins <span class="ot">&lt;-</span> <span class="fu">unique</span>(fossils<span class="sc">$</span>interval_name)</span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create object to hold values</span></span>
-<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>lat_ranges <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For each stage, identify maximum and minimum latitudinal values</span></span>
-<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(time_bins)) {</span>
-<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>  one_stage <span class="ot">&lt;-</span> <span class="fu">filter</span>(fossils, interval_name <span class="sc">==</span> time_bins[i])</span>
-<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a>  max <span class="ot">&lt;-</span> <span class="fu">max</span>(one_stage<span class="sc">$</span>paleolat)</span>
-<span id="cb85-11"><a href="#cb85-11" aria-hidden="true" tabindex="-1"></a>  min <span class="ot">&lt;-</span> <span class="fu">min</span>(one_stage<span class="sc">$</span>paleolat)</span>
-<span id="cb85-12"><a href="#cb85-12" aria-hidden="true" tabindex="-1"></a>  midpoint <span class="ot">&lt;-</span> one_stage<span class="sc">$</span>bin_midpoint[<span class="dv">1</span>]</span>
-<span id="cb85-13"><a href="#cb85-13" aria-hidden="true" tabindex="-1"></a>  lat_ranges <span class="ot">&lt;-</span> <span class="fu">rbind</span>(lat_ranges, <span class="fu">c</span>(time_bins[i], midpoint, min, max))</span>
-<span id="cb85-14"><a href="#cb85-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb85-15"><a href="#cb85-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-16"><a href="#cb85-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Clean up dataframe</span></span>
-<span id="cb85-17"><a href="#cb85-17" aria-hidden="true" tabindex="-1"></a>lat_ranges <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(lat_ranges)</span>
-<span id="cb85-18"><a href="#cb85-18" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(lat_ranges) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"stage"</span>, <span class="st">"midpoint"</span>, <span class="st">"min"</span>, <span class="st">"max"</span>)</span>
-<span id="cb85-19"><a href="#cb85-19" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>midpoint <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>midpoint)</span>
-<span id="cb85-20"><a href="#cb85-20" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>max <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>max)</span>
-<span id="cb85-21"><a href="#cb85-21" aria-hidden="true" tabindex="-1"></a>lat_ranges<span class="sc">$</span>min <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lat_ranges<span class="sc">$</span>min)</span>
-<span id="cb85-22"><a href="#cb85-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb85-23"><a href="#cb85-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the palaeolatitudinal range by stage</span></span>
-<span id="cb85-24"><a href="#cb85-24" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(lat_ranges, <span class="fu">aes</span>(<span class="at">x =</span> midpoint, <span class="at">ymin =</span> min, <span class="at">ymax =</span> max)) <span class="sc">+</span></span>
-<span id="cb85-25"><a href="#cb85-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>() <span class="sc">+</span></span>
-<span id="cb85-26"><a href="#cb85-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Age (Ma)"</span>,</span>
-<span id="cb85-27"><a href="#cb85-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Palaeolatitude (º)"</span>) <span class="sc">+</span></span>
-<span id="cb85-28"><a href="#cb85-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_reverse</span>() <span class="sc">+</span></span>
-<span id="cb85-29"><a href="#cb85-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
-<span id="cb85-30"><a href="#cb85-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_geo</span>(<span class="at">dat =</span> <span class="st">"stages"</span>, <span class="at">expand =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-36-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<p>Now it’s time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. You could modify some of the code above to help you, or write your own!</p>
+<p>Can you find any additional <strong><em>missing data</em></strong>? What will you do with them?</p>
+<p>Can you find any additional <strong><em>data outliers</em></strong>? What will you do with them?</p>
+<p>Can you find any additional <strong><em>data inconsistencies</em></strong>? What will you do with them?</p>
+<p>Can you find any additional <strong><em>data duplicates</em></strong>? What will you do with them?</p>
 <p>Let’s save our data for the next unit!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data</span></span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> fossils, <span class="at">file =</span> <span class="st">"../05_harmonization/cenozoic_crocs.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save data</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(<span class="at">x =</span> fossils, <span class="at">file =</span> <span class="st">"../05_harmonization/cenozoic_crocs_clean.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
 </section>
 </section>
 <section id="resources" class="level1">
