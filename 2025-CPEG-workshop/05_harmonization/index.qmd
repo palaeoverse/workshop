@@ -27,7 +27,7 @@ IV.  Data visualisation and synthesis
 
 ## I. Introduction to Harmonization and Synthesis
 
-So far today, we've used R to carry out a variety of operations for acquiring and preparing palaeontological data. We can also use R to run analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.
+So far, we've used R to carry out a variety of operations for acquiring and preparing palaeontological data. We can also use R to run analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.
 
 It will be of no surprise to anyone in this room that we are in the midst of a biodiversity crisis. Understanding and anticipating the changes that will occur to organisms, their communities, and the environments that they inhabit as a result of climate change and other anthropogenic stressors has emerged as a primary goal of our disciplines. Traditionally, modern ecologists have focused on studying current or recent historical processes to address questions related to biodiversity loss and the impacts of climate change, while palaeoecologists have studied long-term processes in the fossil record [(Nieto-Lugilde et al. 2021)](https://doi.org/10.1088/1748-9326/ac1b59). However, it is becoming increasingly clear that the answers to some of the most important questions relate to the fuzzy area between our modern and palaeo records:
 
@@ -47,9 +47,15 @@ One research area that has particularly benefitted from the harmonization of pal
 
 ![Figures from Jones et al. 2019](Figure3.jpg)
 
-Another clear example of the harmonization of palaeo and modern data is in understanding long-term baselines of species abundances and distributions for conservation. For example, ... [to add]
+Another clear example of the harmonization of palaeo and modern data is in understanding long-term baselines of species abundances and distributions for conservation. This often involves combining records of presence or abundance that were collected in different ways over different timescales, and finding common currencies or other statistical approaches to align them. For example, by combining modern, historical, and palaeontological records of coral presence, [(Cramer et al. 2020)](https://doi.org/10.1126/sciadv.aax9395) examined the timing of coral decline in the Caribbean response to various regional and local stressors. They were able to track trends in coral abundance and community composition before recent ecological surveys, providing important baseline data for understanding the drivers of ongoing coral loss:
 
-However, there are many considerations that have to be taken into account when carrying out this type of research, and a number of practical challenges that have to be overcome to ensure that the results we get are meaningful and useful. Differences in spatial and temporal scales, data types, and various biases that impact our data sources all make this research difficult to carry out. Today, we are going to provide a brief introduction to this broad area of research, focusing in particular on the considerations that have to be made regarding our data and research approaches. Let's dig in!
+ADD: Figure4.jpeg
+
+A final example synthesizes pollen data from cores to quantify rates of vegetation change over thousands of years in different regions, which sets the stage for investigating feedbacks between various anthropogenic and environvental drivers [(Mottl et al. 2021)](https://doi.org/10.1126/science.abg1685). Databases like Neotoma contain a wealth of palaeoecological records such as this, alongside chronological information, that can be leveraged to reconstruct community change with relatively high temporal resolution in shallow time.
+
+ADD: Flantua et al. 2023 Figure5.jpeg
+
+However, there are many considerations that have to be taken into account when carrying out this type of research, and a number of practical challenges that have to be overcome to ensure that the results we get are meaningful. Differences in spatial and temporal scales, data types, and various biases that impact our data sources all make this research difficult to carry out. Today, we are going to provide a brief introduction to this broad area of research, focusing in particular on the decisions that have to be made regarding our data and research approaches. Let's dig in!
 
 ## II. Planning, Setup, and Finding Your Data
 
@@ -626,9 +632,15 @@ Ultimately, our goal was to provide a workflow for merging different types of da
 
 ## References
 
+Cramer et al 2020
+
 Darroch, S.A., Saupe, E.E., Casey, M.M. and Jorge, M.L., 2022. Integrating geographic ranges across temporal scales. Trends in Ecology & Evolution, 37(10), pp.851-860.
 
+Flantua et al. 2023
+
 Jones, L.A., Mannion, P.D., Farnsworth, A., Valdes, P.J., Kelland, S.J. and Allison, P.A., 2019. Coupling of palaeontological and neontological reef coral data improves forecasts of biodiversity responses under global climatic change. Royal Society Open Science, 6(4), p.182111.
+
+Mottl et al 2021
 
 Nieto-Lugilde, D., Blois, J.L., Bonet-García, F.J., Giesecke, T., Gil-Romera, G. and Seddon, A., 2021. Time to better integrate palaeoecological research infrastructures with neoecology to improve understanding of biodiversity long-term dynamics and to inform future conservation. Environmental Research Letters, 16(9), p.095005.
 
