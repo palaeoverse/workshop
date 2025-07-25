@@ -2449,7 +2449,7 @@
     "href": "2025-CPEG-workshop/04_exploration/index.html#practical",
     "title": "Data Processing I",
     "section": "Practical",
-    "text": "Practical\nNow it’s your turn! Explore the data yourself:\nWhat is the geographic scale of our data? (hint: geoscale column)\nWhat is the stratigraphic scale of our data? (hint: stratscale column)\nWhat proportion of our occurrences are marine crocodiles? (hit: taxon_environment column)",
+    "text": "Practical\nNow it’s your turn! Explore the data yourself:\nWhat is the geographic scale of our data? (hint: geoscale column)\nWhat is the stratigraphic scale of our data? (hint: stratscale column)\nWhat proportion of our occurrences are marine crocodiles? (hint: taxon_environment column)",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Data Processing I"
