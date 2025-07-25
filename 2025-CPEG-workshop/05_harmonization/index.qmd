@@ -139,6 +139,7 @@ First, we'll need to install and load some packages that will allow us to work w
 ```{r message = FALSE}
 # Install necessary packages
 #install.packages("rgbif")
+#install.packages("dplyr")
 #install.packages("ggplot2")
 #install.packages("palaeoverse")
 #install.packages("raster")
@@ -152,6 +153,7 @@ First, we'll need to install and load some packages that will allow us to work w
 ```{r warning=F}
 # Load packages
 library(rgbif)
+library(dplyr)
 library(ggplot2)
 library(palaeoverse)
 library(raster)
