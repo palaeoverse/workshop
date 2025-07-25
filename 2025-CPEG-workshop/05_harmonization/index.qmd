@@ -352,7 +352,7 @@ nrow(fossil_occ_filter)
 nrow(modern_occ_filter)
 ```
 
-After filtering, we have 114 fossil occurrences and 2504 modern occurrences to potentially work with. How might we deal with this unequal sampling?
+After filtering, we notice that there are far more modern occurrences than fossil occurences to potentially work with. *How might we deal with this unequal sampling?*
 
 
 ### 3. Cleaning
@@ -361,7 +361,7 @@ We'll then want to explore and clean our data to check for outliers, inconsisten
 
 Our fossil occurrence dataset has already gone through this process.
 
-::: {.callout-note title="Practise Time!"}
+::: {.callout-note title="Practise Time! *(optional)*"}
 **Let's spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session.** For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates.
 :::
 
@@ -376,7 +376,7 @@ Now we come to the fun part. How do we align these data, which were sampled in d
 
 ***1. What factors that might introduce bias when we try to make comparisons across these datasets?***
 
-***2. What are some sources of uncertainty?***
+***2. What are some sources of uncertainty regarding the taxonomic, temporal, and spatial attributes of the data?***
 
 ***3. How might we address these potential confounds prior to analysis and/or what should we keep in mind as we're interpreting our results?***
 
@@ -397,11 +397,11 @@ table(fossil_occ_filter$family)
 table(modern_occ_filter$family)
 ```
 
-We see that the same families are represented in our datasets. If you were to look at the genera, you'll notice some differences. If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?
+We see that the same families are represented in our datasets (with the fossil occurrence dataset lacking some family-level classifications). If you were to look at the genera, you'll notice some differences. *If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?*
 
 #### 4B. Temporal Bins
 
-Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don't align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. Each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. How might we approach this?
+Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don't align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. On the other hand, each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. *How might we approach this?*
 
 First, let's take a look at the temporal distribution of our fossil occurrences.
 ```{r}
@@ -414,7 +414,7 @@ axis_geo(intervals = "stages")
 ```
 
 One option would be to bin the data by stage and use those as proxies for our 5-million-year climatic intervals.
-Another approach might be to make near-equal-length bins within the 25-15 Ma range, and then assign occurrences to those bins. Let's try that here. 
+Another approach might be to make near-equal-length bins within the 25-15 Ma range, and then assign occurrences to those bins. Let's try that latter approach here. 
 
 ```{r}
 # Generate time bins of ~5 million years within 25 and 15 Ma
@@ -427,7 +427,7 @@ bins <- time_bins(interval = c(15,25),
 head(bins)
 ```
 
-Additionally, there are a couple methods that we could use to bin the occurrences. Let's test out two approaches here to see how they differ. Hopefully you're starting to get a sense of how these various decisions might propagate to affect our results.
+There are also a couple methods that we could use to bin the occurrences. Let's test out two methods here to see how they differ. Hopefully you're starting to get a sense of how these various decisions might propagate to affect our results.
 ```{r}
 # `mid` method = uses the midpoint of age range to bin the occurrence
 fossil_occ_mid <- bin_time(occdf = fossil_occ_filter,
@@ -457,7 +457,7 @@ fossil_occ_bin <- fossil_occ_maj
 table(fossil_occ_bin$bin_assignment)
 ```
 
-We see that most of the data falls into bin 3 (20.44-13.82 Ma, midpoint=17.130 Ma), with some occurrences in bin 2 (23.03-20.44 Ma, midpoint=21.735 Ma).
+We see that most of the data falls into bin 3 (20.44-13.82 Ma, midpoint=17.130 Ma), with some occurrences in bin 2 (23.03-20.44 Ma, midpoint=21.735 Ma). We note that:
 
 -  Bin 2 overlaps with our 25-20 Ma climate raster
 -  Bin 3 overlaps with our 20-15 Ma climate raster
@@ -468,7 +468,7 @@ OK, so now we have some temporal bins to facilitate our comparisons with the cli
 
 #### 4C. Spatial Bins
 
-We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we'll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. How might we deal with this?
+We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we'll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. *How might we deal with this?*
 
 Like before, let's take a look at the spatial distribution of our fossil occurrences.
 ```{r}
@@ -484,7 +484,7 @@ ggplot(fossil_occ_bin) +
   theme_void()
 ```
 
-But wait, remember that we need to palaeorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we'll just use the paleoMAP rotation, which will also match up to our palaeoclimatic data. 
+But wait, remember that we need to palaeorotate our coordinates before we proceed! We could run a couple different plate models to check the sensitivity, but for now we'll just use the PALEOMAP rotation, which will also match up to our palaeo-climatic data. 
 ```{r}
 # Palaeorotation
 fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
@@ -529,15 +529,15 @@ ggplot(modern_occ_filter) +
   theme_void()
 ```
 
-Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. How might we account for the spatial structure of the data in our analysis?
+Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. *How might we account for the spatial structure of the data in our analysis?*
 
-Another challenge stems from aligning these occurrences with the spatial explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We'll keep things simple and show the first approach here.
+Another challenge stems from aligning these occurrences with the spatially explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the `bin_space` function in the 'palaeoverse' package). We'd also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We'll keep things simple and show the first approach here.
 
-Now it's onto the final section: using the combination of these datasets to carry out our analysis, and visualising our results!
+Now moving onto the final section: using the combination of these datasets to carry out our analysis and visualise our results!
 
 ## IV. Data Extraction and Visualisation
 
-We're nearly there folks. It's time to put all these data sources together to answer our research question! 
+We're nearly there folks. It's time to put all these data sources together to answer our research question!🥁
 
 We have our data binned to match the climate layers, so let's create separate datasets for each time bin. 
 ```{r}
@@ -620,7 +620,7 @@ ggplot(palaeo_temp, aes(x = Bin, y = Temperature)) +
 ```
 
 When looking at the better sampled intervals in particular, we find that the mean temperature range of Crocodylia occurrences was quite similar between the Miocene and Modern.
-How might we interpret our results? How might this interpretation be shaped by the caveats we pointed out along the way?
+*How might we interpret our results? How might this interpretation be shaped by the caveats we pointed out along the way?*
 
 Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of the caveats that arise when doing so. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general---but particularly in studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting research questions and datasets!
 
