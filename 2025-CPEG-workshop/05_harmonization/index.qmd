@@ -500,6 +500,17 @@ fossil_occ_bin_rot <- palaeorotate(fossil_occ_bin,
                                    model  = "PALEOMAP")
 ```
 
+::: {.callout-note title="Heads Up!"}
+Whilst the `palaeorotate` function is incredibly useful, the GPlates API can sometimes get overloaded with requests. If that happens, we can always use the palaeorotations included within the PBDB download. We'll just have to rename the columns!
+
+```{r}
+#| eval: false
+# Rename palaeorotation columns
+rename(fossil_occ_bin_rot, p_lat = paleolat, p_lng = paleolng)
+```
+
+:::
+
 After some cleaning, we can then plot our rotated occurrences on a palaeogeographic map (here we're going to use our bin 3):
 
 ```{r}
