@@ -962,19 +962,19 @@ Don’t forget!
 <pre><code>[1] 2504</code></pre>
 </div>
 </div>
-<p>After filtering, we have 114 fossil occurrences and 2504 modern occurrences to potentially work with. How might we deal with this unequal sampling?</p>
+<p>After filtering, we notice that there are far more modern occurrences than fossil occurences to potentially work with. <em>How might we deal with this unequal sampling?</em></p>
 </section>
 <section id="cleaning" class="level3">
 <h3 class="anchored" data-anchor-id="cleaning">3. Cleaning</h3>
 <p>We’ll then want to explore and clean our data to check for outliers, inconsistencies, duplicates, and other potential issues.</p>
 <p>Our fossil occurrence dataset has already gone through this process.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Practise Time!">
+<div class="callout callout-style-default callout-note callout-titled" title="Practise Time! *(optional)*">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Practise Time!
+Practise Time! <em>(optional)</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -991,7 +991,7 @@ Practise Time!
 <h2 class="anchored" data-anchor-id="breakout-session-3"><strong>BREAKOUT SESSION 3</strong></h2>
 <p><strong>Return to your discussion groups and take 5 minutes to discuss the following questions:</strong></p>
 <p><strong><em>1. What factors that might introduce bias when we try to make comparisons across these datasets?</em></strong></p>
-<p><strong><em>2. What are some sources of uncertainty?</em></strong></p>
+<p><strong><em>2. What are some sources of uncertainty regarding the taxonomic, temporal, and spatial attributes of the data?</em></strong></p>
 <p><strong><em>3. How might we address these potential confounds prior to analysis and/or what should we keep in mind as we’re interpreting our results?</em></strong></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -1029,11 +1029,11 @@ Alligatoridae  Crocodylidae    Gavialidae
          1933           492            79 </code></pre>
 </div>
 </div>
-<p>We see that the same families are represented in our datasets. If you were to look at the genera, you’ll notice some differences. If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?</p>
+<p>We see that the same families are represented in our datasets (with the fossil occurrence dataset lacking some family-level classifications). If you were to look at the genera, you’ll notice some differences. <em>If we wanted to run an analysis at a finer taxonomic level, what would be some key considerations or steps that we would need to take?</em></p>
 </section>
 <section id="b.-temporal-bins" class="level4">
 <h4 class="anchored" data-anchor-id="b.-temporal-bins">4B. Temporal Bins</h4>
-<p>Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don’t align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. Each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. How might we approach this?</p>
+<p>Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don’t align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. On the other hand, each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. <em>How might we approach this?</em></p>
 <p>First, let’s take a look at the temporal distribution of our fossil occurrences.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="at">x =</span> <span class="fu">tax_range_time</span>(<span class="at">occdf =</span> fossil_occ_filter, </span>
@@ -1059,7 +1059,7 @@ Alligatoridae  Crocodylidae    Gavialidae
 </div>
 </div>
 </div>
-<p>One option would be to bin the data by stage and use those as proxies for our 5-million-year climatic intervals. Another approach might be to make near-equal-length bins within the 25-15 Ma range, and then assign occurrences to those bins. Let’s try that here.</p>
+<p>One option would be to bin the data by stage and use those as proxies for our 5-million-year climatic intervals. Another approach might be to make near-equal-length bins within the 25-15 Ma range, and then assign occurrences to those bins. Let’s try that latter approach here.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate time bins of ~5 million years within 25 and 15 Ma</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">time_bins</span>(<span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">25</span>), </span>
@@ -1091,7 +1091,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 3 #80cdc1 black</code></pre>
 </div>
 </div>
-<p>Additionally, there are a couple methods that we could use to bin the occurrences. Let’s test out two approaches here to see how they differ. Hopefully you’re starting to get a sense of how these various decisions might propagate to affect our results.</p>
+<p>There are also a couple methods that we could use to bin the occurrences. Let’s test out two methods here to see how they differ. Hopefully you’re starting to get a sense of how these various decisions might propagate to affect our results.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `mid` method = uses the midpoint of age range to bin the occurrence</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_mid <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> fossil_occ_filter,</span>
@@ -1123,7 +1123,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
  9 93 </code></pre>
 </div>
 </div>
-<p>We see that most of the data falls into bin 3 (20.44-13.82 Ma, midpoint=17.130 Ma), with some occurrences in bin 2 (23.03-20.44 Ma, midpoint=21.735 Ma).</p>
+<p>We see that most of the data falls into bin 3 (20.44-13.82 Ma, midpoint=17.130 Ma), with some occurrences in bin 2 (23.03-20.44 Ma, midpoint=21.735 Ma). We note that:</p>
 <ul>
 <li>Bin 2 overlaps with our 25-20 Ma climate raster</li>
 <li>Bin 3 overlaps with our 20-15 Ma climate raster</li>
@@ -1133,7 +1133,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </section>
 <section id="c.-spatial-bins" class="level4">
 <h4 class="anchored" data-anchor-id="c.-spatial-bins">4C. Spatial Bins</h4>
-<p>We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we’ll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. How might we deal with this?</p>
+<p>We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we’ll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. <em>How might we deal with this?</em></p>
 <p>Like before, let’s take a look at the spatial distribution of our fossil occurrences.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
@@ -1154,7 +1154,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </div>
 </div>
 </div>
-<p>But wait, remember that we need to palaeorotate our coordinates before we proceed. We could run a couple different plate models to check the sensitivity, but for now we’ll just use the paleoMAP rotation, which will also match up to our palaeoclimatic data.</p>
+<p>But wait, remember that we need to palaeorotate our coordinates before we proceed! We could run a couple different plate models to check the sensitivity, but for now we’ll just use the PALEOMAP rotation, which will also match up to our palaeo-climatic data.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotation</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin_rot <span class="ot">&lt;-</span> <span class="fu">palaeorotate</span>(fossil_occ_bin,</span>
@@ -1212,14 +1212,14 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </div>
 </div>
 </div>
-<p>Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. How might we account for the spatial structure of the data in our analysis?</p>
-<p>Another challenge stems from aligning these occurrences with the spatial explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the <code>bin_space</code> function). We’d also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We’ll keep things simple and show the first approach here.</p>
-<p>Now it’s onto the final section: using the combination of these datasets to carry out our analysis, and visualising our results!</p>
+<p>Looking at these spatial representations of the data, we can really visualise the difference in sampling effort. <em>How might we account for the spatial structure of the data in our analysis?</em></p>
+<p>Another challenge stems from aligning these occurrences with the spatially explicit climate layers. A simple approach would be to extract the mean temperature value at each coordinate. Alternatively, we might consider adding a bit of a buffer around each coordinate to incorporate geographic uncertainty and variation in the climatic data. A third, albeit more complex approach, would be to assign the occurrences to spatial bins so we can match them up to the climate layers (e.g., check out the <code>bin_space</code> function in the ‘palaeoverse’ package). We’d also need to resolve the difference the spatial resolutions between the past and present climatic data, potentially by coarsening the modern dataset. We’ll keep things simple and show the first approach here.</p>
+<p>Now moving onto the final section: using the combination of these datasets to carry out our analysis and visualise our results!</p>
 </section>
 </section>
 <section id="iv.-data-extraction-and-visualisation" class="level2">
 <h2 class="anchored" data-anchor-id="iv.-data-extraction-and-visualisation">IV. Data Extraction and Visualisation</h2>
-<p>We’re nearly there folks. It’s time to put all these data sources together to answer our research question!</p>
+<p>We’re nearly there folks. It’s time to put all these data sources together to answer our research question!🥁</p>
 <p>We have our data binned to match the climate layers, so let’s create separate datasets for each time bin.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 25-20 Ma climate interval</span></span>
@@ -1326,7 +1326,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </div>
 </div>
 </div>
-<p>When looking at the better sampled intervals in particular, we find that the mean temperature range of Crocodylia occurrences was quite similar between the Miocene and Modern. How might we interpret our results? How might this interpretation be shaped by the caveats we pointed out along the way?</p>
+<p>When looking at the better sampled intervals in particular, we find that the mean temperature range of Crocodylia occurrences was quite similar between the Miocene and Modern. <em>How might we interpret our results? How might this interpretation be shaped by the caveats we pointed out along the way?</em></p>
 <p>Ultimately, our goal was to provide a workflow for merging different types of datasets and thinking critically about some of the caveats that arise when doing so. These taxonomic, spatial, and temporal considerations are critical to address and report in palaeobiological and palaeoecological research in general—but particularly in studies aiming to cross the palaeontological-ecological gap. We hope you can adapt and learn from this script as you venture forward with your own exciting research questions and datasets!</p>
 </section>
 <section id="references" class="level2">
