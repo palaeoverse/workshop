@@ -25,6 +25,10 @@ II.  Planning, setup, and finding your data
 III. Building a workflow to merge datasets
 IV.  Data visualisation and synthesis
 
+### Schedule
+
+14:00–15:30
+
 ## I. Introduction to Harmonization and Synthesis
 
 So far, we've used R to carry out a variety of operations for acquiring and preparing palaeontological data. We can also use R to run analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.
