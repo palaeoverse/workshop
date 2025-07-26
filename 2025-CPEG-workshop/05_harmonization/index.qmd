@@ -422,7 +422,7 @@ As you discuss, you may find it helpful to return to your notes from Breakout Se
 The resolution and coverage of the data is likely one aspect that came up in your group discussions, both here and in Breakout Session 1. As we move forward, we'll need to make some practical and philosophical decisions about how we bin the data given their varying resolutions. We'll also want to consider the sensitivity of our results to these various decisions. 
 :::
 
-Let's now have a group discussion about these taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.
+Let's now have a group discussion about these taxonomic, temporal, and spatial considerations when endeavoring to make our datasets comparable.
 
 #### 4A. Taxonomy
 
