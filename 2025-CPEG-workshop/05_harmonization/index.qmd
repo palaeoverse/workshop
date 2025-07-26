@@ -618,18 +618,18 @@ st_crs(points_sf_mod) <- st_crs(4326)
 We're now ready to extract the climatic data at each coordinate!
 ```{r}
 # Past temperature (Scotese 2022)
-scotese_temp_20 <- raster::extract(x = scotese.temp$Aquitanian, 
+scotese_temp_20 <- raster::extract(x = scotese_temp$Aquitanian, 
                            y = points_sf_20, 
                            sp = TRUE, 
                            cellnumbers = TRUE)
 
-scotese_temp_15 <- raster::extract(x = scotese.temp$Burdigalian, 
+scotese_temp_15 <- raster::extract(x = scotese_temp$Burdigalian, 
                                      y = points_sf_15, 
                                      sp = TRUE, 
                                      cellnumbers = TRUE)
 
 # Modern temperature (WorldClim)
-modern_temp <- raster::extract(x = modern.mean, 
+modern_temp <- raster::extract(x = modern_mean, 
                                      y = points_sf_mod, 
                                      sp = TRUE, 
                                      cellnumbers = TRUE)
