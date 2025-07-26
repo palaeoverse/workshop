@@ -20,12 +20,12 @@ In this last session, we'll be thinking about archiving our data and other mater
 
 Now we're back from break, let's get talking about archiving our work. Think about the following questions and discuss your thoughts with your neighbours. Then write your answers on post-its and stick them up, and have a look at what your colleagues think is important in archiving research outputs.
 
-- What do you think it is important for researchers to archive?
-- Why is archiving important?
-- Where can you archive research materials?
-- What are the major barriers to archiving?
-
 25 minutes, then we'll come back together to go over the important points!
+
+1. Why is archiving important?
+2. What do you think it is important for researchers to archive?
+3. Where can you archive research materials?
+4. What are the major barriers to archiving?
 
 ## Archiving & publishing
 
