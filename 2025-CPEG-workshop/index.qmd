@@ -7,7 +7,6 @@ format:
 order: 97
 ---
 
-> **WORKSHOP MATERIALS CURRENTLY UNDER CONSTRUCTION**
 
 **July 27^th^, 2025**<br>
 09:00-17:00
