@@ -14,8 +14,6 @@ In this session, we'll walk through how to combine different deep time and moder
 -  How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences
 -  How to plan, write code for, and carry out projects covering multiple time frames
 
-To do this, we'll continue working with the Crocodylia dataset. If you've not quite finished cleaning your dataset, you can find a cleaned version that's ready for this next step **[HERE](https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization)**.
-
 ## Plan for the Session
 
 The session will be split into the following sections:
@@ -118,26 +116,21 @@ To help you get an idea of the process of using data from different sources, we'
 
 4.  **Load data.** Read our data into R in an appropriate format to work with (e.g., raster). How might we do this? What packages might we need?
 
-5.  **Check formatting.** Ensure that the data are formatted appropriately. How might this impact our results or interpretations? What issues should we be aware of?
+5.  **Check formatting and prepare for analysis. ** Ensure that the data are formatted appropriately. How might this impact our results or interpretations? What issues should we be aware of?
 
 -   Do the data have the right extent for our research question and R pipeline, and can this be changed?
 -   Are they at an appropriate spatial/temporal resolution, and can this be changed?
 -   Are they in the right Coordinate Reference System?
 -   Are they capturing the same climatic information?
 
-6.  **Prepare for analysis.** Ensure that the data are ready to be used in our next stages of analysis. To do this, we might want to break down our steps further:
+In terms of our R code, we might want to break down our steps further:
 
 -   Check the format of the data using the 'class()' function
 -   Make a reference raster with appropriate resolution and extent
 -   Ensure climate raster doesn't have wrapping/extent issues, and rotate if necessary
 -   Re-sample raster to our reference raster
--   Ensure that all rasters are capturing the same climatic information
 
-Now that we have a basic plan, we can start to put it into action. Let's write some code!
-
-### Set-up
-
-First, we'll need to install and load some packages that will allow us to work with our data:
+Now that we have a basic plan, we can start to put it into action. Before we begin, we'll need to install and load some packages that will allow us to work with our data:
 
 ```{r message = FALSE}
 # Install necessary packages
@@ -167,7 +160,33 @@ library(ncdf4)
 library(rgplates)
 ```
 
-We'll also set some default values to ensure that our spatial datasets conform with one another. 
+Now that's done, let's get cracking! 
+
+### 1. Deciding on climate data to use
+
+As we want to link croc occurrences to temperature, we'll need to find some spatially explicit climatic datasets for both the modern and deep time. This will mean that we can extract the temperature associated with the geographic location of those occurrences which can then be compared between our time intervals of interest. 
+
+We've also decided to keep things simple today and use the mean annual temperature to answer our research question, as this data is readily available in both palaeo and modern intervals. However, if we had more time, we might want to figure out how to find or calculate the temperature of the coldest quarter, as crocs are constrained physiologically by cooler temperatures. But that's a challenge for another day. Now let's find some data!
+
+### 2. Finding a suitable source of data
+
+#### 2A. Palaeo data
+
+After exploring several potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: [https://zenodo.org/records/5718392](https://zenodo.org/records/5718392).
+ 
+This climatic dataset offers decently high temporal resolution (for deep time), but one thing we'll need to keep in mind is that the 5-million-year intervals don't align perfectly with geological stages. This will come into play later when we start working with the occurrence data.
+
+For our study, we'll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition. 
+
+#### 2B. Modern data
+
+We'll obtain our modern climatic data from WorldClim: [https://www.worldclim.org/](https://www.worldclim.org/). WorldClim is a freely available set of global climate layers with a spatial resolution of about 1 square kilometer, which covers a variety of different climatic options. We can load these data directly into R using the `geodata` package, so no need to download anything for now!
+
+Remember, to keep our climatic variables consistent we'll also be working with mean annual temperature data, but we might have to do some fiddling to set that up (this will make more sense when we see the data!).
+
+### 3. Sort file structure
+
+Here we'd ensure that our downloaded palaeoclimate data are in an appropriate folder for our project. We'll also set some default values to ensure that our spatial datasets conform with one another. 
 
 ```{r}
 # Set spatial resolution
@@ -180,26 +199,40 @@ e <- extent(-180, 180, -90, 90)
 ref_raster <- raster(res = res, ext = e)
 ```
 
-Now let's find some climate data!
+### 4. Load data
 
-### Organising Palaeo-climatic Data
+#### 4A. Loading palaeo-climatic data
 
-After exploring several potential palaeo-climatic datasets, we've decided to use a dataset of global mean surface temperatures for the Phanerozoic (Scotese 2021), based on HadCM3L simulations and aligned with geochemical proxies like ∂18O. The data are available for 5-million-year intervals that cover our time period of interest (Miocene) and have a 1x1 degree (lat/long) resolution. The dataset is also publicly accessible via Zenodo: [https://zenodo.org/records/5718392](https://zenodo.org/records/5718392).
- 
-This climatic dataset offers decently high temporal resolution (for deep time), but one thing we'll need to keep in mind is that the 5-million-year intervals don't align perfectly with geological stages. This will come into play later when we start working with the occurrence data.
-
-For our study, we'll work with two files from this dataset: one covering 25-20 Ma and another covering 20-15 Ma. These data span warming intervals like the Mid Miocene Climatic Optimum and cooling intervals like the Oligocene-Miocene Climate Transition. 
-
-First, we need to load in our data, which is currently stored as a .nc file, and have a look at it. This can be read into R as a raster using the `raster` package:
+We now need to load in our data, which is currently stored as a .nc file. This can be read into R as a raster using the `raster` package:
 
 ```{r}
 
 # Load in rasters of palaeoclimate for each time interval
-raster2prep.15 <- raster(x = "015_tas_scotese02a_v21321.nc")
-raster2prep.20 <- raster(x = "020_tas_scotese02a_v21321.nc")
+raster2prep_15 <- raster(x = "015_tas_scotese02a_v21321.nc")
+raster2prep_20 <- raster(x = "020_tas_scotese02a_v21321.nc")
 
-raster2prep.15
-raster2prep.20
+```
+
+#### 4B. Loading modern climatic data
+
+We can now use the `geodata` package to grab our modern climatic data. Whilst below we show you code to access this data directly within R, it can take a while to download. We've therefore also included it alongside the other materials for the workshop, which can be accessed **[HERE](https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization)**.
+
+```{r}
+# Load data from WorldClim and make into raster
+raster2prep_modern <- worldclim_global(var = "tavg", res = 10, path = tempdir())
+raster2prep_modern <- as(raster2prep_modern, "Raster")
+```
+
+### 5. Check formatting and prepare for analysis
+
+#### 5A. Formatting palaeo-climatic data
+
+First, lets have a look at our palaeo climate data and compare it to our reference raster:
+```{r}
+# Examine our raster layers
+raster2prep_15
+raster2prep_20
+ref_raster
 
 ```
 As you can see, the resolution and extent of these rasters doesn't quite match the reference one that we made above. We'll have to resample our data to match our reference raster:
@@ -223,23 +256,18 @@ names(scotese.temp) <- c("Burdigalian","Aquitanian")
 plot(scotese.temp)
 ```
 
-Now we'll move on to our modern data!
+#### 5B. Formatting modern data
 
-### Organising Modern Climatic Data
-
-We'll obtain our modern climatic data from WorldClim: [https://www.worldclim.org/](https://www.worldclim.org/)
-
-To keep our climatic variables consistent, we'll also work with the mean annual temperature data.
-
-Whilst below we show you code to access this data directly within R, it can take a while to download. We've therefore also included it alongside the other materials for the workshop, which can be accessed **[HERE](https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization)**.
+Now let's have a look at our modern data:
 
 ```{r}
-# Load data from WorldClim and make into raster
-modern <- worldclim_global(var = "tavg", res = 10, path = tempdir())
-modern <- as(modern, "Raster")
-modern
+# Examine our modern raster:
+raster2prep_modern
+ref_raster
+
 ```
-As you can see, although the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep time data. They're also provided on a monthly basis, so we'll have to calculate the mean temperature before we can use this for comparison:
+
+As you can see, although the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep time data. But there's something else going on: there's 12 layers within this raster! This is because there's a climatic layer for each month of the year. Therefore, we'll have to calculate the mean temperature before we can use this for comparison:
 
 ```{r}
 # Calculate mean annual temperature
@@ -283,7 +311,8 @@ Let's begin!
 
 #### 1A. Organise fossil occurrence data
 
-First, we'll load in our palaeontological data. Luckily for us, we've already been working with a Crocodylia fossil occurrence dataset. We'll use these data in our analysis. If needed, you can read in the cleaned dataset below.
+First, we'll load in our palaeontological data. Luckily for us, we've already been working with a Crocodylia fossil occurrence dataset. We'll use these data in our analysis. If you've not quite finished cleaning your dataset, you can find a cleaned version that's ready for this next step **[HERE](https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization)**.
+
 ```{r}
 # Load cleaned fossil data for order Crocodylia that we worked on earlier
 fossil_occ <- read.csv("cenozoic_crocs_clean.csv")
