@@ -75,6 +75,15 @@ We'll focus our deep time analysis on the Miocene, a climatically dynamic epoch 
 
 Before we start, it's helpful to write out a step-by-step plan of what we want to accomplish to ensure that the approach we're taking and the code that we write will appropriately answer the question(s) that we are interested in. Think of this as a kind of "logical flow." In other words, what are all the steps needed to get from our research idea to our finalised analysis? This can be as extensive as you wish and can be done in any fashion---even writing out your code or general approach on pen and paper! We'll be doing this a few times today, so let's start by considering our research question and what materials we'll need to address it.
 
+## **BREAKOUT SESSION 1**
+
+**Organize yourselves into groups of 4-6 and take 10 minutes to discuss the following questions:**
+
+***1. What datasets will we need to answer this question?***
+
+***2. What issues might we encounter when sourcing, gathering, and working with these various datasets? How might these be addressed?***
+
+::: {.callout-tip title="Solution" collapse="true"}
 As we aim to compare the distributions of Crocodylia in deep time and the present, there are a couple of key datasets that we will require:
 
 1.  A spatially explicit dataset of modern Crocodylia
@@ -82,17 +91,11 @@ As we aim to compare the distributions of Crocodylia in deep time and the presen
 3.  A spatially explicit dataset of modern climatic variables
 4.  A spatially explicit dataset of climatic variables for the deep time intervals we choose, likely generated from palaeo-climatic modelling
 
+:::
+
 ::: {.callout-note title="Heads Up!"}
 Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results. This will be a recurring theme throughout the session.
 :::
-
-## **BREAKOUT SESSION 1**
-
-**Organize yourselves into groups of 4-6 and take 10 minutes to discuss the following questions:**
-
-***1. What issues might we encounter when sourcing, gathering, and working with these various climatic and occurrence datasets?***
-
-***2. What caveats should we be aware of, and how can they be addressed?***
 
 ## III. Building a Workflow to Merge Datasets
 
