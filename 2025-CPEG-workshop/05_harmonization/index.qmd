@@ -240,8 +240,8 @@ As you can see, the resolution and extent of these rasters doesn't quite match t
 ```{r}
 
 # Resample data to match our set extent and resolution
-raster.resampled.15 <- resample(x = raster2prep.15, y = ref_raster)
-raster.resampled.20 <- resample(x = raster2prep.20, y = ref_raster)
+raster_resampled_15 <- resample(x = raster2prep_15, y = ref_raster)
+raster_resampled_20 <- resample(x = raster2prep_20, y = ref_raster)
 
 ```
 
@@ -249,11 +249,11 @@ Finally, we can stack these rasters into one file, name them, and see what they 
 
 ```{r}
 # Stack rasters
-scotese.temp <- stack(raster.resampled.15, raster.resampled.20)
+scotese_temp <- stack(raster_resampled_15, raster_resampled_20)
 
 # Name and plot rasters
-names(scotese.temp) <- c("Burdigalian","Aquitanian")
-plot(scotese.temp)
+names(scotese_temp) <- c("Burdigalian","Aquitanian")
+plot(scotese_temp)
 ```
 
 #### 5B. Formatting modern data
@@ -271,10 +271,10 @@ As you can see, although the extent matches our reference raster, these modern c
 
 ```{r}
 # Calculate mean annual temperature
-modern.mean <- calc(x = modern, fun = mean)
+modern_mean <- calc(x = raster2prep_modern, fun = mean)
 
 # Plot raster
-plot(modern.mean)
+plot(modern_mean)
 ```
 
 *What issues might this higher resolution cause? What actions could we take to resolve this? What could we test?*
