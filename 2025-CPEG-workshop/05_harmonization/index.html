@@ -1020,9 +1020,9 @@ Don’t forget!
 <span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="do">## GBIF filtering</span></span>
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>modern_occ_filter <span class="ot">&lt;-</span> modern_occ <span class="sc">%&gt;%</span></span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(genus)) <span class="sc">%&gt;%</span> <span class="co">#taxonomic filtering</span></span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1970</span>) <span class="sc">%&gt;%</span> <span class="co">#temporal filtering</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(coordinateUncertaintyInMeters <span class="sc">&lt;</span> <span class="dv">10000</span> <span class="sc">|</span> <span class="fu">is.na</span>(coordinateUncertaintyInMeters)) <span class="co">#we could also remove data with uncertain geographic coordinates</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(genus)) <span class="sc">%&gt;%</span> <span class="co">#taxonomic filtering</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1970</span>) <span class="sc">%&gt;%</span> <span class="co">#temporal filtering</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(coordinateUncertaintyInMeters <span class="sc">&lt;</span> <span class="dv">10000</span> <span class="sc">|</span> <span class="fu">is.na</span>(coordinateUncertaintyInMeters)) <span class="co">#we could also remove data with uncertain geographic coordinates</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This filtering step could have removed a fair amount of data. How many occurrences remain in each filtered dataset?</p>
 <div class="cell">
@@ -1051,7 +1051,7 @@ Practise Time! <em>(optional)</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Let’s spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session.</strong> For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates.</p>
+<p><strong>Let’s spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session.</strong> For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates. Alternatively, you can check out the <a href="https://www.gbif.org/occurrence/search?basis_of_record=PRESERVED_SPECIMEN&amp;taxon_key=11493978&amp;occurrence_status=present">GBIF webpage</a> to see what’s available.</p>
 </div>
 </div>
 </section>
@@ -1083,7 +1083,7 @@ Tip
 </div>
 </div>
 </div>
-<p>Here, we’ll touch on several key taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.</p>
+<p>Let’s now have a group discussion about these taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.</p>
 <section id="a.-taxonomy" class="level4">
 <h4 class="anchored" data-anchor-id="a.-taxonomy">4A. Taxonomy</h4>
 <p>We’ll be using higher-level taxonomic groups for our analysis. Let’s take a look to see what’s here.</p>
