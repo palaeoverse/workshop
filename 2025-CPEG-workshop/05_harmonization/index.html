@@ -617,6 +617,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="making-a-plan" class="level3">
 <h3 class="anchored" data-anchor-id="making-a-plan">Making a Plan</h3>
 <p>Before we start, it’s helpful to write out a step-by-step plan of what we want to accomplish to ensure that the approach we’re taking and the code that we write will appropriately answer the question(s) that we are interested in. Think of this as a kind of “logical flow.” In other words, what are all the steps needed to get from our research idea to our finalised analysis? This can be as extensive as you wish and can be done in any fashion—even writing out your code or general approach on pen and paper! We’ll be doing this a few times today, so let’s start by considering our research question and what materials we’ll need to address it.</p>
+</section>
+</section>
+<section id="breakout-session-1" class="level2">
+<h2 class="anchored" data-anchor-id="breakout-session-1"><strong>BREAKOUT SESSION 1</strong></h2>
+<p><strong>Organize yourselves into groups of 4-6 and take 10 minutes to discuss the following questions:</strong></p>
+<p><strong><em>1. What datasets will we need to answer this question?</em></strong></p>
+<p><strong><em>2. What issues might we encounter when sourcing, gathering, and working with these various datasets? How might these be addressed?</em></strong></p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>As we aim to compare the distributions of Crocodylia in deep time and the present, there are a couple of key datasets that we will require:</p>
 <ol type="1">
 <li>A spatially explicit dataset of modern Crocodylia</li>
@@ -624,6 +643,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>A spatially explicit dataset of modern climatic variables</li>
 <li>A spatially explicit dataset of climatic variables for the deep time intervals we choose, likely generated from palaeo-climatic modelling</li>
 </ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled" title="Heads Up!">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -637,13 +659,6 @@ Heads Up!
 <p>Even at this first step, the decisions we make will have consequences for our research and findings. For example, our choice of datasets and how they are handled can impact our results. This will be a recurring theme throughout the session.</p>
 </div>
 </div>
-</section>
-</section>
-<section id="breakout-session-1" class="level2">
-<h2 class="anchored" data-anchor-id="breakout-session-1"><strong>BREAKOUT SESSION 1</strong></h2>
-<p><strong>Organize yourselves into groups of 4-6 and take 10 minutes to discuss the following questions:</strong></p>
-<p><strong><em>1. What issues might we encounter when sourcing, gathering, and working with these various climatic and occurrence datasets?</em></strong></p>
-<p><strong><em>2. What caveats should we be aware of, and how can they be addressed?</em></strong></p>
 </section>
 <section id="iii.-building-a-workflow-to-merge-datasets" class="level2">
 <h2 class="anchored" data-anchor-id="iii.-building-a-workflow-to-merge-datasets">III. Building a Workflow to Merge Datasets</h2>
@@ -867,7 +882,7 @@ max values :          34.00950,          32.82425,          32.90950,          3
 <p><strong><em>1. First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you’ll need to do any filtering, and how you might format them to enable fair comparisons across time with the climatic data that we just read into R. If you’re an experienced R user, you can also start to plan your code.</em></strong></p>
 <p><strong><em>2. Then, get into the same groups you were in previously to discuss your approach. Where you might encounter potential pitfalls? What packages or approaches might make this process easier?</em></strong></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -876,7 +891,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Let’s start by thinking about what we need from our occurrence datasets. To answer our question, we aim to compare Crocodylia occurrences in the past and present in relation to temperature data from the same geographic coordinates.</p>
 <p>How do we get there? Let’s outline some potential steps:</p>
@@ -1008,7 +1023,7 @@ Practise Time! <em>(optional)</em>
 <p><strong><em>3. How might we address these potential confounds prior to analysis and/or what should we keep in mind as we’re interpreting our results?</em></strong></p>
 <p>As you discuss, you may find it helpful to return to your notes from Breakout Session 1.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1017,7 +1032,7 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The resolution and coverage of the data is likely one aspect that came up in your group discussions, both here and in Breakout Session 1. As we move forward, we’ll need to make some practical and philosophical decisions about how we bin the data given their varying resolutions. We’ll also want to consider the sensitivity of our results to these various decisions.</p>
 </div>
