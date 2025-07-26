@@ -377,9 +377,9 @@ fossil_occ_filter <- fossil_occ %>%
 
 ## GBIF filtering
 modern_occ_filter <- modern_occ %>%
-  filter(!is.na(genus)) %>% #taxonomic filtering
-  filter(year >= 1970) %>% #temporal filtering
-  filter(coordinateUncertaintyInMeters < 10000 | is.na(coordinateUncertaintyInMeters)) #we could also remove data with uncertain geographic coordinates
+  dplyr::filter(!is.na(genus)) %>% #taxonomic filtering
+  dplyr::filter(year >= 1970) %>% #temporal filtering
+  dplyr::filter(coordinateUncertaintyInMeters < 10000 | is.na(coordinateUncertaintyInMeters)) #we could also remove data with uncertain geographic coordinates
 ```
 
 This filtering step could have removed a fair amount of data. How many occurrences remain in each filtered dataset?
@@ -398,7 +398,7 @@ We'll then want to explore and clean our data to check for outliers, inconsisten
 Our fossil occurrence dataset has already gone through this process.
 
 ::: {.callout-note title="Practise Time! *(optional)*"}
-**Let's spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session.** For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates.
+**Let's spend a couple of minutes cleaning and familiarising ourselves with the GBIF data, applying what we learned in the previous session.** For example, you might look at the range of latitudes represented by occurrences or check the taxa for spelling errors. You could plot them on a map to see if you notice any geographic oddities. Or you could check for duplicates. Alternatively, you can check out the [GBIF webpage](https://www.gbif.org/occurrence/search?basis_of_record=PRESERVED_SPECIMEN&taxon_key=11493978&occurrence_status=present) to see what's available.
 :::
 
 
@@ -422,7 +422,7 @@ As you discuss, you may find it helpful to return to your notes from Breakout Se
 The resolution and coverage of the data is likely one aspect that came up in your group discussions, both here and in Breakout Session 1. As we move forward, we'll need to make some practical and philosophical decisions about how we bin the data given their varying resolutions. We'll also want to consider the sensitivity of our results to these various decisions. 
 :::
 
-Here, we'll touch on several key taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.
+Let's now have a group discussion about these taxonomic, temporal, and spatial considerations when endeavoring to make these datasets comparable.
 
 #### 4A. Taxonomy
 
