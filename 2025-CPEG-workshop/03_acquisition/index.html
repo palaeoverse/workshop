@@ -614,7 +614,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>…and then use the download.file function to download and save the file:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(URL, <span class="at">destfile =</span> <span class="st">"cenozoic_crocs_raw.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(URL, <span class="at">destfile =</span> <span class="st">"cenozoic_crocs_raw.csv"</span>, <span class="at">mode =</span> <span class="st">"wb"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>And now we have obtained our dataset.</p>
 </section>
@@ -657,7 +657,7 @@ chr (2): Data Provider, The Paleobiology Database
  3 License URL       https://creativecommons.org/publicdomain/zero/1.0/         
  4 Documentation URL http://paleobiodb.org/data1.2/occs/list_doc.html           
  5 Data URL          http://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowco…
- 6 Access Time       Fri 2025-07-25 15:13:13 GMT                                
+ 6 Access Time       Sun 2025-07-27 12:06:02 GMT                                
  7 Title             PBDB Data Service                                          
  8 Parameters:       &lt;NA&gt;                                                       
  9 &lt;NA&gt;              base_name,Crocodylia                                       
@@ -669,17 +669,14 @@ chr (2): Data Provider, The Paleobiology Database
 <p>These metadata elements are all important information to retain alongside our data, allowing others to better understand what the dataset contains, and when and how it was downloaded. The Paleobiology Database is fully dynamic, not only in that new data is continually being added, but also in that any record can be changed retrospectively by an Editor. It cannot be assumed that the ‘present’ state of any data record was the same in the (historical) past. So, for example, if someone wanted to see how the data associated with this API call had changed in the time elapsed since our download, they could do this, and directly in R if desired:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View API URL</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">5</span>, <span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>metadata[<span class="dv">5</span>, <span class="dv">2</span>, drop <span class="ot">=</span> <span class="cn">TRUE</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-  `The Paleobiology Database`                                                   
-  &lt;chr&gt;                                                                         
-1 http://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowcount&amp;base_name=Croco…</code></pre>
+<pre><code>[1] "http://paleobiodb.org/data1.2/occs/list.csv?datainfo&amp;rowcount&amp;base_name=Crocodylia&amp;interval=Cenozoic&amp;show=full"</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use API call (this is not enacted here)</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(metadata[<span class="dv">5</span>, <span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>new_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(metadata[<span class="dv">5</span>, <span class="dv">2</span>, <span class="at">drop =</span> <span class="cn">TRUE</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>While the metadata is important to keep in the raw file, for the purposes of analysis, we want to be able to just read in the data beneath it. We can do this using the <code>skip</code> parameter in <code>read_csv</code>, which tells R to ignore a given number of rows at the top of the file.</p>
 <div class="cell">
