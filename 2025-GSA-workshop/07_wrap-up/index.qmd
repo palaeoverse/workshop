@@ -1,0 +1,26 @@
+---
+title: "Wrap-up & resources"
+toc: true
+order: 7
+---
+
+## Questions and wrap-up discussion
+
+**Return to your discussion groups** and take 5 minutes to talk about how you might apply what you've learned today to your own work. How could you begin to implement some of these approaches in your research and data processing workflow?
+
+## Resources
+
+To send you forward on your research journey, we'd like to finish by sharing some handy resources that we've compiled:
+
+- [Palaeoverse](https://palaeoverse.org/#our-resources)
+- [Palaeoverse resources database](https://bit.ly/palaeoverse-resources)
+- [Computational paleobiology resources (from NAPC 2024 workshop)](https://workshop.palaeoverse.org/NAPC2024/materials/5_resources/)
+
+## Fin
+
+Thanks for attending!
+
+We'd also love to hear from you if you have any feedback or would like to get involved in future Palaeoverse activities.
+
+- [Get involved](https://palaeoverse.org/#get-involved)
+- [Workshop feedback survey](https://forms.gle/qVy2CvsANUUESgAf8)

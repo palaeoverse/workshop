@@ -1,0 +1,9 @@
+---
+title: "Introduction to the workshop"
+subtitle: "Building open data science skills in paleobiology and ecology"
+toc: true
+order: 1
+---
+
+## Welcome to the Palaeoverse
+<iframe class="slide-deck" width="100%" height="800px" src="workshop_intro_cpeg.html"></iframe>

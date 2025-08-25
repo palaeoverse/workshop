@@ -1,0 +1,170 @@
+---
+title: "CPEG 2025 workshop"
+subtitle: |
+  Building open data science skills in paleobiology and ecology\
+  \
+  ![](../images/cpeg_cpg25_visual_for_web.jpg){fig-align="center" height=250}\
+execute:
+  echo: true
+  eval: true
+  freeze: auto
+format: 
+  revealjs:
+    logo: "../images/logo.png"
+    footer: |
+      4th Crossing the Paleontological-Ecological Gap (CPEG) Meeting &\
+      3rd Conservation Paleobiology Symposium
+    theme: simple
+    embed-resources: true
+    output-file: "workshop_intro_cpeg.html"
+    mermaid:
+      theme: default
+---
+
+
+## Introductions
+
+::: {.columns .h4}
+::: {.column width="20%"}
+![](../images/Erin.png)
+<p style="font-size: 50%; margin-top: -0.4em;">Erin Dillon</p>
+<p style="font-size: 30%; margin-top: -0.1em;min-height: 2.5em;">Smithsonian Tropical Research Institute, Panama</p>
+
+![](../images/Harriet.jpg)
+<p style="font-size: 50%; margin-top: -0.4em;">Harriet Drage</p>
+<p style="font-size: 30%; margin-top: -0.1em;min-height: 2.5em;">University of Lausanne, Switzerland</p>
+:::
+
+::: {.column width="20%"}
+![](../images/Lewis.JPG)
+<p style="font-size: 50%; margin-top: -0.4em;">Lewis Jones</p>
+<p style="font-size: 30%; margin-top: -0.1em;min-height: 2.5em;">University College London, UK</p>
+
+![](../images/Will.jpg)
+<p style="font-size: 50%; margin-top: -0.4em;">Will Gearty</p>
+<p style="font-size: 30%; margin-top: -0.1em;min-height: 2.5em;">Syracuse University, USA</p>
+:::
+
+::: {.column width="20%"}
+![](../images/Bethany.jpeg)
+<p style="font-size: 50%; margin-top: -0.4em;">Bethany Allen</p>
+<p style="font-size: 30%; margin-top: -0.1em;min-height: 2.5em;">GFZ Helmholtz Centre for Geosciences, Germany</p>
+
+![](../images/Pedro.jpeg)
+<p style="font-size: 50%; margin-top: -0.4em;">Pedro Godoy</p>
+<p style="font-size: 30%; margin-top: -0.1em;min-height: 2.5em;">University of São Paulo, Brazil</p>
+:::
+
+::: {.column width="20%"}
+![](../images/Chris.jpeg)
+<p style="font-size: 50%; margin-top: -0.4em;">Chris Dean</p>
+<p style="font-size: 30%; margin-top: -0.1em;min-height: 2.5em;">University College London, UK</p>
+
+![](../images/Niklas.png)
+<p style="font-size: 50%; margin-top: -0.4em;">Niklas Hohmann</p>
+<p style="font-size: 30%; margin-top: -0.1em;min-height: 2.5em;">Utrecht University, Netherlands</p>
+:::
+:::
+
+## Palaeoverse
+
+![](../images/palaeoverse_intro.png)
+
+## Why open science?
+
+::: {.incremental}
+
+- Open science aims to make research and its outcomes—at all stages—more accessible
+    - Increases transparency, reproducibility, and reusability
+    - Facilitates collaboration
+    - Broadens access to scientific knowledge
+    - Enhance the impact and reach of our science
+:::
+
+## Objectives
+
+. . .
+
+- **Goal:** overview of how to process data in an open and reproducible way
+
+. . .
+
+- **Learning objectives:**
+    -  Gain exposure to tools and best practices for developing and sharing reproducible workflows
+    -  Build confidence working with data in R
+    -  Practice coding collaboratively
+    -  Connect with other workshop participants
+    
+
+## Resources
+
+. . .
+
+- **You'll walk away with:**
+    -  Template for creating a workflow and example code that you can adapt to your own work
+    -  Workshop materials and resources
+    -  An expanded network of colleagues
+    
+. . .
+
+- **Workshop website:** <https://workshop.palaeoverse.org>
+
+## Schedule
+
+::: {.columns .h3}
+
+::: {.column width="20%"}
+
+:::
+
+::: {.column width="70%"}
+<div style="font-size: 60%;">
+| Time      | Event                                                     |
+|-----------|-----------------------------------------------------------|
+| **08:00** | **Installation assistance** *(optional)*                  |
+| **09:00** | **Welcome and introduction to the Palaeoverse**           |
+| **09:15** | **Setting up a reproducible workflow**                    |
+| **10:30** | ***Coffee break***☕                                     |
+| **10:45** | **Data acquisition**                                      |
+| **11:15** | **Data Processing I: Data exploration and cleaning**      |
+| **12:30** | ***Lunch break*** 🥪                                     |
+| **14:00** | **Data Processing II: Data harmonization and synthesis**  |
+| **15:30** | ***Coffee break***☕                                     |
+| **15:45** | **Data archiving and publishing**                         |
+| **16:45** | **Questions and wrap-up**                                 |
+
+</div>
+
+:::
+
+:::
+
+
+
+## Logistics
+
+- Room KO2-F-152
+- Restrooms
+- Exits
+- Internet
+
+## Raise your hand if...
+
+::: {.incremental}
+
+- you are just getting started in R
+- you feel comfortable coding in R
+- you work with R so much that you dream in ggplot
+- you have used GitHub before
+- you have downloaded data from a database
+- you have archived your data and/or code
+
+:::
+
+## Meet your colleagues!
+
+- Name
+- Institution
+- Career stage
+- Research interests
+- Example of open science in action?

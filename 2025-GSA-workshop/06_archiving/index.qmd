@@ -1,0 +1,38 @@
+---
+title: "Archiving & Publishing"
+toc: true
+order: 6
+---
+
+## Learning Objectives
+
+In this last session, we'll be thinking about archiving our data and other materials at the end of a project, why we should archive, and where we might archive materials:
+
+- Get moving and thinking about/discussing archiving with others
+- Understand why archiving is important, and what should be archived
+- Have some ideas of where working documents can be archived and openly accessible
+
+**Schedule**
+
+- 15:45--16:45
+
+## Get thinking and discussing!
+
+Now we're back from break, let's get talking about archiving our work. Think about the following questions and discuss your thoughts with your neighbours. Then write your answers on post-its and stick them up, and have a look at what your colleagues think is important in archiving research outputs.
+
+25 minutes, then we'll come back together to go over the important points!
+
+1. Why is archiving important?
+2. What do you think it is important for researchers to archive?
+3. Where can you archive research materials?
+4. What are the major barriers to archiving?
+
+## Archiving & publishing
+
+In the last lecture part for the day, we'll go over some of the key reasons why archiving is important for open science, where you can archive your materials, and some considerations for archiving and publishing:
+
+<object data="./CPEGArchivingPublishing.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf">
+    <embed src="./CPEGArchivingPublishing.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf" />
+</object>
+
+(You can download the slides [here](./CPEGArchivingPublishing.pdf).)

@@ -1,0 +1,18 @@
+---
+title: "Setting up a reproducible workflow"
+subtitle: "Building reproducible workflows using RStudio and GitHub"
+toc: true
+order: 2
+---
+
+## Prerequisites
+
+In order to follow along with this module, you will need the following:
+
+1. [R and RStudio](https://posit.co/download/rstudio-desktop/) installed on your computer (see Steps 1 and 2 on that page).
+2. A [GitHub account](https://github.com/signup).
+3. [GitHub Desktop](https://desktop.github.com/) installed on your computer. You should be signed into GitHub Desktop with your GitHub account.
+
+## Presentation
+
+<iframe class="slide-deck" width="100%" height="800px" src="rproj_github.html"></iframe>
