@@ -7,26 +7,26 @@ order: 3
 
 ## Learning Objectives
 
-In this session, we'll discuss a few different online databases with relevant data, raw data and why/how to keep raw data raw, and acquire today's fossil dataset using the Paleobiology Database API. In this first short section, we'll therefore cover:
+In this session, we'll introduce a few different online databases with relevant data, discuss why and how to keep raw data raw, and acquire today's fossil dataset using the Paleobiology Database API. We'll cover:
 
 - Examples of different types of databases
 - How to access raw data
 - Why it is important to keep raw data raw
-- Acquiring and loading example fossil dataset into R
+- Acquiring and loading an example fossil dataset into R
 
 **Schedule** 
 
-- 10:45--11:15
+- 10:15--10:45 AM
 
 ## I. Databases and raw data
 
 First, we'll learn about online databases and raw data:
 
-<object data="./CPEGDataAcquisition.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf">
-    <embed src="./CPEGDataAcquisition.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf" />
+<object data="./DataAcquisition_GSA2025.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf">
+    <embed src="./DataAcquisition_GSA2025.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf" />
 </object>
 
-(You can download the slides [here](./CPEGDataAcquisition.pdf).)
+(You can download the slides [here](./DataAcquisition_GSA2025.pdf).)
 
 ## II. Data Acquisition
 
@@ -45,11 +45,11 @@ library(readr)
 
 ### Choose the right data for your question
 
-Here at CPEG, we are interested in integrating palaeontological and modern biological data to address questions about the timescales over which changes in biodiversity and ecosystem dynamics take place. In today's practical sessions, we will be focusing on Cenozoic crocodiles as a case study. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates. Our goal is to investigate different facets of crocodilian biodiversity throughout the Cenozoic and to the present day, and test what role temperature might play in these patterns.
+This workshop focuses on creating research workflows to acquire, clean, and analyze paleontological data to address questions about biodiversity and ecosystem change over long timescales. In today's practical sessions, we will use Cenozoic crocodiles as a case study. As ectotherms, crocodiles are highly reliant on the environment in which they live in order to maintain a functional internal body temperature. Because of this, their spatial distribution is constrained to warm climates. Our goal is to investigate different facets of crocodilian biodiversity throughout the Cenozoic and test what role temperature might play in these patterns.
 
-To meet this goal, we need to acquire occurrence data for fossil crocodiles during the Cenozoic. Initially we have decided not to place further taxonomic constraints on our search, so we will include all occurrences belonging to the order 'Crocodylia'. We are interested in the clade's biogeography, so we will need all occurrences globally, and we need to ensure that we have geographic coordinates associated with our occurrences.
+To meet this goal, we need to acquire occurrence data for fossil crocodiles during the Cenozoic. Initially we have decided not to place further taxonomic constraints on our search, so we will include all occurrences belonging to the order 'Crocodylia'. We are interested in the clade's biogeography, so we will need to obtain all occurrences globally, and we will need to ensure that we have geographic coordinates associated with our occurrences.
 
-We will turn to one of the largest sources of fossil occurrence data, the [Paleobiology Database](https://paleobiodb.org). To access our fossil data, we are going to take advantage of the Paleobiology Database's "API" (short for Application Programming Interface), which lets us "download" data directly into R. For our dataset, we will pull all occurrences associated with the taxon name 'Crocodylia', dated to the 'Cenozoic'.
+We will turn to one of the largest sources of fossil occurrence data, the [Paleobiology Database](https://paleobiodb.org). To access our fossil data, we are going to take advantage of the Paleobiology Database's "API" (short for Application Programming Interface), which lets us "download" data directly into R. For our dataset, we will pull all occurrences associated with the taxon name 'Crocodylia' that date to the 'Cenozoic'.
 
 We can begin by setting up some variables:
 
@@ -73,51 +73,51 @@ This is simply the top-level of the database, with 'data1.2' indicating that we 
 Next we want the type of query, here we want some fossil occurrences (which is what most queries are going to be). Here we are going to ask for them as a CSV (comma-separated values):
 "https://paleobiodb.org/data1.2/occs/list.csv"
 
-It is important to note that this means R will assume any comma it finds in the output represents a division between columns of data. If any of the data fields we want to output contain a comma, things are going to break, and hence why other formats (e.g., JSON) are also available. Here we should be fine though.
+It is important to note that this means R will assume any comma it finds in the output represents a division between columns of data. If any of the data fields we want to output contain a comma, things are going to break, and hence why other formats (e.g., JSON) are also available. Here we should be fine, though.
 
-Next we need to tell the database what taxon we actually want data for, so we can use our Taxa variable from above with:
+Next, we need to tell the database which taxon we actually want data for. We can add our 'Taxa' variable from above like this:
 
 ```{r paste_taxon, message = FALSE}
 paste0("https://paleobiodb.org/data1.2/occs/list.csv?base_name=", Taxa)
 ```
 
-The next thing to do is add any additional options we want to add to our query. The obvious one here is the sampling window. We can do this with the interval= option and as this is an addition to the query we proceed it with an ampersand (&):
+The next thing to do is add any additional options we want to add to our query. The obvious one here is the sampling window. We can do this with the 'interval=' option. Because this is an addition to the query, we precede it with an ampersand (&):
 
 ```{r paste_interval, message = FALSE}
 paste0("https://paleobiodb.org/data1.2/occs/list.csv?base_name=", Taxa, "&interval=", Interval)
 ```
 
-We can now determine what we want the output to include with show=. We will indicate that we want to include all of the default outputs, using "show=full":
+We can now determine what we want the output to include with 'show='. We will indicate that we want to include all of the default outputs, using 'show=full':
 
 ```{r add_outputs, message = FALSE}
 paste0("https://paleobiodb.org/data1.2/occs/list.csv?base_name=", Taxa, "&interval=", Interval, "&show=full")
 ```
 
-We also want to request that the metadata is retained, as a header at the top of the dataset, using "datainfo&rowcount":
+We also want to request that the metadata is retained as a header at the top of the dataset using 'datainfo&rowcount':
 
 ```{r add_metadata, message = FALSE}
 paste0("https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&base_name=", Taxa, "&interval=", Interval, "&show=full")
 ```
 
-For a full list of all the options you should consult the API documentation at https://paleobiodb.org/data1.2/.
+For a full list of all the options, you should consult the API documentation at https://paleobiodb.org/data1.2/.
 
-Now we have a complete URL we can store it in a variable...:
+Now we have a complete URL, which we will store as a variable:
 
 ```{r create_url, message = FALSE}
 URL <- paste0("https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&base_name=", Taxa, "&interval=", Interval, "&show=full")
 ```
 
-...and then use the download.file function to download and save the file:
+Finally, we'll use the `download.file` function to download and save the file:
 
 ```{r obtain_data, message = FALSE}
 download.file(URL, destfile = "cenozoic_crocs_raw.csv", mode = "wb")
 ```
 
-And now we have obtained our dataset.
+Ta-da! We have now obtained our dataset.
 
 ### Keep raw data raw
 
-For reproducibility, we want to make sure that we have a copy of the full dataset as initially downloaded - this is the "raw" data. It is important to keep this as part of the formal data archive, which we will discuss in more detail later.
+For reproducibility, we want to make sure that we have a copy of the full dataset as initially downloaded; this is the "raw" data. It is important to keep this as part of the formal data archive, which we will discuss in more detail later.
 
 We can load and view our raw data file to take a look at it.
 
@@ -136,9 +136,9 @@ metadata <- fossils[1:23, ]
 metadata
 ```
 
-The metadata are strangely formatted here, but we can see that they include information about the data license (CC0), the API call used (under the label 'Data URL'), the date and time at which the data were accessed, and the total number of records contained within the dataset (here, 886 fossil occurrences).
+The metadata are strangely formatted here, but we can see that they include information about the data license (CC0), the API call used (under the label 'Data URL'), the date and time at which the data were accessed, and the total number of records contained within the dataset.
 
-These metadata elements are all important information to retain alongside our data, allowing others to better understand what the dataset contains, and when and how it was downloaded. The Paleobiology Database is fully dynamic, not only in that new data is continually being added, but also in that any record can be changed retrospectively by an Editor. It cannot be assumed that the 'present' state of any data record was the same in the (historical) past. So, for example, if someone wanted to see how the data associated with this API call had changed in the time elapsed since our download, they could do this, and directly in R if desired:
+These metadata elements are all important information to retain alongside our data, allowing others to better understand what the dataset contains, and when and how it was downloaded. The Paleobiology Database is fully dynamic, not only in that new data is continually being added, but also in that any record can be changed retrospectively by an Editor. It cannot be assumed that the "present" state of any data record was the same in the (historical) past. So, for example, if someone wanted to see how the data associated with this API call had changed in the time elapsed since our download, they could do this, and directly in R if desired:
 
 ```{r API_print}
 # View API URL
@@ -154,10 +154,10 @@ While the metadata is important to keep in the raw file, for the purposes of ana
 
 ```{r read_trimmed}
 # Load data file, skipping metadata
-fossils <- read_csv("cenozoic_crocs_raw.csv", skip = 18)
+fossils <- read_csv("cenozoic_crocs_raw.csv", skip = 18) #before proceeding, check that the headers are being correctly specified
 ```
 
-Here, we can see that we still have parsing issues, specifically that there were two columns in the `csv` file named "cc", for "country code". Their column number has been appended to their column name, in order to keep these distinct. Is this column simply duplicated? We can check this.
+Here, we can see that we still have parsing issues, specifically that there were two columns in the CSV file named 'cc', for 'country code'. Their column number has been appended to their column name, in order to keep these distinct. Is this column simply duplicated? We can check this.
 
 ```{r check_cc}
 # Are the two `cc` columns identical?
@@ -174,9 +174,9 @@ fossils$cc...49 <- NULL
 colnames(fossils)[colnames(fossils) == 'cc...35'] <- 'cc'
 ```
 
-And now we are ready to commence our data exploration and cleaning.
+We are now ready to commence our data exploration and cleaning.
 
 ```{r save_data}
 # Save data
-write.csv(x = fossils, file = "../04_exploration/cenozoic_crocs.csv", row.names = FALSE)
+write.csv(x = fossils, file = "../03_acquisition/cenozoic_crocs.csv", row.names = FALSE)
 ```
