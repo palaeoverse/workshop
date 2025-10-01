@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../..//images/favicon.png" rel="icon" type="image/png">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-b1cf312bb333aa80d795d302fbc4d93c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9d7b9f665a25c2960f626e3790e9c6e0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-00fb830ab0388804371a937468084cfa.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-9d7b9f665a25c2960f626e3790e9c6e0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-32b796ae1887b2dde2c43519b0d1c730.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-f45b5836865279a7b1eac8ce5e70ff5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-3b82a6ccf9deddd572c722ef36c0bc86.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-f45b5836865279a7b1eac8ce5e70ff5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -123,6 +128,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Palaeoverse Workshops</span>
     </a>
@@ -169,7 +176,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../../index.html" class="sidebar-logo-link">
-      <img src="../../../images/favicon.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../../../images/favicon.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../../images/favicon.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -605,20 +613,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="installation">Installation</h2>
 <p>The <code>palaeoverse</code> package can be installed via CRAN or its dedicated <a href="https://github.com/palaeoverse-community/palaeoverse">GitHub repository</a> if the development version is preferred. To install via the CRAN, simply use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palaeoverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palaeoverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>To install the development version, first install the <code>devtools</code> package, and then use <code>install_github</code> to install <code>palaeoverse</code> directly from GitHub.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"palaeoverse/palaeoverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"palaeoverse/palaeoverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>You can now load <code>palaeoverse</code> using the default <code>library</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palaeoverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palaeoverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Before we get onto the good stuff, the development team has a small request</strong>. If you use <code>palaeoverse</code> in your research, please cite the associated publication. This will help us to continue our work in supporting you to do yours. You can access the appropriate citation via:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>(<span class="st">"palaeoverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">citation</span>(<span class="st">"palaeoverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>To cite palaeoverse in publications, use the following citation:
 
@@ -647,10 +655,10 @@ A BibTeX entry for LaTeX users is
 <h2 class="anchored" data-anchor-id="using-the-package">Using the package</h2>
 <p>Functions in <code>palaeoverse</code> are designed around the assumption that most users’ data are stored in an occurrence <code>data.frame</code>. As such, this is the expected input data format for most functions. We provide two example occurrence datasets (<code>tetrapods</code> and <code>reefs</code>) within the package from different data sources. In this vignette, we will focus on the <code>reefs</code> dataset which is a compilation of Phanerozoic reef occurrences (<em>n</em> = 4,363) from the <a href="https://www.paleo-reefs.pal.uni-erlangen.de">PaleoReefs Database</a> (Kiessling &amp; Krause, 2022).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(reefs)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first five rows &amp; columns of reefs</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>reefs[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>reefs[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  r_number               name             formation   system         series
 1        1   Tilkideligi Tepe                       Triassic Upper Triassic
@@ -669,26 +677,26 @@ A BibTeX entry for LaTeX users is
 <p>In this example, we will use the <code>reefs</code> dataset to examine latitudinal trends in Phanerozoic reefs and demonstrate some of the functionality available in <code>palaeoverse</code>.</p>
 <p>Let’s start by exploring the dataset. Before conducting any analyses, it is always a good idea to explore your data and understand what you are working with. Details related to the example datasets can be accessed via the usual documentation call:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Call documentation for dataset</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Call documentation for dataset</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>?reefs</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># You can also use</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(reefs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">help</span>(reefs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Let’s start by exploring the data a little:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many reefs are there in the dataset?</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many reefs are there in the dataset?</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Each row represents an individual reef.</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(reefs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(reefs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4363</code></pre>
 </div>
 </div>
 <p>Not bad (<em>n</em> = 4363), that’s quite a bit of data to play with! Remember that these are reefs (whole ecosystems), not individual occurrences of fossil organisms like in <code>tetrapods</code>. But how much does this vary across time? We can make use of the <code>group_apply</code> wrapper function to run a function across subsets of data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many reefs per interval?</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many reefs per interval?</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's group by the interval column to test</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>reef_counts <span class="ot">&lt;-</span> <span class="fu">group_apply</span>(<span class="at">occdf =</span> reefs, <span class="at">group =</span> <span class="st">"interval"</span>, <span class="at">fun =</span> nrow)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reef_counts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reef_counts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  nrow                interval
 1    2       (early?) Toarcian
@@ -701,7 +709,7 @@ A BibTeX entry for LaTeX users is
 </div>
 <p>Oh dear, we’ve just hit a common issue… our reef data does not conform to a common time scale! Some reefs are resolved to stage level, while others are resolved to a coarser or finer temporal resolution. In some instances, regional names are also used, while international names are used in others. This makes it challenging to make comparisons through time… one solution could be to use age values to bin the reefs into time bins, but no age range data is provided in the dataset (i.e.&nbsp;“max_ma” and “min_ma”). We must therefore use the names of each interval to link to a common time scale, the ‘<a href="https://stratigraphy.org/chart">International Geological Stages</a>’ established by the International Commission on Stratigraphy (ICS). Fortunately, we can make use of the <code>look_up</code> function to do so. This function can be used to assign international geological stages and numeric ages to occurrences, or use a user-defined interval key to link to a common time scale. Here, we will use the example <code>interval_key</code> available in <code>palaeoverse</code> to assign international geological stage names and numeric ages.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the interval key</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the interval key</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"interval_key"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign a common time scale based on an interval key</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>reefs <span class="ot">&lt;-</span> <span class="fu">look_up</span>(<span class="at">occdf =</span> reefs,</span>
@@ -709,7 +717,7 @@ A BibTeX entry for LaTeX users is
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">late_interval =</span> <span class="st">"interval"</span>,</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">int_key =</span> interval_key)</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Example output</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>reefs[<span class="dv">100</span><span class="sc">:</span><span class="dv">110</span>, <span class="dv">15</span><span class="sc">:</span><span class="dv">19</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>reefs[<span class="dv">100</span><span class="sc">:</span><span class="dv">110</span>, <span class="dv">15</span><span class="sc">:</span><span class="dv">19</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    early_stage late_stage interval_max_ma interval_mid_ma interval_min_ma
 100    Ladinian    Carnian           242.0          234.50           227.0
@@ -727,7 +735,7 @@ A BibTeX entry for LaTeX users is
 </div>
 <p>Great! We now have a common time scale and numeric ages. However, some of our reefs seem to range through several stages and we can’t count just by the early or late stage. Our data still need to be binned. Let’s check out the <code>time_bins</code> and <code>bin_time</code> functions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we have numeric ages for our data, we can easily</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we have numeric ages for our data, we can easily</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># remove pre-Phanerozoic data to focus our study</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>reefs <span class="ot">&lt;-</span> <span class="fu">subset</span>(reefs, interval_max_ma <span class="sc">&lt;=</span> <span class="dv">541</span>)</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract Phanerozoic stage-level stages for time bins</span></span>
@@ -736,10 +744,10 @@ A BibTeX entry for LaTeX users is
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># bin_time requires "max_ma" and "min_ma" columns</span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename columns in reefs</span></span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(reefs)[<span class="fu">which</span>(<span class="fu">colnames</span>(reefs) <span class="sc">==</span> <span class="st">"interval_max_ma"</span>)] <span class="ot">&lt;-</span> <span class="st">"max_ma"</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(reefs)[<span class="fu">which</span>(<span class="fu">colnames</span>(reefs) <span class="sc">==</span> <span class="st">"interval_min_ma"</span>)] <span class="ot">&lt;-</span> <span class="st">"min_ma"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(reefs)[<span class="fu">which</span>(<span class="fu">colnames</span>(reefs) <span class="sc">==</span> <span class="st">"interval_min_ma"</span>)] <span class="ot">&lt;-</span> <span class="st">"min_ma"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Five methods exist in bin_time for binning occurrence data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Five methods exist in bin_time for binning occurrence data</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># You can see details on each via ?bin_time</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Bin by midpoint age</span></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">bin_time</span>(<span class="at">occdf =</span> reefs, <span class="at">bins =</span> bins, <span class="at">method =</span> <span class="st">"mid"</span>)</span>
@@ -750,19 +758,19 @@ A BibTeX entry for LaTeX users is
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Bin randomly into bins within age range (equal probability)</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">bin_time</span>(<span class="at">occdf =</span> reefs, <span class="at">bins =</span> bins, <span class="at">method =</span> <span class="st">"random"</span>, <span class="at">reps =</span> <span class="dv">10</span>)</span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Bin randomly into bins within age range (uniform probability)</span></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">bin_time</span>(<span class="at">occdf =</span> reefs, <span class="at">bins =</span> bins, <span class="at">method =</span> <span class="st">"point"</span>, <span class="at">reps =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">bin_time</span>(<span class="at">occdf =</span> reefs, <span class="at">bins =</span> bins, <span class="at">method =</span> <span class="st">"point"</span>, <span class="at">reps =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's go with "all" for this example!</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>reefs <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> reefs, <span class="at">bins =</span> bins, <span class="at">method =</span> <span class="st">"all"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's go with "all" for this example!</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>reefs <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> reefs, <span class="at">bins =</span> bins, <span class="at">method =</span> <span class="st">"all"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Note that the number of rows of <code>reefs</code> have now increased. This is because the “all” method in <code>bin_time</code> duplicates an occurrence for every bin the age range overlaps with.</p>
 <p>Let’s check those reef numbers through time again using our binned data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count number of occurrences per interval</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Count number of occurrences per interval</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>reefs_time <span class="ot">&lt;-</span> <span class="fu">group_apply</span>(<span class="at">occdf =</span> reefs, <span class="at">group =</span> <span class="st">"bin_midpoint"</span>, <span class="at">fun =</span> nrow)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check output</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reefs_time)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reefs_time)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  nrow bin_midpoint
 1    3       0.0021
@@ -775,7 +783,7 @@ A BibTeX entry for LaTeX users is
 </div>
 <p>That’s more like it! But, let’s not forget it’s always useful to visualise our data. Why don’t we plot the number of reefs through time? We can even make use of the <code>axis_geo</code> function to add the Geological Time Scale to our plot.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> reefs_time<span class="sc">$</span>bin_midpoint,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> reefs_time<span class="sc">$</span>nrow,</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (Ma)"</span>,</span>
@@ -784,7 +792,7 @@ A BibTeX entry for LaTeX users is
 <span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt =</span> <span class="st">"n"</span>,</span>
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"b"</span>, <span class="at">pch =</span> <span class="dv">20</span>)</span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add axis of the geological time scale</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">intervals =</span> <span class="st">"periods"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">intervals =</span> <span class="st">"periods"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -796,13 +804,13 @@ A BibTeX entry for LaTeX users is
 <p>You would (and should) of course want to explore your data a little more than this. However, for the sake of brevity, let’s focus on our research theme: latitudinal trends in Phanerozoic reefs.</p>
 <p>When studying modern latitudinal trends (e.g.&nbsp;in biodiversity), researchers can use the geographic coordinates of their samples to conduct analyses. However, as the continents shift through time, palaeobiologists must reconstruct the palaeogeographic coordinates of fossil localities. To do so, Global Plate Models are used (e.g.&nbsp;the PALEOMAP model) to rotate the modern coordinates of fossil localities to their location at time of deposition. The <code>palaeorotate</code> function allows the user to do so using either the ‘point’ or ‘grid’ method. The first approach makes use of the GPlates Web Service and allows point data to be rotated to specific ages using the available models (see <a href="https://gwsdoc.gplates.org" class="uri">https://gwsdoc.gplates.org</a>). The second approach uses reconstruction files of pre-generated palaeocoordinates to spatiotemporally link occurrences’ modern coordinates and age estimates with their respective palaeocoordinates. Let’s give it a shot:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotate occurrences</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotate occurrences</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>reefs <span class="ot">&lt;-</span> <span class="fu">palaeorotate</span>(<span class="at">occdf =</span> reefs, <span class="at">age =</span> <span class="st">"bin_midpoint"</span>,</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">"point"</span>, <span class="at">model =</span> <span class="st">"PALEOMAP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">"point"</span>, <span class="at">model =</span> <span class="st">"PALEOMAP"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check palaeocoordinates</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reefs[, <span class="fu">c</span>(<span class="st">"p_lng"</span>, <span class="st">"p_lat"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check palaeocoordinates</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reefs[, <span class="fu">c</span>(<span class="st">"p_lng"</span>, <span class="st">"p_lat"</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    p_lng   p_lat
 1 21.3630 10.0755
@@ -815,7 +823,7 @@ A BibTeX entry for LaTeX users is
 </div>
 <p>Now let’s plot that palaeolatitudinal distribution!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot data</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> reefs<span class="sc">$</span>bin_midpoint,</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> reefs<span class="sc">$</span>p_lat,</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Time (Ma)"</span>,</span>
@@ -823,7 +831,7 @@ A BibTeX entry for LaTeX users is
 <span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">541</span>, <span class="dv">0</span>),</span>
 <span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">xaxt =</span> <span class="st">"n"</span>,</span>
 <span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"p"</span>, <span class="at">pch =</span> <span class="dv">20</span>)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">intervals =</span> <span class="st">"periods"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">intervals =</span> <span class="st">"periods"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -834,7 +842,7 @@ A BibTeX entry for LaTeX users is
 </div>
 <p>Neat! But it’s hard to draw any trends from this data (there is a lot of it!). We can do better… let’s summarise this information… if we assume that reefs are broadly limited to tropical and subtropical climatic conditions, the most poleward reef in each time bin should give us an estimate of the palaeolatitudinal extent of these climatic conditions.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's first assume hemispheric symmetry and convert</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's first assume hemispheric symmetry and convert</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># palaeolatitudes to absolute palaeolatitudes</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>reefs<span class="sc">$</span>p_lat <span class="ot">&lt;-</span> <span class="fu">abs</span>(reefs<span class="sc">$</span>p_lat)</span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we can calculate the most poleward latitude per time bin</span></span>
@@ -854,7 +862,7 @@ A BibTeX entry for LaTeX users is
 <span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"b"</span>,</span>
 <span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">20</span>)</span>
 <span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Add axis of the geological time scale</span></span>
-<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">intervals =</span> <span class="st">"periods"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">intervals =</span> <span class="st">"periods"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -865,20 +873,20 @@ A BibTeX entry for LaTeX users is
 </div>
 <p>That’s definitely much clearer! Should we stop there? Well… how about one last thing… let’s consider how Global Plate Model choice might impact these results using three different models: GOLONKA, PALEOMAP, and MERDITH2021 (Wright et al.&nbsp;2013; Scotese &amp; Wright, 2018; Merdith et al.&nbsp;2021).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can call multiple models at once with palaeorotate</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We can call multiple models at once with palaeorotate</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># First, let's define the models...</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>models <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"GOLONKA"</span>, <span class="st">"PALEOMAP"</span>, <span class="st">"MERDITH2021"</span>)</span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># And now palaeorotate!</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>reefs <span class="ot">&lt;-</span> <span class="fu">palaeorotate</span>(<span class="at">occdf =</span> reefs, <span class="at">age =</span> <span class="st">"bin_midpoint"</span>,</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">"point"</span>, <span class="at">model =</span> models)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">"point"</span>, <span class="at">model =</span> models)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check palaeocoordinates</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check palaeocoordinates</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># When multiple models are called, the name of the model</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># is added as a suffix to p_lng and p_lat</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(reefs[, <span class="fu">c</span>(<span class="st">"p_lng_PALEOMAP"</span>, <span class="st">"p_lat_PALEOMAP"</span>,</span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>               <span class="st">"p_lng_GOLONKA"</span>, <span class="st">"p_lat_GOLONKA"</span>,</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"p_lng_MERDITH2021"</span>, <span class="st">"p_lat_MERDITH2021"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">"p_lng_MERDITH2021"</span>, <span class="st">"p_lat_MERDITH2021"</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  p_lng_PALEOMAP p_lat_PALEOMAP p_lng_GOLONKA p_lat_GOLONKA p_lng_MERDITH2021
 1        21.3630        10.0755       35.6565        8.3384           34.4223
@@ -898,7 +906,7 @@ A BibTeX entry for LaTeX users is
 </div>
 <p>Now we’ve palaeorotated our data, let’s repeat what we did earlier and calculate the most poleward reef occurrence for each model.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's code a little helper function to begin with.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's code a little helper function to begin with.</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This is generally useful when repeating code several times!</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>p_lat_max <span class="ot">&lt;-</span> <span class="cf">function</span>(occdf, midpoint, p_lat) {</span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Get absolute palaeolatitudes</span></span>
@@ -944,7 +952,7 @@ A BibTeX entry for LaTeX users is
 <span id="cb29-44"><a href="#cb29-44" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">"#e41a1c"</span>, <span class="st">"#377eb8"</span>, <span class="st">"#4daf4a"</span>),</span>
 <span id="cb29-45"><a href="#cb29-45" aria-hidden="true" tabindex="-1"></a>       <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">17</span>), <span class="at">bty =</span> <span class="st">"n"</span>)</span>
 <span id="cb29-46"><a href="#cb29-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Add geological time scale axis</span></span>
-<span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">intervals =</span> <span class="st">"periods"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-47"><a href="#cb29-47" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">side =</span> <span class="dv">1</span>, <span class="at">intervals =</span> <span class="st">"periods"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1020,13 +1028,14 @@ A BibTeX entry for LaTeX users is
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

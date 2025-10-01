@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -67,14 +67,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../..//images/favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b1cf312bb333aa80d795d302fbc4d93c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-9d7b9f665a25c2960f626e3790e9c6e0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-00fb830ab0388804371a937468084cfa.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-9d7b9f665a25c2960f626e3790e9c6e0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-32b796ae1887b2dde2c43519b0d1c730.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f45b5836865279a7b1eac8ce5e70ff5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-3b82a6ccf9deddd572c722ef36c0bc86.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-f45b5836865279a7b1eac8ce5e70ff5d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../../site_libs/quarto-contrib/iconify-2.1.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -123,6 +128,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Palaeoverse Workshops</span>
     </a>
@@ -169,7 +176,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
       <a href="../../index.html" class="sidebar-logo-link">
-      <img src="../../images/favicon.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../../images/favicon.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../../images/favicon.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
     <div class="sidebar-menu-container"> 
@@ -701,12 +709,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><em>1. What datasets will we need to answer this question?</em></strong></p>
 <p><strong><em>2. What issues might we encounter when sourcing, gathering, and working with these various datasets? How might these be addressed?</em></strong></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -728,7 +736,7 @@ Solution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Heads Up!
+<span class="screen-reader-only">Note</span>Heads Up!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -776,7 +784,7 @@ Heads Up!
 </ul>
 <p>Now that we have a basic plan, we can start to put it into action. Before we begin, we’ll need to install and load some packages that will allow us to work with our data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install necessary packages</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install necessary packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("rgbif")</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("dplyr")</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ggplot2")</span></span>
@@ -786,12 +794,12 @@ Heads Up!
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("geodata")</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("rnaturalearth")</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("ncdf4")</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("rgplates")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("rgplates")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load packages</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgbif)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
@@ -806,9 +814,9 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palaeoverse)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: sp</code></pre>
 </div>
@@ -821,20 +829,20 @@ Attaching package: 'raster'</code></pre>
 
     select</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geodata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geodata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: terra</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>terra 1.8.60</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnaturalearth)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ncdf4)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgplates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rgplates)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Now that’s done, let’s get cracking!</p>
 <section id="deciding-on-climate-data-to-use" class="level3">
@@ -860,14 +868,14 @@ Attaching package: 'raster'</code></pre>
 <h3 class="anchored" data-anchor-id="sort-file-structure">3. Sort file structure</h3>
 <p>Here we’d ensure that our downloaded palaeoclimate data are in an appropriate folder for our project. We’ll also set some default values to ensure that our spatial datasets conform with one another.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set spatial resolution</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set spatial resolution</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="dv">1</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set spatial extent</span></span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">extent</span>(<span class="sc">-</span><span class="dv">180</span>, <span class="dv">180</span>, <span class="sc">-</span><span class="dv">90</span>, <span class="dv">90</span>)</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Make generic raster using these values</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>ref_raster <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">res =</span> res, <span class="at">ext =</span> e)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>ref_raster <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">res =</span> res, <span class="at">ext =</span> e)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="load-data" class="level3">
@@ -876,18 +884,18 @@ Attaching package: 'raster'</code></pre>
 <h4 class="anchored" data-anchor-id="a.-loading-palaeo-climatic-data">4A. Loading palaeo-climatic data</h4>
 <p>We now need to load in our data, which is currently stored as a .nc file. This can be read into R as a raster using the <code>raster</code> package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in rasters of palaeoclimate for each time interval</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in rasters of palaeoclimate for each time interval</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>raster2prep_15 <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"015_tas_scotese02a_v21321.nc"</span>)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>raster2prep_20 <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"020_tas_scotese02a_v21321.nc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>raster2prep_20 <span class="ot">&lt;-</span> <span class="fu">raster</span>(<span class="at">x =</span> <span class="st">"020_tas_scotese02a_v21321.nc"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="b.-loading-modern-climatic-data" class="level4">
 <h4 class="anchored" data-anchor-id="b.-loading-modern-climatic-data">4B. Loading modern climatic data</h4>
 <p>We can now use the <code>geodata</code> package to grab our modern climatic data. Whilst below we show you code to access this data directly within R, it can take a while to download. We’ve therefore also included it alongside the other materials for the workshop, which can be accessed <strong><a href="https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization">HERE</a></strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data from WorldClim and make into raster</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load data from WorldClim and make into raster</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>raster2prep_modern <span class="ot">&lt;-</span> <span class="fu">worldclim_global</span>(<span class="at">var =</span> <span class="st">"tavg"</span>, <span class="at">res =</span> <span class="dv">10</span>, <span class="at">path =</span> <span class="fu">tempdir</span>())</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>raster2prep_modern <span class="ot">&lt;-</span> <span class="fu">as</span>(raster2prep_modern, <span class="st">"Raster"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>raster2prep_modern <span class="ot">&lt;-</span> <span class="fu">as</span>(raster2prep_modern, <span class="st">"Raster"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
@@ -897,8 +905,8 @@ Attaching package: 'raster'</code></pre>
 <h4 class="anchored" data-anchor-id="a.-formatting-palaeo-climatic-data">5A. Formatting palaeo-climatic data</h4>
 <p>First, lets have a look at our palaeo climate data and compare it to our reference raster:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine our raster layers</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>raster2prep_15</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine our raster layers</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>raster2prep_15</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class      : RasterLayer 
 dimensions : 180, 361, 64980  (nrow, ncol, ncell)
@@ -909,7 +917,7 @@ source     : 015_tas_scotese02a_v21321.nc
 names      : X015_tas_scotese02a_v21321 
 zvar       : 015_tas_scotese02a_v21321 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>raster2prep_20</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>raster2prep_20</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class      : RasterLayer 
 dimensions : 180, 361, 64980  (nrow, ncol, ncell)
@@ -920,7 +928,7 @@ source     : 020_tas_scotese02a_v21321.nc
 names      : X020_tas_scotese02a_v21321 
 zvar       : 020_tas_scotese02a_v21321 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ref_raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ref_raster</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class      : RasterLayer 
 dimensions : 180, 360, 64800  (nrow, ncol, ncell)
@@ -931,18 +939,18 @@ crs        : +proj=longlat +datum=WGS84 +no_defs </code></pre>
 </div>
 <p>As you can see, the resolution and extent of these rasters doesn’t quite match the reference one that we made above. We’ll have to resample our data to match our reference raster:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample data to match our set extent and resolution</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resample data to match our set extent and resolution</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>raster_resampled_15 <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep_15, <span class="at">y =</span> ref_raster)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>raster_resampled_20 <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep_20, <span class="at">y =</span> ref_raster)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>raster_resampled_20 <span class="ot">&lt;-</span> <span class="fu">resample</span>(<span class="at">x =</span> raster2prep_20, <span class="at">y =</span> ref_raster)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, we can stack these rasters into one file, name them, and see what they look like:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stack rasters</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Stack rasters</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>scotese_temp <span class="ot">&lt;-</span> <span class="fu">stack</span>(raster_resampled_15, raster_resampled_20)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Name and plot rasters</span></span>
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(scotese_temp) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Burdigalian"</span>,<span class="st">"Aquitanian"</span>)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(scotese_temp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(scotese_temp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -956,8 +964,8 @@ crs        : +proj=longlat +datum=WGS84 +no_defs </code></pre>
 <h4 class="anchored" data-anchor-id="b.-formatting-modern-data">5B. Formatting modern data</h4>
 <p>Now let’s have a look at our modern data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine our modern raster:</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>raster2prep_modern</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Examine our modern raster:</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>raster2prep_modern</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class      : RasterStack 
 dimensions : 1080, 2160, 2332800, 12  (nrow, ncol, ncell, nlayers)
@@ -968,7 +976,7 @@ names      : wc2.1_10m_tavg_01, wc2.1_10m_tavg_02, wc2.1_10m_tavg_03, wc2.1_10m_
 min values :         -45.88400,         -44.80000,         -57.92575,         -64.19250,         -64.81150,         -64.35825,         -68.46075,         -66.52250,         -64.56325,         -55.90000,         -43.43475,         -45.32700 
 max values :          34.00950,          32.82425,          32.90950,          34.19375,          36.25325,          38.35550,          39.54950,          38.43275,          35.79000,          32.65125,          32.78800,          32.82525 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ref_raster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ref_raster</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>class      : RasterLayer 
 dimensions : 180, 360, 64800  (nrow, ncol, ncell)
@@ -979,11 +987,11 @@ crs        : +proj=longlat +datum=WGS84 +no_defs </code></pre>
 </div>
 <p>As you can see, although the extent matches our reference raster, these modern climatic data are considerably higher resolution than what we have available for our deep time data. But there’s something else going on: there’s 12 layers within this raster! This is because there’s a climatic layer for each month of the year. Therefore, we’ll have to calculate the mean temperature before we can use this for comparison:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean annual temperature</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate mean annual temperature</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>modern_mean <span class="ot">&lt;-</span> <span class="fu">calc</span>(<span class="at">x =</span> raster2prep_modern, <span class="at">fun =</span> mean)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot raster</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modern_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(modern_mean)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1002,12 +1010,12 @@ crs        : +proj=longlat +datum=WGS84 +no_defs </code></pre>
 <p><strong><em>1. First, take a couple minutes to jot down a workflow for the fossil and modern occurrence data. Think about where you might find these data, if you’ll need to do any filtering, and how you might format them to enable fair comparisons across time with the climatic data that we just read into R. If you’re an experienced R user, you can also start to plan your code.</em></strong></p>
 <p><strong><em>2. Then, get into the same groups you were in previously to discuss your approach. Where you might encounter potential pitfalls? What packages or approaches might make this process easier?</em></strong></p>
 <div class="callout callout-style-default callout-tip callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">Tip</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1032,8 +1040,8 @@ Solution
 <h4 class="anchored" data-anchor-id="a.-organise-fossil-occurrence-data">1A. Organise fossil occurrence data</h4>
 <p>First, we’ll load in our palaeontological data. Luckily for us, we’ve already been working with a Crocodylia fossil occurrence dataset. We’ll use these data in our analysis. If you’ve not quite finished cleaning your dataset, you can find a cleaned version that’s ready for this next step <strong><a href="https://github.com/palaeoverse/2025-CPEG-workshop/tree/main/05_harmonization">HERE</a></strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load cleaned fossil data for order Crocodylia that we worked on earlier</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fossil_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"cenozoic_crocs_clean.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load cleaned fossil data for order Crocodylia that we worked on earlier</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>fossil_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"cenozoic_crocs_clean.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="b.-organise-modern-occurrence-data" class="level4">
@@ -1042,7 +1050,7 @@ Solution
 <p>We’ll start by doing a quick data download using the <code>rgbif</code> package for the purposes of this exploratory exercise. Note that this method for retrieving occurrences has some limitations, and we’d want to do a formal download query before running our full analysis for publication. For that, you’d need to make a GBIF account.</p>
 <p>Here’s how we can do this. Scroll down to load the dataset we’ve previously downloaded.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set taxa key to order Crocodylia</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set taxa key to order Crocodylia</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#crocodile_key &lt;- name_backbone(name = "Crocodylia")$usageKey</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Download data</span></span>
@@ -1056,12 +1064,12 @@ Solution
 <span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_occ &lt;- modern_download$data</span></span>
 <span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract metadata</span></span>
-<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_meta &lt;- modern_download$meta</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="co">#modern_meta &lt;- modern_download$meta</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>For ease, here’s a csv of the raw data download:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load modern data</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>modern_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crocs_modern.csv"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load modern data</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>modern_occ <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"crocs_modern.csv"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1069,7 +1077,7 @@ Solution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Don’t forget!
+<span class="screen-reader-only">Important</span>Don’t forget!
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1088,7 +1096,7 @@ Don’t forget!
 <li><p><strong>Temporal:</strong> We’ll constrain our palaeontological dataset to the same time intervals as our climatic dataset (25-15 Ma). Earlier, we downloaded Crocodylia occurrences for the whole of the Cenozoic, so we’ll need to do some filtering. Our modern dataset includes occurrences from the 1800s to today, whereas the WorldClim dataset starts at 1970, so we can also filter the occurrence dataset to that time range for consistency.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="do">## PBDB filtering</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="do">## PBDB filtering</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_filter <span class="ot">&lt;-</span> fossil_occ <span class="sc">%&gt;%</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(accepted_rank <span class="sc">==</span> <span class="st">"genus"</span> <span class="sc">|</span> accepted_rank <span class="sc">==</span><span class="st">"species"</span>) <span class="sc">%&gt;%</span> <span class="co">#taxonomic filtering</span></span>
 <span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(max_ma<span class="sc">&lt;=</span><span class="dv">25</span> <span class="sc">&amp;</span> min_ma<span class="sc">&gt;=</span><span class="dv">15</span>) <span class="co">#temporal filtering</span></span>
@@ -1097,15 +1105,15 @@ Don’t forget!
 <span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>modern_occ_filter <span class="ot">&lt;-</span> modern_occ <span class="sc">%&gt;%</span></span>
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(genus)) <span class="sc">%&gt;%</span> <span class="co">#taxonomic filtering</span></span>
 <span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1970</span>) <span class="sc">%&gt;%</span> <span class="co">#temporal filtering</span></span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(coordinateUncertaintyInMeters <span class="sc">&lt;</span> <span class="dv">10000</span> <span class="sc">|</span> <span class="fu">is.na</span>(coordinateUncertaintyInMeters)) <span class="co">#we could also remove data with uncertain geographic coordinates</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(coordinateUncertaintyInMeters <span class="sc">&lt;</span> <span class="dv">10000</span> <span class="sc">|</span> <span class="fu">is.na</span>(coordinateUncertaintyInMeters)) <span class="co">#we could also remove data with uncertain geographic coordinates</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>This filtering step could have removed a fair amount of data. How many occurrences remain in each filtered dataset?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossil_occ_filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(fossil_occ_filter)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 102</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(modern_occ_filter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(modern_occ_filter)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2504</code></pre>
 </div>
@@ -1122,7 +1130,7 @@ Don’t forget!
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Practise Time! <em>(optional)</em>
+<span class="screen-reader-only">Note</span>Practise Time! <em>(optional)</em>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1143,7 +1151,7 @@ Practise Time! <em>(optional)</em>
 <p><strong><em>3. How might we address these potential confounds prior to analysis and/or what should we keep in mind as we’re interpreting our results?</em></strong></p>
 <p>As you discuss, you may find it helpful to return to your notes from Breakout Session 1.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1163,15 +1171,15 @@ Tip
 <h4 class="anchored" data-anchor-id="a.-taxonomy">4A. Taxonomy</h4>
 <p>We’ll be using higher-level taxonomic groups for our analysis. Let’s take a look to see what’s here.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fossil occurrences</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_filter<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fossil occurrences</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_filter<span class="sc">$</span>family)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
       Alligatoridae        Crocodylidae          Gavialidae NO_FAMILY_SPECIFIED 
                  18                  26                  18                  40 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern occurrences</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(modern_occ_filter<span class="sc">$</span>family)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern occurrences</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(modern_occ_filter<span class="sc">$</span>family)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Alligatoridae  Crocodylidae    Gavialidae 
@@ -1185,11 +1193,11 @@ Alligatoridae  Crocodylidae    Gavialidae
 <p>Earlier, we noticed that our climatic data were available at 5-million-year intervals, which don’t align perfectly with geological stages. For example, our 25-20 Ma interval crosses the Chattian and Aquitanian stages and the 20-15 Ma interval crosses the Burdigalian and Langhian stages. On the other hand, each fossil occurrence has an associated age and interval range. We want to create time bins that roughly correspond with our climate layer so we can look at occurrences in relation to the temperature reconstructions. <em>How might we approach this?</em></p>
 <p>First, let’s take a look at the temporal distribution of our fossil occurrences.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="at">x =</span> <span class="fu">tax_range_time</span>(<span class="at">occdf =</span> fossil_occ_filter, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="at">x =</span> <span class="fu">tax_range_time</span>(<span class="at">occdf =</span> fossil_occ_filter, </span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">name =</span> <span class="st">"occurrence_no"</span>,</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">min_ma =</span> <span class="st">"min_ma"</span>, </span>
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">max_ma =</span> <span class="st">"max_ma"</span>, </span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">plot =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">plot =</span> <span class="cn">TRUE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     taxon taxon_id max_ma min_ma range_myr n_occ
 10  643927        1   16.9  15.98      0.92     1
@@ -1199,7 +1207,7 @@ Alligatoridae  Crocodylidae    Gavialidae
 31  742608        5   16.9  15.98      0.92     1
 65 1193267        6   16.9  15.98      0.92     1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">intervals =</span> <span class="st">"stages"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">axis_geo</span>(<span class="at">intervals =</span> <span class="st">"stages"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1210,12 +1218,12 @@ Alligatoridae  Crocodylidae    Gavialidae
 </div>
 <p>One option would be to bin the data by stage and use those as proxies for our 5-million-year climatic intervals. Another approach might be to make near-equal-length bins within the 25-15 Ma range, and then assign occurrences to those bins. Let’s try that latter approach here.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate time bins of ~5 million years within 25 and 15 Ma</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate time bins of ~5 million years within 25 and 15 Ma</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">time_bins</span>(<span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">15</span>,<span class="dv">25</span>), </span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">rank =</span> <span class="st">"stage"</span>,</span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>                  <span class="at">size =</span> <span class="dv">5</span>, <span class="co">#here's where we specify the equal-length bins to approximate the resolution of our climatic data</span></span>
 <span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>                  <span class="at">scale =</span> <span class="st">"GTS2020"</span>,</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>                  <span class="at">plot =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Target equal length time bins was set to 4.67 Myr. 
 Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2.02 Myr.</code></pre>
@@ -1227,8 +1235,8 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check bins</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check bins</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bins)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  bin max_ma mid_ma min_ma duration_myr grouping_rank             intervals
 1   1  27.82 25.425  23.03         4.79         stage              Chattian
@@ -1242,7 +1250,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </div>
 <p>There are also a couple methods that we could use to bin the occurrences. Let’s test out two methods here to see how they differ. Hopefully you’re starting to get a sense of how these various decisions might propagate to affect our results.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `mid` method = uses the midpoint of age range to bin the occurrence</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `mid` method = uses the midpoint of age range to bin the occurrence</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_mid <span class="ot">&lt;-</span> <span class="fu">bin_time</span>(<span class="at">occdf =</span> fossil_occ_filter,</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">bins =</span> bins,</span>
 <span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">method =</span> <span class="st">'mid'</span>)</span>
@@ -1257,15 +1265,15 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(fossil_occ_maj[<span class="fu">c</span>(<span class="st">'occurrence_no'</span>,<span class="st">'bin_assignment'</span>,<span class="st">'n_bins'</span>)],<span class="at">by=</span><span class="st">'occurrence_no'</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">agreement =</span> <span class="fu">case_when</span>(</span>
 <span id="cb51-15"><a href="#cb51-15" aria-hidden="true" tabindex="-1"></a>    bin_assignment.x <span class="sc">==</span> bin_assignment.y <span class="sc">~</span> <span class="st">"yes"</span></span>
-<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb51-16"><a href="#cb51-16" aria-hidden="true" tabindex="-1"></a>  ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In this case, they actually match up! Since these approaches yielded the same results, we’ll use the ‘maj’ dataset moving forward.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Renaming</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin <span class="ot">&lt;-</span> fossil_occ_maj</span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="co"># How many occurrences per bin?</span></span>
-<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_bin<span class="sc">$</span>bin_assignment)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(fossil_occ_bin<span class="sc">$</span>bin_assignment)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
  2  3 
@@ -1285,7 +1293,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <p>We also observed that the spatial resolution of the climatic data differed between the past and present. Additionally, the uncertainties in the coordinates for our modern and fossil occurrences differ, especially since we’ll need to rely on plate models to palaeorotate the geographic positions of our fossil occurrences. <em>How might we deal with this?</em></p>
 <p>Like before, let’s take a look at the spatial distribution of our fossil occurrences.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the geographic coordinates of each locality over the world map</span></span>
@@ -1294,7 +1302,7 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> lng, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
 <span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude (º)"</span>,</span>
 <span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>)<span class="sc">+</span> </span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1305,12 +1313,12 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 </div>
 <p>But wait, remember that we need to palaeorotate our coordinates before we proceed! We could run a couple different plate models to check the sensitivity, but for now we’ll just use the PALEOMAP rotation, which will also match up to our palaeo-climatic data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotation</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Palaeorotation</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin_rot <span class="ot">&lt;-</span> <span class="fu">palaeorotate</span>(fossil_occ_bin,</span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">lng =</span> <span class="st">"lng"</span>,</span>
 <span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">lat =</span> <span class="st">"lat"</span>,</span>
 <span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">age =</span> <span class="st">"bin_midpoint"</span>, </span>
-<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">model  =</span> <span class="st">"PALEOMAP"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">model  =</span> <span class="st">"PALEOMAP"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>PALEOMAP</code></pre>
 </div>
@@ -1321,20 +1329,20 @@ Generated time bins have a mean length of 4.67 Myr and a standard deviation of 2
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Heads Up!
+<span class="screen-reader-only">Note</span>Heads Up!
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Whilst the <code>palaeorotate</code> function is incredibly useful, the GPlates API can sometimes get overloaded with requests. If that happens, we can always use the palaeorotations included within the PBDB download. We’ll just have to rename the columns!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename palaeorotation columns</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(fossil_occ_bin_rot, <span class="at">p_lat =</span> paleolat, <span class="at">p_lng =</span> paleolng)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename palaeorotation columns</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rename</span>(fossil_occ_bin_rot, <span class="at">p_lat =</span> paleolat, <span class="at">p_lng =</span> paleolng)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 <p>After some cleaning, we can then plot our rotated occurrences on a palaeogeographic map (here we’re going to use our bin 3):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove NAs</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Remove NAs</span></span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>fossil_occ_bin_rot <span class="ot">&lt;-</span> fossil_occ_bin_rot <span class="sc">%&gt;%</span></span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(p_lng) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(p_lat))</span>
 <span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1349,7 +1357,7 @@ Heads Up!
 <span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> p_lng, <span class="at">y =</span> p_lat)) <span class="sc">+</span></span>
 <span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"palaeolongitude (º)"</span>,</span>
 <span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"palaeolatitude (º)"</span>)<span class="sc">+</span> </span>
-<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1360,7 +1368,7 @@ Heads Up!
 </div>
 <p>For comparison, let’s also plot the modern occurrences.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load in a world map</span></span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"small"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the geographic coordinates of each locality over the world map</span></span>
@@ -1369,7 +1377,7 @@ Heads Up!
 <span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> decimalLongitude, <span class="at">y =</span> decimalLatitude)) <span class="sc">+</span></span>
 <span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude (º)"</span>,</span>
 <span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Latitude (º)"</span>)<span class="sc">+</span> </span>
-<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1388,7 +1396,7 @@ Heads Up!
 <p>We’re nearly there folks. It’s time to put all these data sources together to answer our research question!🥁</p>
 <p>We have our data binned to match the climate layers, so let’s create separate datasets for each time bin.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 25-20 Ma climate interval</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 25-20 Ma climate interval</span></span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>points_20 <span class="ot">&lt;-</span> fossil_occ_bin_rot <span class="sc">%&gt;%</span></span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(bin_assignment <span class="sc">==</span> <span class="dv">2</span>)</span>
 <span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1397,11 +1405,11 @@ Heads Up!
 <span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(bin_assignment <span class="sc">==</span> <span class="dv">3</span>) </span>
 <span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern interval (whole dataset)</span></span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>points_mod <span class="ot">&lt;-</span> modern_occ_filter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>points_mod <span class="ot">&lt;-</span> modern_occ_filter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Next, let’s set up our points and ensure they’re on the same coordinate system. Recall that this was one of the things we wanted to check when we outlined our workflow for the climatic data at the beginning of the session.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn points into spatial features</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn points into spatial features</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>points_sf_20 <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_20, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"p_lng"</span>, <span class="st">"p_lat"</span>))</span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>points_sf_15 <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_15, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"p_lng"</span>, <span class="st">"p_lat"</span>))</span>
 <span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>points_sf_mod <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(<span class="at">x =</span> points_mod, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"decimalLongitude"</span>, <span class="st">"decimalLatitude"</span>))</span>
@@ -1409,11 +1417,11 @@ Heads Up!
 <span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Set coordinate system (WGS84) for occurrences</span></span>
 <span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_20) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span>
 <span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_15) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span>
-<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_mod) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb61-9"><a href="#cb61-9" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(points_sf_mod) <span class="ot">&lt;-</span> <span class="fu">st_crs</span>(<span class="dv">4326</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We’re now ready to extract the climatic data at each coordinate!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Past temperature (Scotese 2022)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Past temperature (Scotese 2022)</span></span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>scotese_temp_20 <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(<span class="at">x =</span> scotese_temp<span class="sc">$</span>Aquitanian, </span>
 <span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y =</span> points_sf_20, </span>
 <span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>                           <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
@@ -1428,41 +1436,41 @@ Heads Up!
 <span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>modern_temp <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">extract</span>(<span class="at">x =</span> modern_mean, </span>
 <span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">y =</span> points_sf_mod, </span>
 <span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">sp =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a>                                     <span class="at">cellnumbers =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Let’s take a look. How does the temperature range inhabited by Crocodylia in deep time compare to that seen in the present?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aquitanian range (25-20 Ma)</span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aquitanian range (25-20 Ma)</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 18.43755 26.87847</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_20<span class="sc">$</span>Aquitanian, <span class="at">na.rm=</span>T))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8.440919</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Burdigalian/Langhian range (20-15 Ma)</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Burdigalian/Langhian range (20-15 Ma)</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 14.28417 33.11024</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(scotese_temp_15<span class="sc">$</span>Burdigalian, <span class="at">na.rm=</span>T))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 18.82607</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern range</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer, <span class="at">na.rm=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modern range</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer, <span class="at">na.rm=</span>T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  8.368937 30.550188</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer, <span class="at">na.rm=</span>T))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(modern_temp<span class="sc">@</span>data<span class="sc">$</span>layer, <span class="at">na.rm=</span>T))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 22.18125</code></pre>
 </div>
 </div>
 <p>Finally, let’s plot the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Organise data for plotting</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Organise data for plotting</span></span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>palaeo_temp <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">data.frame</span>(<span class="at">Bin =</span> <span class="fu">rep</span>(<span class="st">"Burdigalian"</span>, <span class="fu">length</span>(scotese_temp_15<span class="sc">$</span>Burdigalian)), <span class="co">#</span></span>
 <span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">Temperature =</span> scotese_temp_15<span class="sc">$</span>Burdigalian), </span>
 <span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>                      <span class="fu">data.frame</span>(<span class="at">Bin =</span> <span class="fu">rep</span>(<span class="st">"Aquitanian"</span>, <span class="fu">length</span>(scotese_temp_20<span class="sc">$</span>Aquitanian)), </span>
@@ -1475,7 +1483,7 @@ Heads Up!
 <span id="cb75-11"><a href="#cb75-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">color=</span><span class="st">"gray80"</span>,<span class="at">size=</span><span class="dv">2</span>,<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
 <span id="cb75-12"><a href="#cb75-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width=</span><span class="fl">0.5</span>,<span class="at">alpha=</span><span class="fl">0.7</span>,<span class="at">outlier.shape =</span> <span class="cn">NA</span>)<span class="sc">+</span></span>
 <span id="cb75-13"><a href="#cb75-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Time interval"</span>, <span class="at">y=</span><span class="st">"Temperature (ºC)"</span>)<span class="sc">+</span></span>
-<span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
 (`stat_boxplot()`).</code></pre>
@@ -1563,13 +1571,14 @@ Heads Up!
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
