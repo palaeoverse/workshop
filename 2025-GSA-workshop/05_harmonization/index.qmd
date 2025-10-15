@@ -6,7 +6,20 @@ order: 5
 ---
 ## Learning Objectives
 
-update here
+In this session, we'll walk through how to effectively visualize data. We'll cover:
+
+- Why data visualization is important
+- Strategies for effectively visualizing data
+- How to create basic graph types in R
+
+You'll also walk away with some example code to modify and adapt to your own work.
+
+## Plan for the Session
+
+The session will be split into the following sections:
+
+I.   Theory of data visualization
+II.  Data visualization practical
 
 ## Schedule
 
@@ -15,28 +28,7 @@ update here
 ## I. Theory of data visualization
 <iframe class="slide-deck" width="100%" height="800px" src="data_viz_gsa.html"></iframe>
 
-## Learning Objectives
-
-In this session, we'll walk through how to combine different deep time and modern datasets to answer questions that cross the palaeo-ecological divide. We'll cover:
-
--  The power of harmonizing data from different sources
--  The considerations and complications that arise when combining datasets
--  How to source spatially explicit climatic data for the past and present, and how to look at relationships with fossil and modern occurrences
--  How to plan, write code for, and carry out projects covering multiple time frames
-
-## Plan for the Session
-
-The session will be split into the following sections:
-
-I.   Introduction to harmonization and synthesis
-II.  Planning, setup, and finding your data
-III. Building a workflow to merge datasets
-IV.  Data visualisation and synthesis
-
-### Schedule
-
-14:00–15:30
-
+## OLD
 ## I. Introduction to Harmonization and Synthesis
 
 So far, we've used R to carry out a variety of operations for acquiring and preparing palaeontological data. We can also use R to run analyses with the aim of answering specific research questions. We touched on this briefly during the last session when we looked at the latitudinal ranges of Crocodylia occurrences, but we can push our analyses further than that.
