@@ -3149,6 +3149,18 @@
     ]
   },
   {
+    "objectID": "2025-GSA-workshop/02_workflow/rproj_github.html#prepare-for-the-remaining-modules",
+    "href": "2025-GSA-workshop/02_workflow/rproj_github.html#prepare-for-the-remaining-modules",
+    "title": "Reproducible and Collaborative Workflows",
+    "section": "Prepare for the Remaining Modules",
+    "text": "Prepare for the Remaining Modules\nFor the remaining modules, you’ll need to fork and clone our workshop resources repository. Once cloned, double click the workshop.Rproj file to open the RProject in RStudio.\n\n\nhttps://github.com/palaeoverse/2025-GSA-workshop",
+    "crumbs": [
+      "GSA 2025 Workshop",
+      "Setting up a reproducible workflow",
+      "Reproducible and Collaborative Workflows"
+    ]
+  },
+  {
     "objectID": "NAPC2024/index.html",
     "href": "NAPC2024/index.html",
     "title": "NAPC 2024 Workshop",
