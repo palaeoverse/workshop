@@ -8,7 +8,9 @@ order: 96
 **Saturday, October 18, 2025**<br>
 8:00 AM - 5:30 PM
 
-Henry B. González Convention Center
+**Room 211**<br>
+Henry B. González Convention Center<br>
+San Antonio, TX, USA
 
 # Welcome
 
@@ -16,22 +18,22 @@ Since the development of large paleontological datasets from the 1970s onwards, 
 
 ## Arrival
 
-The event starts at XXX on the XXX and will take place at XXX.
+The workshop takes place 8:00 AM - 5:30 PM on Saturday, October 18, 2025. Check-in starts at 7:30 AM.
 
 ## Schedule
 
 | Time      | Event                                                     |
 |-----------|-----------------------------------------------------------|
-| **08:00 AM** | **Welcome and introduction**                              |
-| **08:30 AM** | **Setting up a reproducible workflow (GitHub, GitHub Desktop, RStudio)**      |
-| **10:00 AM** | ***Coffee break***☕                                     |
-| **10:15 AM** | **Data acquisition**                                      |
-| **10:45 AM** | **Data Processing I: Data exploration and cleaning**      |
+| **08:00 AM** | [**Welcome and introduction**](01_introduction/index.qmd)   |
+| **08:30 AM** | [**Setting up a reproducible workflow (GitHub, GitHub Desktop, RStudio)**](02_workflow/index.qmd)      |
+| **10:00 AM** | ***Coffee break*** ☕                                     |
+| **10:15 AM** | [**Data acquisition**](03_acquisition/index.qmd)          |
+| **10:45 AM** | [**Data Processing I: Data exploration and cleaning**](04_exploration/index.qmd)      |
 | **12:00 PM** | ***Lunch break*** 🥪                                     |
-| **1:30 PM**  | **Data Processing II: Data visualization and synthesis**  |
-| **3:15 PM**  | ***Coffee break***☕                                     |
-| **3:30 PM**  | **Open science presentation/breakout (reporting, archiving, and publishing)**  |
-| **4:45 PM**  | **Closing remarks**                                 |
+| **1:30 PM**  | [**Data Processing II: Data visualization and synthesis**](05_harmonization/index.qmd)  |
+| **3:15 PM**  | ***Coffee break*** ☕                                     |
+| **3:30 PM**  | [**Open science presentation/breakout (FAIR/CARE, archiving)**](06_archiving/index.qmd)  |
+| **4:45 PM**  | [**Closing remarks**](07_wrap-up/index.qmd)                                 |
 
 ## Instructors
 
@@ -41,7 +43,7 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![**Will Gearty** <br> Syracuse University, USA](images/will.jpg){width="100%"}
+![**Will Gearty** <br> Syracuse University](images/will.jpg){width="100%"}
 
 :::
 
@@ -77,7 +79,7 @@ Please ensure that you have the latest version of R for the workshop, which can 
 
 ```{R install}
 #| eval: false
-install.packages()
+install.packages("rmarkdown", "dplyr", "readr", "deeptime", "fossilbrush", "ggplot2", "palaeoverse", "rgplates", "rnaturalearth", "rnaturalearthdata", "geodata", "ncdf4", "raster", "rgbif", "sf")
 ```
 
 ## Acknowledgements
