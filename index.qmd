@@ -6,6 +6,13 @@ Welcome! This website serves as an index for all workshops organised by [Palaeov
 
 ## 2025
 
+### Open Science, Collaboration, and Reproducibility in Paleontology  
+**Organisers:** William Gearty, Erin M. Dillon, Mark Nikolic  
+**Location:** 2025 Paleontological Society Short Course, GSA Connects 2025   
+**Date:** 18^th^ October 2025
+
+[Website](/2025-GSA-workshop/index.qmd) | [Archived materials](https://github.com/palaeoverse/2025-GSA-workshop)
+
 ### Building open data science skills in paleobiology and ecology  
 **Organisers:** Erin M. Dillon, Lewis A. Jones, Bethany J. Allen, William Gearty, Christopher D. Dean, Harriet B. Drage, Pedro Godoy  
 **Location:** 4^th^ Crossing the Palaeontological-Ecological Gap & 3rd Conservation Paleobiology   
