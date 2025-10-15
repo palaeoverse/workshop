@@ -34,7 +34,7 @@ The workshop takes place 8:00 AM - 5:30 PM on Saturday, October 18, 2025. Check-
 | **12:00 PM** | ***Lunch break*** 🥪                                     |
 | **1:30 PM**  | [**Data Processing II: Data visualization and synthesis**](05_harmonization/index.qmd)  |
 | **3:15 PM**  | ***Coffee break*** ☕                                     |
-| **3:30 PM**  | [**Open science presentation/breakout (FAIR/CARE, archiving)**](06_archiving/index.qmd)  |
+| **3:30 PM**  | [**Open science practices presentation/breakout**](06_archiving/index.qmd)  |
 | **4:45 PM**  | [**Closing remarks**](07_wrap-up/index.qmd)                                 |
 
 ## Instructors

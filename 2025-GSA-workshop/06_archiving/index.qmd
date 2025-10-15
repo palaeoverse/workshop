@@ -1,5 +1,5 @@
 ---
-title: "Archiving & Publishing"
+title: "Open Science Practices"
 toc: true
 order: 6
 ---
