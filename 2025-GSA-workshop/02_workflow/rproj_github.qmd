@@ -9,6 +9,7 @@ format:
   revealjs:
     logo: "../images/logo.png"
     footer: |
+      2025 Paleontological Society Short Course\
       GSA Connects 2025
     theme: simple
     embed-resources: true

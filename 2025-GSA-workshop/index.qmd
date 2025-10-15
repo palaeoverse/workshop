@@ -1,6 +1,8 @@
 ---
 title: "GSA 2025 Workshop"
-subtitle: "Open Science, Collaboration, and Reproducibility in Paleontology"
+subtitle: |
+  2025 Paleontological Society Short Course\
+  <i>Open Science, Collaboration, and Reproducibility in Paleontology</i>
 toc: true
 order: 96
 ---
@@ -61,7 +63,7 @@ This edition of the Workshop event is organised and led by the following members
 
 ::: {.g-col-4}
 
-![**Brok Kokesh** <br> University of California, Berkeley](images/broc.jpg){width="100%"}
+![**Broc Kokesh** <br> University of California, Berkeley](images/broc.jpg){width="100%"}
 
 :::
 
