@@ -397,3 +397,13 @@ Well, maybe not...but if you want to be, here are some GitHub resources that you
 - [GitHub Actions](https://docs.github.com/en/actions): Automate workflows
 - [GitHub Pages](https://pages.github.com/): Host websites directly from your GitHub repositories
 - [GitHub Classroom](https://classroom.github.com/): Tool for managing assignments and grading in educational settings
+
+## Prepare for the Remaining Modules {.smaller}
+
+For the remaining modules, you'll need to fork and clone our workshop resources repository. Once cloned, double click the `workshop.Rproj` file to open the RProject in RStudio.
+
+![](images/gsa_repo.png){fig-align="center" width="40%"}
+
+<center>
+[https://github.com/palaeoverse/2025-GSA-workshop](https://github.com/palaeoverse/2025-GSA-workshop)
+</center>
