@@ -9,8 +9,7 @@ format:
   revealjs:
     logo: "../images/logo.png"
     footer: |
-      4th Crossing the Paleontological-Ecological Gap (CPEG) Meeting &\
-      3rd Conservation Paleobiology Symposium
+      GSA Connects 2025
     theme: simple
     embed-resources: true
     output-file: "rproj_github.html"
@@ -21,9 +20,9 @@ format:
 ## Goals
 
 - Understand the importance of reproducible workflows and version control
-- Learn how to set up a project in RStudio
 - Explore version control with GitHub and GitHub Desktop
-- Fork, edit, and publish a GitHub repository
+- Learn how to set up a project in RStudio
+- Learn how to collaborate on a project via Git and GitHub
 
 ::: notes
 :::
@@ -32,8 +31,9 @@ format:
 
 ::: {.incremental}
 
-- Its good science
-- Improves uptake of methods
+- It's good science
+- Don't reinvent the wheel
+- Improves uptake of methods (more citations!)
 - Ease of collaborations
 - Funders love Open Science
 
@@ -44,129 +44,29 @@ format:
 
 ## What makes a workflow reproducible?
 
-- Works on any machine
-- Yields identical results every time
-- Can be understood by externals (and future self)
+::: {.incremental}
 
+- Can be understood by other researchers (and your future self)
+- Yields identical results every time (unless there is randomness)
+- Works on any machine, even in the future (this part can still be a little tricky)
+
+:::
 
 ::: notes
 :::
 
-## Workspace Hygiene
+## How to make your workflow reproducible
 
-. . .
+- Code your workflow in a programming language (today we'll use R)
+- Use version control to keep track of changes (today we'll use Git/GitHub)
+- Standardize file directory structure (we'll use RProjects to help with this)
+- Archive your materials (e.g., Zenodo, Dryad) (more this afternoon)
 
-**Start from a clean slate!**
-
-. . .
-
-
-Your workspace is your laboratory - keep it free of contamination!
-
-. . .
-
-***Tools > Global Options > General***
-
-In the "Basic" tab
-
-- Unceck "Restore .RData into workspace at startup"
-- Set "Save workspace to .RData on exit" to "Never"
-
-## Workspace Hygiene {.nostretch}
-
-![](images/workspace_hygiene.png){fig-align="center" width="60%"}
-
-## Absolute and Relative Paths
-
-. . .
-
-Your code should run on any machine!
-
-. . .
-
-```{r}
-#| eval: false
-#| echo: true
-# BAD PRACTICE: path and data does not exist on other machines
-read.csv("C:/path/to/important/raw/data.csv")
-```
-
-. . .
-
-```{r}
-#| eval: false
-#| echo: true
-# BAD PRACTICE: works only on one specific machine
-setwd("C:/path/to/folder/that/only/exists/on/my/machine")
-```
-
-. . .
-
-```{r}
-#| eval: false
-#| echo: true
-# BAD PRACTICE: requires manual work
-# to run this script, go to
-# Session -> Set Working Directory -> To Source File Location
-# to set your working directory correctly
-```
-
-
-## Introducing: RProjects
-
-::: {.incremental}
-
-- Project files that set working directory automatically after opening the project
-- Whole project folder can be passed between machines and people
-- Specific to RStudio
-
-:::
-
-
-## Working with RProjects
-
-
+## Version history vs version control {.smaller}
 
 :::: {.columns}
 
-::: {.column width="50%"}
-
-File > Open Project > Select RProject file
-
-Work in Rstudio as usual
-
-All paths are set relative to the .RProject file
-
-:::
-
-::: {.column width="50%"}
-
-![](images/new_project.png){fig-align="center" width="100%"}
-
-:::
-
-::::
-
-::: notes
-:::
-
-## Advanced RProjects
-
-RProjects are critical infrastructure for R code
-
-::: {.incremental}
-- [Multiple projects in parallel](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
-- [Reproducible environments & package versioning using `renv`](https://rstudio.github.io/renv/articles/renv.html)
-- [Packaging of R code](https://r-pkgs.org/)
-
-
-:::
-
-## {.smaller #version-history-vs-version-control data-menu-title="Version history vs version control"}
-
-:::: {.columns}
-
-::: {.column width="45%"}
+::: {.column width="45%" .fragment fragment-index=1}
 ### Version history
 
 ```{mermaid}
@@ -178,7 +78,7 @@ gitGraph
     commit id: "Update analysis script"
 ```
 
-:::: {.absolute top=300 width="45%"}
+:::: {.absolute top=350 width="45%"}
 - Tracked changes
 - Allows for rollbacks
 - Easy collaboration, but with potential conflicts
@@ -189,11 +89,10 @@ gitGraph
 
 :::
 
-::: {.column width="10%" .fragment fragment-index=1}
-### vs
+::: {.column width="10%"}
 :::
 
-::: {.column width="45%" .fragment fragment-index=1}
+::: {.column width="45%" .fragment fragment-index=2}
 ### Version control
 
 ```{mermaid}
@@ -210,7 +109,7 @@ gitGraph
     
 ```
 
-::::{.absolute top=300}
+::::{.absolute top=350}
 - Tracked changes
 - Allows for rollbacks
 - Easier collaboration without direct conflicts
@@ -234,9 +133,26 @@ gitGraph
 Version history is not the same as version control. Version history is a record of changes made to a file, while version control is a system that manages changes to files and allows for collaboration among multiple users. Version control systems like Git provide features such as branching, merging, and conflict resolution, which are essential for collaborative work.
 :::
 
+## Version control with git
+
+![](images/git_xkcd.png){fig-align="center" width="100%"}
+
 ## Version control with git and GitHub
 
-![](images/github.png){fig-align="center" width="100%"}
+:::: {.columns}
+
+::: {.column width="50%"}
+![](images/github_narrow.png){fig-align="center"}
+GitHub (platform)
+:::
+
+::: {.column width="50%"}
+![](images/github_desktop.png){fig-align="center"}
+GitHub Desktop (software)
+:::
+
+::::
+
 
 ## Repositories
 
@@ -252,10 +168,10 @@ Repositories, aka "repos", represent independent file environments on GitHub.
 
 ## Repositories (cont.)
 
-![](images/cpeg_repo.png){fig-align="center" width="60%"}
+![](images/demo_repo.png){fig-align="center" width="60%"}
 
 <center>
-[https://github.com/palaeoverse/2025-CPEG-workshop](https://github.com/palaeoverse/2025-CPEG-workshop)
+[https://github.com/palaeoverse/git_rstudio_demo](https://github.com/palaeoverse/git_rstudio_demo)
 </center>
 
 ::: notes
@@ -270,7 +186,7 @@ Point out:
 
 You can easily make your own copy of a repository by "forking" it
 
-![](images/cpeg_repo_fork.png){fig-align="center" width="80%"}
+![](images/demo_repo_fork.png){fig-align="center" width="80%"}
 
 ::: notes
 Walk through this process with everyone. Make sure everyone has forked the repository before moving on.
@@ -278,7 +194,7 @@ Walk through this process with everyone. Make sure everyone has forked the repos
 
 ## Cloning your new repository
 
-Now we're going to "clone" this repo to our local machine using GitHub Desktop. You can also do this in RStudio, but we will use GitHub Desktop for this example.
+Now we're going to "clone" this repo to our local machine using GitHub Desktop.
 
 :::: {.columns}
 
@@ -296,9 +212,48 @@ Now we're going to "clone" this repo to our local machine using GitHub Desktop. 
 Walk through this process with everyone. You will need to select the folder where you want to clone the repository. Make sure everyone has cloned the repository before moving on.
 :::
 
+## RStudio and RProjects {.smaller}
+
+- RStudio is an IDE (integrated development environment) for R
+  - Makes it easier to write and run R code
+  - Provides a user-friendly interface for managing files, packages, and projects
+  - Includes features like syntax highlighting, code completion, and debugging tools
+
+. . .
+
+- RProjects are a way to organize your work in RStudio
+  - Established by the addition of an `.Rproj` file
+  - Opening the project sets the working directory automatically after
+  - Whole project folder can be passed between machines and people
+
+## Working with RProjects
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+File > Open Project > Select RProject file
+
+Work in Rstudio as usual
+
+All paths are set relative to the `.RProj` file
+
+:::
+
+::: {.column width="50%"}
+
+![](images/new_project.png){fig-align="center" width="100%"}
+
+:::
+
+::::
+
+::: notes
+:::
+
 ## Making a new R project
 
-Now let's make a new R project based on this cloned repository...
+Now let's make a new R project based on this forked repository...
 
 :::: {.columns}
 
@@ -320,32 +275,124 @@ Now let's make a new R project based on this cloned repository...
 
 :::
 
-## Git in RStudio
+## Aside: Workspace Hygiene
 
-![](images/git_panel.png){fig-align="center"}
+. . .
+
+**Start from a clean slate!**
+
+. . .
+
+
+Your workspace is your laboratory - keep it free of contamination!
+
+. . .
+
+***Tools > Global Options > General***
+
+In the "Basic" tab
+
+- Unceck "Restore .RData into workspace at startup"
+- Set "Save workspace to .RData on exit" to "Never"
+
+## Aside: Workspace Hygiene {.nostretch}
+
+![](images/workspace_hygiene.png){fig-align="center" width="60%"}
+
+## Aside: Absolute and Relative Paths
+
+. . .
+
+Your code should run on any machine!
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+# BAD PRACTICE: path and data does not exist on other machines
+read.csv("C:/path/to/important/raw/data.csv")
+```
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+# BAD PRACTICE: works only on one specific machine
+setwd("C:/Users/willg/OneDrive - Syracuse University/Palaeoverse/workshop")
+```
+
+. . .
+
+```{r}
+#| eval: false
+#| echo: true
+# BAD PRACTICE: requires manual work
+# to run this script, go to
+# Session -> Set Working Directory -> To Source File Location
+# to set your working directory correctly
+```
+
+. . .
+
+This is why we use RProjects! You just need to set the path to a file relative to the `.Rproj` file:
+```{r}
+#| eval: false
+#| echo: true
+# GOOD PRACTICE: works on any machine
+read.csv("data/raw/data.csv")
+```
 
 ## Making and committing changes {.smaller}
 
 Now let's make some changes to the repository:
 
-1. Open the `README.md` file in RStudio and add some text to it. Perhaps your name or today's date. Make sure to save the file.
-2. You'll now see that the `README.md` file has been modified in the Git panel in RStudio.
-3. Click the checkbox next to the `README.md` file in the Git panel to stage the changes.
-4. In the "Commit message" box, write a brief description of the changes you made (e.g., "Added my name to README").
-5. Click the "Commit" button to commit the changes to your local repository.
-6. Click the "Push" button in the Git panel to upload your changes to GitHub.
+1. Open the `README.md` file in RStudio and add some text to it. Perhaps your name, today's date, and a short poem. Make sure to save the file.
+2. Now open GitHub Desktop again. You'll now see that the `README.md` file has been modified. There should also be a new .Rproj file in the list of changed files.
+3. Make sure the checkboxes next to both of these files are checked.
+4. In the small "Commit message" box below, write a brief message about the changes you made (it probably already says something like "Update README.md"). The larger box below this can be used if you need to further describe your changes.
+5. Click the "Commit" button to commit the changes to your **local repository**.
+6. Click the "Push origin" button to upload your changes to GitHub.
 
 ::: notes
 
 :::
 
+## Advanced RStudio and RProjects {.smaller}
+
+You're well on your way to becoming an RStudio super user! Here are some more advanced RStudio and RProjects features that you can explore on your own:
+
+- [Multiple projects in parallel](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
+- [Reproducible environments & package versioning using `renv`](https://rstudio.github.io/renv/articles/renv.html)
+- [Packaging of R code](https://r-pkgs.org/)
+- [Quarto](https://quarto.org/): A scientific and technical publishing system that let's you write entirely in RStudio
+  - this entire website was built with Quarto!
+
+## Collaborating with Git and GitHub {.smaller}
+
+Now let's learn how to actually collaborate with Git and GitHub!
+
+1. Find a partner.
+2. **Fork** your partner's repository on GitHub (you'll need to change the repo name since you already have a repo with that name).
+3. **Clone** this forked repository to your local machine using GitHub Desktop.
+4. Make a **new branch** in GitHub Desktop (name it "[name]-edits").
+5. Make some changes to the `README.md` file in RStudio (add your name next to your partner's name and add your own poem beneath your partner's poem).
+6. **Commit** and **push** your changes to your branch in GitHub Desktop.
+7. Go to your partner's repository on GitHub and create a **pull request**.
+8. Your partner should **review** the changes and **merge** the pull request.
+9. Your partner should then **pull** the changes to their local machine using GitHub Desktop.
+
 ## Advanced GitHub {.smaller}
 
-Some other topics that you can explore on your own:
+Congratulations, you're now a GitHub pro!
 
-- [Branching and Merging](https://docs.github.com/en/get-started/using-github/github-flow): Manage changes to your codebase with branches and merge them back into the main branch
+. . .
+
+Well, maybe not...but if you want to be, here are some GitHub resources that you can explore on your own:
+
 - [GitHub Issues](https://docs.github.com/en/issues): Track bugs and feature requests (yes, this applies to research code!)
 - [Pull Requests](https://docs.github.com/en/pull-requests): Propose changes to a repository and collaborate with others
 - [GitHub Actions](https://docs.github.com/en/actions): Automate workflows
-- [GitHub Pages](https://pages.github.com/): Host websites directly from your GitHub repository
-
+- [GitHub Pages](https://pages.github.com/): Host websites directly from your GitHub repositories
+- [GitHub Classroom](https://classroom.github.com/): Tool for managing assignments and grading in educational settings
