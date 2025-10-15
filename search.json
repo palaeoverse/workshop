@@ -1077,7 +1077,7 @@
     "href": "2025-GSA-workshop/index.html",
     "title": "GSA 2025 Workshop",
     "section": "",
-    "text": "Saturday, October 18, 2025 8:00 AM - 5:30 PM\nHenry B. González Convention Center",
+    "text": "Saturday, October 18, 2025 8:00 AM - 5:30 PM\nRoom 211 Henry B. González Convention Center San Antonio, TX, USA",
     "crumbs": [
       "GSA 2025 Workshop"
     ]
@@ -1087,7 +1087,7 @@
     "href": "2025-GSA-workshop/index.html#arrival",
     "title": "GSA 2025 Workshop",
     "section": "Arrival",
-    "text": "Arrival\nThe event starts at XXX on the XXX and will take place at XXX.",
+    "text": "Arrival\nThe workshop takes place 8:00 AM - 5:30 PM on Saturday, October 18, 2025. Check-in starts at 7:30 AM.",
     "crumbs": [
       "GSA 2025 Workshop"
     ]
@@ -1097,7 +1097,7 @@
     "href": "2025-GSA-workshop/index.html#schedule",
     "title": "GSA 2025 Workshop",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\nTime\nEvent\n\n\n\n\n08:00 AM\nWelcome and introduction\n\n\n08:30 AM\nSetting up a reproducible workflow (GitHub, GitHub Desktop, RStudio)\n\n\n10:00 AM\nCoffee break☕\n\n\n10:15 AM\nData acquisition\n\n\n10:45 AM\nData Processing I: Data exploration and cleaning\n\n\n12:00 PM\nLunch break 🥪\n\n\n1:30 PM\nData Processing II: Data visualization and synthesis\n\n\n3:15 PM\nCoffee break☕\n\n\n3:30 PM\nOpen science presentation/breakout (reporting, archiving, and publishing)\n\n\n4:45 PM\nClosing remarks",
+    "text": "Schedule\n\n\n\nTime\nEvent\n\n\n\n\n08:00 AM\nWelcome and introduction\n\n\n08:30 AM\nSetting up a reproducible workflow (GitHub, GitHub Desktop, RStudio)\n\n\n10:00 AM\nCoffee break ☕\n\n\n10:15 AM\nData acquisition\n\n\n10:45 AM\nData Processing I: Data exploration and cleaning\n\n\n12:00 PM\nLunch break 🥪\n\n\n1:30 PM\nData Processing II: Data visualization and synthesis\n\n\n3:15 PM\nCoffee break ☕\n\n\n3:30 PM\nOpen science presentation/breakout (FAIR/CARE, archiving)\n\n\n4:45 PM\nClosing remarks",
     "crumbs": [
       "GSA 2025 Workshop"
     ]
@@ -1107,7 +1107,7 @@
     "href": "2025-GSA-workshop/index.html#instructors",
     "title": "GSA 2025 Workshop",
     "section": "Instructors",
-    "text": "Instructors\nThis edition of the Workshop event is organised and led by the following members and friends of the Palaeoverse team.\n\n\n\n\n\nWill Gearty  Syracuse University, USA\n\n\n\n\n\n\n\nErin Dillon  Smithsonian Tropical Research Institute\n\n\n\n\n\n\n\nMark Nikolic  Stanford University\n\n\n\n\n\n\n\nBrok Kokesh  University of California, Berkeley\n\n\n\n\n\n\n\nPedro M. Monarrez  Virginia Tech",
+    "text": "Instructors\nThis edition of the Workshop event is organised and led by the following members and friends of the Palaeoverse team.\n\n\n\n\n\nWill Gearty  Syracuse University\n\n\n\n\n\n\n\nErin Dillon  Smithsonian Tropical Research Institute\n\n\n\n\n\n\n\nMark Nikolic  Stanford University\n\n\n\n\n\n\n\nBrok Kokesh  University of California, Berkeley\n\n\n\n\n\n\n\nPedro M. Monarrez  Virginia Tech",
     "crumbs": [
       "GSA 2025 Workshop"
     ]
@@ -1117,7 +1117,7 @@
     "href": "2025-GSA-workshop/index.html#installation",
     "title": "GSA 2025 Workshop",
     "section": "Installation",
-    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages()",
+    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"rmarkdown\", \"dplyr\", \"readr\", \"deeptime\", \"fossilbrush\", \"ggplot2\", \"palaeoverse\", \"rgplates\", \"rnaturalearth\", \"rnaturalearthdata\", \"geodata\", \"ncdf4\", \"raster\", \"rgbif\", \"sf\")",
     "crumbs": [
       "GSA 2025 Workshop"
     ]
