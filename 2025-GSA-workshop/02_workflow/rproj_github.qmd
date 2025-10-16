@@ -213,77 +213,18 @@ Now we're going to "clone" this repo to our local machine using GitHub Desktop.
 Walk through this process with everyone. You will need to select the folder where you want to clone the repository. Make sure everyone has cloned the repository before moving on.
 :::
 
-## RStudio and RProjects {.smaller}
+## RStudio {.smaller}
 
 - RStudio is an IDE (integrated development environment) for R
   - Makes it easier to write and run R code
   - Provides a user-friendly interface for managing files, packages, and projects
   - Includes features like syntax highlighting, code completion, and debugging tools
 
-. . .
+![](images/rstudio-panes-labeled.jpeg){fig-align="center" width="100%"}
 
-- RProjects are a way to organize your work in RStudio
-  - Established by the addition of an `.Rproj` file
-  - Opening the project sets the working directory automatically after
-  - Whole project folder can be passed between machines and people
-
-## Working with RProjects
-
-:::: {.columns}
-
-::: {.column width="50%"}
-
-File > Open Project > Select RProject file
-
-Work in Rstudio as usual
-
-All paths are set relative to the `.RProj` file
-
-:::
-
-::: {.column width="50%"}
-
-![](images/new_project.png){fig-align="center" width="100%"}
-
-:::
-
-::::
-
-::: notes
-:::
-
-## Making a new R project
-
-Now let's make a new R project based on this forked repository...
-
-:::: {.columns}
-
-::: {.column width="30%"}
-![](images/new_project_menu.png){fig-align="center"}
-:::
-
-::: {.column width="35%"}
-![](images/existing_directory.png){fig-align="center"}
-:::
-
-::: {.column width="35%"}
-![](images/create_project.png){fig-align="center"}
-:::
-
-::::
-
-::: notes
-
-:::
-
-## Aside: Workspace Hygiene
-
-. . .
+## Aside: Workspace Hygiene {.smaller}
 
 **Start from a clean slate!**
-
-. . .
-
 
 Your workspace is your laboratory - keep it free of contamination!
 
@@ -296,9 +237,16 @@ In the "Basic" tab
 - Unceck "Restore .RData into workspace at startup"
 - Set "Save workspace to .RData on exit" to "Never"
 
-## Aside: Workspace Hygiene {.nostretch}
+![](images/workspace_hygiene.png){fig-align="center" width="50%"}
 
-![](images/workspace_hygiene.png){fig-align="center" width="60%"}
+## RProjects {.smaller}
+
+- RProjects are a way to organize your work in RStudio
+  - Established by the addition of an `.Rproj` file
+  - Opening the project sets the working directory automatically
+  - Whole project folder can be passed between machines and people
+
+![](images/new_project.png){fig-align="center" width="100%"}
 
 ## Aside: Absolute and Relative Paths
 
@@ -344,6 +292,30 @@ This is why we use RProjects! You just need to set the path to a file relative t
 # GOOD PRACTICE: works on any machine
 read.csv("data/raw/data.csv")
 ```
+
+## Making a new R project
+
+Now let's make a new R project based on this forked repository...
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![](images/new_project_menu.png){fig-align="center"}
+:::
+
+::: {.column width="35%"}
+![](images/existing_directory.png){fig-align="center"}
+:::
+
+::: {.column width="35%"}
+![](images/create_project.png){fig-align="center"}
+:::
+
+::::
+
+::: notes
+
+:::
 
 ## Making and committing changes {.smaller}
 
