@@ -272,7 +272,7 @@ ggplot(economics, aes(x = unemploy/pop, y = psavert)) +
 
 Note how we've used multiple columns of the data to define the x-axis here.
 
-### BREAKOUT SESSION 1
+### **BREAKOUT SESSION 1**
 
 ::: {.callout-note title="Practice Time!"}
 Your turn! Let's see what you and those sitting around you can produce using the iris dataset built into R. Here's a basic plot of Sepal Length versus Petal Length:
@@ -452,11 +452,11 @@ ggplot(data = occdf) +
 
 And that's that!
 
-### BREAKOUT SESSION 2
+### **BREAKOUT SESSION 2**
 ::: {.callout-note title="Practice Time!"}
-Let's now put what you've learned to work to address the question posed toward the beginning of the workshop with the Cenozoic crocodile dataset: How do paleolatitudinal range and paleodiversity vary for Crocodylia across the Cenozoic?
+Let's now put what you've learned to work to address the question posed toward the beginning of the workshop with the Cenozoic crocodile dataset: *How do paleolatitudinal range and paleodiversity vary for Crocodylia across the Cenozoic?*
 
 - How might you visualize the crocodile occurrences to look at patterns in range size and/or diversity across time intervals? You could start by sketching on paper what a figure might look like before you even start coding.
-- See if you can adapt some of the code shared during the Data Processing modules to make this plot using the cleaned crocodile dataset. For some additional help, you can check out [this Palaeoverse vignette](https://palaeoverse.palaeoverse.org/articles/tetrapod-biodiversity.html).
+- Try to adapt some of the code shared during the Data Processing modules to make this plot using the cleaned crocodile dataset. For some additional help, you can check out [this Palaeoverse vignette](https://palaeoverse.palaeoverse.org/articles/tetrapod-biodiversity.html).
 - Share your figures in small groups and discuss the different ways in which you chose to display the crocodile data. Moving forward, how might you revise your figure to more effectively visualize the data?
 :::
