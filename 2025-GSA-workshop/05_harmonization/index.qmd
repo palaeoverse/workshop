@@ -456,7 +456,7 @@ And that's that!
 ::: {.callout-note title="Practice Time!"}
 Let's now put what you've learned to work to address the question posed toward the beginning of the workshop with the Cenozoic crocodile dataset: *How do paleolatitudinal range and paleodiversity vary for Crocodylia across the Cenozoic?*
 
-- How might you visualize the crocodile occurrences to look at patterns in range size and/or diversity across time intervals? You could start by sketching on paper what a figure might look like before you even start coding.
-- Try to adapt some of the code shared during the Data Processing modules to make this plot using the cleaned crocodile dataset. For some additional help, you can check out [this Palaeoverse vignette](https://palaeoverse.palaeoverse.org/articles/tetrapod-biodiversity.html).
-- Share your figures in small groups and discuss the different ways in which you chose to display the crocodile data. Moving forward, how might you revise your figure to more effectively visualize the data?
+1. How might you visualize the crocodile occurrences to look at patterns in range size and/or diversity across time intervals? You could start by sketching on paper what a figure might look like before you even start coding.
+2. Try to adapt some of the code shared during the Data Processing modules to make this plot using the cleaned crocodile dataset. For some additional help, you can check out [this Palaeoverse vignette](https://palaeoverse.palaeoverse.org/articles/tetrapod-biodiversity.html).
+3. Share your figures in small groups and discuss the different ways in which you chose to display the crocodile data. Moving forward, how might you revise your figure to more effectively visualize the data?
 :::
