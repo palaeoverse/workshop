@@ -88,7 +88,7 @@
     "href": "2025-GSA-workshop/index.html#installation",
     "title": "GSA 2025 Workshop",
     "section": "Installation",
-    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"rmarkdown\", \"dplyr\", \"readr\", \"deeptime\", \"fossilbrush\", \"ggplot2\", \"palaeoverse\", \"rgplates\", \"rnaturalearth\", \"rnaturalearthdata\", \"geodata\", \"ncdf4\", \"raster\", \"rgbif\", \"sf\")",
+    "text": "Installation\nPlease ensure that you have the latest version of R for the workshop, which can be downloaded here. We also recommend installing the latest version of RStudio, which can be downloaded here. To minimize any installation issues during the workshop, please also install the following R packages:\n\ninstall.packages(\"rmarkdown\", \"dplyr\", \"readr\", \"deeptime\", \"fossilbrush\", \"ggplot2\", \"palaeoverse\", \"rgplates\", \"rnaturalearth\", \"rnaturalearthdata\")",
     "crumbs": [
       "GSA 2025 Workshop"
     ]
