@@ -32,7 +32,7 @@ II.  Data visualization practical
 
 ### Getting familiar with ggplot2
 
-[`ggplot2`](https://ggplot2.tidyverse.org/index.html) is designed around the "grammar of graphics". In most cases you start with `ggplot()` and then supply a dataset and "aesthetic" mappings (with `aes()`). You then add on individual layers (like `geom_point()` or `geom_histogram()`) to add the visualization(s) that you want. Let's first try making a scatterplot using some built-in data about car mileage (`mpg`). In this case, we'll plot the highway mileage with respect to the engine size (displacement). Note that in this case, instead of calling functions separately, we chain them together with the `+` operator.
+[`ggplot2`](https://ggplot2.tidyverse.org/index.html) is designed around the "grammar of graphics." In most cases you start with `ggplot()` and then supply a dataset and "aesthetic" mappings (with `aes()`). You then add on individual layers (like `geom_point()` or `geom_histogram()`) to add the visualization(s) that you want. Let's first try making a scatterplot using some built-in data about car mileage (`mpg`). In this case, we'll plot the highway mileage with respect to the engine size (displacement). Note that in this case, instead of calling functions separately, we chain them together with the `+` operator.
 
 ```{r, message = FALSE, warning= FALSE}
 # load the ggplot2 package
@@ -56,12 +56,12 @@ ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
   geom_point()
 ```
 
-Notice that `ggplot2` comes with its own default color scheme. I would strongly discourage you from using the default colors. Instead, we'll try out some of the accessible color palettes we talked about earlier. First, let's try one of the `viridis` color palettes. Since this palette is included in `ggplot2`, all we need to do is add the proper "scale" to our `ggplot()` call.
+Notice that `ggplot2` comes with its own default color scheme. I would discourage you from using the default colors. Instead, we'll try out some of the accessible color palettes we talked about earlier. First, let's try one of the `viridis` color palettes. Since this palette is included in `ggplot2`, all we need to do is add the proper "scale" to our `ggplot()` call.
 
 ```{r}
 ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
-  geom_point() +
-  scale_color_viridis_d()
+  geom_point() + #adds the points
+  scale_color_viridis_d() #applies the viridis color palette
 ```
 
 Hmm...with this many colors, it becomes a little hard to distinguish between the colors with this color palette. Let's try one of the [brewer color palettes](https://r-graph-gallery.com/38-rcolorbrewers-palettes.html).
@@ -69,22 +69,22 @@ Hmm...with this many colors, it becomes a little hard to distinguish between the
 ```{r}
 ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
   geom_point() +
-  scale_color_brewer(palette = "Set1")
+  scale_color_brewer(palette = "Set1") #changing the color palette
 ```
 
-Outside of color, there are many other [aspects of the graph](https://ggplot2.tidyverse.org/articles/ggplot2-specs.html) that we can modify using "scale"s. For example, we can modify the x and y axes:
+Outside of color, there are many other [aspects of the graph](https://ggplot2.tidyverse.org/articles/ggplot2-specs.html) that we can modify using the "scale" functions. For example, we can modify the x and y axes:
 
 ```{r}
 ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
   geom_point() +
   scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
-  scale_x_continuous(name = "Engine Displacement (l)") +
-  scale_y_continuous(name = "Highway Mileage (mpg)")
+  scale_x_continuous(name = "Engine Displacement (l)") + #adding x axis label
+  scale_y_continuous(name = "Highway Mileage (mpg)") #adding y axis label
 ```
 
 #### Theming
 
-The last basic thing you might want to do with `ggplot2` is modify the style of the visualization. This is extremely customizable, but the first place to start is with a [built-in theme](https://ggplot2.tidyverse.org/reference/ggtheme.html). I personally prefer the classic theme:
+The last basic thing you might want to do with `ggplot2` is modify the style of the visualization. This is extremely customizable, but the first place to start is with a [built-in theme](https://ggplot2.tidyverse.org/reference/ggtheme.html). For example, here's what the classic theme looks like:
 
 ```{r}
 ggplot(mpg, aes(x = displ, y = hwy, color = class)) + 
@@ -92,7 +92,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
   scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
   scale_x_continuous(name = "Engine Displacement (l)") +
   scale_y_continuous(name = "Highway Mileage (mpg)") +
-  theme_classic()
+  theme_classic() #applies the classic theme
 ```
 
 Using this built-in theme has changed many visual aspects of the graph, including changing the plot background color, adding axis lines, and removing the internal grid lines. If you look very closely, however, the axis tick labels are still a slight grey. We can use the `theme()` function to further customize the appearance and change this. In this case, we'll make the axis text elements have a black color.
@@ -104,10 +104,10 @@ ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
   scale_x_continuous(name = "Engine Displacement (l)") +
   scale_y_continuous(name = "Highway Mileage (mpg)") +
   theme_classic() +
-  theme(axis.text = element_text(color = "black"))
+  theme(axis.text = element_text(color = "black")) #modifies the axis text
 ```
 
-And there we have it! With just 7 lines we've created what I would say is a publication quality graph! `ggplot` does a lot of the tedious work for you, giving you time to focus on the more important aspects, such as labeling and color. Admittedly, I've spent a LOT of time on these aspects in the past...
+And there we have it! With just 7 lines of code, we've created what I would say is a publication quality graph! `ggplot` does a lot of the tedious work for you, giving you time to focus on the more important aspects, such as labeling and color. Admittedly, I've spent a LOT of time on these aspects in the past...
 
 For comparison, here's how we would produce a similar graph using only R's built-in (base) plotting functions. It's worth taking a moment to see how ggplot's additive functions all work together to produce a final product, whereas base R requires lots of simultaneous arguments inside a single function, plus sequential additive functions that ggplot accounts for by default (e.g., adding a legend).
 
@@ -138,7 +138,7 @@ More information about all of the hierarchical theme components that you can cus
 Let's take our scatterplot example from earlier and make it a little more complex with another aesthetic:
 
 ```{r}
-ggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + 
+ggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) +  #adds a grouping variable (drive type) displayed as different shapes
   geom_point() +
   scale_color_brewer(name = "Vehicle Class", palette = "Set1") +
   scale_shape_discrete(name = "Drive Type") +
@@ -157,7 +157,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) +
   scale_shape_discrete(name = "Drive Type") +
   scale_x_continuous(name = "Engine Displacement (l)") +
   scale_y_continuous(name = "Highway Mileage (mpg)") +
-  facet_wrap(vars(year)) +
+  facet_wrap(vars(year)) + #facets by year
   theme_classic() +
   theme(axis.text = element_text(color = "black"))
 ```
@@ -171,7 +171,7 @@ ggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) +
   scale_shape_discrete(name = "Drive Type") +
   scale_x_continuous(name = "Engine Displacement (l)") +
   scale_y_continuous(name = "Highway Mileage (mpg)") +
-  facet_grid(rows = vars(cyl), cols = vars(year)) +
+  facet_grid(rows = vars(cyl), cols = vars(year)) + #facets by number of cylinders and by year
   theme_classic() +
   theme(axis.text = element_text(color = "black"))
 ```
@@ -188,7 +188,7 @@ We can visualize the density of values for a single variable with a histogram:
 
 ```{r message = FALSE}
 ggplot(mpg, aes(x = hwy)) + 
-  geom_histogram() +
+  geom_histogram() + #creates a histogram of the variable hwy
   scale_x_continuous(name = "Highway Mileage (mpg)") +
   theme_classic() +
   theme(axis.text = element_text(color = "black"))
@@ -202,7 +202,7 @@ We can visualize the density of values for a single variable across a discrete v
 
 ```{r message = FALSE}
 ggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + 
-  geom_boxplot() +
+  geom_boxplot() + #creates a boxplot
   scale_x_discrete(name = "# Cylinders") +
   scale_y_continuous(name = "Highway Mileage (mpg)") +
   theme_classic() +
@@ -211,7 +211,7 @@ ggplot(mpg, aes(x = as.factor(cyl), y = hwy)) +
 
 ```{r message = FALSE}
 ggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + 
-  geom_violin(scale = "width", draw_quantiles = c(0.25, 0.5, 0.75)) +
+  geom_violin(scale = "width", draw_quantiles = c(0.25, 0.5, 0.75)) + #creates a violin plot
   scale_x_discrete(name = "# Cylinders") +
   scale_y_continuous(name = "Highway Mileage (mpg)") +
   theme_classic() +
@@ -226,9 +226,9 @@ We can also visualize the density of values across two continuos variables using
 
 ```{r}
 ggplot(faithful, aes(x = eruptions, y = waiting)) +
-  geom_density_2d(linewidth = 0.25, colour = "black") +
-  xlim(0.5, 6) +
-  ylim(35, 110) +
+  geom_density_2d(linewidth = 0.25, colour = "black") + #creates a contour plot
+  xlim(0.5, 6) + #adjusting limits of x axis
+  ylim(35, 110) + #adjusting limits of y axis
   theme_classic() +
   theme(axis.text = element_text(color = "black"))
 ```
@@ -241,7 +241,7 @@ We can also combine multiple layers to show the same data in different ways in t
 ggplot(faithful, aes(x = eruptions, y = waiting)) +
   geom_point() +
   geom_density_2d_filled(alpha = 0.5) +
-  geom_density_2d(linewidth = 0.25, colour = "black") +
+  geom_density_2d(linewidth = 0.25, colour = "black") + #this is how we can layer visualizations
   xlim(0.5, 6) +
   ylim(35, 110) +
   theme_classic() +
@@ -256,7 +256,7 @@ We'll use the built-in `economics` dataset to explore visualizing a time series.
 
 ```{r}
 ggplot(economics, aes(x = date, y = unemploy)) +
-  geom_line() +
+  geom_line() + #creates a line plot
   theme_classic() +
   theme(axis.text = element_text(color = "black"))
 ```
@@ -272,17 +272,22 @@ ggplot(economics, aes(x = unemploy/pop, y = psavert)) +
 
 Note how we've used multiple columns of the data to define the x-axis here.
 
-### Your turn!
+### BREAKOUT SESSION 1
 
-Let's see what you and those sitting around you can produce using the iris dataset built into R. Here's a basic plot of Sepal Length versus Petal Length:
+::: {.callout-note title="Practice Time!"}
+Your turn! Let's see what you and those sitting around you can produce using the iris dataset built into R. Here's a basic plot of Sepal Length versus Petal Length:
 
 ```{r}
+#look at the data (i.e., what do we have to play with?)
 head(iris)
+
+#visualize the data
 ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) + 
   geom_point()
 ```
 
-Feel free to edit the r script directly above by changing the variables, coloring the points by species, fixing the axis labels, etc.
+Edit the R script directly above by changing the variables, coloring the points by species, fixing the axis labels, etc.
+:::
 
 ### Visualizing paleo data
 
@@ -435,7 +440,7 @@ Now we'll use `geom_points_range()` to plot the occurrences as points and ranges
 ```{r}
 # plot those occurrences
 ggplot(data = occdf) +
-  geom_points_range(aes(x = age, y = accepted_name)) +
+  geom_points_range(aes(x = age, y = accepted_name)) + #plots occurrences
   # geom_point(aes(x = age, y = accepted_name)) +
   # geom_line(aes(x = age, y = accepted_name))
   scale_x_reverse(name = "Time (Ma)") +
@@ -447,6 +452,11 @@ ggplot(data = occdf) +
 
 And that's that!
 
+### BREAKOUT SESSION 2
 ::: {.callout-note title="Practice Time!"}
-TO DO - ADD EXERCISES HERE
+Let's now put what you've learned to work to address the question posed toward the beginning of the workshop with the Cenozoic crocodile dataset: How do paleolatitudinal range and paleodiversity vary for Crocodylia across the Cenozoic?
+
+- How might you visualize the crocodile occurrences to look at patterns in range size and/or diversity across time intervals? You could start by sketching on paper what a figure might look like before you even start coding.
+- See if you can adapt some of the code shared during the Data Processing modules to make this plot using the cleaned crocodile dataset. For some additional help, you can check out [this Palaeoverse vignette](https://palaeoverse.palaeoverse.org/articles/tetrapod-biodiversity.html).
+- Share your figures in small groups and discuss the different ways in which you chose to display the crocodile data. Moving forward, how might you revise your figure to more effectively visualize the data?
 :::
