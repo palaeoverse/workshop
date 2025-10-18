@@ -8,7 +8,7 @@ order: 6
 
 In this last session, we'll be thinking about archiving our data and other materials at the end of a project adhering to ethical open science practices, why we should archive with these principles in mind, and where we might archive materials:
 
-- Get moving and thinking about/discussing ethical open science archiving with others
+- Get moving and thinking about/discussing open science archiving with others
 - Understand why ethical open science is important, and what should be archived
 - Have some ideas of where working documents can be archived and openly accessible
 
@@ -18,7 +18,7 @@ In this last session, we'll be thinking about archiving our data and other mater
 
 ## Get thinking and discussing!
 
-Now we're back from break, let's get talking about archiving our work. Think about the following questions and discuss your thoughts with your neighbours. Then write your answers on post-its and stick them up, and have a look at what your colleagues think is important in archiving research outputs.
+Now we're back from break, let's get talking about archiving our work. Think about the following questions and discuss your thoughts with your neighbours. Then write your answers on post-its and stick them up, and have a look at what your colleagues think is important in open science and archiving research outputs.
 
 25 minutes, then we'll come back together to go over the important points!
 
@@ -31,8 +31,8 @@ Now we're back from break, let's get talking about archiving our work. Think abo
 
 In the last lecture part for the day, we'll go over some of the key reasons why archiving is important for open science, where you can archive your materials, and some considerations for archiving and publishing:
 
-<object data="./OpenScience.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf">
-    <embed src="./OpenScience.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf" />
+<object data="./GSAOpenScience.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf">
+    <embed src="./GSAOpenScience.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf" />
 </object>
 
-(You can download the slides [here](./OpenScience.pdf).)
+(You can download the slides [here](./GSAOpenScience.pdf).)
