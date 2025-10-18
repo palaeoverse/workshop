@@ -347,7 +347,7 @@ You're well on your way to becoming an RStudio super user! Here are some more ad
 Now let's learn how to actually collaborate with Git and GitHub!
 
 1. Find a partner.
-2. **Fork** your partner's repository on GitHub (you'll need to change the repo name since you already have a repo with that name).
+2. **Create** a new repository on GitHub. Then make a **fork** of your partner's repository on GitHub.
 3. **Clone** this forked repository to your local machine using GitHub Desktop.
 4. Make a **new branch** in GitHub Desktop (name it "[name]-edits").
 5. Make some changes to the `README.md` file in RStudio (add your name next to your partner's name and add your own poem beneath your partner's poem).
