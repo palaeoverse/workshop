@@ -72,7 +72,7 @@ table(fossils$accepted_rank)
 (table(fossils$accepted_rank) / nrow(fossils)) * 100
 ```
 
-We can see that of our 886 occurrences, 849 (~38%) are identified to species level. A further 625 (~28%) are identified to genus level. The remaining fossils are more coarsely identified, including 717 (~32%) which are identified to the mysterious level of "unranked clade".
+We can see that of our 2243 occurrences, 850 (~38%) are identified to species level. A further 624 (~28%) are identified to genus level. The remaining fossils are more coarsely identified, including 718 (~32%) which are identified to the mysterious level of "unranked clade".
 
 Next, let's look at the distribution of fossils across localities. In the PBDB, fossils are placed within collections, each of which can roughly be considered a separate locality (they can also represent different sampling horizons at the same locality; more on this later). First, we can count the number of unique `collection_no` values to find out how many unique collections are in the dataset.
 
@@ -81,13 +81,14 @@ Next, let's look at the distribution of fossils across localities. In the PBDB, 
 length(unique(fossils$collection_no))
 ```
 
-Our dataset contains 1691 unique collections.
+Our dataset contains 1692 unique collections.
 
 We can also create a plot showing us the distribution of occurrences across these collections. First let's tally up the number of occurrences in each collection.
 
 ```{r abundance_distribution}
 # Count the number of times each collection number appears in the dataset
 coll_no_freq <- as.data.frame(table(fossils$collection_no))
+coll_no_freq
 ```
 
 Next, we'll use the [ggplot2 package](https://ggplot2.tidyverse.org/), the go-to for professional-looking data visualizations in R, to visualize the frequency of collections with various numbers of occurrences.
@@ -102,24 +103,6 @@ ggplot(coll_no_freq, aes(x = Freq)) +
 
 We can see that the collection containing the most occurrences has 15, while the vast majority only contain a single occurrence.
 
-::: {.callout-note}
-
-### Building ggplot2 visualizations
-
-Let's take a moment to break down the above ggplot2 code, since we'll be using the package a lot in the rest of the workshop:
-
-- The first component of any ggplot2 plot is the `ggplot()` function, which sets up the plot. The first argument of this function here is the data frame that we want to plot, and the second argument is a set of aesthetic mappings, which define how variables in our data are mapped to visual properties of the plot. In this case, we are mapping the `Freq` column to the x-axis.
-- The next component is the `geom_bar()` function, which adds a bar plot layer to the ggplot. This function does not require any additional arguments, as it will automatically use the data and x aesthetic mapping defined in the `ggplot()` function.
-- The final component is the `labs()` function, which adds labels to the x and y axes of the plot. This function takes named arguments for each label, allowing us to customize the appearance of the plot.
-- All of the these components are combined together using the `+` operator, allowing us to build up the plot step by step.
-
-We'll end up using lots of other ggplot2 components moving forward, which we'll explain when we get to them, but this is the basic structure of a ggplot2 plot. Note that multiple layers (e.g., `geom_bar()`, `geom_point()`, etc.) can be added to the same plot, and that the order in which they are added can affect the final appearance of the plot. 
-
-You can also modify other aesthetics of the plot, such as the colour, size, and shape of the points, by adding additional arguments to the `aes()` function (which, by the way, can go within the `ggplot` function, within `geom_` functions, or even on its own). The way these aesthetics are then displayed in the plot can be modified using scale functions (e.g., `scale_color_manual()`, `scale_size_continuous()`, etc.).
-
-For more information on how to use ggplot2, check out the [ggplot2 documentation](https://ggplot2.tidyverse.org/articles/ggplot2.html).
-
-:::
 
 What about the countries in which these fossils were found? We can investigate this using the "cc", or "country code" column.
 
@@ -231,10 +214,10 @@ While all occurrences have present-day coordinates, some are missing palaeocoord
 
 ```{r}
 # Remove occurrences which are missing palaeocoordinates
-fossils <- filter(fossils, !is.na(fossils$paleolng))
+fossils <- filter(fossils, !is.na(fossils$paleolat))
 
 # Check whether this has worked
-sum(is.na(fossils$paleolng))
+sum(is.na(fossils$paleolat))
 ```
 
 A further option applicable in some cases would be to fill in our missing data. We may be able to interpolate values from the rest of our data, or use additional data sources. For our palaeogeography example above, we could generate our own palaeocoordinates, for example using `palaeoverse::palaeorotate()`.
@@ -254,7 +237,11 @@ For example, the formation data for collection 18539 are missing, so we could go
 
 ```{r}
 # Add formation name
+fossils[which(fossils$collection_no == "18539"), "formation"]
+
 fossils[which(fossils$collection_no == "18539"), "formation"] <- "Bone Valley Formation"
+
+fossils[which(fossils$collection_no == "18539"), "formation"]
 ```
 
 ::: {.callout-important}
@@ -517,7 +504,7 @@ length(unique(fossils$collection_no))
 length(unique(fossils_localities$collection_no))
 ```
 
-Here we can see that the number collections of our original dataset dropped after we removed latitude-longitude repeats. This means that, in some cases, more than fossil sampling event have taken place at the same locality. In other words, we have more geographically distinct localities than collections in the dataset.
+Here we can see that the number collections of our original dataset dropped after we removed latitude-longitude repeats. This means that, in some cases, more than one fossil sampling events have taken place at the same locality. In other words, we have more collections than geographically distinct localities in the dataset.
 
 If we are interested in taxonomic diversity, we can also look at repeated names in our dataset. For example, we might want to identify taxa which are represented multiple times in order to then return to the literature and check that they definitely represent the same taxon. We can do this by flagging species names which are represented more than once in the dataset.
 
@@ -544,6 +531,10 @@ fossils_sp <- filter(fossils_sp, duplicate_flag == TRUE)
 fossils_sp <- arrange(fossils_sp, accepted_name)
 ```
 
+```{r}
+fossils_sp
+```
+
 
 ::: {.callout-important}
 
@@ -553,7 +544,7 @@ If data are altered or filtered at any point, this can change the overall summar
 
 :::
 
-## Practical
+## Practical (if you so desire)
 
 Now it's time for you to explore that data yourself. First, using the code chunks below, add your own additional lines of code addressing each of the posed questions. You could modify some of the code above to help you, or write your own!
 
@@ -585,7 +576,7 @@ Let's save our data for the next unit!
 
 ```{r save_data}
 # Save data
-write.csv(x = fossils, file = "../05_harmonization/cenozoic_crocs_clean.csv", row.names = FALSE)
+write.csv(x = fossils, file = "./cenozoic_crocs_clean.csv", row.names = FALSE)
 ```
 
 # Resources
@@ -597,6 +588,5 @@ write.csv(x = fossils, file = "../05_harmonization/cenozoic_crocs_clean.csv", ro
 5. RIBEIRO, B. R., VELAZCO, S. J. E., GUIDONI-MARTINS, K., TESSAROLO, G., JARDIM, L., BACHMAN, S. P. and LOYOLA, R. 2022. bdc: A toolkit for standardizing, integrating and cleaning biodiversity data. Methods in Ecology and Evolution, 13, 1421–1428.
 6. TUKEY, J. W. 1977. Exploratory data analysis. Vol. 1. Springer.
 7. VAN BUUREN, S. 2018. Flexible imputation of missing data. Chapman & Hall/CRC, Boca Raton,.
-
 
 
