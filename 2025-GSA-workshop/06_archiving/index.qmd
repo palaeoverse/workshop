@@ -1,15 +1,15 @@
 ---
-title: "Open Science Practices"
+title: "Ethical Open Science Practices"
 toc: true
 order: 6
 ---
 
 ## Learning Objectives
 
-In this last session, we'll be thinking about archiving our data and other materials at the end of a project, why we should archive, and where we might archive materials:
+In this last session, we'll be thinking about archiving our data and other materials at the end of a project adhering to ethical open science practices, why we should archive with these principles in mind, and where we might archive materials:
 
-- Get moving and thinking about/discussing archiving with others
-- Understand why archiving is important, and what should be archived
+- Get moving and thinking about/discussing ethical open science archiving with others
+- Understand why ethical open science is important, and what should be archived
 - Have some ideas of where working documents can be archived and openly accessible
 
 **Schedule**
@@ -22,17 +22,17 @@ Now we're back from break, let's get talking about archiving our work. Think abo
 
 25 minutes, then we'll come back together to go over the important points!
 
-1. Why is archiving important?
-2. What do you think it is important for researchers to archive?
-3. Where can you archive research materials?
-4. What are the major barriers to archiving?
+1. Why is open science important?
+2. What information is important to archive in a findable, accessible, interoperable, and reproducible way?
+3. What are some repositories where you can archive open science data?
+4. What are ethical considerations with open science data?
 
 ## Archiving & publishing
 
 In the last lecture part for the day, we'll go over some of the key reasons why archiving is important for open science, where you can archive your materials, and some considerations for archiving and publishing:
 
-<object data="./CPEGArchivingPublishing.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf">
-    <embed src="./CPEGArchivingPublishing.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf" />
+<object data="./OpenScience.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf">
+    <embed src="./OpenScience.pdf#view=FitH&pagemode=none" width="100%" height="800px" type="application/pdf" />
 </object>
 
-(You can download the slides [here](./CPEGArchivingPublishing.pdf).)
+(You can download the slides [here](./OpenScience.pdf).)
