@@ -1029,8 +1029,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/06_archiving/index.html",
-    "href": "2025-GSA-workshop/06_archiving/index.html",
+    "objectID": "2025-GSA-workshop/06_ethical/index.html",
+    "href": "2025-GSA-workshop/06_ethical/index.html",
     "title": "Ethical Open Science Practices",
     "section": "",
     "text": "In this last session, we’ll be thinking about archiving our data and other materials at the end of a project adhering to ethical open science practices, why we should archive with these principles in mind, and where we might archive materials:\n\nGet moving and thinking about/discussing open science archiving with others\nUnderstand why ethical open science is important, and what should be archived\nHave some ideas of where working documents can be archived and openly accessible\n\nSchedule\n\n15:45–16:45",
@@ -1040,8 +1040,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/06_archiving/index.html#learning-objectives",
-    "href": "2025-GSA-workshop/06_archiving/index.html#learning-objectives",
+    "objectID": "2025-GSA-workshop/06_ethical/index.html#learning-objectives",
+    "href": "2025-GSA-workshop/06_ethical/index.html#learning-objectives",
     "title": "Ethical Open Science Practices",
     "section": "",
     "text": "In this last session, we’ll be thinking about archiving our data and other materials at the end of a project adhering to ethical open science practices, why we should archive with these principles in mind, and where we might archive materials:\n\nGet moving and thinking about/discussing open science archiving with others\nUnderstand why ethical open science is important, and what should be archived\nHave some ideas of where working documents can be archived and openly accessible\n\nSchedule\n\n15:45–16:45",
@@ -1051,8 +1051,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/06_archiving/index.html#get-thinking-and-discussing",
-    "href": "2025-GSA-workshop/06_archiving/index.html#get-thinking-and-discussing",
+    "objectID": "2025-GSA-workshop/06_ethical/index.html#get-thinking-and-discussing",
+    "href": "2025-GSA-workshop/06_ethical/index.html#get-thinking-and-discussing",
     "title": "Ethical Open Science Practices",
     "section": "Get thinking and discussing!",
     "text": "Get thinking and discussing!\nNow we’re back from break, let’s get talking about archiving our work. Think about the following questions and discuss your thoughts with your neighbours. Then write your answers, and have a look at what your colleagues think is important in open science and archiving research outputs.\n25 minutes, then we’ll come back together to go over the important points!\n\nWhy is open science important?\nWhat information is important to archive in a findable, accessible, interoperable, and reproducible way?\nWhat are some repositories where you can archive open science data?\nWhat are ethical considerations with open science data?",
@@ -1062,8 +1062,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/06_archiving/index.html#archiving-publishing",
-    "href": "2025-GSA-workshop/06_archiving/index.html#archiving-publishing",
+    "objectID": "2025-GSA-workshop/06_ethical/index.html#archiving-publishing",
+    "href": "2025-GSA-workshop/06_ethical/index.html#archiving-publishing",
     "title": "Ethical Open Science Practices",
     "section": "Archiving & publishing",
     "text": "Archiving & publishing\nIn the last lecture part for the day, we’ll go over some of the key reasons why archiving is important for open science, where you can archive your materials, and some considerations for archiving and publishing:\n\n\n\n(You can download the slides here.)",
@@ -1073,8 +1073,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#learning-objectives",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#learning-objectives",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#learning-objectives",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#learning-objectives",
     "title": "An introduction to data visualization",
     "section": "Learning objectives",
     "text": "Learning objectives\n\nWhy data visualization is important\nStrategies for effectively visualizing data\nHow to create basic graph types in R\nExample code to modify",
@@ -1085,8 +1085,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#schedule",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#schedule",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#schedule",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#schedule",
     "title": "An introduction to data visualization",
     "section": "Schedule",
     "text": "Schedule\n\n1:30 - 2:00 PM: Theory of data visualization\n\n2:00 - 3:15 PM: Data visualization practical",
@@ -1097,8 +1097,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#theory-of-data-visualization",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#theory-of-data-visualization",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#theory-of-data-visualization",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#theory-of-data-visualization",
     "title": "An introduction to data visualization",
     "section": "Theory of data visualization",
     "text": "Theory of data visualization\n\nWhat is data visualization?\nPicking a graph type\nBasic design principles\nVisualization in R",
@@ -1109,8 +1109,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#what-is-data-visualization-1",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#what-is-data-visualization-1",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#what-is-data-visualization-1",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#what-is-data-visualization-1",
     "title": "An introduction to data visualization",
     "section": "What is data visualization?",
     "text": "What is data visualization?\n\n\n\nThe representation of data through the use of graphs and figures.\n\nOften the data are complex, but the representation should be approachable and easy-to-understand.",
@@ -1121,8 +1121,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#lets-look-at-some-examples",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#lets-look-at-some-examples",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#lets-look-at-some-examples",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#lets-look-at-some-examples",
     "title": "An introduction to data visualization",
     "section": "Let’s look at some examples",
     "text": "Let’s look at some examples\nFor example, here are some data:\n\n (even this is a data visualization)\n\n\nRelative YouTube listening of Rihanna compared to the other Billboard Top 100 in 2017 across the US. Made by the New York Times using geocoded streaming data from YouTube.",
@@ -1133,8 +1133,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#lets-look-at-some-examples-1",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#lets-look-at-some-examples-1",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#lets-look-at-some-examples-1",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#lets-look-at-some-examples-1",
     "title": "An introduction to data visualization",
     "section": "Let’s look at some examples",
     "text": "Let’s look at some examples\nAnd here is a data visualization of that data:\n\n\n\n\nRelative proportions of a sports game that entails “game action”, “game inaction”, or “commercials”. English Premier League shows the highest proportion of game action. NHL games have the most (total) game action.",
@@ -1145,8 +1145,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#lets-look-at-some-examples-2",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#lets-look-at-some-examples-2",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#lets-look-at-some-examples-2",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#lets-look-at-some-examples-2",
     "title": "An introduction to data visualization",
     "section": "Let’s look at some examples",
     "text": "Let’s look at some examples",
@@ -1157,8 +1157,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#how-would-you-improve-this-figure",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#how-would-you-improve-this-figure",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#how-would-you-improve-this-figure",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#how-would-you-improve-this-figure",
     "title": "An introduction to data visualization",
     "section": "How would you improve this figure?",
     "text": "How would you improve this figure?\n\n\n\n\n\n\n-give groups 5 min to discuss: 1) what would they change; 2) what makes a figure memorable problems: (1) Space is poorly used and data are cramped. (2) Text is bold for no reason. (3) Multiple fonts are used. (4) Tick marks are barely visible. (5) Some labels don’t fit in their respective boxes. (6) Axis values are unnecessarily repeated. (7) Dashed and dash-dotted lines are ugly. (8) Mathematical symbols are not italicised. https://brushingupscience.com/2021/05/18/ugly-scientific-figures-are-scientists-lazy-indifferent-or-oblivious/",
@@ -1169,8 +1169,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#what-makes-a-bad-scientific-figure",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#what-makes-a-bad-scientific-figure",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#what-makes-a-bad-scientific-figure",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#what-makes-a-bad-scientific-figure",
     "title": "An introduction to data visualization",
     "section": "What makes a bad scientific figure?",
     "text": "What makes a bad scientific figure?\n\n\n\n\ntoo much data shown (split into multiple panels)\nimproper choice of graph type (avoid 3D plots)\nno clear message\ninformation not laid out in a clear way\naxes with no (or inappropriate) labels or units\nmisleading portrayal of scale and uncertainty (e.g., truncated axes)\nno legend\ninconsistent colors and formatting, cluttered appearance\nnot visually accessible, too many colors, lacking contrast\ncolors/symbols not used to highlight relationships or patterns\nno readable text hierarchy\npoor resolution",
@@ -1181,8 +1181,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#graph-type-depends-on-data-type",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#graph-type-depends-on-data-type",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#graph-type-depends-on-data-type",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#graph-type-depends-on-data-type",
     "title": "An introduction to data visualization",
     "section": "Graph type depends on data type",
     "text": "Graph type depends on data type\n\n\n\n\nWe don’t have time to go over this entire chart, but it should be a good reference for the future. Note that the first question is what aspect of the data you would like to show: relationships, comparisons, distributions, or compositions. From there, we need to decide how many variables we want to include and/or whether we are showing changes over time.",
@@ -1193,8 +1193,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#r-graph-gallery",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#r-graph-gallery",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#r-graph-gallery",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#r-graph-gallery",
     "title": "An introduction to data visualization",
     "section": "R Graph Gallery",
     "text": "R Graph Gallery\nhttps://r-graph-gallery.com/",
@@ -1205,8 +1205,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#r-graph-gallery-1",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#r-graph-gallery-1",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#r-graph-gallery-1",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#r-graph-gallery-1",
     "title": "An introduction to data visualization",
     "section": "R Graph Gallery",
     "text": "R Graph Gallery\nhttps://r-graph-gallery.com/",
@@ -1217,8 +1217,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#plotly",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#plotly",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#plotly",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#plotly",
     "title": "An introduction to data visualization",
     "section": "Plotly",
     "text": "Plotly\nhttps://plotly.com/r/",
@@ -1229,8 +1229,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#basic-design-principles-1",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#basic-design-principles-1",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#basic-design-principles-1",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#basic-design-principles-1",
     "title": "An introduction to data visualization",
     "section": "Basic design principles",
     "text": "Basic design principles\n\nVisual encoding of data points\nColor\nType (Font)\nVisual hierarchy\nComposition and layout (R helps with this)",
@@ -1241,8 +1241,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visual-encoding",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visual-encoding",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visual-encoding",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visual-encoding",
     "title": "An introduction to data visualization",
     "section": "Visual encoding",
     "text": "Visual encoding\n\nMarks and channels to visually represent groups in the data:",
@@ -1253,8 +1253,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nLots of colors exist!",
@@ -1265,8 +1265,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-1",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-1",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-1",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-1",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nPicking colors\n\nValue (lightness/darkness)",
@@ -1277,8 +1277,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-2",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-2",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-2",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-2",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nPicking colors\n\nTemperature (cool vs warm)",
@@ -1289,8 +1289,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-3",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-3",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-3",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-3",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nPicking colors\n\nSaturation (intensity of color)",
@@ -1301,8 +1301,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-4",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-4",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-4",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-4",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nPicking colors\n\nPalettes (collections of colors that work well together)\n\n\n\n\n\nAnalogous colors are three colors next to each other on the color wheel, composed of one dominant color (usually a primary or secondary color), then a supporting color (a secondary or tertiary color), and a third color that is either a mix of the two first colors, or an accent color that pops.",
@@ -1313,8 +1313,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-5",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-5",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-5",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-5",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nPicking colors\n\nPalettes (collections of colors that work well together)\n\n\n\n\n\nA complementary color scheme is created by using two colors opposite each other on the color wheel. This type of palette attracts the most attention because of its bold contrast, but that also makes it the most difficult to find a harmonious balance. One way to achieve good balance when using complementary colors is to identify two opposite colors (as shown in the image below) and then create the rest of your palette by creating slightly darker or lighter versions of those same colors.",
@@ -1325,8 +1325,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-6",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-6",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-6",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-6",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nDeclaring colors in R\n\nNames (see cheat sheet)\nHEX codes",
@@ -1337,8 +1337,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-7",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-7",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-7",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-7",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nGetting HEX codes\n\nIn software (e.g., PowerPoint, Illustrator, Inkscape)\nOnline (e.g., Google, HTML color codes, coolers, Colorhunt)\n{eyedroppeR}",
@@ -1349,8 +1349,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-8",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-8",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-8",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-8",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nOr use premade color palette packages!\n\nRColorBrewer\ngeological timescale palettes in deeptime\nviridis\n\ndesigned for accessibility\n\nwesanderson",
@@ -1361,8 +1361,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-9",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-9",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-9",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-9",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nColor accessibility is important!\nThe more color contrast the better!",
@@ -1373,8 +1373,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-10",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-10",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-10",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-10",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nDon’t forget about color blindness!\nCheck your graphs with a color blindness simulator (e.g., Coblis color blindness simulator or ColorOracle).",
@@ -1385,8 +1385,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-11",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-11",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-11",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-11",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nYour graphs should even be legible in grayscale\n\n\n\n \n\n\nRight is desaturated",
@@ -1397,8 +1397,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-12",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-12",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-12",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-12",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nEffective use of color",
@@ -1409,8 +1409,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-13",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#color-13",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-13",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#color-13",
     "title": "An introduction to data visualization",
     "section": "Color",
     "text": "Color\nEffective use of color",
@@ -1421,8 +1421,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#font",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#font",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#font",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#font",
     "title": "An introduction to data visualization",
     "section": "Font",
     "text": "Font\nThere are lots of fonts/types, too!",
@@ -1433,8 +1433,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#font-1",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#font-1",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#font-1",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#font-1",
     "title": "An introduction to data visualization",
     "section": "Font",
     "text": "Font\nWe want easily readable fonts:\n\nTahoma\nCalibri\nHelvetica\nArial\n\n\nFind more at Google Fonts\n\nCan import these into R using the sysfonts package",
@@ -1445,8 +1445,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#font-2",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#font-2",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#font-2",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#font-2",
     "title": "An introduction to data visualization",
     "section": "Font",
     "text": "Font\nTips\n\nOne font is usually enough (max two)\nMake sure font size is big enough (who is the audience?)\nUse bold for emphasis, but avoid italics and underlines\nLeft-aligned text is most readable\nUse size as a tool to hierarchize content\nUse 1.5 line spacing for better readability\n\n\nItalics and underlines decrease accessibility (e.g., dyslexia)",
@@ -1457,8 +1457,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visual-hierarchy",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visual-hierarchy",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visual-hierarchy",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visual-hierarchy",
     "title": "An introduction to data visualization",
     "section": "Visual hierarchy",
     "text": "Visual hierarchy\n\n\n\nsize\ncolor\ncontrast\ntexture\nalignment\nproximity",
@@ -1469,8 +1469,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#what-makes-a-figure-effective",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#what-makes-a-figure-effective",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#what-makes-a-figure-effective",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#what-makes-a-figure-effective",
     "title": "An introduction to data visualization",
     "section": "What makes a figure effective?",
     "text": "What makes a figure effective?\n\n\n\n\ntells a story with the data\npatterns are represented in a clear, honest, and intuitive way\nuses an appropriate graph type\ngraph design is accessible and emphasizes the main message (minimal clutter)\naesthetics are consistent\nvisual hierarchy that draws the eye to the most important parts of the graph\nincludes labels for context",
@@ -1481,8 +1481,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-1",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-1",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-1",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-1",
     "title": "An introduction to data visualization",
     "section": "Visualization in R",
     "text": "Visualization in R\nR has lots of built-in visualization functionality:\n\nplot()\nbarplot()\nhist()\nboxplot()\naxis()\nlegend()\nlines(), segments(), rect(), text(), etc.\n\n\nWe call all of this ‘base’ graphics, because it is all included in the packages that come with R, including the ‘graphics’ and ‘stats’ packages.\nNote that base graphics is done on a static canvas and objects are drawn on the device through R plotting commands. The canvas has a set of global parameters such as margins and layouts which can be manipulated by the user using par() commands. The R graphics engine does not maintain a user visible graphics list. Ojects cannot be easily edited without redrawing a whole plot.",
@@ -1493,8 +1493,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-2",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-2",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-2",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-2",
     "title": "An introduction to data visualization",
     "section": "Visualization in R",
     "text": "Visualization in R\n\n\n\n\nYou can make some pretty complex plots with ‘base’ R graphics!",
@@ -1505,8 +1505,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-3",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-3",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-3",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-3",
     "title": "An introduction to data visualization",
     "section": "Visualization in R",
     "text": "Visualization in R\nMany packages build on these ‘base’ graphics:\n\n{plotrix}\n{rgl}: for 3D interactive graphics\n{gplots}\n{scatterplot3d}: 3D scatterplots\n{palaeoverse}!\n\n\nSome functions in the palaeoverse package produce base R plots. We’ve done this to reduce the number of dependencies that users need to install when they install the palaeoverse package. Note: It also has the axis_geo() function to add a timescale to an existing base R plot.",
@@ -1517,8 +1517,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-4",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-4",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-4",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-4",
     "title": "An introduction to data visualization",
     "section": "Visualization in R",
     "text": "Visualization in R\nThen ‘grid’ graphics came along:\n\nMore complex layouts\nScaling is maintained on resizing\nNested graphs and more interactivity\n\n\n\n\n\nHowever, one can quickly run into trouble with R’s base graphic system if one wants to design complex layouts where scaling is maintained properly on resizing, nested graphs are desired or more interactivity is needed. grid was designed by Paul Murrell to overcome some of these limitations.\nNote that each component has a size, if you were scale this larger or smaller, all of those relative sizes would be preserved (unlike in base R graphics).",
@@ -1529,8 +1529,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-5",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-5",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-5",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-5",
     "title": "An introduction to data visualization",
     "section": "Visualization in R",
     "text": "Visualization in R\nMany packages build on these ‘grid’ graphics:\n\n{lattice}: trellis graphics\n{vcd}: for categorical data\n{ggplot2}: “grammar of graphics”\n{hexbin}: hexagonal bins\n{patchwork}: combine (ggplot2) plots\n{deeptime}!\n\n\nIn our practical, we’ll be exploring ggplot2. The deeptime package that I’ve developed helps to make plots with ggplots2 (mostly). For example, it has the coord_geo() function which adds a timescale to an existing ggplot2 plot.",
@@ -1541,8 +1541,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-6",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-6",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-6",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-6",
     "title": "An introduction to data visualization",
     "section": "Visualization in R",
     "text": "Visualization in R\nPackages for spatial visualization:\n\n{sf}: basic objects and methods for vector data\n{terra}: basic objects and methods for raster data\n{ggplot2}: works for plotting spatial data, too\n{raster}: plotting raster data\n\n\n\n\n\nIn our practical, we’ll also be exploring using and visualizing spatial objects.",
@@ -1553,8 +1553,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-7",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#visualization-in-r-7",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-7",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#visualization-in-r-7",
     "title": "An introduction to data visualization",
     "section": "Visualization in R",
     "text": "Visualization in R\nFile formats:\nYou can export plots from R in many file formats (we’ll mostly use ggsave()):\n\n\n\n\n\n\nFile format\nImage type\nNotes\n\n\n\n\n.jpg\nRaster\nCan’t have transparent parts\n\n\n.png\nRaster\nCan also have transparent parts\n\n\n.svg\nVector\nCan edit in Inkscape/Illustrator\n\n\n.pdf\nVector\nNot actually an image file type, but can be used\n\n\n\n\n\nI personally like .pdfs because they are easily shareable and are a pretty common file format for everyone. Pdfs can even be imported into inkscape and illustrator for editing (I’d encourage you to try to do all of your customization within R, but I know some things still aren’t possible/easy in R). svgs are also great, but I find they are less supported by email clients and slack, etc. pngs are great, but don’t scale (get pixellated), so never use them for publications, etc",
@@ -1565,8 +1565,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#data-visualization-books",
-    "href": "2025-GSA-workshop/05_harmonization/data_viz_gsa.html#data-visualization-books",
+    "objectID": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#data-visualization-books",
+    "href": "2025-GSA-workshop/05_visualization/data_viz_gsa.html#data-visualization-books",
     "title": "An introduction to data visualization",
     "section": "Data visualization books",
     "text": "Data visualization books\n\n\n\n\n\n\nThe Visual Display of Quantitative Information  Edward R. Tufte\n\n\n\n\n\n\nBetter Data Visualizations  Jonathan Schwabish\n\n\n\n\n\n\nFundamentals of Data Visualization  Claus O. Wilke\n\n\n\n\n\n\nBuilding Science Graphics  Jen Christiansen\n\n\n\n\n\n\nR Graphics Cookbook  Winston Chang\n\n\n\n\nRoyal Statistical Society best practices\nR for Data Science",
@@ -1653,7 +1653,7 @@
     "href": "2025-GSA-workshop/01_introduction/workshop_intro.html#schedule",
     "title": "2025 Paleontological Society Short Course",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nEvent\n\n\n\n\n08:00 AM\nWelcome and introduction\n\n\n08:30 AM\nSetting up a reproducible workflow (GitHub, GitHub Desktop, RStudio)\n\n\n10:00 AM\nCoffee break ☕\n\n\n10:15 AM\nData acquisition\n\n\n10:45 AM\nData Processing I: Data exploration and cleaning\n\n\n12:00 PM\nLunch break 🥪\n\n\n1:30 PM\nData Processing II: Data visualization and synthesis\n\n\n3:15 PM\nCoffee break ☕\n\n\n3:30 PM\nOpen science presentation/breakout (FAIR/CARE, archiving)\n\n\n4:45 PM\nClosing remarks",
+    "text": "Schedule\n\n\n\n\n\n\n\n\n\n\n\n\nTime\nEvent\n\n\n\n\n08:00 AM\nWelcome and introduction\n\n\n08:30 AM\nSetting up a reproducible workflow (GitHub, GitHub Desktop, RStudio)\n\n\n10:00 AM\nCoffee break ☕\n\n\n10:15 AM\nData acquisition\n\n\n10:45 AM\nData Processing I: Data exploration and cleaning\n\n\n12:00 PM\nLunch break 🥪\n\n\n1:30 PM\nData Processing II: Data visualization and synthesis\n\n\n3:15 PM\nCoffee break ☕\n\n\n3:30 PM\nEthical open science\n\n\n4:45 PM\nClosing remarks",
     "crumbs": [
       "GSA 2025 Workshop",
       "Introduction to the workshop",
@@ -2552,7 +2552,7 @@
     "href": "2025-GSA-workshop/index.html#schedule",
     "title": "GSA 2025 Workshop",
     "section": "Schedule",
-    "text": "Schedule\n\n\n\nTime\nEvent\n\n\n\n\n08:00 AM\nWelcome and introduction\n\n\n08:30 AM\nSetting up a reproducible workflow (GitHub, GitHub Desktop, RStudio)\n\n\n10:00 AM\nCoffee break ☕\n\n\n10:15 AM\nData acquisition\n\n\n10:45 AM\nData Processing I: Data exploration and cleaning\n\n\n12:00 PM\nLunch break 🥪\n\n\n1:30 PM\nData Processing II: Data visualization and synthesis\n\n\n3:15 PM\nCoffee break ☕\n\n\n3:30 PM\nOpen science practices presentation/breakout\n\n\n4:45 PM\nClosing remarks",
+    "text": "Schedule\n\n\n\nTime\nEvent\n\n\n\n\n08:00 AM\nWelcome and introduction\n\n\n08:30 AM\nSetting up a reproducible workflow (GitHub, GitHub Desktop, RStudio)\n\n\n10:00 AM\nCoffee break ☕\n\n\n10:15 AM\nData acquisition\n\n\n10:45 AM\nData Processing I: Data exploration and cleaning\n\n\n12:00 PM\nLunch break 🥪\n\n\n1:30 PM\nData Processing II: Data visualization and synthesis\n\n\n3:15 PM\nCoffee break ☕\n\n\n3:30 PM\nEthical open science\n\n\n4:45 PM\nClosing remarks",
     "crumbs": [
       "GSA 2025 Workshop"
     ]
@@ -2588,8 +2588,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/index.html",
-    "href": "2025-GSA-workshop/05_harmonization/index.html",
+    "objectID": "2025-GSA-workshop/05_visualization/index.html",
+    "href": "2025-GSA-workshop/05_visualization/index.html",
     "title": "Data Processing II",
     "section": "",
     "text": "In this session, we’ll walk through how to effectively visualize data. We’ll cover:\n\nWhy data visualization is important\nStrategies for effectively visualizing data\nHow to create basic graph types in R\n\nYou’ll also walk away with some example code to modify and adapt to your own work.",
@@ -2599,8 +2599,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/index.html#learning-objectives",
-    "href": "2025-GSA-workshop/05_harmonization/index.html#learning-objectives",
+    "objectID": "2025-GSA-workshop/05_visualization/index.html#learning-objectives",
+    "href": "2025-GSA-workshop/05_visualization/index.html#learning-objectives",
     "title": "Data Processing II",
     "section": "",
     "text": "In this session, we’ll walk through how to effectively visualize data. We’ll cover:\n\nWhy data visualization is important\nStrategies for effectively visualizing data\nHow to create basic graph types in R\n\nYou’ll also walk away with some example code to modify and adapt to your own work.",
@@ -2610,8 +2610,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/index.html#plan-for-the-session",
-    "href": "2025-GSA-workshop/05_harmonization/index.html#plan-for-the-session",
+    "objectID": "2025-GSA-workshop/05_visualization/index.html#plan-for-the-session",
+    "href": "2025-GSA-workshop/05_visualization/index.html#plan-for-the-session",
     "title": "Data Processing II",
     "section": "Plan for the Session",
     "text": "Plan for the Session\nThe session will be split into the following sections:\n\nTheory of data visualization\nData visualization practical",
@@ -2621,8 +2621,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/index.html#schedule",
-    "href": "2025-GSA-workshop/05_harmonization/index.html#schedule",
+    "objectID": "2025-GSA-workshop/05_visualization/index.html#schedule",
+    "href": "2025-GSA-workshop/05_visualization/index.html#schedule",
     "title": "Data Processing II",
     "section": "Schedule",
     "text": "Schedule\n1:30–3:15 PM",
@@ -2632,8 +2632,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/index.html#i.-theory-of-data-visualization",
-    "href": "2025-GSA-workshop/05_harmonization/index.html#i.-theory-of-data-visualization",
+    "objectID": "2025-GSA-workshop/05_visualization/index.html#i.-theory-of-data-visualization",
+    "href": "2025-GSA-workshop/05_visualization/index.html#i.-theory-of-data-visualization",
     "title": "Data Processing II",
     "section": "I. Theory of data visualization",
     "text": "I. Theory of data visualization",
@@ -2643,8 +2643,8 @@
     ]
   },
   {
-    "objectID": "2025-GSA-workshop/05_harmonization/index.html#ii.-data-visualization-practical",
-    "href": "2025-GSA-workshop/05_harmonization/index.html#ii.-data-visualization-practical",
+    "objectID": "2025-GSA-workshop/05_visualization/index.html#ii.-data-visualization-practical",
+    "href": "2025-GSA-workshop/05_visualization/index.html#ii.-data-visualization-practical",
     "title": "Data Processing II",
     "section": "II. Data visualization practical",
     "text": "II. Data visualization practical\n\nGetting familiar with ggplot2\nggplot2 is designed around the “grammar of graphics.” In most cases you start with ggplot() and then supply a dataset and “aesthetic” mappings (with aes()). You then add on individual layers (like geom_point() or geom_histogram()) to add the visualization(s) that you want. Let’s first try making a scatterplot using some built-in data about car mileage (mpg). In this case, we’ll plot the highway mileage with respect to the engine size (displacement). Note that in this case, instead of calling functions separately, we chain them together with the + operator.\n\n# load the ggplot2 package\nlibrary(ggplot2)\n\n\n# check out the mileage data\nhead(mpg)\n\n# A tibble: 6 × 11\n  manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class \n  &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; \n1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa…\n2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa…\n3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa…\n4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa…\n5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa…\n6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa…\n\n\n\nggplot(mpg, aes(x = displ, y = hwy)) + \n  geom_point()\n\n\n\n\n\n\n\n\nYou’ll notice that with just a couple of lines, we’ve already made a pretty nice visualization. ggplot2 does most of the work for us once we specify our x and y variables. Let’s go a step further and color the points by another variable (e.g., the class of the car). With ggplot2, all that requires is specifying another aesthetic:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point()\n\n\n\n\n\n\n\n\nNotice that ggplot2 comes with its own default color scheme. I would discourage you from using the default colors. Instead, we’ll try out some of the accessible color palettes we talked about earlier. First, let’s try one of the viridis color palettes. Since this palette is included in ggplot2, all we need to do is add the proper “scale” to our ggplot() call.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() + #adds the points\n  scale_color_viridis_d() #applies the viridis color palette\n\n\n\n\n\n\n\n\nHmm…with this many colors, it becomes a little hard to distinguish between the colors with this color palette. Let’s try one of the brewer color palettes.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(palette = \"Set1\") #changing the color palette\n\n\n\n\n\n\n\n\nOutside of color, there are many other aspects of the graph that we can modify using the “scale” functions. For example, we can modify the x and y axes:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") + #adding x axis label\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") #adding y axis label\n\n\n\n\n\n\n\n\n\nTheming\nThe last basic thing you might want to do with ggplot2 is modify the style of the visualization. This is extremely customizable, but the first place to start is with a built-in theme. For example, here’s what the classic theme looks like:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() #applies the classic theme\n\n\n\n\n\n\n\n\nUsing this built-in theme has changed many visual aspects of the graph, including changing the plot background color, adding axis lines, and removing the internal grid lines. If you look very closely, however, the axis tick labels are still a slight grey. We can use the theme() function to further customize the appearance and change this. In this case, we’ll make the axis text elements have a black color.\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\")) #modifies the axis text\n\n\n\n\n\n\n\n\nAnd there we have it! With just 7 lines of code, we’ve created what I would say is a publication quality graph! ggplot does a lot of the tedious work for you, giving you time to focus on the more important aspects, such as labeling and color. Admittedly, I’ve spent a LOT of time on these aspects in the past…\nFor comparison, here’s how we would produce a similar graph using only R’s built-in (base) plotting functions. It’s worth taking a moment to see how ggplot’s additive functions all work together to produce a final product, whereas base R requires lots of simultaneous arguments inside a single function, plus sequential additive functions that ggplot accounts for by default (e.g., adding a legend).\n\nggplot(mpg, aes(x = displ, y = hwy, color = class)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\nplot(x = mpg$displ, y = mpg$hwy,\n     col = factor(mpg$class), pch = 16,\n     xlab = \"Engine Displacement (l)\",\n     ylab = \"Highway Mileage (mpg)\")\nlegend(\"topright\", legend = unique(mpg$class), cex = 0.8,\n       pch = 16, col = unique(factor(mpg$class)),\n       ncol = 2, bty = 'n', title = \"Vehicle Class\")\n\n\n\n\n\n\n\n\nMore information about all of the hierarchical theme components that you can customize is available here. In order to change many of these components, you need to use theme elements like we did above with element_text(). That and other theme elements are documented here.\n\n\n\nMore complex features\n\nFacetting\nLet’s take our scatterplot example from earlier and make it a little more complex with another aesthetic:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) +  #adds a grouping variable (drive type) displayed as different shapes\n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNow, what if we wanted to also split the data by the years the cars were manufactured? We’re already using color and shape, so what other aesthetic could we use? We could possible use some shapes that have both a fill and outline color, but that sounds messy. Instead of using another aesthetic, we could also use a facet. This splits the chart into multiple panels:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  facet_wrap(vars(year)) + #facets by year\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe can get even crazier by faceting by multiple variables:\n\nggplot(mpg, aes(x = displ, y = hwy, color = class, shape = drv)) + \n  geom_point() +\n  scale_color_brewer(name = \"Vehicle Class\", palette = \"Set1\") +\n  scale_shape_discrete(name = \"Drive Type\") +\n  scale_x_continuous(name = \"Engine Displacement (l)\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  facet_grid(rows = vars(cyl), cols = vars(year)) + #facets by number of cylinders and by year\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nOK, maybe we’ve gone a little too far here, but you get the picture!\n\n\nOther layers\nThere are many other types of plots that we can make with ggplot2.\n\nHistograms\nWe can visualize the density of values for a single variable with a histogram:\n\nggplot(mpg, aes(x = hwy)) + \n  geom_histogram() + #creates a histogram of the variable hwy\n  scale_x_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote how histograms don’t require a y-axis aesthetic by default. The counts are tabulated for you.\n\n\nBoxplots and Violin Plots\nWe can visualize the density of values for a single variable across a discrete variable with boxplots or violin plots:\n\nggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + \n  geom_boxplot() + #creates a boxplot\n  scale_x_discrete(name = \"# Cylinders\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nggplot(mpg, aes(x = as.factor(cyl), y = hwy)) + \n  geom_violin(scale = \"width\", draw_quantiles = c(0.25, 0.5, 0.75)) + #creates a violin plot\n  scale_x_discrete(name = \"# Cylinders\") +\n  scale_y_continuous(name = \"Highway Mileage (mpg)\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\nWarning: The `draw_quantiles` argument of `geom_violin()` is deprecated as of ggplot2\n4.0.0.\nℹ Please use the `quantiles.linetype` argument instead.\n\n\n\n\n\n\n\n\n\nNote that many of these “geoms” have lots of options. For example, we’ve decided to scale all of the violin plots to the same width and to draw the quartiles on them (mimicking the boxplots above).\n\n\n2D Contours\nWe can also visualize the density of values across two continuos variables using a 2D contour. Here we’ll use the built-in Old Faithful waiting time/eruption duration data (faithful). We’ll expand the axes a little bit to better show the contours:\n\nggplot(faithful, aes(x = eruptions, y = waiting)) +\n  geom_density_2d(linewidth = 0.25, colour = \"black\") + #creates a contour plot\n  xlim(0.5, 6) + #adjusting limits of x axis\n  ylim(35, 110) + #adjusting limits of y axis\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\n\n\nCombining layers\nWe can also combine multiple layers to show the same data in different ways in the same plot. For example, we could show the raw data for the above contour plot in addition to the contours:\n\nggplot(faithful, aes(x = eruptions, y = waiting)) +\n  geom_point() +\n  geom_density_2d_filled(alpha = 0.5) +\n  geom_density_2d(linewidth = 0.25, colour = \"black\") + #this is how we can layer visualizations\n  xlim(0.5, 6) +\n  ylim(35, 110) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote that, when combining layers, the layers are added to the plot in order, so in this case the points are the bottom layer and the contour lines are the top layer. We changed the alpha of the middle layer to prevent the points from being blocked.\n\nTime Series\nWe’ll use the built-in economics dataset to explore visualizing a time series. In this case, we are looking at unemployment over time:\n\nggplot(economics, aes(x = date, y = unemploy)) +\n  geom_line() + #creates a line plot\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\ngeom_path() lets you explore how two variables are related over time. For example, unemployment and personal savings rate:\n\nggplot(economics, aes(x = unemploy/pop, y = psavert)) +\n  geom_path(aes(colour = as.numeric(date))) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nNote how we’ve used multiple columns of the data to define the x-axis here.\n\n\n\n\nBREAKOUT SESSION 1\n\n\n\n\n\n\nNotePractice Time!\n\n\n\nYour turn! Let’s see what you and those sitting around you can produce using the iris dataset built into R. Here’s a basic plot of Sepal Length versus Petal Length:\n\n#look at the data (i.e., what do we have to play with?)\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n#visualize the data\nggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) + \n  geom_point()\n\n\n\n\n\n\n\n\nEdit the R script directly above by changing the variables, coloring the points by species, fixing the axis labels, etc.\n\n\n\n\nVisualizing paleo data\nNow let’s take a stab at visualizing some paleo data! First, let’s load and prepare the packages we are going to need.\n\nlibrary(palaeoverse) # for data\nlibrary(ggplot2) # for plots\nlibrary(deeptime) # for fun plot additions\n\nNow let’s prepare our reef data that comes with the palaeoverse package:\n\n# Assign a common time scale based on an interval key\ndata(reefs)\nreefs &lt;- look_up(occdf = reefs,\n                 early_interval = \"interval\",\n                 late_interval = \"interval\",\n                 int_key = interval_key)\n# Remove pre-Phanerozoic data to focus our study\nreefs &lt;- subset(reefs, interval_max_ma &lt;= 541)\n# Extract Phanerozoic stage-level stages for time bins\nbins &lt;- time_bins(interval = \"Phanerozoic\", rank = \"stage\")\n# bin_time requires \"max_ma\" and \"min_ma\" columns\ncolnames(reefs)[which(colnames(reefs) == \"interval_max_ma\")] &lt;- \"max_ma\"\ncolnames(reefs)[which(colnames(reefs) == \"interval_min_ma\")] &lt;- \"min_ma\"\nreefs &lt;- bin_time(occdf = reefs, bins = bins, method = \"all\")\n# Bin occurrence data\nreefs_time &lt;- group_apply(occdf = reefs, group = c(\"bin_assignment\", \"bin_midpoint\"), fun = nrow)\n# Clean these columns up\nreefs_time$bin_assignment &lt;- as.numeric(reefs_time$bin_assignment)\nreefs_time$bin_midpoint &lt;- as.numeric(reefs_time$bin_midpoint)\n# Check output\nhead(reefs_time)\n\n  nrow bin_assignment bin_midpoint\n1    3            102      0.00210\n2    3            101      0.00620\n3    3            100      0.00995\n4  117             99      0.07035\n5   52             98      0.45150\n6   34             97      1.28700\n\n\nAnd now we plot the data:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\", limits = c(541, 0), expand = expansion(0, 0)) +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nTimescales\nThe deeptime package allows us to add a timescale to a ggplot2 plot with a single line (just like palaeoverse does in base R graphics). coord_geo() is one of many coordinate systems that exist in the ggplot2 ecosystems. Often coordinate systems are used to alter the positions of aesthetics, but in this case coord_geo() adds a timescale to one or more of the axes:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe can stack multiple timescales or have timescales on multiple sides:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(\n    dat = list(\"periods\", \"eras\"), xlim = c(542, 0),\n    pos = list(\"b\", \"b\"), abbrv = list(TRUE, FALSE)\n  ) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow)) +\n  geom_line() +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  coord_geo(\n    dat = list(\"periods\", \"eras\"), xlim = c(542, 0),\n    pos = list(\"b\", \"t\"), abbrv = list(TRUE, FALSE)\n  ) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\nTimescale color palettes\nInstead of a line graph/time series, we could plot these reef counts as a bar graph (geom_col() in this case). However, to give a little more life to our graph, we’ll go ahead and color each bar based on the official geological timescale color palette (included in deeptime). First we need to get the stage names and the beginnings and ends of the bins.\n\n# Get stage names\nreefs_time$stage &lt;- bins$interval_name[reefs_time$bin_assignment]\n\n# Get beginning and end of bins\nreefs_time$bin_max_ma &lt;- bins$max_ma[reefs_time$bin_assignment]\nreefs_time$bin_min_ma &lt;- bins$min_ma[reefs_time$bin_assignment]\n\nThen we can go ahead and make the desired bar graph:\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow, fill = stage)) +\n  geom_col(aes(width = bin_max_ma - bin_min_ma)) +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  scale_fill_geo(dat = \"stages\", guide = \"none\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\nWe could also group the stages by era and color them based on that:\n\nreefs_time$era &lt;- cut(reefs_time$bin_midpoint,\n                      breaks = c(0, 66, 252, 542),\n                      labels = c(\"Cenozoic\", \"Mesozoic\", \"Paleozoic\"))\n\nggplot(reefs_time, aes(x = bin_midpoint, y = nrow, fill = era)) +\n  geom_col(aes(width = bin_max_ma - bin_min_ma)) +\n  scale_x_reverse(\"Time (Ma)\") +\n  scale_y_continuous(\"Number of reefs per stage\") +\n  scale_fill_geo(dat = \"eras\", guide = \"none\") +\n  coord_geo(xlim = c(541, 0)) +\n  theme_classic() +\n  theme(axis.text = element_text(color = \"black\"))\n\n\n\n\n\n\n\n\n\n\n\nPlot occurrences through time\nA common graph in paleontology is stratigraphic occurrences of taxa through time. The palaeoverse and deeptime packages have functions to instantly create graphs like these based on occurrence data. I’ll focus on the deeptime version here since it uses ggplot2. First we’ll grab some tetrapod occurrence data from the palaeoverse package and clean it up a little:\n\noccdf &lt;- subset(tetrapods, accepted_rank == \"genus\")\noccdf &lt;- subset(occdf, select = c(occurrence_no, accepted_name,\n                                  max_ma, min_ma))\noccdf$age &lt;- (occdf$max_ma + occdf$min_ma) / 2\noccdf &lt;- subset(occdf, accepted_name %in% c(\"Eryops\", \"Dimetrodon\",\n                                            \"Diadectes\", \"Diictodon\",\n                                            \"Ophiacodon\", \"Diplocaulus\",\n                                            \"Benthosuchus\"))\n\nNow we’ll use geom_points_range() to plot the occurrences as points and ranges:\n\n# plot those occurrences\nggplot(data = occdf) +\n  geom_points_range(aes(x = age, y = accepted_name)) + #plots occurrences\n  # geom_point(aes(x = age, y = accepted_name)) +\n  # geom_line(aes(x = age, y = accepted_name))\n  scale_x_reverse(name = \"Time (Ma)\") +\n  coord_geo(pos = list(\"bottom\", \"bottom\"),\n            dat = list(\"stages\", \"periods\"),\n            abbrv = list(TRUE, FALSE), expand = TRUE, size = \"auto\") +\n  theme_classic()\n\n\n\n\n\n\n\n\nAnd that’s that!\n\n\n\nBREAKOUT SESSION 2\n\n\n\n\n\n\nNotePractice Time!\n\n\n\nLet’s now put what you’ve learned to work to address the question posed toward the beginning of the workshop with the Cenozoic crocodile dataset: How do paleolatitudinal range and paleodiversity vary for Crocodylia across the Cenozoic?\n\nHow might you visualize the crocodile occurrences to look at patterns in range size and/or diversity across time intervals? You could start by sketching on paper what a figure might look like before you even start coding.\nTry to adapt some of the code shared during the Data Processing modules to make this plot using the cleaned crocodile dataset. For some additional help, you can check out this Palaeoverse vignette.\nShare your figures in small groups and discuss the different ways in which you chose to display the crocodile data. Moving forward, how might you revise your figure to more effectively visualize the data?",
