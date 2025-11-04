@@ -127,9 +127,9 @@ format:
 | **10:15 AM** | [**Data acquisition**](../03_acquisition/index.qmd)          |
 | **10:45 AM** | [**Data Processing I: Data exploration and cleaning**](../04_exploration/index.qmd)      |
 | **12:00 PM** | ***Lunch break*** 🥪                                     |
-| **1:30 PM**  | [**Data Processing II: Data visualization and synthesis**](../05_harmonization/index.qmd)  |
+| **1:30 PM**  | [**Data Processing II: Data visualization and synthesis**](../05_visualization/index.qmd)  |
 | **3:15 PM**  | ***Coffee break*** ☕                                     |
-| **3:30 PM**  | [**Open science presentation/breakout (FAIR/CARE, archiving)**](../06_archiving/index.qmd)  |
+| **3:30 PM**  | [**Ethical open science**](../06_ethical/index.qmd)  |
 | **4:45 PM**  | [**Closing remarks**](../07_wrap-up/index.qmd)                                 |
 
 : {tbl-colwidths="[20,80]"}

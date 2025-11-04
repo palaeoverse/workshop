@@ -1,6 +1,6 @@
 ---
 title: "Data Processing II"
-subtitle: "Data Processing II: Data Harmonization and Synthesis"
+subtitle: "Data Processing II: Data Visualization and Synthesis"
 toc: true
 order: 5
 ---
