@@ -1917,7 +1917,7 @@
     "href": "2025-CPEG-workshop/02_workflow/rproj_github.html#making-and-committing-changes",
     "title": "Reproducible and Collaborative Workflows",
     "section": "Making and committing changes",
-    "text": "Making and committing changes\nNow let’s make some changes to the repository:\n\nOpen the README.md file in RStudio and add some text to it. Perhaps your name or today’s date. Make sure to save the file.\nYou’ll now see that the README.md file has been modified in the Git panel in RStudio.\nClick the checkbox next to the README.md file in the Git panel to stage the changes.\nIn the “Commit message” box, write a brief description of the changes you made (e.g., “Added my name to README”).\nClick the “Commit” button to commit the changes to your local repository.\nClick the “Push” button in the Git panel to upload your changes to GitHub.",
+    "text": "Making and committing changes\nNow let’s make some changes to the repository:\n\nOpen the README.md file in RStudio and add some text to it. Perhaps your name or today’s date. Make sure to save the file.\nNow open GitHub Desktop again. You’ll now see that the README.md file has been modified. There should also be a new .Rproj file in the list of changed files.\nMake sure the checkboxes next to both of these files are checked.\nIn the small “Commit message” box below, write a brief message about the changes you made (it probably already says something like “Update README.md”). The larger box below this can be used if you need to further describe your changes.\nClick the “Commit” button to commit the changes to your local repository.\nClick the “Push origin” button to upload your changes to GitHub.",
     "crumbs": [
       "CPEG 2025 Workshop",
       "Setting up a reproducible workflow",
