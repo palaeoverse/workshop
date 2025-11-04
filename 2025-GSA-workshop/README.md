@@ -32,7 +32,7 @@ Now sit back and relax while all of your hard work is copied to the website repo
 
 ## Archiving
 
-We strongly recommend that you archive your workshop materials. Archiving should be done via continuous integration with Zenodo, implemented through version controlled releases (a manual process when all content has been prepared). You can follow the [instructions here](https://docs.github.com/en/repositories/archiving-a-github-repository/referencing-and-citing-content) to link your GitHub repository to Zenodo and set up automatic archiving whenever a new release is created.
+These materials are archived on Zenodo: [![DOI](https://zenodo.org/badge/1009268437.svg)](https://doi.org/10.5281/zenodo.17525405)
 
 ## Folder structure and content
 
