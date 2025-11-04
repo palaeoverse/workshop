@@ -1,6 +1,6 @@
 # Open Science, Collaboration, and Reproducibility in Paleontology
 
-These are the materials for a workshop run by Palaeoverse at the Paleontological Society's Short Course in San Antonio, TX in October, 2025.
+These are the materials for a workshop run by Palaeoverse at the [Paleontological Society's Short Course](https://www.paleosoc.org/2025-paleo-short-course) in San Antonio, TX in October, 2025.
 
 ## Instructions
 
